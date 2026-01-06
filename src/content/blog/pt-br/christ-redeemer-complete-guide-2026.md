@@ -68,7 +68,7 @@ TL;DR: Visite o Cristo Redentor:
 - Como chegar: trem (cênico), van (rápida), Uber (flexível) ou trilha (paga taxa de entrada do parque)
 - Ingressos: R$87-134 (~US$15-24) dependendo do método
 - Duração: 2-3 horas no total (com transporte)
-- Melhores tours: [The Essential Rio](/pt-br/passeios-privados/essential-rio) ou [Sunrise at Sugarloaf](/pt-br/passeios-privados/first-light-sunrise) incluem o Cristo com acesso agendado e guias especializados.
+- Melhores tours: [The Essential Rio](/pt-br/passeios-privados/essential-rio) ou [Sunrise at Sugarloaf](/pt-br/passeios-privados/first-light-sunrise) incluem o Cristo com acesso agendado na subida e guias especializados.
 
 Cristo Redentor - o ícone que define o skyline do Rio. Depois de guiar milhares de visitantes por mais de 12 anos, aqui está tudo o que você precisa saber para uma visita perfeita em 2026.
 
@@ -164,22 +164,18 @@ Custo: a trilha é gratuita. Para entrar no monumento no topo, paga-se R$58 (~US
 
 Tours de trilha em breve - fique de olho!
 
-### 4. Carro particular (oficial apenas)
+### 4. Carro particular
 
-Observação: carros particulares e Ubers não sobem até o monumento.
+Carros particulares, táxis e Ubers não sobem até o monumento. Eles deixam você no Centro de Visitantes Paineiras, de onde é preciso pegar uma van.
 
 Prós:
 
 - Acesso direto ao Centro de Visitantes Paineiras
-- Bom para mobilidade reduzida até certo ponto
 - Experiência privada
 
 Contras:
 
 - É obrigatório trocar para van oficial em Paineiras para subir ao monumento
-- Preço mais alto
-
-Melhor para: grupos de 4+, pessoas com mobilidade reduzida, quem quer máximo conforto
 
 ## Melhor horário por prioridade
 
@@ -432,7 +428,7 @@ Nossos tours privados deixam 45-60 minutos no topo, com ritmo ideal.
 
 ### Posso visitar o Cristo Redentor por conta própria?
 
-Sim! Recomendamos comprar online em [tremdocorcovado.rio](https://tremdocorcovado.rio) ou [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Mesmo com ingresso, pode haver fila na descida. Nossos tours incluem guia, pickup no hotel e acesso agendado.
+Sim! Recomendamos comprar online em [tremdocorcovado.rio](https://tremdocorcovado.rio) ou [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Mesmo com ingresso, pode haver fila na descida. Nossos tours incluem guia, pickup no hotel e acesso agendado na subida.
 
 ### Vale a pena visitar o Cristo Redentor?
 

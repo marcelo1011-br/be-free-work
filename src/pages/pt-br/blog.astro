@@ -124,7 +124,6 @@ const schemas = [blogSchemaData, breadcrumbSchema];
 
   <section class="blog-pillars">
     <div class="container">
-      <h2 class="pillars-title">Guias Pilar</h2>
       <div class="pillars-grid">
         <a class="pillar-card" href="/pt-br/blog/cristo-redentor">
           <h3>Hub do Cristo Redentor</h3>
@@ -330,6 +329,12 @@ const schemas = [blogSchemaData, breadcrumbSchema];
   .category-btn.active {
     background: var(--gradient-accent);
     border-color: var(--color-accent);
+    color: white;
+  }
+
+  /* Fix for light theme - ensure text contrast */
+  :root[data-theme="light"] .category-btn.active {
+    background: var(--color-accent);
     color: white;
   }
 

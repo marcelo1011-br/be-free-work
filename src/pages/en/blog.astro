@@ -124,7 +124,6 @@ const categories = [
 
   <section class="blog-pillars">
     <div class="container">
-      <h2 class="pillars-title">Pillar Guides</h2>
       <div class="pillars-grid">
         <a class="pillar-card" href="/en/blog/christ-redeemer">
           <h3>Christ the Redeemer Hub</h3>
@@ -331,6 +330,12 @@ const categories = [
   .category-btn.active {
     background: var(--gradient-accent);
     border-color: var(--color-accent);
+    color: white;
+  }
+
+  /* Fix for light theme - ensure text contrast */
+  :root[data-theme="light"] .category-btn.active {
+    background: var(--color-accent);
     color: white;
   }
 

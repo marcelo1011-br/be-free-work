@@ -711,53 +711,112 @@ const pageTitle = `${tour.title} | Be Free Tours`;
                 )
               }
 
-              <div class="payment-policies">
-                <h4>Condiciones de pago</h4>
-                <ul class="policy-list">
-                  <li>
-                    <strong>Cómo pagar:</strong>
-                    Recibirás un enlace de pago seguro por email después de confirmar los detalles y cerrar el itinerario.
-                  </li>
-                  <li>
-                    <strong>Cuándo pagar:</strong>
-                    El pago total se requiere al menos 72 horas (3 días) antes de la fecha del tour.
-                  </li>
-                  <li>
-                    <strong>¿Reserva de último minuto?</strong>
-                    Las reservas con menos de 72 horas requieren pago inmediato para confirmar. Enviaremos el enlace en el momento.
-                  </li>
-                  <li>
-                    <strong>Métodos de pago:</strong>
-                    Tarjetas de crédito y débito, procesadas en un entorno seguro (Stripe).
-                  </li>
-                  <li>
-                    <strong>¡Importante!</strong>
-                    Reservas sin pago se liberan automáticamente 72 horas antes del tour. Recibirás recordatorios por email y WhatsApp.
-                  </li>
-                </ul>
-              </div>
+            </div>
+          </div>
+        </div>
 
-              <div class="payment-policies">
-                <h4>Política de cancelación</h4>
-                <ul class="policy-list">
-                  <li>
-                    <strong>Cancelación flexible:</strong>
-                    Cancela sin costo hasta 72 horas (3 días) antes del inicio.
-                  </li>
-                  <li>
-                    <strong>Cómo cancelar o modificar:</strong>
-                    Contáctanos por email o WhatsApp lo antes posible. Con gusto ajustamos o reprogramamos.
-                  </li>
-                  <li>
-                    <strong>Cancelaciones dentro de 72 horas:</strong>
-                    Lamentablemente, cancelaciones con menos de 3 días no son reembolsables.
-                  </li>
-                  <li>
-                    <strong>Condiciones climáticas:</strong>
-                    Si el clima severo hace el tour inseguro, ofrecemos reembolso total o reprogramación sin costo.
-                  </li>
-                </ul>
-              </div>
+        <!-- Condiciones de pago -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"
+                ></path>
+              </svg>
+              <span>Condiciones de pago</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="payment-policies">
+              <ul class="policy-list">
+                <li>
+                  <strong>Cómo pagar:</strong>
+                  Recibirás un enlace de pago seguro por email después de confirmar los detalles y cerrar el itinerario.
+                </li>
+                <li>
+                  <strong>Cuándo pagar:</strong>
+                  El pago total se requiere al menos 72 horas (3 días) antes de la fecha del tour.
+                </li>
+                <li>
+                  <strong>¿Reserva de último minuto?</strong>
+                  Las reservas con menos de 72 horas requieren pago inmediato para confirmar. Enviaremos el enlace en el momento.
+                </li>
+                <li>
+                  <strong>Métodos de pago:</strong>
+                  Tarjetas de crédito y débito, procesadas en un entorno seguro (Stripe).
+                </li>
+                <li>
+                  <strong>¡Importante!</strong>
+                  Reservas sin pago se liberan automáticamente 72 horas antes del tour. Recibirás recordatorios por email y WhatsApp.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Política de cancelación -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
+                ></path>
+              </svg>
+              <span>Política de cancelación</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="payment-policies">
+              <ul class="policy-list">
+                <li>
+                  <strong>Cancelación flexible:</strong>
+                  Cancela sin costo hasta 72 horas (3 días) antes del inicio.
+                </li>
+                <li>
+                  <strong>Cómo cancelar o modificar:</strong>
+                  Contáctanos por email o WhatsApp lo antes posible. Con gusto ajustamos o reprogramamos.
+                </li>
+                <li>
+                  <strong>Cancelaciones dentro de 72 horas:</strong>
+                  Lamentablemente, cancelaciones con menos de 3 días no son reembolsables.
+                </li>
+                <li>
+                  <strong>Condiciones climáticas:</strong>
+                  Si el clima severo hace el tour inseguro, ofrecemos reembolso total o reprogramación sin costo.
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -164,22 +164,18 @@ Cost: The trails are free. To enter the monument at the top, you pay R$58 (~US$1
 
 Hiking tours coming soon - stay tuned for guided experiences!
 
-### 4. Private Car (Official Only)
+### 4. Private Car
 
-Note: Private cars and Ubers cannot drive all the way to the statue.
+Private cars, taxis, and Ubers cannot drive all the way to the statue. They will drop you off at the Paineiras Visitor's Center, from where you'll have to take a van.
 
 Pros:
 
 - Direct route to Paineiras Visitor Center
-- Great for mobility issues up to a certain point
 - Private experience
 
 Cons:
 
 - You must transfer to an official van at Paineiras to reach the statue monument
-- Premium pricing
-
-Best for: Groups of 4+, travelers with mobility concerns, those seeking maximum comfort
 
 ## Best Time by Priority
 
@@ -291,7 +287,7 @@ Always buy online in advance (especially for the Train) to secure your time slot
 
 Private Tours:
 
-- Book through our tours for scheduled access
+- Book through our tours for scheduled access on the ascent
 - Expert guides included
 - Hotel pickup & drop-off
 
@@ -432,7 +428,7 @@ Our private tours allocate 45-60 minutes at the top, perfectly timed to avoid ru
 
 ### Can I visit Christ the Redeemer on my own?
 
-Yes! We strongly recommend buying tickets online at [tremdocorcovado.rio](https://tremdocorcovado.rio) or [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Be aware that even with tickets, you might face lines for the return trip (descent). Our private tours include professional guides, hotel pickup, and scheduled access.
+Yes! We strongly recommend buying tickets online at [tremdocorcovado.rio](https://tremdocorcovado.rio) or [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Be aware that even with tickets, you might face lines for the return trip (descent). Our private tours include professional guides, hotel pickup, and scheduled access for the ascent.
 
 ### Is Christ the Redeemer worth it?
 

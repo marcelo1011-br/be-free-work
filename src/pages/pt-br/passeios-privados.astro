@@ -152,30 +152,31 @@ const schemas = [collectionSchema, breadcrumbSchema];
     gap: var(--space-sm);
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .filter-btn {
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
-    padding: var(--space-sm) var(--space-lg);
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-full);
-    color: var(--color-text);
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-small);
     font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-body);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-white);
+    color: var(--color-text);
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
   .filter-btn:hover {
     border-color: var(--color-accent);
-    transform: translateY(-2px);
+    color: var(--color-accent);
   }
 
   .filter-btn.active {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    background: var(--gradient-accent);
     border-color: var(--color-accent);
     color: white;
   }

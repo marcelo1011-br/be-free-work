@@ -76,36 +76,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Filter Section -->
-  <section class="gallery-filters">
-    <div class="container">
-      <p class="filter-label">{content.filterLabel}</p>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">
-          {content.categories.all}
-        </button>
-        <button class="filter-btn" data-filter="christRedeemer">
-          {content.categories.christRedeemer}
-        </button>
-        <button class="filter-btn" data-filter="sugarloaf">
-          {content.categories.sugarloaf}
-        </button>
-        <button class="filter-btn" data-filter="beaches">
-          {content.categories.beaches}
-        </button>
-        <button class="filter-btn" data-filter="historic">
-          {content.categories.historic}
-        </button>
-        <button class="filter-btn" data-filter="nature">
-          {content.categories.nature}
-        </button>
-        <button class="filter-btn" data-filter="culture">
-          {content.categories.culture}
-        </button>
-      </div>
-    </div>
-  </section>
-
   <!-- Gallery Grid -->
   <section class="gallery-grid-section">
     <div class="container">
@@ -235,58 +205,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
     margin: 0 auto;
   }
 
-  /* Filters */
-  .gallery-filters {
-    padding: var(--space-2xl) 0;
-    background-color: var(--color-bg-soft);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .filter-label {
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text-inverse);
-    margin-bottom: var(--space-md);
-    text-align: center;
-  }
-
-  .filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .filter-btn {
-    padding: 0.625rem 1.25rem;
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-semibold);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-full);
-    background-color: var(--color-bg-white);
-    color: var(--color-text-inverse);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .filter-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
-
-  .filter-btn.active {
-    background: var(--gradient-accent);
-    border-color: var(--color-accent);
-    color: white;
-  }
-
-  /* Fix for light theme - ensure text contrast */
-  :root[data-theme="light"] .filter-btn.active {
-    background: var(--color-accent);
-    color: white;
-  }
-
   /* Gallery Grid */
   .gallery-grid-section {
     padding: var(--space-3xl) 0;
@@ -303,10 +221,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
     opacity: 1;
     transform: scale(1);
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .gallery-item.hidden {
-    display: none;
   }
 
   .gallery-item-inner {
@@ -639,17 +553,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
     }
   }
 
-  /* Light Theme Overrides */
-  :global(html.light) .filter-btn {
-    background: #ffffff;
-    border-color: rgba(15, 23, 42, 0.1);
-    color: #475569;
-  }
-
-  :global(html.light) .filter-btn:hover {
-    border-color: var(--color-accent);
-    color: #0f172a;
-  }
 </style>
 
 <script>
@@ -667,30 +570,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
       };
     })
   };
-
-  // Filter functionality
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      // Update active button
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Filter gallery items
-      galleryItems.forEach(item => {
-        const category = item.dataset.category;
-        if (filter === 'all' || category === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  });
 
   // Lightbox functionality
   const lightbox = document.getElementById('lightbox');

@@ -59,11 +59,12 @@ const { items } = Astro.props;
   .breadcrumbs {
     /* 🆕 Sticky com navbar */
     position: sticky;
-    top: 100px; /* Altura da navbar + espaço extra */
+    top: 72px; /* Alinha com a altura real da navbar */
     z-index: 999; /* Abaixo da navbar (1000) */
 
     /* Visual - FIXO, não muda no scroll */
-    padding: var(--space-md) 0; /* Espaçamento adequado */
+    padding-top: calc(var(--space-md) + 0.75rem);
+    padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--color-border);
 
     /* 🆕 Backdrop blur effect */
@@ -121,7 +122,7 @@ const { items } = Astro.props;
   /* Responsive */
   @media (max-width: 768px) {
     .breadcrumbs {
-      top: 75px; /* Navbar mobile + espaço extra */
+      top: 64px; /* Navbar mobile */
       padding: var(--space-sm) 0; /* Menos padding no mobile */
     }
 

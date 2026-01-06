@@ -27,6 +27,20 @@
   # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
   # ================================
+  # LANGUAGE REDIRECT (root only)
+  # ================================
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^pt [NC]
+  RewriteRule ^$ /pt-br/ [R=302,L]
+
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^es [NC]
+  RewriteRule ^$ /es/ [R=302,L]
+
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^$ /en/ [R=302,L]
+
+  # ================================
   # OLD SITE REDIRECTS (SEO Preservation)
   # ================================
 
