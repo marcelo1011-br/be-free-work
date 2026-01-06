@@ -121,6 +121,11 @@
 
 </IfModule>
 
+# Ensure caches respect language-based redirect at root
+<IfModule mod_headers.c>
+  Header set Vary "Accept-Language"
+</IfModule>
+
 # ================================
 # GZIP COMPRESSION
 # ================================
