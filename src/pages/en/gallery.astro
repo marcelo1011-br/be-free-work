@@ -8,34 +8,43 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { galleryContent, galleryImages } from "../../data/galleryContent.js";
+import { galleryContent } from "../../data/galleryContent.js";
 import { getPageSEO, getImageGallerySchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
 const lang = "en";
 const content = galleryContent[lang];
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 
-// Import all gallery images dynamically
 const galleryImageFiles = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/images/gallery/*.{jpeg,jpg,png,webp}"
+  "/src/images/gallery/*.{jpeg,jpg,png,webp}",
+  { eager: true }
 );
 
-// Load images and match with content
-const images = await Promise.all(
-  galleryImages.map(async (img) => {
-    const imagePath = `/src/images/gallery/${img.imageSrc}`;
-    const imageModule = galleryImageFiles[imagePath];
+const toTitleCase = (value) =>
+  value
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (match) => match.toUpperCase());
+
+const images = Object.entries(galleryImageFiles)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, module]) => {
+    const imageSrc = path.split("/").pop();
+    const baseName = imageSrc.replace(/\.[^/.]+$/, "");
+    const title = toTitleCase(baseName);
+    const description = "";
+    const alt = title;
 
     return {
-      ...img,
-      imageData: imageModule ? (await imageModule()).default : null,
-      title: img.title[lang],
-      description: img.description[lang],
-      alt: img.alt[lang],
-      caption: img.title[lang]
+      id: baseName,
+      category: "gallery",
+      imageSrc,
+      imageData: module.default,
+      title,
+      description,
+      alt,
+      caption: title
     };
-  })
-);
+  });
 
 // SEO
 const seo = {
@@ -45,11 +54,11 @@ const seo = {
 };
 
 // Schemas (for SEO, we'll use placeholder URLs)
-const imagesForSchema = images.map(img => ({
+const imagesForSchema = images.map((img) => ({
   url: `/images/gallery/${img.imageSrc}`,
   thumbnail: `/images/gallery/${img.imageSrc}`,
   title: img.title,
-  description: img.description,
+  description: img.description || img.title,
   caption: img.caption
 }));
 
@@ -106,13 +115,10 @@ const schemas = [gallerySchema, breadcrumbSchema];
                 </div>
               )}
               <div class="gallery-overlay">
-                <h3 class="gallery-title">{image.title}</h3>
-                <p class="gallery-description">{image.description}</p>
-                <button class="gallery-view-btn" aria-label={`View ${image.title}`}>
+                <button class="gallery-view-btn" aria-label={`View ${image.alt}`}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
                   </svg>
-                  View Full Size
                 </button>
               </div>
             </div>
@@ -147,10 +153,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
           src=""
           alt=""
         />
-        <div class="lightbox-caption">
-          <h3 id="lightbox-title"></h3>
-          <p id="lightbox-description"></p>
-        </div>
       </div>
       <div class="lightbox-counter">
         <span id="lightbox-current">1</span> / <span id="lightbox-total">{images.length}</span>
@@ -280,36 +282,16 @@ const schemas = [gallerySchema, breadcrumbSchema];
   .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    background: rgba(0, 0, 0, 0.35);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: var(--space-lg);
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   .gallery-item-inner:hover .gallery-overlay {
     opacity: 1;
-  }
-
-  .gallery-title {
-    font-size: var(--font-size-h6);
-    font-weight: var(--font-weight-bold);
-    color: white;
-    margin-bottom: var(--space-xs);
-  }
-
-  .gallery-description {
-    font-size: var(--font-size-small);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--space-md);
-    line-height: var(--line-height-normal);
   }
 
   .gallery-view-btn {
@@ -417,22 +399,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
     max-height: 70vh;
     object-fit: contain;
     border-radius: var(--radius-lg);
-  }
-
-  .lightbox-caption {
-    margin-top: var(--space-lg);
-    text-align: center;
-    color: white;
-  }
-
-  .lightbox-caption h3 {
-    font-size: var(--font-size-h5);
-    margin-bottom: var(--space-xs);
-  }
-
-  .lightbox-caption p {
-    font-size: var(--font-size-body);
-    color: rgba(255, 255, 255, 0.8);
   }
 
   .lightbox-counter {
@@ -558,13 +524,9 @@ const schemas = [gallerySchema, breadcrumbSchema];
   const galleryData = {
     images: Array.from(document.querySelectorAll('.gallery-item')).map(item => {
       const img = item.querySelector('img');
-      const title = item.querySelector('.gallery-title')?.textContent || '';
-      const description = item.querySelector('.gallery-description')?.textContent || '';
       return {
         src: img?.src || '',
-        alt: img?.alt || '',
-        title,
-        description
+        alt: img?.alt || ''
       };
     })
   };
@@ -572,8 +534,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
   // Lightbox functionality
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
-  const lightboxTitle = document.getElementById('lightbox-title');
-  const lightboxDescription = document.getElementById('lightbox-description');
   const lightboxCurrent = document.getElementById('lightbox-current');
   const lightboxTotal = document.getElementById('lightbox-total');
   const lightboxClose = document.querySelector('.lightbox-close');
@@ -603,8 +563,6 @@ const schemas = [gallerySchema, breadcrumbSchema];
       lightboxImage.src = image.src;
       lightboxImage.alt = image.alt;
     }
-    if (lightboxTitle) lightboxTitle.textContent = image?.title || '';
-    if (lightboxDescription) lightboxDescription.textContent = image?.description || '';
     if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
   }
 
