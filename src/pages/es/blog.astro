@@ -122,25 +122,6 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     </div>
   </section>
 
-  <section class="blog-pillars">
-    <div class="container">
-      <div class="pillars-grid">
-        <a class="pillar-card" href="/es/blog/cristo-redentor">
-          <h3>Hub del Cristo Redentor</h3>
-          <p>Horarios, tickets, transporte y tours en un solo lugar.</p>
-        </a>
-        <a class="pillar-card" href="/es/blog/playas-de-rio">
-          <h3>Hub de Playas de Río</h3>
-          <p>Playas clásicas, escondidas y excursiones.</p>
-        </a>
-        <a class="pillar-card" href="/es/blog/comida-en-rio">
-          <h3>Hub de Comida en Río</h3>
-          <p>Platos esenciales, barrios y tours gastronómicos.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Categories Filter -->
   <section class="blog-categories">
     <div class="container">
@@ -260,39 +241,6 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     font-size: var(--font-size-h6);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
     line-height: var(--line-height-relaxed);
-  }
-
-  /* Pillar Guides */
-  .blog-pillars {
-    padding: var(--space-xl) 0;
-    background-color: var(--color-bg);
-  }
-
-  .pillars-title {
-    font-size: var(--font-size-h4);
-    margin-bottom: var(--space-md);
-    text-align: center;
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-md);
-  }
-
-  .pillar-card {
-    border: 1px solid var(--color-border);
-    padding: var(--space-md);
-    border-radius: var(--radius-lg);
-    background: var(--color-bg-white);
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .pillar-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   }
 
   /* Categories */
