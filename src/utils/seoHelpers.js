@@ -306,7 +306,7 @@ export function getPageSEO(pageName, lang) {
       privateTours: {
         title: 'Tours Privados en Río de Janeiro | Be Free Tours',
         description:
-        'Explora Río con nuestros tours privados personalizados. Tours de ciudad, excursiones y experiencias a pie. Acceso sin filas, itinerarios flexibles, guías locales expertos.',
+        'Explora Río con nuestros tours privados personalizados. Tours de ciudad, excursiones y experiencias a pie. Acceso programado, itinerarios flexibles, guías locales expertos.',
       },
     },
     'pt-br': {
@@ -323,7 +323,7 @@ export function getPageSEO(pageName, lang) {
       privateTours: {
         title: 'Passeios Privados no Rio de Janeiro | Be Free Tours',
         description:
-        'Explore o Rio com nossos passeios privados personalizados. Tours pela cidade, passeios de dia inteiro e experiências a pé. Acesso sem filas, itinerários flexíveis, guias locais especialistas.',
+        'Explore o Rio com nossos passeios privados personalizados. Tours pela cidade, passeios de dia inteiro e experiências a pé. Acesso programado, itinerários flexíveis, guias locais especialistas.',
       },
     },
   };
@@ -363,7 +363,7 @@ export function getHowToSchema(lang, siteUrl) {
         },
         {
           name: "Enjoy Your Tour",
-          text: "On tour day, your guide meets you at your hotel. Relax and enjoy Rio with skip-the-line access, expert commentary, and flexible itinerary.",
+          text: "On tour day, your guide meets you at your hotel. Relax and enjoy Rio with expert commentary and a flexible itinerary.",
           image: `${siteUrl}/images/step-enjoy.jpg`,
         },
       ],
@@ -394,7 +394,7 @@ export function getHowToSchema(lang, siteUrl) {
         },
         {
           name: "Disfruta tu Tour",
-          text: "El día del tour, tu guía te recoge en tu hotel. Relájate y disfruta de Río con acceso sin filas.",
+          text: "El día del tour, tu guía te recoge en tu hotel. Relájate y disfruta de Río con acceso programado.",
           image: `${siteUrl}/images/step-enjoy.jpg`,
         },
       ],
@@ -425,7 +425,7 @@ export function getHowToSchema(lang, siteUrl) {
         },
         {
           name: "Aproveite seu Passeio",
-          text: "No dia do passeio, seu guia te busca no hotel. Relaxe e aproveite o Rio com acesso sem filas.",
+          text: "No dia do passeio, seu guia te busca no hotel. Relaxe e aproveite o Rio com acesso programado.",
           image: `${siteUrl}/images/step-enjoy.jpg`,
         },
       ],
