@@ -93,17 +93,7 @@ export default defineConfig({
     '/en/private-tours/petropolis': '/en/private-tours/petropolis-imperial',
     '/en/private-tours/ilha-grande': '/en/private-tours/island-escape-ilha-grande',
 
-    // Blog Redirects - All old blog posts redirect to main blog page
-    '/rio-beyond-the-guidebook/': '/en/blog',
-    '/foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco/': '/en/blog',
-    '/which-type-of-tour-matches-with-you/': '/en/blog',
-    '/sala-cecilia-meirelles/': '/en/blog',
-    '/botanical-garde-rio-de-janeiro/': '/en/blog',
-    '/ccbb-centro-cultural-banco-do-brasil/': '/en/blog',
-    '/museu-nacional-de-belas-artes/': '/en/blog',
-    '/the-plastic-arts-and-brazil-part-1-jean-baptiste-debret-and-brazil/': '/en/blog',
-    '/rio-world-capital-of-architecture-by-unesco/': '/en/blog',
-    '/lapa-a-rio-wonder/': '/en/blog',
+    // Blog redirects moved to .htaccess to avoid generating extra folders in dist
   },
 
   // Build otimizado
