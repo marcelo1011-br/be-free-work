@@ -109,9 +109,9 @@
   # OLD BLOG POSTS (if any)
   # ================================
   Redirect 301 /rio-beyond-the-guidebook/ /en/blog
-  Redirect 301 /foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco/ /en/blog/rio-food-guide-must-try-dishes
+  Redirect 301 /foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco/ /en/blog
   Redirect 301 /lapa-a-rio-wonder/ /en/blog
-  Redirect 301 /which-type-of-tour-matches-with-you/ /en/private-tours
+  Redirect 301 /which-type-of-tour-matches-with-you/ /en/blog
   Redirect 301 /botanical-garde-rio-de-janeiro/ /en/blog
   Redirect 301 /ccbb-centro-cultural-banco-do-brasil/ /en/blog
   Redirect 301 /museu-nacional-de-belas-artes/ /en/blog
