@@ -91,7 +91,7 @@ Cristo Redentor - el ícono que define el skyline de Río. Después de guiar a m
 | 🚐 Van | 30 min directo | R$87-132 (~US$15-23) | ⭐ Fácil | Más rápido, más barato | Menos escénico | Con poco tiempo |
 | 🚗 Uber/Taxi | 40 min | R$80-120 (~US$16-24) | ⭐⭐ Medio | Flexible, directo | Tráfico, cambio en Paineiras | Grupos 3-4 |
 | 🥾 Caminata | 45 min - 2h subida | R$58 (~US$10) | ⭐⭐⭐ Difícil | Económico, naturaleza | Cansador, empinado | En forma |
-| 🎫 Tour privado | Varía | Desde US$83 | ⭐ Muy fácil | Guía, hotel pickup | Más caro | Mejor experiencia |
+| 🎫 Tour privado | Varía | Desde US$83 | ⭐ Muy fácil | Guía, recogida en cualquier lugar de Río | Más caro | Mejor experiencia |
 
 Nuestra recomendación:
 
@@ -291,7 +291,7 @@ Tours privados:
 
 - Acceso programado
 - Guías expertos
-- Pickup y regreso al hotel
+- Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)
 
 ## Qué llevar
 
@@ -430,7 +430,7 @@ Nuestros tours privados dejan 45-60 minutos arriba, sin apuros.
 
 ### ¿Puedo visitar el Cristo por mi cuenta?
 
-Sí. Recomendamos comprar online en [tremdocorcovado.rio](https://tremdocorcovado.rio) o [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Incluso con tickets, puede haber fila al bajar. Nuestros tours incluyen guía, pickup y acceso programado para la subida.
+Sí. Recomendamos comprar online en [tremdocorcovado.rio](https://tremdocorcovado.rio) o [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Incluso con tickets, puede haber fila al bajar. Nuestros tours incluyen guía, recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros), y acceso programado para la subida.
 
 ### ¿Cómo funcionan los tickets "sin fila" de marketplaces?
 
@@ -440,9 +440,9 @@ En general, te permiten presentarte y te ubican en el primer horario de tren dis
 
 Absolutamente. Es una de las 7 Nuevas Maravillas por una razón. La vista 360° de Río no tiene comparación. El Cristo impresiona más en persona que en fotos. Ve temprano para evitar multitudes.
 
-### ¿Qué ropa usar para visitar el Cristo?
+### ¿Qué ropa usar en Río?
 
-Zapatillas cómodas, ropa ligera, protector solar y gorra. No hay dress code oficial.
+Usa ropa ligera y cómoda y zapatillas para caminar en días calurosos. Lleva protector solar, gafas de sol y gorra. En invierno (junio-agosto), trae una chaqueta ligera para las noches frescas, especialmente en Petrópolis.
 
 ### ¿Puedo visitar si está nublado?
 
@@ -455,9 +455,9 @@ Sí, pero la vista se reduce. Mira la cámara en vivo en YouTube (busca "Paineir
 - Baja temporada (jul-ago): el mismo día suele estar bien, pero online es mejor
 - Tours privados: reserva con 1-2 semanas
 
-### ¿Hay dress code?
+### ¿Necesito ropa especial?
 
-No. Viste algo cómodo.
+No necesitas ropa especial. Vístete según el clima y lleva una capa ligera si estarás afuera temprano o por la tarde.
 
 ### ¿Puedo llevar comida y bebida?
 
@@ -476,7 +476,7 @@ Déjanos la logística!
 - Cristo + Pan de Azúcar
 - Acceso programado
 - Santa Teresa, Escalera Selarón
-- Pickup y regreso al hotel
+- Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)
 - Desde US$415 para 2 personas
 - [Reserva The Essential Rio](/es/tours-privados/essential-rio)
 

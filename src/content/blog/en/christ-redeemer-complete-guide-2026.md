@@ -91,7 +91,7 @@ Cristo Redentor - the iconic statue that defines Rio's skyline. After guiding th
 | 🚐 Van | 30min direct | R$87-132 (~US$15-23) | ⭐ Easy | Faster, cheaper | Less scenic | Time-pressed |
 | 🚗 Uber/Taxi | 40min | R$80-120 (~US$16-24) | ⭐⭐ Medium | Flexible, direct | Traffic, stops at Paineiras | Groups 3-4 |
 | 🥾 Hiking | 45min - 2h climb | R$58 (~US$10) | ⭐⭐⭐ Hard | Affordable, nature | Tiring, steep | Fit travelers |
-| 🎫 Private Tour | Varies | From US$83 | ⭐ Easiest | Guide, hotel pickup | More expensive | Best experience |
+| 🎫 Private Tour | Varies | From US$83 | ⭐ Easiest | Guide, pickup anywhere in Rio | More expensive | Best experience |
 
 Our Recommendation:
 
@@ -291,7 +291,7 @@ Private Tours:
 
 - Book through our tours for scheduled access on the ascent
 - Expert guides included
-- Hotel pickup & drop-off
+- Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)
 
 ## What to Bring
 
@@ -430,7 +430,7 @@ Our private tours allocate 45-60 minutes at the top, perfectly timed to avoid ru
 
 ### Can I visit Christ the Redeemer on my own?
 
-Yes! We strongly recommend buying tickets online at [tremdocorcovado.rio](https://tremdocorcovado.rio) or [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Be aware that even with tickets, you might face lines for the return trip (descent). Our private tours include professional guides, hotel pickup, and scheduled access for the ascent.
+Yes! We strongly recommend buying tickets online at [tremdocorcovado.rio](https://tremdocorcovado.rio) or [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Be aware that even with tickets, you might face lines for the return trip (descent). Our private tours include professional guides, pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port), and scheduled access for the ascent.
 
 ### How do marketplace "skip-the-line" tickets work?
 
@@ -440,9 +440,9 @@ These tickets typically allow you to show up and be slotted into the first avail
 
 Absolutely! It's one of the New 7 Wonders for a reason. The 360° views of Rio are unmatched - you'll see Sugarloaf, Copacabana, Ipanema, Tijuca Forest, and Guanabara Bay all at once. The statue itself is more impressive up close than photos suggest. Just go early to avoid crowds!
 
-### What should I wear to Christ the Redeemer?
+### What should I wear in Rio?
 
-Comfortable walking shoes, light layers, sunscreen + hat. There is no official dress code, just dress comfortably for the heat.
+Wear light, comfortable clothing and walking shoes on hot days. Bring sunscreen, sunglasses, and a hat. In winter (June-August), pack a light jacket for cooler evenings, especially in Petrópolis.
 
 ### Can I visit if it's cloudy?
 
@@ -455,9 +455,9 @@ Yes, though views will be limited. Check the live view on YouTube (search "Paine
 - Low season (Jul-Aug): Same day usually fine, but online is better
 - Private tours: Book 1-2 weeks ahead for best availability.
 
-### Is there a dress code?
+### Do I need any special clothing?
 
-No official dress code. Just wear light, comfortable clothing suitable for the weather.
+No special clothing is required. Dress for the weather and keep layers handy if you’re out early or staying into the evening.
 
 ### Can I bring food and drinks?
 
@@ -476,7 +476,7 @@ Skip the hassle - let us handle everything!
 - Christ the Redeemer + Sugarloaf
 - Scheduled access
 - Santa Teresa, Selaron Steps
-- Hotel pickup/drop-off
+- Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)
 - From $415 for 2 people
 - [Book The Essential Rio](/en/private-tours/essential-rio)
 

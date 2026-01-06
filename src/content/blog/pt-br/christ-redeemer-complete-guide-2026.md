@@ -91,7 +91,7 @@ Cristo Redentor - o ícone que define o skyline do Rio. Depois de guiar milhares
 | 🚐 Van | 30 min direto | R$87-132 (~US$15-23) | ⭐ Fácil | Mais rápido, mais barato | Menos cênico | Pouco tempo |
 | 🚗 Uber/Taxi | 40 min | R$80-120 (~US$16-24) | ⭐⭐ Médio | Flexível, direto | Tráfego, troca em Paineiras | Grupos 3-4 |
 | 🥾 Trilha | 45 min - 2h de subida | R$58 (~US$10) | ⭐⭐⭐ Difícil | Barato, natureza | Cansativo, íngreme | Pessoas em forma |
-| 🎫 Tour privado | Varia | A partir de US$83 | ⭐ Mais fácil | Guia, hotel pickup | Mais caro | Melhor experiência |
+| 🎫 Tour privado | Varia | A partir de US$83 | ⭐ Mais fácil | Guia, busca em qualquer lugar do Rio | Mais caro | Melhor experiência |
 
 Nossa recomendação:
 
@@ -291,7 +291,7 @@ Tours privados:
 
 - Acesso agendado
 - Guias especialistas
-- Pickup e retorno no hotel
+- Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)
 
 ## O que levar
 
@@ -430,7 +430,7 @@ Nossos tours privados deixam 45-60 minutos no topo, com ritmo ideal.
 
 ### Posso visitar o Cristo Redentor por conta própria?
 
-Sim! Recomendamos comprar online em [tremdocorcovado.rio](https://tremdocorcovado.rio) ou [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Mesmo com ingresso, pode haver fila na descida. Nossos tours incluem guia, pickup no hotel e acesso agendado na subida.
+Sim! Recomendamos comprar online em [tremdocorcovado.rio](https://tremdocorcovado.rio) ou [ingressos.paineirascorcovado.com.br](https://ingressos.paineirascorcovado.com.br). Mesmo com ingresso, pode haver fila na descida. Nossos tours incluem guia, busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros), e acesso agendado na subida.
 
 ### Como funcionam os ingressos "sem fila" dos marketplaces?
 
@@ -440,9 +440,9 @@ Em geral, eles permitem chegar e entrar no primeiro horário de trem disponível
 
 Com certeza. É uma das 7 Novas Maravilhas por um motivo. A vista 360° do Rio é incomparável. O Cristo é mais impressionante de perto do que nas fotos. Vá cedo para evitar filas.
 
-### O que vestir para visitar o Cristo?
+### O que vestir no Rio?
 
-Tênis confortável, roupa leve, protetor solar e chapéu. Não há dress code oficial.
+Use roupas leves e confortáveis e tênis para caminhar nos dias quentes. Leve protetor solar, óculos de sol e chapéu. No inverno (junho-agosto), traga um casaco leve para as noites mais frescas, especialmente em Petrópolis.
 
 ### Posso visitar com tempo nublado?
 
@@ -455,9 +455,9 @@ Sim, mas a vista fica limitada. Veja a câmera ao vivo no YouTube (procure "Pain
 - Baixa temporada (jul-ago): no dia geralmente ok, mas online é melhor
 - Tours privados: reserve 1-2 semanas antes
 
-### Há dress code?
+### Preciso de roupa especial?
 
-Não. Vista algo leve e confortável.
+Não precisa de roupa especial. Vista-se de acordo com o clima e leve uma camada leve se for sair cedo ou voltar no fim da tarde.
 
 ### Posso levar comida e bebida?
 
@@ -476,7 +476,7 @@ Deixe a logística com a gente!
 - Cristo + Pão de Açúcar
 - Acesso agendado
 - Santa Teresa, Escadaria Selarón
-- Pickup e retorno no hotel
+- Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)
 - A partir de US$415 para 2 pessoas
 - [Reserve The Essential Rio](/pt-br/passeios-privados/rio-essencial)
 

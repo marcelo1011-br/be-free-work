@@ -65,7 +65,7 @@ export const homeContent = {
         {
           id: 2,
           question: "What's included in the tour price?",
-          answer: "All our tours include private transportation with a professional driver, a certified English-speaking guide, entrance fees to attractions, hotel pickup and drop-off in Rio's main areas, and complimentary bottled water. Meals and gratuities are not included unless specified in the tour description."
+          answer: "All our tours include private transportation with a professional driver, a certified English-speaking guide, entrance fees to attractions, pickup and drop-off anywhere in Rio de Janeiro (including hotels, Airbnbs, airports, and the cruise port), and complimentary bottled water. Meals and gratuities are not included unless specified in the tour description."
         },
         {
           id: 3,
@@ -90,12 +90,12 @@ export const homeContent = {
         {
           id: 7,
           question: "Do you offer hotel pickup?",
-          answer: "Yes! Complimentary hotel pickup and drop-off is included in all our private tours anywhere in Rio de Janeiro, including all neighborhoods, airports (GIG and SDU), and the cruise port. Just provide your location when booking, and we'll be there."
+          answer: "Yes! Complimentary pickup and drop-off is included in all our private tours anywhere in Rio de Janeiro, including all neighborhoods, airports (GIG and SDU), and the cruise port. Just provide your location when booking, and we'll be there."
         },
         {
           id: 8,
           question: "What should I wear for tours in Rio?",
-          answer: "Rio has a tropical climate, so wear light, comfortable clothing and walking shoes. Bring sunscreen, sunglasses, and a hat for sun protection. For Christ the Redeemer, modest clothing is recommended (covering shoulders and knees). If visiting in winter (June-August), bring a light jacket as temperatures can be cooler, especially in Petrópolis."
+          answer: "Rio has a tropical climate, so wear light, comfortable clothing and walking shoes on hot days. Bring sunscreen, sunglasses, and a hat for sun protection. If visiting in winter (June-August), bring a light jacket as temperatures can be cooler, especially in Petrópolis."
         }
       ]
     },
@@ -179,7 +179,7 @@ export const homeContent = {
         {
           id: 2,
           question: "¿Qué incluye el precio del tour?",
-          answer: "Todos nuestros tours incluyen transporte privado con conductor profesional, guía certificado que habla español, entradas a las atracciones, recogida y regreso al hotel en las principales áreas de Río, y agua embotellada de cortesía. Las comidas y propinas no están incluidas a menos que se especifique en la descripción del tour."
+          answer: "Todos nuestros tours incluyen transporte privado con conductor profesional, guía certificado que habla español, entradas a las atracciones, recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y el puerto de cruceros), y agua embotellada de cortesía. Las comidas y propinas no están incluidas a menos que se especifique en la descripción del tour."
         },
         {
           id: 3,
@@ -204,12 +204,12 @@ export const homeContent = {
         {
           id: 7,
           question: "¿Ofrecen recogida en el hotel?",
-          answer: "¡Sí! La recogida y regreso al hotel de cortesía está incluida en todos nuestros tours privados en cualquier lugar de Río de Janeiro, incluyendo todos los barrios, aeropuertos (GIG y SDU), y el puerto de cruceros. Solo proporciona tu ubicación al reservar y estaremos allí."
+          answer: "¡Sí! La recogida y regreso de cortesía está incluida en todos nuestros tours privados en cualquier lugar de Río de Janeiro, incluyendo todos los barrios, aeropuertos (GIG y SDU), y el puerto de cruceros. Solo proporciona tu ubicación al reservar y estaremos allí."
         },
         {
           id: 8,
           question: "¿Qué debo usar para los tours en Río?",
-          answer: "Río tiene un clima tropical, así que usa ropa ligera y cómoda y zapatos para caminar. Trae protector solar, gafas de sol y sombrero para protección del sol. Para Cristo Redentor, se recomienda ropa modesta (cubriendo hombros y rodillas). Si visitas en invierno (junio-agosto), trae una chaqueta ligera ya que las temperaturas pueden ser más frescas, especialmente en Petrópolis."
+          answer: "Río tiene un clima tropical, así que usa ropa ligera y cómoda y zapatos para caminar en días calurosos. Trae protector solar, gafas de sol y sombrero para protección del sol. Si visitas en invierno (junio-agosto), trae una chaqueta ligera ya que las temperaturas pueden ser más frescas, especialmente en Petrópolis."
         }
       ]
     },
@@ -293,7 +293,7 @@ export const homeContent = {
         {
           id: 2,
           question: "O que está incluído no preço do passeio?",
-          answer: "Todos os nossos passeios incluem transporte privado com motorista profissional, guia certificado que fala português, ingressos para as atrações, busca e retorno ao hotel nas principais áreas do Rio, e água mineral de cortesia. Refeições e gorjetas não estão incluídas a menos que especificado na descrição do passeio."
+          answer: "Todos os nossos passeios incluem transporte privado com motorista profissional, guia certificado que fala português, ingressos para as atrações, busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros), e água mineral de cortesia. Refeições e gorjetas não estão incluídas a menos que especificado na descrição do passeio."
         },
         {
           id: 3,
@@ -318,12 +318,12 @@ export const homeContent = {
         {
           id: 7,
           question: "Vocês oferecem busca no hotel?",
-          answer: "Sim! Busca e retorno ao hotel de cortesia está incluído em todos os nossos passeios privados em qualquer lugar do Rio de Janeiro, incluindo todos os bairros, aeroportos (GIG e SDU), e o porto de cruzeiros. Basta fornecer sua localização ao reservar e estaremos lá."
+          answer: "Sim! Busca e retorno de cortesia está incluído em todos os nossos passeios privados em qualquer lugar do Rio de Janeiro, incluindo todos os bairros, aeroportos (GIG e SDU), e o porto de cruzeiros. Basta fornecer sua localização ao reservar e estaremos lá."
         },
         {
           id: 8,
           question: "O que devo vestir para os passeios no Rio?",
-          answer: "O Rio tem clima tropical, então use roupas leves e confortáveis e sapatos para caminhada. Traga protetor solar, óculos de sol e chapéu para proteção solar. Para o Cristo Redentor, roupas modestas são recomendadas (cobrindo ombros e joelhos). Se visitar no inverno (junho-agosto), traga um casaco leve pois as temperaturas podem ser mais frescas, especialmente em Petrópolis."
+          answer: "O Rio tem clima tropical, então use roupas leves e confortáveis e sapatos para caminhada nos dias quentes. Traga protetor solar, óculos de sol e chapéu para proteção solar. Se visitar no inverno (junho-agosto), traga um casaco leve pois as temperaturas podem ser mais frescas, especialmente em Petrópolis."
         }
       ]
     },
