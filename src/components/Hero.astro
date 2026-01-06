@@ -128,8 +128,39 @@ const tagline = taglines[lang] || taglines.en;
 
 <style>
   .hero {
+    --hero-min-height: 100svh;
+    --hero-container-max: min(1600px, 100%);
+    --hero-content-max: min(1550px, 100%);
+    --hero-padding-top: clamp(6rem, 10vw, 7.5rem);
+    --hero-padding-bottom: calc(var(--space-3xl) + var(--hero-padding-top));
+    --hero-padding-top-mobile: clamp(5.5rem, 12vw, 6.25rem);
+    --hero-title-size: clamp(2.5rem, 6vw + 1rem, 4rem);
+    --hero-title-size-mobile: clamp(1.75rem, 7vw, 2.25rem);
+    --hero-title-leading: 1.1;
+    --hero-title-shadow: 0 2px 20px color-mix(in srgb, black 30%, transparent);
+    --hero-subtitle-shadow: 0 1px 8px color-mix(in srgb, black 40%, transparent);
+    --hero-subtitle-max: 80%;
+    --hero-cta-gap: var(--space-md);
+    --hero-cta-btn-gap: var(--space-xs);
+    --trust-max: clamp(40rem, 80vw, 56.25rem);
+    --trust-padding: var(--space-lg) var(--space-xl);
+    --badge-icon-gap: var(--space-2xs);
+    --badge-text-gap: calc(var(--space-2xs) / 2);
+    --badge-star-spacing: calc(var(--space-2xs) / 2);
+    --trust-badge-padding-mobile: var(--space-sm);
+    --trust-badge-border: var(--border-width-hairline);
+    --hero-light-text: white;
+    --hero-light-text-soft: color-mix(in srgb, white 90%, transparent);
+    --hero-light-text-subtle: color-mix(in srgb, white 95%, transparent);
+    --trust-light-bg: color-mix(in srgb, var(--color-primary) 85%, transparent);
+    --trust-light-border: color-mix(in srgb, white 15%, transparent);
+    --trust-light-text-soft: color-mix(in srgb, white 70%, transparent);
+    --trust-light-border-soft: color-mix(in srgb, white 10%, transparent);
+    --outline-cta-border: color-mix(in srgb, white 80%, transparent);
+    --outline-cta-hover: color-mix(in srgb, white 15%, transparent);
+
     position: relative;
-    min-height: 100svh;
+    min-height: var(--hero-min-height);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,16 +192,16 @@ const tagline = taglines[lang] || taglines.en;
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 1600px;
+    max-width: var(--hero-container-max);
     margin-inline: auto;
     padding-inline: var(--container-padding);
-    padding-top: 120px;
-    padding-bottom: calc(var(--space-3xl) + 120px);
+    padding-top: var(--hero-padding-top);
+    padding-bottom: var(--hero-padding-bottom);
   }
 
   /* Content - Centered */
   .hero-content {
-    max-width: 1550px;
+    max-width: var(--hero-content-max);
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -181,19 +212,19 @@ const tagline = taglines[lang] || taglines.en;
     font-weight: var(--font-weight-medium);
     color: var(--color-text-light);
     margin-bottom: var(--space-md);
-    letter-spacing: 0.02em;
+    letter-spacing: var(--tracking-wide);
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 6vw + 1rem, 4rem);
+    font-size: var(--hero-title-size);
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
     margin-bottom: var(--space-lg);
-    line-height: 1.1;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    line-height: var(--hero-title-leading);
+    text-shadow: var(--hero-title-shadow);
     max-width: 100%;
     text-wrap: balance;
-    letter-spacing: -0.015em;
+    letter-spacing: var(--tracking-tight);
   }
 
   .hero-subtitle {
@@ -201,15 +232,15 @@ const tagline = taglines[lang] || taglines.en;
     color: color-mix(in srgb, var(--color-text-inverse) 95%, transparent);
     margin-bottom: var(--space-xl);
     line-height: var(--line-height-relaxed);
-    max-width: 80%;
+    max-width: var(--hero-subtitle-max);
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: var(--hero-subtitle-shadow);
   }
 
   .hero-ctas {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--hero-cta-gap);
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -217,7 +248,7 @@ const tagline = taglines[lang] || taglines.en;
   .hero-ctas .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--hero-cta-btn-gap);
   }
 
   /* Trust Badges */
@@ -228,7 +259,7 @@ const tagline = taglines[lang] || taglines.en;
     transform: translateX(-50%);
     z-index: 2;
     width: 100%;
-    max-width: 900px;
+    max-width: var(--trust-max);
     padding-inline: var(--container-padding);
   }
 
@@ -237,7 +268,7 @@ const tagline = taglines[lang] || taglines.en;
     justify-content: space-around;
     align-items: center;
     gap: var(--space-lg);
-    padding: var(--space-lg) var(--space-xl);
+    padding: var(--trust-padding);
     border-radius: var(--radius-lg);
   }
 
@@ -251,20 +282,20 @@ const tagline = taglines[lang] || taglines.en;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--badge-icon-gap);
     color: var(--color-accent);
   }
 
   .badge-icon .stars {
     font-size: var(--font-size-xs);
     color: var(--color-accent);
-    letter-spacing: 2px;
+    letter-spacing: var(--badge-star-spacing);
   }
 
   .badge-text {
     display: flex;
     flex-direction: column;
-    gap: 0.125rem;
+    gap: var(--badge-text-gap);
   }
 
   .badge-label {
@@ -281,7 +312,7 @@ const tagline = taglines[lang] || taglines.en;
   /* Responsivo */
   @media (max-width: 768px) {
     .hero-container {
-      padding-top: 100px;
+      padding-top: var(--hero-padding-top-mobile);
       padding-bottom: var(--space-xl);
     }
 
@@ -323,8 +354,8 @@ const tagline = taglines[lang] || taglines.en;
       width: 100%;
       justify-content: center;
       text-align: center;
-      padding: var(--space-sm);
-      border-bottom: 1px solid var(--color-border-light);
+      padding: var(--trust-badge-padding-mobile);
+      border-bottom: var(--trust-badge-border) solid var(--color-border-light);
       flex-direction: column;
       gap: var(--space-xs);
     }
@@ -352,7 +383,7 @@ const tagline = taglines[lang] || taglines.en;
 
   @media (max-width: 480px) {
     .hero-title {
-      font-size: clamp(1.75rem, 7vw, 2.25rem);
+      font-size: var(--hero-title-size-mobile);
     }
 
     .hero-subtitle {
@@ -368,54 +399,54 @@ const tagline = taglines[lang] || taglines.en;
   :global(html.light) .hero-tagline,
   :global(html.light) .hero-title,
   :global(html.light) .hero-subtitle {
-    color: #ffffff;
+    color: var(--hero-light-text);
   }
 
   :global(html.light) .hero-tagline {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--hero-light-text-soft);
   }
 
   :global(html.light) .hero-subtitle {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--hero-light-text-subtle);
   }
 
   /* Trust badges no tema claro - glass escuro */
   :global(html.light) .trust-badges {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: var(--trust-light-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: var(--border-width-hairline) solid var(--trust-light-border);
   }
 
   :global(html.light) .badge-label {
-    color: #ffffff;
+    color: var(--hero-light-text);
   }
 
   :global(html.light) .badge-value {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--trust-light-text-soft);
   }
 
   :global(html.light) .trust-badge {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: var(--trust-light-border-soft);
   }
 
   :global(html.light) .btn-outline-secondary {
-    border-color: rgba(255, 255, 255, 0.8);
-    color: #ffffff;
+    border-color: var(--outline-cta-border);
+    color: var(--hero-light-text);
   }
 
   :global(html.light) .btn-outline-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
+    background-color: var(--outline-cta-hover);
+    border-color: var(--hero-light-text);
   }
 
   :global(html.light) .btn-outline-primary {
-    border-color: rgba(255, 255, 255, 0.8);
-    color: #ffffff;
+    border-color: var(--outline-cta-border);
+    color: var(--hero-light-text);
   }
 
   :global(html.light) .btn-outline-primary:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #ffffff;
+    background-color: var(--outline-cta-hover);
+    border-color: var(--hero-light-text);
   }
 </style>

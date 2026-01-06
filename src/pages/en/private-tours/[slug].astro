@@ -1004,6 +1004,22 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   /* Hero Section */
   .tour-hero {
+    --tour-hero-overlay-start: color-mix(in srgb, black 70%, transparent);
+    --tour-hero-overlay-mid: color-mix(in srgb, black 30%, transparent);
+    --tour-hero-text-shadow: 0 2px 10px color-mix(in srgb, black 50%, transparent);
+    --tour-hero-price-shadow: 0 2px 8px color-mix(in srgb, black 80%, transparent),
+      0 4px 16px color-mix(in srgb, black 60%, transparent);
+    --tour-hero-max: clamp(40rem, 75vw, 50rem);
+    --tour-hero-price-opacity: 0.9;
+    --accordion-max: clamp(50rem, 85vw, 56.25rem);
+    --accordion-border: var(--border-width-regular);
+    --accordion-transition: var(--transition-duration-normal) var(--transition-easing-default);
+    --accordion-max-height: 3000px;
+    --included-grid-min: 280px;
+    --spacing-tiny: var(--space-2xs);
+    --cta-max: clamp(34rem, 70vw, 43.75rem);
+    --cta-subtitle-color: color-mix(in srgb, white 90%, transparent);
+
     position: relative;
     min-height: 60vh;
     display: flex;
@@ -1027,8 +1043,8 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
+      var(--tour-hero-overlay-start) 0%,
+      var(--tour-hero-overlay-mid) 50%,
       transparent 100%
     );
   }
@@ -1043,7 +1059,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .hero-text {
     text-align: center;
-    max-width: 800px;
+    max-width: var(--tour-hero-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1054,7 +1070,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .hero-title {
     color: var(--color-text-inverse);
     margin-bottom: 0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: var(--tour-hero-text-shadow);
   }
 
   .hero-meta {
@@ -1077,20 +1093,20 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.125rem;
+    gap: var(--spacing-tiny);
   }
 
   .price-label {
     font-size: var(--font-size-small);
     color: var(--color-text-inverse);
-    opacity: 0.9;
+    opacity: var(--tour-hero-price-opacity);
   }
 
   .price-value {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-bold);
     color: var(--color-text-inverse);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6);
+    text-shadow: var(--tour-hero-price-shadow);
   }
 
   /* Overview */
@@ -1099,7 +1115,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   }
 
   .overview-text {
-    max-width: 800px;
+    max-width: var(--tour-hero-max);
     font-size: var(--font-size-h6);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-light);
@@ -1111,7 +1127,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   }
 
   .accordion {
-    max-width: 900px;
+    max-width: var(--accordion-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1120,7 +1136,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .accordion-item {
     background-color: var(--color-bg-white);
-    border: 2px solid var(--color-border);
+    border: var(--accordion-border) solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
   }
@@ -1134,7 +1150,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--accordion-transition);
   }
 
   .accordion-header:hover {
@@ -1152,7 +1168,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .accordion-icon {
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    transition: transform var(--accordion-transition);
     color: var(--color-accent);
   }
 
@@ -1163,11 +1179,11 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height var(--accordion-transition);
   }
 
   .accordion-item.active .accordion-content {
-    max-height: 3000px;
+    max-height: var(--accordion-max-height);
   }
 
   .accordion-content > * {
@@ -1191,14 +1207,14 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .highlight-item svg {
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: var(--spacing-tiny);
     color: var(--color-accent);
   }
 
   /* Included Grid */
   .included-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--included-grid-min), 1fr));
     gap: var(--space-xl);
   }
 
@@ -1230,7 +1246,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .included-item svg {
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: var(--spacing-tiny);
   }
 
   .included-item:not(.not-included) svg {
@@ -1278,7 +1294,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .price-custom-description {
     font-size: var(--font-size-body);
     color: var(--color-text-light);
-    max-width: 500px;
+    max-width: clamp(26rem, 70vw, 31.25rem);
     line-height: var(--line-height-relaxed);
   }
 
@@ -1298,7 +1314,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .pricing-table td {
     padding: var(--space-md);
     text-align: left;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-width-hairline) solid var(--color-border);
   }
 
   .pricing-table th {
@@ -1343,7 +1359,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .tip-item svg {
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: var(--spacing-tiny);
     color: var(--color-accent);
   }
 
@@ -1356,7 +1372,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .faq-item {
     padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-width-hairline) solid var(--color-border);
   }
 
   .faq-item:last-child {
@@ -1394,12 +1410,12 @@ const pageTitle = `${tour.title} | Be Free Tours`;
       var(--color-primary) 0%,
       var(--color-primary-dark) 100%
     );
-    color: white;
+    color: var(--color-text-inverse);
   }
 
   .cta-content {
     text-align: center;
-    max-width: 700px;
+    max-width: var(--cta-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1408,13 +1424,13 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   }
 
   .cta-title {
-    color: white;
+    color: var(--color-text-inverse);
     margin: 0;
   }
 
   .cta-subtitle {
     font-size: var(--font-size-h5);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--cta-subtitle-color);
     margin: 0;
   }
 
@@ -1467,7 +1483,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     .cta-buttons {
       flex-direction: column;
       width: 100%;
-      max-width: 320px;
+      max-width: clamp(18rem, 80vw, 20rem);
     }
 
     .cta-buttons .btn {

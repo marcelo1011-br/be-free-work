@@ -184,6 +184,8 @@ const schemas = [gallerySchema, breadcrumbSchema];
 <style>
   /* Hero Section */
   .gallery-hero {
+    --gallery-hero-subtitle-max: clamp(34rem, 70vw, 43.75rem);
+
     padding: var(--space-3xl) 0;
     background: linear-gradient(
       135deg,
@@ -196,14 +198,14 @@ const schemas = [gallerySchema, breadcrumbSchema];
   }
 
   .hero-title {
-    color: #ffffff;
+    color: var(--color-text-inverse);
     margin-bottom: var(--space-md);
   }
 
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: 700px;
+    max-width: var(--gallery-hero-subtitle-max);
     margin: 0 auto;
   }
 
@@ -213,8 +215,11 @@ const schemas = [gallerySchema, breadcrumbSchema];
   }
 
   .gallery-grid {
+    --gallery-grid-min: var(--grid-min-md);
+    --gallery-item-transition: var(--transition-duration-slow) var(--transition-easing-default);
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--gallery-grid-min)), 1fr));
     gap: var(--space-lg);
     grid-auto-flow: dense;
   }
@@ -222,23 +227,28 @@ const schemas = [gallerySchema, breadcrumbSchema];
   .gallery-item {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity var(--gallery-item-transition), transform var(--gallery-item-transition);
   }
 
   .gallery-item-inner {
+    --gallery-card-shadow: 0 4px 12px color-mix(in srgb, black 10%, transparent);
+    --gallery-card-shadow-hover: 0 12px 24px color-mix(in srgb, black 15%, transparent);
+    --gallery-card-lift: -4px;
+    --gallery-image-scale: 1.05;
+
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-lg);
     height: 100%;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--gallery-card-shadow);
+    transition: transform var(--gallery-item-transition), box-shadow var(--gallery-item-transition);
     aspect-ratio: 3 / 4;
   }
 
   .gallery-item-inner:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(var(--gallery-card-lift));
+    box-shadow: var(--gallery-card-shadow-hover);
   }
 
   .gallery-item-inner img,
@@ -246,12 +256,12 @@ const schemas = [gallerySchema, breadcrumbSchema];
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
   }
 
   .gallery-item-inner:hover img,
   .gallery-item-inner:hover :global(img) {
-    transform: scale(1.05);
+    transform: scale(var(--gallery-image-scale));
   }
 
   .image-placeholder {
@@ -264,8 +274,8 @@ const schemas = [gallerySchema, breadcrumbSchema];
     gap: var(--space-md);
     background: linear-gradient(
       135deg,
-      rgba(139, 92, 246, 0.1) 0%,
-      rgba(59, 130, 246, 0.1) 100%
+      color-mix(in srgb, var(--color-accent) 10%, transparent) 0%,
+      color-mix(in srgb, var(--color-secondary) 10%, transparent) 100%
     );
     color: var(--color-text-muted);
   }
@@ -283,14 +293,16 @@ const schemas = [gallerySchema, breadcrumbSchema];
   }
 
   .gallery-overlay {
+    --gallery-overlay-bg: color-mix(in srgb, black 35%, transparent);
+
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: var(--gallery-overlay-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--gallery-item-transition);
   }
 
   .gallery-item-inner:hover .gallery-overlay {
@@ -300,8 +312,8 @@ const schemas = [gallerySchema, breadcrumbSchema];
   .gallery-view-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-md);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semibold);
     color: white;
@@ -309,7 +321,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .gallery-view-btn:hover {
@@ -318,9 +330,19 @@ const schemas = [gallerySchema, breadcrumbSchema];
 
   /* Lightbox */
   .lightbox {
+    --lightbox-z: 9999;
+    --lightbox-content-z: 10000;
+    --lightbox-control-z: 10001;
+    --lightbox-backdrop: color-mix(in srgb, black 95%, transparent);
+    --lightbox-control-bg: color-mix(in srgb, white 10%, transparent);
+    --lightbox-control-bg-hover: color-mix(in srgb, white 20%, transparent);
+    --lightbox-control-border: color-mix(in srgb, white 20%, transparent);
+    --lightbox-control-offset: -60px;
+    --lightbox-close-offset: -50px;
+
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: var(--lightbox-z);
     display: none;
     align-items: center;
     justify-content: center;
@@ -333,28 +355,28 @@ const schemas = [gallerySchema, breadcrumbSchema];
   .lightbox-backdrop {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--lightbox-backdrop);
   }
 
   .lightbox-content {
     position: relative;
     width: 90%;
-    max-width: 1200px;
+    max-width: var(--container-max);
     max-height: 90vh;
-    z-index: 10000;
+    z-index: var(--lightbox-content-z);
   }
 
   .lightbox-close {
     position: absolute;
-    top: -50px;
+    top: var(--lightbox-close-offset);
     right: 0;
-    padding: 0.5rem;
+    padding: var(--space-xs);
     background: transparent;
     border: none;
     color: white;
     cursor: pointer;
-    transition: color 0.2s ease;
-    z-index: 10001;
+    transition: color var(--transition-duration-normal) var(--transition-easing-default);
+    z-index: var(--lightbox-control-z);
   }
 
   .lightbox-close:hover {
@@ -366,28 +388,29 @@ const schemas = [gallerySchema, breadcrumbSchema];
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--space-md);
+    background: var(--lightbox-control-bg);
+    backdrop-filter: blur(var(--blur-sm));
+    border: var(--border-width-hairline) solid var(--lightbox-control-border);
     border-radius: var(--radius-md);
     color: white;
     cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 10001;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+    z-index: var(--lightbox-control-z);
   }
 
   .lightbox-prev {
-    left: -60px;
+    left: var(--lightbox-control-offset);
   }
 
   .lightbox-next {
-    right: -60px;
+    right: var(--lightbox-control-offset);
   }
 
   .lightbox-prev:hover,
   .lightbox-next:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--lightbox-control-bg-hover);
     border-color: var(--color-accent);
   }
 
@@ -406,7 +429,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
 
   .lightbox-counter {
     position: absolute;
-    bottom: -40px;
+    bottom: calc(var(--space-lg) * -1);
     left: 50%;
     transform: translateX(-50%);
     font-size: var(--font-size-small);
@@ -416,6 +439,8 @@ const schemas = [gallerySchema, breadcrumbSchema];
 
   /* CTA Section */
   .gallery-cta {
+    --gallery-cta-max: clamp(34rem, 70vw, 43.75rem);
+
     padding: var(--space-3xl) 0;
     background: linear-gradient(
       135deg,
@@ -428,7 +453,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
 
   .cta-content {
     text-align: center;
-    max-width: 700px;
+    max-width: var(--gallery-cta-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -482,7 +507,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     }
 
     .filter-btn {
-      padding: 0.5rem 1rem;
+      padding: var(--space-xs) var(--space-md);
       font-size: var(--font-size-xs);
     }
 
@@ -493,26 +518,26 @@ const schemas = [gallerySchema, breadcrumbSchema];
 
     .lightbox-prev,
     .lightbox-next {
-      padding: 0.75rem;
+      padding: var(--space-sm-compact);
     }
 
     .lightbox-prev {
-      left: 10px;
+      left: var(--space-md);
     }
 
     .lightbox-next {
-      right: 10px;
+      right: var(--space-md);
     }
 
     .lightbox-close {
-      top: 10px;
-      right: 10px;
+      top: var(--space-md);
+      right: var(--space-md);
     }
 
     .cta-buttons {
       flex-direction: column;
       width: 100%;
-      max-width: 320px;
+      max-width: clamp(18rem, 80vw, 20rem);
     }
 
     .cta-buttons .btn {

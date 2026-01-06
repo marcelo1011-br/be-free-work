@@ -139,15 +139,34 @@ const navLinks = [
 
 <style>
   .footer {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text);
+    --footer-bg: var(--color-bg-dark);
+    --footer-text: var(--color-text);
+    --footer-grid-min: var(--grid-min-4);
+    --footer-logo-size: clamp(2rem, 4vw, 2.5rem);
+    --footer-transition: color var(--transition-duration-normal) var(--transition-easing-default);
+    --footer-link-hover: var(--color-accent);
+    --footer-border: var(--border-width-hairline);
+    --tripadvisor-hover-bg: color-mix(in srgb, white 15%, transparent);
+    --tripadvisor-hover-shift: var(--motion-lift-sm);
+    --footer-light-bg: var(--color-primary);
+    --footer-light-text: var(--color-text-inverse);
+    --footer-light-text-soft: color-mix(in srgb, white 70%, transparent);
+    --footer-light-text-muted: color-mix(in srgb, white 60%, transparent);
+    --footer-light-text-faint: color-mix(in srgb, white 50%, transparent);
+    --footer-light-border: color-mix(in srgb, white 10%, transparent);
+    --tripadvisor-light-bg: color-mix(in srgb, white 10%, transparent);
+    --tripadvisor-light-border: color-mix(in srgb, white 15%, transparent);
+    --tripadvisor-light-text: color-mix(in srgb, white 90%, transparent);
+
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     padding: var(--space-3xl) 0 var(--space-xl);
     margin-top: auto;
   }
 
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), 1fr));
     gap: var(--space-2xl);
     margin-bottom: var(--space-2xl);
   }
@@ -168,8 +187,8 @@ const navLinks = [
   }
 
   .footer-logo-image {
-    width: 40px;
-    height: 40px;
+    width: var(--footer-logo-size);
+    height: var(--footer-logo-size);
     object-fit: contain;
     background: transparent !important;
   }
@@ -193,21 +212,22 @@ const navLinks = [
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
     background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    border: var(--footer-border) solid var(--glass-border);
     border-radius: var(--radius-md);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: transform var(--transition-duration-normal) var(--transition-easing-default),
+      background-color var(--transition-duration-normal) var(--transition-easing-default);
     width: fit-content;
   }
 
   .tripadvisor-link:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
+    background: var(--tripadvisor-hover-bg);
+    transform: translateY(var(--tripadvisor-hover-shift));
   }
 
   .tripadvisor-logo {
-    width: 28px;
-    height: 28px;
+    width: clamp(1.5rem, 3vw, 1.75rem);
+    height: clamp(1.5rem, 3vw, 1.75rem);
     object-fit: contain;
   }
 
@@ -240,12 +260,12 @@ const navLinks = [
   .footer-contact a {
     color: var(--color-text-light);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: var(--footer-transition);
   }
 
   .footer-links a:hover,
   .footer-contact a:hover {
-    color: var(--color-accent);
+    color: var(--footer-link-hover);
   }
 
   .footer-contact li {
@@ -262,7 +282,7 @@ const navLinks = [
   /* Bottom */
   .footer-bottom {
     padding-top: var(--space-lg);
-    border-top: 1px solid var(--color-border);
+    border-top: var(--footer-border) solid var(--color-border);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -284,7 +304,7 @@ const navLinks = [
   .footer-credit a {
     color: var(--color-secondary);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: var(--footer-transition);
   }
 
   .footer-credit a:hover {
@@ -305,24 +325,24 @@ const navLinks = [
 
   /* Tema claro: Footer permanece ESCURO (âncora visual) */
   :global(html.light) .footer {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: var(--footer-light-bg);
+    color: var(--footer-light-text);
   }
 
   :global(html.light) .footer-logo .logo-subtext {
-    color: #f8fafc;
+    color: var(--footer-light-text);
   }
 
   :global(html.light) .footer-tagline {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-light-text-soft);
   }
 
   :global(html.light) .footer-title {
-    color: #f8fafc;
+    color: var(--footer-light-text);
   }
 
   :global(html.light) .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-light-text-soft);
   }
 
   :global(html.light) .footer-links a:hover {
@@ -330,35 +350,35 @@ const navLinks = [
   }
 
   :global(html.light) .footer-contact-item {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-light-text-soft);
   }
 
   :global(html.light) .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.1);
+    border-top-color: var(--footer-light-border);
   }
 
   :global(html.light) .footer-copyright {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-light-text-muted);
   }
 
   :global(html.light) .footer-credit {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--footer-light-text-faint);
   }
 
   :global(html.light) .footer-credit a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--footer-light-text-soft);
   }
 
   :global(html.light) .tripadvisor-link {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: var(--tripadvisor-light-bg);
+    border-color: var(--tripadvisor-light-border);
   }
 
   :global(html.light) .tripadvisor-link:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--tripadvisor-hover-bg);
   }
 
   :global(html.light) .tripadvisor-link span {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--tripadvisor-light-text);
   }
 </style>

@@ -264,7 +264,11 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 <style>
   /* Hero Section */
   .contact-hero {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --contact-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --contact-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --contact-hero-subtitle-max: clamp(32rem, 70vw, 37.5rem);
+
+    padding: calc(var(--space-3xl) + var(--contact-hero-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -282,19 +286,26 @@ const schemas = [contactPageSchema, breadcrumbSchema];
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: 600px;
+    max-width: var(--contact-hero-subtitle-max);
     margin: 0 auto;
   }
 
   /* Contact Content */
   .contact-content {
+    --whatsapp-primary: #25d366;
+    --whatsapp-dark: #128c7e;
+    --textarea-min-height: clamp(9rem, 20vw, 9.375rem);
+
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-white);
   }
 
   .contact-grid {
+    --contact-grid-main: 1.5fr;
+    --contact-grid-side: 1fr;
+
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: var(--contact-grid-main) var(--contact-grid-side);
     gap: var(--space-3xl);
   }
 
@@ -335,27 +346,30 @@ const schemas = [contactPageSchema, breadcrumbSchema];
   }
 
   .form-input {
+    --input-border: var(--border-width-regular);
+    --input-focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+
     padding: var(--space-md);
-    border: 2px solid var(--color-border);
+    border: var(--input-border) solid var(--color-border);
     border-radius: var(--radius-md);
     font-family: var(--font-family);
     font-size: var(--font-size-body);
     color: var(--color-text);
     background-color: var(--color-bg-white);
     transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
+      border-color var(--transition-duration-normal) var(--transition-easing-default),
+      box-shadow var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .form-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(42, 78, 145, 0.1);
+    box-shadow: var(--input-focus-ring);
   }
 
   .form-textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: var(--textarea-min-height);
   }
 
   /* Info Column */
@@ -394,18 +408,18 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     border-radius: var(--radius-md);
     text-decoration: none;
     transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
+      transform var(--transition-duration-normal) var(--transition-easing-default),
+      box-shadow var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .contact-method:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(var(--motion-lift-sm));
+    box-shadow: 0 4px 12px color-mix(in srgb, black 10%, transparent);
   }
 
   .method-icon {
-    width: 48px;
-    height: 48px;
+    width: clamp(2.5rem, 5vw, 3rem);
+    height: clamp(2.5rem, 5vw, 3rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -414,7 +428,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
   }
 
   .method-icon.whatsapp {
-    background-color: #25d366;
+    background-color: var(--whatsapp-primary);
     color: white;
   }
 
@@ -437,8 +451,8 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-light);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-2xs);
   }
 
   .method-value {
@@ -462,8 +476,10 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 
   /* WhatsApp CTA */
   .whatsapp-cta {
+    --whatsapp-cta-max: clamp(18rem, 80vw, 20rem);
+
     padding: var(--space-xl);
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, var(--whatsapp-primary) 0%, var(--whatsapp-dark) 100%);
     border-radius: var(--radius-lg);
     color: white;
     text-align: center;
@@ -482,14 +498,14 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 
   .btn-accent {
     background-color: white;
-    color: #25d366;
+    color: var(--whatsapp-primary);
     border-color: white;
   }
 
   .btn-accent:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #128c7e;
-    transform: translateY(-2px);
+    background-color: color-mix(in srgb, white 90%, transparent);
+    color: var(--whatsapp-dark);
+    transform: translateY(var(--motion-lift-sm));
   }
 
   /* Responsivo */
@@ -502,7 +518,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 
   @media (max-width: 768px) {
     .contact-hero {
-      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+      padding: calc(var(--space-3xl) + var(--contact-hero-offset-mobile)) 0 var(--space-xl);
     }
 
     .hero-title {

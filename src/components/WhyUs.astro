@@ -49,13 +49,22 @@ const icons = {
 
 <style>
   .why-us {
+    --why-header-max: clamp(40rem, 75vw, 50rem);
+    --why-card-blur: var(--blur-md);
+    --why-card-border: var(--border-width-hairline);
+    --why-card-lift: -4px;
+    --why-card-shadow: 0 12px 24px color-mix(in srgb, black 30%, transparent);
+    --why-card-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --why-icon-size: clamp(2.5rem, 5vw, 3rem);
+    --why-icon-size-mobile: clamp(2.25rem, 6vw, 2.5rem);
+
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-white);
   }
 
   .section-header {
     text-align: center;
-    max-width: 800px;
+    max-width: var(--why-header-max);
     margin: 0 auto var(--space-2xl);
   }
 
@@ -77,12 +86,12 @@ const icons = {
   .reason-card {
     padding: var(--space-xl);
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--why-card-blur));
+    -webkit-backdrop-filter: blur(var(--why-card-blur));
+    border: var(--why-card-border) solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--why-card-transition), box-shadow var(--why-card-transition);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -91,13 +100,13 @@ const icons = {
   }
 
   .reason-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(var(--why-card-lift));
+    box-shadow: var(--why-card-shadow);
   }
 
   .reason-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--why-icon-size);
+    height: var(--why-icon-size);
     color: var(--color-accent);
     flex-shrink: 0;
   }
@@ -142,13 +151,13 @@ const icons = {
     }
 
     .reason-icon {
-      width: 40px;
-      height: 40px;
+      width: var(--why-icon-size-mobile);
+      height: var(--why-icon-size-mobile);
     }
 
     .reason-icon :global(svg) {
-      width: 40px;
-      height: 40px;
+      width: var(--why-icon-size-mobile);
+      height: var(--why-icon-size-mobile);
     }
 
     .reason-title {

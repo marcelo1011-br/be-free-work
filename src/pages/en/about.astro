@@ -165,7 +165,11 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 <style>
   /* Hero Section */
   .about-hero {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --about-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --about-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --about-hero-subtitle-max: clamp(34rem, 70vw, 43.75rem);
+
+    padding: calc(var(--space-3xl) + var(--about-hero-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -183,7 +187,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: 700px;
+    max-width: var(--about-hero-subtitle-max);
     margin: 0 auto;
   }
 
@@ -217,7 +221,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
   }
 
   .story-text {
@@ -244,7 +248,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   .section-subtitle {
     font-size: var(--font-size-h5);
     color: var(--color-text-light);
-    max-width: 600px;
+    max-width: clamp(32rem, 70vw, 37.5rem);
     margin: 0 auto var(--space-2xl);
   }
 
@@ -253,24 +257,29 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   }
 
   .value-card {
+    --value-card-border: var(--border-width-hairline);
+    --value-card-lift: -4px;
+    --value-card-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --value-icon-size: clamp(2.5rem, 5vw, 3rem);
+
     padding: var(--space-xl);
     background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    border: var(--value-card-border) solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    transition: transform 0.3s ease;
+    transition: transform var(--value-card-transition);
   }
 
   .value-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(var(--value-card-lift));
   }
 
   .value-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--value-icon-size);
+    height: var(--value-icon-size);
     color: var(--color-accent);
   }
 
@@ -293,20 +302,24 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   }
 
   .stats-grid {
+    --stats-columns: 4;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--stats-columns), 1fr);
     gap: var(--space-xl);
     margin-top: var(--space-2xl);
   }
 
   .stat-card {
+    --stat-card-border: var(--border-width-hairline);
+    --stat-card-min-height: clamp(8rem, 20vw, 9.375rem);
+
     text-align: center;
     padding: var(--space-xl) var(--space-lg);
     background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    border: var(--stat-card-border) solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
-    min-height: 150px;
+    min-height: var(--stat-card-min-height);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,7 +330,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
-    line-height: 1.2;
+    line-height: var(--line-height-tight);
     margin-bottom: var(--space-sm);
   }
 
@@ -340,7 +353,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   .cta-content {
     text-align: center;
-    max-width: 700px;
+    max-width: var(--about-hero-subtitle-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -369,7 +382,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   /* Responsivo */
   @media (max-width: 768px) {
     .about-hero {
-      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+      padding: calc(var(--space-3xl) + var(--about-hero-offset-mobile)) 0 var(--space-xl);
     }
 
     .hero-title {
@@ -402,7 +415,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     }
 
     .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
+      --stats-columns: 2;
       gap: var(--space-md);
     }
 
@@ -413,7 +426,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     .cta-buttons {
       flex-direction: column;
       width: 100%;
-      max-width: 320px;
+      max-width: clamp(18rem, 80vw, 20rem);
     }
 
     .cta-buttons .btn {

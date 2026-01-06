@@ -193,13 +193,22 @@ const tourBadgeMap = {
 <style>
   /* How It Works */
   .how-it-works {
+    --step-grid-min: 280px;
+    --step-card-lift: -4px;
+    --step-number-size: clamp(3rem, 6vw, 3.5rem);
+    --step-number-border: var(--border-width-strong);
+    --step-connector-offset: -32px;
+    --step-icon-size: clamp(2rem, 4vw, 2.25rem);
+    --section-subtitle-max: clamp(40rem, 75vw, 50rem);
+    --cta-btn-gap: var(--space-xs);
+
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-soft);
   }
 
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--step-grid-min)), 1fr));
     gap: var(--space-lg);
     margin-top: var(--space-2xl);
   }
@@ -212,20 +221,20 @@ const tourBadgeMap = {
     text-align: center;
     padding: var(--space-xl);
     border-radius: var(--radius-lg);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
   }
 
   .step-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(var(--step-card-lift));
   }
 
   .step-number {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    border: 3px solid var(--color-border);
+    width: var(--step-number-size);
+    height: var(--step-number-size);
+    border: var(--step-number-border) solid var(--color-border);
     border-radius: 50%;
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-bold);
@@ -259,7 +268,7 @@ const tourBadgeMap = {
   .step-connector {
     display: none;
     position: absolute;
-    right: -32px;
+    right: var(--step-connector-offset);
     top: 50%;
     transform: translateY(-50%);
     color: var(--color-border);
@@ -282,7 +291,7 @@ const tourBadgeMap = {
     font-size: var(--font-size-h5);
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
-    max-width: 800px;
+    max-width: var(--section-subtitle-max);
     margin: var(--space-md) auto var(--space-2xl);
   }
 
@@ -297,7 +306,7 @@ const tourBadgeMap = {
   .section-cta .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--cta-btn-gap);
   }
 
   /* Responsivo */
@@ -339,8 +348,8 @@ const tourBadgeMap = {
     }
 
     .step-icon svg {
-      width: 36px;
-      height: 36px;
+      width: var(--step-icon-size);
+      height: var(--step-icon-size);
     }
 
     .section-subtitle {

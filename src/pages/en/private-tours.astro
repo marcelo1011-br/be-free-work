@@ -114,7 +114,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
 <style>
   /* Hero Section */
   .tours-hero {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --tours-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --tours-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --tours-hero-subtitle-max: clamp(40rem, 75vw, 50rem);
+
+    padding: calc(var(--space-3xl) + var(--tours-hero-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -132,19 +136,29 @@ const schemas = [collectionSchema, breadcrumbSchema];
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: 800px;
+    max-width: var(--tours-hero-subtitle-max);
     margin: 0 auto;
     line-height: var(--line-height-relaxed);
   }
 
   /* Filters Section */
   .tours-filters {
+    --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
+    --filters-z: 100;
+    --filters-border: var(--border-width-hairline);
+    --filter-padding-block: clamp(0.625rem, 1.2vw, 0.75rem);
+    --filter-padding-inline: clamp(1rem, 2vw, 1.25rem);
+    --filter-border-width: var(--border-width-regular);
+    --filter-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --filter-count-size: clamp(1.25rem, 3vw, 1.5rem);
+    --filter-count-bg: color-mix(in srgb, black 15%, transparent);
+
     padding: var(--space-xl) 0;
     background-color: var(--color-bg-soft);
     /* position: sticky; */
-    top: 73px; /* Altura da navbar */
-    z-index: 100;
-    border-bottom: 1px solid var(--color-border);
+    top: var(--filters-top); /* Altura da navbar */
+    z-index: var(--filters-z);
+    border-bottom: var(--filters-border) solid var(--color-border);
   }
 
   .filters-wrapper {
@@ -159,15 +173,17 @@ const schemas = [collectionSchema, breadcrumbSchema];
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
-    padding: 0.625rem 1.25rem;
+    padding: var(--filter-padding-block) var(--filter-padding-inline);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semibold);
-    border: 2px solid var(--color-border);
+    border: var(--filter-border-width) solid var(--color-border);
     border-radius: var(--radius-full);
     background-color: var(--color-bg-white);
     color: var(--color-text);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color var(--filter-transition),
+      border-color var(--filter-transition),
+      color var(--filter-transition);
   }
 
   .filter-btn:hover {
@@ -191,10 +207,10 @@ const schemas = [collectionSchema, breadcrumbSchema];
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 24px;
-    height: 24px;
+    min-width: var(--filter-count-size);
+    height: var(--filter-count-size);
     padding: 0 var(--space-xs);
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--filter-count-bg);
     border-radius: var(--radius-full);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
@@ -216,8 +232,8 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
   .tour-item {
     transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+      opacity var(--transition-duration-slow) var(--transition-easing-default),
+      transform var(--transition-duration-slow) var(--transition-easing-default);
   }
 
   .tour-item.hidden {
@@ -248,7 +264,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
   .cta-content {
     text-align: center;
-    max-width: 800px;
+    max-width: var(--tours-hero-subtitle-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -270,7 +286,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
   /* Responsivo */
   @media (max-width: 768px) {
     .tours-hero {
-      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+      padding: calc(var(--space-3xl) + var(--tours-hero-offset-mobile)) 0 var(--space-xl);
     }
 
     .hero-title {

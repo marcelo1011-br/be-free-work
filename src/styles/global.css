@@ -39,7 +39,7 @@
 
   body {
     min-height: 100vh;
-    line-height: 1.6;
+    line-height: var(--line-height-normal);
     font-family: var(--font-family);
     font-weight: 400;
     color: var(--color-text);
@@ -88,7 +88,7 @@
 
   /* Global hero title styling */
   .hero-title {
-    letter-spacing: -0.015em;
+    letter-spacing: var(--tracking-tight);
   }
 
   /* Accessibility - Reduced Motion */
@@ -232,6 +232,10 @@
     /* Font family */
     --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
+    /* Letter spacing */
+    --tracking-tight: -0.015em;
+    --tracking-wide: 0.05em;
+
     /* Fluid font sizes */
     --font-size-h1: clamp(2.25rem, 5vw + 1rem, 3.75rem);
     --font-size-h2: clamp(1.875rem, 4vw + 0.75rem, 3rem);
@@ -259,11 +263,16 @@
      Spacing System
      -------------------------------- */
   :root {
+    --space-2xs: clamp(0.25rem, 0.4vw, 0.375rem);
     --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
     --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+    --space-sm-compact: clamp(0.625rem, 1.2vw, 0.75rem);
     --space-md: clamp(1rem, 2vw, 1.5rem);
+    --space-md-compact: clamp(0.75rem, 1.5vw, 0.875rem);
     --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+    --space-lg-compact: clamp(1.5rem, 2.5vw, 1.75rem);
     --space-xl: clamp(2rem, 5vw, 4rem);
+    --space-xl-compact: clamp(2rem, 4vw, 2.25rem);
     --space-2xl: clamp(3rem, 8vw, 6rem);
     --space-3xl: clamp(4rem, 10vw, 8rem);
 
@@ -276,6 +285,47 @@
     --radius-md: 0.5rem;
     --radius-lg: 1rem;
     --radius-full: 9999px;
+  }
+
+  /* --------------------------------
+     Effects & Sizes
+     -------------------------------- */
+  :root {
+    --border-width-hairline: 1px;
+    --border-width-regular: 2px;
+    --border-width-strong: 3px;
+
+    --blur-sm: clamp(8px, 1vw, 10px);
+    --blur-md: clamp(12px, 1.5vw, 14px);
+
+    --focus-outline-width: var(--border-width-strong);
+    --focus-outline-offset: 2px;
+
+    --motion-lift-sm: -2px;
+    --motion-press-scale: 0.98;
+
+    --decorator-width: clamp(30px, 6vw, 60px);
+    --decorator-width-compact: clamp(20px, 5vw, 30px);
+    --decorator-height: 1px;
+
+    --shadow-accent-sm: 0 4px 14px color-mix(in oklch, var(--color-accent) 40%, transparent);
+    --shadow-accent-md: 0 6px 20px color-mix(in oklch, var(--color-accent) 50%, transparent);
+    --shadow-soft: 0 8px 32px color-mix(in oklch, var(--color-text) 10%, transparent);
+
+    --intrinsic-card: clamp(320px, 40vw, 400px);
+    --intrinsic-step: clamp(240px, 30vw, 300px);
+    --intrinsic-testimonial: clamp(280px, 35vw, 350px);
+    --intrinsic-tour: clamp(360px, 45vw, 450px);
+    --intrinsic-faq: clamp(180px, 25vw, 200px);
+
+    --grid-min-sm: 200px;
+    --grid-min-md: 300px;
+    --grid-min-lg: 400px;
+    --grid-min-2: 450px;
+    --grid-min-3: 300px;
+    --grid-min-4: 250px;
+
+    --hero-min-height-mobile: 100svh;
   }
 
   /* --------------------------------
@@ -444,9 +494,9 @@
     /* Navbar - Dark anchor */
     .navbar {
       background: color-mix(in srgb, var(--color-primary) 95%, transparent);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-block-end: 1px solid color-mix(in srgb, white 10%, transparent);
+      backdrop-filter: blur(var(--blur-md));
+      -webkit-backdrop-filter: blur(var(--blur-md));
+      border-block-end: var(--border-width-hairline) solid color-mix(in srgb, white 10%, transparent);
 
       &.scrolled {
         background: color-mix(in srgb, var(--color-primary) 98%, transparent);
@@ -479,7 +529,7 @@
     .lang-dropdown {
       background: oklch(22% 0.08 255);
       border-color: color-mix(in srgb, white 10%, transparent);
-      box-shadow: 0 8px 32px oklch(0% 0 0 / 0.3);
+      box-shadow: var(--glass-shadow);
     }
 
     .lang-option {
@@ -530,11 +580,11 @@
         color: color-mix(in srgb, white 95%, transparent);
       }
 
-      .trust-badges {
-        background: color-mix(in srgb, var(--color-primary) 85%, transparent);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-color: color-mix(in srgb, white 15%, transparent);
+    .trust-badges {
+      background: color-mix(in srgb, var(--color-primary) 85%, transparent);
+      backdrop-filter: blur(var(--blur-md));
+      -webkit-backdrop-filter: blur(var(--blur-md));
+      border-color: color-mix(in srgb, white 15%, transparent);
 
         .badge-label {
           color: white;
@@ -672,11 +722,11 @@
     .post-card,
     .contact-info-card {
       background: var(--color-bg-card);
-      border: 1px solid var(--color-border);
+      border: var(--border-width-hairline) solid var(--color-border);
       box-shadow: var(--glass-shadow);
 
       &:hover {
-        box-shadow: 0 8px 32px color-mix(in oklch, var(--color-text) 10%, transparent);
+        box-shadow: var(--shadow-soft);
       }
     }
 
@@ -824,7 +874,7 @@
   .contact-hero,
   .blog-hero,
   .gallery-hero {
-    min-height: 100svh;
+    min-height: var(--hero-min-height-mobile);
   }
 }
 @layer components {
@@ -853,32 +903,32 @@
 
   /* Grid responsivo - cards pequenos */
   .grid-sm {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-sm)), 1fr));
   }
 
   /* Grid responsivo - cards médios */
   .grid-md {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-md)), 1fr));
   }
 
   /* Grid responsivo - cards grandes */
   .grid-lg {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-lg)), 1fr));
   }
 
   /* Grid fixo - 2 colunas */
   .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-2)), 1fr));
   }
 
   /* Grid fixo - 3 colunas */
   .grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-3)), 1fr));
   }
 
   /* Grid fixo - 4 colunas */
   .grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-4)), 1fr));
   }
 
   /* Variantes de gap */
@@ -892,9 +942,9 @@
      -------------------------------- */
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: var(--border-width-hairline) solid var(--glass-border);
     box-shadow: var(--glass-shadow);
 
     &:hover,
@@ -905,9 +955,9 @@
 
   .glass-light {
     background: color-mix(in srgb, white 10%, transparent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid color-mix(in srgb, white 15%, transparent);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
+    border: var(--border-width-hairline) solid color-mix(in srgb, white 15%, transparent);
   }
 
   /* --------------------------------
@@ -925,8 +975,8 @@
     &::before,
     &::after {
       content: '';
-      block-size: 1px;
-      inline-size: 60px;
+      block-size: var(--decorator-height);
+      inline-size: var(--decorator-width);
       background: linear-gradient(90deg, transparent, var(--color-border), transparent);
     }
 
@@ -936,7 +986,7 @@
 
       &::before,
       &::after {
-        inline-size: 30px;
+        inline-size: var(--decorator-width-compact);
       }
     }
   }
@@ -945,14 +995,18 @@
      Badges
      -------------------------------- */
   .badge {
+    --badge-padding-block: var(--space-2xs);
+    --badge-padding-inline: var(--space-md-compact);
+    --badge-letter-spacing: var(--tracking-wide);
+
     display: inline-flex;
     align-items: center;
-    padding-block: 0.375rem;
-    padding-inline: 0.875rem;
+    padding-block: var(--badge-padding-block);
+    padding-inline: var(--badge-padding-inline);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--badge-letter-spacing);
     border-radius: var(--radius-full);
 
     &.badge-primary {
@@ -967,7 +1021,7 @@
 
     &.badge-outline {
       background: transparent;
-      border: 1px solid var(--color-accent);
+      border: var(--border-width-hairline) solid var(--color-accent);
       color: var(--color-accent);
     }
   }
@@ -977,25 +1031,27 @@
      -------------------------------- */
   .btn {
     /* Component variables */
-    --btn-padding-block: 0.875rem;
-    --btn-padding-inline: 1.75rem;
+    --btn-padding-block: var(--space-md-compact);
+    --btn-padding-inline: var(--space-lg-compact);
     --btn-font-size: var(--font-size-body);
-    --btn-border-width: 2px;
+    --btn-border-width: var(--border-width-regular);
     --btn-border-radius: var(--radius-md);
     --btn-transition-duration: var(--transition-duration-normal);
     --btn-transition-easing: var(--transition-easing-smooth);
+    --btn-gap: var(--space-xs);
+    --btn-line-height: 1;
 
     /* Base styles */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--btn-gap);
     padding-block: var(--btn-padding-block);
     padding-inline: var(--btn-padding-inline);
     font-family: var(--font-family);
     font-size: var(--btn-font-size);
     font-weight: var(--font-weight-semibold);
-    line-height: 1;
+    line-height: var(--btn-line-height);
     text-align: center;
     border: var(--btn-border-width) solid transparent;
     border-radius: var(--btn-border-radius);
@@ -1014,7 +1070,7 @@
     /* Hover intent (only devices with hover) */
     @media (hover: hover) {
       &:hover {
-        transform: translateY(-2px);
+        transform: translateY(var(--motion-lift-sm));
       }
 
       &:active {
@@ -1025,13 +1081,13 @@
     /* Touch devices */
     @media (hover: none) {
       &:active {
-        transform: scale(0.98);
+        transform: scale(var(--motion-press-scale));
       }
     }
 
     &:focus-visible {
-      outline: 3px solid var(--color-accent-light);
-      outline-offset: 2px;
+      outline: var(--focus-outline-width) solid var(--color-accent-light);
+      outline-offset: var(--focus-outline-offset);
     }
 
     /* Variants */
@@ -1039,22 +1095,22 @@
       background: var(--gradient-accent);
       border-color: var(--color-accent);
       color: white;
-      box-shadow: 0 4px 14px color-mix(in oklch, var(--color-accent) 40%, transparent);
+      box-shadow: var(--shadow-accent-sm);
 
       @media (hover: hover) {
         &:hover {
           background: var(--color-accent-light);
           border-color: var(--color-accent-light);
           color: white;
-          box-shadow: 0 6px 20px color-mix(in oklch, var(--color-accent) 50%, transparent);
+          box-shadow: var(--shadow-accent-md);
         }
       }
     }
 
     &.btn-secondary {
       background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(var(--blur-sm));
+      -webkit-backdrop-filter: blur(var(--blur-sm));
       border-color: var(--glass-border);
       color: var(--color-text);
 
@@ -1123,14 +1179,14 @@
 
     /* Size variants - override component variables */
     &.btn-sm {
-      --btn-padding-block: 0.625rem;
-      --btn-padding-inline: 1.25rem;
+      --btn-padding-block: var(--space-sm-compact);
+      --btn-padding-inline: var(--space-md);
       --btn-font-size: var(--font-size-small);
     }
 
     &.btn-lg {
-      --btn-padding-block: 1rem;
-      --btn-padding-inline: 2.25rem;
+      --btn-padding-block: var(--space-md);
+      --btn-padding-inline: var(--space-xl-compact);
       --btn-font-size: var(--font-size-h6);
     }
 
@@ -1175,28 +1231,28 @@
     content-visibility: auto;
 
     /* Reserve space while offscreen */
-    contain-intrinsic-size: auto 400px;
+    contain-intrinsic-size: auto var(--intrinsic-card);
   }
 
   /* Specific intrinsic sizes for better estimation */
   .step-card {
-    contain-intrinsic-size: auto 300px;
+    contain-intrinsic-size: auto var(--intrinsic-step);
   }
 
   .testimonial-card {
-    contain-intrinsic-size: auto 350px;
+    contain-intrinsic-size: auto var(--intrinsic-testimonial);
   }
 
   .tour-card {
-    contain-intrinsic-size: auto 450px;
+    contain-intrinsic-size: auto var(--intrinsic-tour);
   }
 
   .faq-item {
-    contain-intrinsic-size: auto 200px;
+    contain-intrinsic-size: auto var(--intrinsic-faq);
   }
 
   .post-card {
-    contain-intrinsic-size: auto 400px;
+    contain-intrinsic-size: auto var(--intrinsic-card);
   }
 }
 
@@ -1215,15 +1271,15 @@
   }
 
   *:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline-offset: var(--focus-outline-offset);
+    border-radius: var(--radius-sm);
   }
 
   a:focus-visible,
   button:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
+    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline-offset: var(--focus-outline-offset);
   }
 
   /* Reduced transparency for accessibility */
@@ -1240,12 +1296,11 @@
   @media (prefers-contrast: more) {
     .btn-outline-primary,
     .btn-outline-secondary {
-      border-width: 3px;
+      border-width: var(--border-width-strong);
     }
 
-    .section-title-decorated::before,
-    .section-title-decorated::after {
-      block-size: 2px;
+    .section-title-decorated {
+      --decorator-height: 2px;
     }
   }
 }

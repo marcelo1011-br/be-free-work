@@ -65,13 +65,24 @@ const content = homeContent[lang].faq;
 
 <style>
   .faq {
+    --faq-header-max: clamp(40rem, 75vw, 50rem);
+    --faq-list-max: clamp(48rem, 80vw, 56.25rem);
+    --faq-blur: var(--blur-md);
+    --faq-border: var(--border-width-hairline);
+    --faq-shadow-hover: 0 8px 24px color-mix(in srgb, black 25%, transparent);
+    --faq-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --faq-transition-fast: var(--transition-duration-normal) var(--transition-easing-default);
+    --faq-hover-bg: color-mix(in srgb, white 5%, transparent);
+    --faq-icon-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    --faq-focus-offset: calc(var(--focus-outline-width) * -1);
+
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-white);
   }
 
   .section-header {
     text-align: center;
-    max-width: 800px;
+    max-width: var(--faq-header-max);
     margin: 0 auto var(--space-2xl);
   }
 
@@ -87,7 +98,7 @@ const content = homeContent[lang].faq;
   }
 
   .faq-list {
-    max-width: 900px;
+    max-width: var(--faq-list-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -96,20 +107,20 @@ const content = homeContent[lang].faq;
 
   .faq-item {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--faq-blur));
+    -webkit-backdrop-filter: blur(var(--faq-blur));
+    border: var(--faq-border) solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow var(--faq-transition);
     display: grid;
     grid-template-rows: auto 0fr;
-    transition: grid-template-rows 0.4s ease;
+    transition: grid-template-rows var(--faq-transition);
   }
 
   .faq-item:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--faq-shadow-hover);
   }
 
   /* Quando expandido, anima a segunda linha do grid */
@@ -128,16 +139,16 @@ const content = homeContent[lang].faq;
     background: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--faq-transition-fast);
   }
 
   .faq-question:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--faq-hover-bg);
   }
 
   .faq-question:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: -3px;
+    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline-offset: var(--faq-focus-offset);
   }
 
   .faq-question-text {
@@ -149,15 +160,15 @@ const content = homeContent[lang].faq;
 
   .faq-icon {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    width: var(--faq-icon-size);
+    height: var(--faq-icon-size);
     color: var(--color-accent);
-    transition: transform 0.3s ease;
+    transition: transform var(--faq-transition);
   }
 
   /* Ícone + vira × quando expandido */
   .faq-icon-horizontal {
-    transition: transform 0.3s ease;
+    transition: transform var(--faq-transition);
   }
 
   .faq-question[aria-expanded="true"] .faq-icon-horizontal {
@@ -167,7 +178,7 @@ const content = homeContent[lang].faq;
 
   .faq-answer {
     overflow: hidden;
-    transition: padding 0.4s ease;
+    transition: padding var(--faq-transition);
     padding: 0 var(--space-lg);
   }
 

@@ -57,31 +57,44 @@ const { items } = Astro.props;
 
 <style>
   .breadcrumbs {
+    --breadcrumbs-top: clamp(4rem, 7vw, 4.5rem);
+    --breadcrumbs-top-mobile: clamp(3.5rem, 6vw, 4rem);
+    --breadcrumbs-padding-top: calc(var(--space-md) + var(--space-sm-compact));
+    --breadcrumbs-padding-bottom: var(--space-md);
+    --breadcrumbs-padding-mobile: var(--space-sm);
+    --breadcrumbs-border: var(--border-width-hairline);
+    --breadcrumbs-blur: var(--blur-sm);
+    --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-white) 95%, transparent);
+    --breadcrumbs-shadow: 0 2px 8px color-mix(in srgb, black 5%, transparent);
+    --breadcrumbs-shadow-dark: 0 2px 8px color-mix(in srgb, black 30%, transparent);
+    --breadcrumbs-transition: box-shadow var(--transition-duration-slow) var(--transition-easing-default);
+    --separator-size: clamp(0.625rem, 1.5vw, 0.75rem);
+
     /* 🆕 Sticky com navbar */
     position: sticky;
-    top: 72px; /* Alinha com a altura real da navbar */
-    z-index: 999; /* Abaixo da navbar (1000) */
+    top: var(--breadcrumbs-top); /* Alinha com a altura real da navbar */
+    z-index: calc(var(--navbar-z, 1000) - 1); /* Abaixo da navbar */
 
     /* Visual - FIXO, não muda no scroll */
-    padding-top: calc(var(--space-md) + 0.75rem);
-    padding-bottom: var(--space-md);
-    border-bottom: 1px solid var(--color-border);
+    padding-top: var(--breadcrumbs-padding-top);
+    padding-bottom: var(--breadcrumbs-padding-bottom);
+    border-bottom: var(--breadcrumbs-border) solid var(--color-border);
 
     /* 🆕 Backdrop blur effect */
-    backdrop-filter: blur(10px);
-    background-color: rgba(249, 250, 251, 0.95);
+    backdrop-filter: blur(var(--breadcrumbs-blur));
+    background-color: var(--breadcrumbs-bg);
 
     /* Transição suave apenas para sombra */
-    transition: box-shadow 0.3s ease;
+    transition: var(--breadcrumbs-transition);
   }
 
   /* 🆕 Quando scrollar, adiciona sombra (mas não muda tamanho) */
   .breadcrumbs.scrolled {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--breadcrumbs-shadow);
   }
 
   .breadcrumb-list {
-    max-width: var(--max-width);
+    max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--space-md);
     display: flex;
@@ -95,13 +108,13 @@ const { items } = Astro.props;
     display: flex;
     align-items: center;
     gap: var(--space-xs);
-    font-size: var(--font-size-sm); /* Menor que antes */
+    font-size: var(--font-size-small); /* Menor que antes */
   }
 
   .breadcrumb-link {
     color: var(--color-text-light);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .breadcrumb-link:hover {
@@ -122,8 +135,8 @@ const { items } = Astro.props;
   /* Responsive */
   @media (max-width: 768px) {
     .breadcrumbs {
-      top: 64px; /* Navbar mobile */
-      padding: var(--space-sm) 0; /* Menos padding no mobile */
+      top: var(--breadcrumbs-top-mobile); /* Navbar mobile */
+      padding: var(--breadcrumbs-padding-mobile) 0; /* Menos padding no mobile */
     }
 
     .breadcrumb-list {
@@ -132,19 +145,19 @@ const { items } = Astro.props;
     }
 
     .breadcrumb-separator {
-      width: 12px;
-      height: 12px;
+      width: var(--separator-size);
+      height: var(--separator-size);
     }
   }
 
   /* Dark mode support */
   :global(.dark) .breadcrumbs {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(26, 32, 44, 0.95);
+    --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-soft) 95%, transparent);
+    border-bottom-color: color-mix(in srgb, white 10%, transparent);
   }
 
   :global(.dark) .breadcrumbs.scrolled {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--breadcrumbs-shadow-dark);
   }
 </style>
 

@@ -223,30 +223,44 @@ function isActive(href: string): boolean {
 
 <style>
   .navbar {
+    --navbar-z: 1000;
+    --navbar-blur: var(--blur-md);
+    --navbar-bg: color-mix(in srgb, var(--color-primary) 80%, transparent);
+    --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 95%, transparent);
+    --navbar-border-color: var(--glass-border);
+    --navbar-hover-bg: color-mix(in srgb, white 10%, transparent);
+    --navbar-light-text: color-mix(in srgb, white 80%, transparent);
+    --navbar-cta-text: white;
+    --navbar-transition: background-color var(--transition-duration-slow) var(--transition-easing-default);
+    --logo-size: clamp(2.5rem, 4vw, 3rem);
+    --dropdown-min-width: clamp(9rem, 20vw, 10rem);
+    --dropdown-z: 100;
+
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background: rgba(10, 22, 40, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
-    transition: background-color 0.3s ease;
+    z-index: var(--navbar-z);
+    background: var(--navbar-bg);
+    backdrop-filter: blur(var(--navbar-blur));
+    -webkit-backdrop-filter: blur(var(--navbar-blur));
+    border-bottom: var(--border-width-hairline) solid var(--navbar-border-color);
+    transition: var(--navbar-transition);
   }
 
   /* Tema claro: Navbar permanece ESCURA (âncora visual) */
   :global(html.light) .navbar {
-    background: rgba(15, 23, 42, 0.95);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    --navbar-bg: color-mix(in srgb, var(--color-primary) 95%, transparent);
+    --navbar-border-color: color-mix(in srgb, white 10%, transparent);
+    --navbar-light-text: color-mix(in srgb, white 90%, transparent);
   }
 
   .navbar.scrolled {
-    background: rgba(10, 22, 40, 0.95);
+    background: var(--navbar-bg-scrolled);
   }
 
   :global(html.light) .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.98);
+    --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 98%, transparent);
   }
 
   .navbar-content {
@@ -263,7 +277,7 @@ function isActive(href: string): boolean {
     align-items: center;
     gap: var(--space-sm);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .navbar-logo:hover {
@@ -271,8 +285,8 @@ function isActive(href: string): boolean {
   }
 
   .logo-image {
-    width: 48px;
-    height: 48px;
+    width: var(--logo-size);
+    height: var(--logo-size);
     object-fit: contain;
     background: transparent !important;
   }
@@ -298,24 +312,25 @@ function isActive(href: string): boolean {
     font-weight: var(--font-weight-medium);
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--radius-sm);
-    transition: color 0.2s ease, background-color 0.2s ease;
+    transition: color var(--transition-duration-normal) var(--transition-easing-default),
+      background-color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .nav-link:hover,
   .nav-link.active {
     color: var(--color-text);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--navbar-hover-bg);
   }
 
   /* Tema claro: links brancos na navbar escura */
   :global(html.light) .nav-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--navbar-light-text);
   }
 
   :global(html.light) .nav-link:hover,
   :global(html.light) .nav-link.active {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--navbar-cta-text);
+    background-color: var(--navbar-hover-bg);
   }
 
   /* Actions */
@@ -335,26 +350,27 @@ function isActive(href: string): boolean {
     color: var(--color-text-light);
     cursor: pointer;
     border-radius: var(--radius-sm);
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default),
+      color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .icon-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--navbar-hover-bg);
     color: var(--color-text);
   }
 
   /* Tema claro: ícones brancos na navbar escura */
   :global(html.light) .icon-button {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--navbar-light-text);
   }
 
   :global(html.light) .icon-button:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--navbar-cta-text);
+    background-color: var(--navbar-hover-bg);
   }
 
   :global(html.light) .lang-current {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--navbar-light-text);
   }
 
   /* Theme Toggle */
@@ -397,14 +413,14 @@ function isActive(href: string): boolean {
     top: calc(100% + var(--space-xs));
     right: 0;
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--navbar-blur));
+    -webkit-backdrop-filter: blur(var(--navbar-blur));
+    border: var(--border-width-hairline) solid var(--glass-border);
     border-radius: var(--radius-md);
     box-shadow: var(--glass-shadow);
     padding: var(--space-xs);
-    min-width: 160px;
-    z-index: 100;
+    min-width: var(--dropdown-min-width);
+    z-index: var(--dropdown-z);
   }
 
   .lang-option {
@@ -416,11 +432,11 @@ function isActive(href: string): boolean {
     border-radius: var(--radius-sm);
     text-decoration: none;
     color: var(--color-text);
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .lang-option:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--navbar-hover-bg);
   }
 
   .lang-option.active {
@@ -467,7 +483,7 @@ function isActive(href: string): boolean {
   /* Mobile Menu */
   .mobile-menu {
     padding: var(--space-lg) 0;
-    border-top: 1px solid var(--glass-border);
+    border-top: var(--border-width-hairline) solid var(--glass-border);
     background: var(--glass-bg);
   }
 
@@ -487,12 +503,12 @@ function isActive(href: string): boolean {
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     border-radius: var(--radius-md);
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--navbar-hover-bg);
   }
 
   .mobile-nav-cta {

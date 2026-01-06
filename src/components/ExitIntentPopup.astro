@@ -77,18 +77,24 @@ const text = content[lang] || content.en;
 
 <style>
   .exit-overlay {
+    --exit-overlay-bg: color-mix(in srgb, black 75%, transparent);
+    --exit-overlay-bg-light: color-mix(in srgb, black 60%, transparent);
+    --exit-overlay-blur: clamp(4px, 1vw, 6px);
+    --exit-z: 9999;
+    --exit-transition: var(--transition-duration-slow) var(--transition-easing-default);
+
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: var(--exit-overlay-bg);
+    backdrop-filter: blur(var(--exit-overlay-blur));
+    -webkit-backdrop-filter: blur(var(--exit-overlay-blur));
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: var(--exit-z);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity var(--exit-transition), visibility var(--exit-transition);
     padding: var(--space-md);
   }
 
@@ -98,16 +104,27 @@ const text = content[lang] || content.en;
   }
 
   .exit-popup {
+    --exit-popup-border: var(--border-width-hairline);
+    --exit-popup-radius: clamp(0.375rem, 1vw, 0.5rem);
+    --exit-popup-shadow: 0 20px 60px color-mix(in srgb, black 40%, transparent);
+    --exit-popup-max: clamp(30rem, 90vw, 33.75rem);
+    --exit-popup-scale: 0.9;
+    --exit-popup-shift: 20px;
+    --exit-close-size: clamp(2rem, 8vw, 2.5rem);
+    --exit-close-hover-bg: color-mix(in srgb, white 10%, transparent);
+    --exit-cta-gap: var(--space-xs);
+    --exit-dismiss-opacity: 0.6;
+
     position: relative;
     background: var(--color-bg-card);
-    border: 1px solid var(--glass-border);
-    border-radius: 6px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    max-width: 540px;
+    border: var(--exit-popup-border) solid var(--glass-border);
+    border-radius: var(--exit-popup-radius);
+    box-shadow: var(--exit-popup-shadow);
+    max-width: var(--exit-popup-max);
     width: 100%;
     padding: var(--space-2xl);
-    transform: scale(0.9) translateY(20px);
-    transition: transform 0.3s ease;
+    transform: scale(var(--exit-popup-scale)) translateY(var(--exit-popup-shift));
+    transition: transform var(--exit-transition);
   }
 
   .exit-overlay.show .exit-popup {
@@ -118,8 +135,8 @@ const text = content[lang] || content.en;
     position: absolute;
     top: var(--space-md);
     right: var(--space-md);
-    width: 40px;
-    height: 40px;
+    width: var(--exit-close-size);
+    height: var(--exit-close-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,11 +145,12 @@ const text = content[lang] || content.en;
     color: var(--color-text-light);
     cursor: pointer;
     border-radius: var(--radius-md);
-    transition: all 0.2s ease;
+    transition: color var(--transition-duration-normal) var(--transition-easing-default),
+      background-color var(--transition-duration-normal) var(--transition-easing-default);
   }
 
   .exit-close:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--exit-close-hover-bg);
     color: var(--color-text);
   }
 
@@ -167,7 +185,7 @@ const text = content[lang] || content.en;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--exit-cta-gap);
     width: 100%;
   }
 
@@ -178,8 +196,8 @@ const text = content[lang] || content.en;
     font-size: var(--font-size-small);
     text-decoration: underline;
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s ease;
+    opacity: var(--exit-dismiss-opacity);
+    transition: opacity var(--transition-duration-normal) var(--transition-easing-default);
     padding: var(--space-xs);
   }
 
@@ -189,33 +207,33 @@ const text = content[lang] || content.en;
 
   /* Light theme adjustments */
   :global(html.light) .exit-overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--exit-overlay-bg-light);
   }
 
   :global(html.light) .exit-popup {
-    background: #ffffff;
-    border-color: rgba(15, 23, 42, 0.1);
+    background: var(--color-bg-card);
+    border-color: color-mix(in srgb, var(--color-text) 10%, transparent);
   }
 
   :global(html.light) .exit-title {
-    color: #0f172a;
+    color: var(--color-text);
   }
 
   :global(html.light) .exit-subtitle {
-    color: #475569;
+    color: var(--color-text-light);
   }
 
   :global(html.light) .exit-close {
-    color: #64748b;
+    color: var(--color-text-light);
   }
 
   :global(html.light) .exit-close:hover {
-    background: rgba(15, 23, 42, 0.05);
-    color: #0f172a;
+    background: color-mix(in srgb, var(--color-text) 5%, transparent);
+    color: var(--color-text);
   }
 
   :global(html.light) .exit-dismiss {
-    color: #64748b;
+    color: var(--color-text-light);
   }
 
   /* Mobile adjustments */

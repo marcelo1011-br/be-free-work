@@ -168,7 +168,11 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 <style>
   /* Hero Section */
   .about-hero {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --about-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --about-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --about-hero-subtitle-max: clamp(34rem, 70vw, 43.75rem);
+
+    padding: calc(var(--space-3xl) + var(--about-hero-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -187,13 +191,15 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: 700px;
+    max-width: var(--about-hero-subtitle-max);
     margin: 0 auto;
   }
 
   /* Our Story Section */
   .our-story {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --section-offset: clamp(2rem, 6vw, 2.5rem);
+    --story-image-shadow: 0 8px 24px color-mix(in srgb, black 12%, transparent);
+    padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
   }
 
   .story-content {
@@ -206,14 +212,14 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   .story-image {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--story-image-shadow);
   }
 
   .story-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
   }
 
   .story-text {
@@ -229,7 +235,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   /* Our Values Section */
   .our-values {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
     background-color: var(--color-bg-soft);
   }
 
@@ -240,7 +246,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   .section-subtitle {
     font-size: var(--font-size-h5);
     color: var(--color-text-light);
-    max-width: 600px;
+    max-width: clamp(32rem, 70vw, 37.5rem);
     margin: 0 auto var(--space-2xl);
   }
 
@@ -249,26 +255,32 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   }
 
   .value-card {
+    --value-card-lift: -4px;
+    --value-card-shadow: 0 2px 8px color-mix(in srgb, black 8%, transparent);
+    --value-card-shadow-hover: 0 8px 16px color-mix(in srgb, black 12%, transparent);
+    --value-card-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --value-icon-size: clamp(2.5rem, 5vw, 3rem);
+
     padding: var(--space-xl);
     background-color: var(--color-bg-white);
     border-radius: var(--radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--value-card-shadow);
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
     transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+      transform var(--value-card-transition),
+      box-shadow var(--value-card-transition);
   }
 
   .value-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(var(--value-card-lift));
+    box-shadow: var(--value-card-shadow-hover);
   }
 
   .value-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--value-icon-size);
+    height: var(--value-icon-size);
     color: var(--color-accent);
   }
 
@@ -287,23 +299,26 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   /* Why Choose Section */
   .why-choose {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
   }
 
   .stats-grid {
+    --stats-min: 200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--stats-min), 1fr));
     gap: var(--space-xl);
     margin-top: var(--space-2xl);
   }
 
   .stat-card {
+    --stat-min-height: clamp(9rem, 20vw, 11.25rem);
+
     text-align: center;
     padding: var(--space-xl) var(--space-lg);
     background-color: var(--color-bg-soft);
     border-radius: var(--radius-lg);
     overflow: visible;
-    min-height: 180px;
+    min-height: var(--stat-min-height);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,7 +329,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-weight: var(--font-weight-bold);
     color: var(--color-accent);
-    line-height: 1.3;
+    line-height: var(--line-height-tight);
     margin-bottom: var(--space-sm);
     overflow: visible;
     display: block;
@@ -329,7 +344,8 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   /* CTA Section */
   .about-cta {
-    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    --about-cta-max: clamp(34rem, 70vw, 43.75rem);
+    padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -341,7 +357,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   .cta-content {
     text-align: center;
-    max-width: 700px;
+    max-width: var(--about-cta-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -370,7 +386,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   /* Responsivo */
   @media (max-width: 768px) {
     .about-hero {
-      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+      padding: calc(var(--space-3xl) + var(--about-hero-offset-mobile)) 0 var(--space-xl);
     }
 
     .our-story {
@@ -406,7 +422,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     .cta-buttons {
       flex-direction: column;
       width: 100%;
-      max-width: 320px;
+      max-width: clamp(18rem, 80vw, 20rem);
     }
 
     .cta-buttons .btn {

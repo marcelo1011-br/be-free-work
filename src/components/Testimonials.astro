@@ -181,13 +181,26 @@ const renderStars = (rating) => {
 
 <style>
   .testimonials {
+    --testimonials-header-max: clamp(40rem, 75vw, 50rem);
+    --testimonials-grid-min: 350px;
+    --testimonial-blur: var(--blur-md);
+    --testimonial-border: var(--border-width-hairline);
+    --testimonial-lift: -4px;
+    --testimonial-shadow: 0 12px 24px color-mix(in srgb, black 30%, transparent);
+    --testimonial-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --testimonial-fade-duration: 0.5s;
+    --testimonial-fade-offset: 20px;
+    --testimonial-author-gap: var(--space-2xs);
+    --testimonial-link-transition: color var(--transition-duration-normal) var(--transition-easing-default);
+    --tripadvisor-green: #00aa6c;
+
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-soft);
   }
 
   .section-header {
     text-align: center;
-    max-width: 800px;
+    max-width: var(--testimonials-header-max);
     margin: 0 auto var(--space-2xl);
   }
 
@@ -204,7 +217,7 @@ const renderStars = (rating) => {
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--testimonials-grid-min)), 1fr));
     gap: var(--space-lg);
     margin-bottom: var(--space-2xl);
   }
@@ -212,20 +225,20 @@ const renderStars = (rating) => {
   .testimonial-card {
     padding: var(--space-xl);
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--testimonial-blur));
+    -webkit-backdrop-filter: blur(var(--testimonial-blur));
+    border: var(--testimonial-border) solid var(--glass-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--glass-shadow);
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--testimonial-transition), box-shadow var(--testimonial-transition);
   }
 
   .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(var(--testimonial-lift));
+    box-shadow: var(--testimonial-shadow);
   }
 
   /* Cards escondidos */
@@ -236,13 +249,13 @@ const renderStars = (rating) => {
   /* Animação de entrada quando mostra */
   .testimonial-card.show {
     display: flex;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn var(--testimonial-fade-duration) var(--transition-easing-default);
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(var(--testimonial-fade-offset));
     }
     to {
       opacity: 1;
@@ -255,7 +268,7 @@ const renderStars = (rating) => {
     justify-content: space-between;
     align-items: center;
     padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-border-light);
+    border-bottom: var(--testimonial-border) solid var(--color-border-light);
   }
 
   .testimonial-rating {
@@ -265,7 +278,7 @@ const renderStars = (rating) => {
 
   .testimonial-source {
     font-size: var(--font-size-small);
-    color: #00aa6c; /* Verde TripAdvisor */
+    color: var(--tripadvisor-green); /* Verde TripAdvisor */
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
   }
@@ -295,13 +308,13 @@ const renderStars = (rating) => {
     flex-direction: column;
     gap: var(--space-sm);
     padding-top: var(--space-sm);
-    border-top: 1px solid var(--color-border-light);
+    border-top: var(--testimonial-border) solid var(--color-border-light);
   }
 
   .testimonial-author {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: var(--testimonial-author-gap);
   }
 
   .testimonial-author strong {
@@ -319,7 +332,7 @@ const renderStars = (rating) => {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semibold);
     color: var(--color-accent);
-    transition: color 0.2s ease;
+    transition: var(--testimonial-link-transition);
     align-self: flex-start;
   }
 
