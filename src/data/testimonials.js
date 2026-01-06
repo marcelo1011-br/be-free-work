@@ -18,7 +18,8 @@ export const testimonials = [
       es: "tour-privado-rio-inolvidable-cristo-pan-azucar",
       "pt-br": "passeio-privado-rio-inesquecivel-cristo-pao-acucar"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 2,
@@ -34,7 +35,8 @@ export const testimonials = [
       es: "tour-privado-rio-inolvidable-cristo-pan-azucar",
       "pt-br": "passeio-privado-rio-inesquecivel-cristo-pao-acucar"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 3,
@@ -50,7 +52,8 @@ export const testimonials = [
       es: "tour-privado-rio-inolvidable-cristo-pan-azucar",
       "pt-br": "passeio-privado-rio-inesquecivel-cristo-pao-acucar"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 4,
@@ -66,7 +69,8 @@ export const testimonials = [
       es: "tour-privado-rio-inolvidable-cristo-pan-azucar",
       "pt-br": "passeio-privado-rio-inesquecivel-cristo-pao-acucar"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 5,
@@ -82,7 +86,8 @@ export const testimonials = [
       es: "tour-privado-petropolis-ciudad-imperial",
       "pt-br": "passeio-privado-petropolis-cidade-imperial"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 6,
@@ -98,7 +103,8 @@ export const testimonials = [
       es: "tour-privado-petropolis-ciudad-imperial",
       "pt-br": "passeio-privado-petropolis-cidade-imperial"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 7,
@@ -114,7 +120,8 @@ export const testimonials = [
       es: "tour-privado-petropolis-ciudad-imperial",
       "pt-br": "passeio-privado-petropolis-cidade-imperial"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 8,
@@ -130,7 +137,8 @@ export const testimonials = [
       es: "tour-herencia-pequena-africa-rio-cultura-afrobrasile",
       "pt-br": "tour-heranca-pequena-africa-rio-cultura-afrobrasileira"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   },
   {
     id: 9,
@@ -146,6 +154,7 @@ export const testimonials = [
       es: "tour-gastronomico-rio-cocina-brasilena",
       "pt-br": "tour-gastronomico-rio-cozinha-brasileira"
     },
-    source: "TripAdvisor/Viator"
+    source: "Viator",
+    sourceUrl: "https://www.viator.com/"
   }
 ];

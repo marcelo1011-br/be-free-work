@@ -818,6 +818,15 @@
 /* ================================
    LAYER: COMPONENTS
    ================================ */
+@media (max-width: 768px) {
+  .tours-hero,
+  .about-hero,
+  .contact-hero,
+  .blog-hero,
+  .gallery-hero {
+    min-height: 100svh;
+  }
+}
 @layer components {
 
   /* --------------------------------

@@ -231,6 +231,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
+    aspect-ratio: 3 / 4;
   }
 
   .gallery-item-inner:hover {
@@ -241,7 +242,8 @@ const schemas = [gallerySchema, breadcrumbSchema];
   .gallery-item-inner img,
   .gallery-item-inner :global(img) {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
   }
@@ -540,6 +542,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
   const lightboxPrev = document.querySelector('.lightbox-prev');
   const lightboxNext = document.querySelector('.lightbox-next');
   const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
+  const galleryItems = document.querySelectorAll('.gallery-item');
 
   let currentIndex = 0;
 

@@ -40,7 +40,18 @@ const renderStars = (rating) => {
               <div class="testimonial-rating">
                 {renderStars(testimonial.rating)}
               </div>
-              <div class="testimonial-source">{testimonial.source}</div>
+              {testimonial.sourceUrl ? (
+                <a
+                  class="testimonial-source"
+                  href={testimonial.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {testimonial.source}
+                </a>
+              ) : (
+                <span class="testimonial-source">{testimonial.source}</span>
+              )}
             </div>
 
             <h3 class="testimonial-title">{testimonial.title}</h3>
@@ -73,7 +84,18 @@ const renderStars = (rating) => {
               <div class="testimonial-rating">
                 {renderStars(testimonial.rating)}
               </div>
-              <div class="testimonial-source">{testimonial.source}</div>
+              {testimonial.sourceUrl ? (
+                <a
+                  class="testimonial-source"
+                  href={testimonial.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {testimonial.source}
+                </a>
+              ) : (
+                <span class="testimonial-source">{testimonial.source}</span>
+              )}
             </div>
 
             <h3 class="testimonial-title">{testimonial.title}</h3>
@@ -106,7 +128,18 @@ const renderStars = (rating) => {
               <div class="testimonial-rating">
                 {renderStars(testimonial.rating)}
               </div>
-              <div class="testimonial-source">{testimonial.source}</div>
+              {testimonial.sourceUrl ? (
+                <a
+                  class="testimonial-source"
+                  href={testimonial.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {testimonial.source}
+                </a>
+              ) : (
+                <span class="testimonial-source">{testimonial.source}</span>
+              )}
             </div>
 
             <h3 class="testimonial-title">{testimonial.title}</h3>
@@ -234,6 +267,11 @@ const renderStars = (rating) => {
     font-size: var(--font-size-small);
     color: #00aa6c; /* Verde TripAdvisor */
     font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .testimonial-source:hover {
+    text-decoration: underline;
   }
 
   .testimonial-title {

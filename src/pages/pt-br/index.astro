@@ -13,6 +13,7 @@ import Testimonials from "../../components/Testimonials.astro";
 import FAQ from "../../components/FAQ.astro";
 import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
+import { testimonials } from "../../data/testimonials.js";
 import { getWebSiteSchema } from "../../utils/seoHelpers.js";
 
 // Pega o conteúdo em português
@@ -21,6 +22,28 @@ const content = homeContent["pt-br"];
 // SEO
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const websiteSchema = getWebSiteSchema(siteUrl);
+const monthMap = {
+  Jan: "01",
+  Feb: "02",
+  Mar: "03",
+  Apr: "04",
+  May: "05",
+  Jun: "06",
+  Jul: "07",
+  Aug: "08",
+  Sep: "09",
+  Oct: "10",
+  Nov: "11",
+  Dec: "12"
+};
+
+const toIsoDate = (value) => {
+  if (!value) return undefined;
+  const [month, year] = value.split(" ");
+  const mm = monthMap[month];
+  if (!mm || !year) return undefined;
+  return `${year}-${mm}-01`;
+};
 
 // Organization Schema
 const organizationSchema = {
@@ -37,13 +60,54 @@ const organizationSchema = {
   "priceRange": "$$$",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127" }
 };
+
+const reviewSchemas = testimonials.map((review) => {
+  const published = toIsoDate(review.date);
+  const schema = {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": review.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": String(review.rating),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": review.text,
+    "name": review.title,
+    "itemReviewed": {
+      "@type": "Organization",
+      "name": "Be Free Tours",
+      "url": siteUrl
+    }
+  };
+
+  if (published) {
+    schema.datePublished = published;
+  }
+
+  if (review.source) {
+    schema.publisher = {
+      "@type": "Organization",
+      "name": review.source
+    };
+
+    if (review.sourceUrl) {
+      schema.publisher.url = review.sourceUrl;
+    }
+  }
+
+  return schema;
+});
 ---
 
 <BaseLayout
   title="Passeios Privados no Rio de Janeiro | Be Free Tours"
   description="Passeios privados premium no Rio desde 2013. Guias locais especialistas, acesso sem filas ao Cristo Redentor e Pão de Açúcar. Experiências personalizadas, itinerários flexíveis. Reserve já!"
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema]}
+  schema={[websiteSchema, organizationSchema, ...reviewSchemas]}
 >
   <Hero
     title={content.hero.title}
