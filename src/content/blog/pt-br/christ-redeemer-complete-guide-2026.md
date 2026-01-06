@@ -70,7 +70,7 @@ TL;DR: Visite o Cristo Redentor:
 - Como chegar: trem (cênico), van (rápida), Uber (flexível) ou trilha (paga taxa de entrada do parque)
 - Ingressos: R$87-134 (~US$15-24) dependendo do método
 - Duração: 2-3 horas no total (com transporte)
-- Melhores tours: [The Essential Rio](/pt-br/passeios-privados/essential-rio) ou [Sunrise at Sugarloaf](/pt-br/passeios-privados/first-light-sunrise) incluem o Cristo com acesso agendado na subida e guias especializados.
+- Melhores tours: [The Essential Rio](/pt-br/passeios-privados/rio-essencial) ou [Sunrise at Sugarloaf](/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado) incluem o Cristo com acesso agendado na subida e guias especializados.
 
 Cristo Redentor - o ícone que define o skyline do Rio. Depois de guiar milhares de visitantes por mais de 12 anos, aqui está tudo o que você precisa saber para uma visita perfeita em 2026.
 
@@ -365,7 +365,7 @@ Manhã no Cristo + tarde no Pão de Açúcar:
 - Combinação mais popular
 - Lados opostos do Rio
 - 5-6 horas no total
-- Reserve o [Essential Rio](/pt-br/passeios-privados/essential-rio)!
+- Reserve o [Essential Rio](/pt-br/passeios-privados/rio-essencial)!
 
 Cristo + Santa Teresa:
 
@@ -478,7 +478,7 @@ Deixe a logística com a gente!
 - Santa Teresa, Escadaria Selarón
 - Pickup e retorno no hotel
 - A partir de US$415 para 2 pessoas
-- [Reserve The Essential Rio](/pt-br/passeios-privados/essential-rio)
+- [Reserve The Essential Rio](/pt-br/passeios-privados/rio-essencial)
 
 ### Rio Flash (5 horas)
 
@@ -486,7 +486,7 @@ Deixe a logística com a gente!
 - Tour expresso
 - Acesso agendado
 - A partir de US$410 para 2 pessoas
-- [Reserve Rio Flash](/pt-br/passeios-privados/rio-express)
+- [Reserve Rio Flash](/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar)
 
 ### Sunrise at Sugarloaf
 
@@ -494,7 +494,7 @@ Deixe a logística com a gente!
 - Melhor horário para os dois
 - Nascer do sol + pôr do sol
 - A partir de US$515 para 2 pessoas
-- [Reserve o Sunrise Tour](/pt-br/passeios-privados/first-light-sunrise)
+- [Reserve o Sunrise Tour](/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado)
 
 ## Dicas finais de 12 anos guiando
 

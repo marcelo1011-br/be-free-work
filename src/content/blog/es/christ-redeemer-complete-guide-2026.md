@@ -70,7 +70,7 @@ TL;DR: Visita el Cristo Redentor:
 - Cómo llegar: tren (escénico), van (rápida), Uber (flexible) o caminata (requiere entrada al parque)
 - Tickets: R$87-134 (~US$15-24) según el método
 - Duración: 2-3 horas en total (incluyendo transporte)
-- Mejores tours: [The Essential Rio](/es/tours-privados/essential-rio) o [Sunrise at Sugarloaf](/es/tours-privados/first-light-sunrise) incluyen el Cristo con acceso programado en la subida y guías expertos.
+- Mejores tours: [The Essential Rio](/es/tours-privados/essential-rio) o [Sunrise at Sugarloaf](/es/tours-privados/amanecer-rio) incluyen el Cristo con acceso programado en la subida y guías expertos.
 
 Cristo Redentor - el ícono que define el skyline de Río. Después de guiar a miles de visitantes durante más de 12 años, aquí tienes todo lo que necesitas para una visita perfecta en 2026.
 
@@ -494,7 +494,7 @@ Déjanos la logística!
 - Mejor horario para ambos
 - Amanecer + atardecer
 - Desde US$515 para 2 personas
-- [Reserva Sunrise Tour](/es/tours-privados/first-light-sunrise)
+- [Reserva Sunrise Tour](/es/tours-privados/amanecer-rio)
 
 ## Consejos finales de 12 años guiando
 

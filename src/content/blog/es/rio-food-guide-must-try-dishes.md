@@ -182,7 +182,7 @@ Dónde probar:
 
 - Vendedores de playa - en todos lados
 - Supermercados - compra el polvo y hazlo en casa
-- [Food Walking Tour](/es/tours-privados/food-walking) - te mostramos cómo lo hacen los locales
+- [Food Walking Tour](/es/tours-privados/tour-gastronomico-rio-cocina-brasilena) - te mostramos cómo lo hacen los locales
 
 Pide: "mate gelado, sem açúcar" o "com limão".
 
@@ -228,7 +228,7 @@ Zona nocturna con comida callejera. Pasteles y hot dogs post-bar.
 
 ## Únete a nuestro food walking tour
 
-¿Quieres probar todo con un guía local? Nuestro [Food Walking Tour en el Centro](/es/tours-privados/food-walking) incluye:
+¿Quieres probar todo con un guía local? Nuestro [Food Walking Tour en el Centro](/es/tours-privados/tour-gastronomico-rio-cocina-brasilena) incluye:
 
 - 8-10 degustaciones
 - Contexto histórico
@@ -270,7 +270,7 @@ Necesitarás una siesta, pero entenderás por qué los cariocas aman la comida.
 - [Tour Histórico a Pie](/es/tours-privados/downtown-rio-walking) - incluye paradas gastronómicas
 - [Mejor época para visitar Río](/es/blog/best-time-visit-rio-2026) - algunos platos son de temporada
 - [Playas escondidas en Río](/es/blog/hidden-beaches-rio-locals-love) - combina sol + snacks
-- [Little Africa Walking Tour](/es/tours-privados/little-africa) - influencia africana en la comida carioca
+- [Little Africa Walking Tour](/es/tours-privados/pequena-africa) - influencia africana en la comida carioca
 
 Ven con hambre, sal feliz y tal vez 2 kilos más. ¡Vale la pena! 🍴
 
