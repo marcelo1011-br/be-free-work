@@ -1,0 +1,38 @@
+---
+/* ================================
+   BE FREE TOURS - Root Redirect
+   Redireciona automaticamente baseado no idioma do navegador (client-side)
+   ================================ */
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Free Tours - Redirecting...</title>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    // Client-side language detection and redirect
+    (function() {
+      const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      let targetLang = 'en'; // Default
+
+      if (browserLang.startsWith('pt')) {
+        targetLang = 'pt-br';
+      } else if (browserLang.startsWith('es')) {
+        targetLang = 'es';
+      }
+
+      // Redirect
+      window.location.href = `/${targetLang}/`;
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+  </noscript>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

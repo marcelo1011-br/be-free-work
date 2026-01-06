@@ -1,0 +1,256 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - FAQ Component
+   Seção de perguntas frequentes com accordions
+   ================================ */
+
+import { homeContent } from "../data/homeContent.js";
+
+const { lang } = Astro.props;
+const content = homeContent[lang].faq;
+---
+
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{content.title}</h2>
+      <p class="section-subtitle">{content.subtitle}</p>
+    </div>
+
+    <div class="faq-list">
+      {
+        content.questions.map((item) => (
+          <article class="faq-item" data-faq-id={item.id} data-expanded="false">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">{item.question}</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <line
+                    class="faq-icon-horizontal"
+                    x1="12"
+                    y1="5"
+                    x2="12"
+                    y2="19"
+                  />
+                  <line
+                    class="faq-icon-vertical"
+                    x1="5"
+                    y1="12"
+                    x2="19"
+                    y2="12"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p class="faq-answer-content">{item.answer}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-white);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .section-title {
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-h5);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows 0.4s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Quando expandido, anima a segunda linha do grid */
+  .faq-item[data-expanded="true"] {
+    grid-template-rows: auto 1fr;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .faq-question:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: -3px;
+  }
+
+  .faq-question-text {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+  }
+
+  /* Ícone + vira × quando expandido */
+  .faq-icon-horizontal {
+    transition: transform 0.3s ease;
+  }
+
+  .faq-question[aria-expanded="true"] .faq-icon-horizontal {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  .faq-answer {
+    overflow: hidden;
+    transition: padding 0.4s ease;
+    padding: 0 var(--space-lg);
+  }
+
+  .faq-answer-content {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Quando expandido */
+  .faq-item[data-expanded="true"] .faq-answer {
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .faq {
+      padding: var(--space-2xl) 0;
+    }
+
+    .section-header {
+      margin-bottom: var(--space-xl);
+    }
+
+    .faq-question {
+      padding: var(--space-md);
+    }
+
+    .faq-question-text {
+      font-size: var(--font-size-body);
+    }
+
+    .faq-answer {
+      padding: 0 var(--space-md);
+    }
+
+    .faq-answer-content {
+      font-size: var(--font-size-small);
+    }
+
+    .faq-item[data-expanded="true"] .faq-answer {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  /* ================================
+     JAVASCRIPT - Lógica dos Accordions
+     ================================ */
+
+  // 1. Pega todos os botões de perguntas
+  const faqButtons = document.querySelectorAll(".faq-question");
+
+  // 2. Para cada botão, adiciona evento de clique
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // 3. Pega o item pai (article)
+      const faqItem = button.closest(".faq-item") as HTMLElement;
+
+      // 4. Pega o estado atual (expandido ou não)
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+      // 5. Se está abrindo este item, fecha todos os outros primeiro
+      if (!isExpanded) {
+        // Fecha todos os outros items
+        faqButtons.forEach((otherButton) => {
+          const otherItem = otherButton.closest(".faq-item") as HTMLElement;
+          otherButton.setAttribute("aria-expanded", "false");
+          if (otherItem) otherItem.setAttribute("data-expanded", "false");
+        });
+      }
+
+      // 6. Alterna o estado do item clicado
+      if (isExpanded) {
+        // Se estava expandido, colapsa
+        button.setAttribute("aria-expanded", "false");
+        if (faqItem) faqItem.setAttribute("data-expanded", "false");
+      } else {
+        // Se estava colapsado, expande
+        button.setAttribute("aria-expanded", "true");
+        if (faqItem) faqItem.setAttribute("data-expanded", "true");
+      }
+    });
+  });
+</script>

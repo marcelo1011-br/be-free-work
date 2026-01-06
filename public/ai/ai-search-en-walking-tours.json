@@ -1,0 +1,69 @@
+{
+  "language": "en",
+  "category": "walking_tours",
+  "label": "Walking Tours",
+  "description": "Guided walking tours focused on history, food, and cultural heritage.",
+  "faqs": [
+    {
+      "question": "How long are walking tours?",
+      "answer": "Most walking tours last 3 to 3.5 hours."
+    },
+    {
+      "question": "Is food included in the Food Walking Tour?",
+      "answer": "Yes, 8-10 tastings are included."
+    }
+  ],
+  "tours": [
+    {
+      "id": "historical-walking",
+      "slug": "downtown-rio-walking",
+      "name": "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
+      "duration": "3.5 hours",
+      "price_from": 65,
+      "description": "Discover downtown Rio's architectural treasures and colonial history on this guided walking tour.",
+      "highlights": [
+        "Theatro Municipal",
+        "Selarón Steps",
+        "Lapa neighborhood",
+        "Metropolitan Cathedral",
+        "Confeitaria Colombo",
+        "Paço Imperial"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/downtown-rio-walking"
+    },
+    {
+      "id": "food-walking",
+      "slug": "food-walking",
+      "name": "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
+      "duration": "3 hours",
+      "price_from": 155,
+      "description": "Taste your way through Rio's culinary heritage with 8-10 traditional Brazilian dishes and drinks.",
+      "highlights": [
+        "8-10 traditional dishes and drinks included",
+        "Local markets and authentic eateries",
+        "Brazilian coffee culture",
+        "Street food favorites",
+        "Cachaça tasting"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/food-walking"
+    },
+    {
+      "id": "little-africa",
+      "slug": "little-africa",
+      "name": "Little Africa: Rio's Soul & African Heritage Unveiled",
+      "duration": "3 hours",
+      "price_from": 65,
+      "description": "Explore Rio's profound African heritage through the historic port district where African culture shaped Brazilian identity.",
+      "highlights": [
+        "Cais do Valongo UNESCO site",
+        "Little Africa district",
+        "African influence on Brazilian music",
+        "Afro-Brazilian religions and traditions"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/little-africa"
+    }
+  ]
+}

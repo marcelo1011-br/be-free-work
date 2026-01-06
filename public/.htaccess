@@ -1,0 +1,239 @@
+# ================================
+# BE FREE TOURS - Apache Configuration
+# Optimized for Hostinger deployment
+# ================================
+
+# Enable RewriteEngine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ================================
+  # FORCE HTTPS
+  # ================================
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # ================================
+  # REDIRECT WWW TO NON-WWW (or vice versa)
+  # Uncomment the one you want:
+  # ================================
+  # Option 1: Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Option 2: Redirect non-www to www (comment out option 1 if using this)
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  # ================================
+  # OLD SITE REDIRECTS (SEO Preservation)
+  # ================================
+
+  # Old homepage and tour category pages
+  Redirect 301 /home/private-tours-rio/ /en/private-tours
+  Redirect 301 /home/private-tours-rio/rio-city-tours/ /en/private-tours
+  Redirect 301 /home/private-tours-rio/rio-day-trips/ /en/private-tours
+  Redirect 301 /home/private-tours-rio/walking-tours/ /en/private-tours
+  Redirect 301 /home/private-tours-rio/custom-rio-tours/design-your-tour/ /en/private-tours/custom-tour
+
+  # Old tour pages → New slugs
+  Redirect 301 /home/private-tours-rio/rio-city-tours/christ-redeemer-sugarloaf-tour/ /en/private-tours/essential-rio
+  Redirect 301 /home/private-tours-rio/rio-city-tours/half-day-highlights/ /en/private-tours/rio-express
+  Redirect 301 /home/private-tours-rio/rio-day-trips/ilha-grande-speedboat/ /en/private-tours/island-escape-ilha-grande
+  Redirect 301 /home/private-tours-rio/rio-day-trips/petropolis-imperial-city/ /en/private-tours/petropolis-imperial
+  Redirect 301 /home/private-tours-rio/walking-tours/city-center-historic-walk/ /en/private-tours/downtown-rio-walking
+
+  # ================================
+  # TOUR SLUG REDIRECTS (New URLs)
+  # Old slugs → New slugs (SEO preservation)
+  # ================================
+
+  # English redirects
+  Redirect 301 /en/private-tours/unforgettable-rio /en/private-tours/essential-rio
+  Redirect 301 /en/private-tours/rio-flash /en/private-tours/rio-express
+  Redirect 301 /en/private-tours/sunrise-sugarloaf /en/private-tours/first-light-sunrise
+  Redirect 301 /en/private-tours/sunset-magic /en/private-tours/golden-hour-rio
+  Redirect 301 /en/private-tours/sunset-roxy /en/private-tours/sunset-culture-roxy
+  Redirect 301 /en/private-tours/ilha-grande /en/private-tours/island-escape-ilha-grande
+  Redirect 301 /en/private-tours/buzios /en/private-tours/buzios-riviera
+  Redirect 301 /en/private-tours/petropolis /en/private-tours/petropolis-imperial
+  Redirect 301 /en/private-tours/sky-high /en/private-tours/tijuca-rainforest
+  Redirect 301 /en/private-tours/niteroi /en/private-tours/niteroi-mac-museum
+  Redirect 301 /en/private-tours/future-visions /en/private-tours/modern-rio-museum-tomorrow
+  Redirect 301 /en/private-tours/historical-walking /en/private-tours/downtown-rio-walking
+
+  # Spanish redirects
+  Redirect 301 /es/tours-privados/rio-inolvidable /es/tours-privados/essential-rio
+  Redirect 301 /es/tours-privados/rio-flash /es/tours-privados/rio-express
+  Redirect 301 /es/tours-privados/amanecer-pao-acucar /es/tours-privados/amanecer-rio
+  Redirect 301 /es/tours-privados/magia-atardecer /es/tours-privados/hora-dorada-rio
+  Redirect 301 /es/tours-privados/atardecer-roxy /es/tours-privados/atardecer-cultura-roxy
+  Redirect 301 /es/tours-privados/ilha-grande /es/tours-privados/island-escape-ilha-grande
+  Redirect 301 /es/tours-privados/buzios /es/tours-privados/buzios-riviera
+  Redirect 301 /es/tours-privados/petropolis /es/tours-privados/petropolis-imperial
+  Redirect 301 /es/tours-privados/cielo-alto /es/tours-privados/bosque-tijuca
+  Redirect 301 /es/tours-privados/niteroi /es/tours-privados/niteroi-museo-mac
+  Redirect 301 /es/tours-privados/visiones-futuro /es/tours-privados/rio-moderno-museo-manana
+  Redirect 301 /es/tours-privados/caminata-historica /es/tours-privados/downtown-rio-walking
+
+  # Portuguese redirects
+  Redirect 301 /pt-br/passeios-privados/rio-inesquecivel /pt-br/passeios-privados/rio-essencial
+  Redirect 301 /pt-br/passeios-privados/rio-flash /pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar
+  Redirect 301 /pt-br/passeios-privados/nascer-sol-pao-acucar /pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado
+  Redirect 301 /pt-br/passeios-privados/magia-por-do-sol /pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar
+  Redirect 301 /pt-br/passeios-privados/por-do-sol-roxy /pt-br/passeios-privados/por-do-sol-cultura-roxy
+  Redirect 301 /pt-br/passeios-privados/ilha-grande /pt-br/passeios-privados/island-escape-ilha-grande
+  Redirect 301 /pt-br/passeios-privados/buzios /pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado
+  Redirect 301 /pt-br/passeios-privados/petropolis /pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial
+  Redirect 301 /pt-br/passeios-privados/alto-ceu /pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio
+  Redirect 301 /pt-br/passeios-privados/niteroi /pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado
+  Redirect 301 /pt-br/passeios-privados/visoes-futuro /pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio
+  Redirect 301 /pt-br/passeios-privados/caminhada-historica /pt-br/passeios-privados/downtown-rio-walking
+
+  # ================================
+  # OLD BLOG POSTS (if any)
+  # ================================
+  Redirect 301 /rio-beyond-the-guidebook/ /en/blog
+  Redirect 301 /foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco/ /en/blog/rio-food-guide-must-try-dishes
+  Redirect 301 /lapa-a-rio-wonder/ /en/blog
+  Redirect 301 /which-type-of-tour-matches-with-you/ /en/private-tours
+  Redirect 301 /botanical-garde-rio-de-janeiro/ /en/blog
+  Redirect 301 /ccbb-centro-cultural-banco-do-brasil/ /en/blog
+  Redirect 301 /museu-nacional-de-belas-artes/ /en/blog
+  Redirect 301 /sala-cecilia-meirelles/ /en/blog
+  Redirect 301 /rio-world-capital-of-architecture-by-unesco/ /en/blog
+  Redirect 301 /the-plastic-arts-and-brazil-part-1-jean-baptiste-debret-and-brazil/ /en/blog
+
+</IfModule>
+
+# ================================
+# GZIP COMPRESSION
+# ================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+</IfModule>
+
+# ================================
+# BROWSER CACHING
+# ================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+
+  # HTML
+  ExpiresByType text/html "access plus 1 hour"
+
+  # Manifest and Service Worker
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType text/cache-manifest "access plus 0 seconds"
+</IfModule>
+
+# ================================
+# SECURITY HEADERS
+# ================================
+<IfModule mod_headers.c>
+  # X-Frame-Options (prevent clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # X-Content-Type-Options (prevent MIME sniffing)
+  Header always set X-Content-Type-Options "nosniff"
+
+  # X-XSS-Protection (XSS filter)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer-Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions-Policy (formerly Feature-Policy)
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+
+  # Cache Control for different file types
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=2592000, public"
+  </FilesMatch>
+
+  <FilesMatch "\.(woff|woff2|ttf|otf)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Don't cache service worker
+  <FilesMatch "^(sw\.js|service-worker\.js)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ================================
+# DISABLE DIRECTORY BROWSING
+# ================================
+Options -Indexes
+
+# ================================
+# DEFAULT DOCUMENT
+# ================================
+DirectoryIndex index.html
+
+# ================================
+# ERROR PAGES (Optional)
+# Uncomment and customize if needed
+# ================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# ================================
+# FILE PROTECTION
+# ================================
+<FilesMatch "\.(htaccess|htpasswd|env|git|gitignore|json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

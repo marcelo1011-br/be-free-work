@@ -1,0 +1,1263 @@
+/* ================================
+   BE FREE TOURS - CSS BASE
+   ================================ */
+
+/* --------------------------------
+   CSS Reset (Modern)
+   -------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.6;
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-bg-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* Global hero title styling */
+.hero-title {
+    letter-spacing: -0.015em;
+}
+
+/* --------------------------------
+   Acessibilidade - Movimento Reduzido
+   -------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --------------------------------
+   Variáveis de Cores - Tema Escuro Premium (Padrão)
+   Inspirado no design noturno do Rio
+   -------------------------------- */
+:root {
+    /* Cores primárias - Azul noturno */
+    --color-primary: #0a1628;
+    --color-primary-light: #1a2d4a;
+    --color-primary-dark: #050d18;
+
+    /* Cores de destaque - Laranja/Dourado sunset */
+    --color-accent: #f97316;
+    --color-accent-light: #fb923c;
+    --color-accent-dark: #ea580c;
+
+    /* Cores secundárias - Ciano/Teal */
+    --color-secondary: #06b6d4;
+    --color-secondary-light: #22d3ee;
+    --color-secondary-dark: #0891b2;
+
+    /* Fundos - Escuros com profundidade */
+    --color-bg-white: #0a1628;
+    --color-bg-soft: #0f1e32;
+    --color-bg-dark: #050d18;
+    --color-bg-card: rgba(15, 30, 50, 0.8);
+
+    /* Texto - Claros para contraste */
+    --color-text: #f8fafc;
+    --color-text-light: #94a3b8;
+    --color-text-muted: #64748b;
+    --color-text-inverse: #0a1628;
+
+    /* Utilitários */
+    --color-border: rgba(148, 163, 184, 0.2);
+    --color-border-light: rgba(148, 163, 184, 0.1);
+    --color-success: #22c55e;
+    --color-error: #ef4444;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(15, 30, 50, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Gradientes */
+    --gradient-hero: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(10, 22, 40, 0.4) 50%, rgba(10, 22, 40, 0.7) 100%);
+    --gradient-card: linear-gradient(180deg, rgba(15, 30, 50, 0) 0%, rgba(10, 22, 40, 0.95) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+}
+
+/* --------------------------------
+   Variáveis de Cores - Tema Claro "Coastal Light"
+   Design sofisticado inspirado em studios Webflow
+   Navbar/Footer escuros como âncoras visuais
+   -------------------------------- */
+html.light,
+:root.light {
+    /* Cores primárias - Azul profundo para elementos de destaque */
+    --color-primary: #0f172a;
+    --color-primary-light: #1e293b;
+    --color-primary-dark: #020617;
+
+    /* Fundos - Palette cremosa com tons azulados sutis */
+    --color-bg-white: #fafbfd;
+    --color-bg-soft: #f1f5f9;
+    --color-bg-dark: #0f172a;
+    --color-bg-card: #ffffff;
+    --color-bg-alt: #e8eef6;
+
+    /* Texto - Escuros com personalidade */
+    --color-text: #0f172a;
+    --color-text-light: #475569;
+    --color-text-muted: #64748b;
+    --color-text-inverse: #f8fafc;
+
+    /* Utilitários - Bordas e sombras azuladas */
+    --color-border: rgba(15, 23, 42, 0.08);
+    --color-border-light: rgba(15, 23, 42, 0.04);
+
+    /* Glassmorphism Light - Cards com profundidade */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(15, 23, 42, 0.06);
+    --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+
+    /* Gradientes Light */
+    --gradient-hero: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.7) 100%);
+    --gradient-card: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+/* ================================
+   COASTAL LIGHT THEME - Overrides
+   ================================ */
+
+/* --- NAVBAR - Permanece Escura (Âncora Visual) --- */
+html.light .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.light .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+}
+
+html.light .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .nav-link:hover,
+html.light .nav-link.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+html.light .icon-button {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+html.light .lang-current {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+html.light .lang-dropdown {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+html.light .lang-option {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+html.light .lang-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+html.light .lang-option.active {
+    background: var(--gradient-accent);
+    color: white;
+}
+
+html.light .mobile-menu {
+    background: #1e293b;
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+html.light .mobile-nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+html.light .mobile-nav-link:hover,
+html.light .mobile-nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+html.light .mobile-menu-button {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- HERO - Overlay elegante sobre imagem --- */
+html.light .hero .hero-content,
+html.light .hero .hero-tagline,
+html.light .hero .hero-title,
+html.light .hero .hero-subtitle {
+    color: #ffffff;
+}
+
+html.light .hero .hero-tagline {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+html.light .hero .hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Trust badges no hero - glass escuro sofisticado */
+html.light .hero .trust-badges {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.light .hero .trust-badges .badge-label {
+    color: #ffffff;
+}
+
+html.light .hero .trust-badges .badge-value {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .hero .trust-badge {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- HOW IT WORKS - Fundo cremoso com gradiente sutil --- */
+html.light .how-it-works {
+    background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
+}
+
+html.light .how-it-works .section-title-decorated {
+    color: #0f172a;
+}
+
+html.light .how-it-works .section-title-decorated::before,
+html.light .how-it-works .section-title-decorated::after {
+    background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.2), transparent);
+}
+
+html.light .step-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+html.light .step-card:hover {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.06);
+}
+
+html.light .step-title {
+    color: #0f172a;
+}
+
+html.light .step-description {
+    color: #475569;
+}
+
+html.light .step-number {
+    border-color: rgba(15, 23, 42, 0.15);
+    color: #475569;
+}
+
+html.light .step-icon {
+    color: var(--color-accent);
+}
+
+/* --- FEATURED TOURS - Fundo azulado pálido --- */
+html.light .featured-tours {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e8eef6 50%, #f1f5f9 100%);
+}
+
+html.light .featured-tours .section-title-decorated {
+    color: #0f172a;
+}
+
+html.light .featured-tours .section-title-decorated::before,
+html.light .featured-tours .section-title-decorated::after {
+    background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.2), transparent);
+}
+
+html.light .featured-tours .section-subtitle {
+    color: #475569;
+}
+
+/* Tour Cards no tema claro - Cards brancos com sombra azulada */
+html.light .tour-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+
+html.light .tour-card:hover {
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+}
+
+html.light .tour-card-content {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff 100%);
+}
+
+html.light .tour-card-title {
+    color: #0f172a;
+}
+
+html.light .tour-card-meta .tour-duration,
+html.light .tour-card-meta .tour-audience {
+    color: #475569;
+}
+
+html.light .tour-card-footer {
+    border-top-color: rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+}
+
+html.light .price-label {
+    color: #64748b;
+}
+
+html.light .price-value {
+    color: #0f172a;
+}
+
+/* --- WHY US - Fundo cremoso --- */
+html.light .why-us {
+    background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
+}
+
+html.light .why-us .section-title {
+    color: #0f172a;
+}
+
+html.light .why-us .section-subtitle {
+    color: #475569;
+}
+
+html.light .reason-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+html.light .reason-card:hover {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+}
+
+html.light .reason-icon {
+    color: var(--color-accent);
+}
+
+html.light .reason-title {
+    color: #0f172a;
+}
+
+html.light .reason-description {
+    color: #475569;
+}
+
+/* --- TESTIMONIALS - Fundo azulado pálido --- */
+html.light .testimonials {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e8eef6 50%, #f1f5f9 100%);
+}
+
+html.light .testimonials .section-title {
+    color: #0f172a;
+}
+
+html.light .testimonials .section-subtitle {
+    color: #475569;
+}
+
+html.light .testimonial-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+html.light .testimonial-card:hover {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+}
+
+html.light .testimonial-header {
+    border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+html.light .testimonial-source {
+    color: #64748b;
+}
+
+html.light .testimonial-title {
+    color: #0f172a;
+}
+
+html.light .testimonial-text {
+    color: #475569;
+}
+
+html.light .testimonial-footer {
+    border-top-color: rgba(15, 23, 42, 0.08);
+}
+
+html.light .testimonial-author strong {
+    color: #0f172a;
+}
+
+html.light .testimonial-author span {
+    color: #64748b;
+}
+
+/* --- FAQ - Fundo cremoso --- */
+html.light .faq {
+    background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
+}
+
+html.light .faq .section-title {
+    color: #0f172a;
+}
+
+html.light .faq .section-subtitle {
+    color: #475569;
+}
+
+html.light .faq-item {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+
+html.light .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+
+html.light .faq-question:hover {
+    background-color: #f8fafc;
+}
+
+html.light .faq-question-text {
+    color: #0f172a;
+}
+
+html.light .faq-icon {
+    color: #475569;
+}
+
+html.light .faq-answer-content {
+    color: #475569;
+}
+
+/* --- CTA FINAL - Escuro para impacto máximo --- */
+html.light .cta-final {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+html.light .cta-final::before {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+}
+
+html.light .cta-final .cta-title {
+    color: #ffffff;
+}
+
+html.light .cta-final .cta-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+html.light .cta-final .trust-badges {
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+html.light .cta-final .trust-icon {
+    color: var(--color-accent);
+}
+
+html.light .cta-final .trust-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+html.light .cta-final .cta-btn-secondary {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+html.light .cta-final .cta-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Outline Secondary em fundos escuros - Tema Claro */
+html.light .hero .btn-outline-secondary,
+html.light .tour-cta .btn-outline-secondary,
+html.light .about-cta .btn-outline-secondary,
+html.light .cta-final .btn-outline-secondary,
+html.light .tours-cta .btn-outline-secondary {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+html.light .hero .btn-outline-secondary:hover,
+html.light .tour-cta .btn-outline-secondary:hover,
+html.light .about-cta .btn-outline-secondary:hover,
+html.light .cta-final .btn-outline-secondary:hover,
+html.light .tours-cta .btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+}
+
+/* --- FOOTER - Permanece Escuro (Âncora Visual) --- */
+html.light .footer {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+html.light .footer-logo .logo-subtext {
+    color: #f8fafc;
+}
+
+html.light .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .footer-title {
+    color: #f8fafc;
+}
+
+html.light .footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .footer-links a:hover {
+    color: var(--color-accent);
+}
+
+html.light .footer-contact-item {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+html.light .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+html.light .footer-bottom a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+html.light .footer-bottom a:hover {
+    color: var(--color-accent);
+}
+
+html.light .tripadvisor-link {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.light .tripadvisor-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+html.light .tripadvisor-link span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- PÁGINAS INTERNAS - Heroes com fundo escuro --- */
+html.light .tours-hero,
+html.light .about-hero,
+html.light .contact-hero,
+html.light .blog-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+html.light .tours-hero .hero-title,
+html.light .about-hero .hero-title,
+html.light .contact-hero .hero-title,
+html.light .blog-hero .hero-title {
+    color: #ffffff;
+}
+
+html.light .tours-hero .hero-subtitle,
+html.light .about-hero .hero-subtitle,
+html.light .contact-hero .hero-subtitle,
+html.light .blog-hero .hero-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- FILTROS E BOTÕES --- */
+html.light .filter-btn {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #475569;
+}
+
+html.light .filter-btn:hover {
+    border-color: var(--color-accent);
+    color: #0f172a;
+}
+
+html.light .filter-btn.active {
+    background: var(--gradient-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* --- SEÇÕES DE CONTEÚDO (About, Blog, etc) --- */
+html.light .our-story,
+html.light .our-values,
+html.light .tours-grid-section,
+html.light .blog-posts {
+    background-color: #fafbfd;
+}
+
+html.light .story-text h2,
+html.light .value-title,
+html.light .section-title {
+    color: #0f172a;
+}
+
+html.light .story-text p,
+html.light .value-description {
+    color: #475569;
+}
+
+html.light .value-card,
+html.light .stat-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* --- BLOG POSTS --- */
+html.light .post-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+html.light .post-card:hover {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+}
+
+html.light .post-title {
+    color: #0f172a;
+}
+
+html.light .post-excerpt {
+    color: #475569;
+}
+
+html.light .post-meta time,
+html.light .post-read-time {
+    color: #64748b;
+}
+
+/* Categories */
+html.light .blog-categories {
+    background-color: #f1f5f9;
+    border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+html.light .category-btn {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #475569;
+}
+
+html.light .category-btn:hover {
+    border-color: var(--color-accent);
+}
+
+html.light .category-btn.active {
+    background: var(--gradient-accent);
+    color: #ffffff;
+}
+
+/* Newsletter */
+html.light .newsletter-cta {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* --- CONTACT PAGE --- */
+html.light .contact-content {
+    background-color: #fafbfd;
+}
+
+html.light .contact-form {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+html.light .contact-info-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+html.light .form-label {
+    color: #0f172a;
+}
+
+html.light .form-input,
+html.light .form-textarea,
+html.light .form-select {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #0f172a;
+}
+
+html.light .form-input:focus,
+html.light .form-textarea:focus,
+html.light .form-select:focus {
+    border-color: var(--color-accent);
+    background: #ffffff;
+}
+
+html.light .form-input::placeholder,
+html.light .form-textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* --- TOUR CARDS CTA --- */
+html.light .tours-cta {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+html.light .tours-cta .cta-title,
+html.light .tours-cta .cta-subtitle {
+    color: #ffffff;
+}
+
+/* --- BOTÕES OUTLINE NO TEMA CLARO --- */
+html.light .btn-outline-primary {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+html.light .btn-outline-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* --------------------------------
+   Variáveis de Tipografia
+   -------------------------------- */
+:root {
+    /* Font family */
+    --font-family: 'Plus Jakarta Sans', sans-serif;
+
+    /* Font sizes - fluid com clamp */
+    --font-size-h1: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+    --font-size-h2: clamp(1.875rem, 4vw + 0.75rem, 3rem);
+    --font-size-h3: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
+    --font-size-h4: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+    --font-size-h5: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem);
+    --font-size-h6: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+    --font-size-body: clamp(0.9375rem, 0.5vw + 0.875rem, 1.125rem);
+    --font-size-small: clamp(0.8125rem, 0.5vw + 0.75rem, 1rem);
+    --font-size-xs: clamp(0.6875rem, 0.25vw + 0.625rem, 0.875rem);
+
+    /* Font weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+}
+
+/* --------------------------------
+   Variáveis de Espaçamento
+   -------------------------------- */
+:root {
+    /* Espaçamentos base - escala consistente */
+    --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+    --space-md: clamp(1rem, 2vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+    --space-xl: clamp(2rem, 5vw, 4rem);
+    --space-2xl: clamp(3rem, 8vw, 6rem);
+    --space-3xl: clamp(4rem, 10vw, 8rem);
+
+    /* Container */
+    --container-max: 1200px;
+    --container-padding: clamp(1rem, 4vw, 2rem);
+
+    /* Border radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+}
+
+/* --------------------------------
+   Aplicação da Tipografia
+   -------------------------------- */
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+}
+
+h6 {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+}
+
+p {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+}
+
+a {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-secondary-light);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* --------------------------------
+   Utilitários Glassmorphism
+   -------------------------------- */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass-light {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------
+   Section Titles com linhas decorativas
+   -------------------------------- */
+.section-title-decorated {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.section-title-decorated::before,
+.section-title-decorated::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+@media (max-width: 768px) {
+    .section-title-decorated {
+        font-size: var(--font-size-h4);
+        gap: var(--space-md);
+    }
+    
+    .section-title-decorated::before,
+    .section-title-decorated::after {
+        width: 30px;
+    }
+}
+
+/* --------------------------------
+   Badges
+   -------------------------------- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.875rem;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+}
+
+.badge-primary {
+    background: var(--gradient-accent);
+    color: white;
+}
+
+.badge-secondary {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.badge-outline {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+small {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+}
+
+/* --------------------------------
+   Container Utilitário
+   -------------------------------- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* --------------------------------
+   Grid System
+   -------------------------------- */
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+/* Grid responsivo - cards pequenos (ícones, features) */
+.grid-sm {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+/* Grid responsivo - cards médios (tours, depoimentos) */
+.grid-md {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* Grid responsivo - cards grandes (blog, galerias) */
+.grid-lg {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+}
+
+/* Grid fixo - 2 colunas */
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+}
+
+/* Grid fixo - 3 colunas */
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* Grid fixo - 4 colunas */
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+/* Variantes de gap */
+.grid-gap-sm {
+    gap: var(--space-sm);
+}
+
+.grid-gap-md {
+    gap: var(--space-md);
+}
+
+.grid-gap-lg {
+    gap: var(--space-lg);
+}
+
+.grid-gap-xl {
+    gap: var(--space-xl);
+}
+
+/* --------------------------------
+   Botões
+   -------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--color-accent-light);
+    outline-offset: 2px;
+}
+
+/* Primary - Laranja/Accent (CTAs principais) */
+.btn-primary {
+    background: var(--gradient-accent);
+    border-color: var(--color-accent);
+    color: white;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+    color: white;
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+/* Secondary - Glass style */
+.btn-secondary {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: var(--glass-border);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text);
+}
+
+/* Outline Primary - Borda clara */
+.btn-outline-primary {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text);
+}
+
+.btn-outline-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text);
+}
+
+/* Outline Secondary - Borda azul */
+.btn-outline-secondary {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+/* Outline Secondary em fundos escuros (Hero, CTA) - Tema Escuro */
+.hero .btn-outline-secondary,
+.tour-cta .btn-outline-secondary,
+.about-cta .btn-outline-secondary,
+.cta-final .btn-outline-secondary {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text);
+}
+
+.hero .btn-outline-secondary:hover,
+.tour-cta .btn-outline-secondary:hover,
+.about-cta .btn-outline-secondary:hover,
+.cta-final .btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+/* Ghost Primary - Sem borda, texto dourado */
+.btn-ghost-primary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-accent);
+}
+
+.btn-ghost-primary:hover {
+    background-color: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+/* Ghost Secondary - Sem borda, texto azul */
+.btn-ghost-secondary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-primary);
+}
+
+.btn-ghost-secondary:hover {
+    background-color: var(--color-bg-soft);
+    color: var(--color-primary-dark);
+}
+
+/* Tamanhos de botão */
+.btn-sm {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-small);
+}
+
+.btn-lg {
+    padding: 1rem 2.25rem;
+    font-size: var(--font-size-h6);
+}
+
+/* Botão full width */
+.btn-block {
+    width: 100%;
+}
+
+/* ============================================ */
+/* ACCESSIBILITY - Focus Visible */
+/* ============================================ */
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================ */
+/* ACCESSIBILITY - Reduced Motion */
+/* ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

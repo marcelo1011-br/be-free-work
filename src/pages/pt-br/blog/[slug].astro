@@ -1,0 +1,420 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Blog Post Template PT-BR
+   ================================ */
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { useTranslations } from "../../../i18n/utils";
+import {
+  getArticleSchema,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  getArticleOGTags,
+} from "../../../utils/seoHelpers.js";
+
+const LANG = "pt-br";
+
+// Import de todas as imagens do blog
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}"
+);
+
+// Helper para carregar imagem
+async function getBlogImage(imageSlug: string) {
+  const possiblePaths = [
+    `/src/images/blog/${imageSlug}.webp`,
+    `/src/images/blog/${imageSlug}.jpg`,
+    `/src/images/blog/${imageSlug}.png`,
+  ];
+  
+  for (const path of possiblePaths) {
+    if (blogImages[path]) {
+      const img = await blogImages[path]();
+      return img.default;
+    }
+  }
+  return null;
+}
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  const langPosts = allPosts.filter((post) => post.slug.startsWith("pt-br/"));
+
+  return langPosts.map((post) => {
+    const slug = post.slug.replace("pt-br/", "");
+
+    // Buscar posts relacionados completos (com título)
+    let relatedPostsData = [];
+    if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
+      relatedPostsData = post.data.relatedPosts
+        .map((relatedSlug) => {
+          return langPosts.find((p) => p.slug === `pt-br/${relatedSlug}`);
+        })
+        .filter(Boolean);
+    }
+
+    return {
+      params: { slug },
+      props: {
+        post,
+        relatedPostsData,
+      },
+    };
+  });
+}
+
+const { post, relatedPostsData } = Astro.props;
+const { Content, headings } = await post.render();
+const t = useTranslations(LANG);
+
+// Carregar imagem otimizada
+const postImage = post.data.imageSlug 
+  ? await getBlogImage(post.data.imageSlug)
+  : null;
+
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+
+// Breadcrumb items para componente visual + schema
+const breadcrumbItems = [
+  { name: "Home", url: `/${LANG}` },
+  { name: "Blog", url: `/${LANG}/blog` },
+  {
+    name: post.data.title,
+    url: `/${LANG}/blog/${post.slug.replace("en/", "")}`,
+  },
+];
+
+// Schemas otimizados usando helpers
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const articleSchema = getArticleSchema(
+  {
+    ...post.data,
+    slug: post.slug.replace("pt-br/", ""),
+    image: postImage?.src,
+  },
+  LANG,
+  siteUrl
+);
+
+// TODO: Extrair FAQs do conteúdo do post automaticamente
+// Por enquanto, se o post tiver FAQs no frontmatter, use-as
+let faqSchema = null;
+if (post.data.faqs && post.data.faqs.length > 0) {
+  faqSchema = getFAQSchema(post.data.faqs);
+}
+
+const schemas = [
+  breadcrumbSchema,
+  articleSchema,
+  ...(faqSchema ? [faqSchema] : []),
+];
+
+const articleOGTags = getArticleOGTags(post);
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+const tx = {
+  readTime: "min de leitura",
+  by: "Por",
+  tableOfContents: "Neste Guia:",
+  relatedPosts: "Artigos Relacionados",
+};
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={postImage?.src || (post.data.imageSlug ? `/images/blog/${post.data.imageSlug}.webp` : undefined)}
+  type="article"
+  schema={schemas}
+  ogTags={articleOGTags}
+  preloadImage={postImage?.src}
+>
+  <!-- Breadcrumbs fora do container -->
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <article class="blog-post">
+    <div class="container">
+      <header class="post-header">
+        <span class="post-category">{post.data.category}</span>
+        <h1 class="post-title">{post.data.title}</h1>
+        <div class="post-meta">
+          <span class="author">{tx.by} {post.data.author}</span>
+          <time datetime={post.data.publishDate}>
+            {formatDate(post.data.publishDate)}
+          </time>
+          <span class="read-time">{post.data.readTime}</span>
+        </div>
+      </header>
+
+      <div class="featured-image">
+        {postImage ? (
+          <Image 
+            src={postImage} 
+            alt={post.data.title}
+            width={1000}
+            height={563}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        ) : (
+          <div class="image-placeholder">📷 Imagem em breve</div>
+        )}
+      </div>
+
+      {
+        headings.length > 0 && (
+          <nav class="table-of-contents">
+            <h3>{tx.tableOfContents}</h3>
+            <ul>
+              {headings
+                .filter((h) => h.depth <= 2)
+                .map((heading) => (
+                  <li class={`toc-${heading.depth}`}>
+                    <a href={`#${heading.slug}`}>{heading.text}</a>
+                  </li>
+                ))}
+            </ul>
+          </nav>
+        )
+      }
+
+      <div class="post-content prose">
+        <Content />
+      </div>
+
+      {
+        relatedPostsData && relatedPostsData.length > 0 && (
+          <aside class="related-posts">
+            <h3>{tx.relatedPosts}</h3>
+            <ul>
+              {relatedPostsData.map((relatedPost) => {
+                const relatedSlug = relatedPost.slug.replace("en/", "");
+                return (
+                  <li>
+                    <a href={`/${LANG}/blog/${relatedSlug}`}>
+                      {relatedPost.data.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
+
+  .post-header {
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+  }
+
+  .post-category {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+  }
+
+  .post-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+
+  .post-meta > *:not(:last-child)::after {
+    content: "•";
+    margin-left: var(--space-md);
+  }
+
+  .featured-image {
+    max-width: 1000px;
+    margin: 0 auto var(--space-2xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .table-of-contents {
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+    padding: var(--space-lg);
+    background-color: var(--color-bg-soft);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+  }
+
+  .table-of-contents h3 {
+    font-size: var(--font-size-h5);
+    margin-bottom: var(--space-md);
+  }
+
+  .table-of-contents ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .table-of-contents a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .toc-1 {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .toc-2 {
+    padding-left: var(--space-md);
+  }
+
+  .post-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .prose :global(h2) {
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 2px solid var(--color-border);
+  }
+
+  .prose :global(h3) {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .prose :global(li) {
+    margin-bottom: var(--space-sm);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .prose :global(ul) {
+    list-style: disc;
+  }
+
+  .prose :global(ol) {
+    list-style: decimal;
+  }
+
+  .prose :global(strong) {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+  }
+
+  .prose :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .prose :global(a:hover) {
+    color: var(--color-accent);
+  }
+
+  .prose :global(code) {
+    padding: 0.125rem 0.375rem;
+    background-color: var(--color-bg-soft);
+    border-radius: var(--radius-sm);
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+  }
+
+  .prose :global(blockquote) {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg);
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-bg-soft);
+    font-style: italic;
+  }
+
+  .related-posts {
+    max-width: 800px;
+    margin: var(--space-3xl) auto 0;
+    padding-top: var(--space-2xl);
+    border-top: 2px solid var(--color-border);
+  }
+
+  .related-posts h3 {
+    margin-bottom: var(--space-lg);
+  }
+
+  .related-posts ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .related-posts a {
+    font-size: var(--font-size-h6);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: color 0.2s;
+  }
+
+  .related-posts a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .post-meta {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .post-meta > *::after {
+      display: none;
+    }
+  }
+</style>

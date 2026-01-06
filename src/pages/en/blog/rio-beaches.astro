@@ -1,0 +1,166 @@
+---
+// @ts-nocheck
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import {
+  getArticleSchema,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  getArticleOGTags,
+} from "../../../utils/seoHelpers.js";
+
+const LANG = "en";
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+
+const title = "Rio Beaches Hub: Best Beaches, Hidden Spots & Day Trips";
+const description = "Your central guide to Rio's beaches: classic icons, hidden gems, day trips, and the best time to go.";
+const category = "Beaches";
+const tags = [
+  "rio beaches",
+  "hidden beaches",
+  "prainha",
+  "grumari",
+  "ilha grande",
+];
+const publishDate = "2025-12-03";
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}"
+);
+
+async function getBlogImage(imageSlug: string) {
+  const possiblePaths = [
+    `/src/images/blog/${imageSlug}.webp`,
+    `/src/images/blog/${imageSlug}.jpg`,
+    `/src/images/blog/${imageSlug}.png`,
+  ];
+
+  for (const path of possiblePaths) {
+    if (blogImages[path]) {
+      const img = await blogImages[path]();
+      return img.default;
+    }
+  }
+  return null;
+}
+
+const heroImage = await getBlogImage("hidden-beaches");
+
+const breadcrumbItems = [
+  { name: "Home", url: `/${LANG}` },
+  { name: "Blog", url: `/${LANG}/blog` },
+  { name: "Rio Beaches", url: `/${LANG}/blog/rio-beaches` },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const articleSchema = getArticleSchema(
+  {
+    title,
+    description,
+    publishDate,
+    updateDate: publishDate,
+    category,
+    tags,
+    slug: "rio-beaches",
+    image: heroImage?.src,
+  },
+  LANG,
+  siteUrl
+);
+
+const faqSchema = getFAQSchema([
+  {
+    question: "What are the best beaches in Rio for first-timers?",
+    answer: "Copacabana and Ipanema are iconic, but Prainha and Grumari offer a more local experience.",
+  },
+  {
+    question: "When is the best time for beach weather?",
+    answer: "December to March has the hottest beach weather, with April-May still very pleasant.",
+  },
+  {
+    question: "Are day trips worth it?",
+    answer: "Yes. Ilha Grande and Buzios deliver pristine beaches and a different side of Rio.",
+  },
+]);
+
+const schemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])];
+const articleOGTags = getArticleOGTags({ data: { publishDate, updateDate: publishDate, category, tags } });
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage?.src}
+  preloadImage={heroImage?.src}
+  type="article"
+  schema={schemas}
+  ogTags={articleOGTags}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <article class="blog-post">
+    <div class="container">
+      <header class="post-header">
+        <span class="post-category">{category}</span>
+        <h1 class="post-title">{title}</h1>
+        <div class="post-meta">
+          <span class="author">By Be Free Tours</span>
+          <time datetime={publishDate}>December 3, 2025</time>
+          <span class="read-time">9 min read</span>
+        </div>
+      </header>
+
+      <div class="featured-image">
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt="Hidden beaches in Rio"
+            width={1000}
+            height={563}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        ) : (
+          <div class="image-placeholder">📷 Image coming soon</div>
+        )}
+      </div>
+
+      <div class="post-content">
+        <p>
+          Use this hub to plan your beach days in Rio: classic shoreline, hidden gems, and the best
+          day trips outside the city.
+        </p>
+
+        <h2>Essential beach reads</h2>
+        <ul>
+          <li><a href="/en/blog/hidden-beaches-rio-locals-love">Hidden Beaches in Rio That Locals Love</a></li>
+          <li><a href="/en/blog/best-time-visit-rio-2026">Best Time to Visit Rio (2026)</a></li>
+        </ul>
+
+        <h2>Day trips for beach lovers</h2>
+        <ul>
+          <li><a href="/en/private-tours/island-escape-ilha-grande">Ilha Grande Beach Paradise</a></li>
+          <li><a href="/en/private-tours/buzios-riviera">Buzios Day Trip</a></li>
+        </ul>
+
+        <h2>Quick planning tips</h2>
+        <ul>
+          <li>Weekdays are quieter than weekends.</li>
+          <li>April-May and September-November balance weather and crowds.</li>
+          <li>Bring water, sunscreen, and cash for smaller kiosks.</li>
+        </ul>
+
+        <h2>Pair beach days with food</h2>
+        <p>
+          After the sand, follow the local bites in the
+          <a href="/en/blog/rio-food-guide-must-try-dishes">Rio Food Guide</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

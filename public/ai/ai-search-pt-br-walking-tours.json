@@ -1,0 +1,69 @@
+{
+  "language": "pt-br",
+  "category": "walking_tours",
+  "label": "Walking tours",
+  "description": "Tours a pé focados em história, gastronomia e cultura.",
+  "faqs": [
+    {
+      "question": "Quanto duram os walking tours?",
+      "answer": "A maioria dura entre 3 e 3,5 horas."
+    },
+    {
+      "question": "O Food Walking Tour inclui degustações?",
+      "answer": "Sim, inclui 8-10 degustações."
+    }
+  ],
+  "tours": [
+    {
+      "id": "historical-walking",
+      "slug": "downtown-rio-walking",
+      "name": "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas",
+      "duration": "3.5 horas",
+      "price_from": 65,
+      "description": "Descubra os tesouros arquitetônicos do centro do Rio e sua história colonial neste tour a pé guiado.",
+      "highlights": [
+        "Theatro Municipal",
+        "Degraus de Selarón",
+        "Bairro da Lapa",
+        "Catedral Metropolitana",
+        "Confeitaria Colombo",
+        "Paço Imperial"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/downtown-rio-walking"
+    },
+    {
+      "id": "food-walking",
+      "slug": "tour-gastronomico-rio-cozinha-brasileira",
+      "name": "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica",
+      "duration": "3 horas",
+      "price_from": 155,
+      "description": "Saboreie o patrimônio culinário do Rio com 8-10 pratos e bebidas tradicionais brasileiras.",
+      "highlights": [
+        "8-10 pratos e bebidas tradicionais incluídos",
+        "Mercados locais e restaurantes autênticos",
+        "Cultura do café brasileiro",
+        "Favoritos de comida de rua",
+        "Degustação de cachaça"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira"
+    },
+    {
+      "id": "little-africa",
+      "slug": "tour-heranca-pequena-africa-rio-cultura-afrobrasileira",
+      "name": "Pequena África: A Alma do Rio e a Herança Africana Revelada",
+      "duration": "3 horas",
+      "price_from": 65,
+      "description": "Explore a profunda herança africana do Rio através do distrito portuário histórico onde a cultura africana moldou a identidade brasileira.",
+      "highlights": [
+        "Cais do Valongo sítio UNESCO",
+        "Distrito da Pequena África",
+        "Influência africana na música brasileira",
+        "Religiões e tradições afro-brasileiras"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-heranca-pequena-africa-rio-cultura-afrobrasileira"
+    }
+  ]
+}

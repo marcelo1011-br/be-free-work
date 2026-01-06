@@ -1,0 +1,164 @@
+{
+  "language": "en",
+  "category": "city_tours",
+  "label": "City Tours",
+  "description": "Private city tours covering Rio icons, culture, and neighborhoods with skip-the-line access.",
+  "faqs": [
+    {
+      "question": "Are city tours private?",
+      "answer": "Yes. All tours are private and tailored to your group."
+    },
+    {
+      "question": "Do you include skip-the-line access?",
+      "answer": "Yes for key attractions like Sugarloaf and strategic timing for Christ."
+    }
+  ],
+  "tours": [
+    {
+      "id": "unforgettable-rio",
+      "slug": "essential-rio",
+      "name": "The Essential Rio: Icons, Culture & Hidden Gems",
+      "duration": "8 hours",
+      "price_from": 415,
+      "description": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain with skip-the-line access.",
+      "highlights": [
+        "Christ the Redeemer with priority access",
+        "Sugarloaf Mountain with skip-the-line cable car tickets",
+        "Santa Teresa's bohemian neighborhood",
+        "Selarón Stairs - famous mosaic masterpiece",
+        "Royal Portuguese Reading Room (Monday to Friday)",
+        "Metropolitan Cathedral's unique architecture"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/essential-rio"
+    },
+    {
+      "id": "rio-flash-5h",
+      "slug": "rio-express",
+      "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
+      "duration": "5 hours",
+      "price_from": 410,
+      "description": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
+      "highlights": [
+        "Christ the Redeemer statue",
+        "Sugarloaf Mountain cable car",
+        "Skip-the-line access at Sugarloaf"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/rio-express"
+    },
+    {
+      "id": "sunrise-sugarloaf",
+      "slug": "first-light-sunrise",
+      "name": "Rio at First Light: Sunrise Sugarloaf & Christ",
+      "duration": "6 hours",
+      "price_from": 580,
+      "description": "Experience Rio's most breathtaking sunrise from Sugarloaf Mountain, followed by early access to Christ the Redeemer.",
+      "highlights": [
+        "Exclusive sunrise viewing from Sugarloaf",
+        "Early morning Christ the Redeemer visit",
+        "Professional photography opportunities"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise"
+    },
+    {
+      "id": "sunset-magic",
+      "slug": "golden-hour-rio",
+      "name": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
+      "duration": "6 hours",
+      "price_from": 430,
+      "description": "Experience Rio's golden hour beauty with afternoon visits to Christ the Redeemer and a perfectly timed sunset from Sugarloaf Mountain.",
+      "highlights": [
+        "Christ the Redeemer in golden light",
+        "Sunset from Sugarloaf summit",
+        "Panoramic beach views",
+        "Professional photography guidance"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio"
+    },
+    {
+      "id": "sunset-roxy",
+      "slug": "sunset-culture-roxy",
+      "name": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
+      "duration": "9 hours",
+      "price_from": 680,
+      "description": "Combine Rio's sunset from Sugarloaf with an unforgettable evening at Brazil's premier cultural dinner show.",
+      "highlights": [
+        "Sunset from Sugarloaf",
+        "Roxy Premium Dinner Show",
+        "Three-course dinner included",
+        "Cultural performance"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy"
+    },
+    {
+      "id": "sky-high-urban-forest",
+      "slug": "tijuca-rainforest",
+      "name": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
+      "duration": "8 hours",
+      "price_from": 445,
+      "description": "Combine Sugarloaf Mountain's stunning vistas with the lush beauty of Tijuca Forest and Botanical Garden.",
+      "highlights": [
+        "Sugarloaf Mountain",
+        "Tijuca Forest - world's largest urban forest",
+        "Botanical Garden",
+        "Parque Lage"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest"
+    },
+    {
+      "id": "niteroi",
+      "slug": "niteroi-mac-museum",
+      "name": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
+      "duration": "8 hours",
+      "price_from": 335,
+      "description": "Cross Guanabara Bay to discover Niterói's architectural masterpiece MAC Museum and historic military forts.",
+      "highlights": [
+        "MAC Niterói by Oscar Niemeyer",
+        "Historic military forts",
+        "Spectacular Rio skyline views",
+        "Oceanfront lunch location"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum"
+    },
+    {
+      "id": "future-visions-carnival",
+      "slug": "modern-rio-museum-tomorrow",
+      "name": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
+      "duration": "7 hours",
+      "price_from": 445,
+      "description": "Explore Rio's innovative Museum of Tomorrow, South America's largest aquarium, and go behind the scenes of Carnival.",
+      "highlights": [
+        "Museum of Tomorrow",
+        "AquaRio aquarium",
+        "National Historical Museum",
+        "Carnival samba school behind-the-scenes"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow"
+    },
+    {
+      "id": "custom-tour",
+      "slug": "custom-tour",
+      "name": "Your Rio, Your Way: Custom Private Tour",
+      "duration": "Flexible (4-10+ hours)",
+      "price_from": 0,
+      "description": "Can't find exactly what you're looking for? Design your own Rio experience. Tell us your interests, and we'll craft a personalized itinerary just for you.",
+      "highlights": [
+        "100% customizable itinerary based on your interests",
+        "Expert local guide who adapts to your pace and style",
+        "Combine any attractions, neighborhoods, or experiences",
+        "Flexible duration from half-day to multi-day adventures",
+        "Perfect for special occasions, unique interests, or accessibility needs",
+        "We handle all logistics, tickets, and reservations"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/custom-tour"
+    }
+  ]
+}

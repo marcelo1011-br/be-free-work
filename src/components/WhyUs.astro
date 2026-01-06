@@ -1,0 +1,162 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Why Us Component
+   Seção de diferenciais
+   ================================ */
+
+import { homeContent } from "../data/homeContent.js";
+
+const { lang } = Astro.props;
+const content = homeContent[lang].whyUs;
+
+// Mapeamento de ícones SVG
+const icons = {
+  calendar:
+    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+  customize:
+    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+  guide:
+    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+  travelers:
+    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  star: '<svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+  payment:
+    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
+};
+---
+
+<section class="why-us">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{content.title}</h2>
+      <p class="section-subtitle">{content.subtitle}</p>
+    </div>
+
+    <div class="reasons-grid grid grid-3">
+      {
+        content.reasons.map((reason) => (
+          <article class="reason-card">
+            <div class="reason-icon" set:html={icons[reason.icon]} />
+            <h3 class="reason-title">{reason.title}</h3>
+            <p class="reason-description">{reason.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-us {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-white);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .section-title {
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-h5);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .reasons-grid {
+    margin-top: var(--space-2xl);
+  }
+
+  .reason-card {
+    padding: var(--space-xl);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .reason-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .reason-title {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+    margin: 0;
+  }
+
+  .reason-description {
+    font-size: var(--font-size-body);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .why-us {
+      padding: var(--space-2xl) 0;
+    }
+
+    .section-header {
+      margin-bottom: var(--space-xl);
+      padding-inline: var(--space-md);
+    }
+
+    .section-subtitle {
+      font-size: var(--font-size-body);
+    }
+
+    .reasons-grid {
+      margin-top: var(--space-lg);
+      gap: var(--space-md);
+    }
+
+    .reason-card {
+      padding: var(--space-lg);
+    }
+
+    .reason-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .reason-icon :global(svg) {
+      width: 40px;
+      height: 40px;
+    }
+
+    .reason-title {
+      font-size: var(--font-size-body);
+    }
+
+    .reason-description {
+      font-size: var(--font-size-small);
+    }
+  }
+</style>

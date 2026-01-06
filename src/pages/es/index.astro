@@ -1,0 +1,60 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Home (Espanhol)
+   Página inicial em espanhol
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import FeaturedTours from "../../components/FeaturedTours.astro";
+import WhyUs from "../../components/WhyUs.astro";
+import Testimonials from "../../components/Testimonials.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTAFinal from "../../components/CTAFinal.astro";
+import { homeContent } from "../../data/homeContent.js";
+import { getWebSiteSchema } from "../../utils/seoHelpers.js";
+
+// Pega o conteúdo em espanhol
+const content = homeContent["es"];
+
+// SEO
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const websiteSchema = getWebSiteSchema(siteUrl);
+
+// Organization Schema
+const organizationSchema = {
+  "@type": "TravelAgency",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Be Free Tours",
+  "url": siteUrl,
+  "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 600, "height": 60 },
+  "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados.",
+  "telephone": "+55-21-97927-1637",
+  "email": "contact@befreetours.com.br",
+  "address": { "@type": "PostalAddress", "addressLocality": "Rio de Janeiro", "addressRegion": "RJ", "addressCountry": "BR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "-22.9068", "longitude": "-43.1729" },
+  "priceRange": "$$$",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127" }
+};
+---
+
+<BaseLayout
+  title="Tours Privados en Río de Janeiro | Be Free Tours"
+  description="Tours privados premium en Río desde 2013. Guías locales expertos, acceso sin filas a Cristo Redentor y Pan de Azúcar. Experiencias personalizadas, itinerarios flexibles. ¡Reserva ya!"
+  image="/images/og-home.jpg"
+  schema={[websiteSchema, organizationSchema]}
+>
+  <Hero
+    title={content.hero.title}
+    subtitle={content.hero.subtitle}
+    ctaPrimary={content.hero.ctaPrimary}
+    ctaSecondary={content.hero.ctaSecondary}
+    lang="es"
+  />
+  <FeaturedTours lang="es" />
+  <WhyUs lang="es" />
+  <Testimonials lang="es" />
+  <FAQ lang="es" />
+  <CTAFinal lang="es" />
+</BaseLayout>

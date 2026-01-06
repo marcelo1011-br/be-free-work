@@ -1,0 +1,67 @@
+{
+  "language": "en",
+  "category": "day_trips",
+  "label": "Day Trips",
+  "description": "Full-day escapes to beaches, islands, and mountain towns outside Rio.",
+  "faqs": [
+    {
+      "question": "How far are day trips from Rio?",
+      "answer": "Most destinations are 2-3 hours each way."
+    },
+    {
+      "question": "Are meals included?",
+      "answer": "Meals are typically not included unless specified."
+    }
+  ],
+  "tours": [
+    {
+      "id": "ilha-grande",
+      "slug": "island-escape-ilha-grande",
+      "name": "Island Escape: Ilha Grande by Private Speedboat",
+      "duration": "10 hours",
+      "price_from": 0,
+      "description": "Embark on an exclusive private speedboat journey around the pristine tropical paradise of Ilha Grande.",
+      "highlights": [
+        "Private speedboat for your group",
+        "5-hour island exploration",
+        "Swimming and snorkeling",
+        "Secluded beaches and coves"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/island-escape-ilha-grande"
+    },
+    {
+      "id": "buzios",
+      "slug": "buzios-riviera",
+      "name": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
+      "duration": "10 hours",
+      "price_from": 430,
+      "description": "Discover the sophisticated beach resort of Búzios, famous for its Mediterranean atmosphere and over 20 stunning beaches.",
+      "highlights": [
+        "Multiple peninsula beaches",
+        "Rua das Pedras shopping",
+        "Orla Bardot waterfront",
+        "Mediterranean atmosphere"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/buzios-riviera"
+    },
+    {
+      "id": "petropolis",
+      "slug": "petropolis-imperial",
+      "name": "Petrópolis: Imperial Palaces & Mountain Escape",
+      "duration": "8 hours",
+      "price_from": 360,
+      "description": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
+      "highlights": [
+        "Quitandinha Palace",
+        "Imperial Museum with crown jewels",
+        "House of 7 Errors",
+        "Metropolitan Cathedral",
+        "European-style town center"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/en/private-tours/petropolis-imperial"
+    }
+  ]
+}

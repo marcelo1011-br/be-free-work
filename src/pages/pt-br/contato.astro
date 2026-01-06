@@ -1,0 +1,529 @@
+---
+/* ================================
+   BE FREE TOURS - Contact Page
+   Formulário de contato + info
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import { pageContent } from "../../data/pageContent.js";
+import { getPageSEO, getContactPageSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const lang = "pt-br";
+const t = useTranslations(lang);
+const content = pageContent.contact[lang];
+
+// SEO
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const seo = getPageSEO("contact", lang);
+
+// Schemas
+const contactPageSchema = getContactPageSchema(lang, siteUrl);
+
+// Breadcrumb
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: "Contato", url: `/${lang}/contato` },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const schemas = [contactPageSchema, breadcrumbSchema];
+---
+
+<BaseLayout title={seo.title} description={seo.description} schema={schemas}>
+  <!-- Breadcrumbs -->
+  <Breadcrumbs items={breadcrumbItems} />
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="hero-title">{content.hero.title}</h1>
+      <p class="hero-subtitle">{content.hero.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Form Column -->
+        <div class="form-column">
+          <h2 class="form-title">{content.form.title}</h2>
+
+          <!-- 
+            ⚠️ IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID
+            Get your form ID at: https://formspree.io/
+            Example: action="https://formspree.io/f/xpwzgklr"
+          -->
+          <form
+            action="https://formspree.io/f/mgoeyojz"
+            method="POST"
+            class="contact-form"
+          >
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name" class="form-label"
+                >{content.form.fields.name.label} *</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                placeholder={content.form.fields.name.placeholder}
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email" class="form-label"
+                >{content.form.fields.email.label} *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                placeholder={content.form.fields.email.placeholder}
+              />
+            </div>
+
+            <!-- Phone Field -->
+            <div class="form-group">
+              <label for="phone" class="form-label"
+                >{content.form.fields.phone.label}</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder={content.form.fields.phone.placeholder}
+              />
+            </div>
+
+            <!-- Tour Selection -->
+            <div class="form-group">
+              <label for="tour" class="form-label"
+                >{content.form.fields.tour.label}</label
+              >
+              <select id="tour" name="tour" class="form-input">
+                {
+                  content.form.fields.tour.options.map((option) => (
+                    <option value={option.value}>{option.label}</option>
+                  ))
+                }
+              </select>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="message" class="form-label"
+                >{content.form.fields.message.label} *</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                class="form-input form-textarea"
+                rows="6"
+                required
+                placeholder={content.form.fields.message.placeholder}
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              {content.form.submitButton}
+            </button>
+          </form>
+        </div>
+
+        <!-- Info Column -->
+        <div class="info-column">
+          <!-- Contact Info Card -->
+          <div class="contact-info-card">
+            <h3 class="info-title">{content.info.title}</h3>
+
+            <div class="contact-methods">
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/5521979271637"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-method"
+              >
+                <div class="method-icon whatsapp">
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <div class="method-label">{content.info.whatsapp.label}</div>
+                  <div class="method-value">{content.info.whatsapp.value}</div>
+                </div>
+              </a>
+
+              <!-- Email -->
+              <a
+                href="mailto:contact@befreetours.com.br"
+                class="contact-method"
+              >
+                <div class="method-icon email">
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <div class="method-label">{content.info.email.label}</div>
+                  <div class="method-value">{content.info.email.value}</div>
+                </div>
+              </a>
+
+              <!-- Business Hours -->
+              <div class="contact-method">
+                <div class="method-icon hours">
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="method-content">
+                  <div class="method-label">{content.info.hours.label}</div>
+                  <div class="method-value">{content.info.hours.value}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="response-time">
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                ></path>
+              </svg>
+              <span>{content.info.responseTime}</span>
+            </div>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <div class="whatsapp-cta">
+            <h4>{content.whatsappCta.title}</h4>
+            <p>{content.whatsappCta.subtitle}</p>
+            <a
+              href="https://wa.me/5521979271637?text=Hi!%20I%27m%20interested%20in%20booking%20a%20tour"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-accent btn-lg btn-block"
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                ></path>
+              </svg>
+              {content.whatsappCta.button}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .contact-hero {
+    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    color: var(--color-text-inverse);
+    text-align: center;
+  }
+
+  .hero-title {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Contact Content */
+  .contact-content {
+    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    background-color: var(--color-bg-white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  /* Form Column */
+  .form-column {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .form-title {
+    margin-bottom: var(--space-lg);
+    color: var(--color-primary);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+  }
+
+  .form-input {
+    padding: var(--space-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    color: var(--color-text);
+    background-color: var(--color-bg-white);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(42, 78, 145, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  /* Info Column */
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .contact-info-card {
+    padding: var(--space-xl);
+    background-color: var(--color-bg-soft);
+    border-radius: var(--radius-lg);
+  }
+
+  .info-title {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact-method {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-md);
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .contact-method:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .method-icon.whatsapp {
+    background-color: #25d366;
+    color: var(--color-text-inverse);
+  }
+
+  .method-icon.email {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  .method-icon.hours {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .method-content {
+    flex-grow: 1;
+  }
+
+  .method-label {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .method-value {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+
+  /* Response Time */
+  .response-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-md);
+    color: var(--color-success);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* WhatsApp CTA */
+  .whatsapp-cta {
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-inverse);
+    text-align: center;
+  }
+
+  .whatsapp-cta h4 {
+    font-size: var(--font-size-h5);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-inverse);
+  }
+
+  .whatsapp-cta p {
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+  }
+
+  .btn-accent {
+    background-color: var(--color-text-inverse);
+    color: #25d366;
+    border-color: var(--color-text-inverse);
+  }
+
+  .btn-accent:hover {
+    background-color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    color: #128c7e;
+    transform: translateY(-2px);
+  }
+
+  /* Responsivo */
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero {
+      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+    }
+
+    .contact-content {
+      padding: var(--space-2xl) 0;
+    }
+
+    .form-title {
+      font-size: var(--font-size-h5);
+    }
+
+    .info-title {
+      font-size: var(--font-size-h6);
+    }
+
+    .contact-info-card {
+      padding: var(--space-lg);
+    }
+
+    .whatsapp-cta {
+      padding: var(--space-lg);
+    }
+  }
+</style>

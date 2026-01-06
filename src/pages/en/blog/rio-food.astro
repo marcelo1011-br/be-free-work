@@ -1,0 +1,166 @@
+---
+// @ts-nocheck
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import {
+  getArticleSchema,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  getArticleOGTags,
+} from "../../../utils/seoHelpers.js";
+
+const LANG = "en";
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+
+const title = "Rio Food Hub: Must-Try Dishes, Neighborhoods & Food Tours";
+const description = "Your central guide to Rio's food scene: essential dishes, where to eat, and the best food tours.";
+const category = "Food & Drink";
+const tags = [
+  "rio food",
+  "feijoada",
+  "churrasco",
+  "food tour rio",
+  "where to eat in rio",
+];
+const publishDate = "2025-12-18";
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}"
+);
+
+async function getBlogImage(imageSlug: string) {
+  const possiblePaths = [
+    `/src/images/blog/${imageSlug}.webp`,
+    `/src/images/blog/${imageSlug}.jpg`,
+    `/src/images/blog/${imageSlug}.png`,
+  ];
+
+  for (const path of possiblePaths) {
+    if (blogImages[path]) {
+      const img = await blogImages[path]();
+      return img.default;
+    }
+  }
+  return null;
+}
+
+const heroImage = await getBlogImage("rio-food");
+
+const breadcrumbItems = [
+  { name: "Home", url: `/${LANG}` },
+  { name: "Blog", url: `/${LANG}/blog` },
+  { name: "Rio Food", url: `/${LANG}/blog/rio-food` },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const articleSchema = getArticleSchema(
+  {
+    title,
+    description,
+    publishDate,
+    updateDate: publishDate,
+    category,
+    tags,
+    slug: "rio-food",
+    image: heroImage?.src,
+  },
+  LANG,
+  siteUrl
+);
+
+const faqSchema = getFAQSchema([
+  {
+    question: "What is the most traditional dish in Rio?",
+    answer: "Feijoada is the classic Brazilian dish and the top local favorite.",
+  },
+  {
+    question: "Which neighborhood is best for food?",
+    answer: "Centro for classic botecos, Santa Teresa for local charm, and Ipanema/Leblon for upscale spots.",
+  },
+  {
+    question: "Is the Food Walking Tour worth it?",
+    answer: "Yes, it includes 8-10 tastings and local context without tourist traps.",
+  },
+]);
+
+const schemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])];
+const articleOGTags = getArticleOGTags({ data: { publishDate, updateDate: publishDate, category, tags } });
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage?.src}
+  preloadImage={heroImage?.src}
+  type="article"
+  schema={schemas}
+  ogTags={articleOGTags}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <article class="blog-post">
+    <div class="container">
+      <header class="post-header">
+        <span class="post-category">{category}</span>
+        <h1 class="post-title">{title}</h1>
+        <div class="post-meta">
+          <span class="author">By Be Free Tours</span>
+          <time datetime={publishDate}>December 18, 2025</time>
+          <span class="read-time">9 min read</span>
+        </div>
+      </header>
+
+      <div class="featured-image">
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt="Rio food guide"
+            width={1000}
+            height={563}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        ) : (
+          <div class="image-placeholder">📷 Image coming soon</div>
+        )}
+      </div>
+
+      <div class="post-content">
+        <p>
+          This hub organizes the best food experiences in Rio, from street snacks to iconic dishes
+          and the neighborhoods where locals actually eat.
+        </p>
+
+        <h2>Start with the full guide</h2>
+        <p>
+          Read the complete list of dishes and where to find them:
+          <a href="/en/blog/rio-food-guide-must-try-dishes">Rio Food Guide: 13 Must-Try Dishes</a>.
+        </p>
+
+        <h2>Best neighborhoods for food</h2>
+        <ul>
+          <li>Centro: classic botecos and historic spots.</li>
+          <li>Santa Teresa: bohemian restaurants with views.</li>
+          <li>Ipanema/Leblon: upscale dining and beach kiosks.</li>
+        </ul>
+
+        <h2>Food tours to book</h2>
+        <ul>
+          <li><a href="/en/private-tours/food-walking">Centro Food Walking Tour</a> - 8-10 tastings.</li>
+          <li><a href="/en/private-tours/little-africa">Little Africa Walking Tour</a> - heritage and flavor.</li>
+        </ul>
+
+        <h2>Pair food with Rio highlights</h2>
+        <ul>
+          <li><a href="/en/blog/best-time-visit-rio-2026">Best Time to Visit Rio</a></li>
+          <li><a href="/en/blog/christ-redeemer-complete-guide-2026">Christ the Redeemer Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

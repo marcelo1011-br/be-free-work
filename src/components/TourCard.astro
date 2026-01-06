@@ -1,0 +1,295 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Tour Card Component
+   Design Premium: Glassmorphism com badges e overlay gradiente
+   ================================ */
+
+import { Image } from "astro:assets";
+import { useTranslations } from "../i18n/utils";
+
+const { tour, lang, badge } = Astro.props;
+const t = useTranslations(lang);
+
+// Verifica se é tour customizado
+const isCustomTour = tour.isCustom || tour.pricing?.custom;
+
+// Função para calcular o preço "from" baseado na estrutura de pricing
+function getFromPrice(pricing) {
+  if (pricing.custom) return null;
+  if (pricing.from) return pricing.from;
+  if (pricing.perPerson) return pricing.perPerson;
+  if (pricing.standard) {
+    const prices = Object.values(pricing.standard);
+    return Math.min(...prices);
+  }
+  return null;
+}
+
+const fromPrice = getFromPrice(tour.pricing);
+
+// Texto do preço para tours customizados
+const customPriceText = tour.pricing?.displayText || "Custom quote";
+
+// Mapeamento de rotas de tours por idioma
+const tourRoutes = {
+  en: "private-tours",
+  es: "tours-privados",
+  "pt-br": "passeios-privados",
+};
+
+const tourRoute = tourRoutes[lang] || "private-tours";
+
+// Import da imagem do card
+const imageSlug = tour.imageSlug || tour.slug;
+const cardImage = await import(`../images/tours/cards/${imageSlug}-card.webp`).catch(() => {
+  // Fallback para slug base se imageSlug não encontrar
+  const baseSlug = tour.id || tour.slug.split('-').slice(0, 2).join('-');
+  return import(`../images/tours/cards/${baseSlug}-card.webp`).catch(() => {
+    // Ultimate fallback
+    return import(`../images/tours/cards/essential-rio-card.webp`);
+  });
+});
+
+// Alt text SEO-optimized
+const altText = `${tour.title} - Private ${tour.duration} tour in Rio de Janeiro`;
+
+// Badge styles mapping
+const badgeStyles = {
+  "Most Popular": "badge-primary",
+  "Best Value": "badge-secondary",
+  "Hidden Gem": "badge-outline",
+  "Más Popular": "badge-primary",
+  "Mejor Valor": "badge-secondary",
+  "Joya Oculta": "badge-outline",
+  "Mais Popular": "badge-primary",
+  "Melhor Custo-Benefício": "badge-secondary",
+  "Joia Escondida": "badge-outline",
+};
+
+const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
+---
+
+<article class="tour-card">
+  <!-- Image with overlay -->
+  <div class="tour-card-image">
+    <Image
+      src={cardImage.default}
+      alt={altText}
+      width={800}
+      height={600}
+      loading="lazy"
+      loading="lazy"
+      format="webp"
+    />
+    <div class="image-overlay"></div>
+    
+    {badge && (
+      <span class={`tour-badge badge ${badgeClass}`}>
+        {badge}
+      </span>
+    )}
+  </div>
+
+  <!-- Content -->
+  <div class="tour-card-content">
+    <h3 class="tour-card-title">{tour.title}</h3>
+    
+    <div class="tour-card-meta">
+      <span class="tour-duration">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        {tour.duration}
+      </span>
+      <p class="tour-description">{tour.shortDescription}</p>
+    </div>
+
+    <div class="tour-card-footer">
+      <div class="tour-price">
+        {isCustomTour ? (
+          <span class="price-custom">{customPriceText}</span>
+        ) : (
+          <>
+            <span class="price-label">{t("general.fromPrice")}</span>
+            <span class="price-value">US$ {fromPrice}</span>
+          </>
+        )}
+      </div>
+      
+      <a
+        href={`/${lang}/${tourRoute}/${tour.slug}`}
+        class={`btn btn-sm ${isCustomTour ? 'btn-primary' : 'btn-outline-primary'}`}
+      >
+        {tour.ctaText || t("general.viewTour")}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .tour-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+
+  .tour-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Image */
+  .tour-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .tour-card-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .tour-card:hover .tour-card-image :global(img) {
+    transform: scale(1.08);
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-card);
+    pointer-events: none;
+  }
+
+  /* Badge */
+  .tour-badge {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    z-index: 2;
+  }
+
+  /* Content */
+  .tour-card-content {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .tour-card-title {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+    margin: 0;
+  }
+
+  /* Meta */
+  .tour-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .tour-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+
+  .tour-duration svg {
+    color: var(--color-secondary);
+  }
+
+  .tour-description {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Footer */
+  .tour-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .tour-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-label {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .price-value {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+  }
+
+  .price-custom {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .tour-card-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .tour-card-content {
+      padding: var(--space-md);
+    }
+
+    .tour-card-footer {
+      flex-direction: column;
+      gap: var(--space-md);
+      align-items: stretch;
+    }
+
+    .tour-price {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .tour-card-footer .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

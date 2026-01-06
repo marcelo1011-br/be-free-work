@@ -1,0 +1,209 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - CTA Final Component
+   Seção de call-to-action final otimizada para conversão
+   ================================ */
+
+import { homeContent } from "../data/homeContent.js";
+
+const { lang } = Astro.props;
+const content = homeContent[lang].ctaFinal;
+
+// Ícones dos trust badges
+const icons = {
+  calendar:
+    '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>',
+  travelers:
+    '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>',
+  star: '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>',
+};
+---
+
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">{content.title}</h2>
+      <p class="cta-subtitle">{content.subtitle}</p>
+
+      <div class="cta-buttons">
+        <a href={content.ctaPrimary.link} class="btn btn-primary btn-lg">
+          {content.ctaPrimary.text}
+        </a>
+        <a
+          href={content.ctaSecondary.link}
+          class="btn btn-outline-secondary btn-lg cta-btn-secondary"
+        >
+          {content.ctaSecondary.text}
+        </a>
+      </div>
+
+      <div class="trust-badges">
+        {
+          content.trustBadges.map((badge) => (
+            <div class="trust-badge">
+              <span class="trust-icon" set:html={icons[badge.icon]} />
+              <span class="trust-text">{badge.text}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-final {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Padrão sutil de fundo */
+  .cta-final::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 20% 50%,
+        rgba(249, 115, 22, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(6, 182, 212, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .cta-title {
+    color: var(--color-text-inverse);
+    margin: 0;
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--space-md);
+  }
+
+  /* Botão secondary específico para CTA (branco com borda) */
+  .cta-btn-secondary {
+    background-color: transparent;
+    border-color: var(--color-text-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .cta-btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--color-text-inverse) 10%, transparent);
+    border-color: var(--color-text-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .trust-badges {
+    display: flex;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid color-mix(in srgb, var(--color-text-inverse) 15%, transparent);
+  }
+
+  .trust-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .trust-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .trust-text {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: color-mix(in srgb, var(--color-text-inverse) 70%, transparent);
+    white-space: nowrap;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .cta-final {
+      padding: var(--space-2xl) 0;
+    }
+
+    .cta-content {
+      padding-inline: var(--space-md);
+    }
+
+    .cta-title {
+      font-size: var(--font-size-h4);
+    }
+
+    .cta-subtitle {
+      font-size: var(--font-size-body);
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+
+    .trust-badges {
+      gap: var(--space-md);
+      flex-direction: column;
+    }
+
+    .trust-badge {
+      flex-direction: row;
+      gap: var(--space-sm);
+    }
+
+    .trust-text {
+      font-size: var(--font-size-xs);
+    }
+  }
+</style>

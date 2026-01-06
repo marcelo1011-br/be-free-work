@@ -1,0 +1,167 @@
+---
+/* ================================
+   BE FREE TOURS - Breadcrumbs Component
+   Migalhas de pão visuais + Schema
+   
+   🆕 STICKY COM NAVBAR!
+   - Gruda no topo quando scrolla
+   - Tamanho fixo (não reduz no scroll)
+   - Backdrop blur
+   ================================ */
+
+interface Props {
+  items: Array<{
+    name: string;
+    url: string;
+  }>;
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    {
+      items.map((item, index) => (
+        <li class="breadcrumb-item">
+          {index < items.length - 1 ? (
+            <>
+              <a href={item.url} class="breadcrumb-link">
+                {item.name}
+              </a>
+              <svg
+                class="breadcrumb-separator"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </>
+          ) : (
+            <span class="breadcrumb-current">{item.name}</span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    /* 🆕 Sticky com navbar */
+    position: sticky;
+    top: 100px; /* Altura da navbar + espaço extra */
+    z-index: 999; /* Abaixo da navbar (1000) */
+
+    /* Visual - FIXO, não muda no scroll */
+    padding: var(--space-md) 0; /* Espaçamento adequado */
+    border-bottom: 1px solid var(--color-border);
+
+    /* 🆕 Backdrop blur effect */
+    backdrop-filter: blur(10px);
+    background-color: rgba(249, 250, 251, 0.95);
+
+    /* Transição suave apenas para sombra */
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* 🆕 Quando scrollar, adiciona sombra (mas não muda tamanho) */
+  .breadcrumbs.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .breadcrumb-list {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-sm); /* Menor que antes */
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .breadcrumb-current {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      top: 75px; /* Navbar mobile + espaço extra */
+      padding: var(--space-sm) 0; /* Menos padding no mobile */
+    }
+
+    .breadcrumb-list {
+      font-size: var(--font-size-xs);
+      gap: var(--space-2xs);
+    }
+
+    .breadcrumb-separator {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  /* Dark mode support */
+  :global(.dark) .breadcrumbs {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(26, 32, 44, 0.95);
+  }
+
+  :global(.dark) .breadcrumbs.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+<!-- 🆕 Script para detectar scroll e adicionar sombra -->
+<script>
+  // Adiciona classe 'scrolled' quando scrollar (só para sombra)
+  const breadcrumbs = document.querySelector(".breadcrumbs");
+
+  if (breadcrumbs) {
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+
+      // Se scrollou mais de 50px, adiciona sombra
+      if (currentScroll > 50) {
+        breadcrumbs.classList.add("scrolled");
+      } else {
+        breadcrumbs.classList.remove("scrolled");
+      }
+    });
+  }
+</script>

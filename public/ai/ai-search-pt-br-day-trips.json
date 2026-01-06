@@ -1,0 +1,67 @@
+{
+  "language": "pt-br",
+  "category": "day_trips",
+  "label": "Bate-voltas",
+  "description": "Passeios de dia inteiro para praias, ilhas e cidades de serra.",
+  "faqs": [
+    {
+      "question": "Qual a distância dos bate-voltas?",
+      "answer": "A maioria fica a 2-3 horas de carro."
+    },
+    {
+      "question": "As refeições estão incluídas?",
+      "answer": "Normalmente não, salvo indicação no tour."
+    }
+  ],
+  "tours": [
+    {
+      "id": "ilha-grande",
+      "slug": "island-escape-ilha-grande",
+      "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
+      "duration": "10 horas",
+      "price_from": 0,
+      "description": "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
+      "highlights": [
+        "Lancha privada para seu grupo",
+        "5 horas de exploração",
+        "Natação e mergulho",
+        "Praias e enseadas isoladas"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande"
+    },
+    {
+      "id": "buzios",
+      "slug": "buzios-charme-costeiro-passeio-privado",
+      "name": "Búzios: A Riviera Brasileira (23 Praias em Um Dia)",
+      "duration": "10 horas",
+      "price_from": 430,
+      "description": "Descubra o sofisticado resort de praia de Búzios, famoso por sua atmosfera mediterrânea e mais de 20 praias deslumbrantes.",
+      "highlights": [
+        "Múltiplas praias da península",
+        "Compras na Rua das Pedras",
+        "Orla Bardot à beira-mar",
+        "Atmosfera mediterrânea"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado"
+    },
+    {
+      "id": "petropolis",
+      "slug": "passeio-privado-petropolis-cidade-imperial",
+      "name": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
+      "duration": "8 horas",
+      "price_from": 360,
+      "description": "Fuja para as montanhas e explore a história imperial do Brasil em Petrópolis, residência de verão dos imperadores brasileiros.",
+      "highlights": [
+        "Palácio Quitandinha",
+        "Museu Imperial com joias da coroa",
+        "Casa dos 7 Erros",
+        "Catedral Metropolitana",
+        "Centro de estilo europeu"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial"
+    }
+  ]
+}

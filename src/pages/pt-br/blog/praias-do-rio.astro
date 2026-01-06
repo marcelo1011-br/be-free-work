@@ -1,0 +1,166 @@
+---
+// @ts-nocheck
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import {
+  getArticleSchema,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  getArticleOGTags,
+} from "../../../utils/seoHelpers.js";
+
+const LANG = "pt-br";
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+
+const title = "Praias do Rio: Guia Central de Praias, Hidden Spots e Bate-Voltas";
+const description = "Seu hub para planejar dias de praia no Rio: classicos, praias escondidas e melhores bate-voltas.";
+const category = "Praias";
+const tags = [
+  "praias do rio",
+  "praias escondidas",
+  "prainha",
+  "grumari",
+  "ilha grande",
+];
+const publishDate = "2025-12-03";
+
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}"
+);
+
+async function getBlogImage(imageSlug: string) {
+  const possiblePaths = [
+    `/src/images/blog/${imageSlug}.webp`,
+    `/src/images/blog/${imageSlug}.jpg`,
+    `/src/images/blog/${imageSlug}.png`,
+  ];
+
+  for (const path of possiblePaths) {
+    if (blogImages[path]) {
+      const img = await blogImages[path]();
+      return img.default;
+    }
+  }
+  return null;
+}
+
+const heroImage = await getBlogImage("hidden-beaches");
+
+const breadcrumbItems = [
+  { name: "Home", url: `/${LANG}` },
+  { name: "Blog", url: `/${LANG}/blog` },
+  { name: "Praias do Rio", url: `/${LANG}/blog/praias-do-rio` },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const articleSchema = getArticleSchema(
+  {
+    title,
+    description,
+    publishDate,
+    updateDate: publishDate,
+    category,
+    tags,
+    slug: "praias-do-rio",
+    image: heroImage?.src,
+  },
+  LANG,
+  siteUrl
+);
+
+const faqSchema = getFAQSchema([
+  {
+    question: "Quais sao as melhores praias para primeira viagem?",
+    answer: "Copacabana e Ipanema sao classicas, mas Prainha e Grumari mostram o lado local.",
+  },
+  {
+    question: "Qual a melhor epoca para praia?",
+    answer: "De dezembro a marco tem mais calor, com abril-maio ainda bem agradavel.",
+  },
+  {
+    question: "Vale fazer bate-volta para praias?",
+    answer: "Sim. Ilha Grande e Buzios entregam praias incriveis e outro clima.",
+  },
+]);
+
+const schemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])];
+const articleOGTags = getArticleOGTags({ data: { publishDate, updateDate: publishDate, category, tags } });
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage?.src}
+  preloadImage={heroImage?.src}
+  type="article"
+  schema={schemas}
+  ogTags={articleOGTags}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <article class="blog-post">
+    <div class="container">
+      <header class="post-header">
+        <span class="post-category">{category}</span>
+        <h1 class="post-title">{title}</h1>
+        <div class="post-meta">
+          <span class="author">Por Be Free Tours</span>
+          <time datetime={publishDate}>3 de dezembro de 2025</time>
+          <span class="read-time">9 min de leitura</span>
+        </div>
+      </header>
+
+      <div class="featured-image">
+        {heroImage ? (
+          <Image
+            src={heroImage}
+            alt="Praias escondidas no Rio"
+            width={1000}
+            height={563}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        ) : (
+          <div class="image-placeholder">📷 Image coming soon</div>
+        )}
+      </div>
+
+      <div class="post-content">
+        <p>
+          Use este hub para planejar seus dias de praia no Rio, incluindo classicos, praias
+          escondidas e bate-voltas.
+        </p>
+
+        <h2>Leituras essenciais</h2>
+        <ul>
+          <li><a href="/pt-br/blog/hidden-beaches-rio-locals-love">Praias escondidas que os locais amam</a></li>
+          <li><a href="/pt-br/blog/best-time-visit-rio-2026">Melhor epoca para visitar o Rio</a></li>
+        </ul>
+
+        <h2>Bate-voltas para praias incriveis</h2>
+        <ul>
+          <li><a href="/pt-br/passeios-privados/island-escape-ilha-grande">Ilha Grande Beach Paradise</a></li>
+          <li><a href="/pt-br/passeios-privados/buzios-riviera">Buzios Day Trip</a></li>
+        </ul>
+
+        <h2>Dicas rapidas</h2>
+        <ul>
+          <li>Dias de semana sao mais tranquilos.</li>
+          <li>Abril-maio e setembro-novembro equilibram clima e lotacao.</li>
+          <li>Leve agua, protetor solar e dinheiro vivo.</li>
+        </ul>
+
+        <h2>Combine praia com gastronomia</h2>
+        <p>
+          Depois do sol, veja o
+          <a href="/pt-br/blog/rio-food-guide-must-try-dishes">Guia gastronomico do Rio</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

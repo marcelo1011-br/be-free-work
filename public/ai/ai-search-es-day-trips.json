@@ -1,0 +1,67 @@
+{
+  "language": "es",
+  "category": "day_trips",
+  "label": "Excursiones de un día",
+  "description": "Escapadas de día completo a playas, islas y ciudades de montaña.",
+  "faqs": [
+    {
+      "question": "¿Qué tan lejos están las excursiones?",
+      "answer": "La mayoría están a 2-3 horas por trayecto."
+    },
+    {
+      "question": "¿Las comidas están incluidas?",
+      "answer": "Normalmente no, salvo que se especifique."
+    }
+  ],
+  "tours": [
+    {
+      "id": "ilha-grande",
+      "slug": "island-escape-ilha-grande",
+      "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
+      "duration": "10 horas",
+      "price_from": 0,
+      "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
+      "highlights": [
+        "Lancha privada para tu grupo",
+        "5 horas de exploración",
+        "Natación y snorkel",
+        "Playas y calas aisladas"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande"
+    },
+    {
+      "id": "buzios",
+      "slug": "buzios-riviera",
+      "name": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
+      "duration": "10 horas",
+      "price_from": 430,
+      "description": "Descubre el sofisticado resort de playa de Búzios, famoso por su atmósfera mediterránea y más de 20 playas impresionantes.",
+      "highlights": [
+        "Múltiples playas de la península",
+        "Compras en Rua das Pedras",
+        "Paseo marítimo Orla Bardot",
+        "Atmósfera mediterránea"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera"
+    },
+    {
+      "id": "petropolis",
+      "slug": "petropolis-imperial",
+      "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
+      "duration": "8 horas",
+      "price_from": 360,
+      "description": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
+      "highlights": [
+        "Palacio Quitandinha",
+        "Museo Imperial con joyas de la corona",
+        "Casa de los 7 Errores",
+        "Catedral Metropolitana",
+        "Centro de estilo europeo"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial"
+    }
+  ]
+}

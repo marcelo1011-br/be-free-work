@@ -1,0 +1,338 @@
+{
+  "language": "en",
+  "company": {
+    "name": "Be Free Tours",
+    "tagline": "Your Rio, Your Way - Private Tours Since 2013",
+    "description": "Premium private tour operator in Rio de Janeiro specializing in personalized experiences with certified local guides",
+    "founded": "2013",
+    "website": "https://befreetours.com.br",
+    "type": "private_tour_operator",
+    "specializations": [
+      "Private Tours",
+      "Skip-the-line Access",
+      "Multilingual Guides (EN/ES/PT)",
+      "Customizable Itineraries",
+      "Hotel Pickup/Drop-off"
+    ]
+  },
+  "contact": {
+    "whatsapp": "+5521979271637",
+    "email": "contact@befreetours.com.br",
+    "response_time": "Within 24 hours",
+    "languages": [
+      "English",
+      "Spanish",
+      "Portuguese"
+    ],
+    "operating_hours": "06:00-22:00 (Rio time)"
+  },
+  "booking": {
+    "policy": "24-hour free cancellation",
+    "payment_methods": [
+      "Credit Card",
+      "PayPal",
+      "Bank Transfer"
+    ],
+    "currencies": [
+      "USD",
+      "BRL"
+    ],
+    "deposit": "50% for tours over $500"
+  },
+  "tours": {
+    "city_tours": {
+      "label": "City Tours",
+      "description": "Private city tours covering Rio icons, culture, and neighborhoods with skip-the-line access.",
+      "faqs": [
+        {
+          "question": "Are city tours private?",
+          "answer": "Yes. All tours are private and tailored to your group."
+        },
+        {
+          "question": "Do you include skip-the-line access?",
+          "answer": "Yes for key attractions like Sugarloaf and strategic timing for Christ."
+        }
+      ],
+      "tours": [
+        {
+          "id": "unforgettable-rio",
+          "slug": "essential-rio",
+          "name": "The Essential Rio: Icons, Culture & Hidden Gems",
+          "duration": "8 hours",
+          "price_from": 415,
+          "description": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain with skip-the-line access.",
+          "highlights": [
+            "Christ the Redeemer with priority access",
+            "Sugarloaf Mountain with skip-the-line cable car tickets",
+            "Santa Teresa's bohemian neighborhood",
+            "Selarón Stairs - famous mosaic masterpiece",
+            "Royal Portuguese Reading Room (Monday to Friday)",
+            "Metropolitan Cathedral's unique architecture"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/essential-rio"
+        },
+        {
+          "id": "rio-flash-5h",
+          "slug": "rio-express",
+          "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
+          "duration": "5 hours",
+          "price_from": 410,
+          "description": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
+          "highlights": [
+            "Christ the Redeemer statue",
+            "Sugarloaf Mountain cable car",
+            "Skip-the-line access at Sugarloaf"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/rio-express"
+        },
+        {
+          "id": "sunrise-sugarloaf",
+          "slug": "first-light-sunrise",
+          "name": "Rio at First Light: Sunrise Sugarloaf & Christ",
+          "duration": "6 hours",
+          "price_from": 580,
+          "description": "Experience Rio's most breathtaking sunrise from Sugarloaf Mountain, followed by early access to Christ the Redeemer.",
+          "highlights": [
+            "Exclusive sunrise viewing from Sugarloaf",
+            "Early morning Christ the Redeemer visit",
+            "Professional photography opportunities"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise"
+        },
+        {
+          "id": "sunset-magic",
+          "slug": "golden-hour-rio",
+          "name": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
+          "duration": "6 hours",
+          "price_from": 430,
+          "description": "Experience Rio's golden hour beauty with afternoon visits to Christ the Redeemer and a perfectly timed sunset from Sugarloaf Mountain.",
+          "highlights": [
+            "Christ the Redeemer in golden light",
+            "Sunset from Sugarloaf summit",
+            "Panoramic beach views",
+            "Professional photography guidance"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio"
+        },
+        {
+          "id": "sunset-roxy",
+          "slug": "sunset-culture-roxy",
+          "name": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
+          "duration": "9 hours",
+          "price_from": 680,
+          "description": "Combine Rio's sunset from Sugarloaf with an unforgettable evening at Brazil's premier cultural dinner show.",
+          "highlights": [
+            "Sunset from Sugarloaf",
+            "Roxy Premium Dinner Show",
+            "Three-course dinner included",
+            "Cultural performance"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy"
+        },
+        {
+          "id": "sky-high-urban-forest",
+          "slug": "tijuca-rainforest",
+          "name": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
+          "duration": "8 hours",
+          "price_from": 445,
+          "description": "Combine Sugarloaf Mountain's stunning vistas with the lush beauty of Tijuca Forest and Botanical Garden.",
+          "highlights": [
+            "Sugarloaf Mountain",
+            "Tijuca Forest - world's largest urban forest",
+            "Botanical Garden",
+            "Parque Lage"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest"
+        },
+        {
+          "id": "niteroi",
+          "slug": "niteroi-mac-museum",
+          "name": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
+          "duration": "8 hours",
+          "price_from": 335,
+          "description": "Cross Guanabara Bay to discover Niterói's architectural masterpiece MAC Museum and historic military forts.",
+          "highlights": [
+            "MAC Niterói by Oscar Niemeyer",
+            "Historic military forts",
+            "Spectacular Rio skyline views",
+            "Oceanfront lunch location"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum"
+        },
+        {
+          "id": "future-visions-carnival",
+          "slug": "modern-rio-museum-tomorrow",
+          "name": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
+          "duration": "7 hours",
+          "price_from": 445,
+          "description": "Explore Rio's innovative Museum of Tomorrow, South America's largest aquarium, and go behind the scenes of Carnival.",
+          "highlights": [
+            "Museum of Tomorrow",
+            "AquaRio aquarium",
+            "National Historical Museum",
+            "Carnival samba school behind-the-scenes"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow"
+        },
+        {
+          "id": "custom-tour",
+          "slug": "custom-tour",
+          "name": "Your Rio, Your Way: Custom Private Tour",
+          "duration": "Flexible (4-10+ hours)",
+          "price_from": 0,
+          "description": "Can't find exactly what you're looking for? Design your own Rio experience. Tell us your interests, and we'll craft a personalized itinerary just for you.",
+          "highlights": [
+            "100% customizable itinerary based on your interests",
+            "Expert local guide who adapts to your pace and style",
+            "Combine any attractions, neighborhoods, or experiences",
+            "Flexible duration from half-day to multi-day adventures",
+            "Perfect for special occasions, unique interests, or accessibility needs",
+            "We handle all logistics, tickets, and reservations"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/custom-tour"
+        }
+      ]
+    },
+    "day_trips": {
+      "label": "Day Trips",
+      "description": "Full-day escapes to beaches, islands, and mountain towns outside Rio.",
+      "faqs": [
+        {
+          "question": "How far are day trips from Rio?",
+          "answer": "Most destinations are 2-3 hours each way."
+        },
+        {
+          "question": "Are meals included?",
+          "answer": "Meals are typically not included unless specified."
+        }
+      ],
+      "tours": [
+        {
+          "id": "ilha-grande",
+          "slug": "island-escape-ilha-grande",
+          "name": "Island Escape: Ilha Grande by Private Speedboat",
+          "duration": "10 hours",
+          "price_from": 0,
+          "description": "Embark on an exclusive private speedboat journey around the pristine tropical paradise of Ilha Grande.",
+          "highlights": [
+            "Private speedboat for your group",
+            "5-hour island exploration",
+            "Swimming and snorkeling",
+            "Secluded beaches and coves"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/island-escape-ilha-grande"
+        },
+        {
+          "id": "buzios",
+          "slug": "buzios-riviera",
+          "name": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
+          "duration": "10 hours",
+          "price_from": 430,
+          "description": "Discover the sophisticated beach resort of Búzios, famous for its Mediterranean atmosphere and over 20 stunning beaches.",
+          "highlights": [
+            "Multiple peninsula beaches",
+            "Rua das Pedras shopping",
+            "Orla Bardot waterfront",
+            "Mediterranean atmosphere"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/buzios-riviera"
+        },
+        {
+          "id": "petropolis",
+          "slug": "petropolis-imperial",
+          "name": "Petrópolis: Imperial Palaces & Mountain Escape",
+          "duration": "8 hours",
+          "price_from": 360,
+          "description": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
+          "highlights": [
+            "Quitandinha Palace",
+            "Imperial Museum with crown jewels",
+            "House of 7 Errors",
+            "Metropolitan Cathedral",
+            "European-style town center"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/petropolis-imperial"
+        }
+      ]
+    },
+    "walking_tours": {
+      "label": "Walking Tours",
+      "description": "Guided walking tours focused on history, food, and cultural heritage.",
+      "faqs": [
+        {
+          "question": "How long are walking tours?",
+          "answer": "Most walking tours last 3 to 3.5 hours."
+        },
+        {
+          "question": "Is food included in the Food Walking Tour?",
+          "answer": "Yes, 8-10 tastings are included."
+        }
+      ],
+      "tours": [
+        {
+          "id": "historical-walking",
+          "slug": "downtown-rio-walking",
+          "name": "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
+          "duration": "3.5 hours",
+          "price_from": 65,
+          "description": "Discover downtown Rio's architectural treasures and colonial history on this guided walking tour.",
+          "highlights": [
+            "Theatro Municipal",
+            "Selarón Steps",
+            "Lapa neighborhood",
+            "Metropolitan Cathedral",
+            "Confeitaria Colombo",
+            "Paço Imperial"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/downtown-rio-walking"
+        },
+        {
+          "id": "food-walking",
+          "slug": "food-walking",
+          "name": "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
+          "duration": "3 hours",
+          "price_from": 155,
+          "description": "Taste your way through Rio's culinary heritage with 8-10 traditional Brazilian dishes and drinks.",
+          "highlights": [
+            "8-10 traditional dishes and drinks included",
+            "Local markets and authentic eateries",
+            "Brazilian coffee culture",
+            "Street food favorites",
+            "Cachaça tasting"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/food-walking"
+        },
+        {
+          "id": "little-africa",
+          "slug": "little-africa",
+          "name": "Little Africa: Rio's Soul & African Heritage Unveiled",
+          "duration": "3 hours",
+          "price_from": 65,
+          "description": "Explore Rio's profound African heritage through the historic port district where African culture shaped Brazilian identity.",
+          "highlights": [
+            "Cais do Valongo UNESCO site",
+            "Little Africa district",
+            "African influence on Brazilian music",
+            "Afro-Brazilian religions and traditions"
+          ],
+          "best_for": [],
+          "url": "https://befreetours.com.br/en/private-tours/little-africa"
+        }
+      ]
+    }
+  }
+}

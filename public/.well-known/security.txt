@@ -1,0 +1,25 @@
+# Our security address
+Contact: mailto:security@befreetours.com.br
+Contact: https://befreetours.com/en/contact
+
+# Our OpenPGP key
+# Encryption: https://befreetours.com/pgp-key.txt
+
+# Our security policy
+Policy: https://befreetours.com/security-policy
+
+# Preferred languages
+Preferred-Languages: en, pt, es
+
+# Canonical URL for this file
+Canonical: https://befreetours.com/.well-known/security.txt
+
+# This file expires on
+Expires: 2025-12-31T23:59:59.000Z
+
+# Acknowledgments page (hall of fame for security researchers)
+Acknowledgments: https://befreetours.com/security-thanks
+
+# If you want to report a vulnerability or security issue
+# Please use the contact methods above
+# We appreciate responsible disclosure

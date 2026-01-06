@@ -1,0 +1,133 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Home (English)
+   Página inicial em inglês
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import FeaturedTours from "../../components/FeaturedTours.astro";
+import WhyUs from "../../components/WhyUs.astro";
+import Testimonials from "../../components/Testimonials.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTAFinal from "../../components/CTAFinal.astro";
+import { homeContent } from "../../data/homeContent.js";
+import { getWebSiteSchema } from "../../utils/seoHelpers.js";
+
+// Pega o conteúdo em inglês
+const content = homeContent["en"];
+
+// SEO
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const websiteSchema = getWebSiteSchema(siteUrl);
+
+// Organization Schema completo
+const organizationSchema = {
+  "@type": "TravelAgency",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Be Free Tours",
+  "alternateName": "Be Free Tours Rio de Janeiro",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/images/logo/logo.png`,
+    "width": 600,
+    "height": 60
+  },
+  "image": `${siteUrl}/images/heroes/home-hero.webp`,
+  "description": "Premium private tour operator in Rio de Janeiro since 2013. Customized experiences with certified local guides specializing in Christ the Redeemer, Sugarloaf Mountain, and day trips around Rio.",
+  "slogan": "Your Rio, Your Way - Private Tours Since 2013",
+  "foundingDate": "2013",
+  "telephone": "+55-21-97927-1637",
+  "email": "contact@befreetours.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio de Janeiro",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Rio de Janeiro"
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-22.9068",
+    "longitude": "-43.1729"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-21-97927-1637",
+    "contactType": "Customer Service",
+    "availableLanguage": ["English", "Spanish", "Portuguese"],
+    "areaServed": "BR"
+  },
+  "priceRange": "$$$",
+  "paymentAccepted": "Credit Card, PayPal, Bank Transfer",
+  "currenciesAccepted": "USD, BRL",
+  "openingHours": "Mo-Su 06:00-22:00",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "The Essential Rio: Icons, Culture & Hidden Gems",
+      "description": "Full-day tour including Christ the Redeemer, Sugarloaf Mountain, Santa Teresa, and more",
+      "price": "415",
+      "priceCurrency": "USD",
+      "url": `${siteUrl}/en/private-tours/essential-rio`
+    },
+    {
+      "@type": "Offer",
+      "name": "Rio Express 5h",
+      "description": "Quick tour of Christ the Redeemer and Sugarloaf Mountain",
+      "price": "410",
+      "priceCurrency": "USD",
+      "url": `${siteUrl}/en/private-tours/rio-express`
+    },
+    {
+      "@type": "Offer",
+      "name": "Sunset Magic Tour",
+      "description": "Golden hour at Christ the Redeemer and sunset from Sugarloaf",
+      "price": "430",
+      "priceCurrency": "USD",
+      "url": `${siteUrl}/en/private-tours/golden-hour-rio`
+    }
+  ],
+  "knowsAbout": [
+    "Christ the Redeemer",
+    "Sugarloaf Mountain",
+    "Rio de Janeiro Tourism",
+    "Private Tours",
+    "Brazilian Culture"
+  ]
+};
+---
+
+<BaseLayout
+  title="Private Tours in Rio de Janeiro | Be Free Tours"
+  description="Premium private tours in Rio since 2013. Expert local guides, skip-the-line access to Christ Redeemer & Sugarloaf. Personalized experiences, flexible itineraries. Book now!"
+  image="/images/og-home.jpg"
+  schema={[websiteSchema, organizationSchema]}
+>
+  <Hero
+    title={content.hero.title}
+    subtitle={content.hero.subtitle}
+    ctaPrimary={content.hero.ctaPrimary}
+    ctaSecondary={content.hero.ctaSecondary}
+    lang="en"
+  />
+  <FeaturedTours lang="en" />
+  <WhyUs lang="en" />
+  <Testimonials lang="en" />
+  <FAQ lang="en" />
+  <CTAFinal lang="en" />
+</BaseLayout>

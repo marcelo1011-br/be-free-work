@@ -1,0 +1,582 @@
+---
+/* ================================
+   BE FREE TOURS - Blog Hub (Español)
+   Página principal del blog
+   ================================ */
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content"; // IMPORTANTE: Importar getCollection
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { useTranslations } from "../../i18n/utils";
+import { getBlogSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+
+const lang = "es";
+const t = useTranslations(lang);
+
+// SEO
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const seo = {
+  title: "Blog de Viajes a Río - Consejos, Guías e Historias | Be Free Tours",
+  description:
+    "Consejos expertos, guías internas e historias inspiradoras sobre Río de Janeiro. Desde playas escondidas hasta gastronomía local, descubre Río como nunca antes.",
+};
+
+// 1. Buscar posts REAIS da coleção
+// Filtra apenas posts em Espanhol (slug começa com 'es/')
+// E ordena por data de publicação (mais recente primeiro)
+const allPosts = await getCollection("blog", ({ id }) => {
+  return id.startsWith("es/");
+});
+
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
+);
+
+// Import das imagens do blog
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/blog/*.{jpeg,jpg,png,webp}"
+);
+
+// Helper para carregar imagem
+async function getBlogImage(slug: string) {
+  const possiblePaths = [
+    `/src/images/blog/${slug}.webp`,
+    `/src/images/blog/${slug}.jpg`,
+    `/src/images/blog/${slug}.png`,
+  ];
+
+  for (const path of possiblePaths) {
+    if (blogImages[path]) {
+      const img = await blogImages[path]();
+      return img.default;
+    }
+  }
+  return null;
+}
+
+// Carregar imagens para cada post
+const postsWithImages = await Promise.all(
+  sortedPosts.map(async (post) => {
+    // Remove o prefixo 'es/' do slug para a URL ficar limpa
+    const cleanSlug = post.slug.split('/').pop();
+    return {
+      ...post.data,
+      slug: cleanSlug,
+      image: await getBlogImage(post.data.imageSlug),
+    };
+  })
+);
+
+// Categorías
+const categories = [
+  "Todas las Publicaciones",
+  "Consejos de Viaje",
+  "Joyas Escondidas",
+  "Comida y Bebida",
+  "Atracciones",
+  "Cultura",
+  "Historia",
+  "Barrios",
+];
+
+// Schemas
+const blogSchemaData = getBlogSchema(
+  postsWithImages.map(p => ({
+    slug: `${lang}/blog/${p.slug}`,
+    data: { title: p.title, description: p.description }
+  })),
+  lang,
+  siteUrl
+);
+
+// Breadcrumb
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: "Blog", url: `/${lang}/blog` },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+const schemas = [blogSchemaData, breadcrumbSchema];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  image="/images/og-blog.jpg"
+  schema={schemas}
+>
+  <!-- Breadcrumbs -->
+  <Breadcrumbs items={breadcrumbItems} />
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Blog de Viajes a Río</h1>
+        <p class="hero-subtitle">
+          Consejos expertos, guías internas e historias inspiradoras de Río de
+          Janeiro. Escritas por locales que conocen esta ciudad como la palma de
+          su mano.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-pillars">
+    <div class="container">
+      <h2 class="pillars-title">Guías Pilar</h2>
+      <div class="pillars-grid">
+        <a class="pillar-card" href="/es/blog/cristo-redentor">
+          <h3>Hub del Cristo Redentor</h3>
+          <p>Horarios, tickets, transporte y tours en un solo lugar.</p>
+        </a>
+        <a class="pillar-card" href="/es/blog/playas-de-rio">
+          <h3>Hub de Playas de Río</h3>
+          <p>Playas clásicas, escondidas y excursiones.</p>
+        </a>
+        <a class="pillar-card" href="/es/blog/comida-en-rio">
+          <h3>Hub de Comida en Río</h3>
+          <p>Platos esenciales, barrios y tours gastronómicos.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Filter -->
+  <section class="blog-categories">
+    <div class="container">
+      <div class="categories-wrapper">
+        {
+          categories.map((category, index) => (
+            <button
+              class={`category-btn ${index === 0 ? "active" : ""}`}
+              data-category={category}
+            >
+              {category}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-posts">
+    <div class="container">
+      <div class="posts-grid grid grid-3">
+        {
+          postsWithImages.map((post) => (
+            <article class="post-card" data-category={post.category}>
+              <a href={`/${lang}/blog/${post.slug}`} class="post-link">
+                <div class="post-image">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={600}
+                      height={400}
+                      format="webp"
+                      quality={80}
+                    />
+                  ) : (
+                    <div class="image-placeholder">📷</div>
+                  )}
+                  <span class="post-category">{post.category}</span>
+                </div>
+                <div class="post-content">
+                  <div class="post-meta">
+                    <time datetime={post.publishDate}>
+                      {new Date(post.publishDate).toLocaleDateString("es-ES", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                    <span class="post-read-time">{post.readTime}</span>
+                  </div>
+                  <h2 class="post-title">{post.title}</h2>
+                  <p class="post-excerpt">{post.description}</p>
+                  <span class="read-more">Leer Más →</span>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+
+      <!--
+      <div class="newsletter-cta">
+        <div class="newsletter-content">
+          <h3>Recibe Consejos de Viaje a Río en tu Correo</h3>
+          <p>
+            Únete a 5,000+ viajeros que reciben guías internas, joyas escondidas
+            y descuentos exclusivos en tours.
+          </p>
+          <form
+            class="newsletter-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingresa tu correo"
+              required
+              class="newsletter-input"
+            />
+            <button type="submit" class="btn btn-primary"> Suscribirse </button>
+          </form>
+          <p class="newsletter-note">Sin spam. Cancela cuando quieras. 📧</p>
+        </div>
+      -->      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .blog-hero {
+    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    color: var(--color-text-inverse);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-h6);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Pillar Guides */
+  .blog-pillars {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-bg);
+  }
+
+  .pillars-title {
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .pillar-card {
+    border: 1px solid var(--color-border);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-white);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Categories */
+  .blog-categories {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-bg-soft);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .categories-wrapper {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-white);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .category-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .category-btn.active {
+    background: var(--gradient-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  /* Posts Grid */
+  .blog-posts {
+    padding: calc(var(--space-3xl) + 40px) 0 var(--space-3xl);
+  }
+
+  .posts-grid {
+    margin-bottom: var(--space-3xl);
+  }
+
+  /* Post Card */
+  .post-card {
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-h1);
+  }
+
+  .post-card:hover .post-image img {
+    transform: scale(1.05);
+  }
+
+  .post-category {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    padding: 0.375rem 0.875rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-inverse);
+    background-color: var(--color-accent);
+    border-radius: var(--radius-full);
+    z-index: 2;
+  }
+
+  .post-content {
+    padding: var(--space-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+
+  .post-meta time {
+    font-weight: var(--font-weight-medium);
+  }
+
+  .post-read-time::before {
+    content: "•";
+    margin-right: var(--space-sm);
+  }
+
+  .post-title {
+    font-size: var(--font-size-h5);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+  }
+
+  .post-excerpt {
+    font-size: var(--font-size-body);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .read-more {
+    margin-top: auto;
+    display: inline-block;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    transition: color 0.2s ease;
+  }
+
+  .post-card:hover .read-more {
+    color: var(--color-accent);
+  }
+
+  /*
+  .newsletter-cta {
+    padding: var(--space-2xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    border-radius: var(--radius-lg);
+    text-align: center;
+    color: var(--color-text-inverse);
+  }
+  */
+
+  .newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .newsletter-content h3 {
+    font-size: var(--font-size-h3);
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-sm);
+  }
+
+  .newsletter-content > p {
+    font-size: var(--font-size-h6);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    margin-bottom: var(--space-lg);
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 500px;
+    margin: 0 auto var(--space-sm);
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    font-size: var(--font-size-body);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    background-color: var(--color-text-inverse);
+    color: var(--color-text);
+  }
+
+  .newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .newsletter-note {
+    font-size: var(--font-size-small);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .blog-hero {
+      padding: calc(var(--space-3xl) + 60px) 0 var(--space-xl);
+    }
+
+    .blog-categories {
+      padding: var(--space-lg) 0;
+    }
+
+    .blog-posts {
+      padding: var(--space-2xl) 0;
+    }
+
+    /*
+    .newsletter-form {
+      flex-direction: column;
+    }
+
+    .newsletter-cta {
+      padding: var(--space-xl);
+    }
+    */
+  }
+</style>
+
+<script>
+  // Category filter functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const categoryBtns = document.querySelectorAll(".category-btn");
+    const posts = document.querySelectorAll(".post-card");
+
+    categoryBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // 1. Gerenciar classe ativa nos botões
+        categoryBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // 2. Filtrar posts
+        const selectedCategory = btn.getAttribute("data-category");
+
+        posts.forEach((post) => {
+          if (selectedCategory === "Todas las Publicaciones") {
+            (post as HTMLElement).style.display = "block";
+          } else {
+            const postCategory = post.getAttribute("data-category");
+            if (postCategory === selectedCategory) {
+              (post as HTMLElement).style.display = "block";
+            } else {
+              (post as HTMLElement).style.display = "none";
+            }
+          }
+        });
+      });
+    });
+  });
+</script>

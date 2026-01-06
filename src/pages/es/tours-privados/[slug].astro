@@ -1,0 +1,1392 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Tour Detail Page
+   Página dinâmica de tour individual
+   ================================ */
+
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TourCard from "../../../components/TourCard.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro"; // 🆕 NOVO
+import { tours } from "../../../data/tours.js";
+import { useTranslations } from "../../../i18n/utils";
+import {
+  getTourSEO,
+  getTourSchema,
+  getTouristTripSchema, // 🆕 NOVO - CRÍTICO PARA SEO
+  getFAQSchema,
+  getBreadcrumbSchema,
+  getReviewSchema, // 🆕 NOVO
+  getOpenGraphTags, // 🆕 NOVO
+  getHowToSchema, // 🆕 NOVO
+} from "../../../utils/seoHelpers.js";
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  // APENAS tours em ESPANHOL (ES)
+  const LANG = 'es';
+  const tourList = tours[LANG];
+
+  for (const tour of tourList) {
+    // Carregar imagem hero (usa imageSlug se disponível)
+    const imageSlug = tour.imageSlug || tour.slug;
+    let heroImage;
+    try {
+      heroImage = await import(
+        `../../../images/tours/heroes/${imageSlug}-hero.webp`
+      );
+    } catch {
+      // Fallback para essential-rio se imagem não existir
+      heroImage = await import(
+        `../../../images/tours/heroes/essential-rio-hero.webp`
+      );
+    }
+
+    paths.push({
+      params: {
+        slug: tour.slug,
+      },
+      props: {
+        tour,
+        lang: LANG,
+        allTours: tourList,
+        heroImage: heroImage.default, // Passar imagem como prop
+      },
+    });
+  }
+
+  return paths;
+}
+
+const { tour, lang, allTours, heroImage } = Astro.props;
+const t = useTranslations(lang);
+
+// Função para calcular preço "from"
+function getFromPrice(pricing) {
+  if (pricing.from) return pricing.from;
+  if (pricing.perPerson) return pricing.perPerson;
+  if (pricing.standard) {
+    const prices = Object.values(pricing.standard);
+    return Math.min(...prices);
+  }
+  return null;
+}
+
+const fromPrice = getFromPrice(tour.pricing);
+
+// Related tours (mesma categoria, máximo 3)
+const relatedTours = allTours
+  .filter((t) => t.category === tour.category && t.id !== tour.id)
+  .slice(0, 3);
+
+// Tips personalizados por tipo de tour
+const tourTips = {
+  "ilha-grande": [
+    "Bring swimwear and towel",
+    "Apply waterproof sunscreen",
+    "Motion sickness medication recommended",
+    "Waterproof bag for electronics",
+    "Light lunch or snacks",
+  ],
+  buzios: [
+    "Comfortable walking shoes",
+    "Sunscreen and hat",
+    "Light jacket for evening",
+    "Camera for stunning views",
+    "Cash for beach vendors",
+  ],
+  petropolis: [
+    "Light jacket (cooler temperatures)",
+    "Comfortable walking shoes",
+    "Umbrella (frequent rain)",
+    "Camera for palace photos",
+    "Cash for museum fees",
+  ],
+  "unforgettable-rio": [
+    "Comfortable walking shoes",
+    "Sunscreen and sunglasses",
+    "Light clothing (hot weather)",
+    "Water bottle",
+    "Camera fully charged",
+  ],
+  "rio-flash-5h": [
+    "Comfortable walking shoes",
+    "Sunscreen and hat",
+    "Water bottle",
+    "Camera",
+    "Cash for souvenirs",
+  ],
+  "sunrise-sugarloaf": [
+    "Warm jacket (early morning cold)",
+    "Closed-toe shoes",
+    "Camera with good low-light capability",
+    "Coffee/snacks for energy",
+    "Layers you can remove later",
+  ],
+  "sunset-magic": [
+    "Camera for sunset photos",
+    "Comfortable shoes",
+    "Light jacket for cable car",
+    "Sunglasses",
+    "Arrive early for best spots",
+  ],
+  "sunset-roxy": [
+    "Camera for sunset and nightlife",
+    "Comfortable walking shoes",
+    "Light evening wear",
+    "Cash for drinks/snacks",
+    "ID for venues",
+  ],
+  niteroi: [
+    "Comfortable walking shoes",
+    "Sunscreen and hat",
+    "Camera for architecture",
+    "Light jacket",
+    "Cash for optional stops",
+  ],
+  "sky-high-urban-forest": [
+    "Comfortable hiking shoes",
+    "Insect repellent",
+    "Water bottle (refillable)",
+    "Binoculars for wildlife",
+    "Light rain jacket",
+  ],
+  "future-visions-carnival": [
+    "Comfortable walking shoes",
+    "Camera",
+    "Cash for souvenirs",
+    "Light clothing",
+    "Sunscreen",
+  ],
+  "food-walking": [
+    "Come hungry!",
+    "Comfortable walking shoes",
+    "Light clothing",
+    "Cash for extra tastings",
+    "Appetite for adventure",
+  ],
+  "little-africa": [
+    "Comfortable walking shoes",
+    "Water bottle",
+    "Sunscreen and hat",
+    "Camera",
+    "Respect for sacred sites",
+  ],
+  "historical-walking": [
+    "Comfortable walking shoes essential",
+    "Water bottle",
+    "Sunscreen and hat",
+    "Camera for architecture",
+    "Cash for optional museum visits",
+  ],
+  default: [
+    "Comfortable walking shoes",
+    "Sunscreen and hat",
+    "Water bottle",
+    "Camera",
+    "Cash for extras",
+  ],
+};
+
+const tips = tourTips[tour.id] || tourTips["default"];
+
+// FAQs personalizados por tour (SEO otimizado!)
+const tourFAQs = {
+  "ilha-grande": [
+    {
+      q: "Is Ilha Grande worth visiting from Rio de Janeiro?",
+      a: "Absolutely! Ilha Grande offers pristine beaches and crystal-clear waters just 3 hours from Rio. It's a protected paradise with over 100 beaches, perfect for nature lovers and beach enthusiasts.",
+    },
+    {
+      q: "Do I need to be a strong swimmer for Ilha Grande tours?",
+      a: "No, but basic swimming ability is recommended. We provide life jackets and stay in calm, shallow waters. Your captain will assess conditions and choose the best beaches for your group.",
+    },
+    {
+      q: "Can we visit Lopes Mendes beach?",
+      a: "Yes! Lopes Mendes (voted one of the world's best beaches) is available with our premium package. Note: it requires a 20-minute walk through the jungle, so wear appropriate footwear.",
+    },
+    {
+      q: "What if the weather is bad on tour day?",
+      a: "Tours operate rain or shine, but severe weather may require rescheduling. We monitor conditions and prioritize your safety. Alternative dates or full refunds are provided if we cancel.",
+    },
+  ],
+  "unforgettable-rio": [
+    {
+      q: "Is this tour good for first-time visitors to Rio?",
+      a: "Perfect for first-timers! This comprehensive 8-hour tour covers all of Rio's iconic landmarks plus hidden gems, giving you the complete Rio experience in one day.",
+    },
+    {
+      q: "Do we skip the line at Christ the Redeemer?",
+      a: "Yes! Skip-the-line access is included at both Christ the Redeemer and Sugarloaf Mountain, saving you 1-2 hours of waiting in peak season.",
+    },
+    {
+      q: "Can we customize the tour itinerary?",
+      a: "Absolutely! This is a private tour, so we can adjust timing, add stops, or skip locations based on your interests. Just let your guide know.",
+    },
+    {
+      q: "Is lunch included in the tour price?",
+      a: "Lunch is not included, but we can stop at excellent local restaurants. Your guide will recommend options based on your preferences and budget.",
+    },
+  ],
+  "food-walking": [
+    {
+      q: "How much food is included in the food tour?",
+      a: "Plenty! You'll sample 8-10 different Brazilian specialties including snacks, mains, and desserts. Most people consider this a full meal replacement.",
+    },
+    {
+      q: "Can you accommodate dietary restrictions?",
+      a: "Yes! We can adjust for vegetarian, gluten-free, and most allergies. Please inform us when booking so we can plan appropriate alternatives.",
+    },
+    {
+      q: "How much walking is involved in the food tour?",
+      a: "About 2-3km (1.5-2 miles) at a leisurely pace with frequent food stops. The route is flat and easy for most fitness levels.",
+    },
+    {
+      q: "Do I need to bring money on the food tour?",
+      a: "All tastings are included, but bring cash if you want to purchase extra items, drinks, or take-home goodies from the vendors we visit.",
+    },
+  ],
+  "historical-walking": [
+    {
+      q: "How much walking is on the historical tour?",
+      a: "3.5 hours of easy-paced walking through downtown Rio. The route is mostly flat with occasional steps. Great for all fitness levels.",
+    },
+    {
+      q: "Are museum entrances included?",
+      a: "Museum fees are not included. Most attractions like Selarón Steps and Paço Imperial are free. Optional paid entries will be mentioned by your guide.",
+    },
+    {
+      q: "What makes this different from self-guided walking?",
+      a: "Our expert guides share Rio's hidden history, architectural secrets, and local stories you won't find in guidebooks. We also know the best photo spots!",
+    },
+    {
+      q: "Is this tour suitable for children?",
+      a: "Yes! Kids usually love the colorful Selarón Steps and stories about Rio's history. The pace is relaxed and we can adjust for family groups.",
+    },
+  ],
+  petropolis: [
+    {
+      q: "Why is Petrópolis called the Imperial City?",
+      a: "Petrópolis was the summer residence of Brazilian emperors in the 19th century. The cooler mountain climate provided relief from Rio's heat, and the city preserves magnificent imperial palaces.",
+    },
+    {
+      q: "How cold is Petrópolis compared to Rio?",
+      a: "Petrópolis is 5-10°C (9-18°F) cooler than Rio. In summer it's pleasantly mild; in winter it can get chilly. Always bring a light jacket.",
+    },
+    {
+      q: "How long is the drive to Petrópolis?",
+      a: "About 1.5 hours from Rio through scenic mountain roads. The journey itself is beautiful, with views of the Atlantic rainforest.",
+    },
+    {
+      q: "Is the Imperial Museum worth visiting?",
+      a: "Absolutely! It's one of Brazil's best-preserved imperial palaces with original furniture, crown jewels, and fascinating history. A must-see for history buffs.",
+    },
+  ],
+  "sunrise-sugarloaf": [
+    {
+      q: "Why is sunrise at Sugarloaf special?",
+      a: "You'll witness Rio awakening with golden light hitting Christ the Redeemer, Copacabana, and the bay. Plus, you'll beat the crowds - it's often just you and nature!",
+    },
+    {
+      q: "What time do we need to start?",
+      a: "5:30 AM pickup recommended. Sunrise times vary by season (5:30-6:30 AM), so we adjust pickup accordingly to catch the perfect moment.",
+    },
+    {
+      q: "Is it very cold at sunrise?",
+      a: "Yes! Bring warm layers. Even in summer, early mornings at 400m elevation can be chilly (15-18°C / 59-64°F). It warms up quickly after sunrise.",
+    },
+    {
+      q: "What if it's cloudy?",
+      a: "Clouds can create dramatic photos! If weather is severe (rain/fog), we'll reschedule. But often, clouds clear as sun rises - it's magical.",
+    },
+  ],
+  default: [
+    {
+      q: "What happens if it rains during the tour?",
+      a: "Tours operate rain or shine. Rio's tropical showers are usually brief. We provide flexibility to adjust timing or locations if needed.",
+    },
+    {
+      q: "Can I customize this tour?",
+      a: "Yes! As a private tour, we can adjust the itinerary to match your interests and pace. Just discuss preferences with your guide.",
+    },
+    {
+      q: "Is hotel pickup included?",
+      a: "Yes! Complimentary pickup and drop-off is included anywhere in Rio de Janeiro, including hotels, Airbnbs, airports, and the cruise port.",
+    },
+    {
+      q: "What is your cancellation policy?",
+      a: "Free cancellation up to 24 hours before your tour. Cancel within 24 hours and we charge 50%. No-shows are charged 100%.",
+    },
+  ],
+};
+
+const faqs = tourFAQs[tour.id] || tourFAQs["default"];
+
+// ========================================
+// SEO METADATA & SCHEMAS
+// ========================================
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+
+// 1. Tour SEO metadata
+const seoData = getTourSEO(tour, lang);
+
+// 2. Tour Product Schema
+const tourSchemas = getTourSchema(tour, lang, siteUrl);
+
+// 🆕 2.5 TouristTrip Schema (DIFERENCIAL COMPETITIVO!)
+const touristTripSchema = getTouristTripSchema(tour, lang, siteUrl);
+
+// 3. FAQ Schema (IAs adoram!)
+const faqSchema = getFAQSchema(faqs);
+
+// 4. Breadcrumb Schema
+const tourRoutes = {
+  en: "private-tours",
+  es: "tours-privados",
+  "pt-br": "passeios-privados",
+};
+const tourRoute = tourRoutes[lang] || "private-tours";
+
+// 🆕 Breadcrumb items (para componente visual + schema)
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: t("nav.privateTours"), url: `/${lang}/${tourRoute}` },
+  { name: tour.title, url: `/${lang}/${tourRoute}/${tour.slug}` },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+// 🆕 5. Review Schema (estrelas no Google!)
+const reviewSchema = getReviewSchema(tour, siteUrl, lang);
+
+// 🆕 6. Open Graph tags (redes sociais!)
+const ogTags = getOpenGraphTags(tour, lang, siteUrl);
+
+// 🆕 7. HowTo Schema (Como Reservar - Position Zero!)
+const howToSchema = getHowToSchema(lang, siteUrl);
+
+// Combina todos os schemas
+const pageSchemas = [
+  ...tourSchemas,
+  touristTripSchema, // 🆕 TouristTrip (Google ADORA!)
+  faqSchema,
+  breadcrumbSchema,
+  howToSchema, // 🆕 NOVO
+  ...(reviewSchema || []), // 🆕 Adiciona reviews se existirem
+];
+
+// Título da página
+const pageTitle = `${tour.title} | Be Free Tours`;
+---
+
+<BaseLayout
+  title={seoData.title}
+  description={seoData.description}
+  image={seoData.image}
+  type="product"
+  schema={pageSchemas}
+  ogTags={ogTags}
+>
+  <!-- 🆕 Breadcrumbs Visuais (UX + Google) -->
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <!-- Hero Section -->
+  <section class="tour-hero">
+    <div class="hero-image">
+      <Image
+        src={heroImage}
+        alt={`${tour.title} - Panoramic view of Rio de Janeiro featuring ${tour.highlights[0]}`}
+        width={1920}
+        height={1080}
+        format="webp"
+        quality={85}
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text">
+          <h1 class="hero-title">{tour.title}</h1>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"
+                ></path>
+              </svg>
+              <span>{tour.duration}</span>
+            </div>
+            {
+              fromPrice && (
+                <div class="meta-item hero-price">
+                  <span class="price-label">{t("tour.from")}</span>
+                  <span class="price-value">US$ {fromPrice}</span>
+                </div>
+              )
+            }
+          </div>
+          <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+            {t("tour.bookThisTour")}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="tour-overview">
+    <div class="container">
+      <h2 class="section-title">{t("tour.aboutExperience")}</h2>
+      <p class="overview-text">{tour.fullDescription}</p>
+    </div>
+  </section>
+
+  <!-- Accordion Section -->
+  <section class="tour-details">
+    <div class="container">
+      <div class="accordion">
+        <!-- Highlights -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <span>{t("tour.highlights")}</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <ul class="highlights-list">
+              {
+                tour.highlights.map((highlight) => (
+                  <li class="highlight-item">
+                    <svg
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    </svg>
+                    <span>{highlight}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- Included/Not Included -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"
+                ></path>
+              </svg>
+              <span>{t("tour.whatsIncluded")}</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="included-grid">
+              <div class="included-column">
+                <h4 class="included-title included-yes">
+                  ✓ {t("tour.included")}
+                </h4>
+                <ul class="included-list">
+                  {
+                    tour.included.map((item) => (
+                      <li class="included-item">
+                        <svg
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+              <div class="included-column">
+                <h4 class="included-title included-no">
+                  ✕ {t("tour.notIncluded")}
+                </h4>
+                <ul class="included-list">
+                  {
+                    tour.notIncluded.map((item) => (
+                      <li class="included-item not-included">
+                        <svg
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing & Payment -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"
+                ></path>
+              </svg>
+              <span>{t("tour.pricingPayment")}</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="pricing-content">
+              {
+                tour.pricing.priceTable && (
+                  <div class="pricing-table-wrapper">
+                    <h4>{t("tour.standardPackage")}</h4>
+                    <table class="pricing-table">
+                      <thead>
+                        <tr>
+                          <th>{t("tour.groupSize")}</th>
+                          <th>{t("tour.price")}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(tour.pricing.priceTable).map(
+                          ([size, price]) => (
+                            <tr>
+                              <td>{size} {t("tour.people")}</td>
+                              <td>US$ {price}</td>
+                            </tr>
+                          )
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                )
+              }
+
+              {
+                tour.pricing.perPerson && (
+                  <div class="pricing-table-wrapper">
+                    <h4>{t("tour.standardPackage")}</h4>
+                    <table class="pricing-table">
+                      <thead>
+                        <tr>
+                          <th>{t("tour.groupSize")}</th>
+                          <th>{t("tour.price")}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{t("tour.perPerson")}</td>
+                          <td>US$ {tour.pricing.perPerson}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                )
+              }
+
+              {
+                tour.pricing.standard && (
+                  <div class="pricing-table-wrapper">
+                    <h4>{t("tour.standardPackage")}</h4>
+                    <table class="pricing-table">
+                      <thead>
+                        <tr>
+                          <th>{t("tour.groupSize")}</th>
+                          <th>{t("tour.price")}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(tour.pricing.standard).map(
+                          ([size, price]) => (
+                            <tr>
+                              <td>
+                                {size} {t("tour.people")}
+                              </td>
+                              <td>US$ {price}</td>
+                            </tr>
+                          )
+                        )}
+                      </tbody>
+                    </table>
+
+                    {tour.pricing.lopesMendes && (
+                      <>
+                        <h4 style="margin-top: 1.5rem;">
+                          {t("tour.premiumPackage")} (includes Lopes Mendes)
+                        </h4>
+                        <table class="pricing-table">
+                          <thead>
+                            <tr>
+                              <th>{t("tour.groupSize")}</th>
+                              <th>{t("tour.price")}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Object.entries(tour.pricing.lopesMendes).map(
+                              ([size, price]) => (
+                                <tr>
+                                  <td>
+                                    {size} {t("tour.people")}
+                                  </td>
+                                  <td>US$ {price}</td>
+                                </tr>
+                              )
+                            )}
+                          </tbody>
+                        </table>
+                      </>
+                    )}
+                  </div>
+                )
+              }
+
+              <div class="payment-policies">
+                <h4>Condiciones de pago</h4>
+                <ul class="policy-list">
+                  <li>
+                    <strong>Cómo pagar:</strong>
+                    Recibirás un enlace de pago seguro por email después de confirmar los detalles y cerrar el itinerario.
+                  </li>
+                  <li>
+                    <strong>Cuándo pagar:</strong>
+                    El pago total se requiere al menos 72 horas (3 días) antes de la fecha del tour.
+                  </li>
+                  <li>
+                    <strong>¿Reserva de último minuto?</strong>
+                    Las reservas con menos de 72 horas requieren pago inmediato para confirmar. Enviaremos el enlace en el momento.
+                  </li>
+                  <li>
+                    <strong>Métodos de pago:</strong>
+                    Tarjetas de crédito y débito, procesadas en un entorno seguro (Stripe).
+                  </li>
+                  <li>
+                    <strong>¡Importante!</strong>
+                    Reservas sin pago se liberan automáticamente 72 horas antes del tour. Recibirás recordatorios por email y WhatsApp.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="payment-policies">
+                <h4>Política de cancelación</h4>
+                <ul class="policy-list">
+                  <li>
+                    <strong>Cancelación flexible:</strong>
+                    Cancela sin costo hasta 72 horas (3 días) antes del inicio.
+                  </li>
+                  <li>
+                    <strong>Cómo cancelar o modificar:</strong>
+                    Contáctanos por email o WhatsApp lo antes posible. Con gusto ajustamos o reprogramamos.
+                  </li>
+                  <li>
+                    <strong>Cancelaciones dentro de 72 horas:</strong>
+                    Lamentablemente, cancelaciones con menos de 3 días no son reembolsables.
+                  </li>
+                  <li>
+                    <strong>Condiciones climáticas:</strong>
+                    Si el clima severo hace el tour inseguro, ofrecemos reembolso total o reprogramación sin costo.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11 7h2v2h-2V7zm0 4h2v6h-2v-6zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                ></path>
+              </svg>
+              <span>{t("tour.goodToKnow")}</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <ul class="tips-list">
+              {
+                tips.map((tip) => (
+                  <li class="tip-item">
+                    <svg
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    </svg>
+                    <span>{tip}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQs -->
+        <div class="accordion-item">
+          <button class="accordion-header" data-accordion-trigger>
+            <div class="accordion-title">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                ></path>
+              </svg>
+              <span>{t("tour.faqs")}</span>
+            </div>
+            <svg
+              class="accordion-icon"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+              ></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-list">
+              {
+                faqs.map((faq) => (
+                  <div class="faq-item">
+                    <h4 class="faq-question">{faq.q}</h4>
+                    <p class="faq-answer">{faq.a}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Tours -->
+  {
+    relatedTours.length > 0 && (
+      <section class="related-tours">
+        <div class="container">
+          <h2 class="section-title">{t("tour.relatedTours")}</h2>
+          <div class="related-grid grid grid-3">
+            {relatedTours.map((relatedTour) => (
+              <TourCard tour={relatedTour} lang={lang} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- CTA Final -->
+  <section class="tour-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">{t("tour.readyToBook")}</h2>
+        <p class="cta-subtitle">{t("tour.readyToBookSubtitle")}</p>
+        <div class="cta-buttons">
+          <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+            {t("tour.bookThisTour")}
+          </a>
+          <a
+            href={`/${lang}/private-tours`}
+            class="btn btn-outline-secondary btn-lg"
+          >
+            {t("tour.viewAllTours")}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .tour-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      transparent 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    color: var(--color-text-inverse);
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .hero-title {
+    color: var(--color-text-inverse);
+    margin-bottom: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .hero-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
+  }
+
+  .price-label {
+    font-size: var(--font-size-small);
+    color: var(--color-text-inverse);
+    opacity: 0.9;
+  }
+
+  .price-value {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-inverse);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Overview */
+  .tour-overview {
+    padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+
+  .overview-text {
+    max-width: 800px;
+    font-size: var(--font-size-h6);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-light);
+  }
+
+  /* Accordion */
+  .tour-details {
+    padding: 0 0 var(--space-3xl);
+  }
+
+  .accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .accordion-item {
+    background-color: var(--color-bg-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .accordion-header:hover {
+    background-color: var(--color-bg-soft);
+  }
+
+  .section-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  .accordion-icon {
+    color: var(--color-text-inverse);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: var(--color-text);
+  }
+
+  .accordion-item.active .accordion-icon {
+    color: var(--color-text-inverse);
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 3000px;
+  }
+
+  .accordion-content > * {
+    padding: 0 var(--space-lg) var(--space-lg);
+  }
+
+  /* Highlights */
+  .highlights-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .highlight-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-text-inverse);
+  }
+
+  /* Included Grid */
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .included-title {
+    font-size: var(--font-size-h6);
+    margin-bottom: var(--space-md);
+  }
+
+  .included-yes {
+    color: var(--color-success);
+  }
+
+  .included-no {
+    color: var(--color-error);
+  }
+
+  .included-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--font-size-body);
+  }
+
+  .included-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .included-item:not(.not-included) svg {
+    color: var(--color-success);
+  }
+
+  .included-item.not-included svg {
+    color: var(--color-error);
+  }
+
+  /* Pricing */
+  .pricing-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .price-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-xl);
+    background-color: var(--color-bg-soft);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .price-highlight .price-label {
+    font-size: var(--font-size-body);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-md);
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pricing-table th {
+    background-color: var(--color-bg-soft);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .pricing-table td:last-child {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-inverse);
+  }
+
+  .payment-policies h4 {
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .policy-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .policy-list li {
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Tips */
+  .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .tip-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-text-inverse);
+  }
+
+  /* FAQs */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .faq-item {
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .faq-question {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .faq-answer {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Related Tours */
+  .related-tours {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-soft);
+  }
+
+  .related-grid {
+    margin-top: var(--space-2xl);
+  }
+
+  /* CTA */
+  .tour-cta {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-dark) 100%
+    );
+    color: var(--color-text-inverse);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .cta-title {
+    color: var(--color-text-inverse);
+    margin: 0;
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-h5);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .tour-hero {
+      min-height: 50vh;
+    }
+
+    .hero-content {
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .hero-meta {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .tour-overview {
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .tour-details {
+      padding: 0 0 var(--space-2xl);
+    }
+
+    .section-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .accordion-title {
+      font-size: var(--font-size-body);
+    }
+
+    .included-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-tours {
+      padding: var(--space-2xl) 0;
+    }
+
+    .tour-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Accordion functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(
+      "[data-accordion-trigger]"
+    );
+
+    accordionHeaders.forEach((header) => {
+      header.addEventListener("click", () => {
+        const accordionItem = header.closest(".accordion-item");
+        const isActive = accordionItem.classList.contains("active");
+
+        // Close all accordion items
+        document.querySelectorAll(".accordion-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          accordionItem.classList.add("active");
+        }
+      });
+    });
+
+    // Open first accordion item by default
+    const firstItem = document.querySelector(".accordion-item");
+    if (firstItem) {
+      firstItem.classList.add("active");
+    }
+  });
+</script>

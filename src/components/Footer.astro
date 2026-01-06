@@ -1,0 +1,364 @@
+---
+// @ts-nocheck
+/* ================================
+   BE FREE TOURS - Footer Component
+   Rodapé com links, contato e informações
+   CORRIGIDO: Detecta lang automaticamente
+   ================================ */
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+// CORREÇÃO: Detecta idioma da URL automaticamente (não espera prop)
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const currentYear = new Date().getFullYear();
+
+// Mapeamento de rotas por idioma
+const routes = {
+  en: {
+    home: "/",
+    privateTours: "/private-tours",
+    blog: "/blog",
+    about: "/about",
+    contact: "/contact",
+  },
+  es: {
+    home: "/",
+    privateTours: "/tours-privados",
+    blog: "/blog",
+    about: "/sobre",
+    contact: "/contato",
+  },
+  "pt-br": {
+    home: "/",
+    privateTours: "/passeios-privados",
+    blog: "/blog",
+    about: "/sobre",
+    contact: "/contato",
+  },
+};
+
+const r = routes[lang];
+
+// Links de navegação
+const navLinks = [
+  { href: `/${lang}${r.home}`, label: t("nav.home") },
+  { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
+  { href: `/${lang}${r.blog}`, label: t("nav.blog") },
+  { href: `/${lang}${r.about}`, label: t("nav.about") },
+  { href: `/${lang}${r.contact}`, label: t("nav.contact") },
+];
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Coluna 1: Logo + Tagline + TripAdvisor -->
+      <div class="footer-col">
+        <a href={`/${lang}`} class="footer-logo">
+          <img 
+            src="/images/logo/logo.svg"
+            alt="Be Free Tours" 
+            width="40" 
+            height="40"
+            class="footer-logo-image"
+          />
+          <span class="logo-subtext">Be Free Tours</span>
+        </a>
+        <p class="footer-tagline">{t("footer.tagline")}</p>
+
+        <a
+          href="https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tripadvisor-link"
+        >
+          <img src="/images/tripadvisor-logo.png" alt="TripAdvisor" class="tripadvisor-logo" />
+          <span>Check Our Reviews</span>
+        </a>
+      </div>
+
+      <!-- Coluna 2: Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-title">{t("footer.links")}</h3>
+        <ul class="footer-links">
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Contact -->
+      <div class="footer-col">
+        <h3 class="footer-title">{t("footer.contact")}</h3>
+        <ul class="footer-contact">
+          <li>
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              ></path>
+            </svg>
+            <a href="mailto:contact@befreetours.com.br">
+              contact@befreetours.com.br
+            </a>
+          </li>
+          <li>
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              ></path>
+            </svg>
+            <a
+              href="https://wa.me/5521979271637"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +55 21 97927-1637
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {currentYear} Be Free Tours. {t("footer.rights")}.
+      </p>
+      <p class="footer-credit">
+        Built by <a href="https://midnightweb.com.br" target="_blank" rel="noopener noreferrer">Midnight Web</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    padding: var(--space-3xl) 0 var(--space-xl);
+    margin-top: auto;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Logo */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  .footer-logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: transparent !important;
+  }
+
+  .footer-logo .logo-subtext {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+  }
+
+  .footer-tagline {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* TripAdvisor Link */
+  .tripadvisor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: fit-content;
+  }
+
+  .tripadvisor-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .tripadvisor-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .tripadvisor-link span {
+    color: var(--color-text);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Titles */
+  .footer-title {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  /* Links */
+  .footer-links,
+  .footer-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer-links a,
+  .footer-contact a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer-contact svg {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer-copyright {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    margin: 0;
+  }
+
+  .footer-credit {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    margin: 0;
+  }
+
+  .footer-credit a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-credit a:hover {
+    color: var(--color-accent);
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .footer {
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+
+  /* Tema claro: Footer permanece ESCURO (âncora visual) */
+  :global(html.light) .footer {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+
+  :global(html.light) .footer-logo .logo-subtext {
+    color: #f8fafc;
+  }
+
+  :global(html.light) .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(html.light) .footer-title {
+    color: #f8fafc;
+  }
+
+  :global(html.light) .footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(html.light) .footer-links a:hover {
+    color: var(--color-accent);
+  }
+
+  :global(html.light) .footer-contact-item {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(html.light) .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :global(html.light) .footer-copyright {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  :global(html.light) .footer-credit {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  :global(html.light) .footer-credit a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(html.light) .tripadvisor-link {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  :global(html.light) .tripadvisor-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  :global(html.light) .tripadvisor-link span {
+    color: rgba(255, 255, 255, 0.9);
+  }
+</style>

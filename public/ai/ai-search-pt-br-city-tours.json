@@ -1,0 +1,164 @@
+{
+  "language": "pt-br",
+  "category": "city_tours",
+  "label": "Passeios pela cidade",
+  "description": "Passeios privados pelos ícones do Rio, cultura e bairros com acesso rápido.",
+  "faqs": [
+    {
+      "question": "Os passeios pela cidade são privados?",
+      "answer": "Sim. Todos os tours são privados e adaptados ao seu grupo."
+    },
+    {
+      "question": "Incluem acesso sem filas?",
+      "answer": "Sim para atrações-chave como o Pão de Açúcar e horários estratégicos para o Cristo."
+    }
+  ],
+  "tours": [
+    {
+      "id": "unforgettable-rio",
+      "slug": "rio-essencial",
+      "name": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
+      "duration": "8 horas",
+      "price_from": 415,
+      "description": "Conheça os pontos turísticos mais icônicos do Rio em um passeio privado completo, incluindo Cristo Redentor e Pão de Açúcar com acesso prioritário.",
+      "highlights": [
+        "Cristo Redentor com acesso prioritário",
+        "Pão de Açúcar com ingressos fura-fila",
+        "Bairro boêmio de Santa Teresa",
+        "Escadaria Selarón",
+        "Real Gabinete Português de Leitura",
+        "Catedral Metropolitana"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial"
+    },
+    {
+      "id": "rio-flash-5h",
+      "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
+      "name": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
+      "duration": "5 horas",
+      "price_from": 410,
+      "description": "Perfeito para viajantes com tempo limitado - visite os dois pontos turísticos mais icônicos do Rio em apenas 5 horas.",
+      "highlights": [
+        "Cristo Redentor",
+        "Bondinho do Pão de Açúcar",
+        "Acesso fura-fila"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar"
+    },
+    {
+      "id": "sunrise-sugarloaf",
+      "slug": "nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
+      "name": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
+      "duration": "6 horas",
+      "price_from": 580,
+      "description": "Experimente o nascer do sol mais impressionante do Rio do Pão de Açúcar, seguido de acesso matinal ao Cristo Redentor.",
+      "highlights": [
+        "Nascer do sol exclusivo do Pão de Açúcar",
+        "Visita matinal cedo ao Cristo Redentor",
+        "Oportunidades de fotografia profissional"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado"
+    },
+    {
+      "id": "sunset-magic",
+      "slug": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
+      "name": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
+      "duration": "6 horas",
+      "price_from": 430,
+      "description": "Experimente a beleza da hora dourada do Rio com visitas à tarde ao Cristo Redentor e um pôr do sol perfeitamente programado.",
+      "highlights": [
+        "Cristo Redentor com luz dourada",
+        "Pôr do sol do Pão de Açúcar",
+        "Vistas panorâmicas de praias",
+        "Orientação fotográfica profissional"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar"
+    },
+    {
+      "id": "sunset-roxy",
+      "slug": "por-do-sol-cultura-roxy",
+      "name": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
+      "duration": "9 horas",
+      "price_from": 680,
+      "description": "Combine o pôr do sol do Rio do Pão de Açúcar com uma noite inesquecível no show jantar cultural premier do Brasil.",
+      "highlights": [
+        "Pôr do sol do Pão de Açúcar",
+        "Show Jantar Roxy Premium",
+        "Jantar de três pratos incluído",
+        "Apresentação cultural"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy"
+    },
+    {
+      "id": "sky-high-urban-forest",
+      "slug": "pao-acucar-floresta-tijuca-jardim-botanico-passeio",
+      "name": "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
+      "duration": "8 horas",
+      "price_from": 445,
+      "description": "Combine as vistas impressionantes do Pão de Açúcar com a beleza exuberante da Floresta da Tijuca e do Jardim Botânico.",
+      "highlights": [
+        "Pão de Açúcar",
+        "Floresta da Tijuca - maior floresta urbana",
+        "Jardim Botânico",
+        "Parque Lage"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio"
+    },
+    {
+      "id": "niteroi",
+      "slug": "niteroi-museo-arte-contemporanea-passeio-privado",
+      "name": "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
+      "duration": "8 horas",
+      "price_from": 335,
+      "description": "Cruze a Baía de Guanabara para descobrir a obra-prima arquitetônica do Museu MAC de Niterói e fortes militares históricos.",
+      "highlights": [
+        "MAC Niterói de Oscar Niemeyer",
+        "Fortes militares históricos",
+        "Vistas espetaculares do horizonte do Rio",
+        "Zona de almoço à beira-mar"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado"
+    },
+    {
+      "id": "future-visions-carnival",
+      "slug": "museu-amanha-experiencia-carnaval-rio-passeio",
+      "name": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
+      "duration": "7 horas",
+      "price_from": 445,
+      "description": "Explore o inovador Museu do Amanhã do Rio, o maior aquário da América do Sul, e vá aos bastidores do Carnaval.",
+      "highlights": [
+        "Museu do Amanhã",
+        "Aquário AquaRio",
+        "Museu Histórico Nacional",
+        "Escola de samba do Carnaval nos bastidores"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio"
+    },
+    {
+      "id": "custom-tour",
+      "slug": "passeio-personalizado",
+      "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
+      "duration": "Flexível (4-10+ horas)",
+      "price_from": 0,
+      "description": "Não encontrou exatamente o que procura? Crie sua própria experiência no Rio. Conte-nos seus interesses e criaremos um roteiro personalizado só para você.",
+      "highlights": [
+        "Roteiro 100% personalizável de acordo com seus interesses",
+        "Guia local experiente que se adapta ao seu ritmo e estilo",
+        "Combine quaisquer atrações, bairros ou experiências",
+        "Duração flexível de meio dia a aventuras de vários dias",
+        "Perfeito para ocasiões especiais, interesses únicos ou necessidades de acessibilidade",
+        "Cuidamos de toda a logística, ingressos e reservas"
+      ],
+      "best_for": [],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado"
+    }
+  ]
+}
