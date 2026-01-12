@@ -119,6 +119,67 @@
   Redirect 301 /rio-world-capital-of-architecture-by-unesco/ /en/blog
   Redirect 301 /the-plastic-arts-and-brazil-part-1-jean-baptiste-debret-and-brazil/ /en/blog
 
+  # ================================
+  # CORREÇÃO DE ERROS 404 (VERSÃO SEGURA/GENÉRICA)
+  # Redireciona para categorias em vez de produtos específicos
+  # para evitar erros de página não encontrada.
+  # ================================
+
+  # 1. Limpeza de URLs "Gaguejando" do Blog -> Manda para a capa do Blog
+  RedirectMatch 301 ^/pt-br/blog/pt-br/(.*)$ /pt-br/blog
+  RedirectMatch 301 ^/es/blog/es/(.*)$ /es/blog
+  RedirectMatch 301 ^/en/blog/blog/(.*)$ /en/blog
+
+  # 2. Erros de "Tours Privados" com idioma misturado -> Manda para a lista de Tours do idioma correto
+  # Se o link começa com /en/ mas tem erro, vai para a lista de tours em Inglês
+  RedirectMatch 301 ^/en/tours-privados/(.*)$ /en/private-tours
+  RedirectMatch 301 ^/pt-br/tours-privados/(.*)$ /pt-br/passeios-privados
+  # O espanhol tinha um erro específico de digitação na pasta "tours"
+  RedirectMatch 301 ^/es/tours/(.*)$ /es/tours-privados
+
+  # 3. Erros de Digitação Antigos (Typo "rio-rio")
+  Redirect 301 /home/private-tours-rio/rio-rio-city-tours/half-day-highlights/ /en/private-tours
+  Redirect 301 /home/private-tours-rio/rio-rio-city-tours/christ-redeemer-sugarloaf-tour/ /en/private-tours
+
+  # 4. URLs Antigas da Raiz (Inglês) -> Manda para a lista de Tours em Inglês
+  Redirect 301 /sunrise-at-sugar-loaf-and-christ-the-redeemer /en/private-tours
+  Redirect 301 /sunrise-at-sugar-loaf-and-christ-the-redeemer/ /en/private-tours
+  Redirect 301 /private-tours-half-day-rio /en/private-tours
+  Redirect 301 /private-tours-half-day-rio/ /en/private-tours
+  Redirect 301 /private-tour-rio-de-janeiro /en/private-tours
+  Redirect 301 /private-tour-rio-de-janeiro/ /en/private-tours
+  Redirect 301 /walking-rio /en/private-tours
+  Redirect 301 /rio-free-walking-tour-is-back/ /en/private-tours
+  Redirect 301 /private-tours-custom-rio /en/private-tours
+  Redirect 301 /design-your-tour/ /en/private-tours
+  Redirect 301 /explore-rio-your-way/ /en/private-tours
+  Redirect 301 /private-tours-walking-rio /en/private-tours
+  Redirect 301 /private-tours-walking-rio/ /en/private-tours
+  Redirect 301 /private-tours-petropolis/ /en/private-tours
+  Redirect 301 /private-tours-full-day-rio-highlights /en/private-tours
+  Redirect 301 /private-tours-full-day-rio-highlights/ /en/private-tours
+  Redirect 301 /feira-de-sao-cristovao/ /en/blog
+
+  # 5. Institucionais (Esses dificilmente mudam, mantive específicos)
+  Redirect 301 /en/contato/ /en/contact
+  Redirect 301 /es/contacto /es/contato
+  Redirect 301 /pt-br/contact /pt-br/contato
+  Redirect 301 /en/sobre/ /en/about
+  Redirect 301 /privacy-policy/ /en/privacy-policy
+  Redirect 301 /cookie-policy-us/ /en/cookie-policy
+
+  # 6. Categorias e Listagens Genéricas
+  Redirect 301 /es/passeios-privados/passeio-personalizado/ /es/tours-privados
+  Redirect 301 /category/article/ /en/blog
+  Redirect 301 /pt-br/private-tours /pt-br/passeios-privados
+  Redirect 301 /pt-br/private-tours/ /pt-br/passeios-privados
+  Redirect 301 /es/private-tours /es/tours-privados
+  Redirect 301 /es/private-tours/ /es/tours-privados
+  # Redireciona produtos antigos para a categoria geral
+  Redirect 301 /pt-br/private-tours/essential-rio/ /pt-br/passeios-privados
+  Redirect 301 /es/private-tours/essential-rio/ /es/tours-privados
+  Redirect 301 /es/private-tours/first-light-sunrise/ /es/tours-privados
+
 </IfModule>
 
 # Ensure caches respect language-based redirect at root

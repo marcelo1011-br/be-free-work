@@ -1,0 +1,238 @@
+---
+/* ================================
+   BE FREE TOURS - Cookie Policy
+   Política de Cookies
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const lang = "en";
+const t = useTranslations(lang);
+
+// SEO
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const title = "Cookie Policy | Be Free Tours";
+const description = "Cookie Policy for Be Free Tours - Learn about the cookies we use and how you can manage them.";
+
+// Breadcrumb
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: "Cookie Policy", url: `/${lang}/cookie-policy` },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Breadcrumbs -->
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <!-- Hero Section -->
+  <section class="policy-hero">
+    <div class="container">
+      <h1 class="hero-title">Cookie Policy</h1>
+      <p class="hero-subtitle">Last updated: January 2026</p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="policy-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <article class="policy-text">
+          <h2>1. What Are Cookies?</h2>
+          <p>
+            Cookies are small text files that are placed on your device when you visit our website.
+            They help us provide you with a better browsing experience and allow certain features
+            to work properly.
+          </p>
+
+          <h2>2. Types of Cookies We Use</h2>
+
+          <h3>Essential Cookies</h3>
+          <p>
+            These cookies are necessary for the website to function and cannot be disabled.
+            They include:
+          </p>
+          <ul>
+            <li>Session cookies for navigation</li>
+            <li>Security cookies for protection</li>
+            <li>Load balancing cookies</li>
+          </ul>
+
+          <h3>Performance Cookies</h3>
+          <p>
+            These cookies help us understand how visitors interact with our website by collecting
+            anonymous information:
+          </p>
+          <ul>
+            <li>Google Analytics for traffic analysis</li>
+            <li>Page performance monitoring</li>
+            <li>Error tracking</li>
+          </ul>
+
+          <h3>Functionality Cookies</h3>
+          <p>
+            These cookies remember your preferences and choices:
+          </p>
+          <ul>
+            <li>Language preferences</li>
+            <li>Region selection</li>
+            <li>Accessibility settings</li>
+          </ul>
+
+          <h2>3. Third-Party Cookies</h2>
+          <p>
+            We use third-party services that may set their own cookies:
+          </p>
+          <ul>
+            <li><strong>Google Analytics:</strong> Web analytics service</li>
+            <li><strong>WhatsApp:</strong> Messaging integration</li>
+            <li><strong>Payment Processors:</strong> Secure payment handling</li>
+          </ul>
+
+          <h2>4. Managing Cookies</h2>
+          <p>
+            You can control and manage cookies through your browser settings. Most browsers
+            allow you to:
+          </p>
+          <ul>
+            <li>View cookies stored on your device</li>
+            <li>Delete existing cookies</li>
+            <li>Block cookies from specific websites</li>
+            <li>Block all cookies</li>
+          </ul>
+          <p>
+            Please note that disabling cookies may affect the functionality of our website.
+          </p>
+
+          <h2>5. Cookie Duration</h2>
+          <p>Cookies may be:</p>
+          <ul>
+            <li><strong>Session cookies:</strong> Deleted when you close your browser</li>
+            <li><strong>Persistent cookies:</strong> Remain on your device for a set period or until manually deleted</li>
+          </ul>
+
+          <h2>6. Updates to This Policy</h2>
+          <p>
+            We may update this Cookie Policy from time to time. Any changes will be posted on
+            this page with an updated revision date.
+          </p>
+
+          <h2>7. Contact Us</h2>
+          <p>
+            If you have any questions about our use of cookies, please contact us at:
+          </p>
+          <p>
+            Email: <a href="mailto:contact@befreetours.com.br">contact@befreetours.com.br</a><br />
+            Phone: <a href="tel:+5521979271637">+55 21 97927-1637</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .policy-hero {
+    --policy-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    padding: calc(var(--space-3xl) + var(--policy-hero-offset)) 0 var(--space-2xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    text-align: center;
+  }
+
+  .hero-title {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-body);
+    color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
+  }
+
+  /* Content Section */
+  .policy-content {
+    padding: var(--space-3xl) 0;
+  }
+
+  .content-wrapper {
+    max-width: clamp(40rem, 80vw, 50rem);
+    margin: 0 auto;
+  }
+
+  .policy-text {
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .policy-text h2 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .policy-text h2:first-child {
+    margin-top: 0;
+  }
+
+  .policy-text h3 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .policy-text p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-md);
+  }
+
+  .policy-text ul {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .policy-text li {
+    margin-bottom: var(--space-xs);
+  }
+
+  .policy-text a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .policy-text a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .policy-hero {
+      padding: calc(var(--space-2xl) + var(--policy-hero-offset)) 0 var(--space-xl);
+    }
+
+    .policy-content {
+      padding: var(--space-2xl) 0;
+    }
+
+    .policy-text {
+      padding: var(--space-xl);
+    }
+  }
+</style>

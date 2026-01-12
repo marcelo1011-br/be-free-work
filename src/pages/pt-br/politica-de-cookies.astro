@@ -1,0 +1,91 @@
+---
+/* ================================
+   BE FREE TOURS - Política de Cookies
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const lang = "pt-br";
+const t = useTranslations(lang);
+
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const title = "Política de Cookies | Be Free Tours";
+const description = "Política de Cookies da Be Free Tours - Saiba sobre os cookies que usamos e como você pode gerenciá-los.";
+
+const breadcrumbItems = [
+  { name: "Início", url: `/${lang}` },
+  { name: "Política de Cookies", url: `/${lang}/politica-de-cookies` },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <section class="policy-hero">
+    <div class="container">
+      <h1 class="hero-title">Política de Cookies</h1>
+      <p class="hero-subtitle">Última atualização: Janeiro 2026</p>
+    </div>
+  </section>
+
+  <section class="policy-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <article class="policy-text">
+          <h2>1. O Que São Cookies?</h2>
+          <p>
+            Cookies são pequenos arquivos de texto colocados em seu dispositivo quando você visita nosso site.
+            Eles nos ajudam a fornecer uma melhor experiência de navegação e permitem que certos recursos funcionem corretamente.
+          </p>
+
+          <h2>2. Tipos de Cookies que Usamos</h2>
+          <h3>Cookies Essenciais</h3>
+          <p>Estes cookies são necessários para o funcionamento do site:</p>
+          <ul>
+            <li>Cookies de sessão para navegação</li>
+            <li>Cookies de segurança para proteção</li>
+            <li>Cookies de balanceamento de carga</li>
+          </ul>
+
+          <h3>Cookies de Desempenho</h3>
+          <p>Estes cookies nos ajudam a entender como os visitantes interagem com nosso site:</p>
+          <ul>
+            <li>Google Analytics para análise de tráfego</li>
+            <li>Monitoramento de desempenho de página</li>
+            <li>Rastreamento de erros</li>
+          </ul>
+
+          <h2>3. Gerenciamento de Cookies</h2>
+          <p>Você pode controlar e gerenciar cookies através das configurações do seu navegador.</p>
+
+          <h2>4. Entre em Contato</h2>
+          <p>Se você tiver alguma dúvida sobre nosso uso de cookies, entre em contato:</p>
+          <p>
+            Email: <a href="mailto:contact@befreetours.com.br">contact@befreetours.com.br</a><br />
+            Telefone: <a href="tel:+5521979271637">+55 21 97927-1637</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .policy-hero { --policy-hero-offset: clamp(2rem, 6vw, 2.5rem); padding: calc(var(--space-3xl) + var(--policy-hero-offset)) 0 var(--space-2xl); background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-primary) 50%, var(--color-bg-dark) 100%); text-align: center; }
+  .hero-title { color: var(--color-text-inverse); margin-bottom: var(--space-sm); }
+  .hero-subtitle { font-size: var(--font-size-body); color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent); }
+  .policy-content { padding: var(--space-3xl) 0; }
+  .content-wrapper { max-width: clamp(40rem, 80vw, 50rem); margin: 0 auto; }
+  .policy-text { background: var(--glass-bg); border: var(--border-width-hairline) solid var(--glass-border); border-radius: var(--radius-lg); padding: var(--space-2xl); box-shadow: var(--glass-shadow); }
+  .policy-text h2 { font-size: var(--font-size-h4); font-weight: var(--font-weight-bold); color: var(--color-text); margin-top: var(--space-xl); margin-bottom: var(--space-md); }
+  .policy-text h2:first-child { margin-top: 0; }
+  .policy-text h3 { font-size: var(--font-size-h5); font-weight: var(--font-weight-semibold); color: var(--color-text); margin-top: var(--space-lg); margin-bottom: var(--space-sm); }
+  .policy-text p { color: var(--color-text-light); line-height: var(--line-height-relaxed); margin-bottom: var(--space-md); }
+  .policy-text ul { color: var(--color-text-light); line-height: var(--line-height-relaxed); margin-bottom: var(--space-md); padding-left: var(--space-lg); }
+  .policy-text li { margin-bottom: var(--space-xs); }
+  .policy-text a { color: var(--color-accent); text-decoration: underline; }
+  .policy-text a:hover { color: var(--color-primary); }
+  @media (max-width: 768px) { .policy-hero { padding: calc(var(--space-2xl) + var(--policy-hero-offset)) 0 var(--space-xl); } .policy-content { padding: var(--space-2xl) 0; } .policy-text { padding: var(--space-xl); } }
+</style>

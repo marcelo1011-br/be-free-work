@@ -1,0 +1,119 @@
+---
+/* ================================
+   BE FREE TOURS - Política de Privacidade
+   ================================ */
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const lang = "pt-br";
+const t = useTranslations(lang);
+
+const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const title = "Política de Privacidade | Be Free Tours";
+const description = "Política de Privacidade da Be Free Tours - Saiba como coletamos, usamos e protegemos suas informações pessoais.";
+
+const breadcrumbItems = [
+  { name: "Início", url: `/${lang}` },
+  { name: "Política de Privacidade", url: `/${lang}/politica-de-privacidade` },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <section class="policy-hero">
+    <div class="container">
+      <h1 class="hero-title">Política de Privacidade</h1>
+      <p class="hero-subtitle">Última atualização: Janeiro 2026</p>
+    </div>
+  </section>
+
+  <section class="policy-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <article class="policy-text">
+          <h2>1. Informações que Coletamos</h2>
+          <p>
+            Coletamos informações que você nos fornece diretamente quando reserva um passeio,
+            entra em contato conosco ou usa nosso site. Isso pode incluir:
+          </p>
+          <ul>
+            <li>Nome e informações de contato (e-mail, telefone)</li>
+            <li>Informações de pagamento e faturamento</li>
+            <li>Preferências de viagem e requisitos especiais</li>
+            <li>Histórico de comunicação com nossa equipe</li>
+          </ul>
+
+          <h2>2. Como Usamos Suas Informações</h2>
+          <p>Usamos as informações que coletamos para:</p>
+          <ul>
+            <li>Processar e confirmar suas reservas de passeios</li>
+            <li>Comunicar com você sobre seus passeios</li>
+            <li>Melhorar nossos serviços e experiência do cliente</li>
+            <li>Enviar materiais promocionais (com seu consentimento)</li>
+            <li>Cumprir obrigações legais</li>
+          </ul>
+
+          <h2>3. Compartilhamento de Informações</h2>
+          <p>
+            Não vendemos suas informações pessoais. Podemos compartilhar suas informações com:
+          </p>
+          <ul>
+            <li>Guias turísticos e parceiros necessários para fornecer seu passeio</li>
+            <li>Processadores de pagamento para completar transações</li>
+            <li>Autoridades legais quando exigido por lei</li>
+          </ul>
+
+          <h2>4. Segurança de Dados</h2>
+          <p>
+            Implementamos medidas de segurança apropriadas para proteger suas informações pessoais
+            contra acesso não autorizado, alteração, divulgação ou destruição.
+          </p>
+
+          <h2>5. Seus Direitos</h2>
+          <p>Você tem o direito de:</p>
+          <ul>
+            <li>Acessar seus dados pessoais</li>
+            <li>Solicitar correção de dados imprecisos</li>
+            <li>Solicitar exclusão de seus dados</li>
+            <li>Optar por não receber comunicações de marketing</li>
+          </ul>
+
+          <h2>6. Cookies</h2>
+          <p>
+            Usamos cookies para melhorar sua experiência de navegação. Para mais informações,
+            consulte nossa <a href={`/${lang}/politica-de-cookies`}>Política de Cookies</a>.
+          </p>
+
+          <h2>7. Entre em Contato</h2>
+          <p>
+            Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato:
+          </p>
+          <p>
+            Email: <a href="mailto:contact@befreetours.com.br">contact@befreetours.com.br</a><br />
+            Telefone: <a href="tel:+5521979271637">+55 21 97927-1637</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .policy-hero { --policy-hero-offset: clamp(2rem, 6vw, 2.5rem); padding: calc(var(--space-3xl) + var(--policy-hero-offset)) 0 var(--space-2xl); background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-primary) 50%, var(--color-bg-dark) 100%); text-align: center; }
+  .hero-title { color: var(--color-text-inverse); margin-bottom: var(--space-sm); }
+  .hero-subtitle { font-size: var(--font-size-body); color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent); }
+  .policy-content { padding: var(--space-3xl) 0; }
+  .content-wrapper { max-width: clamp(40rem, 80vw, 50rem); margin: 0 auto; }
+  .policy-text { background: var(--glass-bg); border: var(--border-width-hairline) solid var(--glass-border); border-radius: var(--radius-lg); padding: var(--space-2xl); box-shadow: var(--glass-shadow); }
+  .policy-text h2 { font-size: var(--font-size-h4); font-weight: var(--font-weight-bold); color: var(--color-text); margin-top: var(--space-xl); margin-bottom: var(--space-md); }
+  .policy-text h2:first-child { margin-top: 0; }
+  .policy-text p { color: var(--color-text-light); line-height: var(--line-height-relaxed); margin-bottom: var(--space-md); }
+  .policy-text ul { color: var(--color-text-light); line-height: var(--line-height-relaxed); margin-bottom: var(--space-md); padding-left: var(--space-lg); }
+  .policy-text li { margin-bottom: var(--space-xs); }
+  .policy-text a { color: var(--color-accent); text-decoration: underline; }
+  .policy-text a:hover { color: var(--color-primary); }
+  @media (max-width: 768px) { .policy-hero { padding: calc(var(--space-2xl) + var(--policy-hero-offset)) 0 var(--space-xl); } .policy-content { padding: var(--space-2xl) 0; } .policy-text { padding: var(--space-xl); } }
+</style>
