@@ -6,6 +6,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations } from "../../i18n/utils";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
 
 const lang = "pt-br";
 const t = useTranslations(lang);
@@ -23,12 +24,12 @@ const breadcrumbItems = [
 <BaseLayout title={title} description={description}>
   <Breadcrumbs items={breadcrumbItems} />
 
-  <section class="policy-hero">
-    <div class="container">
-      <h1 class="hero-title">Política de Privacidade</h1>
-      <p class="hero-subtitle">Última atualização: Janeiro 2026</p>
-    </div>
-  </section>
+  <HeroPages
+    title="Política de Privacidade"
+    subtitle="Última atualização: Janeiro 2026"
+    subtitleSize="body"
+    maxWidth="clamp(40rem, 80vw, 50rem)"
+  />
 
   <section class="policy-content">
     <div class="container">

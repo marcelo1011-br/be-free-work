@@ -8,6 +8,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
 import { galleryContent } from "../../data/galleryContent.js";
 import { getPageSEO, getImageGallerySchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
@@ -78,12 +79,11 @@ const schemas = [gallerySchema, breadcrumbSchema];
   <Breadcrumbs items={breadcrumbItems} />
 
   <!-- Hero Section -->
-  <section class="gallery-hero">
-    <div class="container">
-      <h1 class="hero-title">{content.hero.title}</h1>
-      <p class="hero-subtitle">{content.hero.subtitle}</p>
-    </div>
-  </section>
+  <HeroPages
+    title={content.hero.title}
+    subtitle={content.hero.subtitle}
+    maxWidth="clamp(34rem, 70vw, 43.75rem)"
+  />
 
   <!-- Gallery Grid -->
   <section class="gallery-grid-section">

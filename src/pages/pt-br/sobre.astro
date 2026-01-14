@@ -10,6 +10,7 @@ import { useTranslations } from "../../i18n/utils";
 import { pageContent } from "../../data/pageContent.js";
 import { getPageSEO, getAboutPageSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
 
 // Import about image
 import aboutImage from "../../images/about/about-rio.webp";
@@ -39,12 +40,11 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   <!-- Breadcrumbs -->
   <Breadcrumbs items={breadcrumbItems} />
   <!-- Hero Section -->
-  <section class="about-hero">
-    <div class="container">
-      <h1 class="hero-title">{content.hero.title}</h1>
-      <p class="hero-subtitle">{content.hero.subtitle}</p>
-    </div>
-  </section>
+  <HeroPages
+    title={content.hero.title}
+    subtitle={content.hero.subtitle}
+    maxWidth="clamp(34rem, 70vw, 43.75rem)"
+  />
 
   <!-- Our Story Section -->
   <section class="our-story">

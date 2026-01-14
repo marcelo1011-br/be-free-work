@@ -9,6 +9,7 @@ import { tours } from "../../data/tours.js";
 import { useTranslations } from "../../i18n/utils";
 import TourCard from "../../components/TourCard.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
 import { getPageSEO, getToursCollectionSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
 const lang = "es";
@@ -38,12 +39,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
   <!-- Breadcrumbs -->
   <Breadcrumbs items={breadcrumbItems} />
   <!-- Hero Section -->
-  <section class="tours-hero">
-    <div class="container">
-      <h1 class="hero-title">{t("toursHub.title")}</h1>
-      <p class="hero-subtitle">{t("toursHub.subtitle")}</p>
-    </div>
-  </section>
+  <HeroPages
+    title={t("toursHub.title")}
+    subtitle={t("toursHub.subtitle")}
+    maxWidth="clamp(40rem, 75vw, 50rem)"
+  />
 
   <!-- Filters Section -->
   <section class="tours-filters">
@@ -255,16 +255,18 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
   /* CTA Section */
   .tours-cta {
-    --tours-cta-offset: clamp(2rem, 6vw, 2.5rem);
-    --tours-cta-max: clamp(40rem, 75vw, 50rem);
-
-    padding: calc(var(--space-3xl) + var(--tours-cta-offset)) 0 var(--space-3xl);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
   }
 
   .cta-content {
     text-align: center;
-    max-width: var(--tours-cta-max);
+    max-width: var(--tours-hero-subtitle-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;

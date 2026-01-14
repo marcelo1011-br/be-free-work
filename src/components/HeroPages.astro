@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  maxWidth?: string;
+  subtitleSize?: "body" | "h5";
+}
+
+const {
+  title,
+  subtitle,
+  maxWidth = "clamp(34rem, 70vw, 43.75rem)",
+  subtitleSize = "h5",
+} = Astro.props;
+---
+
+<section class="page-hero" style={`--page-hero-max: ${maxWidth};`}>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">{title}</h1>
+      {subtitle && (
+        <p class={`page-hero-subtitle ${subtitleSize === "body" ? "subtitle-body" : ""}`}>
+          {subtitle}
+        </p>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    --page-hero-subtitle-max: var(--page-hero-max);
+
+    min-height: 50svh;
+    padding: calc(var(--space-2xl) + var(--space-lg)) 0 var(--space-2xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-hero-content {
+    max-width: var(--page-hero-subtitle-max);
+    margin: 0 auto;
+  }
+
+  .page-hero-title {
+    color: var(--color-text-inverse);
+    margin: 0 0 var(--space-md);
+  }
+
+  .page-hero-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    margin: 0;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .page-hero-subtitle.subtitle-body {
+    font-size: var(--font-size-body);
+    color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: calc(var(--space-xl) + var(--space-lg)) 0 var(--space-xl);
+    }
+
+    .page-hero-title {
+      font-size: var(--font-size-h3);
+    }
+
+    .page-hero-subtitle {
+      font-size: var(--font-size-body);
+    }
+  }
+</style>

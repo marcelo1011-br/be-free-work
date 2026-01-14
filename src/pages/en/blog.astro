@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content"; // IMPORTANTE: Importar getCollection
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
 import { useTranslations } from "../../i18n/utils";
 import { getBlogSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
@@ -109,18 +110,11 @@ const categories = [
   <!-- Breadcrumbs -->
   <Breadcrumbs items={breadcrumbItems} />
   <!-- Hero Section -->
-  <section class="blog-hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">Rio Travel Blog</h1>
-        <p class="hero-subtitle">
-          Expert tips, insider guides, and inspiring stories from Rio de
-          Janeiro. Written by locals who know this city like the back of their
-          hand.
-        </p>
-      </div>
-    </div>
-  </section>
+  <HeroPages
+    title="Rio Travel Blog"
+    subtitle="Expert tips, insider guides, and inspiring stories from Rio de Janeiro. Written by locals who know this city like the back of their hand."
+    maxWidth="clamp(34rem, 70vw, 43.75rem)"
+  />
 
   <!-- Categories Filter -->
   <section class="blog-categories">

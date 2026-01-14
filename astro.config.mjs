@@ -1,13 +1,28 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import VitePWA from '@vite-pwa/astro';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-
+  // URL base do site sem barra no final para evitar duplicidade
   site: 'https://befreetours.com.br',
 
+  // Configuração para garantir que o Astro não adicione barras extras no final das URLs
+  trailingSlash: 'never',
+
   integrations: [
+    // Integração oficial de Sitemap com filtro de limpeza de URLs
+    sitemap({
+      serialize(item) {
+        // Remove barras duplas (//) caso o Astro tente gerá-las
+        if (item.url.includes('https://befreetours.com.br//')) {
+          item.url = item.url.replace('https://befreetours.com.br//', 'https://befreetours.com.br/');
+        }
+        return item;
+      },
+    }),
+
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
@@ -66,39 +81,12 @@ export default defineConfig({
     }),
   ],
 
-  // Redirecionamentos (URLs antigas -> Novas URLs)
-  redirects: {
-    '/home/private-tours-rio/': '/en/private-tours',
-    '/home/private-tours-rio/rio-city-tours/christ-redeemer-sugarloaf-tour/': '/en/private-tours/essential-rio',
-    '/home/private-tours-rio/rio-city-tours/half-day-highlights/': '/en/private-tours/rio-express',
-    '/home/private-tours-rio/rio-day-trips/petropolis-imperial-city/': '/en/private-tours/petropolis-imperial',
-    '/home/private-tours-rio/walking-tours/city-center-historic-walk/': '/en/private-tours/downtown-rio-walking',
-    '/home/private-tours-rio/rio-day-trips/ilha-grande-speedboat/': '/en/private-tours/island-escape-ilha-grande',
-    '/home/private-tours-rio/custom-rio-tours/design-your-tour/': '/en/private-tours/custom-tour',
-    '/home/private-tours-rio/rio-city-tours/': '/',
-    '/home/private-tours-rio/rio-day-trips/': '/',
-    '/home/private-tours-rio/walking-tours/': '/',
+  // Os redirecionamentos foram removidos deste arquivo para evitar duplicação e
+  // conflitos com o arquivo .htaccess, além de reduzir o tamanho da pasta dist.
 
-    // Tour Slug Redirects - Old slugs redirect to new slugs (SEO preservation)
-    '/en/private-tours/unforgettable-rio': '/en/private-tours/essential-rio',
-    '/en/private-tours/rio-flash': '/en/private-tours/rio-express',
-    '/en/private-tours/sunrise-sugarloaf': '/en/private-tours/first-light-sunrise',
-    '/en/private-tours/sunset-magic': '/en/private-tours/golden-hour-rio',
-    '/en/private-tours/sunset-roxy': '/en/private-tours/sunset-culture-roxy',
-    '/en/private-tours/sky-high': '/en/private-tours/tijuca-rainforest',
-    '/en/private-tours/niteroi': '/en/private-tours/niteroi-mac-museum',
-    '/en/private-tours/future-visions': '/en/private-tours/modern-rio-museum-tomorrow',
-    '/en/private-tours/historical-walking': '/en/private-tours/downtown-rio-walking',
-    '/en/private-tours/buzios': '/en/private-tours/buzios-riviera',
-    '/en/private-tours/petropolis': '/en/private-tours/petropolis-imperial',
-    '/en/private-tours/ilha-grande': '/en/private-tours/island-escape-ilha-grande',
-
-    // Blog redirects moved to .htaccess to avoid generating extra folders in dist
-  },
-
-  // Build otimizado
+  // Build otimizado para gerar pastas limpas
   build: {
-    format: 'directory', // URLs sem .html (ex: /en/about ao invés de /en/about.html)
+    format: 'directory',
   },
 
   // Servidor de desenvolvimento
