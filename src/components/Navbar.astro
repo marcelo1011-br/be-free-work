@@ -373,29 +373,29 @@ function isActive(href: string): boolean {
     color: var(--navbar-light-text);
   }
 
-  /* Theme Toggle */
+  /* Theme Toggle - mostra o ícone do tema OPOSTO (ação) */
   .sun-icon {
-    display: none;
+    display: block;
   }
 
   .moon-icon {
-    display: block;
+    display: none;
   }
 
   :global(html.light) .sun-icon {
-    display: block;
+    display: none;
   }
 
   :global(html.light) .moon-icon {
-    display: none;
+    display: block;
   }
 
   :global(html.dark) .sun-icon {
-    display: none;
+    display: block;
   }
 
   :global(html.dark) .moon-icon {
-    display: block;
+    display: none;
   }
 
   /* Language Selector */

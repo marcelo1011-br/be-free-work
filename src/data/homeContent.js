@@ -96,6 +96,16 @@ export const homeContent = {
           id: 8,
           question: "What should I wear for tours in Rio?",
           answer: "Rio has a tropical climate, so wear light, comfortable clothing and walking shoes on hot days. Bring sunscreen, sunglasses, and a hat for sun protection. If visiting in winter (June-August), bring a light jacket as temperatures can be cooler, especially in Petrópolis."
+        },
+        {
+          id: 9,
+          question: "Is Rio safe for solo female travelers?",
+          answer: "Rio welcomes thousands of solo female travelers every year. Tourist areas like Copacabana, Ipanema, Leblon, and Santa Teresa are generally safe during the day, especially when following common-sense precautions: stay aware of your surroundings, avoid displaying expensive items, and stick to well-lit, populated areas at night. Our private tours add an extra layer of comfort — you'll have door-to-door transportation and an experienced local guide who knows the city inside out. Many of our solo female clients tell us they felt completely at ease exploring Rio with our team."
+        },
+        {
+          id: 10,
+          question: "Is Rio de Janeiro LGBTQ+ friendly?",
+          answer: "Rio is one of the most LGBTQ+ friendly destinations in the world. Same-sex marriage has been legal in Brazil since 2013, and Rio hosts one of the planet's largest Pride parades, drawing over 1 million people annually to Copacabana. Ipanema beach — particularly near Farme de Amoedo street, known as the 'Gay Beach' — is a welcoming gathering spot year-round. Neighborhoods like Lapa and Ipanema offer vibrant nightlife with LGBTQ+ bars and clubs. Public displays of affection between same-sex couples are common and generally well-accepted in tourist areas. Our private tours provide a comfortable, judgment-free environment, and our guides know the best spots for every traveler."
         }
       ]
     },
@@ -210,6 +220,16 @@ export const homeContent = {
           id: 8,
           question: "¿Qué debo usar para los tours en Río?",
           answer: "Río tiene un clima tropical, así que usa ropa ligera y cómoda y zapatos para caminar en días calurosos. Trae protector solar, gafas de sol y sombrero para protección del sol. Si visitas en invierno (junio-agosto), trae una chaqueta ligera ya que las temperaturas pueden ser más frescas, especialmente en Petrópolis."
+        },
+        {
+          id: 9,
+          question: "¿Es Río seguro para mujeres que viajan solas?",
+          answer: "Río recibe miles de mujeres viajando solas cada año. Las zonas turísticas como Copacabana, Ipanema, Leblon y Santa Teresa son generalmente seguras durante el día, especialmente siguiendo precauciones básicas: mantente atenta a tu entorno, evita mostrar objetos de valor y quédate en áreas iluminadas y concurridas por la noche. Nuestros tours privados añaden una capa extra de tranquilidad — tendrás transporte puerta a puerta y una guía local con experiencia que conoce la ciudad a fondo. Muchas de nuestras clientas que viajan solas nos cuentan que se sintieron completamente cómodas explorando Río con nuestro equipo."
+        },
+        {
+          id: 10,
+          question: "¿Río de Janeiro es amigable con la comunidad LGBTQ+?",
+          answer: "Río es uno de los destinos más amigables para la comunidad LGBTQ+ en el mundo. El matrimonio entre personas del mismo sexo es legal en Brasil desde 2013, y Río celebra una de las marchas del Orgullo más grandes del planeta, reuniendo a más de 1 millón de personas cada año en Copacabana. La playa de Ipanema — especialmente cerca de la calle Farme de Amoedo, conocida como la 'Playa Gay' — es un punto de encuentro acogedor durante todo el año. Barrios como Lapa e Ipanema ofrecen una vibrante vida nocturna con bares y discotecas LGBTQ+. Las muestras de afecto entre parejas del mismo sexo son comunes y generalmente bien aceptadas en zonas turísticas. Nuestros tours privados ofrecen un ambiente cómodo y libre de prejuicios, y nuestras guías conocen los mejores lugares para cada viajero."
         }
       ]
     },
@@ -324,6 +344,16 @@ export const homeContent = {
           id: 8,
           question: "O que devo vestir para os passeios no Rio?",
           answer: "O Rio tem clima tropical, então use roupas leves e confortáveis e sapatos para caminhada nos dias quentes. Traga protetor solar, óculos de sol e chapéu para proteção solar. Se visitar no inverno (junho-agosto), traga um casaco leve pois as temperaturas podem ser mais frescas, especialmente em Petrópolis."
+        },
+        {
+          id: 9,
+          question: "O Rio é seguro para mulheres que viajam sozinhas?",
+          answer: "O Rio recebe milhares de mulheres viajando sozinhas todos os anos. As áreas turísticas como Copacabana, Ipanema, Leblon e Santa Teresa são geralmente seguras durante o dia, especialmente seguindo precauções básicas: fique atenta ao seu redor, evite exibir objetos de valor e prefira áreas iluminadas e movimentadas à noite. Nossos passeios privados trazem uma camada extra de tranquilidade — você terá transporte porta a porta e uma guia local experiente que conhece a cidade como a palma da mão. Muitas das nossas clientes que viajam sozinhas nos contam que se sentiram completamente à vontade explorando o Rio com nossa equipe."
+        },
+        {
+          id: 10,
+          question: "O Rio de Janeiro é amigável para a comunidade LGBTQ+?",
+          answer: "O Rio é um dos destinos mais acolhedores para a comunidade LGBTQ+ no mundo. O casamento entre pessoas do mesmo sexo é legal no Brasil desde 2013, e o Rio sedia uma das maiores Paradas do Orgulho do planeta, reunindo mais de 1 milhão de pessoas todos os anos em Copacabana. A praia de Ipanema — especialmente perto da rua Farme de Amoedo, conhecida como 'Praia Gay' — é um ponto de encontro acolhedor o ano inteiro. Bairros como Lapa e Ipanema oferecem vida noturna vibrante com bares e boates LGBTQ+. Demonstrações de afeto entre casais do mesmo sexo são comuns e geralmente bem aceitas nas áreas turísticas. Nossos passeios privados oferecem um ambiente confortável e livre de julgamentos, e nossas guias conhecem os melhores lugares para cada viajante."
         }
       ]
     },

@@ -1036,6 +1036,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 
   .hero-overlay {
@@ -1367,17 +1368,15 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
 
   .faq-item {
-    padding-bottom: var(--space-lg);
-    border-bottom: var(--border-width-hairline) solid var(--color-border);
-  }
-
-  .faq-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
   }
 
   .faq-question {
@@ -1407,15 +1406,15 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     padding: var(--space-3xl) 0;
     background: linear-gradient(
       135deg,
-      var(--color-primary) 0%,
-      var(--color-primary-dark) 100%
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
     );
-    color: var(--color-text-inverse);
   }
 
   .cta-content {
     text-align: center;
-    max-width: var(--cta-max);
+    max-width: clamp(34rem, 70vw, 43.75rem);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1430,7 +1429,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 
   .cta-subtitle {
     font-size: var(--font-size-h5);
-    color: var(--cta-subtitle-color);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
     margin: 0;
   }
 
@@ -1439,6 +1438,16 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     gap: var(--space-md);
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .cta-buttons .btn-outline-secondary {
+    color: var(--color-text-inverse);
+    border-color: var(--color-text-inverse);
+  }
+
+  .cta-buttons .btn-outline-secondary:hover {
+    background-color: var(--color-text-inverse);
+    color: var(--color-primary);
   }
 
   /* Responsivo */
