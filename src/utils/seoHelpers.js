@@ -27,7 +27,7 @@ export function getTourSEO(tour, lang, imageUrl) {
 
   const langText = langMap[lang] || langMap.en;
 
-  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+  const resolvedImage = imageUrl || '/images/og-default.jpg';
 
   return {
     title: `${tour.title} | ${langText.titleSuffix}`,
@@ -42,7 +42,7 @@ export function getTourSEO(tour, lang, imageUrl) {
 export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
   const tourRoute = getTourRoute(lang);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
-  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+  const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
@@ -101,7 +101,7 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
 
   const tourRoute = getTourRoute(lang);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
-  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+  const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
