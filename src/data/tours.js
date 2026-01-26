@@ -197,6 +197,22 @@ export const tours = {
       thumbnail: "/images/tours/historical-walking.jpg"
     },
     {
+      id: "santa-teresa-walking",
+      category: "walking-tours",
+      isFeatured: false,
+      slug: "santa-teresa-walking",
+      title: "Santa Teresa Walking Tour: Art, History & Hidden Corners",
+      shortDescription: "Explore one of Rio's most charming neighborhoods: art, history, viewpoints and authentic local life.",
+      fullDescription: "Santa Teresa is one of Rio's most enchanting neighborhoods, where art, history and local life blend seamlessly. This relaxed walking tour takes you through cobblestone streets, past colonial mansions, artist studios, and hidden viewpoints. Starting at Largo dos Guimaraes, the neighborhood's social heart, you'll discover the Bar dos Descasados with its curious history, visit the open-air Atelier Bonzolandia with recycled art, stop at the beloved traditional Bar do Gomez, and conclude at Parque das Ruinas, a cultural center offering panoramic city views and fascinating history.",
+      highlights: ["Largo dos Guimaraes", "Bar dos Descasados", "Atelier Bonzolandia", "Bar do Gomez", "Parque das Ruinas", "Hidden viewpoints"],
+      included: ["Expert local guide", "Historical insights"],
+      notIncluded: ["Transportation to/from meeting point", "Food and drinks"],
+      pricing: { perPerson: 65 },
+      duration: "2.5 hours",
+      meetingPoint: "Largo dos Guimaraes",
+      thumbnail: "/images/tours/santa-teresa-walking.webp"
+    },
+    {
       id: "food-walking",
       category: "walking-tours",
       isFeatured: false,
@@ -453,6 +469,22 @@ export const tours = {
       thumbnail: "/images/tours/historical-walking.jpg"
     },
     {
+      id: "santa-teresa-walking",
+      category: "walking-tours",
+      isFeatured: false,
+      slug: "santa-teresa-walking",
+      title: "Tour a Pie por Santa Teresa: Arte, Historia y Rincones Ocultos",
+      shortDescription: "Explora uno de los barrios más encantadores de Río: arte, historia, miradores y vida local auténtica.",
+      fullDescription: "Santa Teresa es uno de los barrios más cautivadores de Río, donde arte, historia y vida local se entrelazan de manera única. Este tour relajado te lleva por calles empedradas, casonas coloniales, talleres de artistas y miradores escondidos. Comenzando en Largo dos Guimarães, el corazón social del barrio, descubrirás el Bar dos Descasados con su curiosa historia, visitarás el Atelier Bonzolandia al aire libre con arte reciclado, te detendrás en el querido Bar do Gomez y terminarás en el Parque das Ruínas, centro cultural con vistas panorámicas e historia fascinante.",
+      highlights: ["Largo dos Guimarães", "Bar dos Descasados", "Atelier Bonzolandia", "Bar do Gomez", "Parque das Ruínas", "Miradores ocultos"],
+      included: ["Guía local experto", "Contexto histórico y cultural"],
+      notIncluded: ["Transporte hasta/desde el punto de encuentro", "Comida y bebidas"],
+      pricing: { perPerson: 65 },
+      duration: "2,5 horas",
+      meetingPoint: "Largo dos Guimarães",
+      thumbnail: "/images/tours/santa-teresa-walking.webp"
+    },
+    {
       id: "food-walking",
       category: "walking-tours",
       isFeatured: false,
@@ -705,6 +737,22 @@ export const tours = {
       duration: "3.5 horas",
       meetingPoint: "Theatro Municipal (Cinelândia)",
       thumbnail: "/images/tours/historical-walking.jpg"
+    },
+    {
+      id: "santa-teresa-walking",
+      category: "walking-tours",
+      isFeatured: false,
+      slug: "santa-teresa-walking",
+      title: "Tour a Pé por Santa Teresa: Arte, História e Cantos Escondidos",
+      shortDescription: "Explore um dos bairros mais charmosos do Rio: arte, história, mirantes e vida local autêntica.",
+      fullDescription: "Santa Teresa é um dos bairros mais encantadores do Rio, onde arte, história e vida local se misturam de forma única. Este tour relaxado leva você por ruas de paralelepípedos, casarões coloniais, ateliês de artistas e mirantes escondidos. Começando no Largo dos Guimarães, o coração social do bairro, você vai descobrir o Bar dos Descasados com sua história curiosa, visitar o Atelier Bonzolandia a céu aberto com arte reciclada, parar no querido Bar do Gomez e terminar no Parque das Ruínas, centro cultural com vistas panorâmicas e história fascinante.",
+      highlights: ["Largo dos Guimarães", "Bar dos Descasados", "Atelier Bonzolandia", "Bar do Gomez", "Parque das Ruínas", "Mirantes escondidos"],
+      included: ["Guia local especializado", "Contexto histórico e cultural"],
+      notIncluded: ["Transporte até/do ponto de encontro", "Alimentação e bebidas"],
+      pricing: { perPerson: 65 },
+      duration: "2,5 horas",
+      meetingPoint: "Largo dos Guimarães",
+      thumbnail: "/images/tours/santa-teresa-walking.webp"
     },
     {
       id: "food-walking",
