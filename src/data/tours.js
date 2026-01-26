@@ -21,7 +21,6 @@ export const tours = {
       duration: "8 hours",
       startTime: "6:30 AM or 1:00 PM (flexible)",
       recommendations: "Start at 6:30 AM for minimal crowds and perfect morning light at Christ the Redeemer. Start at 1:00 PM or later to catch the spectacular sunset from Sugarloaf Mountain.",
-      thumbnail: "/images/tours/unforgettable-rio.jpg"
     },
     {
       id: "rio-flash-5h",
@@ -37,7 +36,6 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 hours",
-      thumbnail: "/images/tours/rio-flash.jpg"
     },
     {
       id: "sunrise-sugarloaf",
@@ -53,7 +51,6 @@ export const tours = {
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 hours",
       startTime: "4:00 AM",
-      thumbnail: "/images/tours/sunrise-sugarloaf.jpg"
     },
     {
       id: "sunset-magic",
@@ -68,7 +65,6 @@ export const tours = {
       notIncluded: ["Dinner (optional stops available)", "Gratuities"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 hours",
-      thumbnail: "/images/tours/sunset-magic.jpg"
     },
     {
       id: "sunset-roxy",
@@ -84,7 +80,6 @@ export const tours = {
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 hours",
       restrictions: "Wednesday to Sunday only. Roxy tickets cannot be cancelled.",
-      thumbnail: "/images/tours/sunset-roxy.jpg"
     },
     {
       id: "ilha-grande",
@@ -100,7 +95,6 @@ export const tours = {
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 hours",
       startTime: "5:30 AM recommended",
-      thumbnail: "/images/tours/ilha-grande.jpg"
     },
     {
       id: "buzios",
@@ -115,7 +109,6 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Beach equipment rentals", "Gratuities"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 hours",
-      thumbnail: "/images/tours/buzios.jpg"
     },
     {
       id: "petropolis",
@@ -131,7 +124,6 @@ export const tours = {
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 hours",
       restrictions: "Not available Mondays",
-      thumbnail: "/images/tours/petropolis.jpg"
     },
     {
       id: "sky-high-urban-forest",
@@ -146,7 +138,6 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 hours",
-      thumbnail: "/images/tours/urban-forest.jpg"
     },
     {
       id: "niteroi",
@@ -162,7 +153,6 @@ export const tours = {
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 hours",
       restrictions: "Not available Mondays",
-      thumbnail: "/images/tours/niteroi.jpg"
     },
     {
       id: "future-visions-carnival",
@@ -178,7 +168,6 @@ export const tours = {
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 hours",
       restrictions: "Not available Mondays. Carnival experience Tuesday-Saturday only.",
-      thumbnail: "/images/tours/museum-tomorrow.jpg"
     },
     {
       id: "historical-walking",
@@ -194,13 +183,13 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3.5 hours",
       meetingPoint: "Theatro Municipal (Cinelandia)",
-      thumbnail: "/images/tours/historical-walking.jpg"
     },
     {
       id: "santa-teresa-walking",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
+      imageSlug: "santa-teresa-walking-tour",
       title: "Santa Teresa Walking Tour: Art, History & Hidden Corners",
       shortDescription: "Explore one of Rio's most charming neighborhoods: art, history, viewpoints and authentic local life.",
       fullDescription: "Santa Teresa is one of Rio's most enchanting neighborhoods, where art, history and local life blend seamlessly. This relaxed walking tour takes you through cobblestone streets, past colonial mansions, artist studios, and hidden viewpoints. Starting at Largo dos Guimaraes, the neighborhood's social heart, you'll discover the Bar dos Descasados with its curious history, visit the open-air Atelier Bonzolandia with recycled art, stop at the beloved traditional Bar do Gomez, and conclude at Parque das Ruinas, a cultural center offering panoramic city views and fascinating history.",
@@ -210,7 +199,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "2.5 hours",
       meetingPoint: "Largo dos Guimaraes",
-      thumbnail: "/images/tours/santa-teresa-walking.webp"
     },
     {
       id: "food-walking",
@@ -226,7 +214,6 @@ export const tours = {
       pricing: { perPerson: 155 },
       duration: "3 hours",
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
-      thumbnail: "/images/tours/food-walking.jpg"
     },
     {
       id: "little-africa",
@@ -242,7 +229,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3 hours",
       meetingPoint: "General Osorio Statue (Praça XV)",
-      thumbnail: "/images/tours/little-africa.jpg"
     },
     {
       id: "custom-tour",
@@ -260,7 +246,6 @@ export const tours = {
       duration: "Flexible (4-10+ hours)",
       startTime: "Your choice",
       recommendations: "Contact us at least 48 hours in advance so we can craft the perfect experience for you. The more you share about your interests, the better we can tailor your day.",
-      thumbnail: "/images/tours/custom-tour-card.webp",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Start Planning"
     }
@@ -286,7 +271,6 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 415, priceTable: { 1: 415, 2: 555, 3: 690, 4: 795, 5: 990, 6: 1100, 7: 1250, 8: 1380, 9: 1500, 10: 1700, 11: 1900, 12: 2100 } },
       duration: "8 horas",
-      thumbnail: "/images/tours/unforgettable-rio.jpg"
     },
     {
       id: "rio-flash-5h",
@@ -302,7 +286,6 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 horas",
-      thumbnail: "/images/tours/rio-flash.jpg"
     },
     {
       id: "sunrise-sugarloaf",
@@ -319,7 +302,6 @@ export const tours = {
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 horas",
       startTime: "4:00 AM",
-      thumbnail: "/images/tours/sunrise-sugarloaf.jpg"
     },
     {
       id: "sunset-magic",
@@ -335,7 +317,6 @@ export const tours = {
       notIncluded: ["Cena (paradas opcionales)", "Propinas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 horas",
-      thumbnail: "/images/tours/sunset-magic.jpg"
     },
     {
       id: "sunset-roxy",
@@ -352,7 +333,6 @@ export const tours = {
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 horas",
       restrictions: "Miércoles a domingo solamente. Entradas Roxy no reembolsables.",
-      thumbnail: "/images/tours/sunset-roxy.jpg"
     },
     {
       id: "ilha-grande",
@@ -367,7 +347,6 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 horas",
-      thumbnail: "/images/tours/ilha-grande.jpg"
     },
     {
       id: "buzios",
@@ -383,7 +362,6 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Alquiler de equipo de playa", "Propinas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 horas",
-      thumbnail: "/images/tours/buzios.jpg"
     },
     {
       id: "petropolis",
@@ -400,7 +378,6 @@ export const tours = {
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 horas",
       restrictions: "No disponible los lunes",
-      thumbnail: "/images/tours/petropolis.jpg"
     },
     {
       id: "sky-high-urban-forest",
@@ -416,7 +393,6 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 horas",
-      thumbnail: "/images/tours/urban-forest.jpg"
     },
     {
       id: "niteroi",
@@ -433,7 +409,6 @@ export const tours = {
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 horas",
       restrictions: "No disponible los lunes",
-      thumbnail: "/images/tours/niteroi.jpg"
     },
     {
       id: "future-visions-carnival",
@@ -450,7 +425,6 @@ export const tours = {
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 horas",
       restrictions: "No disponible los lunes. Experiencia Carnaval martes-sábado solamente.",
-      thumbnail: "/images/tours/museum-tomorrow.jpg"
     },
     {
       id: "historical-walking",
@@ -466,13 +440,13 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3.5 horas",
       meetingPoint: "Theatro Municipal (Cinelandia)",
-      thumbnail: "/images/tours/historical-walking.jpg"
     },
     {
       id: "santa-teresa-walking",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
+      imageSlug: "santa-teresa-walking-tour",
       title: "Tour a Pie por Santa Teresa: Arte, Historia y Rincones Ocultos",
       shortDescription: "Explora uno de los barrios más encantadores de Río: arte, historia, miradores y vida local auténtica.",
       fullDescription: "Santa Teresa es uno de los barrios más cautivadores de Río, donde arte, historia y vida local se entrelazan de manera única. Este tour relajado te lleva por calles empedradas, casonas coloniales, talleres de artistas y miradores escondidos. Comenzando en Largo dos Guimarães, el corazón social del barrio, descubrirás el Bar dos Descasados con su curiosa historia, visitarás el Atelier Bonzolandia al aire libre con arte reciclado, te detendrás en el querido Bar do Gomez y terminarás en el Parque das Ruínas, centro cultural con vistas panorámicas e historia fascinante.",
@@ -482,7 +456,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "2,5 horas",
       meetingPoint: "Largo dos Guimarães",
-      thumbnail: "/images/tours/santa-teresa-walking.webp"
     },
     {
       id: "food-walking",
@@ -499,7 +472,6 @@ export const tours = {
       pricing: { perPerson: 155 },
       duration: "3 horas",
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
-      thumbnail: "/images/tours/food-walking.jpg"
     },
     {
       id: "little-africa",
@@ -516,7 +488,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3 horas",
       meetingPoint: "Estatua General Osorio (Praça XV)",
-      thumbnail: "/images/tours/little-africa.jpg"
     },
     {
       id: "custom-tour",
@@ -535,7 +506,6 @@ export const tours = {
       duration: "Flexible (4-10+ horas)",
       startTime: "A tu elección",
       recommendations: "Contáctanos con al menos 48 horas de anticipación para que podamos crear la experiencia perfecta para ti. Cuanto más compartas sobre tus intereses, mejor podremos personalizar tu día.",
-      thumbnail: "/images/tours/custom-tour-card.webp",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Empezar a Planificar"
     }
@@ -556,7 +526,6 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 415, priceTable: { 1: 415, 2: 555, 3: 690, 4: 795, 5: 990, 6: 1100, 7: 1250, 8: 1380, 9: 1500, 10: 1700, 11: 1900, 12: 2100 } },
       duration: "8 horas",
-      thumbnail: "/images/tours/unforgettable-rio.jpg"
     },
     {
       id: "rio-flash-5h",
@@ -572,7 +541,6 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 horas",
-      thumbnail: "/images/tours/rio-flash.jpg"
     },
     {
       id: "sunrise-sugarloaf",
@@ -589,7 +557,6 @@ export const tours = {
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 horas",
       startTime: "4:00 da manhã",
-      thumbnail: "/images/tours/sunrise-sugarloaf.jpg"
     },
     {
       id: "sunset-magic",
@@ -605,7 +572,6 @@ export const tours = {
       notIncluded: ["Jantar (paradas opcionais)", "Gorjetas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 horas",
-      thumbnail: "/images/tours/sunset-magic.jpg"
     },
     {
       id: "sunset-roxy",
@@ -622,7 +588,6 @@ export const tours = {
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 horas",
       restrictions: "Quarta a domingo apenas. Ingressos Roxy não reembolsáveis.",
-      thumbnail: "/images/tours/sunset-roxy.jpg"
     },
     {
       id: "ilha-grande",
@@ -637,7 +602,6 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 horas",
-      thumbnail: "/images/tours/ilha-grande.jpg"
     },
     {
       id: "buzios",
@@ -653,7 +617,6 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Aluguel de equipamento de praia", "Gorjetas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 horas",
-      thumbnail: "/images/tours/buzios.jpg"
     },
     {
       id: "petropolis",
@@ -670,7 +633,6 @@ export const tours = {
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 horas",
       restrictions: "Não disponível às segundas-feiras",
-      thumbnail: "/images/tours/petropolis.jpg"
     },
     {
       id: "sky-high-urban-forest",
@@ -686,7 +648,6 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 horas",
-      thumbnail: "/images/tours/urban-forest.jpg"
     },
     {
       id: "niteroi",
@@ -703,7 +664,6 @@ export const tours = {
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 horas",
       restrictions: "Não disponível às segundas-feiras",
-      thumbnail: "/images/tours/niteroi.jpg"
     },
     {
       id: "future-visions-carnival",
@@ -720,7 +680,6 @@ export const tours = {
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 horas",
       restrictions: "Não disponível às segundas-feiras. Experiência Carnaval terça-sábado apenas.",
-      thumbnail: "/images/tours/museum-tomorrow.jpg"
     },
     {
       id: "historical-walking",
@@ -736,13 +695,13 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3.5 horas",
       meetingPoint: "Theatro Municipal (Cinelândia)",
-      thumbnail: "/images/tours/historical-walking.jpg"
     },
     {
       id: "santa-teresa-walking",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
+      imageSlug: "santa-teresa-walking-tour",
       title: "Tour a Pé por Santa Teresa: Arte, História e Cantos Escondidos",
       shortDescription: "Explore um dos bairros mais charmosos do Rio: arte, história, mirantes e vida local autêntica.",
       fullDescription: "Santa Teresa é um dos bairros mais encantadores do Rio, onde arte, história e vida local se misturam de forma única. Este tour relaxado leva você por ruas de paralelepípedos, casarões coloniais, ateliês de artistas e mirantes escondidos. Começando no Largo dos Guimarães, o coração social do bairro, você vai descobrir o Bar dos Descasados com sua história curiosa, visitar o Atelier Bonzolandia a céu aberto com arte reciclada, parar no querido Bar do Gomez e terminar no Parque das Ruínas, centro cultural com vistas panorâmicas e história fascinante.",
@@ -752,7 +711,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "2,5 horas",
       meetingPoint: "Largo dos Guimarães",
-      thumbnail: "/images/tours/santa-teresa-walking.webp"
     },
     {
       id: "food-walking",
@@ -769,7 +727,6 @@ export const tours = {
       pricing: { perPerson: 155 },
       duration: "3 horas",
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
-      thumbnail: "/images/tours/food-walking.jpg"
     },
     {
       id: "little-africa",
@@ -786,7 +743,6 @@ export const tours = {
       pricing: { perPerson: 65 },
       duration: "3 horas",
       meetingPoint: "Estátua General Osorio (Praça XV)",
-      thumbnail: "/images/tours/little-africa.jpg"
     },
     {
       id: "custom-tour",
@@ -805,7 +761,6 @@ export const tours = {
       duration: "Flexível (4-10+ horas)",
       startTime: "Sua escolha",
       recommendations: "Entre em contato com pelo menos 48 horas de antecedência para que possamos criar a experiência perfeita para você. Quanto mais você compartilhar sobre seus interesses, melhor poderemos personalizar seu dia.",
-      thumbnail: "/images/tours/custom-tour-card.webp",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Começar a Planejar"
     }

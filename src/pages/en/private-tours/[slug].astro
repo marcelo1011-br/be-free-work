@@ -350,10 +350,10 @@ const faqs = tourFAQs[tour.id] || tourFAQs["default"];
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 
 // 1. Tour SEO metadata
-const seoData = getTourSEO(tour, lang);
+const seoData = getTourSEO(tour, lang, heroImage?.src);
 
 // 2. Tour Product Schema
-const tourSchemas = getTourSchema(tour, lang, siteUrl);
+const tourSchemas = getTourSchema(tour, lang, siteUrl, heroImage?.src);
 
 // 🆕 2.5 TouristTrip Schema (DIFERENCIAL COMPETITIVO!)
 const touristTripSchema = getTouristTripSchema(tour, lang, siteUrl);
@@ -382,7 +382,7 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 const reviewSchema = getReviewSchema(tour, siteUrl, lang);
 
 // 🆕 6. Open Graph tags (redes sociais!)
-const ogTags = getOpenGraphTags(tour, lang, siteUrl);
+const ogTags = getOpenGraphTags(tour, lang, siteUrl, heroImage?.src);
 
 // 🆕 7. HowTo Schema (Como Reservar - Position Zero!)
 const howToSchema = getHowToSchema(lang, siteUrl);
@@ -1368,15 +1368,15 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-xs);
   }
 
   .faq-item {
     padding: var(--space-lg);
-    background: var(--glass-bg);
-    border: var(--border-width-hairline) solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--glass-shadow);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .faq-question {

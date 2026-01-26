@@ -9,7 +9,7 @@
 /**
  * Gera metadata SEO para página de tour individual
  */
-export function getTourSEO(tour, lang) {
+export function getTourSEO(tour, lang, imageUrl) {
   const langMap = {
     en: {
       titleSuffix: 'Private Tour in Rio | Be Free Tours',
@@ -27,22 +27,25 @@ export function getTourSEO(tour, lang) {
 
   const langText = langMap[lang] || langMap.en;
 
+  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+
   return {
     title: `${tour.title} | ${langText.titleSuffix}`,
     description: `${langText.metaTemplate}${tour.shortDescription}`,
-    image: tour.thumbnail || '/images/og-default.jpg',
+    image: resolvedImage,
   };
 }
 
 /**
  * 🆕 Gera Open Graph metadata completa
  */
-export function getOpenGraphTags(tour, lang, siteUrl) {
+export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
   const tourRoute = getTourRoute(lang);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
-  const imageUrl = tour.thumbnail?.startsWith('http')
-  ? tour.thumbnail
-  : `${siteUrl}${tour.thumbnail || '/images/og-default.jpg'}`;
+  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+  const absoluteImageUrl = resolvedImage?.startsWith('http')
+  ? resolvedImage
+  : `${siteUrl}${resolvedImage}`;
 
   // Rating se disponível
   const rating = tour.reviews?.aggregateRating?.ratingValue || null;
@@ -53,7 +56,7 @@ export function getOpenGraphTags(tour, lang, siteUrl) {
     'og:url': tourUrl,
     'og:title': tour.title,
     'og:description': tour.shortDescription,
-    'og:image': imageUrl,
+    'og:image': absoluteImageUrl,
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:site_name': 'Be Free Tours',
@@ -63,7 +66,7 @@ export function getOpenGraphTags(tour, lang, siteUrl) {
     'twitter:card': 'summary_large_image',
     'twitter:title': tour.title,
     'twitter:description': tour.shortDescription,
-    'twitter:image': imageUrl,
+    'twitter:image': absoluteImageUrl,
 
     // Rating meta (se disponível)
     ...(rating && {
@@ -84,7 +87,7 @@ function getTourRoute(lang) {
 /**
  * Gera JSON-LD schema para tour (TourProduct + Offer)
  */
-export function getTourSchema(tour, lang, siteUrl) {
+export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   // Calcula preço mínimo
   let price = 0;
   if (tour.pricing.from) {
@@ -98,9 +101,10 @@ export function getTourSchema(tour, lang, siteUrl) {
 
   const tourRoute = getTourRoute(lang);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
-  const imageUrl = tour.thumbnail?.startsWith('http')
-  ? tour.thumbnail
-  : `${siteUrl}${tour.thumbnail}`;
+  const resolvedImage = imageUrl || tour.thumbnail || '/images/og-default.jpg';
+  const absoluteImageUrl = resolvedImage?.startsWith('http')
+  ? resolvedImage
+  : `${siteUrl}${resolvedImage}`;
 
   // Rating base ou do tour
   const rating = tour.reviews?.aggregateRating || {
@@ -116,7 +120,7 @@ export function getTourSchema(tour, lang, siteUrl) {
       '@id': `${tourUrl}#product`,
       'name': tour.title,
       'description': tour.fullDescription,
-      'image': imageUrl,
+      'image': absoluteImageUrl,
       'url': tourUrl,
       'brand': {
         '@type': 'Brand',
@@ -164,7 +168,7 @@ export function getTourSchema(tour, lang, siteUrl) {
       '@id': `${tourUrl}#attraction`,
       'name': tour.title,
       'description': tour.shortDescription,
-      'image': imageUrl,
+      'image': absoluteImageUrl,
       'touristType': 'Tourists',
       'availableLanguage': ['en', 'es', 'pt'],
     },
