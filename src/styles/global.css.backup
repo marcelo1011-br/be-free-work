@@ -1,10 +1,6 @@
-/* ================================
-   BE FREE TOURS - CSS BASE
-   ================================ */
 
-/* --------------------------------
-   CSS Reset (Modern)
-   -------------------------------- */
+
+
 *,
 *::before,
 *::after {
@@ -79,14 +75,12 @@ p {
     text-wrap: pretty;
 }
 
-/* Global hero title styling */
+
 .hero-title {
     letter-spacing: -0.015em;
 }
 
-/* --------------------------------
-   Acessibilidade - Movimento Reduzido
-   -------------------------------- */
+
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -99,99 +93,90 @@ p {
     }
 }
 
-/* --------------------------------
-   Variáveis de Cores - Tema Escuro Premium (Padrão)
-   Inspirado no design noturno do Rio
-   -------------------------------- */
+
 :root {
-    /* Cores primárias - Azul noturno */
+    
     --color-primary: #0a1628;
     --color-primary-light: #1a2d4a;
     --color-primary-dark: #050d18;
 
-    /* Cores de destaque - Laranja/Dourado sunset */
+    
     --color-accent: #f97316;
     --color-accent-light: #fb923c;
     --color-accent-dark: #ea580c;
 
-    /* Cores secundárias - Ciano/Teal */
+    
     --color-secondary: #06b6d4;
     --color-secondary-light: #22d3ee;
     --color-secondary-dark: #0891b2;
 
-    /* Fundos - Escuros com profundidade */
+    
     --color-bg-white: #0a1628;
     --color-bg-soft: #0f1e32;
     --color-bg-dark: #050d18;
     --color-bg-card: rgba(15, 30, 50, 0.8);
 
-    /* Texto - Claros para contraste */
+    
     --color-text: #f8fafc;
     --color-text-light: #94a3b8;
     --color-text-muted: #64748b;
     --color-text-inverse: #0a1628;
 
-    /* Utilitários */
+    
     --color-border: rgba(148, 163, 184, 0.2);
     --color-border-light: rgba(148, 163, 184, 0.1);
     --color-success: #22c55e;
     --color-error: #ef4444;
 
-    /* Glassmorphism */
+    
     --glass-bg: rgba(15, 30, 50, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-    /* Gradientes */
+    
     --gradient-hero: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(10, 22, 40, 0.4) 50%, rgba(10, 22, 40, 0.7) 100%);
     --gradient-card: linear-gradient(180deg, rgba(15, 30, 50, 0) 0%, rgba(10, 22, 40, 0.95) 100%);
     --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
 }
 
-/* --------------------------------
-   Variáveis de Cores - Tema Claro "Coastal Light"
-   Design sofisticado inspirado em studios Webflow
-   Navbar/Footer escuros como âncoras visuais
-   -------------------------------- */
+
 html.light,
 :root.light {
-    /* Cores primárias - Azul profundo para elementos de destaque */
+    
     --color-primary: #0f172a;
     --color-primary-light: #1e293b;
     --color-primary-dark: #020617;
 
-    /* Fundos - Palette cremosa com tons azulados sutis */
+    
     --color-bg-white: #fafbfd;
     --color-bg-soft: #f1f5f9;
     --color-bg-dark: #0f172a;
     --color-bg-card: #ffffff;
     --color-bg-alt: #e8eef6;
 
-    /* Texto - Escuros com personalidade */
+    
     --color-text: #0f172a;
     --color-text-light: #475569;
     --color-text-muted: #64748b;
     --color-text-inverse: #f8fafc;
 
-    /* Utilitários - Bordas e sombras azuladas */
+    
     --color-border: rgba(15, 23, 42, 0.08);
     --color-border-light: rgba(15, 23, 42, 0.04);
 
-    /* Glassmorphism Light - Cards com profundidade */
+    
     --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: rgba(15, 23, 42, 0.06);
     --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
 
-    /* Gradientes Light */
+    
     --gradient-hero: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.7) 100%);
     --gradient-card: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.85) 100%);
 }
 
-/* ================================
-   COASTAL LIGHT THEME - Overrides
-   ================================ */
 
-/* --- NAVBAR - Permanece Escura (Âncora Visual) --- */
+
+
 html.light .navbar {
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(12px);
@@ -263,7 +248,7 @@ html.light .mobile-menu-button {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- HERO - Overlay elegante sobre imagem --- */
+
 html.light .hero .hero-content,
 html.light .hero .hero-tagline,
 html.light .hero .hero-title,
@@ -279,7 +264,7 @@ html.light .hero .hero-subtitle {
     color: rgba(255, 255, 255, 0.95);
 }
 
-/* Trust badges no hero - glass escuro sofisticado */
+
 html.light .hero .trust-badges {
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(12px);
@@ -299,7 +284,7 @@ html.light .hero .trust-badge {
     border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- HOW IT WORKS - Fundo cremoso com gradiente sutil --- */
+
 html.light .how-it-works {
     background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
 }
@@ -340,7 +325,7 @@ html.light .step-icon {
     color: var(--color-accent);
 }
 
-/* --- FEATURED TOURS - Fundo azulado pálido --- */
+
 html.light .featured-tours {
     background: linear-gradient(180deg, #f1f5f9 0%, #e8eef6 50%, #f1f5f9 100%);
 }
@@ -358,7 +343,7 @@ html.light .featured-tours .section-subtitle {
     color: #475569;
 }
 
-/* Tour Cards no tema claro - Cards brancos com sombra azulada */
+
 html.light .tour-card {
     background: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.06);
@@ -395,7 +380,7 @@ html.light .price-value {
     color: #0f172a;
 }
 
-/* --- WHY US - Fundo cremoso --- */
+
 html.light .why-us {
     background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
 }
@@ -430,7 +415,7 @@ html.light .reason-description {
     color: #475569;
 }
 
-/* --- TESTIMONIALS - Fundo azulado pálido --- */
+
 html.light .testimonials {
     background: linear-gradient(180deg, #f1f5f9 0%, #e8eef6 50%, #f1f5f9 100%);
 }
@@ -481,7 +466,7 @@ html.light .testimonial-author span {
     color: #64748b;
 }
 
-/* --- FAQ - Fundo cremoso --- */
+
 html.light .faq {
     background: linear-gradient(180deg, #fafbfd 0%, #f1f5f9 100%);
 }
@@ -520,7 +505,7 @@ html.light .faq-answer-content {
     color: #475569;
 }
 
-/* --- CTA FINAL - Escuro para impacto máximo --- */
+
 html.light .cta-final {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
@@ -560,7 +545,7 @@ html.light .cta-final .cta-btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Outline Secondary em fundos escuros - Tema Claro */
+
 html.light .hero .btn-outline-secondary,
 html.light .tour-cta .btn-outline-secondary,
 html.light .about-cta .btn-outline-secondary,
@@ -579,7 +564,7 @@ html.light .tours-cta .btn-outline-secondary:hover {
     border-color: #ffffff;
 }
 
-/* --- FOOTER - Permanece Escuro (Âncora Visual) --- */
+
 html.light .footer {
     background-color: #0f172a;
     color: #f8fafc;
@@ -635,7 +620,7 @@ html.light .tripadvisor-link span {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- PÁGINAS INTERNAS - Heroes com fundo escuro --- */
+
 html.light .tours-hero,
 html.light .about-hero,
 html.light .contact-hero,
@@ -657,7 +642,7 @@ html.light .blog-hero .hero-subtitle {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* --- FILTROS E BOTÕES --- */
+
 html.light .filter-btn {
     background: #ffffff;
     border-color: rgba(15, 23, 42, 0.1);
@@ -675,7 +660,7 @@ html.light .filter-btn.active {
     color: #ffffff;
 }
 
-/* --- SEÇÕES DE CONTEÚDO (About, Blog, etc) --- */
+
 html.light .our-story,
 html.light .our-values,
 html.light .tours-grid-section,
@@ -701,7 +686,7 @@ html.light .stat-card {
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
 }
 
-/* --- BLOG POSTS --- */
+
 html.light .post-card {
     background: #ffffff;
     border: 1px solid rgba(15, 23, 42, 0.06);
@@ -725,7 +710,7 @@ html.light .post-read-time {
     color: #64748b;
 }
 
-/* Categories */
+
 html.light .blog-categories {
     background-color: #f1f5f9;
     border-bottom-color: rgba(15, 23, 42, 0.08);
@@ -746,12 +731,12 @@ html.light .category-btn.active {
     color: #ffffff;
 }
 
-/* Newsletter */
+
 html.light .newsletter-cta {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-/* --- CONTACT PAGE --- */
+
 html.light .contact-content {
     background-color: #fafbfd;
 }
@@ -792,7 +777,7 @@ html.light .form-textarea::placeholder {
     color: #94a3b8;
 }
 
-/* --- TOUR CARDS CTA --- */
+
 html.light .tours-cta {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
@@ -802,7 +787,7 @@ html.light .tours-cta .cta-subtitle {
     color: #ffffff;
 }
 
-/* --- BOTÕES OUTLINE NO TEMA CLARO --- */
+
 html.light .btn-outline-primary {
     border-color: var(--color-accent);
     color: var(--color-accent);
@@ -814,14 +799,12 @@ html.light .btn-outline-primary:hover {
     color: #ffffff;
 }
 
-/* --------------------------------
-   Variáveis de Tipografia
-   -------------------------------- */
+
 :root {
-    /* Font family */
+    
     --font-family: 'Plus Jakarta Sans', sans-serif;
 
-    /* Font sizes - fluid com clamp */
+    
     --font-size-h1: clamp(2.25rem, 5vw + 1rem, 3.75rem);
     --font-size-h2: clamp(1.875rem, 4vw + 0.75rem, 3rem);
     --font-size-h3: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
@@ -832,23 +815,21 @@ html.light .btn-outline-primary:hover {
     --font-size-small: clamp(0.8125rem, 0.5vw + 0.75rem, 1rem);
     --font-size-xs: clamp(0.6875rem, 0.25vw + 0.625rem, 0.875rem);
 
-    /* Font weights */
+    
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    /* Line heights */
+    
     --line-height-tight: 1.2;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
 }
 
-/* --------------------------------
-   Variáveis de Espaçamento
-   -------------------------------- */
+
 :root {
-    /* Espaçamentos base - escala consistente */
+    
     --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
     --space-sm: clamp(0.5rem, 1vw, 0.75rem);
     --space-md: clamp(1rem, 2vw, 1.5rem);
@@ -857,20 +838,18 @@ html.light .btn-outline-primary:hover {
     --space-2xl: clamp(3rem, 8vw, 6rem);
     --space-3xl: clamp(4rem, 10vw, 8rem);
 
-    /* Container */
+    
     --container-max: 1200px;
     --container-padding: clamp(1rem, 4vw, 2rem);
 
-    /* Border radius */
+    
     --radius-sm: 0.25rem;
     --radius-md: 0.5rem;
     --radius-lg: 1rem;
     --radius-full: 9999px;
 }
 
-/* --------------------------------
-   Aplicação da Tipografia
-   -------------------------------- */
+
 h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
@@ -924,9 +903,7 @@ a:hover {
     color: var(--color-accent);
 }
 
-/* --------------------------------
-   Utilitários Glassmorphism
-   -------------------------------- */
+
 .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -942,9 +919,7 @@ a:hover {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* --------------------------------
-   Section Titles com linhas decorativas
-   -------------------------------- */
+
 .section-title-decorated {
     display: flex;
     align-items: center;
@@ -975,9 +950,7 @@ a:hover {
     }
 }
 
-/* --------------------------------
-   Badges
-   -------------------------------- */
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -1011,9 +984,7 @@ small {
     line-height: var(--line-height-normal);
 }
 
-/* --------------------------------
-   Container Utilitário
-   -------------------------------- */
+
 .container {
     width: 100%;
     max-width: var(--container-max);
@@ -1021,45 +992,43 @@ small {
     padding-inline: var(--container-padding);
 }
 
-/* --------------------------------
-   Grid System
-   -------------------------------- */
+
 .grid {
     display: grid;
     gap: var(--space-lg);
 }
 
-/* Grid responsivo - cards pequenos (ícones, features) */
+
 .grid-sm {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 }
 
-/* Grid responsivo - cards médios (tours, depoimentos) */
+
 .grid-md {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
-/* Grid responsivo - cards grandes (blog, galerias) */
+
 .grid-lg {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 }
 
-/* Grid fixo - 2 colunas */
+
 .grid-2 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
 }
 
-/* Grid fixo - 3 colunas */
+
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
-/* Grid fixo - 4 colunas */
+
 .grid-4 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
 }
 
-/* Variantes de gap */
+
 .grid-gap-sm {
     gap: var(--space-sm);
 }
@@ -1076,9 +1045,7 @@ small {
     gap: var(--space-xl);
 }
 
-/* --------------------------------
-   Botões
-   -------------------------------- */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -1113,7 +1080,7 @@ small {
     outline-offset: 2px;
 }
 
-/* Primary - Laranja/Accent (CTAs principais) */
+
 .btn-primary {
     background: var(--gradient-accent);
     border-color: var(--color-accent);
@@ -1128,7 +1095,7 @@ small {
     box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
 }
 
-/* Secondary - Glass style */
+
 .btn-secondary {
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
@@ -1143,7 +1110,7 @@ small {
     color: var(--color-text);
 }
 
-/* Outline Primary - Borda clara */
+
 .btn-outline-primary {
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
@@ -1156,7 +1123,7 @@ small {
     color: var(--color-text);
 }
 
-/* Outline Secondary - Borda azul */
+
 .btn-outline-secondary {
     background-color: transparent;
     border-color: var(--color-primary);
@@ -1169,7 +1136,7 @@ small {
     color: var(--color-text-inverse);
 }
 
-/* Outline Secondary em fundos escuros (Hero, CTA) - Tema Escuro */
+
 .hero .btn-outline-secondary,
 .tour-cta .btn-outline-secondary,
 .about-cta .btn-outline-secondary,
@@ -1187,7 +1154,7 @@ small {
     color: #ffffff;
 }
 
-/* Ghost Primary - Sem borda, texto dourado */
+
 .btn-ghost-primary {
     background-color: transparent;
     border-color: transparent;
@@ -1199,7 +1166,7 @@ small {
     color: var(--color-text);
 }
 
-/* Ghost Secondary - Sem borda, texto azul */
+
 .btn-ghost-secondary {
     background-color: transparent;
     border-color: transparent;
@@ -1211,7 +1178,7 @@ small {
     color: var(--color-primary-dark);
 }
 
-/* Tamanhos de botão */
+
 .btn-sm {
     padding: 0.625rem 1.25rem;
     font-size: var(--font-size-small);
@@ -1222,14 +1189,14 @@ small {
     font-size: var(--font-size-h6);
 }
 
-/* Botão full width */
+
 .btn-block {
     width: 100%;
 }
 
-/* ============================================ */
-/* ACCESSIBILITY - Focus Visible */
-/* ============================================ */
+
+
+
 
 *:focus {
   outline: none;
@@ -1247,9 +1214,9 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* ============================================ */
-/* ACCESSIBILITY - Reduced Motion */
-/* ============================================ */
+
+
+
 
 @media (prefers-reduced-motion: reduce) {
   *,

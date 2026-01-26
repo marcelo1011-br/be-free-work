@@ -1,8 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Privacy Policy
-   Política de Privacidade
-   ================================ */
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations } from "../../i18n/utils";
@@ -12,12 +9,12 @@ import HeroPages from "../../components/HeroPages.astro";
 const lang = "en";
 const t = useTranslations(lang);
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const title = "Privacy Policy | Be Free Tours";
 const description = "Privacy Policy for Be Free Tours - Learn how we collect, use, and protect your personal information.";
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Privacy Policy", url: `/${lang}/privacy-policy` },
@@ -25,10 +22,10 @@ const breadcrumbItems = [
 ---
 
 <BaseLayout title={title} description={description}>
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
 
-  <!-- Hero Section -->
+  
   <HeroPages
     title="Privacy Policy"
     subtitle="Last updated: January 2026"
@@ -36,7 +33,7 @@ const breadcrumbItems = [
     maxWidth="clamp(40rem, 80vw, 50rem)"
   />
 
-  <!-- Content Section -->
+  
   <section class="policy-content">
     <div class="container">
       <div class="content-wrapper">
@@ -109,7 +106,7 @@ const breadcrumbItems = [
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .policy-hero {
     --policy-hero-offset: clamp(2rem, 6vw, 2.5rem);
     padding: calc(var(--space-3xl) + var(--policy-hero-offset)) 0 var(--space-2xl);
@@ -132,7 +129,7 @@ const breadcrumbItems = [
     color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
   }
 
-  /* Content Section */
+  
   .policy-content {
     padding: var(--space-3xl) 0;
   }
@@ -188,7 +185,7 @@ const breadcrumbItems = [
     color: var(--color-primary);
   }
 
-  /* Responsive */
+  
   @media (max-width: 768px) {
     .policy-hero {
       padding: calc(var(--space-2xl) + var(--policy-hero-offset)) 0 var(--space-xl);

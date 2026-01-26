@@ -1,9 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - FAQ Component
-   Seção de perguntas frequentes com accordions
-   ================================ */
+
+
 
 import { homeContent } from "../data/homeContent.js";
 
@@ -123,7 +120,7 @@ const content = homeContent[lang].faq;
     box-shadow: var(--faq-shadow-hover);
   }
 
-  /* Quando expandido, anima a segunda linha do grid */
+  
   .faq-item[data-expanded="true"] {
     grid-template-rows: auto 1fr;
   }
@@ -166,7 +163,7 @@ const content = homeContent[lang].faq;
     transition: transform var(--faq-transition);
   }
 
-  /* Ícone + vira × quando expandido */
+  
   .faq-icon-horizontal {
     transition: transform var(--faq-transition);
   }
@@ -188,12 +185,12 @@ const content = homeContent[lang].faq;
     margin: 0;
   }
 
-  /* Quando expandido */
+  
   .faq-item[data-expanded="true"] .faq-answer {
     padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .faq {
       padding: var(--space-2xl) 0;
@@ -226,25 +223,23 @@ const content = homeContent[lang].faq;
 </style>
 
 <script>
-  /* ================================
-     JAVASCRIPT - Lógica dos Accordions
-     ================================ */
+  
 
-  // 1. Pega todos os botões de perguntas
+  
   const faqButtons = document.querySelectorAll(".faq-question");
 
-  // 2. Para cada botão, adiciona evento de clique
+  
   faqButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      // 3. Pega o item pai (article)
+      
       const faqItem = button.closest(".faq-item") as HTMLElement;
 
-      // 4. Pega o estado atual (expandido ou não)
+      
       const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-      // 5. Se está abrindo este item, fecha todos os outros primeiro
+      
       if (!isExpanded) {
-        // Fecha todos os outros items
+        
         faqButtons.forEach((otherButton) => {
           const otherItem = otherButton.closest(".faq-item") as HTMLElement;
           otherButton.setAttribute("aria-expanded", "false");
@@ -252,13 +247,13 @@ const content = homeContent[lang].faq;
         });
       }
 
-      // 6. Alterna o estado do item clicado
+      
       if (isExpanded) {
-        // Se estava expandido, colapsa
+        
         button.setAttribute("aria-expanded", "false");
         if (faqItem) faqItem.setAttribute("data-expanded", "false");
       } else {
-        // Se estava colapsado, expande
+        
         button.setAttribute("aria-expanded", "true");
         if (faqItem) faqItem.setAttribute("data-expanded", "true");
       }

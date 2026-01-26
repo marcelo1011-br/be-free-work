@@ -1,7 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Política de Privacidad
-   ================================ */
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations } from "../../i18n/utils";
@@ -11,12 +9,12 @@ import HeroPages from "../../components/HeroPages.astro";
 const lang = "es";
 const t = useTranslations(lang);
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const title = "Política de Privacidad | Be Free Tours";
 const description = "Política de Privacidad de Be Free Tours - Conozca cómo recopilamos, usamos y protegemos su información personal.";
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Inicio", url: `/${lang}` },
   { name: "Política de Privacidad", url: `/${lang}/politica-de-privacidad` },

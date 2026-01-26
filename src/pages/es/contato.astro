@@ -1,8 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Contact Page
-   Formulário de contato + info
-   ================================ */
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations } from "../../i18n/utils";
@@ -15,14 +12,14 @@ const lang = "es";
 const t = useTranslations(lang);
 const content = pageContent.contact[lang];
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = getPageSEO("contact", lang);
 
-// Schemas
+
 const contactPageSchema = getContactPageSchema(lang, siteUrl);
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Contacto", url: `/${lang}/contato` },
@@ -33,34 +30,30 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 ---
 
 <BaseLayout title={seo.title} description={seo.description} schema={schemas}>
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
-  <!-- Hero Section -->
+  
   <HeroPages
     title={content.hero.title}
     subtitle={content.hero.subtitle}
     maxWidth="clamp(32rem, 70vw, 37.5rem)"
   />
 
-  <!-- Contact Content -->
+  
   <section class="contact-content">
     <div class="container">
       <div class="contact-grid">
-        <!-- Form Column -->
+        
         <div class="form-column">
           <h2 class="form-title">{content.form.title}</h2>
 
-          <!-- 
-            ⚠️ IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID
-            Get your form ID at: https://formspree.io/
-            Example: action="https://formspree.io/f/xpwzgklr"
-          -->
+          
           <form
             action="https://formspree.io/f/mgoeyojz"
             method="POST"
             class="contact-form"
           >
-            <!-- Name Field -->
+            
             <div class="form-group">
               <label for="name" class="form-label"
                 >{content.form.fields.name.label} *</label
@@ -75,7 +68,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               />
             </div>
 
-            <!-- Email Field -->
+            
             <div class="form-group">
               <label for="email" class="form-label"
                 >{content.form.fields.email.label} *</label
@@ -90,7 +83,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               />
             </div>
 
-            <!-- Phone Field -->
+            
             <div class="form-group">
               <label for="phone" class="form-label"
                 >{content.form.fields.phone.label}</label
@@ -104,7 +97,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               />
             </div>
 
-            <!-- Tour Selection -->
+            
             <div class="form-group">
               <label for="tour" class="form-label"
                 >{content.form.fields.tour.label}</label
@@ -118,7 +111,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               </select>
             </div>
 
-            <!-- Message Field -->
+            
             <div class="form-group">
               <label for="message" class="form-label"
                 >{content.form.fields.message.label} *</label
@@ -133,21 +126,21 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               ></textarea>
             </div>
 
-            <!-- Submit Button -->
+            
             <button type="submit" class="btn btn-primary btn-lg btn-block">
               {content.form.submitButton}
             </button>
           </form>
         </div>
 
-        <!-- Info Column -->
+        
         <div class="info-column">
-          <!-- Contact Info Card -->
+          
           <div class="contact-info-card">
             <h3 class="info-title">{content.info.title}</h3>
 
             <div class="contact-methods">
-              <!-- WhatsApp -->
+              
               <a
                 href="https://wa.me/5521979271637"
                 target="_blank"
@@ -172,7 +165,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
                 </div>
               </a>
 
-              <!-- Email -->
+              
               <a
                 href="mailto:contact@befreetours.com.br"
                 class="contact-method"
@@ -195,7 +188,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
                 </div>
               </a>
 
-              <!-- Business Hours -->
+              
               <div class="contact-method">
                 <div class="method-icon hours">
                   <svg
@@ -216,7 +209,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
               </div>
             </div>
 
-            <!-- Response Time -->
+            
             <div class="response-time">
               <svg
                 width="20"
@@ -232,7 +225,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
             </div>
           </div>
 
-          <!-- WhatsApp CTA -->
+          
           <div class="whatsapp-cta">
             <h4>{content.whatsappCta.title}</h4>
             <p>{content.whatsappCta.subtitle}</p>
@@ -262,7 +255,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .contact-hero {
     --contact-hero-offset: clamp(2rem, 6vw, 2.5rem);
     --contact-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
@@ -291,7 +284,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     margin: 0 auto;
   }
 
-  /* Contact Content */
+  
   .contact-content {
     --contact-content-offset: clamp(2rem, 6vw, 2.5rem);
     --whatsapp-primary: #25d366;
@@ -310,7 +303,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     gap: var(--space-3xl);
   }
 
-  /* Form Column */
+  
   .form-column {
     background-color: transparent;
     border: none;
@@ -373,7 +366,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     min-height: var(--textarea-min-height);
   }
 
-  /* Info Column */
+  
   .info-column {
     display: flex;
     flex-direction: column;
@@ -462,7 +455,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     color: var(--color-text);
   }
 
-  /* Response Time */
+  
   .response-time {
     display: flex;
     align-items: center;
@@ -475,7 +468,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     font-weight: var(--font-weight-medium);
   }
 
-  /* WhatsApp CTA */
+  
   .whatsapp-cta {
     padding: var(--space-xl);
     background: linear-gradient(135deg, var(--whatsapp-primary) 0%, var(--whatsapp-dark) 100%);
@@ -507,7 +500,7 @@ const schemas = [contactPageSchema, breadcrumbSchema];
     transform: translateY(var(--motion-lift-sm));
   }
 
-  /* Responsivo */
+  
   @media (max-width: 968px) {
     .contact-grid {
       grid-template-columns: 1fr;

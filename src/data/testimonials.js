@@ -1,7 +1,4 @@
-/* ================================
-   BE FREE TOURS - Testimonials Data
-   Depoimentos reais do TripAdvisor
-   ================================ */
+
 
 export const testimonials = [
   {

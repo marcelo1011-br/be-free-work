@@ -1,9 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Photo Gallery (EN)
-   Galeria de fotos com lightbox e filtros
-   COM OTIMIZAÇÃO DE IMAGENS DO ASTRO!
-   ================================ */
+
 
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -47,14 +43,14 @@ const images = Object.entries(galleryImageFiles)
     };
   });
 
-// SEO
+
 const seo = {
   title: "Photo Gallery - Rio de Janeiro | Be Free Tours",
   description: content.hero.subtitle,
   image: "/images/og-gallery.svg"
 };
 
-// Schemas (for SEO, we'll use placeholder URLs)
+
 const imagesForSchema = images.map((img) => ({
   url: `/images/gallery/${img.imageSrc}`,
   thumbnail: `/images/gallery/${img.imageSrc}`,
@@ -75,17 +71,17 @@ const schemas = [gallerySchema, breadcrumbSchema];
 ---
 
 <BaseLayout title={seo.title} description={seo.description} image={seo.image} schema={schemas}>
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
 
-  <!-- Hero Section -->
+  
   <HeroPages
     title={content.hero.title}
     subtitle={content.hero.subtitle}
     maxWidth="clamp(34rem, 70vw, 43.75rem)"
   />
 
-  <!-- Gallery Grid -->
+  
   <section class="gallery-grid-section">
     <div class="container">
       <div class="gallery-grid">
@@ -128,7 +124,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Lightbox -->
+  
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-backdrop"></div>
     <div class="lightbox-content">
@@ -160,7 +156,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     </div>
   </div>
 
-  <!-- CTA Section -->
+  
   <section class="gallery-cta">
     <div class="container">
       <div class="cta-content">
@@ -180,7 +176,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .gallery-hero {
     --gallery-hero-subtitle-max: clamp(34rem, 70vw, 43.75rem);
 
@@ -207,7 +203,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     margin: 0 auto;
   }
 
-  /* Gallery Grid */
+  
   .gallery-grid-section {
     padding: var(--space-3xl) 0;
   }
@@ -327,7 +323,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     background-color: var(--color-accent-light);
   }
 
-  /* Lightbox */
+  
   .lightbox {
     --lightbox-z: 9999;
     --lightbox-content-z: 10000;
@@ -436,7 +432,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     font-weight: var(--font-weight-medium);
   }
 
-  /* CTA Section */
+  
   .gallery-cta {
     --gallery-cta-max: clamp(34rem, 70vw, 43.75rem);
 
@@ -490,7 +486,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     color: var(--color-text-inverse);
   }
 
-  /* Responsive */
+  
   @media (max-width: 768px) {
     .gallery-hero {
       padding: var(--space-2xl) 0 var(--space-xl);
@@ -543,11 +539,11 @@ const schemas = [gallerySchema, breadcrumbSchema];
     }
   }
 
-  /* Light Theme Overrides */
+  
 </style>
 
 <script>
-  // Gallery Images Data (embedded for lightbox functionality)
+  
   const galleryData = {
     images: Array.from(document.querySelectorAll('.gallery-item')).map(item => {
       const img = item.querySelector('img');
@@ -558,7 +554,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     })
   };
 
-  // Lightbox functionality
+  
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxCurrent = document.getElementById('lightbox-current');
@@ -604,7 +600,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
     updateLightbox();
   }
 
-  // Event listeners
+  
   galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => openLightbox(index));
   });
@@ -614,7 +610,7 @@ const schemas = [gallerySchema, breadcrumbSchema];
   lightboxNext?.addEventListener('click', nextImage);
   lightboxPrev?.addEventListener('click', prevImage);
 
-  // Keyboard navigation
+  
   document.addEventListener('keydown', (e) => {
     if (!lightbox?.classList.contains('active')) return;
 

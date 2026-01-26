@@ -1,5 +1,5 @@
 ---
-// @ts-nocheck
+
 
 import { Image } from "astro:assets";
 import { useTranslations } from "../i18n/utils";
@@ -76,7 +76,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     )}
   </div>
 
-  <!-- Content -->
+  
   <div class="tour-card-content">
     <h3 class="tour-card-title">{tour.title}</h3>
     
@@ -147,7 +147,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     box-shadow: var(--tour-card-shadow);
   }
 
-  /* Image */
+  
   .tour-card-image {
     position: relative;
     width: 100%;
@@ -173,7 +173,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     pointer-events: none;
   }
 
-  /* Badge */
+  
   .tour-badge {
     position: absolute;
     top: var(--space-md);
@@ -181,7 +181,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     z-index: 2;
   }
 
-  /* Content */
+  
   .tour-card-content {
     padding: var(--space-lg);
     display: flex;
@@ -198,7 +198,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     margin: 0;
   }
 
-  /* Meta */
+  
   .tour-card-meta {
     display: flex;
     flex-direction: column;
@@ -224,7 +224,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     margin: 0;
   }
 
-  /* Footer */
+  
   .tour-card-footer {
     display: flex;
     justify-content: space-between;
@@ -265,7 +265,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
     gap: var(--tour-btn-gap);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .tour-card-content {
       padding: var(--space-md);

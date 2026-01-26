@@ -1,34 +1,6 @@
-/**
- * BE FREE TOURS - Gallery Content
- * Image descriptions and metadata for the photo gallery
- *
- * INSTRUÇÕES PARA ADICIONAR IMAGENS REAIS:
- *
- * 1. Coloque todas as imagens em: src/images/gallery/
- *
- * 2. Nomes de arquivo: livres. A galeria importa automaticamente tudo
- *    da pasta e usa o nome do arquivo como título/alt.
- *    Dica: use nomes descritivos para melhorar acessibilidade.
- *
- * 3. Formato aceito: JPG, JPEG, PNG ou WebP
- *    Recomendado: WebP (menor tamanho, melhor performance)
- *
- * 4. Proporções: LIVRES - aceita qualquer proporção!
- *    - Paisagem (landscape): 16:9, 3:2, 4:3, etc.
- *    - Retrato (portrait): 2:3, 3:4, 9:16, etc.
- *    - Quadrado: 1:1
- *    O grid se auto-ajusta às diferentes proporções
- *
- * 5. Tamanho recomendado:
- *    - Largura: 1200-1600px (para boa qualidade em telas grandes)
- *    - Altura: livre, de acordo com a proporção da imagem
- *
- * 6. A galeria aceita: *.{jpeg,jpg,png,webp}
- */
 
-/**
- * Gallery Filters - Used for category filtering in the gallery
- */
+
+
 export const galleryFilters = {
   all: {
     en: "All Photos",
@@ -67,9 +39,7 @@ export const galleryFilters = {
   }
 };
 
-/**
- * Gallery Page Content - Text for the gallery page UI
- */
+
 export const galleryContent = {
   en: {
     hero: {

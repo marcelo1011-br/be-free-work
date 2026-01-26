@@ -1,7 +1,4 @@
-/* ================================
-   BE FREE TOURS - Home Content
-   Conteúdo da página home em 3 idiomas
-   ================================ */
+
 
 export const homeContent = {
   en: {

@@ -1,21 +1,21 @@
-// @ts-check
+
 import { defineConfig } from 'astro/config';
 import VitePWA from '@vite-pwa/astro';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
+
 export default defineConfig({
-  // URL base do site sem barra no final para evitar duplicidade
+  
   site: 'https://befreetours.com.br',
 
-  // Configuração para garantir que o Astro não adicione barras extras no final das URLs
+  
   trailingSlash: 'never',
 
   integrations: [
-    // Integração oficial de Sitemap com filtro de limpeza de URLs
+    
     sitemap({
       serialize(item) {
-        // Remove barras duplas (//) caso o Astro tente gerá-las
+        
         if (item.url.includes('https://befreetours.com.br//')) {
           item.url = item.url.replace('https://befreetours.com.br//', 'https://befreetours.com.br/');
         }
@@ -55,7 +55,7 @@ export default defineConfig({
               cacheName: 'google-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxAgeSeconds: 60 * 60 * 24 * 365, 
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -69,7 +69,7 @@ export default defineConfig({
               cacheName: 'gstatic-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxAgeSeconds: 60 * 60 * 24 * 365, 
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -81,15 +81,15 @@ export default defineConfig({
     }),
   ],
 
-  // Os redirecionamentos foram removidos deste arquivo para evitar duplicação e
-  // conflitos com o arquivo .htaccess, além de reduzir o tamanho da pasta dist.
+  
+  
 
-  // Build otimizado para gerar pastas limpas
+  
   build: {
     format: 'directory',
   },
 
-  // Servidor de desenvolvimento
+  
   server: {
     port: 3000,
     host: true,

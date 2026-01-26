@@ -1,16 +1,9 @@
-/* ================================
-   BE FREE TOURS - CSS ELITE 2026+
-   Cascade Layers • OKLCH • Nesting • Container Queries
-   ================================ */
 
-/* --------------------------------
-   Declare Layer Order (Specificity Control)
-   -------------------------------- */
+
+
 @layer reset, base, themes, components, utilities, overrides;
 
-/* ================================
-   LAYER: RESET
-   ================================ */
+
 @layer reset {
   *,
   *::before,
@@ -18,7 +11,7 @@
     box-sizing: border-box;
   }
 
-  /* Reset only elements that typically have margin/padding */
+  
   h1, h2, h3, h4, h5, h6,
   p, ul, ol, figure,
   blockquote, dl, dd {
@@ -86,12 +79,12 @@
     text-wrap: pretty;
   }
 
-  /* Global hero title styling */
+  
   .hero-title {
     letter-spacing: var(--tracking-tight);
   }
 
-  /* Accessibility - Reduced Motion */
+  
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -104,60 +97,55 @@
   }
 }
 
-/* ================================
-   LAYER: BASE (Design Tokens)
-   ================================ */
+
 @layer base {
 
-  /* --------------------------------
-     Color System - OKLCH (2026+)
-     Perceptually uniform colors
-     -------------------------------- */
+  
   @supports (color: oklch(0% 0 0)) {
     :root {
-      /* Primary - Deep Blue Night */
+      
       --color-primary-base: oklch(15% 0.08 255);
       --color-primary: var(--color-primary-base);
       --color-primary-light: oklch(from var(--color-primary-base) calc(l + 10%) c h);
       --color-primary-dark: oklch(from var(--color-primary-base) calc(l - 5%) c h);
 
-      /* Accent - Sunset Orange/Gold */
+      
       --color-accent-base: oklch(65% 0.18 45);
       --color-accent: var(--color-accent-base);
       --color-accent-light: oklch(from var(--color-accent-base) calc(l + 10%) c h);
       --color-accent-dark: oklch(from var(--color-accent-base) calc(l - 10%) c h);
 
-      /* Secondary - Cyan/Teal */
+      
       --color-secondary-base: oklch(60% 0.15 205);
       --color-secondary: var(--color-secondary-base);
       --color-secondary-light: oklch(from var(--color-secondary-base) calc(l + 10%) c h);
       --color-secondary-dark: oklch(from var(--color-secondary-base) calc(l - 10%) c h);
 
-      /* Backgrounds - Dark with depth */
+      
       --color-bg-base: oklch(15% 0.08 255);
       --color-bg-white: var(--color-bg-base);
       --color-bg-soft: oklch(18% 0.08 255);
       --color-bg-dark: oklch(10% 0.08 255);
       --color-bg-card: color-mix(in oklch, var(--color-bg-soft) 80%, transparent);
 
-      /* Text - Light for contrast */
+      
       --color-text: oklch(98% 0.01 255);
       --color-text-light: oklch(70% 0.02 255);
       --color-text-muted: oklch(55% 0.02 255);
       --color-text-inverse: oklch(98% 0.01 255);
 
-      /* Utilities */
+      
       --color-border: color-mix(in oklch, var(--color-text-light) 20%, transparent);
       --color-border-light: color-mix(in oklch, var(--color-text-light) 10%, transparent);
       --color-success: oklch(65% 0.18 145);
       --color-error: oklch(60% 0.20 25);
 
-      /* Glassmorphism */
+      
       --glass-bg: color-mix(in oklch, var(--color-bg-soft) 70%, transparent);
       --glass-border: color-mix(in oklch, white 10%, transparent);
       --glass-shadow: 0 8px 32px oklch(0% 0 0 / 0.3);
 
-      /* Gradients with smooth transitions */
+      
       --gradient-hero: linear-gradient(
         135deg in oklch,
         oklch(15% 0.08 255 / 0.9) 0%,
@@ -177,66 +165,64 @@
     }
   }
 
-  /* Fallback for browsers without OKLCH support */
+  
   @supports not (color: oklch(0% 0 0)) {
     :root {
-      /* Primary */
+      
       --color-primary: #0a1628;
       --color-primary-light: #1a2d4a;
       --color-primary-dark: #050d18;
 
-      /* Accent */
+      
       --color-accent: #f97316;
       --color-accent-light: #fb923c;
       --color-accent-dark: #ea580c;
 
-      /* Secondary */
+      
       --color-secondary: #06b6d4;
       --color-secondary-light: #22d3ee;
       --color-secondary-dark: #0891b2;
 
-      /* Backgrounds */
+      
       --color-bg-white: #0a1628;
       --color-bg-soft: #0f1e32;
       --color-bg-dark: #050d18;
       --color-bg-card: rgba(15, 30, 50, 0.8);
 
-      /* Text */
+      
       --color-text: #f8fafc;
       --color-text-light: #94a3b8;
       --color-text-muted: #64748b;
       --color-text-inverse: #f8fafc;
 
-      /* Utilities */
+      
       --color-border: rgba(148, 163, 184, 0.2);
       --color-border-light: rgba(148, 163, 184, 0.1);
       --color-success: #22c55e;
       --color-error: #ef4444;
 
-      /* Glass */
+      
       --glass-bg: rgba(15, 30, 50, 0.7);
       --glass-border: rgba(255, 255, 255, 0.1);
       --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-      /* Gradients */
+      
       --gradient-hero: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(10, 22, 40, 0.4) 50%, rgba(10, 22, 40, 0.7) 100%);
       --gradient-card: linear-gradient(180deg, rgba(15, 30, 50, 0) 0%, rgba(10, 22, 40, 0.95) 100%);
       --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
     }
   }
 
-  /* --------------------------------
-     Typography System
-     -------------------------------- */
+  
   :root {
-    /* Font family */
+    
     --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-    /* Letter spacing */
+    
     --tracking-tight: -0.015em;
     --tracking-wide: 0.05em;
 
-    /* Fluid font sizes */
+    
     --font-size-h1: clamp(2.25rem, 5vw + 1rem, 3.75rem);
     --font-size-h2: clamp(1.875rem, 4vw + 0.75rem, 3rem);
     --font-size-h3: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
@@ -247,21 +233,19 @@
     --font-size-small: clamp(0.8125rem, 0.5vw + 0.75rem, 1rem);
     --font-size-xs: clamp(0.6875rem, 0.25vw + 0.625rem, 0.875rem);
 
-    /* Font weights */
+    
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    /* Line heights */
+    
     --line-height-tight: 1.2;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
   }
 
-  /* --------------------------------
-     Spacing System
-     -------------------------------- */
+  
   :root {
     --space-2xs: clamp(0.25rem, 0.4vw, 0.375rem);
     --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
@@ -276,20 +260,18 @@
     --space-2xl: clamp(3rem, 8vw, 6rem);
     --space-3xl: clamp(4rem, 10vw, 8rem);
 
-    /* Container */
+    
     --container-max: 1200px;
     --container-padding: clamp(1rem, 4vw, 2rem);
 
-    /* Border radius */
+    
     --radius-sm: 0.25rem;
     --radius-md: 0.5rem;
     --radius-lg: 1rem;
     --radius-full: 9999px;
   }
 
-  /* --------------------------------
-     Effects & Sizes
-     -------------------------------- */
+  
   :root {
     --border-width-hairline: 1px;
     --border-width-regular: 2px;
@@ -328,9 +310,7 @@
     --hero-min-height-mobile: 100svh;
   }
 
-  /* --------------------------------
-     Animation/Transition Tokens
-     -------------------------------- */
+  
   :root {
     --transition-duration-fast: 150ms;
     --transition-duration-normal: 200ms;
@@ -340,9 +320,7 @@
     --transition-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  /* --------------------------------
-     Typography Application
-     -------------------------------- */
+  
   h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
@@ -403,46 +381,42 @@
   }
 }
 
-/* ================================
-   LAYER: THEMES
-   ================================ */
+
 @layer themes {
 
-  /* --------------------------------
-     Light Theme (OKLCH with fallback)
-     -------------------------------- */
+  
   @supports (color: oklch(0% 0 0)) {
     html.light,
     :root.light {
-      /* Primary */
+      
       --color-primary-base: oklch(18% 0.08 255);
       --color-primary: var(--color-primary-base);
       --color-primary-light: oklch(from var(--color-primary-base) calc(l + 5%) c h);
       --color-primary-dark: oklch(from var(--color-primary-base) calc(l - 8%) c h);
 
-      /* Backgrounds - Coastal Light */
+      
       --color-bg-white: oklch(99% 0.01 255);
       --color-bg-soft: oklch(96% 0.01 255);
       --color-bg-dark: oklch(18% 0.08 255);
       --color-bg-card: oklch(100% 0 0);
       --color-bg-alt: oklch(94% 0.02 255);
 
-      /* Text */
+      
       --color-text: oklch(18% 0.08 255);
       --color-text-light: oklch(45% 0.04 255);
       --color-text-muted: oklch(55% 0.02 255);
       --color-text-inverse: oklch(98% 0.01 255);
 
-      /* Utilities */
+      
       --color-border: color-mix(in oklch, var(--color-text) 8%, transparent);
       --color-border-light: color-mix(in oklch, var(--color-text) 4%, transparent);
 
-      /* Glass */
+      
       --glass-bg: color-mix(in oklch, white 80%, transparent);
       --glass-border: color-mix(in oklch, var(--color-text) 6%, transparent);
       --glass-shadow: 0 4px 24px oklch(18% 0.08 255 / 0.08);
 
-      /* Gradients */
+      
       --gradient-hero: linear-gradient(
         135deg in oklch,
         oklch(18% 0.08 255 / 0.85) 0%,
@@ -487,11 +461,9 @@
     }
   }
 
-  /* --------------------------------
-     Light Theme Component Overrides (Nested)
-     -------------------------------- */
+  
   html.light {
-    /* Navbar - Dark anchor */
+    
     .navbar {
       background: color-mix(in srgb, var(--color-primary) 95%, transparent);
       backdrop-filter: blur(var(--blur-md));
@@ -563,7 +535,7 @@
       color: color-mix(in srgb, white 90%, transparent);
     }
 
-    /* Hero - Light overlay */
+    
     .hero {
       .hero-content,
       .hero-tagline,
@@ -600,7 +572,7 @@
       }
     }
 
-    /* Sections */
+    
     .how-it-works {
       background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-soft) 100%);
     }
@@ -621,7 +593,7 @@
       background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-soft) 100%);
     }
 
-    /* CTA - Dark for impact */
+    
     .cta-final {
       background: linear-gradient(135deg, var(--color-primary) 0%, oklch(22% 0.08 255) 50%, var(--color-primary) 100%);
 
@@ -664,7 +636,7 @@
       }
     }
 
-    /* Footer - Dark anchor */
+    
     .footer {
       background-color: var(--color-primary);
       color: var(--color-text-inverse);
@@ -711,7 +683,7 @@
       }
     }
 
-    /* Cards */
+    
     .step-card,
     .tour-card,
     .testimonial-card,
@@ -730,7 +702,7 @@
       }
     }
 
-    /* Text colors */
+    
     .step-title,
     .tour-card-title,
     .testimonial-title,
@@ -772,14 +744,14 @@
       color: var(--color-accent);
     }
 
-    /* Borders */
+    
     .testimonial-header,
     .testimonial-footer,
     .tour-card-footer {
       border-color: var(--color-border);
     }
 
-    /* Forms */
+    
     .form-label {
       color: var(--color-text);
     }
@@ -801,7 +773,7 @@
       }
     }
 
-    /* Blog */
+    
     .blog-categories {
       background-color: var(--color-bg-soft);
       border-block-end-color: var(--color-border);
@@ -823,7 +795,7 @@
       }
     }
 
-    /* Internal pages */
+    
     .tours-grid-section,
     .blog-posts,
     .our-story,
@@ -848,7 +820,7 @@
       }
     }
 
-    /* Outline buttons on dark backgrounds */
+    
     .hero .btn-outline-secondary,
     .tour-cta .btn-outline-secondary,
     .about-cta .btn-outline-secondary,
@@ -865,9 +837,7 @@
   }
 }
 
-/* ================================
-   LAYER: COMPONENTS
-   ================================ */
+
 @media (max-width: 768px) {
   .tours-hero,
   .about-hero,
@@ -879,9 +849,7 @@
 }
 @layer components {
 
-  /* --------------------------------
-     Container (with Logical Properties)
-     -------------------------------- */
+  
   .container {
     inline-size: 100%;
     max-inline-size: var(--container-max);
@@ -891,9 +859,7 @@
     container-name: main-container;
   }
 
-  /* --------------------------------
-     Grid System (Container Query Ready)
-     -------------------------------- */
+  
   .grid {
     display: grid;
     gap: var(--space-lg);
@@ -901,45 +867,43 @@
     container-name: grid;
   }
 
-  /* Grid responsivo - cards pequenos */
+  
   .grid-sm {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-sm)), 1fr));
   }
 
-  /* Grid responsivo - cards médios */
+  
   .grid-md {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-md)), 1fr));
   }
 
-  /* Grid responsivo - cards grandes */
+  
   .grid-lg {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-lg)), 1fr));
   }
 
-  /* Grid fixo - 2 colunas */
+  
   .grid-2 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-2)), 1fr));
   }
 
-  /* Grid fixo - 3 colunas */
+  
   .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-3)), 1fr));
   }
 
-  /* Grid fixo - 4 colunas */
+  
   .grid-4 {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-4)), 1fr));
   }
 
-  /* Variantes de gap */
+  
   .grid-gap-sm { gap: var(--space-sm); }
   .grid-gap-md { gap: var(--space-md); }
   .grid-gap-lg { gap: var(--space-lg); }
   .grid-gap-xl { gap: var(--space-xl); }
 
-  /* --------------------------------
-     Glassmorphism Components
-     -------------------------------- */
+  
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--blur-md));
@@ -960,9 +924,7 @@
     border: var(--border-width-hairline) solid color-mix(in srgb, white 15%, transparent);
   }
 
-  /* --------------------------------
-     Section Title (Container Query)
-     -------------------------------- */
+  
   .section-title-decorated {
     display: flex;
     align-items: center;
@@ -991,9 +953,7 @@
     }
   }
 
-  /* --------------------------------
-     Badges
-     -------------------------------- */
+  
   .badge {
     --badge-padding-block: var(--space-2xs);
     --badge-padding-inline: var(--space-md-compact);
@@ -1026,11 +986,9 @@
     }
   }
 
-  /* --------------------------------
-     Button System (Nested + Performance)
-     -------------------------------- */
+  
   .btn {
-    /* Component variables */
+    
     --btn-padding-block: var(--space-md-compact);
     --btn-padding-inline: var(--space-lg-compact);
     --btn-font-size: var(--font-size-body);
@@ -1041,7 +999,7 @@
     --btn-gap: var(--space-xs);
     --btn-line-height: 1;
 
-    /* Base styles */
+    
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1056,7 +1014,7 @@
     border: var(--btn-border-width) solid transparent;
     border-radius: var(--btn-border-radius);
     cursor: pointer;
-    transform: translateZ(0); /* GPU acceleration */
+    transform: translateZ(0); 
     transition:
       background-color var(--btn-transition-duration) var(--btn-transition-easing),
       color var(--btn-transition-duration) var(--btn-transition-easing),
@@ -1064,10 +1022,10 @@
       transform var(--btn-transition-duration) var(--btn-transition-easing),
       box-shadow var(--btn-transition-duration) var(--btn-transition-easing);
 
-    /* Performance hints */
+    
     contain: layout style;
 
-    /* Hover intent (only devices with hover) */
+    
     @media (hover: hover) {
       &:hover {
         transform: translateY(var(--motion-lift-sm));
@@ -1078,7 +1036,7 @@
       }
     }
 
-    /* Touch devices */
+    
     @media (hover: none) {
       &:active {
         transform: scale(var(--motion-press-scale));
@@ -1090,7 +1048,7 @@
       outline-offset: var(--focus-outline-offset);
     }
 
-    /* Variants */
+    
     &.btn-primary {
       background: var(--gradient-accent);
       border-color: var(--color-accent);
@@ -1177,7 +1135,7 @@
       }
     }
 
-    /* Size variants - override component variables */
+    
     &.btn-sm {
       --btn-padding-block: var(--space-sm-compact);
       --btn-padding-inline: var(--space-md);
@@ -1195,7 +1153,7 @@
     }
   }
 
-  /* Outline buttons on dark backgrounds */
+  
   .hero .btn-outline-secondary,
   .tour-cta .btn-outline-secondary,
   .about-cta .btn-outline-secondary,
@@ -1212,9 +1170,7 @@
     }
   }
 
-  /* --------------------------------
-     Performance - Cards with Containment
-     -------------------------------- */
+  
   .tour-card,
   .testimonial-card,
   .step-card,
@@ -1224,17 +1180,17 @@
   .stat-card,
   .post-card,
   .contact-info-card {
-    /* CSS Containment for better rendering */
+    
     contain: layout style paint;
 
-    /* Lazy render offscreen content */
+    
     content-visibility: auto;
 
-    /* Reserve space while offscreen */
+    
     contain-intrinsic-size: auto var(--intrinsic-card);
   }
 
-  /* Specific intrinsic sizes for better estimation */
+  
   .step-card {
     contain-intrinsic-size: auto var(--intrinsic-step);
   }
@@ -1256,16 +1212,12 @@
   }
 }
 
-/* ================================
-   LAYER: UTILITIES
-   ================================ */
+
 @layer utilities {
 
-  /* --------------------------------
-     Accessibility
-     -------------------------------- */
+  
 
-  /* Focus visible (already 3px ✅) */
+  
   *:focus {
     outline: none;
   }
@@ -1282,7 +1234,7 @@
     outline-offset: var(--focus-outline-offset);
   }
 
-  /* Reduced transparency for accessibility */
+  
   @media (prefers-reduced-transparency: reduce) {
     .glass,
     .glass-light {
@@ -1292,7 +1244,7 @@
     }
   }
 
-  /* High contrast mode */
+  
   @media (prefers-contrast: more) {
     .btn-outline-primary,
     .btn-outline-secondary {
@@ -1305,10 +1257,7 @@
   }
 }
 
-/* ================================
-   LAYER: OVERRIDES
-   (For rare exceptions only)
-   ================================ */
+
 @layer overrides {
-  /* Intentionally left empty - use sparingly */
+  
 }

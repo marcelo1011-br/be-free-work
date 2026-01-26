@@ -1,9 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Featured Tours Component
-   Design Premium: Inclui seção "How It Works" + cards com badges
-   ================================ */
+
+
 
 import TourCard from "./TourCard.astro";
 import { tours } from "../data/tours.js";
@@ -12,10 +9,10 @@ import { useTranslations } from "../i18n/utils";
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// Filtra apenas os tours com isFeatured: true
+
 const featuredTours = tours[lang].filter((tour) => tour.isFeatured);
 
-// How It Works content by language
+
 const howItWorks = {
   en: {
     title: "How It Works",
@@ -90,7 +87,7 @@ const howItWorks = {
 
 const content = howItWorks[lang] || howItWorks.en;
 
-// Badge mapping by tour ID
+
 const tourBadgeMap = {
   "unforgettable-rio": {
     en: "Most Popular",
@@ -115,7 +112,7 @@ const tourBadgeMap = {
 };
 ---
 
-<!-- How It Works Section -->
+
 <section class="how-it-works">
   <div class="container">
     <h2 class="section-title-decorated">{content.title}</h2>
@@ -160,7 +157,7 @@ const tourBadgeMap = {
   </div>
 </section>
 
-<!-- Featured Tours Section -->
+
 <section class="featured-tours">
   <div class="container">
     <h2 class="section-title-decorated">{t("featuredTours.title")}</h2>
@@ -191,7 +188,7 @@ const tourBadgeMap = {
 </section>
 
 <style>
-  /* How It Works */
+  
   .how-it-works {
     --step-grid-min: 280px;
     --step-card-lift: -4px;
@@ -280,7 +277,7 @@ const tourBadgeMap = {
     }
   }
 
-  /* Featured Tours */
+  
   .featured-tours {
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-soft);
@@ -319,7 +316,7 @@ const tourBadgeMap = {
     box-shadow: none;
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .how-it-works,
     .featured-tours {

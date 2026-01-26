@@ -1,14 +1,6 @@
-/* ================================
- *  BE FREE TOURS - SEO Helpers (ENHANCED)
- *  Funções para gerar metadata e schema
- *  + Review Schema ⭐
- *  + Open Graph 📱
- *  + FAQ Schema expandido 🎯
- *  ================================ */
 
-/**
- * Gera metadata SEO para página de tour individual
- */
+
+
 export function getTourSEO(tour, lang, imageUrl) {
   const langMap = {
     en: {
@@ -36,9 +28,7 @@ export function getTourSEO(tour, lang, imageUrl) {
   };
 }
 
-/**
- * 🆕 Gera Open Graph metadata completa
- */
+
 export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
   const tourRoute = getTourRoute(lang);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
@@ -47,7 +37,7 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
 
-  // Rating se disponível
+  
   const rating = tour.reviews?.aggregateRating?.ratingValue || null;
   const reviewCount = tour.reviews?.aggregateRating?.reviewCount || null;
 
@@ -62,13 +52,13 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
     'og:site_name': 'Be Free Tours',
     'og:locale': lang === 'pt-br' ? 'pt_BR' : lang,
 
-    // Twitter Card
+    
     'twitter:card': 'summary_large_image',
     'twitter:title': tour.title,
     'twitter:description': tour.shortDescription,
     'twitter:image': absoluteImageUrl,
 
-    // Rating meta (se disponível)
+    
     ...(rating && {
       'product:rating:value': rating,
       'product:rating:count': reviewCount,
@@ -84,11 +74,9 @@ function getTourRoute(lang) {
       : "passeios-privados";
 }
 
-/**
- * Gera JSON-LD schema para tour (TourProduct + Offer)
- */
+
 export function getTourSchema(tour, lang, siteUrl, imageUrl) {
-  // Calcula preço mínimo
+  
   let price = 0;
   if (tour.pricing.from) {
     price = tour.pricing.from;
@@ -106,7 +94,7 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
 
-  // Rating base ou do tour
+  
   const rating = tour.reviews?.aggregateRating || {
     ratingValue: '5.0',
     reviewCount: '50',
@@ -175,9 +163,7 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   ];
 }
 
-/**
- * 🆕 Gera Review Schema com reviews reais do Viator/TripAdvisor
- */
+
 export function getReviewSchema(tour, siteUrl, lang) {
   if (!tour.reviews || !tour.reviews.reviewsList || tour.reviews.reviewsList.length === 0) {
     return null;
@@ -208,14 +194,12 @@ export function getReviewSchema(tour, siteUrl, lang) {
     'reviewBody': review.text,
     'publisher': {
       '@type': 'Organization',
-      'name': review.source, // "Viator" ou "TripAdvisor"
+      'name': review.source, 
     },
   }));
 }
 
-/**
- * Gera breadcrumb schema
- */
+
 export function getBreadcrumbSchema(items, siteUrl) {
   return {
     '@type': 'BreadcrumbList',
@@ -228,9 +212,7 @@ export function getBreadcrumbSchema(items, siteUrl) {
   };
 }
 
-/**
- * 🆕 Gera FAQPage schema EXPANDIDO (mais FAQs = melhor SEO)
- */
+
 export function getFAQSchema(faqs) {
   if (!faqs || faqs.length === 0) {
     return null;
@@ -249,9 +231,7 @@ export function getFAQSchema(faqs) {
   };
 }
 
-/**
- * Gera WebSite schema com search action (permite pesquisa no Google)
- */
+
 export function getWebSiteSchema(siteUrl) {
   return {
     '@type': 'WebSite',
@@ -274,9 +254,7 @@ export function getWebSiteSchema(siteUrl) {
   };
 }
 
-/**
- * Gera metadata para páginas estáticas (About, Contact, etc)
- */
+
 export function getPageSEO(pageName, lang) {
   const metadata = {
     en: {
@@ -335,10 +313,7 @@ export function getPageSEO(pageName, lang) {
   return metadata[lang]?.[pageName] || metadata.en[pageName];
 }
 
-/**
- * 🆕 Gera HowTo Schema (Como Reservar um Tour)
- * IAs e Google ADORAM este schema!
- */
+
 export function getHowToSchema(lang, siteUrl) {
   const howToContent = {
     en: {
@@ -450,13 +425,11 @@ export function getHowToSchema(lang, siteUrl) {
       text: step.text,
       image: step.image,
     })),
-    totalTime: "PT5M", // 5 minutos para reservar
+    totalTime: "PT5M", 
   };
 }
 
-/**
- * 🆕 Gera Article Schema completo para posts do blog
- */
+
 export function getArticleSchema(post, lang, siteUrl) {
   const postUrl = `${siteUrl}/${lang}/blog/${post.slug}`;
   const imageUrl = post.image?.startsWith("http")
@@ -514,10 +487,7 @@ export function getArticleSchema(post, lang, siteUrl) {
   };
 }
 
-/**
- * Get TouristTrip schema for tour pages
- * ESSENCIAL para tour operators - Google entende que é uma viagem turística
- */
+
 export function getTouristTripSchema(tour, lang, siteUrl) {
   const langMap = {
     en: 'English',
@@ -536,14 +506,14 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
     "url": tourUrl,
     "image": `${siteUrl}/images/tours/heroes/${tour.slug}-hero.webp`,
     
-    // Tipo de turista ideal
+    
     "touristType": tour.bestFor || ["Families", "Couples", "Solo travelers"],
     
-    // Idiomas disponíveis
+    
     "inLanguage": langMap[lang],
     "availableLanguage": ["English", "Spanish", "Portuguese"],
     
-    // Itinerário detalhado
+    
     "itinerary": {
       "@type": "ItemList",
       "numberOfItems": tour.highlights?.length || 0,
@@ -558,7 +528,7 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
       })) || []
     },
     
-    // Ofertas (pricing)
+    
     "offers": {
       "@type": "Offer",
       "price": tour.pricing.from || tour.pricing.perPerson || tour.pricing.standard?.['1-3'] || "0",
@@ -573,10 +543,10 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
       }
     },
     
-    // Duração
+    
     "duration": tour.duration,
     
-    // Ponto de partida
+    
     "departureLocation": {
       "@type": "Place",
       "name": "Rio de Janeiro",
@@ -588,7 +558,7 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
       }
     },
     
-    // Provider
+    
     "provider": {
       "@type": "TravelAgency",
       "name": "Be Free Tours",
@@ -598,14 +568,11 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
   };
 }
 
-// ============================================
-// NEW SCHEMAS FOR SEO 100/100
-// ============================================
 
-/**
- * AboutPage Schema
- * Para páginas "Sobre"
- */
+
+
+
+
 export function getAboutPageSchema(lang, siteUrl) {
   const route = lang === 'en' ? 'about' : 'sobre';
 
@@ -627,10 +594,7 @@ export function getAboutPageSchema(lang, siteUrl) {
   };
 }
 
-/**
- * ContactPage Schema
- * Para páginas de contato
- */
+
 export function getContactPageSchema(lang, siteUrl) {
   const route = lang === 'en' ? 'contact' : 'contato';
 
@@ -651,10 +615,7 @@ export function getContactPageSchema(lang, siteUrl) {
   };
 }
 
-/**
- * Blog/CollectionPage Schema
- * Para página de listagem de blog
- */
+
 export function getBlogSchema(posts, lang, siteUrl) {
   return {
     "@type": "Blog",
@@ -672,10 +633,7 @@ export function getBlogSchema(posts, lang, siteUrl) {
   };
 }
 
-/**
- * CollectionPage Schema (Tours Listing)
- * Para página de listagem de tours
- */
+
 export function getToursCollectionSchema(tours, lang, siteUrl) {
   const route = lang === 'en' ? 'private-tours' : lang === 'es' ? 'tours-privados' : 'passeios-privados';
 
@@ -703,10 +661,7 @@ export function getToursCollectionSchema(tours, lang, siteUrl) {
   };
 }
 
-/**
- * Open Graph Article Tags
- * Para blog posts
- */
+
 export function getArticleOGTags(post) {
   return {
     'article:published_time': post.data.publishDate || new Date().toISOString(),
@@ -717,10 +672,7 @@ export function getArticleOGTags(post) {
   };
 }
 
-/**
- * ImageGallery Schema
- * Para página de galeria de fotos
- */
+
 export function getImageGallerySchema(images, lang, siteUrl) {
   const route = lang === 'en' ? 'gallery' : 'galeria';
 

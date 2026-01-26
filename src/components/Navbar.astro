@@ -1,22 +1,18 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Navbar Component
-   Navegação principal com dark/light toggle e seletor de idiomas
-   CORRIGIDO: Detecta lang automaticamente
-   ================================ */
+
+
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { languages } from "../i18n/ui.js";
 
-// CORREÇÃO: Detecta idioma da URL automaticamente (não espera prop)
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Detectar página atual para estado ativo
+
 const currentPath = Astro.url.pathname;
 
-// Mapeamento de rotas por idioma
+
 const routes = {
   en: {
     home: "/",
@@ -46,7 +42,7 @@ const routes = {
 
 const r = routes[lang];
 
-// Links de navegação
+
 const navLinks = [
   { href: `/${lang}${r.home}`, label: t("nav.home") },
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
@@ -56,13 +52,13 @@ const navLinks = [
   { href: `/${lang}${r.contact}`, label: t("nav.contact") },
 ];
 
-// Função para verificar se o link está ativo
+
 function isActive(href: string): boolean {
-  // Home: só ativo se for exatamente a home
+  
   if (href === `/${lang}/` || href === `/${lang}`) {
     return currentPath === `/${lang}` || currentPath === `/${lang}/`;
   }
-  // Outros links: ativo se o path começa com o href
+  
   return currentPath.startsWith(href);
 }
 ---
@@ -71,7 +67,7 @@ function isActive(href: string): boolean {
   <nav class="navbar" role="navigation" aria-label="Main navigation" id="navigation">
   <div class="container">
     <div class="navbar-content">
-      <!-- Logo -->
+      
       <a href={`/${lang}`} class="navbar-logo">
         <img 
           src="/images/logo/logo.svg"
@@ -82,7 +78,7 @@ function isActive(href: string): boolean {
         />
       </a>
 
-      <!-- Desktop Navigation -->
+      
       <ul class="navbar-menu">
         {
           navLinks.map((link) => (
@@ -95,9 +91,9 @@ function isActive(href: string): boolean {
         }
       </ul>
 
-      <!-- Actions -->
+      
       <div class="navbar-actions">
-        <!-- Dark/Light Toggle -->
+        
         <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">
           <svg
             class="theme-icon sun-icon"
@@ -123,7 +119,7 @@ function isActive(href: string): boolean {
           </svg>
         </button>
 
-        <!-- Language Selector -->
+        
         <div class="language-selector">
           <button
             id="lang-toggle"
@@ -154,12 +150,12 @@ function isActive(href: string): boolean {
           </div>
         </div>
 
-        <!-- CTA Button -->
+        
         <a href={`/${lang}/contact`} class="btn btn-primary btn-sm navbar-cta">
           {t("nav.book")}
         </a>
 
-        <!-- Mobile Menu Toggle -->
+        
         <button
           id="mobile-menu-toggle"
           class="mobile-menu-button"
@@ -198,7 +194,7 @@ function isActive(href: string): boolean {
       </div>
     </div>
 
-    <!-- Mobile Menu -->
+    
     <div id="mobile-menu" class="mobile-menu" hidden>
       <ul class="mobile-menu-list">
         {
@@ -248,7 +244,7 @@ function isActive(href: string): boolean {
     transition: var(--navbar-transition);
   }
 
-  /* Tema claro: Navbar permanece ESCURA (âncora visual) */
+  
   :global(html.light) .navbar {
     --navbar-bg: color-mix(in srgb, var(--color-primary) 95%, transparent);
     --navbar-border-color: color-mix(in srgb, white 10%, transparent);
@@ -271,7 +267,7 @@ function isActive(href: string): boolean {
     gap: var(--space-lg);
   }
 
-  /* Logo */
+  
   .navbar-logo {
     display: flex;
     align-items: center;
@@ -297,13 +293,13 @@ function isActive(href: string): boolean {
     color: var(--color-text-light);
   }
 
-  /* Desktop Menu */
+  
   .navbar-menu {
     display: none;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: var(--space-md); /* Reduzido de --space-lg para caber mais itens */
+    gap: var(--space-md); 
   }
 
   .nav-link {
@@ -322,7 +318,7 @@ function isActive(href: string): boolean {
     background-color: var(--navbar-hover-bg);
   }
 
-  /* Tema claro: links brancos na navbar escura */
+  
   :global(html.light) .nav-link {
     color: var(--navbar-light-text);
   }
@@ -333,7 +329,7 @@ function isActive(href: string): boolean {
     background-color: var(--navbar-hover-bg);
   }
 
-  /* Actions */
+  
   .navbar-actions {
     display: flex;
     align-items: center;
@@ -359,7 +355,7 @@ function isActive(href: string): boolean {
     color: var(--color-text);
   }
 
-  /* Tema claro: ícones brancos na navbar escura */
+  
   :global(html.light) .icon-button {
     color: var(--navbar-light-text);
   }
@@ -373,7 +369,7 @@ function isActive(href: string): boolean {
     color: var(--navbar-light-text);
   }
 
-  /* Theme Toggle - mostra o ícone do tema OPOSTO (ação) */
+  
   .sun-icon {
     display: block;
   }
@@ -398,7 +394,7 @@ function isActive(href: string): boolean {
     display: none;
   }
 
-  /* Language Selector */
+  
   .language-selector {
     position: relative;
   }
@@ -453,12 +449,12 @@ function isActive(href: string): boolean {
     font-size: var(--font-size-small);
   }
 
-  /* CTA Button */
+  
   .navbar-cta {
     display: none;
   }
 
-  /* Mobile Menu Button */
+  
   .mobile-menu-button {
     display: flex;
     padding: var(--space-xs);
@@ -480,7 +476,7 @@ function isActive(href: string): boolean {
     display: block;
   }
 
-  /* Mobile Menu */
+  
   .mobile-menu {
     padding: var(--space-lg) 0;
     border-top: var(--border-width-hairline) solid var(--glass-border);
@@ -522,7 +518,7 @@ function isActive(href: string): boolean {
     background: var(--color-accent-light);
   }
 
-  /* Desktop */
+  
   @media (min-width: 769px) {
     .navbar-menu {
       display: flex;
@@ -539,18 +535,16 @@ function isActive(href: string): boolean {
 </style>
 
 <script>
-  /* ================================
-     JAVASCRIPT - Navbar Interactions
-     ================================ */
+  
 
-  // Theme Toggle
+  
   const themeToggle = document.getElementById("theme-toggle");
   const html = document.documentElement;
 
-  // Load saved theme - default to dark (novo design)
+  
   const savedTheme = localStorage.getItem("theme") || "dark";
 
-  // Apply initial theme
+  
   function applyTheme(theme: string) {
     if (theme === "light") {
       html.classList.add("light");
@@ -561,7 +555,7 @@ function isActive(href: string): boolean {
     }
   }
 
-  // Apply on load
+  
   applyTheme(savedTheme);
 
   themeToggle?.addEventListener("click", () => {
@@ -572,7 +566,7 @@ function isActive(href: string): boolean {
     localStorage.setItem("theme", newTheme);
   });
 
-  // Language Dropdown
+  
   const langToggle = document.getElementById("lang-toggle");
   const langDropdown = document.getElementById("lang-dropdown");
 
@@ -585,7 +579,7 @@ function isActive(href: string): boolean {
     }
   });
 
-  // Close dropdown when clicking outside
+  
   document.addEventListener("click", (e) => {
     if (
       !langToggle?.contains(e.target as Node) &&
@@ -595,7 +589,7 @@ function isActive(href: string): boolean {
     }
   });
 
-  // Mobile Menu Toggle
+  
   const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
 

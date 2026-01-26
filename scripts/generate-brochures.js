@@ -400,8 +400,8 @@ const buildHtml = (lang) => {
 <head>
   <meta charset="utf-8">
   <title>${labels.brochureTitle} - ${langLabel}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https:
+  <link rel="preconnect" href="https:
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles/global.css">
   <link rel="stylesheet" href="../src/styles/brochure.css">

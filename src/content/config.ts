@@ -1,12 +1,9 @@
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Content Collections Config
-   Define o schema dos posts do blog
-   ================================ */
+
+
 
 import { defineCollection, z } from 'astro:content';
 
-// Define a coleção "blog"
+
 const blog = defineCollection({
   type: 'content',
   schema: z.object({
@@ -15,7 +12,7 @@ const blog = defineCollection({
     author: z.string().default('Be Free Tours'),
     publishDate: z.string(),
     updateDate: z.string().optional(),
-    imageSlug: z.string(), // Slug da imagem em src/images/blog/
+    imageSlug: z.string(), 
     category: z.string(),
     readTime: z.string(),
     relatedTours: z.array(z.string()).optional(),
@@ -33,7 +30,7 @@ const blog = defineCollection({
   }),
 });
 
-// Exporta as coleções
+
 export const collections = {
   blog,
 };

@@ -1,8 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Private Tours Hub
-   Página com todos os tours + filtros
-   ================================ */
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { tours } from "../../data/tours.js";
@@ -15,17 +12,17 @@ import { getPageSEO, getToursCollectionSchema, getBreadcrumbSchema } from "../..
 const lang = "en";
 const t = useTranslations(lang);
 
-// Pega todos os tours em inglês
+
 const allTours = tours[lang];
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = getPageSEO("privateTours", lang);
 
-// Schemas
+
 const collectionSchema = getToursCollectionSchema(allTours, lang, siteUrl);
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Private Tours", url: `/${lang}/private-tours` },
@@ -36,16 +33,16 @@ const schemas = [collectionSchema, breadcrumbSchema];
 ---
 
 <BaseLayout title={seo.title} description={seo.description} schema={schemas}>
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
-  <!-- Hero Section -->
+  
   <HeroPages
     title={t("toursHub.title")}
     subtitle={t("toursHub.subtitle")}
     maxWidth="clamp(40rem, 75vw, 50rem)"
   />
 
-  <!-- Filters Section -->
+  
   <section class="tours-filters">
     <div class="container">
       <div class="filters-wrapper">
@@ -77,7 +74,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Tours Grid -->
+  
   <section class="tours-grid-section">
     <div class="container">
       <div class="tours-grid grid grid-3">
@@ -90,14 +87,14 @@ const schemas = [collectionSchema, breadcrumbSchema];
         }
       </div>
 
-      <!-- No Results Message -->
+      
       <div class="no-results" hidden>
         <p>{t("toursHub.noResults")}</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  
   <section class="tours-cta">
     <div class="container">
       <div class="cta-content">
@@ -112,7 +109,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .tours-hero {
     --tours-hero-offset: clamp(2rem, 6vw, 2.5rem);
     --tours-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
@@ -141,7 +138,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     line-height: var(--line-height-relaxed);
   }
 
-  /* Filters Section */
+  
   .tours-filters {
     --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
     --filters-z: 100;
@@ -155,8 +152,8 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
     padding: var(--space-xl) 0;
     background-color: var(--color-bg-soft);
-    /* position: sticky; */
-    top: var(--filters-top); /* Altura da navbar */
+    
+    top: var(--filters-top); 
     z-index: var(--filters-z);
     border-bottom: var(--filters-border) solid var(--color-border);
   }
@@ -197,7 +194,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     color: white;
   }
 
-  /* Fix for light theme - ensure text contrast */
+  
   :root[data-theme="light"] .filter-btn.active {
     background: var(--color-accent);
     color: white;
@@ -221,7 +218,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     color: white;
   }
 
-  /* Tours Grid */
+  
   .tours-grid-section {
     padding: var(--space-3xl) 0;
   }
@@ -240,7 +237,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     display: none;
   }
 
-  /* No Results */
+  
   .no-results {
     text-align: center;
     padding: var(--space-3xl) 0;
@@ -251,7 +248,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     color: var(--color-text-light);
   }
 
-  /* CTA Section */
+  
   .tours-cta {
     padding: var(--space-3xl) 0;
     background: linear-gradient(
@@ -283,7 +280,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
     margin: 0;
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .tours-hero {
       padding: calc(var(--space-3xl) + var(--tours-hero-offset-mobile)) 0 var(--space-xl);
@@ -321,9 +318,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
 </style>
 
 <script>
-  /* ================================
-     JAVASCRIPT - Filter Functionality
-     ================================ */
+  
 
   const filterButtons = document.querySelectorAll(".filter-btn");
   const tourItems = document.querySelectorAll(".tour-item");
@@ -333,11 +328,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
 
-      // Update active button
+      
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Filter tours
+      
       let visibleCount = 0;
 
       tourItems.forEach((item) => {
@@ -351,7 +346,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
         }
       });
 
-      // Show/hide no results message
+      
       if (visibleCount === 0) {
         noResults?.removeAttribute("hidden");
       } else {

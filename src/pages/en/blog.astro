@@ -1,11 +1,8 @@
 ---
-/* ================================
-   BE FREE TOURS - Blog Hub (English)
-   Página principal do blog
-   ================================ */
+
 
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content"; // IMPORTANTE: Importar getCollection
+import { getCollection } from "astro:content"; 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
@@ -15,7 +12,7 @@ import { getBlogSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 const lang = "en";
 const t = useTranslations(lang);
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = {
   title: "Rio Travel Blog - Tips, Guides & Stories | Be Free Tours",
@@ -23,9 +20,9 @@ const seo = {
     "Expert travel tips, insider guides, and inspiring stories about Rio de Janeiro. From hidden beaches to local cuisine, discover Rio like never before.",
 };
 
-// 1. Buscar posts REAIS da coleção
-// Filtra apenas posts em Inglês (slug começa com 'en/')
-// E ordena por data de publicação (mais recente primeiro)
+
+
+
 const allPosts = await getCollection("blog", ({ id }) => {
   return id.startsWith("en/");
 });
@@ -34,12 +31,12 @@ const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
 );
 
-// Import das imagens do blog
+
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/blog/*.{jpeg,jpg,png,webp}"
 );
 
-// Helper para carregar imagem
+
 async function getBlogImage(slug: string) {
   const possiblePaths = [
     `/src/images/blog/${slug}.webp`,
@@ -56,10 +53,10 @@ async function getBlogImage(slug: string) {
   return null;
 }
 
-// Carregar imagens para cada post
+
 const postsWithImages = await Promise.all(
   sortedPosts.map(async (post) => {
-    // Remove o prefixo 'en/' do slug para a URL ficar limpa
+    
     const cleanSlug = post.slug.split('/').pop();
     return {
       ...post.data,
@@ -69,17 +66,17 @@ const postsWithImages = await Promise.all(
   })
 );
 
-// Schemas
+
 const blogSchemaData = getBlogSchema(
   postsWithImages.map(p => ({
     slug: `${lang}/blog/${p.slug}`,
-    data: { title: p.title, description: p.description } // Note: seu schema chama de 'description', não 'excerpt'
+    data: { title: p.title, description: p.description } 
   })),
   lang,
   siteUrl
 );
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Blog", url: `/${lang}/blog` },
@@ -88,7 +85,7 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
 const schemas = [blogSchemaData, breadcrumbSchema];
 
-// Categorias (Geradas dinamicamente ou estáticas)
+
 const categories = [
   "All Posts",
   "Travel Tips",
@@ -107,16 +104,16 @@ const categories = [
   image="/images/og-blog.svg"
   schema={schemas}
 >
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
-  <!-- Hero Section -->
+  
   <HeroPages
     title="Rio Travel Blog"
     subtitle="Expert tips, insider guides, and inspiring stories from Rio de Janeiro. Written by locals who know this city like the back of their hand."
     maxWidth="clamp(34rem, 70vw, 43.75rem)"
   />
 
-  <!-- Categories Filter -->
+  
   <section class="blog-categories">
     <div class="container">
       <div class="categories-wrapper">
@@ -134,7 +131,7 @@ const categories = [
     </div>
   </section>
 
-  <!-- Blog Posts Grid -->
+  
   <section class="blog-posts">
     <div class="container">
       <div class="posts-grid grid grid-3">
@@ -178,38 +175,13 @@ const categories = [
         }
       </div>
 
-      <!--
-      <div class="newsletter-cta">
-        <div class="newsletter-content">
-          <h3>Get Rio Travel Tips in Your Inbox</h3>
-          <p>
-            Join 5,000+ travelers getting insider guides, hidden gems, and
-            exclusive tour discounts.
-          </p>
-          <form
-            class="newsletter-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              class="newsletter-input"
-            />
-            <button type="submit" class="btn btn-primary"> Subscribe </button>
-          </form>
-          <p class="newsletter-note">No spam. Unsubscribe anytime. 📧</p>
-        </div>
-      </div>
-      -->
+      
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* Hero */
+  
   .blog-hero {
     --blog-hero-offset: clamp(2rem, 6vw, 2.5rem);
     --blog-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
@@ -242,7 +214,7 @@ const categories = [
     line-height: var(--line-height-relaxed);
   }
 
-  /* Categories */
+  
   .blog-categories {
     --blog-categories-border: var(--border-width-hairline);
     --category-padding-block: clamp(0.625rem, 1.2vw, 0.75rem);
@@ -287,13 +259,13 @@ const categories = [
     color: white;
   }
 
-  /* Fix for light theme - ensure text contrast */
+  
   :root[data-theme="light"] .category-btn.active {
     background: var(--color-accent);
     color: white;
   }
 
-  /* Posts Grid */
+  
   .blog-posts {
     padding: var(--space-3xl) 0;
   }
@@ -302,7 +274,7 @@ const categories = [
     margin-bottom: var(--space-3xl);
   }
 
-  /* Post Card */
+  
   .post-card {
     --post-card-border: var(--border-width-hairline);
     --post-card-lift: -4px;
@@ -433,65 +405,9 @@ const categories = [
     color: var(--color-accent-light);
   }
 
-  /*
-  .newsletter-cta {
-    padding: var(--space-2xl);
-    background: linear-gradient(
-      135deg,
-      var(--color-primary) 0%,
-      var(--color-primary-dark) 100%
-    );
-    border-radius: var(--radius-lg);
-    text-align: center;
-    color: white;
-  }
+  
 
-  .newsletter-content {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .newsletter-content h3 {
-    font-size: var(--font-size-h3);
-    color: white;
-    margin-bottom: var(--space-sm);
-  }
-
-  .newsletter-content > p {
-    font-size: var(--font-size-h6);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--space-lg);
-  }
-
-  .newsletter-form {
-    display: flex;
-    gap: var(--space-sm);
-    max-width: 500px;
-    margin: 0 auto var(--space-sm);
-  }
-
-  .newsletter-input {
-    flex: 1;
-    padding: 0.875rem 1.25rem;
-    font-size: var(--font-size-body);
-    border: 2px solid transparent;
-    border-radius: var(--radius-md);
-    background-color: white;
-    color: var(--color-text);
-  }
-
-  .newsletter-input:focus {
-    outline: none;
-    border-color: var(--color-accent);
-  }
-
-  .newsletter-note {
-    font-size: var(--font-size-small);
-    color: rgba(255, 255, 255, 0.8);
-  }
-  */
-
-  /* Responsive */
+  
   @media (max-width: 768px) {
     .blog-hero {
       padding: calc(var(--space-3xl) + var(--blog-hero-offset-mobile)) 0 var(--space-xl);
@@ -525,38 +441,30 @@ const categories = [
       color: var(--color-accent);
     }
 
-    /*
-    .newsletter-form {
-      flex-direction: column;
-    }
-
-    .newsletter-cta {
-      padding: var(--space-xl);
-    }
-    */
+    
   }
 </style>
 
 <script>
-  // Script simples para filtro de categorias no frontend
+  
   document.addEventListener("DOMContentLoaded", () => {
     const categoryBtns = document.querySelectorAll(".category-btn");
     const posts = document.querySelectorAll(".post-card");
 
     categoryBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // 1. Gerenciar classe ativa nos botões
+        
         categoryBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
 
-        // 2. Filtrar posts
+        
         const selectedCategory = btn.getAttribute("data-category");
 
         posts.forEach((post) => {
-          // Se for "All Posts", mostra tudo.
-          // Senão, verifica se a categoria do post bate com a selecionada.
-          // Atenção: Isso assume que post.category é exatamente igual ao botão.
-          // Em um sistema real, pode precisar normalizar strings (lowercase, trim).
+          
+          
+          
+          
 
           if (selectedCategory === "All Posts") {
             (post as HTMLElement).style.display = "block";

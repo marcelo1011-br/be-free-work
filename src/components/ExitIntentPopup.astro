@@ -1,12 +1,9 @@
 ---
-/* ================================
-   BE FREE TOURS - Exit Intent Popup
-   Popup que aparece quando o usuário está prestes a sair
-   ================================ */
+
 
 const { lang = "en" } = Astro.props;
 
-// Conteúdo por idioma
+
 const content = {
   en: {
     title: "Have questions about your Rio trip?",
@@ -40,7 +37,7 @@ const content = {
 const text = content[lang] || content.en;
 ---
 
-<!-- Exit Intent Popup Overlay -->
+
 <div id="exit-intent-overlay" class="exit-overlay" aria-hidden="true">
   <div class="exit-popup" role="dialog" aria-labelledby="exit-popup-title">
     <button class="exit-close" aria-label="Close popup">
@@ -205,7 +202,7 @@ const text = content[lang] || content.en;
     opacity: 1;
   }
 
-  /* Light theme adjustments */
+  
   :global(html.light) .exit-overlay {
     background: var(--exit-overlay-bg-light);
   }
@@ -236,7 +233,7 @@ const text = content[lang] || content.en;
     color: var(--color-text-light);
   }
 
-  /* Mobile adjustments */
+  
   @media (max-width: 640px) {
     .exit-popup {
       padding: var(--space-xl);
@@ -257,11 +254,9 @@ const text = content[lang] || content.en;
 </style>
 
 <script>
-  /* ================================
-     EXIT INTENT DETECTION
-     ================================ */
+  
 
-  // Verifica se já mostrou o popup nesta sessão
+  
   const STORAGE_KEY = 'exitIntentShown';
   const hasShownPopup = sessionStorage.getItem(STORAGE_KEY);
 
@@ -271,7 +266,7 @@ const text = content[lang] || content.en;
     const dismissBtn = overlay?.querySelector('.exit-dismiss');
     let hasTriggered = false;
 
-    // Função para mostrar o popup
+    
     function showPopup() {
       if (hasTriggered || !overlay) return;
       hasTriggered = true;
@@ -281,7 +276,7 @@ const text = content[lang] || content.en;
       document.body.style.overflow = 'hidden';
     }
 
-    // Função para fechar o popup
+    
     function closePopup() {
       if (!overlay) return;
       overlay.classList.remove('show');
@@ -289,26 +284,26 @@ const text = content[lang] || content.en;
       document.body.style.overflow = '';
     }
 
-    // Detecta quando o mouse sai pela parte superior (exit intent)
+    
     document.addEventListener('mouseout', (e) => {
-      // Se o mouse sai pela parte superior do viewport
+      
       if (!e.relatedTarget && e.clientY <= 0) {
         showPopup();
       }
     });
 
-    // Eventos de fechar
+    
     closeBtn?.addEventListener('click', closePopup);
     dismissBtn?.addEventListener('click', closePopup);
 
-    // Fechar ao clicar fora do popup
+    
     overlay?.addEventListener('click', (e) => {
       if (e.target === overlay) {
         closePopup();
       }
     });
 
-    // Fechar com ESC
+    
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay?.classList.contains('show')) {
         closePopup();

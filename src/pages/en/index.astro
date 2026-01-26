@@ -1,9 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Home (English)
-   Página inicial em inglês
-   ================================ */
+
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
@@ -16,10 +13,10 @@ import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
 import { getWebSiteSchema } from "../../utils/seoHelpers.js";
 
-// Pega o conteúdo em inglês
+
 const content = homeContent["en"];
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const websiteSchema = getWebSiteSchema(siteUrl);
 const monthMap = {
@@ -45,7 +42,7 @@ const toIsoDate = (value) => {
   return `${year}-${mm}-01`;
 };
 
-// Organization Schema completo
+
 const organizationSchema = {
   "@type": "TravelAgency",
   "@id": `${siteUrl}/#organization`,

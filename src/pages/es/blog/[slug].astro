@@ -1,8 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Blog Post Template ES
-   ================================ */
+
+
 
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
@@ -18,12 +16,12 @@ import {
 
 const LANG = "es";
 
-// Import de todas as imagens do blog
+
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/blog/*.{jpeg,jpg,png,webp}"
 );
 
-// Helper para carregar imagem
+
 async function getBlogImage(imageSlug: string) {
   const possiblePaths = [
     `/src/images/blog/${imageSlug}.webp`,
@@ -48,7 +46,7 @@ export async function getStaticPaths() {
   return langPosts.map((post) => {
     const slug = post.slug.replace("es/", "");
 
-    // Buscar posts relacionados completos (com título)
+    
     let relatedPostsData = [];
     if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
       relatedPostsData = post.data.relatedPosts
@@ -72,14 +70,14 @@ const { post, relatedPostsData } = Astro.props;
 const { Content, headings } = await post.render();
 const t = useTranslations(LANG);
 
-// Carregar imagem otimizada
+
 const postImage = post.data.imageSlug 
   ? await getBlogImage(post.data.imageSlug)
   : null;
 
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 
-// Breadcrumb items para componente visual + schema
+
 const breadcrumbItems = [
   { name: "Home", url: `/${LANG}` },
   { name: "Blog", url: `/${LANG}/blog` },
@@ -89,7 +87,7 @@ const breadcrumbItems = [
   },
 ];
 
-// Schemas otimizados usando helpers
+
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
 const articleSchema = getArticleSchema(
@@ -102,8 +100,8 @@ const articleSchema = getArticleSchema(
   siteUrl
 );
 
-// TODO: Extrair FAQs do conteúdo do post automaticamente
-// Por enquanto, se o post tiver FAQs no frontmatter, use-as
+
+
 let faqSchema = null;
 if (post.data.faqs && post.data.faqs.length > 0) {
   faqSchema = getFAQSchema(post.data.faqs);
@@ -143,7 +141,7 @@ const tx = {
   ogTags={articleOGTags}
   preloadImage={postImage?.src}
 >
-  <!-- Breadcrumbs fora do container -->
+  
   <Breadcrumbs items={breadcrumbItems} />
 
   <article class="blog-post">

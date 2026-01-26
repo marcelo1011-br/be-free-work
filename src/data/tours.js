@@ -1,8 +1,4 @@
-/* ================================
- * BE FREE TOURS - Tours Data
- * Todos os 14 tours em 3 idiomas
- * SEO + IA optimized
- * ================================ */
+
 
 export const tours = {
   en: [
@@ -251,10 +247,10 @@ export const tours = {
     }
   ],
 
-  // ================================
-  // TOURS ES - COM imageSlug CORRIGIDO
-  // Cole isso dentro do seu tours.js na seção ES
-  // ================================
+  
+  
+  
+  
 
   es: [
     {

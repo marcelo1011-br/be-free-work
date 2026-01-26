@@ -1,22 +1,19 @@
-/* ================================
-   BE FREE TOURS - i18n UI
-   Traduções da interface
-   ================================ */
 
-// Idiomas disponíveis
+
+
 export const languages = {
   en: 'English',
   es: 'Español',
   'pt-br': 'Português'
 };
 
-// Idioma padrão
+
 export const defaultLang = 'en';
 
-// Traduções da interface
+
 export const ui = {
   en: {
-    // Navegação
+    
     'nav.home': 'Home',
     'nav.privateTours': 'Private Tours',
     'nav.gallery': 'Gallery',
@@ -27,7 +24,7 @@ export const ui = {
     'nav.book': 'Book Now',
     'nav.language': 'Language',
     
-    // Footer
+    
     'footer.tagline': 'Premium Private Tours in Rio de Janeiro',
     'footer.contact': 'Contact',
     'footer.links': 'Quick Links',
@@ -37,24 +34,24 @@ export const ui = {
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Review us on TripAdvisor',
     
-    // Botões gerais
+    
     'btn.learnMore': 'Learn More',
     'btn.viewTour': 'View Tour',
     'btn.bookNow': 'Book Now',
     'btn.contactUs': 'Contact Us',
     
-    // Geral
+    
     'general.price': 'Price',
     'general.duration': 'Duration',
     'general.fromPrice': 'From',
     'general.viewTour': 'View Tour',
     
-    // Featured Tours
+    
     'featuredTours.title': 'Featured Tours',
     'featuredTours.subtitle': 'Discover our most popular experiences in Rio de Janeiro',
     'featuredTours.viewAll': 'View All Tours',
     
-    // Tours Hub
+    
     'toursHub.title': 'Private Tours in Rio de Janeiro',
     'toursHub.subtitle': 'Explore Rio your way with our handcrafted private tours. Choose from city highlights, day trips, or walking experiences.',
     'toursHub.filterAll': 'All Tours',
@@ -66,14 +63,14 @@ export const ui = {
     'toursHub.ctaSubtitle': 'Let us create a custom tour just for you',
     'toursHub.ctaButton': 'Contact Us',
     
-    // Testimonials
+    
     'testimonials.title': 'What Our Guests Say',
     'testimonials.subtitle': 'Real experiences from travelers who discovered Rio with us',
     'testimonials.readMore': 'Read More Reviews',
     'testimonials.showLess': 'Show Less',
     'testimonials.viewTour': 'View this tour',
     
-    // Tour Page
+    
     'tour.aboutExperience': 'About This Experience',
     'tour.highlights': 'Highlights',
     'tour.whatsIncluded': 'What\'s Included',
@@ -110,7 +107,7 @@ export const ui = {
   },
   
   es: {
-    // Navegación
+    
     'nav.home': 'Inicio',
     'nav.privateTours': 'Tours Privados',
     'nav.gallery': 'Galería',
@@ -121,7 +118,7 @@ export const ui = {
     'nav.book': 'Reservar',
     'nav.language': 'Idioma',
     
-    // Footer
+    
     'footer.tagline': 'Tours Privados Premium en Río de Janeiro',
     'footer.contact': 'Contacto',
     'footer.links': 'Enlaces Rápidos',
@@ -131,24 +128,24 @@ export const ui = {
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Califícanos en TripAdvisor',
     
-    // Botones generales
+    
     'btn.learnMore': 'Más Información',
     'btn.viewTour': 'Ver Tour',
     'btn.bookNow': 'Reservar Ahora',
     'btn.contactUs': 'Contáctanos',
     
-    // General
+    
     'general.price': 'Precio',
     'general.duration': 'Duración',
     'general.fromPrice': 'Desde',
     'general.viewTour': 'Ver Tour',
     
-    // Featured Tours
+    
     'featuredTours.title': 'Tours Destacados',
     'featuredTours.subtitle': 'Descubre nuestras experiencias más populares en Río de Janeiro',
     'featuredTours.viewAll': 'Ver Todos los Tours',
     
-    // Tours Hub
+    
     'toursHub.title': 'Tours Privados en Río de Janeiro',
     'toursHub.subtitle': 'Explora Río a tu manera con nuestros tours privados personalizados. Elige entre tours de ciudad, excursiones de día completo o experiencias a pie.',
     'toursHub.filterAll': 'Todos los Tours',
@@ -160,14 +157,14 @@ export const ui = {
     'toursHub.ctaSubtitle': 'Déjanos crear un tour personalizado solo para ti',
     'toursHub.ctaButton': 'Contáctanos',
     
-    // Testimonials
+    
     'testimonials.title': 'Lo Que Dicen Nuestros Huéspedes',
     'testimonials.subtitle': 'Experiencias reales de viajeros que descubrieron Río con nosotros',
     'testimonials.readMore': 'Leer Más Reseñas',
     'testimonials.showLess': 'Mostrar Menos',
     'testimonials.viewTour': 'Ver este tour',
     
-    // Tour Page
+    
     'tour.aboutExperience': 'Sobre Esta Experiencia',
     'tour.highlights': 'Lo Más Destacado',
     'tour.whatsIncluded': 'Qué Está Incluido',
@@ -204,7 +201,7 @@ export const ui = {
   },
   
   'pt-br': {
-    // Navegação
+    
     'nav.home': 'Início',
     'nav.privateTours': 'Passeios Privados',
     'nav.gallery': 'Galeria',
@@ -215,7 +212,7 @@ export const ui = {
     'nav.book': 'Reservar',
     'nav.language': 'Idioma',
     
-    // Footer
+    
     'footer.tagline': 'Passeios Privados Premium no Rio de Janeiro',
     'footer.contact': 'Contato',
     'footer.links': 'Links Rápidos',
@@ -225,24 +222,24 @@ export const ui = {
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Avalie-nos no TripAdvisor',
     
-    // Botões gerais
+    
     'btn.learnMore': 'Saiba Mais',
     'btn.viewTour': 'Ver Tour',
     'btn.bookNow': 'Reservar Agora',
     'btn.contactUs': 'Fale Conosco',
     
-    // General
+    
     'general.price': 'Preço',
     'general.duration': 'Duração',
     'general.fromPrice': 'A partir de',
     'general.viewTour': 'Ver Passeio',
     
-    // Featured Tours
+    
     'featuredTours.title': 'Passeios em Destaque',
     'featuredTours.subtitle': 'Conheça nossas experiências mais populares no Rio de Janeiro',
     'featuredTours.viewAll': 'Ver Todos os Passeios',
     
-    // Tours Hub
+    
     'toursHub.title': 'Passeios Privados no Rio de Janeiro',
     'toursHub.subtitle': 'Explore o Rio do seu jeito com nossos passeios privados personalizados. Escolha entre tours pela cidade, passeios de dia inteiro ou experiências a pé.',
     'toursHub.filterAll': 'Todos os Passeios',
@@ -254,14 +251,14 @@ export const ui = {
     'toursHub.ctaSubtitle': 'Deixe-nos criar um passeio personalizado só para você',
     'toursHub.ctaButton': 'Fale Conosco',
     
-    // Testimonials
+    
     'testimonials.title': 'O Que Nossos Hóspedes Dizem',
     'testimonials.subtitle': 'Experiências reais de viajantes que descobriram o Rio conosco',
     'testimonials.readMore': 'Ler Mais Avaliações',
     'testimonials.showLess': 'Mostrar Menos',
     'testimonials.viewTour': 'Ver este passeio',
     
-    // Tour Page
+    
     'tour.aboutExperience': 'Sobre Esta Experiência',
     'tour.highlights': 'Destaques',
     'tour.whatsIncluded': 'O Que Está Incluído',

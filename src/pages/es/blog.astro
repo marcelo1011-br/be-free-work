@@ -1,11 +1,8 @@
 ---
-/* ================================
-   BE FREE TOURS - Blog Hub (Español)
-   Página principal del blog
-   ================================ */
+
 
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content"; // IMPORTANTE: Importar getCollection
+import { getCollection } from "astro:content"; 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
@@ -15,7 +12,7 @@ import { getBlogSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 const lang = "es";
 const t = useTranslations(lang);
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = {
   title: "Blog de Viajes a Río - Consejos, Guías e Historias | Be Free Tours",
@@ -23,9 +20,9 @@ const seo = {
     "Consejos expertos, guías internas e historias inspiradoras sobre Río de Janeiro. Desde playas escondidas hasta gastronomía local, descubre Río como nunca antes.",
 };
 
-// 1. Buscar posts REAIS da coleção
-// Filtra apenas posts em Espanhol (slug começa com 'es/')
-// E ordena por data de publicação (mais recente primeiro)
+
+
+
 const allPosts = await getCollection("blog", ({ id }) => {
   return id.startsWith("es/");
 });
@@ -34,12 +31,12 @@ const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
 );
 
-// Import das imagens do blog
+
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/blog/*.{jpeg,jpg,png,webp}"
 );
 
-// Helper para carregar imagem
+
 async function getBlogImage(slug: string) {
   const possiblePaths = [
     `/src/images/blog/${slug}.webp`,
@@ -56,10 +53,10 @@ async function getBlogImage(slug: string) {
   return null;
 }
 
-// Carregar imagens para cada post
+
 const postsWithImages = await Promise.all(
   sortedPosts.map(async (post) => {
-    // Remove o prefixo 'es/' do slug para a URL ficar limpa
+    
     const cleanSlug = post.slug.split('/').pop();
     return {
       ...post.data,
@@ -69,7 +66,7 @@ const postsWithImages = await Promise.all(
   })
 );
 
-// Categorías
+
 const categories = [
   "Todas las Publicaciones",
   "Consejos de Viaje",
@@ -81,7 +78,7 @@ const categories = [
   "Barrios",
 ];
 
-// Schemas
+
 const blogSchemaData = getBlogSchema(
   postsWithImages.map(p => ({
     slug: `${lang}/blog/${p.slug}`,
@@ -91,7 +88,7 @@ const blogSchemaData = getBlogSchema(
   siteUrl
 );
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Blog", url: `/${lang}/blog` },
@@ -107,16 +104,16 @@ const schemas = [blogSchemaData, breadcrumbSchema];
   image="/images/og-blog.svg"
   schema={schemas}
 >
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
-  <!-- Hero Section -->
+  
   <HeroPages
     title="Blog de Viajes a Río"
     subtitle="Consejos expertos, guías internas e historias inspiradoras de Río de Janeiro. Escritas por locales que conocen esta ciudad como la palma de su mano."
     maxWidth="clamp(34rem, 70vw, 43.75rem)"
   />
 
-  <!-- Categories Filter -->
+  
   <section class="blog-categories">
     <div class="container">
       <div class="categories-wrapper">
@@ -134,7 +131,7 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Blog Posts Grid -->
+  
   <section class="blog-posts">
     <div class="container">
       <div class="posts-grid grid grid-3">
@@ -178,37 +175,13 @@ const schemas = [blogSchemaData, breadcrumbSchema];
         }
       </div>
 
-      <!--
-      <div class="newsletter-cta">
-        <div class="newsletter-content">
-          <h3>Recibe Consejos de Viaje a Río en tu Correo</h3>
-          <p>
-            Únete a 5,000+ viajeros que reciben guías internas, joyas escondidas
-            y descuentos exclusivos en tours.
-          </p>
-          <form
-            class="newsletter-form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="Ingresa tu correo"
-              required
-              class="newsletter-input"
-            />
-            <button type="submit" class="btn btn-primary"> Suscribirse </button>
-          </form>
-          <p class="newsletter-note">Sin spam. Cancela cuando quieras. 📧</p>
-        </div>
-      -->      </div>
+            </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* Hero */
+  
   .blog-hero {
     --blog-hero-offset: clamp(2rem, 6vw, 2.5rem);
     --blog-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
@@ -241,7 +214,7 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     line-height: var(--line-height-relaxed);
   }
 
-  /* Categories */
+  
   .blog-categories {
     --blog-categories-border: var(--border-width-hairline);
     --category-padding-block: clamp(0.625rem, 1.2vw, 0.75rem);
@@ -286,13 +259,13 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     color: white;
   }
 
-  /* Fix for light theme - ensure text contrast */
+  
   :root[data-theme="light"] .category-btn.active {
     background: var(--color-accent);
     color: white;
   }
 
-  /* Posts Grid */
+  
   .blog-posts {
     --blog-posts-offset: clamp(2rem, 6vw, 2.5rem);
     padding: calc(var(--space-3xl) + var(--blog-posts-offset)) 0 var(--space-3xl);
@@ -302,7 +275,7 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     margin-bottom: var(--space-3xl);
   }
 
-  /* Post Card */
+  
   .post-card {
     --post-card-border: var(--border-width-hairline);
     --post-card-lift: -4px;
@@ -432,20 +405,7 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     color: var(--color-accent);
   }
 
-  /*
-  .newsletter-cta {
-    padding: var(--space-2xl);
-    background: linear-gradient(
-      135deg,
-      var(--color-bg-dark) 0%,
-      var(--color-primary) 50%,
-      var(--color-bg-dark) 100%
-    );
-    border-radius: var(--radius-lg);
-    text-align: center;
-    color: var(--color-text-inverse);
-  }
-  */
+  
 
   .newsletter-content {
     max-width: 600px;
@@ -491,7 +451,7 @@ const schemas = [blogSchemaData, breadcrumbSchema];
     color: rgba(255, 255, 255, 0.8);
   }
 
-  /* Responsive */
+  
   @media (max-width: 768px) {
     .blog-hero {
       padding: calc(var(--space-3xl) + var(--blog-hero-offset-mobile)) 0 var(--space-xl);
@@ -505,31 +465,23 @@ const schemas = [blogSchemaData, breadcrumbSchema];
       padding: var(--space-2xl) 0;
     }
 
-    /*
-    .newsletter-form {
-      flex-direction: column;
-    }
-
-    .newsletter-cta {
-      padding: var(--space-xl);
-    }
-    */
+    
   }
 </style>
 
 <script>
-  // Category filter functionality
+  
   document.addEventListener("DOMContentLoaded", () => {
     const categoryBtns = document.querySelectorAll(".category-btn");
     const posts = document.querySelectorAll(".post-card");
 
     categoryBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // 1. Gerenciar classe ativa nos botões
+        
         categoryBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
 
-        // 2. Filtrar posts
+        
         const selectedCategory = btn.getAttribute("data-category");
 
         posts.forEach((post) => {

@@ -1,16 +1,13 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - CTA Final Component
-   Seção de call-to-action final otimizada para conversão
-   ================================ */
+
+
 
 import { homeContent } from "../data/homeContent.js";
 
 const { lang } = Astro.props;
 const content = homeContent[lang].ctaFinal;
 
-// Ícones dos trust badges
+
 const icons = {
   calendar:
     '<svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>',
@@ -73,7 +70,7 @@ const icons = {
     overflow: hidden;
   }
 
-  /* Padrão sutil de fundo */
+  
   .cta-final::before {
     content: "";
     position: absolute;
@@ -128,7 +125,7 @@ const icons = {
     margin-top: var(--space-md);
   }
 
-  /* Botão secondary específico para CTA (branco com borda) */
+  
   .cta-btn-secondary {
     background-color: transparent;
     border-color: var(--color-text-inverse);
@@ -172,7 +169,7 @@ const icons = {
     white-space: nowrap;
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .cta-final {
       padding: var(--space-2xl) 0;

@@ -1,13 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Breadcrumbs Component
-   Migalhas de pão visuais + Schema
-   
-   🆕 STICKY COM NAVBAR!
-   - Gruda no topo quando scrolla
-   - Tamanho fixo (não reduz no scroll)
-   - Backdrop blur
-   ================================ */
+
 
 interface Props {
   items: Array<{
@@ -70,25 +62,25 @@ const { items } = Astro.props;
     --breadcrumbs-transition: box-shadow var(--transition-duration-slow) var(--transition-easing-default);
     --separator-size: clamp(0.625rem, 1.5vw, 0.75rem);
 
-    /* 🆕 Sticky com navbar */
+    
     position: sticky;
-    top: var(--breadcrumbs-top); /* Alinha com a altura real da navbar */
-    z-index: calc(var(--navbar-z, 1000) - 1); /* Abaixo da navbar */
+    top: var(--breadcrumbs-top); 
+    z-index: calc(var(--navbar-z, 1000) - 1); 
 
-    /* Visual - FIXO, não muda no scroll */
+    
     padding-top: var(--breadcrumbs-padding-top);
     padding-bottom: var(--breadcrumbs-padding-bottom);
     border-bottom: var(--breadcrumbs-border) solid var(--color-border);
 
-    /* 🆕 Backdrop blur effect */
+    
     backdrop-filter: blur(var(--breadcrumbs-blur));
     background-color: var(--breadcrumbs-bg);
 
-    /* Transição suave apenas para sombra */
+    
     transition: var(--breadcrumbs-transition);
   }
 
-  /* 🆕 Quando scrollar, adiciona sombra (mas não muda tamanho) */
+  
   .breadcrumbs.scrolled {
     box-shadow: var(--breadcrumbs-shadow);
   }
@@ -108,7 +100,7 @@ const { items } = Astro.props;
     display: flex;
     align-items: center;
     gap: var(--space-xs);
-    font-size: var(--font-size-small); /* Menor que antes */
+    font-size: var(--font-size-small); 
   }
 
   .breadcrumb-link {
@@ -132,11 +124,11 @@ const { items } = Astro.props;
     font-weight: var(--font-weight-medium);
   }
 
-  /* Responsive */
+  
   @media (max-width: 768px) {
     .breadcrumbs {
-      top: var(--breadcrumbs-top-mobile); /* Navbar mobile */
-      padding: var(--breadcrumbs-padding-mobile) 0; /* Menos padding no mobile */
+      top: var(--breadcrumbs-top-mobile); 
+      padding: var(--breadcrumbs-padding-mobile) 0; 
     }
 
     .breadcrumb-list {
@@ -150,7 +142,7 @@ const { items } = Astro.props;
     }
   }
 
-  /* Dark mode support */
+  
   :global(.dark) .breadcrumbs {
     --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-soft) 95%, transparent);
     border-bottom-color: color-mix(in srgb, white 10%, transparent);
@@ -161,16 +153,16 @@ const { items } = Astro.props;
   }
 </style>
 
-<!-- 🆕 Script para detectar scroll e adicionar sombra -->
+
 <script>
-  // Adiciona classe 'scrolled' quando scrollar (só para sombra)
+  
   const breadcrumbs = document.querySelector(".breadcrumbs");
 
   if (breadcrumbs) {
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
 
-      // Se scrollou mais de 50px, adiciona sombra
+      
       if (currentScroll > 50) {
         breadcrumbs.classList.add("scrolled");
       } else {

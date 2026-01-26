@@ -1,8 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - Hero Component
-   Design Premium: Full-screen com imagem de fundo e trust badges
-   ================================ */
+
 
 import { Image } from "astro:assets";
 
@@ -14,10 +11,10 @@ const {
   lang = "en"
 } = Astro.props;
 
-// Import hero background image
+
 import heroImage from "../images/heroes/home-hero.webp";
 
-// Trust badges content by language
+
 const trustBadges = {
   en: [
     { icon: "star", label: "Top-Rated", value: "Private Tour Operator" },
@@ -38,7 +35,7 @@ const trustBadges = {
 
 const badges = trustBadges[lang] || trustBadges.en;
 
-// Tagline by language
+
 const taglines = {
   en: "Tailor-Made, Expert-Led, Stress-Free",
   es: "A Medida, Con Expertos, Sin Estrés",
@@ -49,7 +46,7 @@ const tagline = taglines[lang] || taglines.en;
 ---
 
 <section class="hero">
-  <!-- Background Image -->
+  
   <div class="hero-bg">
     <Image
       src={heroImage}
@@ -64,7 +61,7 @@ const tagline = taglines[lang] || taglines.en;
     <div class="hero-overlay"></div>
   </div>
 
-  <!-- Content -->
+  
   <div class="hero-container">
     <div class="hero-content">
       <p class="hero-tagline">{tagline}</p>
@@ -85,7 +82,7 @@ const tagline = taglines[lang] || taglines.en;
     </div>
   </div>
 
-  <!-- Trust Badges Bar -->
+  
   <div class="trust-badges-wrapper">
     <div class="trust-badges glass">
       {badges.map((badge) => (
@@ -167,7 +164,7 @@ const tagline = taglines[lang] || taglines.en;
     overflow: hidden;
   }
 
-  /* Background Image */
+  
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -187,7 +184,7 @@ const tagline = taglines[lang] || taglines.en;
     background: var(--gradient-hero);
   }
 
-  /* Container */
+  
   .hero-container {
     position: relative;
     z-index: 1;
@@ -199,7 +196,7 @@ const tagline = taglines[lang] || taglines.en;
     padding-bottom: var(--hero-padding-bottom);
   }
 
-  /* Content - Centered */
+  
   .hero-content {
     max-width: var(--hero-content-max);
     width: 100%;
@@ -251,7 +248,7 @@ const tagline = taglines[lang] || taglines.en;
     gap: var(--hero-cta-btn-gap);
   }
 
-  /* Trust Badges */
+  
   .trust-badges-wrapper {
     position: absolute;
     bottom: var(--space-xl);
@@ -309,7 +306,7 @@ const tagline = taglines[lang] || taglines.en;
     color: var(--color-text-light);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .hero-container {
       padding-top: var(--hero-padding-top-mobile);
@@ -395,7 +392,7 @@ const tagline = taglines[lang] || taglines.en;
     }
   }
 
-  /* Tema claro: Hero mantém texto branco sobre imagem */
+  
   :global(html.light) .hero-tagline,
   :global(html.light) .hero-title,
   :global(html.light) .hero-subtitle {
@@ -410,7 +407,7 @@ const tagline = taglines[lang] || taglines.en;
     color: var(--hero-light-text-subtle);
   }
 
-  /* Trust badges no tema claro - glass escuro */
+  
   :global(html.light) .trust-badges {
     background: var(--trust-light-bg);
     backdrop-filter: blur(var(--blur-md));

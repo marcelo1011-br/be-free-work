@@ -1,8 +1,5 @@
 ---
-/* ================================
-   BE FREE TOURS - About Page
-   Sobre a empresa
-   ================================ */
+
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
@@ -12,21 +9,21 @@ import { getPageSEO, getAboutPageSchema, getBreadcrumbSchema } from "../../utils
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
 
-// Import about image
+
 import aboutImage from "../../images/about/about-rio.webp";
 
 const lang = "pt-br";
 const t = useTranslations(lang);
 const content = pageContent.about[lang];
 
-// SEO
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = getPageSEO("about", lang);
 
-// Schemas
+
 const aboutPageSchema = getAboutPageSchema(lang, siteUrl);
 
-// Breadcrumb
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: "Sobre", url: `/${lang}/sobre` },
@@ -37,16 +34,16 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 ---
 
 <BaseLayout title={seo.title} description={seo.description} schema={schemas}>
-  <!-- Breadcrumbs -->
+  
   <Breadcrumbs items={breadcrumbItems} />
-  <!-- Hero Section -->
+  
   <HeroPages
     title={content.hero.title}
     subtitle={content.hero.subtitle}
     maxWidth="clamp(34rem, 70vw, 43.75rem)"
   />
 
-  <!-- Our Story Section -->
+  
   <section class="our-story">
     <div class="container">
       <div class="story-content">
@@ -68,7 +65,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Our Values Section -->
+  
   <section class="our-values">
     <div class="container">
       <h2 class="section-title text-center">{content.values.title}</h2>
@@ -129,7 +126,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
+  
   <section class="why-choose">
     <div class="container">
       <h2 class="section-title text-center">{content.stats.title}</h2>
@@ -146,7 +143,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     </div>
   </section>
 
-  <!-- CTA Section -->
+  
   <section class="about-cta">
     <div class="container">
       <div class="cta-content">
@@ -166,7 +163,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .about-hero {
     --about-hero-offset: clamp(2rem, 6vw, 2.5rem);
     --about-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
@@ -195,7 +192,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     margin: 0 auto;
   }
 
-  /* Our Story Section */
+  
   .our-story {
     --section-offset: clamp(2rem, 6vw, 2.5rem);
     --story-image-shadow: 0 8px 24px color-mix(in srgb, black 12%, transparent);
@@ -233,7 +230,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     line-height: var(--line-height-relaxed);
   }
 
-  /* Our Values Section */
+  
   .our-values {
     padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
     background-color: var(--color-bg-soft);
@@ -297,7 +294,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     margin: 0;
   }
 
-  /* Why Choose Section */
+  
   .why-choose {
     padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
   }
@@ -342,7 +339,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     color: var(--color-text);
   }
 
-  /* CTA Section */
+  
   .about-cta {
     --about-cta-max: clamp(34rem, 70vw, 43.75rem);
     padding: calc(var(--space-3xl) + var(--section-offset)) 0 var(--space-3xl);
@@ -383,7 +380,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     justify-content: center;
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .about-hero {
       padding: calc(var(--space-3xl) + var(--about-hero-offset-mobile)) 0 var(--space-xl);

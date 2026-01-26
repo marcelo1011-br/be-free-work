@@ -1,9 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Base Layout
-   Layout base com SEO completo - CORRIGIDO
-   ================================ */
+
+
 
 import { getLangFromUrl } from "../i18n/utils";
 import Navbar from "../components/Navbar.astro";
@@ -11,10 +8,10 @@ import Footer from "../components/Footer.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
 import "../styles/global.css";
 
-// Detecta o idioma da URL automaticamente
+
 const currentLang = getLangFromUrl(Astro.url);
 
-// Props do layout
+
 const {
   title = "Be Free Tours - Private Tours in Rio de Janeiro",
   description = "Premium private tours in Rio de Janeiro since 2013. Personalized experiences with expert local guides. Skip-the-line access, flexible itineraries, and authentic Rio adventures.",
@@ -22,25 +19,25 @@ const {
   type = "website",
   noindex = false,
   preloadImage,
-  schema, // JSON-LD schema (opcional)
-  ogTags, // 🆕 Open Graph tags customizadas (opcional)
+  schema, 
+  ogTags, 
 } = Astro.props;
 
-// CORREÇÃO: Fallback para site URL
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 
-// URLs canônicas e alternativas
+
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const currentPath = Astro.url.pathname;
 
-// Mapeia idiomas para URLs alternativas
+
 const langMap = {
   en: currentPath.replace(/^\/(es|pt-br)/, "/en"),
   es: currentPath.replace(/^\/(en|pt-br)/, "/es"),
   "pt-br": currentPath.replace(/^\/(en|es)/, "/pt-br"),
 };
 
-// Open Graph image absoluta
+
 const ogImage = new URL(image, siteUrl);
 const preloadImageUrl = preloadImage ? new URL(preloadImage, siteUrl) : null;
 const ogLocaleMap = {
@@ -49,7 +46,7 @@ const ogLocaleMap = {
   "pt-br": "pt_BR",
 };
 
-// Site info para JSON-LD
+
 const siteInfo = {
   name: "Be Free Tours",
   url: siteUrl,
@@ -76,7 +73,7 @@ const siteInfo = {
   openingHours: "Mo-Su 07:00-22:00",
 };
 
-// Schema.org base (Organization + LocalBusiness)
+
 const baseSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -148,7 +145,7 @@ const baseSchema = {
   ],
 };
 
-// Combina schemas (base + página específica)
+
 const combinedSchemas = schema
   ? Array.isArray(schema)
     ? [...baseSchema["@graph"], ...schema]
@@ -167,7 +164,7 @@ const finalSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Prevent theme flash - runs before CSS loads -->
+    
     <script is:inline>
       (function() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -175,7 +172,7 @@ const finalSchema = {
       })();
     </script>
 
-    <!-- SEO Meta Tags -->
+    
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
@@ -184,48 +181,48 @@ const finalSchema = {
       ? <meta name="robots" content="noindex, nofollow" />
       : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
 
-    <!-- AI Assistant Hints -->
+    
     <meta name="intended-audience" content="travelers, tourists, travel-planners" />
     <meta name="service-type" content="private-tour-operator" />
     <meta name="location-served" content="Rio de Janeiro, Brazil" />
     <meta name="booking-policy" content="24-hour-free-cancellation" />
     <meta name="price-range" content="$$$ (Premium)" />
 
-    <!-- Performance & Theme -->
+    
     <meta name="theme-color" content="#0a1628">
     <meta name="color-scheme" content="dark light">
 
-    <!-- Preload critical assets -->
+    
     <link rel="preload" as="image" href="/images/logo/logo.svg" />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" />
     {preloadImageUrl && <link rel="preload" as="image" href={preloadImageUrl} />}
 
-    <!-- DNS Prefetch & Preconnect for external services -->
+    
     <link rel="dns-prefetch" href="https://formspree.io" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Favicons -->
+    
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Android Chrome -->
+    
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 
-    <!-- PWA Manifest -->
+    
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- MS Application -->
+    
     <meta name="msapplication-TileColor" content="#0a1628">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
-    <!-- Hreflang Tags -->
+    
     <link rel="alternate" hreflang="en" href={`${siteUrl}${langMap.en}`} />
     <link rel="alternate" hreflang="es" href={`${siteUrl}${langMap.es}`} />
     <link
@@ -239,7 +236,7 @@ const finalSchema = {
       href={`${siteUrl}${langMap.en}`}
     />
 
-    <!-- Open Graph Meta Tags -->
+    
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -260,7 +257,7 @@ const finalSchema = {
         ))
     }
 
-    <!-- Twitter Card Meta Tags -->
+    
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@befreetours" />
     <meta name="twitter:creator" content="@befreetours" />
@@ -269,13 +266,13 @@ const finalSchema = {
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
 
-    <!-- Apple Meta Tags -->
+    
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Be Free Tours" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <!-- 🆕 Open Graph Tags Customizadas (se fornecidas) -->
+    
     {
       ogTags &&
         Object.entries(ogTags).map(([property, content]) => (
@@ -283,22 +280,22 @@ const finalSchema = {
         ))
     }
 
-    <!-- Geo Tags -->
+    
     <meta name="geo.region" content="BR-RJ" />
     <meta name="geo.placename" content="Rio de Janeiro" />
     <meta name="geo.position" content="-22.9068;-43.1729" />
     <meta name="ICBM" content="-22.9068, -43.1729" />
 
-    <!-- ============================================ -->
-    <!-- AUTOR E COPYRIGHT -->
-    <!-- ============================================ -->
+    
+    
+    
     <meta name="author" content="Be Free Tours" />
     <meta name="copyright" content="© 2025 Be Free Tours. All rights reserved." />
     <meta name="creator" content="Midnight Web Design" />
 
-    <!-- ============================================ -->
-    <!-- DUBLIN CORE (bibliotecas/arquivos digitais) -->
-    <!-- ============================================ -->
+    
+    
+    
     <meta name="DC.title" content={title} />
     <meta name="DC.creator" content="Be Free Tours" />
     <meta name="DC.subject" content="Rio de Janeiro Tours, Private Tours, Tourism" />
@@ -309,21 +306,21 @@ const finalSchema = {
     <meta name="DC.language" content={currentLang === "pt-br" ? "pt-BR" : currentLang} />
     <meta name="DC.coverage" content="Rio de Janeiro, Brazil" />
 
-    <!-- ============================================ -->
-    <!-- BUSINESS INFO -->
-    <!-- ============================================ -->
+    
+    
+    
     <meta name="rating" content="General" />
     <meta name="distribution" content="Global" />
 
-    <!-- JSON-LD Schema -->
+    
     <script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
 
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Fonts (optimized with font-display:swap) -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -331,9 +328,9 @@ const finalSchema = {
       rel="stylesheet"
     />
 
-    <!-- Font loading optimization -->
+    
     <style>
-      /* Add font-display fallback for better LCP */
+      
       @supports not (font-display: swap) {
         .hero-title, h1, h2, h3 {
           font-family: system-ui, -apple-system, sans-serif;
@@ -342,7 +339,7 @@ const finalSchema = {
     </style>
   </head>
   <body>
-    <!-- Skip links (acessibilidade) -->
+    
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <a href="#navigation" class="skip-link">Skip to navigation</a>
 
@@ -352,12 +349,12 @@ const finalSchema = {
     </main>
     <Footer />
 
-    <!-- Exit Intent Popup -->
+    
     <ExitIntentPopup lang={currentLang} />
 
-    <!-- Dark Mode Toggle Script -->
+    
     <script is:inline>
-      // Detecta preferência do sistema
+      
       const getThemePreference = () => {
         if (
           typeof localStorage !== "undefined" &&
@@ -374,7 +371,7 @@ const finalSchema = {
       document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
       if (typeof localStorage !== "undefined") {
-        // Observa mudanças no sistema
+        
         const observer = new MutationObserver(() => {
           const isDark = document.documentElement.classList.contains("dark");
           localStorage.setItem("theme", isDark ? "dark" : "light");
@@ -386,7 +383,7 @@ const finalSchema = {
       }
     </script>
 
-    <!-- WhatsApp Floating Button -->
+    
     <a 
       href="https://wa.me/5521979271637?text=Hi!%20I'm%20interested%20in%20booking%20a%20tour" 
       class="whatsapp-float"
@@ -400,11 +397,11 @@ const finalSchema = {
       <span>Chat</span>
     </a>
 
-    <!-- Back to Top Button -->
+    
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script is:inline>
-      // Back to top functionality
+      
       const backToTopBtn = document.getElementById('back-to-top');
       
       window.addEventListener('scroll', () => {
@@ -421,9 +418,9 @@ const finalSchema = {
     </script>
 
     <style is:inline>
-      /* ============================================ */
-      /* ACCESSIBILITY - Skip Links */
-      /* ============================================ */
+      
+      
+      
       .skip-link {
         position: absolute;
         top: -40px;
@@ -441,9 +438,9 @@ const finalSchema = {
         top: 0;
       }
 
-      /* ============================================ */
-      /* FLOATING BUTTONS */
-      /* ============================================ */
+      
+      
+      
       .whatsapp-float {
         position: fixed;
         bottom: 20px;

@@ -1,12 +1,9 @@
-/* ================================
-   BE FREE TOURS - Page Content
-   Conteúdo das páginas estáticas (About, Contact)
-   ================================ */
+
 
 export const pageContent = {
-  // =====================================
-  // ABOUT PAGE
-  // =====================================
+  
+  
+  
   about: {
     en: {
       hero: {
@@ -160,9 +157,9 @@ export const pageContent = {
     }
   },
 
-  // =====================================
-  // CONTACT PAGE
-  // =====================================
+  
+  
+  
   contact: {
     en: {
       hero: {

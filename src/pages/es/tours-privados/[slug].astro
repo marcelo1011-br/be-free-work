@@ -1,36 +1,33 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Tour Detail Page
-   Página dinâmica de tour individual
-   ================================ */
+
+
 
 import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import TourCard from "../../../components/TourCard.astro";
-import Breadcrumbs from "../../../components/Breadcrumbs.astro"; // 🆕 NOVO
+import Breadcrumbs from "../../../components/Breadcrumbs.astro"; 
 import { tours } from "../../../data/tours.js";
 import { useTranslations } from "../../../i18n/utils";
 import {
   getTourSEO,
   getTourSchema,
-  getTouristTripSchema, // 🆕 NOVO - CRÍTICO PARA SEO
+  getTouristTripSchema, 
   getFAQSchema,
   getBreadcrumbSchema,
-  getReviewSchema, // 🆕 NOVO
-  getOpenGraphTags, // 🆕 NOVO
-  getHowToSchema, // 🆕 NOVO
+  getReviewSchema, 
+  getOpenGraphTags, 
+  getHowToSchema, 
 } from "../../../utils/seoHelpers.js";
 
 export async function getStaticPaths() {
   const paths = [];
 
-  // APENAS tours em ESPANHOL (ES)
+  
   const LANG = 'es';
   const tourList = tours[LANG];
 
   for (const tour of tourList) {
-    // Carregar imagem hero (usa imageSlug se disponível)
+    
     const imageSlug = tour.imageSlug || tour.slug;
     let heroImage;
     try {
@@ -38,7 +35,7 @@ export async function getStaticPaths() {
         `../../../images/tours/heroes/${imageSlug}-hero.webp`
       );
     } catch {
-      // Fallback para essential-rio se imagem não existir
+      
       heroImage = await import(
         `../../../images/tours/heroes/essential-rio-hero.webp`
       );
@@ -52,7 +49,7 @@ export async function getStaticPaths() {
         tour,
         lang: LANG,
         allTours: tourList,
-        heroImage: heroImage.default, // Passar imagem como prop
+        heroImage: heroImage.default, 
       },
     });
   }
@@ -63,7 +60,7 @@ export async function getStaticPaths() {
 const { tour, lang, allTours, heroImage } = Astro.props;
 const t = useTranslations(lang);
 
-// Função para calcular preço "from"
+
 function getFromPrice(pricing) {
   if (pricing.from) return pricing.from;
   if (pricing.perPerson) return pricing.perPerson;
@@ -76,12 +73,12 @@ function getFromPrice(pricing) {
 
 const fromPrice = getFromPrice(tour.pricing);
 
-// Related tours (mesma categoria, máximo 3)
+
 const relatedTours = allTours
   .filter((t) => t.category === tour.category && t.id !== tour.id)
   .slice(0, 3);
 
-// Tips personalizados por tipo de tour
+
 const tourTips = {
   "ilha-grande": [
     "Bring swimwear and towel",
@@ -192,7 +189,7 @@ const tourTips = {
 
 const tips = tourTips[tour.id] || tourTips["default"];
 
-// FAQs personalizados por tour (SEO otimizado!)
+
 const tourFAQs = {
   "ilha-grande": [
     {
@@ -324,24 +321,24 @@ const tourFAQs = {
 
 const faqs = tourFAQs[tour.id] || tourFAQs["default"];
 
-// ========================================
-// SEO METADATA & SCHEMAS
-// ========================================
+
+
+
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 
-// 1. Tour SEO metadata
+
 const seoData = getTourSEO(tour, lang, heroImage?.src);
 
-// 2. Tour Product Schema
+
 const tourSchemas = getTourSchema(tour, lang, siteUrl, heroImage?.src);
 
-// 🆕 2.5 TouristTrip Schema (DIFERENCIAL COMPETITIVO!)
+
 const touristTripSchema = getTouristTripSchema(tour, lang, siteUrl);
 
-// 3. FAQ Schema (IAs adoram!)
+
 const faqSchema = getFAQSchema(faqs);
 
-// 4. Breadcrumb Schema
+
 const tourRoutes = {
   en: "private-tours",
   es: "tours-privados",
@@ -349,7 +346,7 @@ const tourRoutes = {
 };
 const tourRoute = tourRoutes[lang] || "private-tours";
 
-// 🆕 Breadcrumb items (para componente visual + schema)
+
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   { name: t("nav.privateTours"), url: `/${lang}/${tourRoute}` },
@@ -358,26 +355,26 @@ const breadcrumbItems = [
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
-// 🆕 5. Review Schema (estrelas no Google!)
+
 const reviewSchema = getReviewSchema(tour, siteUrl, lang);
 
-// 🆕 6. Open Graph tags (redes sociais!)
+
 const ogTags = getOpenGraphTags(tour, lang, siteUrl, heroImage?.src);
 
-// 🆕 7. HowTo Schema (Como Reservar - Position Zero!)
+
 const howToSchema = getHowToSchema(lang, siteUrl);
 
-// Combina todos os schemas
+
 const pageSchemas = [
   ...tourSchemas,
-  touristTripSchema, // 🆕 TouristTrip (Google ADORA!)
+  touristTripSchema, 
   faqSchema,
   breadcrumbSchema,
-  howToSchema, // 🆕 NOVO
-  ...(reviewSchema || []), // 🆕 Adiciona reviews se existirem
+  howToSchema, 
+  ...(reviewSchema || []), 
 ];
 
-// Título da página
+
 const pageTitle = `${tour.title} | Be Free Tours`;
 ---
 
@@ -389,10 +386,10 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   schema={pageSchemas}
   ogTags={ogTags}
 >
-  <!-- 🆕 Breadcrumbs Visuais (UX + Google) -->
+  
   <Breadcrumbs items={breadcrumbItems} />
 
-  <!-- Hero Section -->
+  
   <section class="tour-hero">
     <div class="hero-image">
       <Image
@@ -441,7 +438,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     </div>
   </section>
 
-  <!-- Overview Section -->
+  
   <section class="tour-overview">
     <div class="container">
       <h2 class="section-title">{t("tour.aboutExperience")}</h2>
@@ -449,11 +446,11 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     </div>
   </section>
 
-  <!-- Accordion Section -->
+  
   <section class="tour-details">
     <div class="container">
       <div class="accordion">
-        <!-- Highlights -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -501,7 +498,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- Included/Not Included -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -578,7 +575,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- Pricing & Payment -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -715,7 +712,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- Condiciones de pago -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -770,7 +767,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- Política de cancelación -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -821,7 +818,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- Tips -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -869,7 +866,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           </div>
         </div>
 
-        <!-- FAQs -->
+        
         <div class="accordion-item">
           <button class="accordion-header" data-accordion-trigger>
             <div class="accordion-title">
@@ -913,7 +910,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     </div>
   </section>
 
-  <!-- Related Tours -->
+  
   {
     relatedTours.length > 0 && (
       <section class="related-tours">
@@ -929,7 +926,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     )
   }
 
-  <!-- CTA Final -->
+  
   <section class="tour-cta">
     <div class="container">
       <div class="cta-content">
@@ -952,7 +949,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 </BaseLayout>
 
 <style>
-  /* Hero Section */
+  
   .tour-hero {
     --tour-hero-overlay-start: color-mix(in srgb, black 70%, transparent);
     --tour-hero-overlay-mid: color-mix(in srgb, black 30%, transparent);
@@ -1060,7 +1057,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     text-shadow: var(--tour-hero-price-shadow);
   }
 
-  /* Overview */
+  
   .tour-overview {
     padding: var(--space-3xl) 0 var(--space-2xl);
   }
@@ -1072,7 +1069,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     color: var(--color-text-light);
   }
 
-  /* Accordion */
+  
   .tour-details {
     padding: 0 0 var(--space-3xl);
   }
@@ -1149,7 +1146,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     padding: 0 var(--space-lg) var(--space-lg);
   }
 
-  /* Highlights */
+  
   .highlights-list {
     display: flex;
     flex-direction: column;
@@ -1170,7 +1167,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     color: var(--color-accent);
   }
 
-  /* Included Grid */
+  
   .included-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--included-grid-min), 1fr));
@@ -1216,7 +1213,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     color: var(--color-error);
   }
 
-  /* Pricing */
+  
   .pricing-content {
     display: flex;
     flex-direction: column;
@@ -1277,7 +1274,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     line-height: var(--line-height-relaxed);
   }
 
-  /* Tips */
+  
   .tips-list {
     display: flex;
     flex-direction: column;
@@ -1298,7 +1295,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     color: var(--color-accent);
   }
 
-  /* FAQs */
+  
   .faq-list {
     display: flex;
     flex-direction: column;
@@ -1325,7 +1322,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     line-height: var(--line-height-relaxed);
   }
 
-  /* Related Tours */
+  
   .related-tours {
     padding: var(--space-3xl) 0;
     background-color: var(--color-bg-soft);
@@ -1335,7 +1332,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     margin-top: var(--space-2xl);
   }
 
-  /* CTA */
+  
   .tour-cta {
     padding: var(--space-3xl) 0;
     background: linear-gradient(
@@ -1384,7 +1381,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     color: var(--color-primary);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .tour-hero {
       min-height: 50vh;
@@ -1443,7 +1440,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
 </style>
 
 <script>
-  // Accordion functionality
+  
   document.addEventListener("DOMContentLoaded", () => {
     const accordionHeaders = document.querySelectorAll(
       "[data-accordion-trigger]"
@@ -1454,19 +1451,19 @@ const pageTitle = `${tour.title} | Be Free Tours`;
         const accordionItem = header.closest(".accordion-item");
         const isActive = accordionItem.classList.contains("active");
 
-        // Close all accordion items
+        
         document.querySelectorAll(".accordion-item").forEach((item) => {
           item.classList.remove("active");
         });
 
-        // Open clicked item if it wasn't active
+        
         if (!isActive) {
           accordionItem.classList.add("active");
         }
       });
     });
 
-    // Open first accordion item by default
+    
     const firstItem = document.querySelector(".accordion-item");
     if (firstItem) {
       firstItem.classList.add("active");

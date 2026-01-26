@@ -1,20 +1,16 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Footer Component
-   Rodapé com links, contato e informações
-   CORRIGIDO: Detecta lang automaticamente
-   ================================ */
+
+
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-// CORREÇÃO: Detecta idioma da URL automaticamente (não espera prop)
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
 
-// Mapeamento de rotas por idioma
+
 const routes = {
   en: {
     home: "/",
@@ -41,7 +37,7 @@ const routes = {
 
 const r = routes[lang];
 
-// Links de navegação
+
 const navLinks = [
   { href: `/${lang}${r.home}`, label: t("nav.home") },
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
@@ -54,7 +50,7 @@ const navLinks = [
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-content">
-      <!-- Coluna 1: Logo + Tagline + TripAdvisor -->
+      
       <div class="footer-col">
         <a href={`/${lang}`} class="footer-logo">
           <img 
@@ -79,7 +75,7 @@ const navLinks = [
         </a>
       </div>
 
-      <!-- Coluna 2: Quick Links -->
+      
       <div class="footer-col">
         <h3 class="footer-title">{t("footer.links")}</h3>
         <ul class="footer-links">
@@ -93,7 +89,7 @@ const navLinks = [
         </ul>
       </div>
 
-      <!-- Coluna 3: Contact -->
+      
       <div class="footer-col">
         <h3 class="footer-title">{t("footer.contact")}</h3>
         <ul class="footer-contact">
@@ -125,7 +121,7 @@ const navLinks = [
       </div>
     </div>
 
-    <!-- Copyright -->
+    
     <div class="footer-bottom">
       <p class="footer-copyright">
         © {currentYear} Be Free Tours. {t("footer.rights")}.
@@ -177,7 +173,7 @@ const navLinks = [
     gap: var(--space-md);
   }
 
-  /* Logo */
+  
   .footer-logo {
     display: flex;
     align-items: center;
@@ -205,7 +201,7 @@ const navLinks = [
     margin: 0;
   }
 
-  /* TripAdvisor Link */
+  
   .tripadvisor-link {
     display: inline-flex;
     align-items: center;
@@ -237,7 +233,7 @@ const navLinks = [
     font-weight: var(--font-weight-medium);
   }
 
-  /* Titles */
+  
   .footer-title {
     font-size: var(--font-size-h6);
     font-weight: var(--font-weight-semibold);
@@ -245,7 +241,7 @@ const navLinks = [
     margin: 0;
   }
 
-  /* Links */
+  
   .footer-links,
   .footer-contact {
     list-style: none;
@@ -279,7 +275,7 @@ const navLinks = [
     color: var(--color-text-muted);
   }
 
-  /* Bottom */
+  
   .footer-bottom {
     padding-top: var(--space-lg);
     border-top: var(--footer-border) solid var(--color-border);
@@ -311,7 +307,7 @@ const navLinks = [
     color: var(--color-accent);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .footer {
       padding: var(--space-2xl) 0 var(--space-lg);
@@ -323,7 +319,7 @@ const navLinks = [
     }
   }
 
-  /* Tema claro: Footer permanece ESCURO (âncora visual) */
+  
   :global(html.light) .footer {
     background-color: var(--footer-light-bg);
     color: var(--footer-light-text);

@@ -1,9 +1,6 @@
 ---
-// @ts-nocheck
-/* ================================
-   BE FREE TOURS - Testimonials Component
-   Seção de depoimentos com 2 níveis de expansão
-   ================================ */
+
+
 
 import { testimonials } from "../data/testimonials.js";
 import { useTranslations } from "../i18n/utils";
@@ -11,12 +8,12 @@ import { useTranslations } from "../i18n/utils";
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// Separa os depoimentos em 3 grupos
-const firstThree = testimonials.slice(0, 3); // Cards 1, 2, 3 - sempre visíveis inicialmente
-const secondThree = testimonials.slice(3, 6); // Cards 4, 5, 6 - aparecem na 1ª expansão
-const lastThree = testimonials.slice(6, 9); // Cards 7, 8, 9 - aparecem na 2ª expansão
 
-// Função pra criar estrelas (5 estrelas preenchidas)
+const firstThree = testimonials.slice(0, 3); 
+const secondThree = testimonials.slice(3, 6); 
+const lastThree = testimonials.slice(6, 9); 
+
+
 const renderStars = (rating) => {
   return "★".repeat(rating) + "☆".repeat(5 - rating);
 };
@@ -32,7 +29,7 @@ const renderStars = (rating) => {
     </div>
 
     <div class="testimonials-grid">
-      <!-- GRUPO 1: Primeiros 3 cards (sempre visíveis) -->
+      
       {
         firstThree.map((testimonial) => (
           <article class="testimonial-card" data-group="1">
@@ -76,7 +73,7 @@ const renderStars = (rating) => {
         ))
       }
 
-      <!-- GRUPO 2: Cards 4-6 (aparecem na 1ª expansão) -->
+      
       {
         secondThree.map((testimonial) => (
           <article class="testimonial-card hidden" data-group="2">
@@ -120,7 +117,7 @@ const renderStars = (rating) => {
         ))
       }
 
-      <!-- GRUPO 3: Cards 7-9 (aparecem na 2ª expansão) -->
+      
       {
         lastThree.map((testimonial) => (
           <article class="testimonial-card hidden" data-group="3">
@@ -165,7 +162,7 @@ const renderStars = (rating) => {
       }
     </div>
 
-    <!-- Botão para expandir/colapsar -->
+    
     <div class="section-cta">
       <button
         id="testimonials-toggle"
@@ -244,12 +241,12 @@ const renderStars = (rating) => {
     box-shadow: var(--testimonial-shadow);
   }
 
-  /* Cards escondidos */
+  
   .testimonial-card.hidden {
     display: none;
   }
 
-  /* Animação de entrada quando mostra */
+  
   .testimonial-card.show {
     display: flex;
     animation: fadeIn var(--testimonial-fade-duration) var(--transition-easing-default);
@@ -281,7 +278,7 @@ const renderStars = (rating) => {
 
   .testimonial-source {
     font-size: var(--font-size-small);
-    color: var(--tripadvisor-green); /* Verde TripAdvisor */
+    color: var(--tripadvisor-green); 
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
   }
@@ -365,7 +362,7 @@ const renderStars = (rating) => {
     transform: rotate(-90deg);
   }
 
-  /* Responsivo */
+  
   @media (max-width: 768px) {
     .testimonials {
       padding: var(--space-2xl) 0;
@@ -400,27 +397,25 @@ const renderStars = (rating) => {
 </style>
 
 <script>
-  /* ================================
-     JAVASCRIPT - Lógica de 2 Níveis de Expansão
-     ================================ */
+  
 
-  // 1. Pega os elementos do DOM
+  
   const toggleButton = document.getElementById("testimonials-toggle");
   const allCards = document.querySelectorAll(".testimonial-card");
 
-  // 2. Variável pra controlar o nível de expansão (0, 1, ou 2)
+  
   let expansionLevel = 0;
 
-  // 3. Função que atualiza a visualização baseado no nível
+  
   function updateTestimonials() {
-    // Para cada card, verifica qual grupo ele pertence
+    
     allCards.forEach((card) => {
       const groupAttr = card.getAttribute("data-group");
       const group = groupAttr ? parseInt(groupAttr) : 0;
 
-      // Lógica de visibilidade:
+      
       if (expansionLevel === 0) {
-        // Nível 0: só mostra grupo 1
+        
         if (group === 1) {
           card.classList.remove("hidden");
           card.classList.add("show");
@@ -429,7 +424,7 @@ const renderStars = (rating) => {
           card.classList.remove("show");
         }
       } else if (expansionLevel === 1) {
-        // Nível 1: mostra grupos 1 e 2
+        
         if (group === 1 || group === 2) {
           card.classList.remove("hidden");
           card.classList.add("show");
@@ -438,13 +433,13 @@ const renderStars = (rating) => {
           card.classList.remove("show");
         }
       } else if (expansionLevel === 2) {
-        // Nível 2: mostra todos (grupos 1, 2 e 3)
+        
         card.classList.remove("hidden");
         card.classList.add("show");
       }
     });
 
-    // Atualiza o texto do botão baseado no nível
+    
     if (toggleButton) {
       const label = toggleButton.querySelector(".testimonials-toggle-label");
       if (expansionLevel === 0 || expansionLevel === 1) {
@@ -463,12 +458,12 @@ const renderStars = (rating) => {
     }
   }
 
-  // 4. Adiciona evento de clique no botão
+  
   toggleButton?.addEventListener("click", () => {
-    // Avança o nível (0 → 1 → 2 → 0 → 1 → 2...)
+    
     expansionLevel = (expansionLevel + 1) % 3;
 
-    // Se voltou pra 0, faz scroll suave pra seção
+    
     if (expansionLevel === 0) {
       document.querySelector(".testimonials")?.scrollIntoView({
         behavior: "smooth",
@@ -476,10 +471,10 @@ const renderStars = (rating) => {
       });
     }
 
-    // Atualiza a visualização
+    
     updateTestimonials();
   });
 
-  // 5. Inicializa na primeira carga (mostra só grupo 1)
+  
   updateTestimonials();
 </script>
