@@ -1,9 +1,5 @@
 ---
 // @ts-nocheck
-/* ================================
-   BE FREE TOURS - Tour Card Component
-   Design Premium: Glassmorphism com badges e overlay gradiente
-   ================================ */
 
 import { Image } from "astro:assets";
 import { useTranslations } from "../i18n/utils";
@@ -11,10 +7,8 @@ import { useTranslations } from "../i18n/utils";
 const { tour, lang, badge } = Astro.props;
 const t = useTranslations(lang);
 
-// Verifica se é tour customizado
 const isCustomTour = tour.isCustom || tour.pricing?.custom;
 
-// Função para calcular o preço "from" baseado na estrutura de pricing
 function getFromPrice(pricing) {
   if (pricing.custom) return null;
   if (pricing.from) return pricing.from;
@@ -28,10 +22,8 @@ function getFromPrice(pricing) {
 
 const fromPrice = getFromPrice(tour.pricing);
 
-// Texto do preço para tours customizados
 const customPriceText = tour.pricing?.displayText || "Custom quote";
 
-// Mapeamento de rotas de tours por idioma
 const tourRoutes = {
   en: "private-tours",
   es: "tours-privados",
@@ -40,21 +32,16 @@ const tourRoutes = {
 
 const tourRoute = tourRoutes[lang] || "private-tours";
 
-// Import da imagem do card
 const imageSlug = tour.imageSlug || tour.slug;
 const cardImage = await import(`../images/tours/cards/${imageSlug}-card.webp`).catch(() => {
-  // Fallback para slug base se imageSlug não encontrar
   const baseSlug = tour.id || tour.slug.split('-').slice(0, 2).join('-');
   return import(`../images/tours/cards/${baseSlug}-card.webp`).catch(() => {
-    // Ultimate fallback
     return import(`../images/tours/cards/essential-rio-card.webp`);
   });
 });
 
-// Alt text SEO-optimized
 const altText = `${tour.title} - Private ${tour.duration} tour in Rio de Janeiro`;
 
-// Badge styles mapping
 const badgeStyles = {
   "Most Popular": "badge-primary",
   "Best Value": "badge-secondary",
@@ -71,14 +58,12 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
 ---
 
 <article class="tour-card">
-  <!-- Image with overlay -->
   <div class="tour-card-image">
     <Image
       src={cardImage.default}
       alt={altText}
       width={800}
       height={600}
-      loading="lazy"
       loading="lazy"
       format="webp"
     />

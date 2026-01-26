@@ -100,12 +100,12 @@ export const homeContent = {
         {
           id: 9,
           question: "Is Rio safe for solo female travelers?",
-          answer: "Rio welcomes thousands of solo female travelers every year. Tourist areas like Copacabana, Ipanema, Leblon, and Santa Teresa are generally safe during the day, especially when following common-sense precautions: stay aware of your surroundings, avoid displaying expensive items, and stick to well-lit, populated areas at night. Our private tours add an extra layer of comfort — you'll have door-to-door transportation and an experienced local guide who knows the city inside out. Many of our solo female clients tell us they felt completely at ease exploring Rio with our team."
+          answer: "Rio welcomes thousands of solo female travelers every year. Well-known neighborhoods such as Copacabana, Ipanema, and Leblon are generally safe during the day when basic, common-sense precautions are followed — staying aware of your surroundings, avoiding visible valuables, and favoring well-lit, lively areas in the evening. Choosing a private tour adds an extra layer of comfort and peace of mind: door-to-door transportation and an experienced local guide who understands the city’s rhythms and nuances. Many solo female travelers tell us they felt relaxed and confident exploring Rio with our team."
         },
         {
           id: 10,
           question: "Is Rio de Janeiro LGBTQ+ friendly?",
-          answer: "Rio is one of the most LGBTQ+ friendly destinations in the world. Same-sex marriage has been legal in Brazil since 2013, and Rio hosts one of the planet's largest Pride parades, drawing over 1 million people annually to Copacabana. Ipanema beach — particularly near Farme de Amoedo street, known as the 'Gay Beach' — is a welcoming gathering spot year-round. Neighborhoods like Lapa and Ipanema offer vibrant nightlife with LGBTQ+ bars and clubs. Public displays of affection between same-sex couples are common and generally well-accepted in tourist areas. Our private tours provide a comfortable, judgment-free environment, and our guides know the best spots for every traveler."
+          answer: "Rio de Janeiro is widely considered an LGBTQ+ friendly city, particularly in the South Zone neighborhoods of Ipanema, Leblon, and Copacabana. Same-sex marriage is legal in Brazil, and diversity is generally well accepted in everyday life and in tourist settings. As in any large city, awareness and common-sense precautions are always important, but most LGBTQ+ travelers feel comfortable exploring Rio openly. Our private tours offer a discreet, respectful, and welcoming environment, guided by locals who understand the city and adapt each experience to the traveler — without assumptions or labels."
         }
       ]
     },
@@ -223,13 +223,13 @@ export const homeContent = {
         },
         {
           id: 9,
-          question: "¿Es Río seguro para mujeres que viajan solas?",
-          answer: "Río recibe miles de mujeres viajando solas cada año. Las zonas turísticas como Copacabana, Ipanema, Leblon y Santa Teresa son generalmente seguras durante el día, especialmente siguiendo precauciones básicas: mantente atenta a tu entorno, evita mostrar objetos de valor y quédate en áreas iluminadas y concurridas por la noche. Nuestros tours privados añaden una capa extra de tranquilidad — tendrás transporte puerta a puerta y una guía local con experiencia que conoce la ciudad a fondo. Muchas de nuestras clientas que viajan solas nos cuentan que se sintieron completamente cómodas explorando Río con nuestro equipo."
+          question: "¿Río es un destino seguro para mujeres que viajan solas?",
+          answer: "Río recibe a miles de mujeres que viajan solas cada año. Zonas turísticas como Copacabana, Ipanema, Leblon y Santa Teresa suelen ser seguras durante el día, especialmente cuando se siguen precauciones básicas: estar atenta al entorno, evitar mostrar objetos de valor y moverse por áreas bien iluminadas y concurridas por la noche. Nuestros tours privados ofrecen un nivel adicional de comodidad y tranquilidad, con transporte puerta a puerta y el acompañamiento de un guía local con amplio conocimiento de la ciudad. Muchas viajeras que han recorrido Río con nuestro equipo destacan haberse sentido seguras y cómodas a lo largo de toda la experiencia."
         },
         {
           id: 10,
-          question: "¿Río de Janeiro es amigable con la comunidad LGBTQ+?",
-          answer: "Río es uno de los destinos más amigables para la comunidad LGBTQ+ en el mundo. El matrimonio entre personas del mismo sexo es legal en Brasil desde 2013, y Río celebra una de las marchas del Orgullo más grandes del planeta, reuniendo a más de 1 millón de personas cada año en Copacabana. La playa de Ipanema — especialmente cerca de la calle Farme de Amoedo, conocida como la 'Playa Gay' — es un punto de encuentro acogedor durante todo el año. Barrios como Lapa e Ipanema ofrecen una vibrante vida nocturna con bares y discotecas LGBTQ+. Las muestras de afecto entre parejas del mismo sexo son comunes y generalmente bien aceptadas en zonas turísticas. Nuestros tours privados ofrecen un ambiente cómodo y libre de prejuicios, y nuestras guías conocen los mejores lugares para cada viajero."
+          question: "¿Río de Janeiro es un destino LGBTQ+ friendly?",
+          answer: "Río de Janeiro es ampliamente considerada una ciudad LGBTQ+ friendly, especialmente en los barrios de la Zona Sur como Ipanema, Leblon y Copacabana. El matrimonio entre personas del mismo sexo es legal en Brasil, y la diversidad suele ser bien aceptada en la vida cotidiana y en entornos turísticos. Como en cualquier gran ciudad, la atención y el sentido común siempre son importantes, pero la mayoría de los viajeros LGBTQ+ se sienten cómodos explorando Río con naturalidad. Nuestros tours privados ofrecen un entorno discreto, respetuoso y acogedor, guiado por profesionales locales que conocen la ciudad y adaptan cada experiencia al viajero — sin etiquetas ni suposiciones."
         }
       ]
     },
@@ -348,12 +348,12 @@ export const homeContent = {
         {
           id: 9,
           question: "O Rio é seguro para mulheres que viajam sozinhas?",
-          answer: "O Rio recebe milhares de mulheres viajando sozinhas todos os anos. As áreas turísticas como Copacabana, Ipanema, Leblon e Santa Teresa são geralmente seguras durante o dia, especialmente seguindo precauções básicas: fique atenta ao seu redor, evite exibir objetos de valor e prefira áreas iluminadas e movimentadas à noite. Nossos passeios privados trazem uma camada extra de tranquilidade — você terá transporte porta a porta e uma guia local experiente que conhece a cidade como a palma da mão. Muitas das nossas clientes que viajam sozinhas nos contam que se sentiram completamente à vontade explorando o Rio com nossa equipe."
+          answer: "O Rio recebe milhares de mulheres viajando sozinhas todos os anos. Áreas turísticas como Copacabana, Ipanema, Leblon e Santa Teresa costumam ser seguras durante o dia, especialmente quando se adotam cuidados básicos: atenção ao entorno, evitar expor objetos de valor e priorizar locais movimentados e bem iluminados à noite. Nossos tours privados acrescentam uma camada extra de conforto e tranquilidade, com transporte porta a porta e o acompanhamento de um guia local experiente, que conhece a cidade em profundidade. Muitas viajantes que exploraram o Rio conosco relatam ter se sentido seguras e à vontade durante toda a experiência."
         },
         {
           id: 10,
-          question: "O Rio de Janeiro é amigável para a comunidade LGBTQ+?",
-          answer: "O Rio é um dos destinos mais acolhedores para a comunidade LGBTQ+ no mundo. O casamento entre pessoas do mesmo sexo é legal no Brasil desde 2013, e o Rio sedia uma das maiores Paradas do Orgulho do planeta, reunindo mais de 1 milhão de pessoas todos os anos em Copacabana. A praia de Ipanema — especialmente perto da rua Farme de Amoedo, conhecida como 'Praia Gay' — é um ponto de encontro acolhedor o ano inteiro. Bairros como Lapa e Ipanema oferecem vida noturna vibrante com bares e boates LGBTQ+. Demonstrações de afeto entre casais do mesmo sexo são comuns e geralmente bem aceitas nas áreas turísticas. Nossos passeios privados oferecem um ambiente confortável e livre de julgamentos, e nossas guias conhecem os melhores lugares para cada viajante."
+          question: "O Rio de Janeiro é um destino LGBTQ+ friendly?",
+          answer: "O Rio de Janeiro é amplamente considerado uma cidade LGBTQ+ friendly, especialmente nos bairros da Zona Sul, como Ipanema, Leblon e Copacabana. O casamento entre pessoas do mesmo sexo é legal no Brasil, e a diversidade costuma ser bem aceita no dia a dia e em contextos turísticos. Como em qualquer grande cidade, atenção e bom senso são sempre importantes, mas a maioria dos viajantes LGBTQ+ se sente confortável explorando o Rio de forma aberta. Nossos tours privados oferecem um ambiente discreto, respeitoso e acolhedor, conduzido por profissionais locais que entendem a cidade e adaptam cada experiência ao perfil do viajante — sem rótulos ou pressupostos."
         }
       ]
     },

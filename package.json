@@ -6,13 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "brochure": "node scripts/generate-brochures.js"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.1",
-    "astro": "^5.16.6"
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.16.14"
   },
   "devDependencies": {
-    "@vite-pwa/astro": "^1.2.0"
+    "@vite-pwa/astro": "^1.2.0",
+    "playwright": "^1.49.1"
   }
 }

@@ -173,7 +173,10 @@ const renderStars = (rating) => {
         data-text-more={t("testimonials.readMore")}
         data-text-less={t("testimonials.showLess")}
       >
-        {t("testimonials.readMore")}
+        <span class="testimonials-toggle-label">{t("testimonials.readMore")}</span>
+        <svg class="testimonials-toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
       </button>
     </div>
   </div>
@@ -344,6 +347,24 @@ const renderStars = (rating) => {
     text-align: center;
   }
 
+  .testimonials .section-cta .btn-outline-primary {
+    border-color: transparent;
+  }
+
+  #testimonials-toggle:focus,
+  #testimonials-toggle:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .testimonials-toggle-icon {
+    transition: transform var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  #testimonials-toggle.is-collapsed .testimonials-toggle-icon {
+    transform: rotate(-90deg);
+  }
+
   /* Responsivo */
   @media (max-width: 768px) {
     .testimonials {
@@ -424,15 +445,20 @@ const renderStars = (rating) => {
     });
 
     // Atualiza o texto do botão baseado no nível
-    if (expansionLevel === 0 || expansionLevel === 1) {
-      if (toggleButton) {
-        toggleButton.textContent =
-          toggleButton.getAttribute("data-text-more") || "Read More Reviews";
-      }
-    } else {
-      if (toggleButton) {
-        toggleButton.textContent =
-          toggleButton.getAttribute("data-text-less") || "Show Less";
+    if (toggleButton) {
+      const label = toggleButton.querySelector(".testimonials-toggle-label");
+      if (expansionLevel === 0 || expansionLevel === 1) {
+        if (label) {
+          label.textContent =
+            toggleButton.getAttribute("data-text-more") || "Read More Reviews";
+        }
+        toggleButton.classList.remove("is-collapsed");
+      } else {
+        if (label) {
+          label.textContent =
+            toggleButton.getAttribute("data-text-less") || "Show Less";
+        }
+        toggleButton.classList.add("is-collapsed");
       }
     }
   }
