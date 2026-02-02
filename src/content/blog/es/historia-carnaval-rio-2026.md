@@ -3,7 +3,7 @@ title: "La Historia del Carnaval de Río: Cómo el Caos se Convirtió en el Mayo
 description: "De los juegos callejeros coloniales al samba y al Sambódromo, descubre cómo el Carnaval de Río se convirtió en el mayor espectáculo del mundo."
 author: "Be Free Tours"
 publishDate: "2026-01-27"
-imageSlug: "rio-carnival-history-2026"
+imageSlug: "rio-carnaval-history-2026"
 category: "Cultura"
 readTime: "9 min de lectura"
 relatedTours:

@@ -206,9 +206,10 @@ const navLinks = [
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
+    align-self: flex-start;
     padding: var(--space-sm) var(--space-md);
-    background: var(--glass-bg);
-    border: var(--footer-border) solid var(--glass-border);
+    background: transparent;
+    border: none;
     border-radius: var(--radius-md);
     text-decoration: none;
     transition: transform var(--transition-duration-normal) var(--transition-easing-default),
@@ -217,7 +218,7 @@ const navLinks = [
   }
 
   .tripadvisor-link:hover {
-    background: var(--tripadvisor-hover-bg);
+    background: transparent;
     transform: translateY(var(--tripadvisor-hover-shift));
   }
 
@@ -366,12 +367,12 @@ const navLinks = [
   }
 
   :global(html.light) .tripadvisor-link {
-    background: var(--tripadvisor-light-bg);
-    border-color: var(--tripadvisor-light-border);
+    background: transparent;
+    border-color: transparent;
   }
 
   :global(html.light) .tripadvisor-link:hover {
-    background: var(--tripadvisor-hover-bg);
+    background: transparent;
   }
 
   :global(html.light) .tripadvisor-link span {

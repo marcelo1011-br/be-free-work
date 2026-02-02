@@ -119,30 +119,11 @@ const tourBadgeMap = {
     
     <div class="steps-grid">
       {content.steps.map((step, index) => (
-        <div class="step-card glass-light">
+        <div class="step-card">
           <div class="step-number">{step.number}</div>
           <div class="step-content">
             <h3 class="step-title">{step.title}</h3>
             <p class="step-description">{step.description}</p>
-          </div>
-          <div class="step-icon">
-            {step.icon === "chat" && (
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
-              </svg>
-            )}
-            {step.icon === "map" && (
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/>
-                <path d="M8 2v16M16 6v16"/>
-              </svg>
-            )}
-            {step.icon === "pin" && (
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            )}
           </div>
           {index < content.steps.length - 1 && (
             <div class="step-connector">
@@ -200,7 +181,7 @@ const tourBadgeMap = {
     --cta-btn-gap: var(--space-xs);
 
     padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-soft);
+    background-color: var(--color-bg-white);
   }
 
   .steps-grid {
@@ -217,6 +198,9 @@ const tourBadgeMap = {
     align-items: center;
     text-align: center;
     padding: var(--space-xl);
+    background: none;
+    border: none;
+    box-shadow: none;
     border-radius: var(--radius-lg);
     transition: transform var(--transition-duration-slow) var(--transition-easing-default);
   }
@@ -254,12 +238,6 @@ const tourBadgeMap = {
     font-size: var(--font-size-small);
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
-  }
-
-  .step-icon {
-    margin-top: var(--space-lg);
-    color: var(--color-secondary);
-    opacity: 0.6;
   }
 
   .step-connector {
@@ -350,14 +328,6 @@ const tourBadgeMap = {
       font-size: var(--font-size-small);
     }
 
-    .step-icon {
-      margin-top: var(--space-md);
-    }
-
-    .step-icon svg {
-      width: var(--step-icon-size);
-      height: var(--step-icon-size);
-    }
 
     .section-subtitle {
       margin-bottom: var(--space-xl);

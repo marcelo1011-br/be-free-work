@@ -574,7 +574,7 @@
 
     
     .how-it-works {
-      background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-soft) 100%);
+      background: var(--color-bg-white);
     }
 
     .featured-tours {
