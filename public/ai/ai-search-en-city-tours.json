@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "unforgettable-rio",
+      "id": "The Essential Rio: Icons, Culture & Hidden Gems",
       "slug": "essential-rio",
       "name": "The Essential Rio: Icons, Culture & Hidden Gems",
       "duration": "8 hours",
@@ -33,7 +33,7 @@
       "url": "https://befreetours.com.br/en/private-tours/essential-rio"
     },
     {
-      "id": "rio-flash-5h",
+      "id": "Rio Express: Christ & Sugarloaf in 5 Hours",
       "slug": "rio-express",
       "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
       "duration": "5 hours",
@@ -48,7 +48,7 @@
       "url": "https://befreetours.com.br/en/private-tours/rio-express"
     },
     {
-      "id": "sunrise-sugarloaf",
+      "id": "Rio at First Light: Sunrise Sugarloaf & Christ",
       "slug": "first-light-sunrise",
       "name": "Rio at First Light: Sunrise Sugarloaf & Christ",
       "duration": "6 hours",
@@ -63,7 +63,7 @@
       "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise"
     },
     {
-      "id": "sunset-magic",
+      "id": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       "slug": "golden-hour-rio",
       "name": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       "duration": "6 hours",
@@ -79,7 +79,7 @@
       "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio"
     },
     {
-      "id": "sunset-roxy",
+      "id": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
       "slug": "sunset-culture-roxy",
       "name": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
       "duration": "9 hours",
@@ -95,7 +95,7 @@
       "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy"
     },
     {
-      "id": "sky-high-urban-forest",
+      "id": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
       "slug": "tijuca-rainforest",
       "name": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
       "duration": "8 hours",
@@ -111,7 +111,7 @@
       "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest"
     },
     {
-      "id": "niteroi",
+      "id": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
       "slug": "niteroi-mac-museum",
       "name": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
       "duration": "8 hours",
@@ -127,7 +127,7 @@
       "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum"
     },
     {
-      "id": "future-visions-carnival",
+      "id": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
       "slug": "modern-rio-museum-tomorrow",
       "name": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
       "duration": "7 hours",
@@ -143,7 +143,7 @@
       "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow"
     },
     {
-      "id": "custom-tour",
+      "id": "Your Rio, Your Way: Custom Private Tour",
       "slug": "custom-tour",
       "name": "Your Rio, Your Way: Custom Private Tour",
       "duration": "Flexible (4-10+ hours)",

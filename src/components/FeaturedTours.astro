@@ -89,25 +89,23 @@ const content = howItWorks[lang] || howItWorks.en;
 
 
 const tourBadgeMap = {
-  "unforgettable-rio": {
-    en: "Most Popular",
-    es: "Más Popular",
-    "pt-br": "Mais Popular"
+  en: {
+    "The Essential Rio: Icons, Culture & Hidden Gems": "Most Popular",
+    "Golden Hour Rio: Christ & Sugarloaf at Sunset": "Best for Sunset",
+    "Your Rio, Your Way: Custom Private Tour": "Fully Customizable",
+    "Petrópolis: Imperial Palaces & Mountain Escape": "Best Value"
   },
-  "sunset-magic": {
-    en: "Best for Sunset",
-    es: "Mejor para Atardecer",
-    "pt-br": "Melhor para Pôr do Sol"
+  es: {
+    "El Río Esencial: Íconos, Cultura y Joyas Ocultas": "Más Popular",
+    "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer": "Mejor para Atardecer",
+    "Tu Río, a Tu Manera: Tour Privado Personalizado": "Totalmente Personalizable",
+    "Petrópolis: Palacios Imperiales y Refugio en la Montaña": "Mejor Valor"
   },
-  "custom-tour": {
-    en: "Fully Customizable",
-    es: "Totalmente Personalizable",
-    "pt-br": "Totalmente Personalizável"
-  },
-  "petropolis": {
-    en: "Best Value",
-    es: "Mejor Valor",
-    "pt-br": "Melhor Custo-Benefício"
+  "pt-br": {
+    "O Essencial do Rio: Ícones, Cultura e Joias Escondidas": "Mais Popular",
+    "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol": "Melhor para Pôr do Sol",
+    "Seu Rio, do Seu Jeito: Passeio Privado Personalizado": "Totalmente Personalizável",
+    "Petrópolis: Palácios Imperiais e Refúgio na Montanha": "Melhor Custo-Benefício"
   }
 };
 ---
@@ -149,7 +147,7 @@ const tourBadgeMap = {
         <TourCard
           tour={tour}
           lang={lang}
-          badge={tourBadgeMap[tour.id]?.[lang]}
+          badge={tourBadgeMap[lang]?.[tour.id]}
         />
       ))}
     </div>

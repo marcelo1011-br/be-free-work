@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import TourCard from "../../../components/TourCard.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro"; 
+import BookingModal from "../../../components/BookingModal.astro";
 import { tours } from "../../../data/tours.js";
 import { useTranslations } from "../../../i18n/utils";
 import {
@@ -80,98 +81,98 @@ const relatedTours = allTours
 
 
 const tourTips = {
-  "ilha-grande": [
+  "Escapada para a Ilha: Ilha Grande de Lancha Privativa": [
     "Bring swimwear and towel",
     "Apply waterproof sunscreen",
     "Motion sickness medication recommended",
     "Waterproof bag for electronics",
     "Light lunch or snacks",
   ],
-  buzios: [
+  "Búzios: A Riviera Brasileira (23 Praias em Um Dia)": [
     "Comfortable walking shoes",
     "Sunscreen and hat",
     "Light jacket for evening",
     "Camera for stunning views",
     "Cash for beach vendors",
   ],
-  petropolis: [
+  "Petrópolis: Palácios Imperiais e Refúgio na Montanha": [
     "Light jacket (cooler temperatures)",
     "Comfortable walking shoes",
     "Umbrella (frequent rain)",
     "Camera for palace photos",
     "Cash for museum fees",
   ],
-  "unforgettable-rio": [
+  "O Essencial do Rio: Ícones, Cultura e Joias Escondidas": [
     "Comfortable walking shoes",
     "Sunscreen and sunglasses",
     "Light clothing (hot weather)",
     "Water bottle",
     "Camera fully charged",
   ],
-  "rio-flash-5h": [
+  "Rio Express: Cristo e Pão de Açúcar em 5 Horas": [
     "Comfortable walking shoes",
     "Sunscreen and hat",
     "Water bottle",
     "Camera",
     "Cash for souvenirs",
   ],
-  "sunrise-sugarloaf": [
+  "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer": [
     "Warm jacket (early morning cold)",
     "Closed-toe shoes",
     "Camera with good low-light capability",
     "Coffee/snacks for energy",
     "Layers you can remove later",
   ],
-  "sunset-magic": [
+  "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol": [
     "Camera for sunset photos",
     "Comfortable shoes",
     "Light jacket for cable car",
     "Sunglasses",
     "Arrive early for best spots",
   ],
-  "sunset-roxy": [
+  "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy": [
     "Camera for sunset and nightlife",
     "Comfortable walking shoes",
     "Light evening wear",
     "Cash for drinks/snacks",
     "ID for venues",
   ],
-  niteroi: [
+  "Niterói: Museu MAC de Niemeyer e Fortes Coloniais": [
     "Comfortable walking shoes",
     "Sunscreen and hat",
     "Camera for architecture",
     "Light jacket",
     "Cash for optional stops",
   ],
-  "sky-high-urban-forest": [
+  "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura": [
     "Comfortable hiking shoes",
     "Insect repellent",
     "Water bottle (refillable)",
     "Binoculars for wildlife",
     "Light rain jacket",
   ],
-  "future-visions-carnival": [
+  "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores": [
     "Comfortable walking shoes",
     "Camera",
     "Cash for souvenirs",
     "Light clothing",
     "Sunscreen",
   ],
-  "food-walking": [
+  "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica": [
     "Come hungry!",
     "Comfortable walking shoes",
     "Light clothing",
     "Cash for extra tastings",
     "Appetite for adventure",
   ],
-  "little-africa": [
+  "Pequena África: A Alma do Rio e a Herança Africana Revelada": [
     "Comfortable walking shoes",
     "Water bottle",
     "Sunscreen and hat",
     "Camera",
     "Respect for sacred sites",
   ],
-  "historical-walking": [
+  "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas": [
     "Comfortable walking shoes essential",
     "Water bottle",
     "Sunscreen and hat",
@@ -191,7 +192,7 @@ const tips = tourTips[tour.id] || tourTips["default"];
 
 
 const tourFAQs = {
-  "ilha-grande": [
+  "Escapada para a Ilha: Ilha Grande de Lancha Privativa": [
     {
       q: "Is Ilha Grande worth visiting from Rio de Janeiro?",
       a: "Absolutely! Ilha Grande offers pristine beaches and crystal-clear waters just 3 hours from Rio. It's a protected paradise with over 100 beaches, perfect for nature lovers and beach enthusiasts.",
@@ -209,7 +210,7 @@ const tourFAQs = {
       a: "Tours operate rain or shine, but severe weather may require rescheduling. We monitor conditions and prioritize your safety. Alternative dates or full refunds are provided if we cancel.",
     },
   ],
-  "unforgettable-rio": [
+  "O Essencial do Rio: Ícones, Cultura e Joias Escondidas": [
     {
       q: "Is this tour good for first-time visitors to Rio?",
       a: "Perfect for first-timers! This comprehensive 8-hour tour covers all of Rio's iconic landmarks plus hidden gems, giving you the complete Rio experience in one day.",
@@ -227,7 +228,7 @@ const tourFAQs = {
       a: "Lunch is not included, but we can stop at excellent local restaurants. Your guide will recommend options based on your preferences and budget.",
     },
   ],
-  "food-walking": [
+  "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica": [
     {
       q: "How much food is included in the food tour?",
       a: "Plenty! You'll sample 8-10 different Brazilian specialties including snacks, mains, and desserts. Most people consider this a full meal replacement.",
@@ -245,7 +246,7 @@ const tourFAQs = {
       a: "All tastings are included, but bring cash if you want to purchase extra items, drinks, or take-home goodies from the vendors we visit.",
     },
   ],
-  "historical-walking": [
+  "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas": [
     {
       q: "How much walking is on the historical tour?",
       a: "3.5 hours of easy-paced walking through downtown Rio. The route is mostly flat with occasional steps. Great for all fitness levels.",
@@ -263,7 +264,7 @@ const tourFAQs = {
       a: "Yes! Kids usually love the colorful Selarón Steps and stories about Rio's history. The pace is relaxed and we can adjust for family groups.",
     },
   ],
-  petropolis: [
+  "Petrópolis: Palácios Imperiais e Refúgio na Montanha": [
     {
       q: "Why is Petrópolis called the Imperial City?",
       a: "Petrópolis was the summer residence of Brazilian emperors in the 19th century. The cooler mountain climate provided relief from Rio's heat, and the city preserves magnificent imperial palaces.",
@@ -281,7 +282,7 @@ const tourFAQs = {
       a: "Absolutely! It's one of Brazil's best-preserved imperial palaces with original furniture, crown jewels, and fascinating history. A must-see for history buffs.",
     },
   ],
-  "sunrise-sugarloaf": [
+  "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer": [
     {
       q: "Why is sunrise at Sugarloaf special?",
       a: "You'll witness Rio awakening with golden light hitting Christ the Redeemer, Copacabana, and the bay. Plus, you'll beat the crowds - it's often just you and nature!",
@@ -430,9 +431,9 @@ const pageTitle = `${tour.title} | Be Free Tours`;
               )
             }
           </div>
-          <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+          <button type="button" class="btn btn-primary btn-lg" data-booking-trigger>
             {t("tour.bookThisTour")}
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -933,9 +934,9 @@ const pageTitle = `${tour.title} | Be Free Tours`;
         <h2 class="cta-title">{t("tour.readyToBook")}</h2>
         <p class="cta-subtitle">{t("tour.readyToBookSubtitle")}</p>
         <div class="cta-buttons">
-          <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+          <button type="button" class="btn btn-primary btn-lg" data-booking-trigger>
             {t("tour.bookThisTour")}
-          </a>
+          </button>
           <a
             href={`/${lang}/private-tours`}
             class="btn btn-outline-secondary btn-lg"
@@ -946,6 +947,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
       </div>
     </div>
   </section>
+  <BookingModal tour={tour} lang={lang} />
 </BaseLayout>
 
 <style>

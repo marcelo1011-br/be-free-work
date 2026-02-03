@@ -7,9 +7,9 @@ imageSlug: "christ-guide"
 category: "Attractions"
 readTime: "15 min read"
 relatedTours:
-  - "unforgettable-rio"
-  - "sunrise-sugarloaf"
-  - "rio-flash-5h"
+  - "The Essential Rio: Icons, Culture & Hidden Gems"
+  - "Rio at First Light: Sunrise Sugarloaf & Christ"
+  - "Rio Express: Christ & Sugarloaf in 5 Hours"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"

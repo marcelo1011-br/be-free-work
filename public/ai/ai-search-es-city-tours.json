@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "unforgettable-rio",
+      "id": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
       "slug": "essential-rio",
       "name": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
       "duration": "8 horas",
@@ -33,7 +33,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/essential-rio"
     },
     {
-      "id": "rio-flash-5h",
+      "id": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
       "slug": "rio-express",
       "name": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
       "duration": "5 horas",
@@ -48,7 +48,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/rio-express"
     },
     {
-      "id": "sunrise-sugarloaf",
+      "id": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
       "slug": "amanecer-rio",
       "name": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
       "duration": "6 horas",
@@ -63,7 +63,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio"
     },
     {
-      "id": "sunset-magic",
+      "id": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
       "slug": "hora-dorada-rio",
       "name": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
       "duration": "6 horas",
@@ -79,7 +79,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio"
     },
     {
-      "id": "sunset-roxy",
+      "id": "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
       "slug": "atardecer-cultura-roxy",
       "name": "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
       "duration": "9 horas",
@@ -95,7 +95,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/atardecer-cultura-roxy"
     },
     {
-      "id": "sky-high-urban-forest",
+      "id": "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
       "slug": "bosque-tijuca",
       "name": "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
       "duration": "8 horas",
@@ -111,7 +111,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/bosque-tijuca"
     },
     {
-      "id": "niteroi",
+      "id": "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
       "slug": "niteroi-museo-mac",
       "name": "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
       "duration": "8 horas",
@@ -127,7 +127,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac"
     },
     {
-      "id": "future-visions-carnival",
+      "id": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
       "slug": "rio-moderno-museo-manana",
       "name": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
       "duration": "7 horas",
@@ -143,7 +143,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/rio-moderno-museo-manana"
     },
     {
-      "id": "custom-tour",
+      "id": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "slug": "tour-personalizado",
       "name": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "duration": "Flexible (4-10+ horas)",

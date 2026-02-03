@@ -34,7 +34,7 @@ const tourRoute = tourRoutes[lang] || "private-tours";
 
 const imageSlug = tour.imageSlug || tour.slug;
 const cardImage = await import(`../images/tours/cards/${imageSlug}-card.webp`).catch(() => {
-  const baseSlug = tour.id || tour.slug.split('-').slice(0, 2).join('-');
+  const baseSlug = tour.slug.split('-').slice(0, 2).join('-');
   return import(`../images/tours/cards/${baseSlug}-card.webp`).catch(() => {
     return import(`../images/tours/cards/essential-rio-card.webp`);
   });

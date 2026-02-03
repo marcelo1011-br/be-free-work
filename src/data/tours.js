@@ -3,7 +3,7 @@
 export const tours = {
   en: [
     {
-      id: "unforgettable-rio",
+      id: "The Essential Rio: Icons, Culture & Hidden Gems",
       category: "city-tours",
       isFeatured: true,
       slug: "essential-rio",
@@ -15,11 +15,21 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities (optional)"],
       pricing: { from: 415, priceTable: { 1: 415, 2: 555, 3: 690, 4: 795, 5: 990, 6: 1100, 7: 1250, 8: 1380, 9: 1500, 10: 1700, 11: 1900, 12: 2100 } },
       duration: "8 hours",
-      startTime: "6:30 AM or 1:00 PM (flexible)",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
       recommendations: "Start at 6:30 AM for minimal crowds and perfect morning light at Christ the Redeemer. Start at 1:00 PM or later to catch the spectacular sunset from Sugarloaf Mountain.",
     },
     {
-      id: "rio-flash-5h",
+      id: "Rio Express: Christ & Sugarloaf in 5 Hours",
       category: "city-tours",
       isFeatured: false,
       slug: "rio-express",
@@ -32,9 +42,20 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 hours",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "sunrise-sugarloaf",
+      id: "Rio at First Light: Sunrise Sugarloaf & Christ",
       category: "city-tours",
       isFeatured: false,
       slug: "first-light-sunrise",
@@ -46,10 +67,16 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 hours",
-      startTime: "4:00 AM",
+      bookingTimeSlots: [
+        "04:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday"],
+      startTime: "04:00",
     },
     {
-      id: "sunset-magic",
+      id: "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       category: "city-tours",
       isFeatured: true,
       slug: "golden-hour-rio",
@@ -61,9 +88,15 @@ export const tours = {
       notIncluded: ["Dinner (optional stops available)", "Gratuities"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 hours",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "12:00, 13:00",
     },
     {
-      id: "sunset-roxy",
+      id: "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
       category: "city-tours",
       isFeatured: false,
       slug: "sunset-culture-roxy",
@@ -75,10 +108,17 @@ export const tours = {
       notIncluded: ["Drinks at Roxy", "Gratuities"],
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 hours",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 2,
+      bookingBlockedWeekdays: ["monday", "tuesday"],
       restrictions: "Wednesday to Sunday only. Roxy tickets cannot be cancelled.",
+      startTime: "12:00, 13:00",
     },
     {
-      id: "ilha-grande",
+      id: "Island Escape: Ilha Grande by Private Speedboat",
       category: "day-trips",
       isFeatured: false,
       slug: "island-escape-ilha-grande",
@@ -90,10 +130,16 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 hours",
-      startTime: "5:30 AM recommended",
+      bookingTimeSlots: [
+        "05:30", "05:45", "06:00", "06:15", "06:30",
+        "06:45", "07:00", "07:15", "07:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 3,
+      startTime: "05:30 - 07:30",
     },
     {
-      id: "buzios",
+      id: "Búzios: Brazil's Riviera (23 Beaches in One Day)",
       category: "day-trips",
       isFeatured: false,
       slug: "buzios-riviera",
@@ -105,9 +151,17 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Beach equipment rentals", "Gratuities"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 hours",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 09:30",
     },
     {
-      id: "petropolis",
+      id: "Petrópolis: Imperial Palaces & Mountain Escape",
       category: "day-trips",
       isFeatured: true,
       slug: "petropolis-imperial",
@@ -119,10 +173,19 @@ export const tours = {
       notIncluded: ["Lunch and drinks", "Gratuities"],
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 hours",
+      bookingTimeSlots: [
+        "08:00", "08:15", "08:30", "08:45", "09:00",
+        "09:15", "09:30", "09:45", "10:00", "10:15",
+        "10:30"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "Not available Mondays",
+      startTime: "08:00 - 10:30",
     },
     {
-      id: "sky-high-urban-forest",
+      id: "Tijuca Rainforest & Museums: Where Nature Meets Culture",
       category: "city-tours",
       isFeatured: false,
       slug: "tijuca-rainforest",
@@ -134,9 +197,21 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 hours",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "niteroi",
+      id: "Niterói: Niemeyer's MAC Museum & Colonial Forts",
       category: "city-tours",
       isFeatured: false,
       slug: "niteroi-mac-museum",
@@ -148,10 +223,19 @@ export const tours = {
       notIncluded: ["Lunch and drinks", "Optional helicopter or boat tours", "Gratuities"],
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 hours",
+      bookingTimeSlots: [
+        "08:30", "08:45", "09:00", "09:15", "09:30",
+        "09:45", "10:00", "10:15", "10:30", "10:45",
+        "11:00", "11:15", "11:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["monday"],
       restrictions: "Not available Mondays",
+      startTime: "08:30 - 11:30",
     },
     {
-      id: "future-visions-carnival",
+      id: "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
       category: "city-tours",
       isFeatured: false,
       slug: "modern-rio-museum-tomorrow",
@@ -163,10 +247,18 @@ export const tours = {
       notIncluded: ["Meals and drinks", "Gratuities"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 hours",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "Not available Mondays. Carnival experience Tuesday-Saturday only.",
+      startTime: "10:00 - 12:00",
     },
     {
-      id: "historical-walking",
+      id: "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
       category: "walking-tours",
       isFeatured: false,
       slug: "downtown-rio-walking",
@@ -178,10 +270,20 @@ export const tours = {
       notIncluded: ["Transportation to/from meeting point", "Museum fees", "Food and drinks"],
       pricing: { perPerson: 65 },
       duration: "3.5 hours",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Theatro Municipal (Cinelandia)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "santa-teresa-walking",
+      id: "Santa Teresa Walking Tour: Art, History & Hidden Corners",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
@@ -194,10 +296,20 @@ export const tours = {
       notIncluded: ["Transportation to/from meeting point", "Food and drinks"],
       pricing: { perPerson: 65 },
       duration: "2.5 hours",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Largo dos Guimaraes",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "food-walking",
+      id: "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
       category: "walking-tours",
       isFeatured: false,
       slug: "food-walking",
@@ -209,10 +321,20 @@ export const tours = {
       notIncluded: ["Transportation to/from meeting point", "Additional purchases"],
       pricing: { perPerson: 155 },
       duration: "3 hours",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "little-africa",
+      id: "Little Africa: Rio's Soul & African Heritage Unveiled",
       category: "walking-tours",
       isFeatured: false,
       slug: "little-africa",
@@ -224,10 +346,20 @@ export const tours = {
       notIncluded: ["Transportation to/from meeting point", "Museum fees", "Food and drinks"],
       pricing: { perPerson: 65 },
       duration: "3 hours",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "General Osorio Statue (Praça XV)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "custom-tour",
+      id: "Your Rio, Your Way: Custom Private Tour",
       category: "city-tours",
       isFeatured: true,
       isCustom: true,
@@ -240,7 +372,12 @@ export const tours = {
       notIncluded: ["Attraction tickets (quoted separately based on your itinerary)", "Meals and drinks (can be arranged upon request)", "Gratuities (optional)"],
       pricing: { custom: true, displayText: "Varies by itinerary" },
       duration: "Flexible (4-10+ hours)",
-      startTime: "Your choice",
+      bookingTimeSlots: [
+        "Flexible"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "Flexible",
       recommendations: "Contact us at least 48 hours in advance so we can craft the perfect experience for you. The more you share about your interests, the better we can tailor your day.",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Start Planning"
@@ -254,7 +391,7 @@ export const tours = {
 
   es: [
     {
-      id: "unforgettable-rio",
+      id: "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
       category: "city-tours",
       isFeatured: true,
       slug: "essential-rio",
@@ -267,9 +404,20 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 415, priceTable: { 1: 415, 2: 555, 3: 690, 4: 795, 5: 990, 6: 1100, 7: 1250, 8: 1380, 9: 1500, 10: 1700, 11: 1900, 12: 2100 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "rio-flash-5h",
+      id: "Río Express: Cristo y Pan de Azúcar en 5 Horas",
       category: "city-tours",
       isFeatured: false,
       slug: "rio-express",
@@ -282,9 +430,20 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "sunrise-sugarloaf",
+      id: "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
       category: "city-tours",
       isFeatured: false,
       slug: "amanecer-rio",
@@ -297,10 +456,16 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 horas",
-      startTime: "4:00 AM",
+      bookingTimeSlots: [
+        "04:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday"],
+      startTime: "04:00",
     },
     {
-      id: "sunset-magic",
+      id: "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
       category: "city-tours",
       isFeatured: true,
       slug: "hora-dorada-rio",
@@ -313,9 +478,15 @@ export const tours = {
       notIncluded: ["Cena (paradas opcionales)", "Propinas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 horas",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "12:00, 13:00",
     },
     {
-      id: "sunset-roxy",
+      id: "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
       category: "city-tours",
       isFeatured: false,
       slug: "atardecer-cultura-roxy",
@@ -328,10 +499,17 @@ export const tours = {
       notIncluded: ["Bebidas en Roxy", "Propinas"],
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 horas",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 2,
+      bookingBlockedWeekdays: ["monday", "tuesday"],
       restrictions: "Miércoles a domingo solamente. Entradas Roxy no reembolsables.",
+      startTime: "12:00, 13:00",
     },
     {
-      id: "ilha-grande",
+      id: "Escape a la Isla: Ilha Grande en Lancha Privada",
       category: "day-trips",
       isFeatured: false,
       slug: "island-escape-ilha-grande",
@@ -343,9 +521,16 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 horas",
+      bookingTimeSlots: [
+        "05:30", "05:45", "06:00", "06:15", "06:30",
+        "06:45", "07:00", "07:15", "07:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 3,
+      startTime: "05:30 - 07:30",
     },
     {
-      id: "buzios",
+      id: "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
       category: "day-trips",
       isFeatured: false,
       slug: "buzios-riviera",
@@ -358,9 +543,17 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Alquiler de equipo de playa", "Propinas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 09:30",
     },
     {
-      id: "petropolis",
+      id: "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       category: "day-trips",
       isFeatured: true,
       slug: "petropolis-imperial",
@@ -373,10 +566,19 @@ export const tours = {
       notIncluded: ["Almuerzo y bebidas", "Propinas"],
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "08:00", "08:15", "08:30", "08:45", "09:00",
+        "09:15", "09:30", "09:45", "10:00", "10:15",
+        "10:30"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "No disponible los lunes",
+      startTime: "08:00 - 10:30",
     },
     {
-      id: "sky-high-urban-forest",
+      id: "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
       category: "city-tours",
       isFeatured: false,
       slug: "bosque-tijuca",
@@ -389,9 +591,21 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "niteroi",
+      id: "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
       category: "city-tours",
       isFeatured: false,
       slug: "niteroi-museo-mac",
@@ -404,10 +618,19 @@ export const tours = {
       notIncluded: ["Almuerzo y bebidas", "Tours opcionales en helicóptero o barco", "Propinas"],
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "08:30", "08:45", "09:00", "09:15", "09:30",
+        "09:45", "10:00", "10:15", "10:30", "10:45",
+        "11:00", "11:15", "11:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["monday"],
       restrictions: "No disponible los lunes",
+      startTime: "08:30 - 11:30",
     },
     {
-      id: "future-visions-carnival",
+      id: "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
       category: "city-tours",
       isFeatured: false,
       slug: "rio-moderno-museo-manana",
@@ -420,10 +643,18 @@ export const tours = {
       notIncluded: ["Comidas y bebidas", "Propinas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "No disponible los lunes. Experiencia Carnaval martes-sábado solamente.",
+      startTime: "10:00 - 12:00",
     },
     {
-      id: "historical-walking",
+      id: "Centro de Río a Pie: Escaleras de Selarón y Joyas Ocultas",
       category: "walking-tours",
       isFeatured: false,
       slug: "downtown-rio-walking",
@@ -435,10 +666,20 @@ export const tours = {
       notIncluded: ["Transporte al/del punto de encuentro", "Tarifas de museos", "Comida y bebidas"],
       pricing: { perPerson: 65 },
       duration: "3.5 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Theatro Municipal (Cinelandia)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "santa-teresa-walking",
+      id: "Tour a Pie por Santa Teresa: Arte, Historia y Rincones Ocultos",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
@@ -451,10 +692,20 @@ export const tours = {
       notIncluded: ["Transporte hasta/desde el punto de encuentro", "Comida y bebidas"],
       pricing: { perPerson: 65 },
       duration: "2,5 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Largo dos Guimarães",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "food-walking",
+      id: "Tour Gastronómico a Pie por Río: Experiencia Culinaria Brasileña Auténtica",
       category: "walking-tours",
       isFeatured: false,
       slug: "tour-gastronomico-rio-cocina-brasilena",
@@ -467,10 +718,20 @@ export const tours = {
       notIncluded: ["Transporte al/del punto de encuentro", "Compras adicionales"],
       pricing: { perPerson: 155 },
       duration: "3 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "little-africa",
+      id: "Pequeña África: El Alma de Río y la Herencia Africana Revelada",
       category: "walking-tours",
       isFeatured: false,
       slug: "pequena-africa",
@@ -483,10 +744,20 @@ export const tours = {
       notIncluded: ["Transporte al/del punto de encuentro", "Tarifas de museos", "Comida y bebidas"],
       pricing: { perPerson: 65 },
       duration: "3 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Estatua General Osorio (Praça XV)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "custom-tour",
+      id: "Tu Río, a Tu Manera: Tour Privado Personalizado",
       category: "city-tours",
       isFeatured: true,
       isCustom: true,
@@ -500,7 +771,12 @@ export const tours = {
       notIncluded: ["Entradas a atracciones (cotizadas por separado según tu itinerario)", "Comidas y bebidas (se pueden organizar bajo pedido)", "Propinas (opcional)"],
       pricing: { custom: true, displayText: "Varía según itinerario" },
       duration: "Flexible (4-10+ horas)",
-      startTime: "A tu elección",
+      bookingTimeSlots: [
+        "Flexible"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "Flexible",
       recommendations: "Contáctanos con al menos 48 horas de anticipación para que podamos crear la experiencia perfecta para ti. Cuanto más compartas sobre tus intereses, mejor podremos personalizar tu día.",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Empezar a Planificar"
@@ -509,7 +785,7 @@ export const tours = {
 
   'pt-br': [
     {
-      id: "unforgettable-rio",
+      id: "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
       category: "city-tours",
       isFeatured: true,
       slug: "rio-essencial",
@@ -522,9 +798,20 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 415, priceTable: { 1: 415, 2: 555, 3: 690, 4: 795, 5: 990, 6: 1100, 7: 1250, 8: 1380, 9: 1500, 10: 1700, 11: 1900, 12: 2100 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "rio-flash-5h",
+      id: "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       category: "city-tours",
       isFeatured: false,
       slug: "passeio-expresso-rio-5-horas-cristo-pao-acucar",
@@ -537,9 +824,20 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 410, priceTable: { 1: 410, 2: 515, 3: 625, 4: 735, 5: 925, 6: 1055, 7: 1190, 8: 1325, 9: 1455, 10: 1585, 11: 1725, 12: 1900 } },
       duration: "5 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "sunrise-sugarloaf",
+      id: "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
       category: "city-tours",
       isFeatured: false,
       slug: "nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
@@ -552,10 +850,16 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 580, priceTable: { 1: 580, 2: 750, 3: 900, 4: 1200, 5: 1500, 6: 1800 } },
       duration: "6 horas",
-      startTime: "4:00 da manhã",
+      bookingTimeSlots: [
+        "04:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday"],
+      startTime: "04:00",
     },
     {
-      id: "sunset-magic",
+      id: "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       category: "city-tours",
       isFeatured: true,
       slug: "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
@@ -568,9 +872,15 @@ export const tours = {
       notIncluded: ["Jantar (paradas opcionais)", "Gorjetas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "6 horas",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "12:00, 13:00",
     },
     {
-      id: "sunset-roxy",
+      id: "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
       category: "city-tours",
       isFeatured: false,
       slug: "por-do-sol-cultura-roxy",
@@ -583,10 +893,17 @@ export const tours = {
       notIncluded: ["Bebidas no Roxy", "Gorjetas"],
       pricing: { from: 680, priceTable: { 1: 680, 2: 960, 3: 1260, 4: 1550, 5: 1960, 6: 2250, 7: 2550, 8: 2650, 9: 3100, 10: 3450, 11: 3750, 12: 4050 } },
       duration: "9 horas",
+      bookingTimeSlots: [
+        "12:00", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 2,
+      bookingBlockedWeekdays: ["monday", "tuesday"],
       restrictions: "Quarta a domingo apenas. Ingressos Roxy não reembolsáveis.",
+      startTime: "12:00, 13:00",
     },
     {
-      id: "ilha-grande",
+      id: "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       category: "day-trips",
       isFeatured: false,
       slug: "island-escape-ilha-grande",
@@ -598,9 +915,16 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { standard: { "1-4": 875, "5-10": 1075 }, lopesMendes: { "1-4": 975, "5-10": 1200 } },
       duration: "10 horas",
+      bookingTimeSlots: [
+        "05:30", "05:45", "06:00", "06:15", "06:30",
+        "06:45", "07:00", "07:15", "07:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 3,
+      startTime: "05:30 - 07:30",
     },
     {
-      id: "buzios",
+      id: "Búzios: A Riviera Brasileira (23 Praias em Um Dia)",
       category: "day-trips",
       isFeatured: false,
       slug: "buzios-charme-costeiro-passeio-privado",
@@ -613,9 +937,17 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Aluguel de equipamento de praia", "Gorjetas"],
       pricing: { from: 430, priceTable: { 1: 430, 2: 520, 3: 610, 4: 725, 5: 880, 6: 995, 7: 1085, 8: 1210, 9: 1320, 10: 1460, 11: 1560, 12: 1715 } },
       duration: "10 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 09:30",
     },
     {
-      id: "petropolis",
+      id: "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       category: "day-trips",
       isFeatured: true,
       slug: "passeio-privado-petropolis-cidade-imperial",
@@ -628,10 +960,19 @@ export const tours = {
       notIncluded: ["Almoço e bebidas", "Gorjetas"],
       pricing: { from: 360, priceTable: { 1: 360, 2: 370, 3: 390, 4: 410, 5: 570, 6: 600, 7: 690, 8: 760, 9: 840, 10: 990, 11: 1050, 12: 1120 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "08:00", "08:15", "08:30", "08:45", "09:00",
+        "09:15", "09:30", "09:45", "10:00", "10:15",
+        "10:30"
+      ],
+      bookingBlockedDates: ["2026-02-14", "2026-02-16", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "Não disponível às segundas-feiras",
+      startTime: "08:00 - 10:30",
     },
     {
-      id: "sky-high-urban-forest",
+      id: "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
       category: "city-tours",
       isFeatured: false,
       slug: "pao-acucar-floresta-tijuca-jardim-botanico-passeio",
@@ -644,9 +985,21 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "06:30", "06:45", "07:00", "07:15", "07:30",
+        "07:45", "08:00", "08:15", "08:30", "08:45",
+        "09:00", "09:15", "09:30", "09:45", "10:00",
+        "10:15", "10:30", "10:45", "11:00", "11:15",
+        "11:30", "11:45", "12:00", "12:15", "12:30",
+        "12:45", "13:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
+      startTime: "06:30 - 13:00",
     },
     {
-      id: "niteroi",
+      id: "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
       category: "city-tours",
       isFeatured: false,
       slug: "niteroi-museo-arte-contemporanea-passeio-privado",
@@ -659,10 +1012,19 @@ export const tours = {
       notIncluded: ["Almoço e bebidas", "Tours opcionais de helicóptero ou barco", "Gorjetas"],
       pricing: { from: 335, priceTable: { 1: 335, 2: 370, 3: 400, 4: 420, 5: 440, 6: 470, 7: 490, 8: 530, 9: 570, 10: 620, 11: 670, 12: 715 } },
       duration: "8 horas",
+      bookingTimeSlots: [
+        "08:30", "08:45", "09:00", "09:15", "09:30",
+        "09:45", "10:00", "10:15", "10:30", "10:45",
+        "11:00", "11:15", "11:30"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 4,
+      bookingBlockedWeekdays: ["monday"],
       restrictions: "Não disponível às segundas-feiras",
+      startTime: "08:30 - 11:30",
     },
     {
-      id: "future-visions-carnival",
+      id: "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
       category: "city-tours",
       isFeatured: false,
       slug: "museu-amanha-experiencia-carnaval-rio-passeio",
@@ -675,10 +1037,18 @@ export const tours = {
       notIncluded: ["Refeições e bebidas", "Gorjetas"],
       pricing: { from: 445, priceTable: { 1: 445, 2: 590, 3: 730, 4: 890, 5: 1095, 6: 1260, 7: 1420, 8: 1560, 9: 1740, 10: 1920, 11: 2070, 12: 2230 } },
       duration: "7 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["monday"],
+      bookingCutoffDays: 1,
       restrictions: "Não disponível às segundas-feiras. Experiência Carnaval terça-sábado apenas.",
+      startTime: "10:00 - 12:00",
     },
     {
-      id: "historical-walking",
+      id: "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas",
       category: "walking-tours",
       isFeatured: false,
       slug: "downtown-rio-walking",
@@ -690,10 +1060,20 @@ export const tours = {
       notIncluded: ["Transporte para/do ponto de encontro", "Tarifas de museus", "Comida e bebidas"],
       pricing: { perPerson: 65 },
       duration: "3.5 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Theatro Municipal (Cinelândia)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "santa-teresa-walking",
+      id: "Tour a Pé por Santa Teresa: Arte, História e Cantos Escondidos",
       category: "walking-tours",
       isFeatured: false,
       slug: "santa-teresa-walking",
@@ -706,10 +1086,20 @@ export const tours = {
       notIncluded: ["Transporte até/do ponto de encontro", "Alimentação e bebidas"],
       pricing: { perPerson: 65 },
       duration: "2,5 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Largo dos Guimarães",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "food-walking",
+      id: "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica",
       category: "walking-tours",
       isFeatured: false,
       slug: "tour-gastronomico-rio-cozinha-brasileira",
@@ -722,10 +1112,20 @@ export const tours = {
       notIncluded: ["Transporte para/do ponto de encontro", "Compras adicionais"],
       pricing: { perPerson: 155 },
       duration: "3 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Restaurante Cortiço Carioca (Lapa)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "little-africa",
+      id: "Pequena África: A Alma do Rio e a Herança Africana Revelada",
       category: "walking-tours",
       isFeatured: false,
       slug: "tour-heranca-pequena-africa-rio-cultura-afrobrasileira",
@@ -738,10 +1138,20 @@ export const tours = {
       notIncluded: ["Transporte para/do ponto de encontro", "Tarifas de museus", "Comida e bebidas"],
       pricing: { perPerson: 65 },
       duration: "3 horas",
+      bookingTimeSlots: [
+        "10:00", "10:15", "10:30", "10:45", "11:00",
+        "11:15", "11:30", "11:45", "12:00", "12:15",
+        "12:30", "12:45", "13:00", "13:15", "13:30",
+        "13:45", "14:00"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingBlockedWeekdays: ["sunday"],
+      bookingCutoffDays: 1,
       meetingPoint: "Estátua General Osorio (Praça XV)",
+      startTime: "10:00 - 14:00",
     },
     {
-      id: "custom-tour",
+      id: "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       category: "city-tours",
       isFeatured: true,
       isCustom: true,
@@ -755,7 +1165,12 @@ export const tours = {
       notIncluded: ["Ingressos para atrações (cotados separadamente conforme seu roteiro)", "Refeições e bebidas (podem ser organizadas sob pedido)", "Gorjetas (opcional)"],
       pricing: { custom: true, displayText: "Varia conforme roteiro" },
       duration: "Flexível (4-10+ horas)",
-      startTime: "Sua escolha",
+      bookingTimeSlots: [
+        "Flexible"
+      ],
+      bookingBlockedDates: ["2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-12-31", "2027-01-01"],
+      bookingCutoffDays: 1,
+      startTime: "Flexible",
       recommendations: "Entre em contato com pelo menos 48 horas de antecedência para que possamos criar a experiência perfeita para você. Quanto mais você compartilhar sobre seus interesses, melhor poderemos personalizar seu dia.",
       heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Começar a Planejar"

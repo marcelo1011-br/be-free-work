@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "historical-walking",
+      "id": "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
       "slug": "downtown-rio-walking",
       "name": "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
       "duration": "3.5 hours",
@@ -33,7 +33,7 @@
       "url": "https://befreetours.com.br/en/private-tours/downtown-rio-walking"
     },
     {
-      "id": "food-walking",
+      "id": "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
       "slug": "food-walking",
       "name": "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
       "duration": "3 hours",
@@ -50,7 +50,7 @@
       "url": "https://befreetours.com.br/en/private-tours/food-walking"
     },
     {
-      "id": "little-africa",
+      "id": "Little Africa: Rio's Soul & African Heritage Unveiled",
       "slug": "little-africa",
       "name": "Little Africa: Rio's Soul & African Heritage Unveiled",
       "duration": "3 hours",

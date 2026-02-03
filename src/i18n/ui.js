@@ -21,7 +21,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.about': 'About',
     'nav.contact': 'Contact',
-    'nav.book': 'Book Now',
+    'nav.book': 'Quick Book',
     'nav.language': 'Language',
     
     
@@ -115,7 +115,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.about': 'Nosotros',
     'nav.contact': 'Contacto',
-    'nav.book': 'Reservar',
+    'nav.book': 'Reserva rápida',
     'nav.language': 'Idioma',
     
     
@@ -209,7 +209,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.about': 'Sobre',
     'nav.contact': 'Contato',
-    'nav.book': 'Reservar',
+    'nav.book': 'Reserva rápida',
     'nav.language': 'Idioma',
     
     

@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "historical-walking",
+      "id": "Centro de Río a Pie: Escaleras de Selarón y Joyas Ocultas",
       "slug": "downtown-rio-walking",
       "name": "Centro de Río a Pie: Escaleras de Selarón y Joyas Ocultas",
       "duration": "3.5 horas",
@@ -33,7 +33,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/downtown-rio-walking"
     },
     {
-      "id": "food-walking",
+      "id": "Tour Gastronómico a Pie por Río: Experiencia Culinaria Brasileña Auténtica",
       "slug": "tour-gastronomico-rio-cocina-brasilena",
       "name": "Tour Gastronómico a Pie por Río: Experiencia Culinaria Brasileña Auténtica",
       "duration": "3 horas",
@@ -50,7 +50,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/tour-gastronomico-rio-cocina-brasilena"
     },
     {
-      "id": "little-africa",
+      "id": "Pequeña África: El Alma de Río y la Herencia Africana Revelada",
       "slug": "pequena-africa",
       "name": "Pequeña África: El Alma de Río y la Herencia Africana Revelada",
       "duration": "3 horas",

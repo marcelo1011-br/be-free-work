@@ -6,6 +6,7 @@ import { getLangFromUrl } from "../i18n/utils";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
+import TourSelectModal from "../components/TourSelectModal.astro";
 import "../styles/global.css";
 
 
@@ -360,6 +361,7 @@ const finalSchema = {
 
     
     <ExitIntentPopup lang={currentLang} />
+    <TourSelectModal lang={currentLang} />
 
     
     <script is:inline>
@@ -389,6 +391,57 @@ const finalSchema = {
           attributes: true,
           attributeFilter: ["class"],
         });
+      }
+
+      const initTourSelectModal = () => {
+        const modal = document.querySelector("[data-tour-select-modal]");
+        if (!modal) return;
+
+        const select = modal.querySelector("#tour-select");
+        const goButton = modal.querySelector("[data-tour-select-go]");
+
+        const openModal = () => {
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+        };
+
+        const closeModal = () => {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("modal-open");
+        };
+
+        document.addEventListener("click", (event) => {
+          const trigger = event.target?.closest?.("[data-tour-select-trigger]");
+          if (trigger) {
+            event.preventDefault();
+            openModal();
+          }
+        });
+
+        modal.querySelectorAll("[data-tour-select-close]").forEach((btn) => {
+          btn.addEventListener("click", closeModal);
+        });
+
+        goButton?.addEventListener("click", () => {
+          const slug = select?.value;
+          if (!slug) return;
+          const lang = document.documentElement.lang || "en";
+          const routeMap = {
+            en: "private-tours",
+            es: "tours-privados",
+            "pt-br": "passeios-privados",
+          };
+          const route = routeMap[lang] || "private-tours";
+          window.location.href = `/${lang}/${route}/${slug}`;
+        });
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initTourSelectModal);
+      } else {
+        initTourSelectModal();
       }
     </script>
 

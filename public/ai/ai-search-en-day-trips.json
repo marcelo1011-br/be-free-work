@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "ilha-grande",
+      "id": "Island Escape: Ilha Grande by Private Speedboat",
       "slug": "island-escape-ilha-grande",
       "name": "Island Escape: Ilha Grande by Private Speedboat",
       "duration": "10 hours",
@@ -31,7 +31,7 @@
       "url": "https://befreetours.com.br/en/private-tours/island-escape-ilha-grande"
     },
     {
-      "id": "buzios",
+      "id": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
       "slug": "buzios-riviera",
       "name": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
       "duration": "10 hours",
@@ -47,7 +47,7 @@
       "url": "https://befreetours.com.br/en/private-tours/buzios-riviera"
     },
     {
-      "id": "petropolis",
+      "id": "Petrópolis: Imperial Palaces & Mountain Escape",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Imperial Palaces & Mountain Escape",
       "duration": "8 hours",

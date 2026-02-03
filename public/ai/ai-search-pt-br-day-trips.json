@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "ilha-grande",
+      "id": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       "slug": "island-escape-ilha-grande",
       "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       "duration": "10 horas",
@@ -31,7 +31,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande"
     },
     {
-      "id": "buzios",
+      "id": "Búzios: A Riviera Brasileira (23 Praias em Um Dia)",
       "slug": "buzios-charme-costeiro-passeio-privado",
       "name": "Búzios: A Riviera Brasileira (23 Praias em Um Dia)",
       "duration": "10 horas",
@@ -47,7 +47,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado"
     },
     {
-      "id": "petropolis",
+      "id": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       "slug": "passeio-privado-petropolis-cidade-imperial",
       "name": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       "duration": "8 horas",

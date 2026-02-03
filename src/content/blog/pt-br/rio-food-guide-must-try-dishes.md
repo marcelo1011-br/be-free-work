@@ -7,9 +7,9 @@ imageSlug: "rio-food"
 category: "Gastronomia"
 readTime: "12 min de leitura"
 relatedTours:
-  - "food-walking"
-  - "unforgettable-rio"
-  - "little-africa"
+  - "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica"
+  - "O Essencial do Rio: Ícones, Cultura e Joias Escondidas"
+  - "Pequena África: A Alma do Rio e a Herança Africana Revelada"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"

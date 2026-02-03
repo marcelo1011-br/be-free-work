@@ -7,9 +7,9 @@ imageSlug: "rio-food"
 category: "Food & Drink"
 readTime: "12 min read"
 relatedTours:
-  - "food-walking"
-  - "unforgettable-rio"
-  - "little-africa"
+  - "Rio Food Walking Tour: Authentic Brazilian Culinary Experience"
+  - "The Essential Rio: Icons, Culture & Hidden Gems"
+  - "Little Africa: Rio's Soul & African Heritage Unveiled"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"
@@ -182,7 +182,7 @@ Where to Try:
 
 - Beach vendors - Literally everywhere
 - Supermercados - Buy the powder, make at home
-- [Food Walking Tour](/en/private-tours/food-walking) - We'll show you how locals make it
+- [Food Walking Tour](/en/private-tours/Rio Food Walking Tour: Authentic Brazilian Culinary Experience) - We'll show you how locals make it
 
 Order: "Mate gelado, sem acucar" (no sugar) or "com limao" (with lemon).
 
@@ -228,7 +228,7 @@ Nightlife hub with street food vendors. Post-bar pasteis and cachorro-quente.
 
 ## Join Our Food Walking Tour
 
-Want to try everything on this list with a local guide? Our [Centro Food Walking Tour](/en/private-tours/food-walking) includes:
+Want to try everything on this list with a local guide? Our [Centro Food Walking Tour](/en/private-tours/Rio Food Walking Tour: Authentic Brazilian Culinary Experience) includes:
 
 - 8-10 tastings
 - Historical context
@@ -270,7 +270,7 @@ You'll need a nap, but you'll understand why Cariocas love food so much!
 - [Historical Walking Tour](/en/private-tours/downtown-rio-walking) - Includes food stops
 - [Best Time to Visit Rio](/en/blog/best-time-visit-rio-2026) - Some dishes are seasonal
 - [Hidden Beaches Rio Locals Love](/en/blog/hidden-beaches-rio-locals-love) - Pair sun + snacks like a local
-- [Little Africa Walking Tour](/en/private-tours/little-africa) - Explores African influence on Rio food
+- [Little Africa Walking Tour](/en/private-tours/Little Africa: Rio's Soul & African Heritage Unveiled) - Explores African influence on Rio food
 
 Come hungry, leave happy, and probably 5 pounds heavier. Worth it!
 

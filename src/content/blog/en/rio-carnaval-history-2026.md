@@ -7,9 +7,9 @@ imageSlug: "rio-carnaval-history-2026"
 category: "Culture"
 readTime: "9 min read"
 relatedTours:
-  - "future-visions-carnival"
-  - "historical-walking"
-  - "custom-tour"
+  - "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes"
+  - "Downtown Rio on Foot: Selarón Steps & Hidden Gems"
+  - "Your Rio, Your Way: Custom Private Tour"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"

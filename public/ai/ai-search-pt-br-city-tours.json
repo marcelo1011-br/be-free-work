@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "unforgettable-rio",
+      "id": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
       "slug": "rio-essencial",
       "name": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
       "duration": "8 horas",
@@ -33,7 +33,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial"
     },
     {
-      "id": "rio-flash-5h",
+      "id": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
       "name": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       "duration": "5 horas",
@@ -48,7 +48,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar"
     },
     {
-      "id": "sunrise-sugarloaf",
+      "id": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
       "slug": "nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
       "name": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
       "duration": "6 horas",
@@ -63,7 +63,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado"
     },
     {
-      "id": "sunset-magic",
+      "id": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       "slug": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
       "name": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       "duration": "6 horas",
@@ -79,7 +79,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar"
     },
     {
-      "id": "sunset-roxy",
+      "id": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
       "slug": "por-do-sol-cultura-roxy",
       "name": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
       "duration": "9 horas",
@@ -95,7 +95,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy"
     },
     {
-      "id": "sky-high-urban-forest",
+      "id": "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
       "slug": "pao-acucar-floresta-tijuca-jardim-botanico-passeio",
       "name": "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
       "duration": "8 horas",
@@ -111,7 +111,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio"
     },
     {
-      "id": "niteroi",
+      "id": "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
       "slug": "niteroi-museo-arte-contemporanea-passeio-privado",
       "name": "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
       "duration": "8 horas",
@@ -127,7 +127,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado"
     },
     {
-      "id": "future-visions-carnival",
+      "id": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
       "slug": "museu-amanha-experiencia-carnaval-rio-passeio",
       "name": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
       "duration": "7 horas",
@@ -143,7 +143,7 @@
       "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio"
     },
     {
-      "id": "custom-tour",
+      "id": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "slug": "passeio-personalizado",
       "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "duration": "Flexível (4-10+ horas)",

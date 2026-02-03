@@ -15,7 +15,7 @@
   ],
   "tours": [
     {
-      "id": "ilha-grande",
+      "id": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "slug": "island-escape-ilha-grande",
       "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "duration": "10 horas",
@@ -31,7 +31,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande"
     },
     {
-      "id": "buzios",
+      "id": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
       "slug": "buzios-riviera",
       "name": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
       "duration": "10 horas",
@@ -47,7 +47,7 @@
       "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera"
     },
     {
-      "id": "petropolis",
+      "id": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "duration": "8 horas",

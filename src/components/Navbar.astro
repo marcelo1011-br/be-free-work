@@ -151,9 +151,9 @@ function isActive(href: string): boolean {
         </div>
 
         
-        <a href={`/${lang}/contact`} class="btn btn-primary btn-sm navbar-cta">
+        <button type="button" class="btn btn-primary btn-sm navbar-cta" data-tour-select-trigger>
           {t("nav.book")}
-        </a>
+        </button>
 
         
         <button
@@ -207,9 +207,9 @@ function isActive(href: string): boolean {
           ))
         }
         <li>
-          <a href={`/${lang}/contact`} class="mobile-nav-link mobile-nav-cta">
+          <button type="button" class="mobile-nav-link mobile-nav-cta" data-tour-select-trigger>
             {t("nav.book")}
-          </a>
+          </button>
         </li>
       </ul>
     </div>

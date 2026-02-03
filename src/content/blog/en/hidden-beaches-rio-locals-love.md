@@ -7,9 +7,9 @@ imageSlug: "hidden-beaches"
 category: "Hidden Gems"
 readTime: "10 min read"
 relatedTours:
-  - "ilha-grande"
-  - "buzios"
-  - "unforgettable-rio"
+  - "Island Escape: Ilha Grande by Private Speedboat"
+  - "Búzios: Brazil's Riviera (23 Beaches in One Day)"
+  - "The Essential Rio: Icons, Culture & Hidden Gems"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "rio-food-guide-must-try-dishes"
@@ -199,8 +199,8 @@ Most hidden beaches are difficult to reach by public transport. Options:
 Want to visit these secret spots without the hassle? Our private tours include:
 
 - Prainha & Grumari Day Trip - Visit both beaches with a local guide
-- [Ilha Grande Beach Paradise](/en/private-tours/island-escape-ilha-grande) - Even more pristine beaches on an island
-- [Buzios Day Trip](/en/private-tours/buzios-riviera) - The Hamptons of Brazil with 20+ beautiful beaches
+- [Ilha Grande Beach Paradise](/en/private-tours/island-escape-Island Escape: Ilha Grande by Private Speedboat) - Even more pristine beaches on an island
+- [Buzios Day Trip](/en/private-tours/Búzios: Brazil's Riviera (23 Beaches in One Day)-riviera) - The Hamptons of Brazil with 20+ beautiful beaches
 - [The Essential Rio](/en/private-tours/essential-rio) - Add a hidden beach stop to your city tour
 
 ## Local Etiquette

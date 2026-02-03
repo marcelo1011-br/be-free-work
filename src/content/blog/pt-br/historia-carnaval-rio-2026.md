@@ -7,9 +7,9 @@ imageSlug: "rio-carnaval-history-2026"
 category: "Cultura"
 readTime: "9 min de leitura"
 relatedTours:
-  - "future-visions-carnival"
-  - "historical-walking"
-  - "custom-tour"
+  - "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores"
+  - "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas"
+  - "Seu Rio, do Seu Jeito: Passeio Privado Personalizado"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"

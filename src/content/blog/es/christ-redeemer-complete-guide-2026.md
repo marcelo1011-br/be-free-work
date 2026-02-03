@@ -7,9 +7,9 @@ imageSlug: "christ-guide"
 category: "Atracciones"
 readTime: "15 min de lectura"
 relatedTours:
-  - "unforgettable-rio"
-  - "sunrise-sugarloaf"
-  - "rio-flash-5h"
+  - "El Río Esencial: Íconos, Cultura y Joyas Ocultas"
+  - "Río al Amanecer: Pan de Azúcar y Cristo al Alba"
+  - "Río Express: Cristo y Pan de Azúcar en 5 Horas"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"

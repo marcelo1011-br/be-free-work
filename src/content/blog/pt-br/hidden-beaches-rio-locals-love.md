@@ -7,9 +7,9 @@ imageSlug: "hidden-beaches"
 category: "Tesouros Escondidos"
 readTime: "10 min de leitura"
 relatedTours:
-  - "ilha-grande"
-  - "buzios"
-  - "unforgettable-rio"
+  - "Escapada para a Ilha: Ilha Grande de Lancha Privativa"
+  - "Búzios: A Riviera Brasileira (23 Praias em Um Dia)"
+  - "O Essencial do Rio: Ícones, Cultura e Joias Escondidas"
 relatedPosts:
   - "best-time-visit-rio-2026"
   - "rio-food-guide-must-try-dishes"
@@ -199,8 +199,8 @@ Muitas praias são difíceis de acessar de transporte público. Opções:
 Quer conhecer esses lugares sem dor de cabeça? Nossos tours privados incluem:
 
 - Prainha & Grumari Day Trip - visite as duas com guia local
-- [Ilha Grande Beach Paradise](/pt-br/passeios-privados/island-escape-ilha-grande) - praias ainda mais preservadas em uma ilha
-- [Búzios Day Trip](/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado) - a "Saint-Tropez brasileira" com 20+ praias lindas
+- [Ilha Grande Beach Paradise](/pt-br/passeios-privados/island-escape-Escapada para a Ilha: Ilha Grande de Lancha Privativa) - praias ainda mais preservadas em uma ilha
+- [Búzios Day Trip](/pt-br/passeios-privados/Búzios: A Riviera Brasileira (23 Praias em Um Dia)-charme-costeiro-passeio-privado) - a "Saint-Tropez brasileira" com 20+ praias lindas
 - [The Essential Rio](/pt-br/passeios-privados/rio-essencial) - inclua uma parada em praia escondida no seu tour pela cidade
 
 ## Etiqueta local

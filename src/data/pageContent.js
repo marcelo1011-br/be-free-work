@@ -177,12 +177,12 @@ export const pageContent = {
             placeholder: "Select a tour (optional)",
             options: [
               { value: "", label: "Select a tour (optional)" },
-              { value: "unforgettable-rio", label: "Unforgettable Rio" },
-              { value: "sunset-magic", label: "Sunset Magic" },
-              { value: "ilha-grande", label: "Ilha Grande" },
-              { value: "petropolis", label: "Petrópolis" },
-              { value: "food-walking", label: "Food Walking Tour" },
-              { value: "custom", label: "Custom Tour" },
+              { value: "The Essential Rio: Icons, Culture & Hidden Gems", label: "Unforgettable Rio" },
+              { value: "Golden Hour Rio: Christ & Sugarloaf at Sunset", label: "Sunset Magic" },
+              { value: "Island Escape: Ilha Grande by Private Speedboat", label: "Ilha Grande" },
+              { value: "Petrópolis: Imperial Palaces & Mountain Escape", label: "Petrópolis" },
+              { value: "Rio Food Walking Tour: Authentic Brazilian Culinary Experience", label: "Food Walking Tour" },
+              { value: "Your Rio, Your Way: Custom Private Tour", label: "Custom Tour" },
               { value: "other", label: "Other" }
             ]
           },
@@ -222,12 +222,12 @@ export const pageContent = {
             placeholder: "Selecciona un tour (opcional)",
             options: [
               { value: "", label: "Selecciona un tour (opcional)" },
-              { value: "unforgettable-rio", label: "Río Inolvidable" },
-              { value: "sunset-magic", label: "Magia del Atardecer" },
-              { value: "ilha-grande", label: "Ilha Grande" },
-              { value: "petropolis", label: "Petrópolis" },
-              { value: "food-walking", label: "Tour Gastronómico" },
-              { value: "custom", label: "Tour Personalizado" },
+              { value: "El Río Esencial: Íconos, Cultura y Joyas Ocultas", label: "Río Inolvidable" },
+              { value: "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer", label: "Magia del Atardecer" },
+              { value: "Escape a la Isla: Ilha Grande en Lancha Privada", label: "Ilha Grande" },
+              { value: "Petrópolis: Palacios Imperiales y Refugio en la Montaña", label: "Petrópolis" },
+              { value: "Tour Gastronómico a Pie por Río: Experiencia Culinaria Brasileña Auténtica", label: "Tour Gastronómico" },
+              { value: "Tu Río, a Tu Manera: Tour Privado Personalizado", label: "Tour Personalizado" },
               { value: "other", label: "Otro" }
             ]
           },
@@ -267,12 +267,12 @@ export const pageContent = {
             placeholder: "Selecione um passeio (opcional)",
             options: [
               { value: "", label: "Selecione um passeio (opcional)" },
-              { value: "unforgettable-rio", label: "Rio Inesquecível" },
-              { value: "sunset-magic", label: "Magia do Por do Sol" },
-              { value: "ilha-grande", label: "Ilha Grande" },
-              { value: "petropolis", label: "Petrópolis" },
-              { value: "food-walking", label: "Tour Gastronômico" },
-              { value: "custom", label: "Passeio Personalizado" },
+              { value: "O Essencial do Rio: Ícones, Cultura e Joias Escondidas", label: "Rio Inesquecível" },
+              { value: "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol", label: "Magia do Por do Sol" },
+              { value: "Escapada para a Ilha: Ilha Grande de Lancha Privativa", label: "Ilha Grande" },
+              { value: "Petrópolis: Palácios Imperiais e Refúgio na Montanha", label: "Petrópolis" },
+              { value: "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica", label: "Tour Gastronômico" },
+              { value: "Seu Rio, do Seu Jeito: Passeio Privado Personalizado", label: "Passeio Personalizado" },
               { value: "other", label: "Outro" }
             ]
           },

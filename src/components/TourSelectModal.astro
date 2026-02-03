@@ -1,0 +1,194 @@
+---
+import { tours } from "../data/tours.js";
+
+const { lang } = Astro.props;
+
+const tourRoutes = {
+  en: "private-tours",
+  es: "tours-privados",
+  "pt-br": "passeios-privados",
+};
+
+const primaryTitles = {
+  en: [
+    "The Essential Rio: Icons, Culture & Hidden Gems",
+    "Rio Express: Christ & Sugarloaf in 5 Hours",
+    "Golden Hour Rio: Christ & Sugarloaf at Sunset",
+    "Petrópolis: Imperial Palaces & Mountain Escape",
+    "Island Escape: Ilha Grande by Private Speedboat",
+    "Your Rio, Your Way: Custom Private Tour",
+  ],
+  es: [
+    "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
+    "Río Express: Cristo y Pan de Azúcar en 5 Horas",
+    "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
+    "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
+    "Escape a la Isla: Ilha Grande en Lancha Privada",
+    "Tu Río, a Tu Manera: Tour Privado Personalizado",
+  ],
+  "pt-br": [
+    "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
+    "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
+    "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
+    "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
+    "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
+    "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
+  ],
+};
+
+const copyMap = {
+  en: {
+    title: "Choose Your Tour",
+    ctaPrimary: "View Tour",
+    ctaSecondary: "See All Tours",
+    placeholder: "Select a tour",
+  },
+  es: {
+    title: "Elige tu Tour",
+    ctaPrimary: "Ver Tour",
+    ctaSecondary: "Ver Todos los Tours",
+    placeholder: "Selecciona un tour",
+  },
+  "pt-br": {
+    title: "Escolha seu Passeio",
+    ctaPrimary: "Ver Passeio",
+    ctaSecondary: "Ver Todos os Passeios",
+    placeholder: "Selecione um passeio",
+  },
+};
+
+const list = primaryTitles[lang] || primaryTitles.en;
+const tourList = tours[lang] || tours.en;
+const options = list
+  .map((title) => tourList.find((tour) => tour.title === title))
+  .filter(Boolean)
+  .map((tour) => ({
+    title: tour.title,
+    slug: tour.slug,
+  }));
+
+const route = tourRoutes[lang] || "private-tours";
+const copy = copyMap[lang] || copyMap.en;
+---
+
+<div class="tour-select-modal" data-tour-select-modal aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="tour-select-modal__backdrop" data-tour-select-close></div>
+  <div class="tour-select-modal__panel" role="document">
+    <button class="tour-select-modal__close" type="button" aria-label="Close" data-tour-select-close>
+      ×
+    </button>
+    <h2 class="tour-select-modal__title">{copy.title}</h2>
+    <div class="tour-select-modal__form">
+      <label for="tour-select" class="tour-select-modal__label">{copy.placeholder}</label>
+      <select id="tour-select" class="tour-select-modal__select">
+        <option value="" selected disabled>{copy.placeholder}</option>
+        {options.map((opt) => (
+          <option value={opt.slug}>{opt.title}</option>
+        ))}
+      </select>
+
+      <div class="tour-select-modal__actions">
+        <button type="button" class="btn btn-primary btn-lg" data-tour-select-go>
+          {copy.ctaPrimary}
+        </button>
+        <a href={`/${lang}/${route}`} class="btn btn-outline-secondary btn-lg">
+          {copy.ctaSecondary}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tour-select-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration-normal) var(--transition-easing-default);
+    z-index: 1200;
+  }
+
+  .tour-select-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .tour-select-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, black 60%, transparent);
+  }
+
+  .tour-select-modal__panel {
+    position: relative;
+    width: min(90vw, 520px);
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 60px color-mix(in srgb, black 40%, transparent);
+    backdrop-filter: blur(18px);
+    animation: modalIn var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  .tour-select-modal__close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: color-mix(in srgb, var(--color-text) 8%, transparent);
+    color: var(--color-text);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .tour-select-modal__title {
+    margin: 0 0 var(--space-lg);
+    font-size: var(--font-size-h3);
+    color: var(--color-text);
+  }
+
+  .tour-select-modal__form {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .tour-select-modal__label {
+    font-weight: var(--font-weight-medium);
+  }
+
+  .tour-select-modal__select {
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    border: var(--border-width-hairline) solid var(--color-border-light);
+    background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    color: var(--color-text);
+  }
+
+  .tour-select-modal__select option {
+    color: #111;
+    background: #fff;
+  }
+
+  .tour-select-modal__actions {
+    display: grid;
+    gap: var(--space-sm);
+  }
+  @keyframes modalIn {
+    from {
+      transform: translateY(12px) scale(0.98);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+</style>

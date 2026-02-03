@@ -1,0 +1,678 @@
+---
+import "flatpickr/dist/flatpickr.min.css";
+
+const { tour, lang } = Astro.props;
+
+const bookingSlots = Array.isArray(tour.bookingTimeSlots) ? tour.bookingTimeSlots : [];
+const hasFixedSlots = bookingSlots.length > 0 && !bookingSlots.includes("Flexible");
+
+const copyMap = {
+  en: {
+    title: "Request Booking",
+    close: "Close",
+    date: "Date *",
+    time: "Time *",
+    timeFlexibleLabel: "Time (Flexible) *",
+    timeFlexiblePlaceholder: "Preferred time or note",
+    participants: "Number of participants *",
+    pickup: "Pickup location *",
+    pickupPlaceholder: "Hotel name, address, or neighborhood",
+    special: "Special requests (optional)",
+    specialPlaceholder: "Any special requirements or preferences?",
+    name: "Name *",
+    email: "Email *",
+    phone: "Phone *",
+    phonePlaceholder: "+55 21 97927-1637",
+    submit: "Request Booking",
+    success: "Request sent successfully. We'll be in touch soon.",
+    error: "Please check the highlighted fields.",
+    dateError: "Please select a valid date.",
+    timeError: "Please select a time.",
+    participantsError: "Please enter 1 to 12 participants.",
+    pickupError: "Please enter a pickup location.",
+    nameError: "Please enter your name.",
+    emailError: "Please enter a valid email.",
+    phoneError: "Please enter a valid phone number with country code.",
+    submitError: "Something went wrong. Please try again.",
+    todayError: "Date cannot be in the past.",
+  },
+  es: {
+    title: "Solicitar Reserva",
+    close: "Cerrar",
+    date: "Fecha *",
+    time: "Hora *",
+    timeFlexibleLabel: "Hora (Flexible) *",
+    timeFlexiblePlaceholder: "Hora preferida o nota",
+    participants: "Número de participantes *",
+    pickup: "Lugar de recogida *",
+    pickupPlaceholder: "Nombre del hotel, dirección o barrio",
+    special: "Solicitudes especiales (opcional)",
+    specialPlaceholder: "¿Alguna preferencia o requisito especial?",
+    name: "Nombre *",
+    email: "Email *",
+    phone: "Teléfono *",
+    phonePlaceholder: "+55 21 97927-1637",
+    submit: "Solicitar Reserva",
+    success: "Solicitud enviada. Te contactaremos pronto.",
+    error: "Revisa los campos resaltados.",
+    dateError: "Selecciona una fecha válida.",
+    timeError: "Selecciona una hora.",
+    participantsError: "Ingresa de 1 a 12 participantes.",
+    pickupError: "Ingresa un lugar de recogida.",
+    nameError: "Ingresa tu nombre.",
+    emailError: "Ingresa un email válido.",
+    phoneError: "Ingresa un teléfono válido con código de país.",
+    submitError: "Algo salió mal. Inténtalo de nuevo.",
+    todayError: "La fecha no puede ser pasada.",
+  },
+  "pt-br": {
+    title: "Solicitar Reserva",
+    close: "Fechar",
+    date: "Data *",
+    time: "Horário *",
+    timeFlexibleLabel: "Horário (Flexível) *",
+    timeFlexiblePlaceholder: "Horário preferido ou observação",
+    participants: "Número de participantes *",
+    pickup: "Local de busca *",
+    pickupPlaceholder: "Nome do hotel, endereço ou bairro",
+    special: "Pedidos especiais (opcional)",
+    specialPlaceholder: "Alguma preferência ou necessidade especial?",
+    name: "Nome *",
+    email: "Email *",
+    phone: "Telefone *",
+    phonePlaceholder: "+55 21 97927-1637",
+    submit: "Solicitar Reserva",
+    success: "Solicitação enviada. Entraremos em contato em breve.",
+    error: "Confira os campos destacados.",
+    dateError: "Selecione uma data válida.",
+    timeError: "Selecione um horário.",
+    participantsError: "Informe de 1 a 12 participantes.",
+    pickupError: "Informe o local de busca.",
+    nameError: "Informe seu nome.",
+    emailError: "Informe um email válido.",
+    phoneError: "Informe um telefone válido com código do país.",
+    submitError: "Algo deu errado. Tente novamente.",
+    todayError: "A data não pode ser no passado.",
+  },
+};
+
+const copy = copyMap[lang] || copyMap.en;
+---
+
+<div
+  class="booking-modal"
+  data-booking-modal
+  data-lang={lang}
+  data-tour-name={tour.title}
+  data-tour-id={tour.id}
+  data-cutoff-days={tour.bookingCutoffDays ?? 1}
+  data-blocked-weekdays={(tour.bookingBlockedWeekdays || []).join(",")}
+  data-blocked-dates={(tour.bookingBlockedDates || []).join(",")}
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="booking-modal__backdrop" data-booking-close></div>
+  <div class="booking-modal__panel" role="document">
+    <button
+      class="booking-modal__close"
+      type="button"
+      aria-label={copy.close}
+      data-booking-close
+    >
+      ×
+    </button>
+    <h2 class="booking-modal__title">{copy.title}</h2>
+    <form
+      class="booking-form"
+      data-booking-form
+      action="https://formspree.io/f/mgoeyojz"
+      method="POST"
+    >
+      <input type="hidden" name="tourName" value={tour.title} />
+      <input type="hidden" name="tourId" value={tour.id} />
+      <input type="hidden" name="lang" value={lang} />
+      <input type="hidden" name="_subject" value={`New Booking Request - ${tour.title}`} />
+
+      <div class="form-field">
+        <label for="booking-date">{copy.date}</label>
+        <input id="booking-date" name="date" type="text" required />
+        <small class="field-error" data-error-for="date"></small>
+      </div>
+
+      {hasFixedSlots ? (
+        <div class="form-field">
+          <label for="booking-time">{copy.time}</label>
+          <select id="booking-time" name="time" required>
+            <option value="" selected disabled>
+              --
+            </option>
+            {bookingSlots.map((slot) => (
+              <option value={slot}>{slot}</option>
+            ))}
+          </select>
+          <small class="field-error" data-error-for="time"></small>
+        </div>
+      ) : (
+        <div class="form-field">
+          <label for="booking-time-flex">{copy.timeFlexibleLabel}</label>
+          <input
+            id="booking-time-flex"
+            name="time"
+            type="text"
+            placeholder={copy.timeFlexiblePlaceholder}
+            required
+          />
+          <small class="field-error" data-error-for="time"></small>
+        </div>
+      )}
+
+      <div class="form-field">
+        <label for="booking-participants">{copy.participants}</label>
+        <input
+          id="booking-participants"
+          name="participants"
+          type="number"
+          min="1"
+          max="12"
+          required
+        />
+        <small class="field-error" data-error-for="participants"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-pickup">{copy.pickup}</label>
+        <input
+          id="booking-pickup"
+          name="pickup"
+          type="text"
+          placeholder={copy.pickupPlaceholder}
+          required
+        />
+        <small class="field-error" data-error-for="pickup"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-special">{copy.special}</label>
+        <textarea
+          id="booking-special"
+          name="specialRequests"
+          placeholder={copy.specialPlaceholder}
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-name">{copy.name}</label>
+        <input id="booking-name" name="name" type="text" required />
+        <small class="field-error" data-error-for="name"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-email">{copy.email}</label>
+        <input id="booking-email" name="email" type="email" required />
+        <small class="field-error" data-error-for="email"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="booking-phone">{copy.phone}</label>
+        <input
+          id="booking-phone"
+          name="phone"
+          type="tel"
+          required
+          placeholder={copy.phonePlaceholder}
+          inputmode="tel"
+        />
+        <small class="field-error" data-error-for="phone"></small>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg booking-submit">
+        {copy.submit}
+      </button>
+      <p class="form-error" data-booking-error aria-live="polite"></p>
+    </form>
+  </div>
+
+</div>
+
+<div class="booking-toast" data-booking-toast aria-live="polite">
+  {copy.success}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="module">
+  const flatpickr = window.flatpickr;
+  const copyMap = {
+    en: {
+      dateError: "Please select a valid date.",
+      todayError: "Date cannot be in the past.",
+      timeError: "Please select a time.",
+      participantsError: "Please enter 1 to 12 participants.",
+      pickupError: "Please enter a pickup location.",
+      nameError: "Please enter your name.",
+      emailError: "Please enter a valid email.",
+      phoneError: "Please enter a valid phone number with country code.",
+      submitError: "Something went wrong. Please try again.",
+    },
+    es: {
+      dateError: "Selecciona una fecha válida.",
+      todayError: "La fecha no puede ser pasada.",
+      timeError: "Selecciona una hora.",
+      participantsError: "Ingresa de 1 a 12 participantes.",
+      pickupError: "Ingresa un lugar de recogida.",
+      nameError: "Ingresa tu nombre.",
+      emailError: "Ingresa un email válido.",
+      phoneError: "Ingresa un teléfono válido con código de país.",
+      submitError: "Algo salió mal. Inténtalo de nuevo.",
+    },
+    "pt-br": {
+      dateError: "Selecione uma data válida.",
+      todayError: "A data não pode ser no passado.",
+      timeError: "Selecione um horário.",
+      participantsError: "Informe de 1 a 12 participantes.",
+      pickupError: "Informe o local de busca.",
+      nameError: "Informe seu nome.",
+      emailError: "Informe um email válido.",
+      phoneError: "Informe um telefone válido com código do país.",
+      submitError: "Algo deu errado. Tente novamente.",
+    },
+  };
+
+  const init = () => {
+    const modal = document.querySelector("[data-booking-modal]");
+    if (!modal) return;
+
+    const form = modal.querySelector("[data-booking-form]");
+    const toast = document.querySelector("[data-booking-toast]");
+    const errorLine = modal.querySelector("[data-booking-error]");
+    const dateInput = modal.querySelector("#booking-date");
+    const lang = modal.dataset.lang || "en";
+    const messages = copyMap[lang] || copyMap.en;
+
+    if (dateInput) {
+      const cutoffDays = Number(modal.dataset.cutoffDays || 1);
+      const cutoffHour = 19;
+      const timeZone = "America/Sao_Paulo";
+
+      const now = new Date();
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        hour12: false,
+      }).formatToParts(now);
+
+      const getPart = (type) => parts.find((p) => p.type === type)?.value;
+      const year = Number(getPart("year"));
+      const month = Number(getPart("month"));
+      const day = Number(getPart("day"));
+      const hour = Number(getPart("hour"));
+
+      const isAfterCutoff = hour >= cutoffHour;
+      const minOffset = isAfterCutoff ? cutoffDays + 1 : cutoffDays;
+      const minDate = new Date(year, month - 1, day + minOffset);
+
+      const blockedWeekdaysRaw = modal.dataset.blockedWeekdays || "";
+      const blockedDatesRaw = modal.dataset.blockedDates || "";
+      const blockedWeekdays = blockedWeekdaysRaw
+        ? blockedWeekdaysRaw.split(",").map((d) => d.trim()).filter(Boolean)
+        : [];
+      const blockedDates = blockedDatesRaw
+        ? blockedDatesRaw.split(",").map((d) => d.trim()).filter(Boolean)
+        : [];
+      const weekdayMap = {
+        sunday: 0,
+        monday: 1,
+        tuesday: 2,
+        wednesday: 3,
+        thursday: 4,
+        friday: 5,
+        saturday: 6,
+      };
+      const blockedSet = new Set(
+        blockedWeekdays
+          .map((day) => weekdayMap[String(day).toLowerCase()])
+          .filter((value) => value !== undefined)
+      );
+
+      const disabledRules = [];
+      if (blockedDates.length) {
+        const blockedDateObjects = blockedDates
+          .map((d) => {
+            const [y, m, day] = d.split("-").map(Number);
+            if (!y || !m || !day) return null;
+            return new Date(y, m - 1, day);
+          })
+          .filter(Boolean);
+        disabledRules.push(...blockedDateObjects);
+      }
+      disabledRules.push((date) => {
+        const month = date.getMonth();
+        const day = date.getDate();
+        return (month === 11 && day === 31) || (month === 0 && day === 1);
+      });
+      if (blockedSet.size) {
+        disabledRules.push((date) => blockedSet.has(date.getDay()));
+      }
+
+      flatpickr(dateInput, {
+        dateFormat: "d/m/Y",
+        minDate,
+        disable: disabledRules,
+      });
+    }
+
+    const openModal = () => {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    };
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      const trigger = target?.closest?.("[data-booking-trigger]");
+      if (trigger) {
+        event.preventDefault();
+        openModal();
+      }
+    });
+
+    modal.querySelectorAll("[data-booking-close]").forEach((btn) => {
+      btn.addEventListener("click", closeModal);
+    });
+
+    const setFieldError = (name, message) => {
+      const field = form?.querySelector(`[name=\"${name}\"]`);
+      const error = form?.querySelector(`[data-error-for=\"${name}\"]`);
+      if (field) field.classList.add("is-error");
+      if (error) error.textContent = message || "";
+    };
+
+    const clearErrors = () => {
+      form?.querySelectorAll(".is-error").forEach((el) => el.classList.remove("is-error"));
+      form?.querySelectorAll("[data-error-for]").forEach((el) => (el.textContent = ""));
+      if (errorLine) errorLine.textContent = "";
+    };
+
+    const parseDate = (value) => {
+      const [day, month, year] = value.split("/").map(Number);
+      if (!day || !month || !year) return null;
+      const date = new Date(year, month - 1, day);
+      return Number.isNaN(date.getTime()) ? null : date;
+    };
+
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearErrors();
+
+      const data = new FormData(form);
+      const dateValue = String(data.get("date") || "");
+      const timeValue = String(data.get("time") || "");
+      const participants = Number(data.get("participants") || 0);
+      const pickup = String(data.get("pickup") || "").trim();
+      const name = String(data.get("name") || "").trim();
+      const email = String(data.get("email") || "").trim();
+      const phone = String(data.get("phone") || "").trim();
+
+      let hasError = false;
+
+      const parsedDate = parseDate(dateValue);
+      if (!parsedDate) {
+        setFieldError("date", messages.dateError);
+        hasError = true;
+      } else {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (parsedDate < today) {
+          setFieldError("date", messages.todayError);
+          hasError = true;
+        }
+      }
+
+      if (!timeValue) {
+        setFieldError("time", messages.timeError);
+        hasError = true;
+      }
+
+      if (!participants || participants < 1 || participants > 12) {
+        setFieldError("participants", messages.participantsError);
+        hasError = true;
+      }
+
+      if (!pickup) {
+        setFieldError("pickup", messages.pickupError);
+        hasError = true;
+      }
+
+      if (!name) {
+        setFieldError("name", messages.nameError);
+        hasError = true;
+      }
+
+      const emailInput = form?.querySelector("#booking-email");
+      const phoneInput = form?.querySelector("#booking-phone");
+      if (emailInput) emailInput.value = email;
+      const emailValid = emailInput
+        ? emailInput.checkValidity()
+        : /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+      if (!emailValid) {
+        setFieldError("email", messages.emailError);
+        hasError = true;
+      }
+
+      const phoneValid = phone.length >= 6;
+      if (!phoneValid) {
+        setFieldError("phone", messages.phoneError);
+        hasError = true;
+      }
+
+      if (hasError) {
+        if (errorLine) errorLine.textContent = messages.submitError;
+        return;
+      }
+
+      try {
+        const summary = [
+          `Tour: ${data.get("tourName")}`,
+          `Date: ${dateValue}`,
+          `Time: ${timeValue}`,
+          `Participants: ${participants}`,
+          `Pickup: ${pickup}`,
+          `Special requests: ${data.get("specialRequests") || "-"}`,
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Phone: ${phone}`,
+          `Language: ${data.get("lang")}`,
+        ].join("\\n");
+
+        data.append("details", summary);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: data,
+        });
+
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        form.reset();
+        if (dateInput?._flatpickr) dateInput._flatpickr.clear();
+        closeModal();
+
+        if (toast) {
+          toast.classList.add("is-visible");
+          setTimeout(() => toast.classList.remove("is-visible"), 3500);
+        }
+      } catch (error) {
+        if (errorLine) errorLine.textContent = messages.submitError;
+      }
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+</script>
+
+<style>
+  :global(body.modal-open) {
+    overflow: hidden;
+  }
+
+  .booking-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration-normal) var(--transition-easing-default);
+    z-index: 1200;
+  }
+
+  .booking-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .booking-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, black 60%, transparent);
+  }
+
+  .booking-modal__panel {
+    position: relative;
+    width: min(90vw, 560px);
+    max-height: min(85vh, 800px);
+    overflow: auto;
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 60px color-mix(in srgb, black 40%, transparent);
+    backdrop-filter: blur(18px);
+    animation: modalIn var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  @keyframes modalIn {
+    from {
+      transform: translateY(12px) scale(0.98);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .booking-modal__close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: color-mix(in srgb, var(--color-text) 8%, transparent);
+    color: var(--color-text);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .booking-modal__title {
+    margin: 0 0 var(--space-lg);
+    font-size: var(--font-size-h3);
+    color: var(--color-text);
+  }
+
+  .booking-form {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .form-field {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .form-field label {
+    font-weight: var(--font-weight-medium);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    border: var(--border-width-hairline) solid var(--color-border-light);
+    background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    color: var(--color-text);
+  }
+
+  .form-field select option {
+    color: #111;
+    background: #fff;
+  }
+
+  .form-field input.is-error,
+  .form-field select.is-error,
+  .form-field textarea.is-error {
+    border-color: var(--color-danger, #d64545);
+  }
+
+  .field-error {
+    color: var(--color-danger, #d64545);
+    min-height: 1rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .booking-submit {
+    width: 100%;
+    margin-top: var(--space-xs);
+  }
+
+  .form-error {
+    color: var(--color-danger, #d64545);
+    min-height: 1.2rem;
+    margin: 0;
+  }
+
+  .booking-toast {
+    --toast-bg: #1f5eff;
+    --toast-text: #ffffff;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.98);
+    background: var(--toast-bg);
+    color: var(--toast-text);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration-normal) var(--transition-easing-default),
+      transform var(--transition-duration-normal) var(--transition-easing-default);
+    z-index: 1300;
+    text-align: center;
+  }
+
+  .booking-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+</style>
