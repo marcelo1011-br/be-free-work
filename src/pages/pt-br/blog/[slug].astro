@@ -16,7 +16,6 @@ import {
 
 const LANG = "pt-br";
 
-
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/blog/*.{jpeg,jpg,png,webp}"
 );
@@ -39,19 +38,30 @@ async function getBlogImage(imageSlug: string) {
 }
 
 export async function getStaticPaths() {
+  const lang = "pt-br";
+  const getEntryId = (post) => post?.slug ?? post?.id ?? "";
+  const getEntrySlug = (post) => {
+    const raw = getEntryId(post);
+    if (!raw) return "";
+    const normalized = raw.replace(/^\/+/, "");
+    const prefix = `${lang}/`;
+    if (normalized.startsWith(prefix)) return normalized.slice(prefix.length);
+    return normalized.split("/").pop() || normalized;
+  };
+
   const allPosts = await getCollection("blog");
 
-  const langPosts = allPosts.filter((post) => post.slug.startsWith("pt-br/"));
+  const langPosts = allPosts.filter((post) => getEntryId(post).startsWith(`${lang}/`));
 
   return langPosts.map((post) => {
-    const slug = post.slug.replace("pt-br/", "");
+    const slug = getEntrySlug(post);
 
     
     let relatedPostsData = [];
     if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
       relatedPostsData = post.data.relatedPosts
         .map((relatedSlug) => {
-          return langPosts.find((p) => p.slug === `pt-br/${relatedSlug}`);
+          return langPosts.find((p) => getEntrySlug(p) === relatedSlug);
         })
         .filter(Boolean);
     }
@@ -69,6 +79,14 @@ export async function getStaticPaths() {
 const { post, relatedPostsData } = Astro.props;
 const { Content, headings } = await post.render();
 const t = useTranslations(LANG);
+const getEntrySlug = (entry) => {
+  const raw = entry?.slug ?? entry?.id ?? "";
+  if (!raw) return "";
+  const normalized = raw.replace(/^\/+/, "");
+  const prefix = `${LANG}/`;
+  if (normalized.startsWith(prefix)) return normalized.slice(prefix.length);
+  return normalized.split("/").pop() || normalized;
+};
 
 
 const postImage = post.data.imageSlug 
@@ -203,7 +221,7 @@ const tx = {
             <h3>{tx.relatedPosts}</h3>
             <ul>
               {relatedPostsData.map((relatedPost) => {
-                const relatedSlug = relatedPost.slug.replace("en/", "");
+                const relatedSlug = getEntrySlug(relatedPost);
                 return (
                   <li>
                     <a href={`/${LANG}/blog/${relatedSlug}`}>

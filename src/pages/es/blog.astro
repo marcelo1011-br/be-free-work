@@ -12,6 +12,15 @@ import { getBlogSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 const lang = "es";
 const t = useTranslations(lang);
 
+const getEntryId = (post) => post.slug ?? post.id ?? "";
+const getEntrySlug = (post) => {
+  const raw = getEntryId(post);
+  if (!raw) return "";
+  const normalized = raw.replace(/^\/+/, "");
+  const prefix = `${lang}/`;
+  if (normalized.startsWith(prefix)) return normalized.slice(prefix.length);
+  return normalized.split("/").pop() || normalized;
+};
 
 const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
 const seo = {
@@ -23,8 +32,8 @@ const seo = {
 
 
 
-const allPosts = await getCollection("blog", ({ id }) => {
-  return id.startsWith("es/");
+const allPosts = await getCollection("blog", ({ id, slug }) => {
+  return (slug ?? id ?? "").startsWith(`${lang}/`);
 });
 
 const sortedPosts = allPosts.sort(
@@ -57,7 +66,7 @@ async function getBlogImage(slug: string) {
 const postsWithImages = await Promise.all(
   sortedPosts.map(async (post) => {
     
-    const cleanSlug = post.slug.split('/').pop();
+    const cleanSlug = getEntrySlug(post);
     return {
       ...post.data,
       slug: cleanSlug,
