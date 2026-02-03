@@ -379,7 +379,6 @@ export const tours = {
       bookingCutoffDays: 1,
       startTime: "Flexible",
       recommendations: "Contact us at least 48 hours in advance so we can craft the perfect experience for you. The more you share about your interests, the better we can tailor your day.",
-      heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Start Planning"
     }
   ],
@@ -778,7 +777,6 @@ export const tours = {
       bookingCutoffDays: 1,
       startTime: "Flexible",
       recommendations: "Contáctanos con al menos 48 horas de anticipación para que podamos crear la experiencia perfecta para ti. Cuanto más compartas sobre tus intereses, mejor podremos personalizar tu día.",
-      heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Empezar a Planificar"
     }
   ],
@@ -1172,7 +1170,6 @@ export const tours = {
       bookingCutoffDays: 1,
       startTime: "Flexible",
       recommendations: "Entre em contato com pelo menos 48 horas de antecedência para que possamos criar a experiência perfeita para você. Quanto mais você compartilhar sobre seus interesses, melhor poderemos personalizar seu dia.",
-      heroImage: "/images/tours/custom-tour-hero.webp",
       ctaText: "Começar a Planejar"
     }
   ]

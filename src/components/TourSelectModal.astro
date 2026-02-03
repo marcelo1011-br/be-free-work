@@ -79,8 +79,7 @@ const copy = copyMap[lang] || copyMap.en;
     </button>
     <h2 class="tour-select-modal__title">{copy.title}</h2>
     <div class="tour-select-modal__form">
-      <label for="tour-select" class="tour-select-modal__label">{copy.placeholder}</label>
-      <select id="tour-select" class="tour-select-modal__select">
+      <select id="tour-select" class="tour-select-modal__select" aria-label={copy.placeholder}>
         <option value="" selected disabled>{copy.placeholder}</option>
         {options.map((opt) => (
           <option value={opt.slug}>{opt.title}</option>
@@ -132,6 +131,9 @@ const copy = copyMap[lang] || copyMap.en;
     box-shadow: 0 30px 60px color-mix(in srgb, black 40%, transparent);
     backdrop-filter: blur(18px);
     animation: modalIn var(--transition-duration-normal) var(--transition-easing-default);
+    text-align: left;
+    direction: ltr;
+    box-sizing: border-box;
   }
 
   .tour-select-modal__close {
@@ -152,23 +154,30 @@ const copy = copyMap[lang] || copyMap.en;
     margin: 0 0 var(--space-lg);
     font-size: var(--font-size-h3);
     color: var(--color-text);
+    text-align: left;
   }
 
   .tour-select-modal__form {
     display: grid;
     gap: var(--space-md);
+    justify-items: stretch;
+    width: 100%;
   }
 
   .tour-select-modal__label {
     font-weight: var(--font-weight-medium);
+    text-align: left;
   }
 
   .tour-select-modal__select {
+    width: 100%;
     padding: var(--space-sm);
     border-radius: var(--radius-md);
     border: var(--border-width-hairline) solid var(--color-border-light);
     background: color-mix(in srgb, var(--color-surface) 80%, transparent);
     color: var(--color-text);
+    text-align: left;
+    box-sizing: border-box;
   }
 
   .tour-select-modal__select option {
@@ -179,6 +188,17 @@ const copy = copyMap[lang] || copyMap.en;
   .tour-select-modal__actions {
     display: grid;
     gap: var(--space-sm);
+    width: 100%;
+  }
+
+  .tour-select-modal__actions .btn-outline-secondary {
+    color: var(--color-text);
+    border-color: color-mix(in srgb, var(--color-text) 65%, transparent);
+    background: transparent;
+  }
+
+  .tour-select-modal__actions .btn-outline-secondary:hover {
+    background: color-mix(in srgb, var(--color-text) 10%, transparent);
   }
   @keyframes modalIn {
     from {
@@ -190,5 +210,4 @@ const copy = copyMap[lang] || copyMap.en;
       opacity: 1;
     }
   }
-</style>
 </style>
