@@ -35,8 +35,8 @@ export const homeContent = {
         },
         {
           icon: "travelers",
-          title: "15,000+ Happy Travelers",
-          description: "Join thousands of satisfied guests from around the world who've discovered Rio with us."
+          title: "All-Inclusive Pricing",
+          description: "Our prices include all entrance fees unless noted. No hidden costs, no surprises. What you see is what you pay."
         },
         {
           icon: "star",
@@ -159,8 +159,8 @@ export const homeContent = {
         },
         {
           icon: "travelers",
-          title: "Más de 15,000 Viajeros Satisfechos",
-          description: "Únete a miles de huéspedes satisfechos de todo el mundo que han descubierto Río con nosotros."
+          title: "Precios Todo Incluido",
+          description: "Nuestros precios incluyen todas las entradas, salvo que se indique lo contrario. Sin costos ocultos ni sorpresas. Lo que ves es lo que pagas."
         },
         {
           icon: "star",
@@ -283,8 +283,8 @@ export const homeContent = {
         },
         {
           icon: "travelers",
-          title: "Mais de 15.000 Viajantes Satisfeitos",
-          description: "Junte-se a milhares de hóspedes satisfeitos de todo o mundo que descobriram o Rio conosco."
+          title: "Preços Tudo Incluído",
+          description: "Nossos preços incluem todas as entradas, salvo indicação em contrário. Sem custos ocultos, sem surpresas. O que você vê é o que você paga."
         },
         {
           icon: "star",
