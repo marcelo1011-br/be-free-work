@@ -29,8 +29,14 @@
         "Real Gabinete Portugués de Lectura",
         "Catedral Metropolitana"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/essential-rio"
+      "best_for": [
+        "first_time_visitors",
+        "families",
+        "couples",
+        "iconic_highlights"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/essential-rio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
@@ -44,8 +50,12 @@
         "Teleférico del Pan de Azúcar",
         "Acceso sin fila"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/rio-express"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/rio-express",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
@@ -59,8 +69,12 @@
         "Visita matutina temprana al Cristo Redentor",
         "Oportunidades de fotografía profesional"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
@@ -75,8 +89,12 @@
         "Vistas panorámicas de playas",
         "Orientación fotográfica profesional"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
@@ -91,8 +109,12 @@
         "Cena de tres platos incluida",
         "Presentación cultural"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/atardecer-cultura-roxy"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/atardecer-cultura-roxy",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
@@ -107,8 +129,12 @@
         "Jardín Botánico",
         "Parque Lage"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/bosque-tijuca"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/bosque-tijuca",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
@@ -123,8 +149,12 @@
         "Vistas espectaculares del horizonte de Río",
         "Zona de almuerzo frente al mar"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
@@ -139,15 +169,19 @@
         "Museo Histórico Nacional",
         "Escuela de samba del Carnaval tras bambalinas"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/rio-moderno-museo-manana"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/rio-moderno-museo-manana",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "slug": "tour-personalizado",
       "name": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "duration": "Flexible (4-10+ horas)",
-      "price_from": 0,
+      "price_from": null,
       "description": "¿No encuentras exactamente lo que buscas? Diseña tu propia experiencia en Río. Cuéntanos tus intereses y crearemos un itinerario personalizado solo para ti.",
       "highlights": [
         "Itinerario 100% personalizable según tus intereses",
@@ -157,8 +191,15 @@
         "Perfecto para ocasiones especiales, intereses únicos o necesidades de accesibilidad",
         "Nosotros manejamos toda la logística, entradas y reservas"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/tour-personalizado"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/tour-personalizado",
+      "tour_type": "private_vehicle_tour",
+      "pricing_note": "Bajo consulta / varía según el tamaño del grupo y el itinerario"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }

@@ -29,8 +29,14 @@
         "Real Gabinete Português de Leitura",
         "Catedral Metropolitana"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial"
+      "best_for": [
+        "first_time_visitors",
+        "families",
+        "couples",
+        "iconic_highlights"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
@@ -44,8 +50,13 @@
         "Bondinho do Pão de Açúcar",
         "Acesso fura-fila"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar"
+      "best_for": [
+        "cruise_passengers",
+        "limited_time",
+        "first_time_visitors"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
@@ -59,8 +70,13 @@
         "Visita matinal cedo ao Cristo Redentor",
         "Oportunidades de fotografia profissional"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado"
+      "best_for": [
+        "photographers",
+        "early_risers",
+        "crowd_avoidance"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
@@ -75,8 +91,13 @@
         "Vistas panorâmicas de praias",
         "Orientação fotográfica profissional"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar"
+      "best_for": [
+        "couples",
+        "photographers",
+        "sunset_lovers"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
@@ -91,8 +112,13 @@
         "Jantar de três pratos incluído",
         "Apresentação cultural"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy"
+      "best_for": [
+        "culture_lovers",
+        "night_out",
+        "couples"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
@@ -107,8 +133,13 @@
         "Jardim Botânico",
         "Parque Lage"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio"
+      "best_for": [
+        "nature_lovers",
+        "gardens",
+        "balanced_day"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
@@ -123,8 +154,13 @@
         "Vistas espetaculares do horizonte do Rio",
         "Zona de almoço à beira-mar"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado"
+      "best_for": [
+        "architecture",
+        "art_lovers",
+        "off_the_beaten_path"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
@@ -139,15 +175,21 @@
         "Museu Histórico Nacional",
         "Escola de samba do Carnaval nos bastidores"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio"
+      "best_for": [
+        "museums",
+        "families",
+        "rainy_day_friendly",
+        "carnival_interest"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "slug": "passeio-personalizado",
       "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "duration": "Flexível (4-10+ horas)",
-      "price_from": 0,
+      "price_from": null,
       "description": "Não encontrou exatamente o que procura? Crie sua própria experiência no Rio. Conte-nos seus interesses e criaremos um roteiro personalizado só para você.",
       "highlights": [
         "Roteiro 100% personalizável de acordo com seus interesses",
@@ -157,8 +199,16 @@
         "Perfeito para ocasiões especiais, interesses únicos ou necessidades de acessibilidade",
         "Cuidamos de toda a logística, ingressos e reservas"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado"
+      "best_for": [
+        "customization",
+        "special_occasions",
+        "repeat_visitors"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado",
+      "tour_type": "private_vehicle_tour",
+      "pricing_note": "Sob consulta / varia conforme o tamanho do grupo e o itinerário"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }

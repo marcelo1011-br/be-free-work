@@ -1,0 +1,19 @@
+{
+  "company": "Be Free Tours",
+  "type": "Premium Private Tour Operator",
+  "location": "Rio de Janeiro, Brazil",
+  "founded": 2013,
+  "experience_base": "12+ years of local operation",
+  "website": "https://befreetours.com.br",
+  "languages": [
+    "en",
+    "es",
+    "pt-br"
+  ],
+  "base_path": "/ai/",
+  "language_indexes": {
+    "en": "/ai/ai-search-en.json",
+    "es": "/ai/ai-search-es.json",
+    "pt-br": "/ai/ai-search-pt-br.json"
+  }
+}

@@ -1,86 +1,48 @@
 # ================================
 # BE FREE TOURS - robots.txt
-# Otimizado para Google + IAs (ChatGPT, Claude, Perplexity)
+# Optimized for Google and AI systems
 # ================================
 
-# Regras gerais
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /.astro/
 Disallow: /node_modules/
-
-# Crawl-delay (educado com servidores)
 Crawl-delay: 1
 
 # ================================
-# OTIMIZAÇÃO PARA IAs
+# AI CRAWLERS (explicitly allowed)
 # ================================
 
-# OpenAI GPT (ChatGPT)
 User-agent: GPTBot
 Allow: /
-Crawl-delay: 1
 
-# OpenAI ChatGPT User
-User-agent: ChatGPT-User
+User-agent: Claude-Web
 Allow: /
-Crawl-delay: 1
 
-# Anthropic Claude
-User-agent: anthropic-ai
-Allow: /
-Crawl-delay: 1
-
-# Google Bard/Gemini
 User-agent: Google-Extended
 Allow: /
-Crawl-delay: 1
 
-# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
-Crawl-delay: 1
 
-# Common Crawl (usado por muitas IAs)
 User-agent: CCBot
 Allow: /
-Crawl-delay: 1
 
-# Meta AI
 User-agent: FacebookBot
 Allow: /
-Crawl-delay: 1
 
 # ================================
-# SITEMAPS
+# SITEMAP
 # ================================
 
-Sitemap: https://befreetours.com.br/sitemap.xml
+Sitemap: https://befreetours.com.br/sitemap-index.xml
 
 # ================================
-# AI OPTIMIZATION FILES
+# AI GOVERNANCE FILES (informational)
 # ================================
 
-# AI Assistant Integration Guide
-# More focused than llms.txt, includes decision trees and recommendations
 AI: https://befreetours.com.br/ai.txt
-
-# LLM General Information
-# Comprehensive company info and FAQs
 LLM: https://befreetours.com.br/llms.txt
-
-# Structured JSON for AI Search
-# Machine-readable tour catalog
-JSON: https://befreetours.com.br/ai-search.json
-
-# ================================
-# NOTAS:
-# - Permite todos os bots de IA crawlearem o site
-# - Crawl-delay evita sobrecarga do servidor
-# - Sitemaps ajudam indexação rápida
-# - ai.txt = guia de integração para assistentes
-# - llms.txt = info geral da empresa
-# - ai-search.json = catálogo estruturado
-# ================================
+JSON: https://befreetours.com.br/ai/ai-search.json

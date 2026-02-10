@@ -29,8 +29,14 @@
         "Royal Portuguese Reading Room (Monday to Friday)",
         "Metropolitan Cathedral's unique architecture"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/essential-rio"
+      "best_for": [
+        "first_time_visitors",
+        "families",
+        "couples",
+        "iconic_highlights"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/essential-rio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Rio Express: Christ & Sugarloaf in 5 Hours",
@@ -44,8 +50,12 @@
         "Sugarloaf Mountain cable car",
         "Skip-the-line tickets for Sugarloaf included."
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/rio-express"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/rio-express",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Rio at First Light: Sunrise Sugarloaf & Christ",
@@ -59,8 +69,12 @@
         "Early morning Christ the Redeemer visit",
         "Professional photography opportunities"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
@@ -75,8 +89,13 @@
         "Panoramic beach views",
         "Professional photography guidance"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio"
+      "best_for": [
+        "couples",
+        "photographers",
+        "sunset_lovers"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
@@ -91,8 +110,12 @@
         "Three-course dinner included",
         "Cultural performance"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
@@ -107,8 +130,12 @@
         "Botanical Garden",
         "Parque Lage"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
@@ -123,8 +150,12 @@
         "Spectacular Rio skyline views",
         "Oceanfront lunch location"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
@@ -139,15 +170,19 @@
         "National Historical Museum",
         "Carnival samba school behind-the-scenes"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow"
+      "best_for": [
+        "private_tour",
+        "customizable"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow",
+      "tour_type": "private_vehicle_tour"
     },
     {
       "id": "Your Rio, Your Way: Custom Private Tour",
       "slug": "custom-tour",
       "name": "Your Rio, Your Way: Custom Private Tour",
       "duration": "Flexible (4-10+ hours)",
-      "price_from": 0,
+      "price_from": null,
       "description": "Can't find exactly what you're looking for? Design your own Rio experience. Tell us your interests, and we'll craft a personalized itinerary just for you.",
       "highlights": [
         "100% customizable itinerary based on your interests",
@@ -157,8 +192,16 @@
         "Perfect for special occasions, unique interests, or accessibility needs",
         "We handle all logistics, tickets, and reservations"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/en/private-tours/custom-tour"
+      "best_for": [
+        "customization",
+        "special_occasions",
+        "repeat_visitors"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/custom-tour",
+      "tour_type": "private_vehicle_tour",
+      "pricing_note": "Quote-based / varies by group size and itinerary"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }

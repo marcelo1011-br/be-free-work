@@ -24,6 +24,7 @@ const copyMap = {
     phone: "Phone *",
     phonePlaceholder: "+55 21 97927-1637",
     submit: "Request Booking",
+    priceNote: "No payment required now",
     success: "Request sent. This is not a confirmation yet — we'll confirm by email within 1 hour.",
     error: "Please check the highlighted fields.",
     dateError: "Please select a valid date.",
@@ -53,6 +54,7 @@ const copyMap = {
     phone: "Teléfono *",
     phonePlaceholder: "+55 21 97927-1637",
     submit: "Solicitar Reserva",
+    priceNote: "Sin pago ahora",
     success: "Solicitud enviada. Esto no es una confirmación aún — confirmaremos por email en hasta 1 hora.",
     error: "Revisa los campos resaltados.",
     dateError: "Selecciona una fecha válida.",
@@ -82,6 +84,7 @@ const copyMap = {
     phone: "Telefone *",
     phonePlaceholder: "+55 21 97927-1637",
     submit: "Solicitar Reserva",
+    priceNote: "Sem pagamento agora",
     success: "Solicitação enviada. Isso ainda não é uma confirmação — confirmaremos por email em até 1 hora.",
     error: "Confira os campos destacados.",
     dateError: "Selecione uma data válida.",
@@ -108,6 +111,7 @@ const copy = copyMap[lang] || copyMap.en;
   data-cutoff-days={tour.bookingCutoffDays ?? 1}
   data-blocked-weekdays={(tour.bookingBlockedWeekdays || []).join(",")}
   data-blocked-dates={(tour.bookingBlockedDates || []).join(",")}
+  data-pricing={JSON.stringify(tour.pricing ?? {})}
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
@@ -177,6 +181,10 @@ const copy = copyMap[lang] || copyMap.en;
           max="12"
           required
         />
+        <div class="booking-price" data-booking-price hidden>
+          <div class="booking-price__value" data-booking-price-value></div>
+          <div class="booking-price__note">{copy.priceNote}</div>
+        </div>
         <small class="field-error" data-error-for="participants"></small>
       </div>
 
@@ -289,6 +297,53 @@ const copy = copyMap[lang] || copyMap.en;
     const dateInput = modal.querySelector("#booking-date");
     const lang = modal.dataset.lang || "en";
     const messages = copyMap[lang] || copyMap.en;
+    const participantsInput = modal.querySelector("#booking-participants");
+    const priceWrap = modal.querySelector("[data-booking-price]");
+    const priceValue = modal.querySelector("[data-booking-price-value]");
+    let pricingData = {};
+
+    try {
+      pricingData = JSON.parse(modal.dataset.pricing || "{}");
+    } catch {
+      pricingData = {};
+    }
+
+    const getPriceForParticipants = (count) => {
+      if (!count || !pricingData) return null;
+      if (pricingData.custom) return null;
+
+      if (pricingData.priceTable) {
+        const direct = pricingData.priceTable[String(count)];
+        if (direct !== undefined) return direct;
+      }
+
+      if (pricingData.perPerson) {
+        return pricingData.perPerson * count;
+      }
+
+      if (pricingData.standard) {
+        for (const [range, price] of Object.entries(pricingData.standard)) {
+          const [min, max] = String(range).split("-").map(Number);
+          if (!Number.isFinite(min) || !Number.isFinite(max)) continue;
+          if (count >= min && count <= max) return price;
+        }
+      }
+
+      return null;
+    };
+
+    const updatePrice = () => {
+      if (!priceWrap || !priceValue || !participantsInput) return;
+      const count = Number(participantsInput.value || 0);
+      const price = getPriceForParticipants(count);
+      if (price === null || price === undefined) {
+        priceWrap.hidden = true;
+        priceValue.textContent = "";
+        return;
+      }
+      priceValue.textContent = `US$ ${price}`;
+      priceWrap.hidden = false;
+    };
 
     if (dateInput) {
       const cutoffDays = Number(modal.dataset.cutoffDays || 1);
@@ -364,6 +419,9 @@ const copy = copyMap[lang] || copyMap.en;
         disable: disabledRules,
       });
     }
+
+    updatePrice();
+    participantsInput?.addEventListener("input", updatePrice);
 
     const openModal = () => {
       modal.classList.add("is-open");
@@ -621,6 +679,25 @@ const copy = copyMap[lang] || copyMap.en;
     border: var(--border-width-hairline) solid var(--color-border-light);
     background: color-mix(in srgb, var(--color-surface) 80%, transparent);
     color: var(--color-text);
+  }
+
+  .booking-price {
+    display: grid;
+    gap: var(--space-3xs);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    border: var(--border-width-hairline) solid var(--color-border-light);
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    color: var(--color-text);
+  }
+
+  .booking-price__value {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .booking-price__note {
+    font-size: var(--font-size-xs);
+    color: color-mix(in srgb, var(--color-text) 75%, transparent);
   }
 
   .form-field select option {

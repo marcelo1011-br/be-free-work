@@ -1,0 +1,13 @@
+{
+  "company": "Be Free Tours",
+  "language": "es",
+  "label": "Tours Privados en Río de Janeiro",
+  "description": "Tours privados premium en Río de Janeiro operados por guías locales certificados. Todas las experiencias son privadas, personalizables y pensadas para viajeros que valoran comodidad, eficiencia y conocimiento local.",
+  "operation_model": "private_only_no_mixed_groups",
+  "currency": "USD",
+  "categories": {
+    "city_tours": "/ai/ai-search-es-city-tours.json",
+    "day_trips": "/ai/ai-search-es-day-trips.json",
+    "walking_tours": "/ai/ai-search-es-walking-tours.json"
+  }
+}

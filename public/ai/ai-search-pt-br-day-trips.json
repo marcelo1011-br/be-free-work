@@ -2,7 +2,7 @@
   "language": "pt-br",
   "category": "day_trips",
   "label": "Bate-voltas",
-  "description": "Passeios de dia inteiro para praias, ilhas e cidades de serra.",
+  "description": "Passeios de dia inteiro para praias, ilhas e cidades de serra. Operados como bate-voltas privativos com saída do Rio de Janeiro.",
   "faqs": [
     {
       "question": "Qual a distância dos bate-voltas?",
@@ -19,7 +19,7 @@
       "slug": "island-escape-ilha-grande",
       "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       "duration": "10 horas",
-      "price_from": 0,
+      "price_from": 875,
       "description": "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
       "highlights": [
         "Lancha privada para seu grupo",
@@ -27,8 +27,14 @@
         "Natação e mergulho",
         "Praias e enseadas isoladas"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande"
+      "best_for": [
+        "beach_lovers",
+        "snorkeling",
+        "adventure",
+        "nature_lovers"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande",
+      "tour_type": "private_day_trip"
     },
     {
       "id": "Búzios: A Riviera Brasileira (23 Praias em Um Dia)",
@@ -43,8 +49,14 @@
         "Orla Bardot à beira-mar",
         "Atmosfera mediterrânea"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado"
+      "best_for": [
+        "beach_lovers",
+        "shopping",
+        "coastal_town",
+        "relaxed_pace"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado",
+      "tour_type": "private_day_trip"
     },
     {
       "id": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
@@ -60,8 +72,16 @@
         "Catedral Metropolitana",
         "Centro de estilo europeu"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial"
+      "best_for": [
+        "history",
+        "cool_climate",
+        "architecture",
+        "day_trip"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial",
+      "tour_type": "private_day_trip"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }

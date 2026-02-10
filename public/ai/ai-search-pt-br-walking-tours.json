@@ -29,8 +29,14 @@
         "Confeitaria Colombo",
         "Paço Imperial"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/downtown-rio-walking"
+      "best_for": [
+        "history",
+        "architecture",
+        "city_center",
+        "culture_lovers"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/downtown-rio-walking",
+      "tour_type": "walking_private"
     },
     {
       "id": "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica",
@@ -46,8 +52,13 @@
         "Favoritos de comida de rua",
         "Degustação de cachaça"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira"
+      "best_for": [
+        "foodies",
+        "local_flavors",
+        "markets"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira",
+      "tour_type": "walking_private"
     },
     {
       "id": "Pequena África: A Alma do Rio e a Herança Africana Revelada",
@@ -62,8 +73,16 @@
         "Influência africana na música brasileira",
         "Religiões e tradições afro-brasileiras"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-heranca-pequena-africa-rio-cultura-afrobrasileira"
+      "best_for": [
+        "history",
+        "heritage",
+        "culture_lovers",
+        "unesco"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-heranca-pequena-africa-rio-cultura-afrobrasileira",
+      "tour_type": "walking_private"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }

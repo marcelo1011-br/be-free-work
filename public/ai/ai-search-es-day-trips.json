@@ -2,7 +2,7 @@
   "language": "es",
   "category": "day_trips",
   "label": "Excursiones de un día",
-  "description": "Escapadas de día completo a playas, islas y ciudades de montaña.",
+  "description": "Escapadas de día completo a playas, islas y ciudades de montaña. Operadas como excursiones privadas de un día con salida desde Río de Janeiro.",
   "faqs": [
     {
       "question": "¿Qué tan lejos están las excursiones?",
@@ -19,7 +19,7 @@
       "slug": "island-escape-ilha-grande",
       "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "duration": "10 horas",
-      "price_from": 0,
+      "price_from": 875,
       "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
       "highlights": [
         "Lancha privada para tu grupo",
@@ -27,8 +27,14 @@
         "Natación y snorkel",
         "Playas y calas aisladas"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande"
+      "best_for": [
+        "beach_lovers",
+        "snorkeling",
+        "adventure",
+        "nature_lovers"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande",
+      "tour_type": "private_day_trip"
     },
     {
       "id": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
@@ -43,8 +49,14 @@
         "Paseo marítimo Orla Bardot",
         "Atmósfera mediterránea"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera"
+      "best_for": [
+        "beach_lovers",
+        "shopping",
+        "coastal_town",
+        "relaxed_pace"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera",
+      "tour_type": "private_day_trip"
     },
     {
       "id": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
@@ -60,8 +72,16 @@
         "Catedral Metropolitana",
         "Centro de estilo europeo"
       ],
-      "best_for": [],
-      "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial"
+      "best_for": [
+        "history",
+        "cool_climate",
+        "architecture",
+        "day_trip"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial",
+      "tour_type": "private_day_trip"
     }
-  ]
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
 }
