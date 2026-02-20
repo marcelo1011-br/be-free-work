@@ -31,10 +31,6 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
     <div class="container">
       <div class="content-wrapper">
         <article class="policy-text">
-          <p>
-            This page outlines our payment and cancellation terms so you can book with confidence and know exactly what to expect.
-          </p>
-
           <h2>Payment Policy</h2>
 
           <h3>How booking works</h3>
@@ -97,11 +93,25 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
             If you have any questions about payments, cancellations, or changes, please contact us directly:
           </p>
           <p>
-            Email: <a href="mailto:info@befreetours.com.br">info@befreetours.com.br</a><br />
-            WhatsApp: <a href="https://wa.me/5521979271637" target="_blank" rel="noopener noreferrer">+55 21 97927-1637</a>
+            Email: <a class="contact-link" href="mailto:info@befreetours.com.br">info@befreetours.com.br</a><br />
+            WhatsApp: <a class="contact-link" href="https://wa.me/5521979271637" target="_blank" rel="noopener noreferrer">+55 21 97927-1637</a>
           </p>
           <p>We&apos;re always happy to help.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="policy-page-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to explore Rio your way?</h2>
+        <p class="cta-subtitle">Browse our private experiences and find the ideal tour for your trip.</p>
+        <div class="cta-buttons">
+          <a href={`/${lang}/private-tours`} class="btn btn-primary btn-lg">
+            Explore All Tours
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -171,6 +181,52 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
     color: var(--color-primary);
   }
 
+  .policy-text a.contact-link,
+  .policy-text a.contact-link:hover,
+  .policy-text a.contact-link:visited {
+    text-decoration: none;
+  }
+
+  .policy-page-cta {
+    --policy-cta-max: clamp(34rem, 70vw, 43.75rem);
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    color: var(--color-text-inverse);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: var(--policy-cta-max);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .cta-title {
+    color: var(--color-text-inverse);
+    margin: 0;
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
     .policy-content {
       padding: var(--space-2xl) 0;
@@ -178,6 +234,21 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
     .policy-text {
       padding: var(--space-xl);
+    }
+
+    .policy-page-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+      max-width: clamp(18rem, 80vw, 20rem);
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

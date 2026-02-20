@@ -31,10 +31,6 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
     <div class="container">
       <div class="content-wrapper">
         <article class="policy-text">
-          <p>
-            Esta página descreve nossos termos de pagamento e cancelamento para que você reserve com confiança e saiba exatamente o que esperar.
-          </p>
-
           <h2>Política de Pagamento</h2>
 
           <h3>Como a reserva funciona</h3>
@@ -97,10 +93,16 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
             Se você tiver dúvidas sobre pagamentos, cancelamentos ou alterações, fale conosco diretamente:
           </p>
           <p>
-            Email: <a href="mailto:info@befreetours.com.br">info@befreetours.com.br</a><br />
-            WhatsApp: <a href="https://wa.me/5521979271637" target="_blank" rel="noopener noreferrer">+55 21 97927-1637</a>
+            Email: <a class="contact-link" href="mailto:info@befreetours.com.br">info@befreetours.com.br</a><br />
+            WhatsApp: <a class="contact-link" href="https://wa.me/5521979271637" target="_blank" rel="noopener noreferrer">+55 21 97927-1637</a>
           </p>
           <p>Será um prazer ajudar.</p>
+
+          <div class="policy-cta">
+            <a href={`/${lang}/passeios-privados`} class="btn btn-primary btn-lg">
+              Explore Todos os Passeios
+            </a>
+          </div>
         </article>
       </div>
     </div>
@@ -171,6 +173,33 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
     color: var(--color-primary);
   }
 
+  .policy-text a.contact-link,
+  .policy-text a.contact-link:hover,
+  .policy-text a.contact-link:visited {
+    text-decoration: none;
+  }
+
+  .policy-cta {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: var(--border-width-hairline) solid var(--glass-border);
+  }
+
+  .policy-cta .btn,
+  .policy-cta .btn:visited,
+  .policy-cta .btn:hover,
+  .policy-cta .btn:focus-visible {
+    color: var(--color-text-inverse);
+    text-decoration: none;
+  }
+
+  .policy-cta .btn.btn-primary:hover,
+  .policy-cta .btn.btn-primary:focus-visible {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
   @media (max-width: 768px) {
     .policy-content {
       padding: var(--space-2xl) 0;
@@ -178,6 +207,11 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
     .policy-text {
       padding: var(--space-xl);
+    }
+
+    .policy-cta .btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
