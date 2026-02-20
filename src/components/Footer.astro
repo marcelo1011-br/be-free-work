@@ -15,23 +15,29 @@ const routes = {
   en: {
     home: "/",
     privateTours: "/private-tours",
+    gallery: "/gallery",
     blog: "/blog",
     about: "/about",
     contact: "/contact",
+    paymentPolicy: "/payment-cancellation-policy",
   },
   es: {
     home: "/",
     privateTours: "/tours-privados",
+    gallery: "/galeria",
     blog: "/blog",
     about: "/sobre",
     contact: "/contato",
+    paymentPolicy: "/politica-de-pago-y-cancelacion",
   },
   "pt-br": {
     home: "/",
     privateTours: "/passeios-privados",
+    gallery: "/galeria",
     blog: "/blog",
     about: "/sobre",
     contact: "/contato",
+    paymentPolicy: "/politica-de-pagamento-e-cancelamento",
   },
 };
 
@@ -41,9 +47,19 @@ const r = routes[lang];
 const navLinks = [
   { href: `/${lang}${r.home}`, label: t("nav.home") },
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
+  { href: `/${lang}${r.gallery}`, label: t("nav.gallery") },
   { href: `/${lang}${r.blog}`, label: t("nav.blog") },
   { href: `/${lang}${r.about}`, label: t("nav.about") },
   { href: `/${lang}${r.contact}`, label: t("nav.contact") },
+  {
+    href: `/${lang}${r.paymentPolicy}`,
+    label:
+      lang === "en"
+        ? "Payment & Cancellation Policy"
+        : lang === "es"
+          ? "Política de Pago y Cancelación"
+          : "Política de Pagamento e Cancelamento",
+  },
 ];
 ---
 

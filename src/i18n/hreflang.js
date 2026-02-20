@@ -45,6 +45,7 @@ const pageMap = {
   "gallery":          { es: "galeria",                  "pt-br": "galeria" },
   "privacy-policy":   { es: "politica-de-privacidad",   "pt-br": "politica-de-privacidade" },
   "cookie-policy":    { es: "politica-de-cookies",       "pt-br": "politica-de-cookies" },
+  "payment-cancellation-policy": { es: "politica-de-pago-y-cancelacion", "pt-br": "politica-de-pagamento-e-cancelamento" },
   "blog":             { es: "blog",                     "pt-br": "blog" },
   "private-tours":    { es: "tours-privados",            "pt-br": "passeios-privados" },
   "faq":              { es: "preguntas-frecuentes",      "pt-br": "perguntas-frequentes" },
