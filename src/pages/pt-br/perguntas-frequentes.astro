@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
+import CTAFinal from "../../components/CTAFinal.astro";
+import { homeContent } from "../../data/homeContent.js";
+import { getBreadcrumbSchema, getFAQSchema } from "../../utils/seoHelpers.js";
+
+const lang = "pt-br";
+const content = homeContent[lang].faq;
+
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+
+const breadcrumbItems = [
+  { name: "Início", url: `/${lang}` },
+  { name: "Perguntas Frequentes", url: `/${lang}/perguntas-frequentes` },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+const faqSchema = getFAQSchema(content.questions);
+---
+
+<BaseLayout
+  title="Perguntas Frequentes | Passeios Privados no Rio | Be Free Tours"
+  description="Encontre respostas sobre passeios privados no Rio de Janeiro. Preços, política de cancelamento, busca no hotel, idiomas dos guias, dicas de segurança e mais."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <HeroPages
+    title="Perguntas Frequentes"
+    subtitle="Tudo o que você precisa saber sobre nossos passeios privados no Rio de Janeiro"
+    maxWidth="clamp(40rem, 80vw, 50rem)"
+  />
+
+  <section class="faq-page">
+    <div class="container">
+      <div class="faq-list">
+        {content.questions.map((item) => (
+          <article class="faq-item" data-faq-id={item.id} data-expanded="false">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">{item.question}</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <line class="faq-icon-horizontal" x1="12" y1="5" x2="12" y2="19" />
+                  <line class="faq-icon-vertical" x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p class="faq-answer-content">{item.answer}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="faq-cta">
+        <p>Ainda tem dúvidas? Ficaremos felizes em ajudar!</p>
+        <a href={`/${lang}/contato`} class="btn-primary">Fale Conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <CTAFinal lang={lang} />
+</BaseLayout>
+
+<style>
+  .faq-page {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-white);
+  }
+
+  .faq-list {
+    max-width: clamp(48rem, 80vw, 56.25rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows var(--transition-duration-slow) var(--transition-easing-default),
+                box-shadow var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 8px 24px color-mix(in srgb, black 25%, transparent);
+  }
+
+  .faq-item[data-expanded="true"] {
+    grid-template-rows: auto 1fr;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  .faq-question:hover {
+    background-color: color-mix(in srgb, white 5%, transparent);
+  }
+
+  .faq-question:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline-offset: calc(var(--focus-outline-width) * -1);
+  }
+
+  .faq-question-text {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: clamp(1.25rem, 2.5vw, 1.5rem);
+    height: clamp(1.25rem, 2.5vw, 1.5rem);
+    color: var(--color-accent);
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  .faq-icon-horizontal {
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  .faq-question[aria-expanded="true"] .faq-icon-horizontal {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  .faq-answer {
+    overflow: hidden;
+    transition: padding var(--transition-duration-slow) var(--transition-easing-default);
+    padding: 0 var(--space-lg);
+  }
+
+  .faq-answer-content {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .faq-item[data-expanded="true"] .faq-answer {
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+  }
+
+  .faq-cta {
+    max-width: clamp(48rem, 80vw, 56.25rem);
+    margin: var(--space-2xl) auto 0;
+    text-align: center;
+  }
+
+  .faq-cta p {
+    font-size: var(--font-size-h5);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-xl);
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .faq-page {
+      padding: var(--space-2xl) 0;
+    }
+
+    .faq-question {
+      padding: var(--space-md);
+    }
+
+    .faq-question-text {
+      font-size: var(--font-size-body);
+    }
+
+    .faq-answer {
+      padding: 0 var(--space-md);
+    }
+
+    .faq-answer-content {
+      font-size: var(--font-size-small);
+    }
+
+    .faq-item[data-expanded="true"] .faq-answer {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  const faqButtons = document.querySelectorAll(".faq-question");
+
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const faqItem = button.closest(".faq-item") as HTMLElement;
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+      if (!isExpanded) {
+        faqButtons.forEach((otherButton) => {
+          const otherItem = otherButton.closest(".faq-item") as HTMLElement;
+          otherButton.setAttribute("aria-expanded", "false");
+          if (otherItem) otherItem.setAttribute("data-expanded", "false");
+        });
+      }
+
+      if (isExpanded) {
+        button.setAttribute("aria-expanded", "false");
+        if (faqItem) faqItem.setAttribute("data-expanded", "false");
+      } else {
+        button.setAttribute("aria-expanded", "true");
+        if (faqItem) faqItem.setAttribute("data-expanded", "true");
+      }
+    });
+  });
+</script>

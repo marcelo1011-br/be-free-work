@@ -5,6 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations } from "../../i18n/utils";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
+import { getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
 const lang = "es";
 const t = useTranslations(lang);
@@ -17,9 +18,10 @@ const breadcrumbItems = [
   { name: "Inicio", url: `/${lang}` },
   { name: "Política de Cookies", url: `/${lang}/politica-de-cookies` },
 ];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema]}>
   <Breadcrumbs items={breadcrumbItems} />
 
   <HeroPages

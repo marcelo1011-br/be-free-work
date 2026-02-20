@@ -47,6 +47,7 @@ const pageMap = {
   "cookie-policy":    { es: "politica-de-cookies",       "pt-br": "politica-de-cookies" },
   "blog":             { es: "blog",                     "pt-br": "blog" },
   "private-tours":    { es: "tours-privados",            "pt-br": "passeios-privados" },
+  "faq":              { es: "preguntas-frecuentes",      "pt-br": "perguntas-frequentes" },
 };
 
 // Build reverse maps for pages too

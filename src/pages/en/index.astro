@@ -11,7 +11,7 @@ import FAQ from "../../components/FAQ.astro";
 import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
-import { getWebSiteSchema } from "../../utils/seoHelpers.js";
+import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
 
 
 const content = homeContent["en"];
@@ -122,6 +122,11 @@ const organizationSchema = {
       "url": `${siteUrl}/en/private-tours/golden-hour-rio`
     }
   ],
+  "sameAs": [
+    "https://www.facebook.com/befreetours",
+    "https://www.instagram.com/befreetours",
+    "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html"
+  ],
   "knowsAbout": [
     "Christ the Redeemer",
     "Sugarloaf Mountain",
@@ -177,7 +182,7 @@ const reviewSchemas = testimonials.map((review) => {
   title="Private Tours in Rio de Janeiro | Be Free Tours"
   description="Premium private tours in Rio since 2013. Expert local guides, scheduled access to Sugarloaf and timed entry to Corcovado. Personalized experiences, flexible itineraries. Book now!"
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema, ...reviewSchemas]}
+  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("en", siteUrl), ...reviewSchemas]}
 >
   <Hero
     title={content.hero.title}

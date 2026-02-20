@@ -120,9 +120,9 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
         'priceCurrency': 'USD',
         'price': price,
         'priceValidUntil': '2026-12-31',
-        'validFrom': '2025-01-01',
+        'validFrom': '2026-01-01',
         'availability': 'https://schema.org/InStock',
-        'availabilityStarts': '2025-01-01T00:00:00-03:00',
+        'availabilityStarts': '2026-01-01T00:00:00-03:00',
         'availabilityEnds': '2026-12-31T23:59:59-03:00',
         'acceptedPaymentMethod': [
           'https://schema.org/CreditCard',
@@ -535,8 +535,8 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "url": tourUrl,
-      "validFrom": "2025-01-01",
-      "priceValidUntil": "2025-12-31",
+      "validFrom": "2026-01-01",
+      "priceValidUntil": "2026-12-31",
       "seller": {
         "@type": "Organization",
         "name": "Be Free Tours"

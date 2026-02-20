@@ -11,7 +11,7 @@ import FAQ from "../../components/FAQ.astro";
 import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
-import { getWebSiteSchema } from "../../utils/seoHelpers.js";
+import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
 
 
 const content = homeContent["es"];
@@ -47,15 +47,42 @@ const organizationSchema = {
   "@type": "TravelAgency",
   "@id": `${siteUrl}/#organization`,
   "name": "Be Free Tours",
+  "alternateName": "Be Free Tours Rio de Janeiro",
   "url": siteUrl,
   "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 600, "height": 60 },
+  "image": `${siteUrl}/images/heroes/home-hero.webp`,
   "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados.",
+  "slogan": "Tu Río, A Tu Manera - Tours Privados Desde 2013",
+  "foundingDate": "2013",
   "telephone": "+55-21-97927-1637",
   "email": "contact@befreetours.com.br",
   "address": { "@type": "PostalAddress", "addressLocality": "Rio de Janeiro", "addressRegion": "RJ", "addressCountry": "BR" },
+  "areaServed": [{ "@type": "City", "name": "Rio de Janeiro" }],
   "geo": { "@type": "GeoCoordinates", "latitude": "-22.9068", "longitude": "-43.1729" },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-21-97927-1637",
+    "contactType": "Customer Service",
+    "availableLanguage": ["English", "Spanish", "Portuguese"],
+    "areaServed": "BR"
+  },
   "priceRange": "$$$",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500", "bestRating": "5", "worstRating": "1" }
+  "paymentAccepted": "Credit Card, PayPal, Bank Transfer",
+  "currenciesAccepted": "USD, BRL",
+  "openingHours": "Mo-Su 06:00-22:00",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500", "bestRating": "5", "worstRating": "1" },
+  "sameAs": [
+    "https://www.facebook.com/befreetours",
+    "https://www.instagram.com/befreetours",
+    "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html"
+  ],
+  "knowsAbout": [
+    "Cristo Redentor",
+    "Pan de Azúcar",
+    "Turismo en Río de Janeiro",
+    "Tours Privados",
+    "Cultura Brasileña"
+  ]
 };
 
 const reviewSchemas = testimonials.map((review) => {
@@ -104,7 +131,7 @@ const reviewSchemas = testimonials.map((review) => {
   title="Tours Privados en Río de Janeiro | Be Free Tours"
   description="Tours privados premium en Río desde 2013. Guías locales expertos, horario reservado para subir al Corcovado y acceso preferente al teleférico del Pan de Azúcar. Experiencias personalizadas, itinerarios flexibles. ¡Reserva ya!"
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema, ...reviewSchemas]}
+  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("es", siteUrl), ...reviewSchemas]}
 >
   <Hero
     title={content.hero.title}
