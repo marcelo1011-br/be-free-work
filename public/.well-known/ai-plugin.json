@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Be Free Tours",
+  "name_for_model": "be_free_tours",
+  "description_for_human": "Premium private tours in Rio de Janeiro since 2013",
+  "description_for_model": "Be Free Tours is a premium private tour operator in Rio de Janeiro, Brazil. Founded in 2013 with 12+ years of experience. Specializes in private, customizable tours with certified local guides. Offers city tours (Christ the Redeemer, Sugarloaf), day trips (Ilha Grande, Buzios, Petropolis), and walking tours (food, history, African heritage). Supports English, Spanish, and Portuguese. Not a budget or group tour operator.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://befreetours.com.br/ai-search.json"
+  },
+  "logo_url": "https://befreetours.com.br/images/logo/logo.png",
+  "contact_email": "contact@befreetours.com.br",
+  "legal_info_url": "https://befreetours.com.br/en/privacy-policy"
+}

@@ -30,10 +30,10 @@
         "Catedral Metropolitana"
       ],
       "best_for": [
-        "first_time_visitors",
-        "families",
-        "couples",
-        "iconic_highlights"
+        "visitantes de primeira viagem",
+        "famílias",
+        "casais",
+        "buscadores de experiência completa"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial",
       "tour_type": "private_vehicle_tour"
@@ -51,9 +51,9 @@
         "Acesso fura-fila"
       ],
       "best_for": [
-        "cruise_passengers",
-        "limited_time",
-        "first_time_visitors"
+        "passageiros de cruzeiro",
+        "viajantes com tempo limitado",
+        "visitantes de primeira viagem"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar",
       "tour_type": "private_vehicle_tour"
@@ -71,9 +71,9 @@
         "Oportunidades de fotografia profissional"
       ],
       "best_for": [
-        "photographers",
-        "early_risers",
-        "crowd_avoidance"
+        "fotógrafos",
+        "madrugadores",
+        "casais buscando experiência romântica"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
       "tour_type": "private_vehicle_tour"
@@ -92,9 +92,9 @@
         "Orientação fotográfica profissional"
       ],
       "best_for": [
-        "couples",
-        "photographers",
-        "sunset_lovers"
+        "casais",
+        "fotógrafos",
+        "buscadores de experiência romântica"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
       "tour_type": "private_vehicle_tour"
@@ -113,9 +113,10 @@
         "Apresentação cultural"
       ],
       "best_for": [
-        "culture_lovers",
-        "night_out",
-        "couples"
+        "casais",
+        "amantes da cultura",
+        "ocasiões especiais",
+        "buscadores de experiência noturna"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy",
       "tour_type": "private_vehicle_tour"
@@ -134,9 +135,10 @@
         "Parque Lage"
       ],
       "best_for": [
-        "nature_lovers",
-        "gardens",
-        "balanced_day"
+        "amantes da natureza",
+        "famílias com crianças",
+        "fotógrafos",
+        "ecoturistas"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio",
       "tour_type": "private_vehicle_tour"
@@ -155,9 +157,9 @@
         "Zona de almoço à beira-mar"
       ],
       "best_for": [
-        "architecture",
-        "art_lovers",
-        "off_the_beaten_path"
+        "amantes da arquitetura",
+        "entusiastas da arte",
+        "buscadores de destinos alternativos"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado",
       "tour_type": "private_vehicle_tour"
@@ -176,10 +178,10 @@
         "Escola de samba do Carnaval nos bastidores"
       ],
       "best_for": [
-        "museums",
-        "families",
-        "rainy_day_friendly",
-        "carnival_interest"
+        "famílias com crianças",
+        "amantes da cultura",
+        "entusiastas do carnaval",
+        "aficionados por história"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio",
       "tour_type": "private_vehicle_tour"
@@ -189,7 +191,7 @@
       "slug": "passeio-personalizado",
       "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "duration": "Flexível (4-10+ horas)",
-      "price_from": null,
+      "price_from": "Consulte para valores",
       "description": "Não encontrou exatamente o que procura? Crie sua própria experiência no Rio. Conte-nos seus interesses e criaremos um roteiro personalizado só para você.",
       "highlights": [
         "Roteiro 100% personalizável de acordo com seus interesses",
@@ -200,9 +202,10 @@
         "Cuidamos de toda a logística, ingressos e reservas"
       ],
       "best_for": [
-        "customization",
-        "special_occasions",
-        "repeat_visitors"
+        "ocasiões especiais",
+        "viajantes com interesses únicos",
+        "necessidades de acessibilidade",
+        "visitantes de vários dias"
       ],
       "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado",
       "tour_type": "private_vehicle_tour",

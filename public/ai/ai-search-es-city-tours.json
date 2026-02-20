@@ -30,10 +30,10 @@
         "Catedral Metropolitana"
       ],
       "best_for": [
-        "first_time_visitors",
-        "families",
-        "couples",
-        "iconic_highlights"
+        "visitantes primerizos",
+        "familias",
+        "parejas",
+        "buscadores de experiencia completa"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/essential-rio",
       "tour_type": "private_vehicle_tour"
@@ -51,8 +51,9 @@
         "Acceso sin fila"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "pasajeros de crucero",
+        "viajeros con tiempo limitado",
+        "visitantes primerizos"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/rio-express",
       "tour_type": "private_vehicle_tour"
@@ -70,8 +71,9 @@
         "Oportunidades de fotografía profesional"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "fotógrafos",
+        "madrugadores",
+        "parejas buscando experiencia romántica"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio",
       "tour_type": "private_vehicle_tour"
@@ -90,8 +92,9 @@
         "Orientación fotográfica profesional"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "parejas",
+        "fotógrafos",
+        "buscadores de experiencia romántica"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio",
       "tour_type": "private_vehicle_tour"
@@ -110,8 +113,10 @@
         "Presentación cultural"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "parejas",
+        "amantes de la cultura",
+        "ocasiones especiales",
+        "buscadores de experiencia nocturna"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/atardecer-cultura-roxy",
       "tour_type": "private_vehicle_tour"
@@ -130,8 +135,10 @@
         "Parque Lage"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "amantes de la naturaleza",
+        "familias con niños",
+        "fotógrafos",
+        "ecoturistas"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/bosque-tijuca",
       "tour_type": "private_vehicle_tour"
@@ -150,8 +157,9 @@
         "Zona de almuerzo frente al mar"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "amantes de la arquitectura",
+        "entusiastas del arte",
+        "buscadores de destinos alternativos"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac",
       "tour_type": "private_vehicle_tour"
@@ -170,8 +178,10 @@
         "Escuela de samba del Carnaval tras bambalinas"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "familias con niños",
+        "amantes de la cultura",
+        "entusiastas del carnaval",
+        "aficionados a la historia"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/rio-moderno-museo-manana",
       "tour_type": "private_vehicle_tour"
@@ -181,7 +191,7 @@
       "slug": "tour-personalizado",
       "name": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "duration": "Flexible (4-10+ horas)",
-      "price_from": null,
+      "price_from": "Contactar para precio",
       "description": "¿No encuentras exactamente lo que buscas? Diseña tu propia experiencia en Río. Cuéntanos tus intereses y crearemos un itinerario personalizado solo para ti.",
       "highlights": [
         "Itinerario 100% personalizable según tus intereses",
@@ -192,8 +202,10 @@
         "Nosotros manejamos toda la logística, entradas y reservas"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "ocasiones especiales",
+        "viajeros con intereses únicos",
+        "necesidades de accesibilidad",
+        "visitantes de varios días"
       ],
       "url": "https://befreetours.com.br/es/tours-privados/tour-personalizado",
       "tour_type": "private_vehicle_tour",

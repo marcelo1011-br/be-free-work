@@ -96,8 +96,8 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
 
   
   const rating = tour.reviews?.aggregateRating || {
-    ratingValue: '5.0',
-    reviewCount: '50',
+    ratingValue: '4.9',
+    reviewCount: '500',
     bestRating: '5',
     worstRating: '1',
   };

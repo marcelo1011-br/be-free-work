@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 const allTours = tours[lang];
 
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const seo = getPageSEO("privateTours", lang);
 
 
@@ -77,7 +77,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
   
   <section class="tours-grid-section">
     <div class="container">
-      <div class="tours-grid grid grid-3">
+      <div class="tours-grid grid grid-4">
         {
           allTours.map((tour) => (
             <div class="tour-item" data-category={tour.category}>
@@ -224,8 +224,20 @@ const schemas = [collectionSchema, breadcrumbSchema];
     padding: calc(var(--space-3xl) + var(--tours-grid-offset)) 0 var(--space-3xl);
   }
 
+  .tours-grid-section .container {
+    max-width: none;
+    padding-inline: var(--space-xl-compact);
+  }
+
   .tours-grid {
     margin-bottom: var(--space-2xl);
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 1200px) {
+    .tours-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   .tour-item {

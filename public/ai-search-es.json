@@ -69,7 +69,7 @@
             "Real Gabinete Portugués de Lectura",
             "Catedral Metropolitana"
           ],
-          "best_for": [],
+          "best_for": ["primera visita a Río", "familias", "parejas", "experiencia completa"],
           "url": "https://befreetours.com.br/es/tours-privados/essential-rio"
         },
         {
@@ -84,7 +84,7 @@
             "Teleférico del Pan de Azúcar",
             "Acceso sin fila"
           ],
-          "best_for": [],
+          "best_for": ["pasajeros de crucero", "viajeros con poco tiempo", "primera visita a Río"],
           "url": "https://befreetours.com.br/es/tours-privados/rio-express"
         },
         {
@@ -99,7 +99,7 @@
             "Visita matutina temprana al Cristo Redentor",
             "Oportunidades de fotografía profesional"
           ],
-          "best_for": [],
+          "best_for": ["fotógrafos", "madrugadores", "parejas buscando experiencia romántica"],
           "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio"
         },
         {
@@ -115,7 +115,7 @@
             "Vistas panorámicas de playas",
             "Orientación fotográfica profesional"
           ],
-          "best_for": [],
+          "best_for": ["parejas", "fotógrafos", "experiencia romántica"],
           "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio"
         },
         {
@@ -131,7 +131,7 @@
             "Cena de tres platos incluida",
             "Presentación cultural"
           ],
-          "best_for": [],
+          "best_for": ["parejas", "amantes de la cultura", "ocasiones especiales", "experiencia nocturna"],
           "url": "https://befreetours.com.br/es/tours-privados/atardecer-cultura-roxy"
         },
         {
@@ -147,7 +147,7 @@
             "Jardín Botánico",
             "Parque Lage"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la naturaleza", "familias con niños", "fotógrafos", "ecoturistas"],
           "url": "https://befreetours.com.br/es/tours-privados/bosque-tijuca"
         },
         {
@@ -163,7 +163,7 @@
             "Vistas espectaculares del horizonte de Río",
             "Zona de almuerzo frente al mar"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la arquitectura", "entusiastas del arte", "fuera de lo convencional"],
           "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac"
         },
         {
@@ -179,7 +179,7 @@
             "Museo Histórico Nacional",
             "Escuela de samba del Carnaval tras bambalinas"
           ],
-          "best_for": [],
+          "best_for": ["familias con niños", "amantes de la cultura", "entusiastas del carnaval", "amantes de la historia"],
           "url": "https://befreetours.com.br/es/tours-privados/rio-moderno-museo-manana"
         },
         {
@@ -187,7 +187,7 @@
           "slug": "tour-personalizado",
           "name": "Tu Río, a Tu Manera: Tour Privado Personalizado",
           "duration": "Flexible (4-10+ horas)",
-          "price_from": 0,
+          "price_from": "Contactar para precio",
           "description": "¿No encuentras exactamente lo que buscas? Diseña tu propia experiencia en Río. Cuéntanos tus intereses y crearemos un itinerario personalizado solo para ti.",
           "highlights": [
             "Itinerario 100% personalizable según tus intereses",
@@ -197,7 +197,7 @@
             "Perfecto para ocasiones especiales, intereses únicos o necesidades de accesibilidad",
             "Nosotros manejamos toda la logística, entradas y reservas"
           ],
-          "best_for": [],
+          "best_for": ["ocasiones especiales", "intereses únicos", "necesidades de accesibilidad", "visitantes de varios días"],
           "url": "https://befreetours.com.br/es/tours-privados/tour-personalizado"
         }
       ]
@@ -221,7 +221,7 @@
           "slug": "island-escape-ilha-grande",
           "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
           "duration": "10 horas",
-          "price_from": 0,
+          "price_from": 875,
           "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
           "highlights": [
             "Lancha privada para tu grupo",
@@ -229,7 +229,7 @@
             "Natación y snorkel",
             "Playas y calas aisladas"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la naturaleza", "amantes de la playa", "aventureros", "snorkel"],
           "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande"
         },
         {
@@ -245,7 +245,7 @@
             "Paseo marítimo Orla Bardot",
             "Atmósfera mediterránea"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la playa", "parejas", "relax", "foodies"],
           "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera"
         },
         {
@@ -262,7 +262,7 @@
             "Catedral Metropolitana",
             "Centro de estilo europeo"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la historia", "familias", "escape del calor", "entusiastas de la cultura"],
           "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial"
         }
       ]
@@ -296,7 +296,7 @@
             "Confeitaria Colombo",
             "Paço Imperial"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la historia", "amantes de la arquitectura", "precio accesible", "buscadores de cultura"],
           "url": "https://befreetours.com.br/es/tours-privados/downtown-rio-walking"
         },
         {
@@ -313,7 +313,7 @@
             "Favoritos de comida callejera",
             "Degustación de cachaça"
           ],
-          "best_for": [],
+          "best_for": ["foodies", "entusiastas culinarios", "parejas", "experiencia cultural"],
           "url": "https://befreetours.com.br/es/tours-privados/tour-gastronomico-rio-cocina-brasilena"
         },
         {
@@ -329,7 +329,7 @@
             "Influencia africana en la música brasileña",
             "Religiones y tradiciones afrobrasileñas"
           ],
-          "best_for": [],
+          "best_for": ["amantes de la historia", "entusiastas de la cultura", "viajeros de patrimonio", "amantes de la música"],
           "url": "https://befreetours.com.br/es/tours-privados/pequena-africa"
         }
       ]

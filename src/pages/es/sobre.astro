@@ -17,7 +17,7 @@ const t = useTranslations(lang);
 const content = pageContent.about[lang];
 
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const seo = getPageSEO("about", lang);
 
 
@@ -207,7 +207,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
   }
 
   .story-image {
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     overflow: hidden;
     box-shadow: var(--story-image-shadow);
   }
@@ -249,6 +249,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
   .values-grid {
     margin-top: var(--space-2xl);
+    gap: var(--space-md);
   }
 
   .value-card {
@@ -260,7 +261,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
 
     padding: var(--space-xl);
     background-color: var(--color-bg-white);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     box-shadow: var(--value-card-shadow);
     display: flex;
     flex-direction: column;
@@ -303,7 +304,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     --stats-min: 200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--stats-min), 1fr));
-    gap: var(--space-xl);
+    gap: var(--space-md);
     margin-top: var(--space-2xl);
   }
 
@@ -313,7 +314,7 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
     text-align: center;
     padding: var(--space-xl) var(--space-lg);
     background-color: var(--color-bg-soft);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     overflow: visible;
     min-height: var(--stat-min-height);
     display: flex;

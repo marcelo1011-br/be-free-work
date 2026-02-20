@@ -325,7 +325,7 @@ const faqs = tourFAQs[tour.id] || tourFAQs["default"];
 
 
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 
 
 const seoData = getTourSEO(tour, lang, heroImage?.src);
@@ -917,7 +917,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
       <section class="related-tours">
         <div class="container">
           <h2 class="section-title">{t("tour.relatedTours")}</h2>
-          <div class="related-grid grid grid-3">
+          <div class="related-grid grid grid-4">
             {relatedTours.map((relatedTour) => (
               <TourCard tour={relatedTour} lang={lang} />
             ))}
@@ -1087,7 +1087,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
   .accordion-item {
     background-color: var(--color-bg-white);
     border: var(--accordion-border) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     overflow: hidden;
   }
 
@@ -1228,7 +1228,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     align-items: center;
     padding: var(--space-xl);
     background-color: var(--color-bg-soft);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     text-align: center;
   }
 
@@ -1330,8 +1330,14 @@ const pageTitle = `${tour.title} | Be Free Tours`;
     background-color: var(--color-bg-soft);
   }
 
+  .related-tours .container {
+    max-width: none;
+    padding-inline: var(--space-xl-compact);
+  }
+
   .related-grid {
     margin-top: var(--space-2xl);
+    gap: var(--space-md);
   }
 
   

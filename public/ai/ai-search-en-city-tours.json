@@ -30,10 +30,10 @@
         "Metropolitan Cathedral's unique architecture"
       ],
       "best_for": [
-        "first_time_visitors",
+        "first-time visitors",
         "families",
         "couples",
-        "iconic_highlights"
+        "comprehensive experience seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/essential-rio",
       "tour_type": "private_vehicle_tour"
@@ -51,8 +51,9 @@
         "Skip-the-line tickets for Sugarloaf included."
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "cruise passengers",
+        "travelers with limited time",
+        "first-time visitors"
       ],
       "url": "https://befreetours.com.br/en/private-tours/rio-express",
       "tour_type": "private_vehicle_tour"
@@ -70,8 +71,9 @@
         "Professional photography opportunities"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "photographers",
+        "early risers",
+        "couples seeking romantic experience"
       ],
       "url": "https://befreetours.com.br/en/private-tours/first-light-sunrise",
       "tour_type": "private_vehicle_tour"
@@ -92,7 +94,7 @@
       "best_for": [
         "couples",
         "photographers",
-        "sunset_lovers"
+        "romantic experience seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/golden-hour-rio",
       "tour_type": "private_vehicle_tour"
@@ -111,8 +113,10 @@
         "Cultural performance"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "couples",
+        "culture lovers",
+        "special occasions",
+        "evening experience seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/sunset-culture-roxy",
       "tour_type": "private_vehicle_tour"
@@ -131,8 +135,10 @@
         "Parque Lage"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "nature lovers",
+        "families with children",
+        "photographers",
+        "eco-tourists"
       ],
       "url": "https://befreetours.com.br/en/private-tours/tijuca-rainforest",
       "tour_type": "private_vehicle_tour"
@@ -151,8 +157,9 @@
         "Oceanfront lunch location"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "architecture lovers",
+        "art enthusiasts",
+        "off-the-beaten-path seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/niteroi-mac-museum",
       "tour_type": "private_vehicle_tour"
@@ -171,8 +178,10 @@
         "Carnival samba school behind-the-scenes"
       ],
       "best_for": [
-        "private_tour",
-        "customizable"
+        "families with kids",
+        "culture lovers",
+        "carnival enthusiasts",
+        "history buffs"
       ],
       "url": "https://befreetours.com.br/en/private-tours/modern-rio-museum-tomorrow",
       "tour_type": "private_vehicle_tour"
@@ -182,7 +191,7 @@
       "slug": "custom-tour",
       "name": "Your Rio, Your Way: Custom Private Tour",
       "duration": "Flexible (4-10+ hours)",
-      "price_from": null,
+      "price_from": "Contact for pricing",
       "description": "Can't find exactly what you're looking for? Design your own Rio experience. Tell us your interests, and we'll craft a personalized itinerary just for you.",
       "highlights": [
         "100% customizable itinerary based on your interests",
@@ -193,9 +202,10 @@
         "We handle all logistics, tickets, and reservations"
       ],
       "best_for": [
-        "customization",
-        "special_occasions",
-        "repeat_visitors"
+        "special occasions",
+        "travelers with unique interests",
+        "accessibility needs",
+        "multi-day visitors"
       ],
       "url": "https://befreetours.com.br/en/private-tours/custom-tour",
       "tour_type": "private_vehicle_tour",

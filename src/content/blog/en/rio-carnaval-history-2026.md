@@ -3,6 +3,7 @@ title: "The History of Rio Carnaval: How Chaos Became the Greatest Show on Earth
 description: "From colonial street games to samba schools and the Sambadrome, discover how Rio Carnaval became the world's greatest show on earth."
 author: "Be Free Tours"
 publishDate: "2026-01-27"
+updateDate: "2026-02-19"
 imageSlug: "rio-carnaval-history-2026"
 category: "Culture"
 readTime: "9 min read"
@@ -14,6 +15,7 @@ relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"
   - "christ-redeemer-complete-guide-2026"
+  - "is-rio-de-janeiro-safe-for-tourists"
 tags:
   - "rio carnaval history"
   - "samba schools"

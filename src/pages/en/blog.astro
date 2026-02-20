@@ -22,7 +22,7 @@ const getEntrySlug = (post) => {
   return normalized.split("/").pop() || normalized;
 };
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const seo = {
   title: "Rio Travel Blog - Tips, Guides & Stories | Be Free Tours",
   description:
@@ -279,8 +279,20 @@ const categories = [
     padding: var(--space-3xl) 0;
   }
 
+  .blog-posts .container {
+    max-width: none;
+    padding-inline: var(--space-xl-compact);
+  }
+
   .posts-grid {
     margin-bottom: var(--space-3xl);
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 1200px) {
+    .posts-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   
@@ -295,7 +307,7 @@ const categories = [
 
     background-color: var(--color-bg-white);
     border: var(--post-card-border) solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     overflow: hidden;
     transition:
       transform var(--post-card-transition),

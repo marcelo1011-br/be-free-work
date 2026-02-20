@@ -3,6 +3,7 @@
 
 
 import { getLangFromUrl } from "../i18n/utils";
+import { getHreflangPaths } from "../i18n/hreflang";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
@@ -12,11 +13,27 @@ import "../styles/global.css";
 
 const currentLang = getLangFromUrl(Astro.url);
 
+const defaultMeta = {
+  en: {
+    title: "Be Free Tours - Private Tours in Rio de Janeiro",
+    description: "Premium private tours in Rio de Janeiro since 2013. Personalized experiences with expert local guides. Skip-the-line access, flexible itineraries, and authentic Rio adventures.",
+  },
+  es: {
+    title: "Be Free Tours - Tours Privados en Río de Janeiro",
+    description: "Tours privados premium en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales expertos. Acceso sin filas, itinerarios flexibles y aventuras auténticas en Río.",
+  },
+  "pt-br": {
+    title: "Be Free Tours - Passeios Privados no Rio de Janeiro",
+    description: "Passeios privados premium no Rio de Janeiro desde 2013. Experiências personalizadas com guias locais especializados. Acesso sem filas, roteiros flexíveis e aventuras autênticas no Rio.",
+  },
+};
+
+const langDefaults = defaultMeta[currentLang] || defaultMeta.en;
 
 const {
-  title = "Be Free Tours - Private Tours in Rio de Janeiro",
-  description = "Premium private tours in Rio de Janeiro since 2013. Personalized experiences with expert local guides. Skip-the-line access, flexible itineraries, and authentic Rio adventures.",
-  image = "/images/logo/logo.svg",
+  title = langDefaults.title,
+  description = langDefaults.description,
+  image = "/images/og-default.jpg",
   type = "website",
   noindex = false,
   preloadImage,
@@ -25,18 +42,14 @@ const {
 } = Astro.props;
 
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 
 
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const currentPath = Astro.url.pathname;
 
 
-const langMap = {
-  en: currentPath.replace(/^\/(es|pt-br)/, "/en"),
-  es: currentPath.replace(/^\/(en|pt-br)/, "/es"),
-  "pt-br": currentPath.replace(/^\/(en|es)/, "/pt-br"),
-};
+const langMap = getHreflangPaths(currentPath);
 
 
 const ogImage = new URL(image, siteUrl);
@@ -68,7 +81,7 @@ const siteInfo = {
   areaServed: "Rio de Janeiro",
   priceRange: "$$-$$$",
   aggregateRating: {
-    ratingValue: "5.0",
+    ratingValue: "4.9",
     reviewCount: "500",
   },
   openingHours: "Mo-Su 07:00-22:00",
@@ -90,7 +103,7 @@ const baseSchema = {
       sameAs: [
         "https://www.facebook.com/befreetours",
         "https://www.instagram.com/befreetours",
-        "https://www.tripadvisor.com/befreetours",
+        "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -195,15 +208,13 @@ const finalSchema = {
 
     
     <link rel="preload" as="image" href="/images/logo/logo.svg" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/plus-jakarta-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     {preloadImageUrl && <link rel="preload" as="image" href={preloadImageUrl} />}
 
     
     <link rel="dns-prefetch" href="https://formspree.io" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -291,7 +302,7 @@ const finalSchema = {
     
     
     <meta name="author" content="Be Free Tours" />
-    <meta name="copyright" content="© 2025 Be Free Tours. All rights reserved." />
+    <meta name="copyright" content={`© ${new Date().getFullYear()} Be Free Tours. All rights reserved.`} />
     <meta name="creator" content="Midnight Web Design" />
 
     
@@ -316,18 +327,8 @@ const finalSchema = {
     
     <script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
 
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/fonts/plus-jakarta-sans.css" />
 
     
     <style>

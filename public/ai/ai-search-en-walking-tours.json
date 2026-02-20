@@ -30,10 +30,10 @@
         "Paço Imperial"
       ],
       "best_for": [
-        "history",
-        "architecture",
-        "city_center",
-        "culture_lovers"
+        "history lovers",
+        "architecture fans",
+        "budget-conscious travelers",
+        "culture seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/downtown-rio-walking",
       "tour_type": "walking_private"
@@ -53,7 +53,10 @@
         "Cachaça tasting"
       ],
       "best_for": [
-        "walking_tour"
+        "foodies",
+        "culinary enthusiasts",
+        "couples",
+        "cultural experience seekers"
       ],
       "url": "https://befreetours.com.br/en/private-tours/food-walking",
       "tour_type": "walking_private"
@@ -72,7 +75,10 @@
         "Afro-Brazilian religions and traditions"
       ],
       "best_for": [
-        "walking_tour"
+        "history lovers",
+        "culture enthusiasts",
+        "heritage travelers",
+        "music fans"
       ],
       "url": "https://befreetours.com.br/en/private-tours/little-africa",
       "tour_type": "walking_private"

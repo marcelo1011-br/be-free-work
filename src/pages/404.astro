@@ -1,0 +1,135 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const lang = (() => {
+  const path = Astro.url.pathname;
+  if (path.startsWith("/pt-br")) return "pt-br";
+  if (path.startsWith("/es")) return "es";
+  return "en";
+})();
+
+const content = {
+  en: {
+    title: "Page Not Found | Be Free Tours",
+    heading: "Page Not Found",
+    description: "The page you're looking for doesn't exist or has been moved.",
+    home: "Back to Home",
+    tours: "Browse Tours",
+    contact: "Contact Us",
+    homeUrl: "/en/",
+    toursUrl: "/en/private-tours",
+    contactUrl: "/en/contact",
+  },
+  es: {
+    title: "Página No Encontrada | Be Free Tours",
+    heading: "Página No Encontrada",
+    description: "La página que buscas no existe o ha sido movida.",
+    home: "Volver al Inicio",
+    tours: "Ver Tours",
+    contact: "Contáctenos",
+    homeUrl: "/es/",
+    toursUrl: "/es/tours-privados",
+    contactUrl: "/es/contato",
+  },
+  "pt-br": {
+    title: "Página Não Encontrada | Be Free Tours",
+    heading: "Página Não Encontrada",
+    description: "A página que você procura não existe ou foi movida.",
+    home: "Voltar ao Início",
+    tours: "Ver Passeios",
+    contact: "Fale Conosco",
+    homeUrl: "/pt-br/",
+    toursUrl: "/pt-br/passeios-privados",
+    contactUrl: "/pt-br/contato",
+  },
+};
+
+const c = content[lang] || content.en;
+---
+
+<BaseLayout title={c.title} description={c.description} noindex={true}>
+  <section class="error-page">
+    <div class="error-container">
+      <span class="error-code">404</span>
+      <h1>{c.heading}</h1>
+      <p>{c.description}</p>
+      <nav class="error-links" aria-label="Helpful links">
+        <a href={c.homeUrl} class="btn btn-primary">{c.home}</a>
+        <a href={c.toursUrl} class="btn btn-secondary">{c.tours}</a>
+        <a href={c.contactUrl} class="btn btn-secondary">{c.contact}</a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .error-container {
+    max-width: 500px;
+  }
+
+  .error-code {
+    font-size: clamp(5rem, 15vw, 10rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-accent, #f97316);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.75rem;
+    color: var(--color-text, #e2e8f0);
+  }
+
+  p {
+    color: var(--color-text-muted, #94a3b8);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .error-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    background: var(--color-accent, #f97316);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-text, #e2e8f0);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+</style>

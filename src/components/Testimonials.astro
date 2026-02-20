@@ -9,9 +9,10 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 
-const firstThree = testimonials.slice(0, 3); 
-const secondThree = testimonials.slice(3, 6); 
-const lastThree = testimonials.slice(6, 9); 
+const firstFour = testimonials.slice(0, 4);
+const secondFour = testimonials.slice(4, 8);
+const thirdFour = testimonials.slice(8, 12);
+const fourthGroup = testimonials.slice(12, 16);
 
 
 const renderStars = (rating) => {
@@ -31,7 +32,7 @@ const renderStars = (rating) => {
     <div class="testimonials-grid">
       
       {
-        firstThree.map((testimonial) => (
+        firstFour.map((testimonial) => (
           <article class="testimonial-card" data-group="1">
             <div class="testimonial-header">
               <div class="testimonial-rating">
@@ -75,7 +76,7 @@ const renderStars = (rating) => {
 
       
       {
-        secondThree.map((testimonial) => (
+        secondFour.map((testimonial) => (
           <article class="testimonial-card hidden" data-group="2">
             <div class="testimonial-header">
               <div class="testimonial-rating">
@@ -119,8 +120,51 @@ const renderStars = (rating) => {
 
       
       {
-        lastThree.map((testimonial) => (
+        thirdFour.map((testimonial) => (
           <article class="testimonial-card hidden" data-group="3">
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                {renderStars(testimonial.rating)}
+              </div>
+              {testimonial.sourceUrl ? (
+                <a
+                  class="testimonial-source"
+                  href={testimonial.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {testimonial.source}
+                </a>
+              ) : (
+                <span class="testimonial-source">{testimonial.source}</span>
+              )}
+            </div>
+
+            <h3 class="testimonial-title">{testimonial.title}</h3>
+
+            <p class="testimonial-text">{testimonial.text}</p>
+
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span>
+                  {testimonial.country} • {testimonial.date}
+                </span>
+              </div>
+              <a
+                href={`/${lang}/tours/${testimonial.tourSlug[lang]}`}
+                class="testimonial-tour-link"
+              >
+                {t("testimonials.viewTour")} →
+              </a>
+            </div>
+          </article>
+        ))
+      }
+
+      {
+        fourthGroup.map((testimonial) => (
+          <article class="testimonial-card hidden" data-group="4">
             <div class="testimonial-header">
               <div class="testimonial-rating">
                 {renderStars(testimonial.rating)}
@@ -198,6 +242,11 @@ const renderStars = (rating) => {
     background-color: var(--color-bg-soft);
   }
 
+  .testimonials .container {
+    max-width: none;
+    padding-inline: var(--space-xl-compact);
+  }
+
   .section-header {
     text-align: center;
     max-width: var(--testimonials-header-max);
@@ -217,9 +266,15 @@ const renderStars = (rating) => {
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--testimonials-grid-min)), 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-4)), 1fr));
+    gap: var(--space-md);
     margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 1200px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   .testimonial-card {
@@ -228,7 +283,7 @@ const renderStars = (rating) => {
     backdrop-filter: blur(var(--testimonial-blur));
     -webkit-backdrop-filter: blur(var(--testimonial-blur));
     border: var(--testimonial-border) solid var(--glass-border);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     box-shadow: var(--glass-shadow);
     display: flex;
     flex-direction: column;
@@ -418,7 +473,6 @@ const renderStars = (rating) => {
 
       
       if (expansionLevel === 0) {
-        
         if (group === 1) {
           card.classList.remove("hidden");
           card.classList.add("show");
@@ -426,26 +480,39 @@ const renderStars = (rating) => {
           card.classList.add("hidden");
           card.classList.remove("show");
         }
-      } else if (expansionLevel === 1) {
-        
-        if (group === 1 || group === 2) {
+        return;
+      }
+
+      if (expansionLevel === 1) {
+        if (group <= 2) {
           card.classList.remove("hidden");
           card.classList.add("show");
         } else {
           card.classList.add("hidden");
           card.classList.remove("show");
         }
-      } else if (expansionLevel === 2) {
-        
-        card.classList.remove("hidden");
-        card.classList.add("show");
+        return;
       }
+
+      if (expansionLevel === 2) {
+        if (group <= 3) {
+          card.classList.remove("hidden");
+          card.classList.add("show");
+        } else {
+          card.classList.add("hidden");
+          card.classList.remove("show");
+        }
+        return;
+      }
+
+      card.classList.remove("hidden");
+      card.classList.add("show");
     });
 
     
     if (toggleButton) {
       const label = toggleButton.querySelector(".testimonials-toggle-label");
-      if (expansionLevel === 0 || expansionLevel === 1) {
+      if (expansionLevel < 3) {
         if (label) {
           label.textContent =
             toggleButton.getAttribute("data-text-more") || "Read More Reviews";
@@ -464,7 +531,7 @@ const renderStars = (rating) => {
   
   toggleButton?.addEventListener("click", () => {
     
-    expansionLevel = (expansionLevel + 1) % 3;
+    expansionLevel = (expansionLevel + 1) % 4;
 
     
     if (expansionLevel === 0) {

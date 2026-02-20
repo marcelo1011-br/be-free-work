@@ -78,16 +78,15 @@ const icons = {
 
   .reasons-grid {
     margin-top: var(--space-2xl);
+    gap: var(--space-md);
   }
 
   .reason-card {
     padding: var(--space-xl);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--why-card-blur));
-    -webkit-backdrop-filter: blur(var(--why-card-blur));
-    border: var(--why-card-border) solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--glass-shadow);
+    background: none;
+    border: none;
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
+    box-shadow: none;
     transition: transform var(--why-card-transition), box-shadow var(--why-card-transition);
     text-align: center;
     display: flex;
@@ -98,7 +97,7 @@ const icons = {
 
   .reason-card:hover {
     transform: translateY(var(--why-card-lift));
-    box-shadow: var(--why-card-shadow);
+    box-shadow: none;
   }
 
   .reason-icon {

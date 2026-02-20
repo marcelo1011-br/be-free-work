@@ -44,5 +44,10 @@ Sitemap: https://befreetours.com.br/sitemap-index.xml
 # ================================
 
 AI: https://befreetours.com.br/ai.txt
+AI-ES: https://befreetours.com.br/ai-es.txt
+AI-PT: https://befreetours.com.br/ai-pt-br.txt
 LLM: https://befreetours.com.br/llms.txt
-JSON: https://befreetours.com.br/ai/ai-search.json
+LLM-ES: https://befreetours.com.br/llms-es.txt
+LLM-PT: https://befreetours.com.br/llms-pt-br.txt
+JSON: https://befreetours.com.br/ai-search.json
+AI-Plugin: https://befreetours.com.br/.well-known/ai-plugin.json

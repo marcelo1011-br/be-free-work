@@ -3,6 +3,7 @@ title: "A História do Carnaval do Rio: Como o Caos se Tornou o Maior Espetácul
 description: "Dos jogos de rua coloniais ao samba e ao Sambódromo, descubra como o Carnaval do Rio se tornou o maior espetáculo do mundo."
 author: "Be Free Tours"
 publishDate: "2026-01-27"
+updateDate: "2026-02-19"
 imageSlug: "rio-carnaval-history-2026"
 category: "Cultura"
 readTime: "9 min de leitura"
@@ -14,6 +15,7 @@ relatedPosts:
   - "best-time-visit-rio-2026"
   - "hidden-beaches-rio-locals-love"
   - "christ-redeemer-complete-guide-2026"
+  - "is-rio-de-janeiro-safe-for-tourists"
 tags:
   - "história do carnaval"
   - "escolas de samba"

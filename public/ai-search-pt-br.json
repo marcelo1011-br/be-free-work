@@ -69,7 +69,7 @@
             "Real Gabinete Português de Leitura",
             "Catedral Metropolitana"
           ],
-          "best_for": [],
+          "best_for": ["primeira visita ao Rio", "famílias", "casais", "experiência completa"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial"
         },
         {
@@ -84,7 +84,7 @@
             "Bondinho do Pão de Açúcar",
             "Acesso fura-fila"
           ],
-          "best_for": [],
+          "best_for": ["passageiros de cruzeiro", "viajantes com pouco tempo", "primeira visita ao Rio"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar"
         },
         {
@@ -99,7 +99,7 @@
             "Visita matinal cedo ao Cristo Redentor",
             "Oportunidades de fotografia profissional"
           ],
-          "best_for": [],
+          "best_for": ["fotógrafos", "madrugadores", "casais buscando experiência romântica"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado"
         },
         {
@@ -115,7 +115,7 @@
             "Vistas panorâmicas de praias",
             "Orientação fotográfica profissional"
           ],
-          "best_for": [],
+          "best_for": ["casais", "fotógrafos", "experiência romântica"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar"
         },
         {
@@ -131,7 +131,7 @@
             "Jantar de três pratos incluído",
             "Apresentação cultural"
           ],
-          "best_for": [],
+          "best_for": ["casais", "amantes de cultura", "ocasiões especiais", "experiência noturna"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/por-do-sol-cultura-roxy"
         },
         {
@@ -147,7 +147,7 @@
             "Jardim Botânico",
             "Parque Lage"
           ],
-          "best_for": [],
+          "best_for": ["amantes da natureza", "famílias com crianças", "fotógrafos", "ecoturistas"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio"
         },
         {
@@ -163,7 +163,7 @@
             "Vistas espetaculares do horizonte do Rio",
             "Zona de almoço à beira-mar"
           ],
-          "best_for": [],
+          "best_for": ["amantes de arquitetura", "entusiastas de arte", "fora do roteiro convencional"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado"
         },
         {
@@ -179,7 +179,7 @@
             "Museu Histórico Nacional",
             "Escola de samba do Carnaval nos bastidores"
           ],
-          "best_for": [],
+          "best_for": ["famílias com crianças", "amantes de cultura", "entusiastas do carnaval", "amantes de história"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/museu-amanha-experiencia-carnaval-rio-passeio"
         },
         {
@@ -187,7 +187,7 @@
           "slug": "passeio-personalizado",
           "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
           "duration": "Flexível (4-10+ horas)",
-          "price_from": 0,
+          "price_from": "Consulte para valores",
           "description": "Não encontrou exatamente o que procura? Crie sua própria experiência no Rio. Conte-nos seus interesses e criaremos um roteiro personalizado só para você.",
           "highlights": [
             "Roteiro 100% personalizável de acordo com seus interesses",
@@ -197,7 +197,7 @@
             "Perfeito para ocasiões especiais, interesses únicos ou necessidades de acessibilidade",
             "Cuidamos de toda a logística, ingressos e reservas"
           ],
-          "best_for": [],
+          "best_for": ["ocasiões especiais", "interesses únicos", "necessidades de acessibilidade", "visitantes de vários dias"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado"
         }
       ]
@@ -221,7 +221,7 @@
           "slug": "island-escape-ilha-grande",
           "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
           "duration": "10 horas",
-          "price_from": 0,
+          "price_from": 875,
           "description": "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
           "highlights": [
             "Lancha privada para seu grupo",
@@ -229,7 +229,7 @@
             "Natação e mergulho",
             "Praias e enseadas isoladas"
           ],
-          "best_for": [],
+          "best_for": ["amantes da natureza", "amantes de praia", "aventureiros", "mergulho"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande"
         },
         {
@@ -245,7 +245,7 @@
             "Orla Bardot à beira-mar",
             "Atmosfera mediterrânea"
           ],
-          "best_for": [],
+          "best_for": ["amantes de praia", "casais", "relaxamento", "gastronomia"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado"
         },
         {
@@ -262,7 +262,7 @@
             "Catedral Metropolitana",
             "Centro de estilo europeu"
           ],
-          "best_for": [],
+          "best_for": ["amantes de história", "famílias", "fuga do calor", "entusiastas de cultura"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial"
         }
       ]
@@ -296,7 +296,7 @@
             "Confeitaria Colombo",
             "Paço Imperial"
           ],
-          "best_for": [],
+          "best_for": ["amantes de história", "fãs de arquitetura", "preço acessível", "buscadores de cultura"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/downtown-rio-walking"
         },
         {
@@ -313,7 +313,7 @@
             "Favoritos de comida de rua",
             "Degustação de cachaça"
           ],
-          "best_for": [],
+          "best_for": ["foodies", "entusiastas culinários", "casais", "experiência cultural"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira"
         },
         {
@@ -329,7 +329,7 @@
             "Influência africana na música brasileira",
             "Religiões e tradições afro-brasileiras"
           ],
-          "best_for": [],
+          "best_for": ["amantes de história", "entusiastas de cultura", "viajantes de patrimônio", "amantes de música"],
           "url": "https://befreetours.com.br/pt-br/passeios-privados/tour-heranca-pequena-africa-rio-cultura-afrobrasileira"
         }
       ]

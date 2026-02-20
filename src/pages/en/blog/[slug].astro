@@ -93,7 +93,7 @@ const postImage = post.data.imageSlug
   ? await getBlogImage(post.data.imageSlug)
   : null;
 
-const siteUrl = Astro.site?.toString() || "https://befreetours.com.br";
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 
 
 const breadcrumbItems = [
@@ -296,7 +296,7 @@ const tx = {
   .featured-image {
     max-width: var(--featured-max);
     margin: 0 auto var(--space-2xl);
-    border-radius: var(--radius-lg);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
     overflow: hidden;
   }
 
