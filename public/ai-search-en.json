@@ -30,8 +30,7 @@
     "policy": "24-hour free cancellation",
     "payment_methods": [
       "Credit Card",
-      "PayPal",
-      "Bank Transfer"
+      "PayPal"
     ],
     "currencies": [
       "USD",

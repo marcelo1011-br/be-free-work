@@ -54,8 +54,8 @@ Creamos tours privados totalmente personalizados basados en tus intereses. Cont�
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Política de Cancelación
-- Cancelación gratuita hasta 24 horas antes del tour
-- 50% de cargo dentro de las 24 horas
+- Cancelación gratuita hasta 72 horas antes del tour
+- 50% de cargo dentro de las 72 horas
 - 100% de cargo por no-shows
 
 ### Qué Está Incluido (Mayoría de Tours)
@@ -87,7 +87,7 @@ R: Temprano por la mañana (antes de las 9am) o por la tarde (después de las 3p
 R: Sí, ofrecemos recogida y regreso en la terminal de cruceros. Nuestro Río Express 5h es perfecto para pasajeros de crucero.
 
 **P: ¿Cómo se paga?**
-R: Aceptamos tarjetas de crédito, PayPal y transferencia bancaria. El pago se realiza normalmente tras la confirmación de la reserva.
+R: Aceptamos tarjetas de crédito y PayPal. El pago se realiza normalmente tras la confirmación de la reserva.
 
 ## Ubicación y Área de Operación
 

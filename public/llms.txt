@@ -54,8 +54,8 @@ We create fully customized private tours based on your interests. Contact us wit
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Cancellation Policy
-- Free cancellation up to 24 hours before tour
-- 50% charge within 24 hours
+- Free cancellation up to 72 hours before tour
+- 50% charge within 72 hours
 - 100% charge for no-shows
 
 ### What's Included (Most Tours)
@@ -87,7 +87,7 @@ A: Early morning (before 9am) or late afternoon (after 3pm) for fewer crowds and
 A: Yes, we offer pickup and drop-off at the Rio cruise terminal. Our Rio Express 5h tour is perfect for cruise passengers.
 
 **Q: How do I pay?**
-A: We accept credit cards, PayPal, and bank transfer. Payment is typically made after booking confirmation.
+A: We accept credit cards and PayPal. Payment is typically made after booking confirmation.
 
 ## Location & Operating Area
 
@@ -157,7 +157,7 @@ A: 8-10 tastings of authentic Brazilian dishes and drinks: feijoada, pastel, aç
 ### Practical FAQs
 
 **Q: How do I pay for tours?**
-A: We accept credit cards (Visa, Mastercard), PayPal, and bank transfer (USD or BRL). Payment is typically made after booking confirmation, with 50% deposit for tours over $500. Full refund if cancelled 24+ hours before tour.
+A: We accept credit cards (Visa, Mastercard) and PayPal. Payment is typically made after booking confirmation, with 50% deposit for tours over $500. Full refund if cancelled 72+ hours before tour.
 
 **Q: What if it rains on my tour day?**
 A: Rio weather is unpredictable but rain usually passes quickly. Christ the Redeemer and Sugarloaf are dramatic even in mist (photos are unique!). If forecast shows all-day heavy rain, we can reschedule free of charge or suggest indoor alternatives (Museum of Tomorrow, Confeitaria Colombo, etc).

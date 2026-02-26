@@ -30,8 +30,7 @@
     "policy": "Cancelamento gratuito até 24h antes",
     "payment_methods": [
       "Cartão de crédito",
-      "PayPal",
-      "Transferência bancária"
+      "PayPal"
     ],
     "currencies": [
       "USD",

@@ -320,7 +320,7 @@ const tourFAQs = {
   ],
 };
 
-const faqs = tourFAQs[tour.id] || tourFAQs["default"];
+const faqs = tour.faqs || tourFAQs[tour.id] || tourFAQs["default"];
 
 
 

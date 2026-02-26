@@ -54,8 +54,8 @@ Criamos passeios privados totalmente personalizados baseados nos seus interesses
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Política de Cancelamento
-- Cancelamento gratuito até 24 horas antes do passeio
-- 50% de cobrança dentro das 24 horas
+- Cancelamento gratuito até 72 horas antes do passeio
+- 50% de cobrança dentro das 72 horas
 - 100% de cobrança para no-shows
 
 ### O Que Está Incluído (Maioria dos Passeios)
@@ -87,7 +87,7 @@ R: Manhã cedo (antes das 9h) ou fim de tarde (após 15h) para menos multidão e
 R: Sim, oferecemos busca e retorno no terminal de cruzeiros. Nosso Rio Express 5h é perfeito para passageiros de cruzeiro.
 
 **P: Como faço o pagamento?**
-R: Aceitamos cartões de crédito, PayPal e transferência bancária. O pagamento é normalmente feito após a confirmação da reserva.
+R: Aceitamos cartões de crédito e PayPal. O pagamento é normalmente feito após a confirmação da reserva.
 
 ## Localização e Área de Operação
 

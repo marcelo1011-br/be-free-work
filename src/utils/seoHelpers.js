@@ -97,7 +97,7 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   
   const rating = tour.reviews?.aggregateRating || {
     ratingValue: '4.9',
-    reviewCount: '500',
+    reviewCount: '1000',
     bestRating: '5',
     worstRating: '1',
   };
@@ -128,7 +128,6 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
           'https://schema.org/CreditCard',
           'https://schema.org/PaymentCard',
           'http://purl.org/goodrelations/v1#PayPal',
-          'http://purl.org/goodrelations/v1#BankTransferInAdvance'
         ],
         'seller': {
           '@type': 'Organization',
