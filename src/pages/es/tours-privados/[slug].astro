@@ -188,7 +188,7 @@ const tourTips = {
   ],
 };
 
-const tips = tourTips[tour.id] || tourTips["default"];
+const tips = (tour.tips && tour.tips.length > 0) ? tour.tips : (tourTips[tour.id] || tourTips["default"]);
 
 
 const tourFAQs = {

@@ -34,6 +34,13 @@ export const tours = {
         { q: "Can we adjust the itinerary or add extra stops?", a: "Absolutely -- this is a private tour and the itinerary is completely flexible. If you'd like to spend more time in Santa Teresa, skip a stop, or add a neighborhood not on the standard route, just let your guide know. The 8 hours is yours to use as you wish." },
         { q: "What's the best starting time for this tour?", a: "To avoid queues at Christ the Redeemer, we recommend starting at 06:30 AM. To catch the sunset at Christ or Sugarloaf, we recommend starting at 11:30 AM." },
       ],
+      tips: [
+        "Start at Christ the Redeemer early — the first cable car or van of the day has the shortest queues and clearest views before clouds roll in.",
+        "The Royal Portuguese Reading Room is only open Monday to Friday. If your tour is on a weekend, your guide will suggest an equally impressive alternative.",
+        "Selarón Steps are most photogenic in the morning light. Ask your guide to time this stop accordingly.",
+        "Bring a small daypack — you'll be on your feet for up to 8 hours across multiple neighborhoods.",
+        "Keep your phone charged. Between Christ, Sugarloaf, Santa Teresa and Selarón, you'll want the battery for photos.",
+      ],
     },
     {
       id: "Rio Express: Christ & Sugarloaf in 5 Hours",
@@ -66,6 +73,13 @@ export const tours = {
         { q: "What happens if the weather is bad and Christ the Redeemer is covered in clouds?", a: "Rio's weather changes quickly -- even cloudy mornings often clear by mid-morning. Your guide will monitor conditions and advise on the best timing. If visibility is severely impacted, we can adjust the order of visits or reschedule at no extra cost." },
         { q: "Is this tour suitable for cruise ship passengers?", a: "This tour was designed with cruise passengers in mind. Pickup from Pier Mauá cruise port is included, and the 5-hour format fits comfortably within most port day windows. Your guide will ensure you're back at the ship on time." },
       ],
+      tips: [
+        "This tour is optimized for cruise passengers — if you're arriving at Pier Mauá, let us know your ship's all-aboard time when booking so we build in a comfortable buffer.",
+        "Christ the Redeemer and Sugarloaf are best in the morning before afternoon clouds typically build. This tour is timed accordingly.",
+        "The Sugarloaf cable car has two stages — the first stop at Morro da Urca already offers spectacular views and is less crowded than the summit.",
+        "Bring a small bag rather than a large suitcase if you're coming directly from the cruise port.",
+        "Both attractions have gift shops if you want to pick up souvenirs — build that into your time at each stop.",
+      ],
     },
     {
       id: "Rio at First Light: Sunrise Sugarloaf & Christ",
@@ -94,6 +108,13 @@ export const tours = {
         { q: "What should I wear for a 4 AM tour?", a: "Bring a light jacket -- the summit can be cool and breezy before sunrise even in Rio's summer. Comfortable walking shoes are essential. As the day warms up after Christ the Redeemer, lighter layers work well." },
         { q: "Are all tickets included including the early-morning Sugarloaf access?", a: "Yes, all tickets including the special early-morning Sugarloaf access and Christ the Redeemer entrance are included in the tour price." },
       ],
+      tips: [
+        "Your pickup is at 4:00 AM — set two alarms. Your guide will be waiting at your hotel lobby precisely on time.",
+        "The summit of Sugarloaf can be windy and noticeably cooler before sunrise even in summer. Bring a light jacket you can remove as the day warms up.",
+        "Bring a camera or smartphone with a good low-light mode. The sunrise colors over Guanabara Bay are extraordinary — this is the moment the tour is built around.",
+        "Have a light snack before or during the drive. The 4 AM start means breakfast comes later — ask your guide about good options near Christ the Redeemer afterward.",
+        "This tour is available Saturdays only. If you need to reschedule, contact us as early as possible — Saturday slots fill up weeks in advance.",
+      ],
     },
     {
       id: "Golden Hour Rio: Christ & Sugarloaf at Sunset",
@@ -119,6 +140,13 @@ export const tours = {
         { q: "What time does the Golden Hour tour typically start?", a: "Start times vary seasonally to align with sunset. Generally between 1:00 PM and 3:00 PM, depending on the time of year. When you book, we'll confirm the exact time based on your tour date to ensure perfect golden hour timing." },
         { q: "Is it possible to have dinner after the tour?", a: "Yes -- the tour ends at Sugarloaf as sunset concludes. Your driver can take you directly to a restaurant afterward. We're happy to recommend excellent options near the Sugarloaf area or anywhere in Rio for a post-tour dinner." },
         { q: "Are skip-the-line tickets included for both attractions?", a: "Yes, skip-the-line tickets for both Christ the Redeemer and Sugarloaf Mountain cable car are included. This is particularly important for the Golden Hour tour since sunset timing is precise -- queues would compromise the experience." },
+      ],
+      tips: [
+        "Start time varies by season to align with sunset — confirm your exact pickup time when booking. Generally between 1:00 PM and 3:00 PM.",
+        "Bring a camera or smartphone — the golden hour light on Christ the Redeemer and the sunset from Sugarloaf summit are among the most photographed moments in Rio. A tripod mini-stand is worth it.",
+        "The cable car ascent to Sugarloaf is timed to reach the summit as the sun begins to set. Trust the timing — your guide knows exactly when to go up.",
+        "If you'd like to have dinner after the tour, let your guide know. The Sugarloaf area has excellent restaurants and your driver can take you directly.",
+        "Sunset timing is precise — skip-the-line tickets are included specifically to ensure you reach the summit before the light changes.",
       ],
     },
     {
@@ -149,6 +177,13 @@ export const tours = {
         { q: "What should we wear to the Roxy Dinner Show?", a: "Smart casual is appropriate -- the Roxy is an upscale venue. No formal attire required, but avoid beach clothing. Think a nice dress or blouse for women, collared shirt or light blazer for men." },
         { q: "Are drinks included at the Roxy?", a: "The three-course dinner is included but drinks at the Roxy are purchased separately. Budget approximately USD 20-40 per person for drinks depending on your preferences." },
       ],
+      tips: [
+        "The Roxy Show tickets are non-refundable once purchased — this applies regardless of notice given. Please only book if your plans are confirmed.",
+        "This tour is available Wednesday to Sunday only. The Roxy does not operate on Mondays and Tuesdays.",
+        "Dress smart casual for the Roxy — it's an upscale venue. Beach clothing is not appropriate. Beyond that, wear what makes you comfortable.",
+        "Drinks at the Roxy are not included in the tour price. Budget approximately USD 20–40 per person depending on your preferences.",
+        "Bring ID — the Roxy may request it at the entrance.",
+      ],
     },
     {
       id: "Island Escape: Ilha Grande by Private Speedboat",
@@ -177,6 +212,13 @@ export const tours = {
         { q: "What's the difference between the standard option and the Lopes Mendes option?", a: "Lopes Mendes is consistently ranked among Brazil's most beautiful beaches -- a long stretch of pristine white sand accessible only by boat. The standard option explores a variety of beaches and coves. The Lopes Mendes upgrade adds USD 100 to the group price and is worth it if you have beach lovers in the group." },
         { q: "What should we bring for the Ilha Grande day?", a: "Swimwear, reef-safe sunscreen, a hat, light clothing for the drive, a change of clothes, and cash for lunch on the island (meals are not included). The 10-hour day means an early start -- typically departing Rio at 6:00-7:00 AM." },
       ],
+      tips: [
+        "Apply waterproof sunscreen before boarding the speedboat — reapplication is harder once underway and the equatorial sun on open water is intense.",
+        "Bring a waterproof bag or dry sack for your phone, camera and valuables. The speedboat ride can be splashy depending on sea conditions.",
+        "Motion sickness medication is recommended if you're sensitive to boat movement. Take it before departure, not after symptoms start.",
+        "Bring cash for lunch on the island — there are good restaurants in the village of Abraão but most prefer cash. Meals are not included in the tour.",
+        "The tour departs Rio very early — typically between 6:00 and 7:00 AM. Prepare everything the night before.",
+      ],
     },
     {
       id: "Búzios: Brazil's Riviera (23 Beaches in One Day)",
@@ -204,6 +246,13 @@ export const tours = {
         { q: "With 23 beaches on the peninsula, how many will we actually visit?", a: "In a 10-hour day, you'll realistically explore 4-6 beaches depending on your group's preferences and pace. Your guide will recommend the best beaches for your interests -- whether you prefer calm swimming waters, dramatic scenery, or lively beach bars. The famous Rua das Pedras and Orla Bardot waterfront are also included." },
         { q: "What's the best time of year to visit Búzios?", a: "Búzios is beautiful year-round but peak season is December to March when the water is warmest. The shoulder months of October-November and April-May offer excellent conditions with fewer crowds. July and August can be cooler but Búzios' charm is still very much present." },
         { q: "Should we bring cash to Búzios?", a: "Yes, bring cash for lunch, beach equipment rentals (sunbeds, umbrellas), and shopping on Rua das Pedras. While many establishments accept cards, smaller beach kiosks often prefer cash. Meals and beach equipment are not included in the tour." },
+      ],
+      tips: [
+        "Búzios has 23 beaches — your guide will recommend the best ones based on your interests and the day's conditions. You won't see all 23, but you'll see the right ones.",
+        "Rua das Pedras is the main strip for restaurants and shopping — best explored on foot. Ask your guide which section has the best local shops vs. tourist traps.",
+        "Bring cash for lunch, beach chair and umbrella rentals, and shopping. Many smaller vendors and beach kiosks don't accept cards.",
+        "The drive from Rio takes about 2.5 hours each way through the scenic Lake Region — the coastal views on the return leg are particularly beautiful at sunset.",
+        "Búzios is best April through November — outside peak summer crowds but with warm water and full sunshine.",
       ],
     },
     {
@@ -235,6 +284,13 @@ export const tours = {
         { q: "Are all museum and palace entrance fees included?", a: "Yes, all entrance fees are included: Quitandinha Palace, Imperial Museum with the crown jewels, House of 7 Errors, and Metropolitan Cathedral. No separate purchases needed at any attraction." },
         { q: "Is Petrópolis significantly cooler than Rio?", a: "Yes, noticeably so. At 840 meters altitude, Petrópolis averages 5-8 degrees Celsius cooler than Rio throughout the year. In winter (June-August) temperatures can reach 10-15 degrees Celsius. Bring a jacket or light layer regardless of the Rio weather when you leave." },
         { q: "Is there time for lunch in Petrópolis?", a: "Yes -- the 8-hour format includes a comfortable lunch break. Petrópolis has excellent restaurants in its European-style town center. Lunch is not included in the tour price but your guide will recommend the best local options." },
+      ],
+      tips: [
+        "Petrópolis sits at 840 metres altitude — bring a light jacket regardless of Rio's temperature when you leave. It's consistently 5–8°C cooler and afternoon rain is common.",
+        "The mountain road from Rio is spectacular — the ascent through the Serra dos Órgãos is part of the experience. If you're prone to motion sickness on winding roads, take medication before departure.",
+        "The Imperial Museum contains the original Brazilian crown jewels and royal artefacts — allow at least 45 minutes inside. It's one of the most impressive museum collections in South America.",
+        "The House of 7 Errors (Casa dos 7 Erros) is a quirky architectural oddity where an eccentric Brazilian built a house deliberately full of construction mistakes. Your guide's explanation makes it genuinely fascinating.",
+        "Not available on Mondays — most Petrópolis museums and palaces are closed. The tour runs Tuesday to Sunday.",
       ],
     },
     {
@@ -269,6 +325,13 @@ export const tours = {
         { q: "Does this tour include Sugarloaf Mountain?", a: "Yes -- Sugarloaf Mountain is included as part of this tour combining natural and cultural highlights. The 8-hour day covers Sugarloaf, Tijuca National Park, Botanical Garden, and Parque Lage." },
         { q: "What is Parque Lage and why is it included?", a: "Parque Lage is a beautiful historic park at the foot of Corcovado Mountain, featuring a neo-classical mansion (now an art school) surrounded by Atlantic Forest. Its famous café is a Rio institution and the park offers stunning views of Christ the Redeemer above the forest." },
       ],
+      tips: [
+        "Tijuca National Park is the world's largest urban rainforest — wildlife sightings depend on time of day and season. Toucans, marmosets, and butterflies are commonly seen. Your guide knows the best spots.",
+        "Bring insect repellent for the forest section — it's a genuine rainforest and mosquitoes are present, especially after rain.",
+        "The Botanical Garden has over 6,500 plant species across 137 hectares — you won't see everything, but your guide will focus on the most extraordinary sections including the giant Victoria amazonica lily pads.",
+        "Parque Lage's café is one of Rio's most atmospheric spots — a century-old Art Nouveau café inside a neo-classical mansion with Christ the Redeemer visible above the forest canopy.",
+        "Not available on Mondays — Parque Lage has reduced access. The tour runs Tuesday to Sunday.",
+      ],
     },
     {
       id: "Niterói: Niemeyer's MAC Museum & Colonial Forts",
@@ -300,6 +363,13 @@ export const tours = {
         { q: "Are the historic military forts interesting even for non-history enthusiasts?", a: "Absolutely. The Fortaleza de Santa Cruz and Fortaleza de São Luís offer some of the most dramatic views available anywhere in the Rio metropolitan area -- looking directly back at the city from across the bay. The historical context your guide provides brings the strategic importance of these 16th-17th century forts to life." },
         { q: "Is lunch near Niterói included?", a: "Lunch is not included but an oceanfront lunch stop is built into the itinerary. Your guide will take you to the Icaraí beachfront area where excellent seafood restaurants overlook the bay with direct views of Rio. Budget USD 20-40 per person for a good lunch with drinks." },
       ],
+      tips: [
+        "The MAC Niterói sits on a clifftop above Guanabara Bay — the view of Rio's skyline from the museum's external ramp is one of the best in the entire metropolitan area, worth lingering over.",
+        "The Rio–Niterói Bridge crossing (13.3 km) offers spectacular bay views from the car. Have your camera ready for the approach.",
+        "The Fortaleza de Santa Cruz dates from the 16th century — your guide's historical context transforms what could be just old walls into a vivid story of Rio's colonial past and strategic importance.",
+        "An oceanfront lunch stop in Icaraí is built into the itinerary. Bring USD 20–40 per person for a good meal with drinks.",
+        "Not available on Mondays — MAC Niterói is closed. The tour runs Tuesday to Sunday.",
+      ],
     },
     {
       id: "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
@@ -329,6 +399,13 @@ export const tours = {
         { q: "Is this tour available every day?", a: "Not available on Mondays -- the Museum of Tomorrow and National Historical Museum are closed on Mondays. The Carnival experience is additionally only available Tuesday to Saturday." },
         { q: "What is AquaRio and is it suitable for adults without children?", a: "AquaRio is South America's largest aquarium with over 8,000 marine animals including sharks, rays, and sea turtles. It's an excellent experience for adults -- the submarine tunnel and deep-sea exhibits are genuinely impressive. You don't need children in the group to enjoy it." },
         { q: "What's the best way to experience the samba school visit?", a: "The samba school visit works best when you engage with the artisans and ask questions through your guide. These are the people who spend months crafting the elaborate floats and costumes for Carnival. The energy in the workshop is electric even off-season." },
+      ],
+      tips: [
+        "The Museum of Tomorrow is interactive and genuinely immersive — allow at least 90 minutes inside. Don't rush it for the sake of the other attractions.",
+        "The Carnival samba school visit is available Tuesday to Saturday only. If your tour falls on a Sunday or Monday, this portion of the experience is replaced — confirm when booking.",
+        "AquaRio is South America's largest aquarium — the submarine tunnel walk-through with sharks and rays overhead is the highlight. Budget at least 60 minutes.",
+        "The port district (Porto Maravilha) where these attractions are clustered was completely revitalised for the 2016 Olympics — your guide's urban history context adds a fascinating layer to the visit.",
+        "Not available on Mondays — Museum of Tomorrow is closed. The tour runs Tuesday to Sunday.",
       ],
     },
     {
@@ -360,6 +437,13 @@ export const tours = {
         { q: "Is transportation to the meeting point included?", a: "Transportation to and from Theatro Municipal is not included. The meeting point is centrally located and easily reached by Uber, taxi, or metro (Cinelândia station). Your guide can advise on the easiest route from your accommodation." },
         { q: "What makes Confeitaria Colombo special?", a: "Confeitaria Colombo, opened in 1894, is one of the most beautiful Art Nouveau cafés in the world -- a stunning room of Belgian mirrors, stained glass, and Portuguese tile. It's a genuine working café, not a museum. A coffee or pastry there is a step back into Rio's Belle Époque." },
         { q: "How much walking is involved and is the route flat?", a: "The tour covers approximately 3-4km over 3.5 hours at a leisurely pace with multiple stops. Downtown Rio is relatively flat in the historic center area. Comfortable walking shoes are recommended. The Selarón Steps do involve a short climb." },
+      ],
+      tips: [
+        "Meeting point is Theatro Municipal at Cinelândia — easily reached by metro (Cinelândia station) or Uber. The tour does not include transportation to the meeting point.",
+        "Confeitaria Colombo (1894) is one of the most beautiful Art Nouveau cafés in the world — have a coffee or pastry there. It's a working café, not a museum, and the experience is part of the tour.",
+        "The Selarón Steps involve a short uphill climb — comfortable shoes with grip are recommended. The steps are tiled and can be slippery after rain.",
+        "Not available on Sundays — the tour runs Monday to Saturday.",
+        "The downtown historic district is best explored on a weekday when the area is lively with locals. Saturday mornings are also excellent — quieter but with good atmosphere.",
       ],
     },
     {
@@ -393,6 +477,13 @@ export const tours = {
         { q: "Is transportation to the meeting point included?", a: "Transportation to Largo dos Guimarães is not included. From the city center, the classic way to arrive is by the historic Santa Teresa tram (bondinho) -- ask your guide about this option when booking. Uber is also available and straightforward." },
         { q: "How steep are the streets in Santa Teresa?", a: "Santa Teresa is a hillside neighborhood and some streets are steep and cobblestoned. The tour is designed at a comfortable pace with plenty of stops. Comfortable shoes with grip are recommended -- avoid flip-flops or heeled sandals." },
       ],
+      tips: [
+        "Meeting point is Largo dos Guimarães — the social heart of Santa Teresa. Consider arriving by the historic bonde (tram) from downtown for an authentic carioca experience. Ask your guide about this option when booking.",
+        "Santa Teresa is a hillside neighbourhood — some streets are steep and cobblestoned. Shoes with grip are recommended. The tour pace is relaxed with plenty of stops.",
+        "Bar do Gomez is one of Rio's oldest traditional botequins (neighbourhood bars), open since 1919. A cold beer or guaraná here is part of the experience.",
+        "Parque das Ruínas offers one of the best views of downtown Rio and the bay — arrive at this stop with camera ready.",
+        "Not available on Sundays — the tour runs Monday to Saturday.",
+      ],
     },
     {
       id: "Rio Food Walking Tour: Authentic Brazilian Culinary Experience",
@@ -425,6 +516,13 @@ export const tours = {
         { q: "Can vegetarians or people with dietary restrictions participate?", a: "Yes -- please mention any dietary restrictions when booking and your guide will adapt the food stops accordingly. Rio's culinary landscape includes many vegetarian-friendly options. For severe allergies, please contact us in advance so we can verify all ingredients at each stop." },
         { q: "Will we be full after the tour or should we plan a separate lunch/dinner?", a: "Most guests find the 8-10 tastings genuinely filling -- this is not a light snack tour. Plan accordingly: the Food Tour works well as a late breakfast/brunch experience (starting around 10-11 AM) or as lunch replacement. Your guide will advise on the best start time." },
       ],
+      tips: [
+        "Come hungry — this is not a light snack tour. The 8–10 tastings are genuinely filling. Most guests don't need lunch afterward.",
+        "Meeting point is Restaurante Cortiço Carioca in Lapa — easily reached by metro (Cinelândia station, 5-minute walk) or Uber. Transportation to the meeting point is not included.",
+        "Mention any dietary restrictions or allergies when booking — your guide will adapt the stops accordingly. For severe allergies, contact us in advance so we can verify ingredients at each location.",
+        "The tour includes a cachaça tasting — Brazil's national spirit, made from fermented sugarcane juice. If you prefer to skip the alcohol, just let your guide know.",
+        "Not available on Sundays — the tour runs Monday to Saturday.",
+      ],
     },
     {
       id: "Little Africa: Rio's Soul & African Heritage Unveiled",
@@ -456,6 +554,13 @@ export const tours = {
         { q: "Is this tour available every day?", a: "Available Monday to Saturday. Not available on Sundays. The tour starts at the General Osório Statue at Praça XV, easily reached by metro (Uruguaiana station) or Uber." },
         { q: "Is transportation to the meeting point included?", a: "Transportation to Praça XV is not included. It's easily accessible by metro (Uruguaiana station) or Uber from all Rio neighborhoods." },
       ],
+      tips: [
+        "Cais do Valongo is a UNESCO World Heritage Site — the most important physical trace of the African slave trade in the Americas. Visiting with a knowledgeable guide provides the historical context that transforms this from a dock into one of the most significant sites in the Western Hemisphere.",
+        "This tour covers serious historical content including the realities of slavery and its legacy. It is approached with depth and respect. For children under 12, consider whether the content is age-appropriate.",
+        "Meeting point is the General Osório Statue at Praça XV — easily reached by metro (Uruguaiana station) or Uber. Transportation to the meeting point is not included.",
+        "The Little Africa district is best explored on a weekday when the area has its authentic working rhythm. Avoid Sundays when many locations are closed.",
+        "Not available on Sundays — the tour runs Monday to Saturday.",
+      ],
     },
     {
       id: "Your Rio, Your Way: Custom Private Tour",
@@ -485,6 +590,13 @@ export const tours = {
         { q: "How is the pricing determined for a Custom Tour?", a: "Pricing varies based on itinerary, duration, group size, and specific attractions selected (some have additional entrance fees). We'll provide a complete transparent quote before you confirm. There are no surprise costs on the day of the tour." },
         { q: "Can the Custom Tour accommodate people with mobility limitations?", a: "Yes -- this is one of the key reasons guests choose the Custom Tour. We can design an itinerary that avoids stairs, steep terrain, or long walks, while still delivering an exceptional Rio experience. Please mention any mobility considerations when you contact us." },
         { q: "Can we combine multiple tours or attractions not on your standard menu?", a: "Absolutely -- that's the point of the Custom Tour. Whether it's a specific restaurant, neighborhood, event, architectural landmark, or activity not covered in our standard tours, we can incorporate it. Rio has far more to offer than any fixed tour can cover, and our guides' local knowledge is extensive." },
+      ],
+      tips: [
+        "The more detail you share with us before the tour, the better we can design it. Tell us your interests, must-sees, dietary needs, mobility considerations, and anything you've already seen in Rio.",
+        "Custom tours range from 4 hours (half-day) to multi-day itineraries covering Rio state — Petrópolis, Búzios, Ilha Grande, Paraty. Let us know your available time when you reach out.",
+        "If you have mobility limitations, mention this upfront — we can design a fully accessible itinerary that avoids stairs, steep terrain, and long walks while still delivering an exceptional experience.",
+        "There is no charge for the planning process. Contact us via WhatsApp or email, we'll design the itinerary, adjust based on your feedback, and confirm once you're satisfied.",
+        "Pricing varies by itinerary, duration, group size, and specific attractions. We'll provide a complete transparent quote before you confirm — no surprise costs on the day.",
       ],
     }
   ],
@@ -527,6 +639,13 @@ export const tours = {
         { q: "¿Podemos ajustar el itinerario o agregar paradas?", a: "Por supuesto -- es un tour privado y el itinerario es completamente flexible. Si quieres más tiempo en Santa Teresa, saltar una parada o agregar un barrio diferente, simplemente díselo a tu guía. Las 8 horas son tuyas." },
         { q: "¿Cuál es el mejor horario de inicio para este tour?", a: "Para evitar filas en el Cristo Redentor recomendamos comenzar a las 06:30. Para ver el atardecer en el Cristo o el Pan de Azúcar, recomendamos comenzar a las 11:30." },
       ],
+      tips: [
+        "Llegad temprano al Cristo Redentor — el primer teleférico o van del día tiene las colas más cortas y las vistas más despejadas antes de que lleguen las nubes.",
+        "El Real Gabinete Portugués de Lectura solo abre de lunes a viernes. Si tu tour es en fin de semana, tu guía sugerirá una alternativa igualmente impresionante.",
+        "Las Escaleras de Selarón lucen mejor con la luz de la mañana. Pídele a tu guía que planifique esa parada con anticipación.",
+        "Lleva una mochila pequeña — estarás de pie hasta 8 horas por distintos barrios.",
+        "Mantén el teléfono cargado. Entre el Cristo, el Pan de Azúcar, Santa Teresa y el Selarón, querrás batería de sobra para fotos.",
+      ],
     },
     {
       id: "Río Express: Cristo y Pan de Azúcar en 5 Horas",
@@ -559,6 +678,13 @@ export const tours = {
         { q: "¿Qué pasa si el clima está malo y el Cristo está entre nubes?", a: "El clima en Río cambia rápido -- incluso los días nublados suelen despejarse a media mañana. Tu guía monitoreará las condiciones y aconsejará el mejor horario. Si la visibilidad es muy baja, podemos ajustar el orden de visitas o reprogramar sin costo adicional." },
         { q: "¿Es este tour apto para pasajeros de crucero?", a: "Este tour fue diseñado especialmente para pasajeros de crucero. El recojo en la terminal de cruceros Pier Mauá está incluido y las 5 horas caben cómodamente dentro del tiempo en puerto. Tu guía se asegurará de que regreses al barco a tiempo." },
       ],
+      tips: [
+        "Este tour está optimizado para pasajeros de crucero — si llegas al Pier Mauá, indícanos el horario de regreso a bordo al reservar para que tengamos un margen cómodo.",
+        "El Cristo Redentor y el Pan de Azúcar están mejor por la mañana, antes de que las nubes de la tarde aparezcan. El tour está programado en consecuencia.",
+        "El teleférico del Pan de Azúcar tiene dos etapas — la primera parada en el Morro da Urca ya ofrece vistas espectaculares y está menos concurrida que la cima.",
+        "Si vienes directamente desde el puerto de cruceros, lleva una bolsa pequeña en vez de maleta grande.",
+        "Ambas atracciones tienen tiendas de recuerdos — tenlo en cuenta al planificar el tiempo en cada parada.",
+      ],
     },
     {
       id: "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
@@ -588,6 +714,13 @@ export const tours = {
         { q: "¿Qué ropa debo llevar para un tour a las 4 AM?", a: "Lleva una chaqueta ligera -- la cumbre puede estar fresca y con brisa antes del amanecer incluso en verano. Zapatos cómodos para caminar son esenciales. A medida que avanza el día tras visitar el Cristo, capas livianas funcionan bien." },
         { q: "¿Están incluidas todas las entradas incluyendo el acceso especial al Pan de Azúcar?", a: "Sí, todas las entradas incluyendo el acceso especial de madrugada al Pan de Azúcar y la entrada al Cristo Redentor están incluidas en el precio del tour." },
       ],
+      tips: [
+        "Tu recogida es a las 4:00 AM — pon dos alarmas. Tu guía te estará esperando en el lobby del hotel exactamente a esa hora.",
+        "La cima del Pan de Azúcar puede estar ventosa y notablemente más fresca antes del amanecer, incluso en verano. Lleva una chaqueta ligera que puedas quitarte cuando el día caliente.",
+        "Lleva una cámara o smartphone con buen modo de poca luz. Los colores del amanecer sobre la Bahía de Guanabara son extraordinarios — ese es el momento central del tour.",
+        "Come algo ligero antes o durante el trayecto. El inicio a las 4 AM significa que el desayuno llega después — tu guía puede recomendarte buenas opciones cerca del Cristo.",
+        "Este tour solo está disponible los sábados. Si necesitas reprogramar, contáctanos con la mayor anticipación posible — los cupos del sábado se agotan semanas antes.",
+      ],
     },
     {
       id: "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
@@ -614,6 +747,13 @@ export const tours = {
         { q: "¿A qué hora suele comenzar el tour Hora Dorada?", a: "Los horarios de inicio varían según la estación para alinearse con el atardecer. Generalmente entre la 1:00 PM y las 3:00 PM. Al reservar, confirmaremos el horario exacto según la fecha para garantizar el timing perfecto de la hora dorada." },
         { q: "¿Es posible cenar después del tour?", a: "Sí -- el tour termina en el Pan de Azúcar al caer el sol. Tu conductor puede llevarte directamente a un restaurante después. Podemos recomendarte excelentes opciones cerca del Pan de Azúcar o en cualquier parte de Río." },
         { q: "¿Las entradas sin filas están incluidas para ambas atracciones?", a: "Sí, las entradas sin filas para el Cristo Redentor y el teleférico del Pan de Azúcar están incluidas. Esto es especialmente importante en el tour Hora Dorada ya que el timing del atardecer es preciso -- las colas arruinarían la experiencia." },
+      ],
+      tips: [
+        "El horario de inicio varía según la estación para alinearse con el atardecer — confirma tu hora exacta de recogida al reservar. Generalmente entre la 1:00 PM y las 3:00 PM.",
+        "Lleva cámara o smartphone — la luz de la hora dorada sobre el Cristo y el atardecer desde la cima del Pan de Azúcar son de los momentos más fotografiados de Río. Un minitrípode vale la pena.",
+        "El ascenso en teleférico al Pan de Azúcar está cronometrado para llegar a la cima justo cuando el sol empieza a bajar. Confía en el timing — tu guía sabe exactamente cuándo subir.",
+        "Si quieres cenar después del tour, díselo a tu guía. La zona del Pan de Azúcar tiene excelentes restaurantes y el conductor puede llevarte directamente.",
+        "El timing del atardecer es preciso — las entradas sin fila están incluidas específicamente para que llegues a la cima antes de que cambie la luz.",
       ],
     },
     {
@@ -645,6 +785,13 @@ export const tours = {
         { q: "¿Qué debemos vestir para el Show Cena Roxy?", a: "Elegante casual es apropiado -- el Roxy es un lugar exclusivo. No se requiere ropa formal, pero evita ropa de playa. Un vestido o blusa bonita para mujeres, camisa con cuello o blazer ligero para hombres." },
         { q: "¿Las bebidas están incluidas en el Roxy?", a: "La cena de tres platos está incluida pero las bebidas en el Roxy se pagan por separado. Presupuesta aproximadamente USD 20-40 por persona para bebidas." },
       ],
+      tips: [
+        "Las entradas al Show Roxy no son reembolsables una vez compradas — esto aplica independientemente del aviso dado. Reserva solo si tus planes están confirmados.",
+        "Este tour solo está disponible de miércoles a domingo. El Roxy no opera los lunes ni martes.",
+        "Viste elegante casual para el Roxy — es un local exclusivo. La ropa de playa no es apropiada. Más allá de eso, viste lo que te haga sentir cómodo.",
+        "Las bebidas en el Roxy no están incluidas en el precio del tour. Presupuesta aproximadamente USD 20–40 por persona según tus preferencias.",
+        "Lleva identificación — el Roxy puede pedirla en la entrada.",
+      ],
     },
     {
       id: "Escape a la Isla: Ilha Grande en Lancha Privada",
@@ -672,6 +819,13 @@ export const tours = {
         { q: "¿Necesitamos saber nadar o tener experiencia en snorkel?", a: "No se necesita experiencia previa. El equipo de snorkel está incluido y las aguas de Ilha Grande son tranquilas y cristalinas, aptas para principiantes. Si alguien prefiere quedarse en la playa, también está perfecto." },
         { q: "¿Cuál es la diferencia entre la opción estándar y la opción Lopes Mendes?", a: "Lopes Mendes está constantemente clasificada como una de las playas más bellas de Brasil -- una larga franja de arena blanca prístina accesible solo por barca. La opción estándar explora diversas playas y calas. La mejora a Lopes Mendes agrega USD 100 al precio grupal y vale la pena si tienes amantes de la playa en el grupo." },
         { q: "¿Qué debemos llevar para el día en Ilha Grande?", a: "Traje de baño, protector solar apto para arrecifes, sombrero, ropa ligera para el viaje, ropa de cambio y efectivo para el almuerzo en la isla (comidas no incluidas). El día de 10 horas implica salida temprana -- típicamente entre las 6:00 y 7:00 AM desde Río." },
+      ],
+      tips: [
+        "Aplica protector solar resistente al agua antes de abordar la lancha — reaplicarlo durante el trayecto es más difícil y el sol ecuatorial sobre el agua abierta es intenso.",
+        "Lleva una bolsa impermeable o dry sack para el teléfono, cámara y objetos de valor. El paseo en lancha puede mojarte según las condiciones del mar.",
+        "Se recomienda medicación para el mareo si eres sensible al movimiento de embarcaciones. Tómala antes de salir, no cuando ya tengas síntomas.",
+        "Lleva efectivo para el almuerzo en la isla — hay buenos restaurantes en el pueblo de Abraão pero la mayoría prefiere efectivo. Las comidas no están incluidas.",
+        "El tour sale de Río muy temprano — generalmente entre las 6:00 y las 7:00 AM. Prepara todo la noche anterior.",
       ],
     },
     {
@@ -701,6 +855,13 @@ export const tours = {
         { q: "Con 23 playas en la península, ¿cuántas visitaremos realmente?", a: "En un día de 10 horas, explorarás realísticamente 4-6 playas según las preferencias y el ritmo de tu grupo. Tu guía recomendará las mejores según tus intereses -- ya sea aguas tranquilas para nadar, paisajes dramáticos o animados beach bars. La famosa Rua das Pedras y el paseo Orla Bardot también están incluidos." },
         { q: "¿Cuál es la mejor época del año para visitar Búzios?", a: "Búzios es hermosa todo el año pero la temporada alta es de diciembre a marzo con el agua más cálida. Los meses intermedios de octubre-noviembre y abril-mayo ofrecen excelentes condiciones con menos multitudes. Julio y agosto pueden ser más frescos pero el encanto de Búzios sigue presente." },
         { q: "¿Debemos llevar efectivo a Búzios?", a: "Sí, lleva efectivo para el almuerzo, alquiler de equipos de playa (reposeras, sombrillas) y compras en Rua das Pedras. Aunque muchos establecimientos aceptan tarjetas, los kioscos de playa pequeños suelen preferir efectivo. Las comidas y el equipo de playa no están incluidos en el tour." },
+      ],
+      tips: [
+        "Búzios tiene 23 playas — tu guía recomendará las mejores según tus intereses y las condiciones del día. No verás las 23, pero verás las correctas.",
+        "La Rua das Pedras es la calle principal de restaurantes y tiendas — mejor explorarla a pie. Pregúntale a tu guía qué parte tiene las mejores tiendas locales frente a las más turísticas.",
+        "Lleva efectivo para el almuerzo, alquiler de sillas de playa y sombrillas, y compras. Muchos vendedores pequeños y quioscos de playa no aceptan tarjetas.",
+        "El viaje desde Río dura unas 2.5 horas por la pintoresca Región de los Lagos — las vistas costeras en el trayecto de regreso son especialmente bellas al atardecer.",
+        "Búzios está mejor de abril a noviembre — fuera de las multitudes del verano pero con agua cálida y sol pleno.",
       ],
     },
     {
@@ -733,6 +894,13 @@ export const tours = {
         { q: "¿Todas las entradas a museos y palacios están incluidas?", a: "Sí, todas las entradas están incluidas: Palacio Quitandinha, Museo Imperial con las joyas de la corona, Casa de los 7 Errores y Catedral Metropolitana. No necesitas comprar nada por separado." },
         { q: "¿Petrópolis es significativamente más fresca que Río?", a: "Sí, notablemente. A 840 metros de altitud, Petrópolis es 5-8 grados Celsius más fresca que Río durante todo el año. En invierno (junio-agosto) las temperaturas pueden bajar a 10-15 grados. Lleva una chaqueta o capa ligera independientemente del clima de Río cuando partas." },
         { q: "¿Hay tiempo para almorzar en Petrópolis?", a: "Sí -- el formato de 8 horas incluye una pausa cómoda para almorzar. Petrópolis tiene excelentes restaurantes en su centro de estilo europeo. El almuerzo no está incluido pero tu guía recomendará las mejores opciones locales." },
+      ],
+      tips: [
+        "Petrópolis está a 840 metros de altitud — lleva una chaqueta ligera independientemente de la temperatura en Río cuando salgas. Es consistentemente 5–8°C más fresca y la lluvia vespertina es habitual.",
+        "La carretera de montaña desde Río es espectacular — el ascenso por la Serra dos Órgãos es parte de la experiencia. Si eres propenso al mareo en carreteras sinuosas, toma medicación antes de salir.",
+        "El Museo Imperial contiene las joyas de la corona brasileña originales y artefactos reales — dedica al menos 45 minutos adentro. Es una de las colecciones museísticas más impresionantes de América del Sur.",
+        "La Casa de los 7 Errores es una curiosa rareza arquitectónica donde un excéntrico brasileño construyó una casa deliberadamente llena de errores de construcción. La explicación de tu guía la hace genuinamente fascinante.",
+        "No disponible los lunes — la mayoría de museos y palacios de Petrópolis cierran ese día. El tour opera de martes a domingo.",
       ],
     },
     {
@@ -768,6 +936,13 @@ export const tours = {
         { q: "¿Este tour incluye el Pan de Azúcar?", a: "Sí -- el Pan de Azúcar está incluido como parte de este tour que combina lo mejor natural y cultural. El día de 8 horas cubre el Pan de Azúcar, el Parque Nacional de Tijuca, el Jardín Botánico y el Parque Lage." },
         { q: "¿Qué es el Parque Lage y por qué está incluido?", a: "El Parque Lage es un hermoso parque histórico al pie del Morro Corcovado, con una mansión neoclásica (hoy escuela de arte) rodeada de Mata Atlántica. Su famoso café es una institución en Río y el parque ofrece vistas impresionantes del Cristo Redentor sobre el bosque." },
       ],
+      tips: [
+        "El Parque Nacional de Tijuca es la mayor selva urbana del mundo — los avistamientos de fauna dependen de la hora del día y la estación. Tucanes, tití-leones y mariposas se ven con frecuencia. Tu guía conoce los mejores lugares.",
+        "Lleva repelente de insectos para la sección del bosque — es una selva real y los mosquitos están presentes, especialmente después de la lluvia.",
+        "El Jardín Botánico tiene más de 6.500 especies de plantas en 137 hectáreas — no lo verás todo, pero tu guía se centrará en las secciones más extraordinarias, incluidas las hojas de Victoria amazonica gigantes.",
+        "El café del Parque Lage es uno de los lugares más atmosféricos de Río — un café Art Nouveau centenario dentro de una mansión neoclásica con el Cristo Redentor visible sobre el dosel del bosque.",
+        "No disponible los lunes — el Parque Lage tiene acceso reducido ese día. El tour opera de martes a domingo.",
+      ],
     },
     {
       id: "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
@@ -800,6 +975,13 @@ export const tours = {
         { q: "¿Son interesantes los fuertes militares históricos incluso para los no aficionados a la historia?", a: "Absolutamente. La Fortaleza de Santa Cruz y la Fortaleza de São Luís ofrecen algunas de las vistas más dramáticas -- mirando directamente a la ciudad desde el otro lado de la bahía. El contexto histórico que tu guía proporciona da vida a la importancia estratégica de estos fuertes de los siglos XVI-XVII." },
         { q: "¿El almuerzo cerca de Niterói está incluido?", a: "El almuerzo no está incluido pero hay una parada frente al mar incorporada al itinerario. Tu guía te llevará al área costera de Icaraí donde excelentes restaurantes de mariscos tienen vistas directas a Río. Presupuesta USD 20-40 por persona para un buen almuerzo con bebidas." },
       ],
+      tips: [
+        "El MAC Niterói está en un acantilado sobre la Bahía de Guanabara — la vista del skyline de Río desde la rampa exterior del museo es una de las mejores de toda el área metropolitana y vale la pena detenerse a contemplarla.",
+        "El cruce del Puente Río–Niterói (13.3 km) ofrece vistas espectaculares de la bahía desde el coche. Ten la cámara lista en el momento del cruce.",
+        "La Fortaleza de Santa Cruz data del siglo XVI — el contexto histórico de tu guía transforma lo que podrían ser simples muros viejos en una historia vívida del pasado colonial e importancia estratégica de Río.",
+        "Una parada para almorzar frente al mar en Icaraí está incluida en el itinerario. Lleva USD 20–40 por persona para una buena comida con bebidas.",
+        "No disponible los lunes — el MAC Niterói cierra ese día. El tour opera de martes a domingo.",
+      ],
     },
     {
       id: "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
@@ -830,6 +1012,13 @@ export const tours = {
         { q: "¿El tour está disponible todos los días?", a: "No está disponible los lunes -- el Museo del Mañana y el Museo Histórico Nacional cierran los lunes. La experiencia de Carnaval solo está disponible de martes a sábado." },
         { q: "¿Qué es el AquaRio y es adecuado para adultos sin niños?", a: "AquaRio es el acuario más grande de América del Sur con más de 8,000 animales marinos. Es una excelente experiencia para adultos -- el túnel submarino y las exhibiciones de aguas profundas son genuinamente impresionantes. No necesitas tener niños en el grupo para disfrutarlo." },
         { q: "¿Cuál es la mejor manera de disfrutar la visita a la escuela de samba?", a: "La visita funciona mejor cuando interactúas con los artesanos y haces preguntas a través de tu guía. Son las personas que pasan meses creando los elaborados carros alegóricos y disfraces para el Carnaval. La energía en el taller es electrizante incluso fuera de temporada." },
+      ],
+      tips: [
+        "El Museo del Mañana es interactivo y genuinamente inmersivo — dedica al menos 90 minutos adentro. No lo apresures por las demás atracciones.",
+        "La visita a la escuela de samba del Carnaval solo está disponible de martes a sábado. Si tu tour cae en domingo o lunes, esta parte se reemplaza — confirma al reservar.",
+        "AquaRio es el mayor acuario de América del Sur — el túnel submarino con tiburones y rayas sobre tu cabeza es el punto culminante. Dedica al menos 60 minutos.",
+        "El distrito portuario (Porto Maravilha) donde se agrupan estas atracciones fue completamente renovado para los Juegos Olímpicos de 2016 — el contexto histórico urbano de tu guía añade una capa fascinante a la visita.",
+        "No disponible los lunes — el Museo del Mañana cierra ese día. El tour opera de martes a domingo.",
       ],
     },
     {
@@ -862,6 +1051,13 @@ export const tours = {
         { q: "¿Qué hace especial a la Confeitaria Colombo?", a: "La Confeitaria Colombo, abierta en 1894, es uno de los cafés Art Nouveau más hermosos del mundo -- una sala impresionante de espejos belgas, vitrales y azulejos portugueses. Es un café en funcionamiento real, no un museo. Un café o pastel allí es un paso atrás en la Belle Époque carioca." },
         { q: "¿Cuánto hay que caminar y la ruta es plana?", a: "El tour recorre aproximadamente 3-4 km en 3.5 horas a un ritmo tranquilo con múltiples paradas. El centro histórico de Río es relativamente plano. Se recomiendan zapatos cómodos para caminar. Las Escaleras de Selarón implican una subida corta." },
       ],
+      tips: [
+        "El punto de encuentro es el Theatro Municipal en Cinelândia — fácilmente accesible en metro (estación Cinelândia) o Uber. El tour no incluye transporte hasta el punto de encuentro.",
+        "La Confeitaria Colombo (1894) es uno de los cafés Art Nouveau más hermosos del mundo — toma un café o pastel allí. Es un café en funcionamiento, no un museo, y la experiencia forma parte del tour.",
+        "Las Escaleras de Selarón implican una subida corta — se recomiendan zapatos cómodos con agarre. Las escaleras están recubiertas de azulejos y pueden estar resbaladizas después de la lluvia.",
+        "No disponible los domingos — el tour opera de lunes a sábado.",
+        "El distrito histórico del centro se explora mejor entre semana cuando la zona está animada con locales. Los sábados por la mañana también son excelentes — más tranquilos pero con buena atmósfera.",
+      ],
     },
     {
       id: "Tour a Pie por Santa Teresa: Arte, Historia y Rincones Ocultos",
@@ -893,6 +1089,13 @@ export const tours = {
         { q: "¿El tour está disponible todos los días?", a: "Disponible todos los días excepto los domingos. El tour comienza en el Largo dos Guimarães, el corazón social del barrio." },
         { q: "¿El transporte al punto de encuentro está incluido?", a: "El transporte al Largo dos Guimarães no está incluido. La forma clásica de llegar desde el centro es en el histórico tranvía de Santa Teresa (bondinho) -- consulta con tu guía esta opción al reservar. Uber también está disponible." },
         { q: "¿Qué tan empinadas son las calles de Santa Teresa?", a: "Santa Teresa es un barrio en ladera y algunas calles son empinadas y empedradas. El tour está diseñado a un ritmo cómodo con muchas paradas. Se recomiendan zapatos cómodos con agarre -- evita chanclas o sandalias con tacón." },
+      ],
+      tips: [
+        "El punto de encuentro es el Largo dos Guimarães — el corazón social de Santa Teresa. Considera llegar en el histórico bonde (tranvía) desde el centro para una experiencia carioca auténtica. Pregúntale a tu guía sobre esta opción al reservar.",
+        "Santa Teresa es un barrio en ladera — algunas calles son empinadas y empedradas. Se recomiendan zapatos con agarre. El ritmo del tour es tranquilo con muchas paradas.",
+        "El Bar do Gomez es uno de los botequines (bares de barrio) más antiguos de Río, abierto desde 1919. Una cerveza fría o guaraná aquí es parte de la experiencia.",
+        "El Parque das Ruinas ofrece una de las mejores vistas del centro de Río y la bahía — llega a esta parada con la cámara lista.",
+        "No disponible los domingos — el tour opera de lunes a sábado.",
       ],
     },
     {
@@ -927,6 +1130,13 @@ export const tours = {
         { q: "¿Pueden participar vegetarianos o personas con restricciones alimentarias?", a: "Sí -- menciona cualquier restricción dietética al reservar y tu guía adaptará las paradas. Para alergias graves, contáctanos con anticipación para verificar todos los ingredientes en cada parada." },
         { q: "¿Quedaremos satisfechos después del tour o debemos planear una comida separada?", a: "La mayoría encuentra las 8-10 degustaciones genuinamente satisfactorias. El Tour Gastronómico funciona bien como desayuno tardío/brunch (comenzando alrededor de las 10-11 AM) o como reemplazo del almuerzo." },
       ],
+      tips: [
+        "Ven con hambre — este no es un tour de aperitivos ligeros. Las 8–10 degustaciones son genuinamente sustanciosas. La mayoría de los viajeros no necesita almorzar después.",
+        "El punto de encuentro es el Restaurante Cortiço Carioca en Lapa — fácilmente accesible en metro (estación Cinelândia, 5 minutos caminando) o Uber. El transporte hasta el punto de encuentro no está incluido.",
+        "Menciona cualquier restricción dietética o alergia al reservar — tu guía adaptará las paradas en consecuencia. Para alergias graves, contáctanos con anticipación para verificar los ingredientes en cada local.",
+        "El tour incluye una degustación de cachaça — el aguardiente nacional de Brasil, hecho de jugo de caña de azúcar fermentado. Si prefieres saltarte el alcohol, simplemente díselo a tu guía.",
+        "No disponible los domingos — el tour opera de lunes a sábado.",
+      ],
     },
     {
       id: "Pequeña África: El Alma de Río y la Herencia Africana Revelada",
@@ -959,6 +1169,13 @@ export const tours = {
         { q: "¿El tour está disponible todos los días?", a: "Disponible de lunes a sábado. No disponible los domingos. El tour comienza en la Estatua del General Osório en Praça XV, fácilmente accesible en metro (estación Uruguaiana) o Uber." },
         { q: "¿El transporte al punto de encuentro está incluido?", a: "El transporte a Praça XV no está incluido. Es accesible fácilmente en metro (estación Uruguaiana) o Uber desde todos los barrios de Río." },
       ],
+      tips: [
+        "El Cais do Valongo es Patrimonio Mundial de la UNESCO — el rastro físico más importante del comercio de esclavos africano en las Américas. Visitarlo con un guía experto proporciona el contexto histórico que transforma este muelle en uno de los sitios más significativos del hemisferio occidental.",
+        "Este tour cubre contenido histórico serio, incluyendo las realidades de la esclavitud y su legado. Se aborda con profundidad y respeto. Para niños menores de 12 años, considera si el contenido es apropiado para su edad.",
+        "El punto de encuentro es la Estatua del General Osório en Praça XV — fácilmente accesible en metro (estación Uruguaiana) o Uber. El transporte hasta el punto de encuentro no está incluido.",
+        "El barrio de la Pequeña África se explora mejor entre semana cuando la zona tiene su ritmo de trabajo auténtico. Evita los domingos cuando muchos locales están cerrados.",
+        "No disponible los domingos — el tour opera de lunes a sábado.",
+      ],
     },
     {
       id: "Tu Río, a Tu Manera: Tour Privado Personalizado",
@@ -989,6 +1206,13 @@ export const tours = {
         { q: "¿Cómo se determina el precio de un Tour Personalizado?", a: "El precio varía según el itinerario, la duración, el tamaño del grupo y las atracciones seleccionadas. Te proporcionaremos un presupuesto completo y transparente antes de confirmar. No hay costos sorpresa el día del tour." },
         { q: "¿El Tour Personalizado puede adaptarse a personas con limitaciones de movilidad?", a: "Sí -- esta es una de las razones clave por las que los viajeros eligen el Tour Personalizado. Podemos diseñar un itinerario que evite escaleras, terrenos empinados o caminatas largas, manteniendo una experiencia excepcional. Menciona cualquier consideración de movilidad al contactarnos." },
         { q: "¿Podemos combinar múltiples tours o atracciones que no están en tu menú estándar?", a: "Por supuesto -- ese es el objetivo del Tour Personalizado. Ya sea un restaurante específico, barrio, evento o actividad no cubierta en nuestros tours estándar, podemos incorporarlo. Río tiene mucho más para ofrecer de lo que cualquier tour fijo puede cubrir." },
+      ],
+      tips: [
+        "Cuantos más detalles nos compartas antes del tour, mejor podremos diseñarlo. Cuéntanos tus intereses, lugares imprescindibles, necesidades dietéticas, consideraciones de movilidad y cualquier cosa que ya hayas visto en Río.",
+        "Los tours personalizados van desde 4 horas (medio día) hasta itinerarios de varios días por el estado de Río — Petrópolis, Búzios, Ilha Grande, Paraty. Indícanos tu tiempo disponible cuando contactes.",
+        "Si tienes limitaciones de movilidad, menciónalo desde el principio — podemos diseñar un itinerario totalmente accesible que evite escaleras, terrenos empinados y largas caminatas, manteniendo una experiencia excepcional.",
+        "No hay cargo por el proceso de planificación. Contáctanos por WhatsApp o email, diseñaremos el itinerario, ajustaremos según tus comentarios y confirmaremos cuando estés satisfecho.",
+        "El precio varía según el itinerario, la duración, el tamaño del grupo y las atracciones específicas. Te proporcionaremos un presupuesto completo y transparente antes de confirmar — sin costos sorpresa el día del tour.",
       ],
     }
   ],
@@ -1026,6 +1250,13 @@ export const tours = {
         { q: "Podemos ajustar o itinerário ou adicionar paradas?", a: "Com certeza -- é um passeio privado e o itinerário é completamente flexível. Se quiser mais tempo em Santa Teresa, pular uma parada ou adicionar um bairro diferente, basta avisar ao guia. As 8 horas são suas." },
         { q: "Qual o melhor horário de início para este tour?", a: "Para evitar filas no Cristo recomendamos começar às 06:30. Para ver o pôr do sol no Cristo ou no Pão de Açúcar, recomendamos começar às 11:30." },
       ],
+      tips: [
+        "Chegue cedo ao Cristo Redentor — o primeiro bondinho ou van do dia tem as filas mais curtas e as vistas mais limpas antes das nuvens chegarem.",
+        "A Real Gabinete Português de Leitura só abre de segunda a sexta. Se o seu passeio for no fim de semana, seu guia sugerirá uma alternativa igualmente impressionante.",
+        "As Escadarias do Selarón ficam mais fotogênicas com a luz da manhã. Peça ao seu guia para planejar essa parada com antecedência.",
+        "Leve uma mochila pequena — você estará de pé por até 8 horas em diferentes bairros.",
+        "Mantenha o celular carregado. Entre o Cristo, o Pão de Açúcar, Santa Teresa e o Selarón, você vai querer bateria de sobra para fotos.",
+      ],
     },
     {
       id: "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
@@ -1058,6 +1289,13 @@ export const tours = {
         { q: "O que acontece se o tempo estiver ruim e o Cristo estiver encoberto por nuvens?", a: "O clima no Rio muda rapidamente -- mesmo manhãs nubladas costumam abrir ao longo da manhã. Seu guia monitorará as condições e aconselhará o melhor horário. Se a visibilidade estiver muito baixa, podemos ajustar a ordem das visitas ou reagendar sem custo adicional." },
         { q: "Este tour é adequado para passageiros de cruzeiro?", a: "Este tour foi pensado especialmente para passageiros de cruzeiro. O traslado do terminal Pier Mauá está incluído e as 5 horas cabem confortavelmente dentro da janela de tempo no porto. Seu guia garantirá que você retorne ao navio no horário." },
       ],
+      tips: [
+        "Este passeio é otimizado para passageiros de cruzeiro — se você chega pelo Pier Mauá, informe o horário de retorno ao navio ao reservar para que tenhamos uma margem confortável.",
+        "O Cristo Redentor e o Pão de Açúcar estão melhores de manhã, antes das nuvens da tarde chegarem. O passeio é planejado com essa lógica.",
+        "O bondinho do Pão de Açúcar tem duas etapas — a primeira parada no Morro da Urca já oferece vistas espetaculares e é menos movimentada que o topo.",
+        "Se você vem direto do terminal de cruzeiros, leve uma bolsa pequena em vez de mala grande.",
+        "As duas atrações têm lojas de souvenirs — leve isso em conta ao planejar o tempo em cada parada.",
+      ],
     },
     {
       id: "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
@@ -1087,6 +1325,13 @@ export const tours = {
         { q: "O que devo vestir para um tour às 4h da manhã?", a: "Leve um casaco leve -- o topo pode estar fresco e ventoso antes do amanhecer mesmo no verão carioca. Tênis confortável é essencial. Conforme o dia esquenta após o Cristo Redentor, roupas mais leves funcionam bem." },
         { q: "Todos os ingressos estão incluídos, inclusive o acesso especial ao Pão de Açúcar?", a: "Sim, todos os ingressos incluindo o acesso especial de madrugada ao Pão de Açúcar e a entrada do Cristo Redentor estão incluídos no preço do tour." },
       ],
+      tips: [
+        "Sua busca é às 4h — coloque dois alarmes. Seu guia estará esperando no lobby do hotel exatamente no horário.",
+        "O topo do Pão de Açúcar pode estar ventoso e visivelmente mais fresco antes do amanhecer, mesmo no verão. Leve um casaco leve que você possa tirar conforme o dia esquenta.",
+        "Leve câmera ou smartphone com bom modo de pouca luz. As cores do amanhecer sobre a Baía de Guanabara são extraordinárias — é o momento central do passeio.",
+        "Coma algo leve antes ou durante o trajeto. O início às 4h significa que o café da manhã vem depois — seu guia pode recomendar boas opções perto do Cristo.",
+        "Este passeio só está disponível aos sábados. Se precisar reagendar, entre em contato com a maior antecedência possível — as vagas de sábado se esgotam semanas antes.",
+      ],
     },
     {
       id: "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
@@ -1113,6 +1358,13 @@ export const tours = {
         { q: "A que horas o tour Hora Dourada costuma começar?", a: "Os horários de início variam conforme a estação do ano para se alinhar ao pôr do sol. Geralmente entre 13h e 15h. Ao reservar, confirmaremos o horário exato conforme a data para garantir o timing perfeito da hora dourada." },
         { q: "É possível jantar depois do tour?", a: "Sim -- o tour termina no Pão de Açúcar ao final do pôr do sol. Seu motorista pode levá-lo diretamente a um restaurante depois. Podemos recomendar ótimas opções perto do Pão de Açúcar ou em qualquer parte do Rio." },
         { q: "Os ingressos sem fila estão incluídos para as duas atrações?", a: "Sim, os ingressos sem fila para o Cristo Redentor e o bondinho do Pão de Açúcar estão incluídos. Isso é especialmente importante no tour Hora Dourada pois o timing do pôr do sol é preciso -- filas comprometeriam a experiência." },
+      ],
+      tips: [
+        "O horário de início varia conforme a estação para se alinhar ao pôr do sol — confirme seu horário exato de busca ao reservar. Geralmente entre 13h e 15h.",
+        "Leve câmera ou smartphone — a luz dourada sobre o Cristo e o pôr do sol do topo do Pão de Açúcar estão entre os momentos mais fotografados do Rio. Um mini tripé vale a pena.",
+        "A subida no bondinho é cronometrada para chegar ao topo exatamente quando o sol começa a baixar. Confie no timing — seu guia sabe exatamente a hora certa de subir.",
+        "Se quiser jantar após o passeio, avise seu guia. A região do Pão de Açúcar tem ótimos restaurantes e o motorista pode levar você diretamente.",
+        "O timing do pôr do sol é preciso — os ingressos sem fila estão incluídos especificamente para garantir que você chegue ao topo antes de a luz mudar.",
       ],
     },
     {
@@ -1144,6 +1396,13 @@ export const tours = {
         { q: "O que devemos vestir para o Show Jantar Roxy?", a: "Elegante casual é apropriado -- o Roxy é um local sofisticado. Não é necessária roupa formal, mas evite roupas de praia. Um vestido ou blusa bonita para mulheres, camisa com colarinho ou blazer leve para homens." },
         { q: "As bebidas estão incluídas no Roxy?", a: "O jantar de três pratos está incluído mas as bebidas no Roxy são pagas separadamente. Calcule aproximadamente USD 20-40 por pessoa para bebidas." },
       ],
+      tips: [
+        "Os ingressos do Show Roxy não são reembolsáveis após a compra — isso se aplica independentemente do aviso dado. Reserve apenas se seus planos estiverem confirmados.",
+        "Este passeio só está disponível de quarta a domingo. O Roxy não funciona às segundas e terças.",
+        "Vista-se elegante casual para o Roxy — é um local sofisticado. Roupas de praia não são adequadas. Além disso, vista o que o fizer sentir confortável.",
+        "As bebidas no Roxy não estão incluídas no preço do passeio. Calcule aproximadamente USD 20–40 por pessoa conforme suas preferências.",
+        "Leve documento de identidade — o Roxy pode solicitá-lo na entrada.",
+      ],
     },
     {
       id: "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
@@ -1171,6 +1430,13 @@ export const tours = {
         { q: "Precisamos saber nadar ou ter experiência em snorkel?", a: "Não é necessária experiência prévia. O equipamento de snorkel é fornecido e as águas da Ilha Grande são calmas e cristalinas, adequadas para iniciantes. Se alguém do grupo preferir ficar na praia, também está ótimo." },
         { q: "Qual é a diferença entre a opção padrão e a opção Lopes Mendes?", a: "Lopes Mendes é consistentemente classificada entre as praias mais bonitas do Brasil -- uma longa faixa de areia branca prístina acessível apenas de barco. A opção padrão explora diversas praias e enseadas. O upgrade para Lopes Mendes adiciona USD 100 ao preço do grupo e vale a pena se você tem amantes de praia no grupo." },
         { q: "O que devemos levar para o dia na Ilha Grande?", a: "Roupa de banho, protetor solar ecológico, chapéu, roupa leve para o trajeto, roupa para trocar e dinheiro para almoço na ilha (refeições não incluídas). O dia de 10 horas começa cedo -- tipicamente partindo do Rio entre 6h e 7h." },
+      ],
+      tips: [
+        "Passe protetor solar à prova d'água antes de embarcar na lancha — reaplicar durante o trajeto é mais difícil e o sol equatorial sobre a água aberta é intenso.",
+        "Leve uma bolsa impermeável ou dry sack para o celular, câmera e objetos de valor. O passeio de lancha pode molhar dependendo das condições do mar.",
+        "Remédio para enjoo é recomendado se você tem sensibilidade ao movimento de embarcações. Tome antes de partir, não depois que os sintomas começarem.",
+        "Leve dinheiro para o almoço na ilha — há bons restaurantes na vila de Abraão mas a maioria prefere dinheiro em espécie. As refeições não estão incluídas.",
+        "O passeio sai do Rio muito cedo — geralmente entre 6h e 7h. Prepare tudo na noite anterior.",
       ],
     },
     {
@@ -1200,6 +1466,13 @@ export const tours = {
         { q: "Com 23 praias na península, quantas visitaremos de verdade?", a: "Em um dia de 10 horas, você visitará realisticamente 4-6 praias dependendo das preferências e ritmo do grupo. Seu guia recomendará as melhores conforme seus interesses -- seja águas calmas para nadar, paisagens dramáticas ou animados beach bars. A famosa Rua das Pedras e o calçadão Orla Bardot também estão incluídos." },
         { q: "Qual é a melhor época do ano para visitar Búzios?", a: "Búzios é linda o ano todo mas a alta temporada é de dezembro a março com água mais quente. Os meses intermediários de outubro-novembro e abril-maio oferecem ótimas condições com menos turistas. Julho e agosto podem ser mais frescos mas o charme de Búzios continua presente." },
         { q: "Devemos levar dinheiro para Búzios?", a: "Sim, leve dinheiro para almoço, aluguel de equipamentos de praia (espreguiçadeiras, guarda-sóis) e compras na Rua das Pedras. Embora muitos estabelecimentos aceitem cartão, os quiosques de praia menores geralmente preferem dinheiro. Refeições e equipamentos de praia não estão incluídos no tour." },
+      ],
+      tips: [
+        "Búzios tem 23 praias — seu guia recomendará as melhores conforme seus interesses e as condições do dia. Você não verá todas as 23, mas verá as certas.",
+        "A Rua das Pedras é a rua principal de restaurantes e lojas — melhor explorada a pé. Pergunte ao seu guia qual trecho tem as melhores lojas locais vs. as mais turísticas.",
+        "Leve dinheiro para almoço, aluguel de cadeiras de praia e guarda-sóis, e compras. Muitos vendedores menores e quiosques de praia não aceitam cartão.",
+        "O trajeto do Rio leva cerca de 2h30 pela pitoresca Região dos Lagos — as vistas costeiras no caminho de volta são especialmente belas ao pôr do sol.",
+        "Búzios está melhor de abril a novembro — fora das multidões do verão mas com água quente e sol pleno.",
       ],
     },
     {
@@ -1232,6 +1505,13 @@ export const tours = {
         { q: "Todas as entradas de museus e palácios estão incluídas?", a: "Sim, todas as entradas estão incluídas: Palácio Quitandinha, Museu Imperial com as joias da coroa, Casa dos 7 Erros e Catedral Metropolitana. Não é necessário comprar nada separadamente." },
         { q: "Petrópolis é significativamente mais fria que o Rio?", a: "Sim, notavelmente. A 840 metros de altitude, Petrópolis é 5-8 graus Celsius mais fria que o Rio o ano todo. No inverno (junho-agosto) as temperaturas podem chegar a 10-15 graus. Leve uma jaqueta ou camada leve independentemente do clima do Rio ao partir." },
         { q: "Há tempo para almoçar em Petrópolis?", a: "Sim -- o formato de 8 horas inclui uma pausa confortável para almoço. Petrópolis tem ótimos restaurantes em seu centro de estilo europeu. O almoço não está incluído mas seu guia recomendará as melhores opções locais." },
+      ],
+      tips: [
+        "Petrópolis fica a 840 metros de altitude — leve um casaco leve independentemente da temperatura no Rio quando você sair. É consistentemente 5–8°C mais fria e chuva à tarde é comum.",
+        "A estrada de montanha do Rio é espetacular — a subida pela Serra dos Órgãos é parte da experiência. Se você é propenso a enjoo em estradas com muitas curvas, tome medicação antes de partir.",
+        "O Museu Imperial contém as joias da coroa brasileira originais e artefatos reais — reserve pelo menos 45 minutos dentro. É uma das coleções museológicas mais impressionantes da América do Sul.",
+        "A Casa dos 7 Erros é uma curiosa excentricidade arquitetônica onde um brasileiro construiu uma casa deliberadamente cheia de erros de construção. A explicação do seu guia a torna genuinamente fascinante.",
+        "Não disponível às segundas — a maioria dos museus e palácios de Petrópolis fecha nesse dia. O passeio funciona de terça a domingo.",
       ],
     },
     {
@@ -1267,6 +1547,13 @@ export const tours = {
         { q: "Este tour inclui o Pão de Açúcar?", a: "Sim -- o Pão de Açúcar está incluído como parte deste tour que combina destaques naturais e culturais. O dia de 8 horas cobre Pão de Açúcar, Parque Nacional da Tijuca, Jardim Botânico e Parque Lage." },
         { q: "O que é o Parque Lage e por que está incluído?", a: "O Parque Lage é um belo parque histórico ao pé do Morro do Corcovado, com uma mansão neoclássica (hoje escola de arte) cercada de Mata Atlântica. Seu famoso café é uma instituição carioca e o parque oferece vistas deslumbrantes do Cristo Redentor acima da floresta." },
       ],
+      tips: [
+        "O Parque Nacional da Tijuca é a maior floresta urbana do mundo — os avistamentos de fauna dependem do horário e da estação. Tucanos, saguis e borboletas são vistos com frequência. Seu guia conhece os melhores pontos.",
+        "Leve repelente de insetos para a seção da floresta — é uma floresta tropical de verdade e mosquitos estão presentes, especialmente após chuva.",
+        "O Jardim Botânico tem mais de 6.500 espécies de plantas em 137 hectares — você não verá tudo, mas seu guia focará nas seções mais extraordinárias, incluindo as vitórias-régias gigantes.",
+        "O café do Parque Lage é um dos lugares mais atmosféricos do Rio — um café Art Nouveau centenário dentro de uma mansão neoclássica com o Cristo Redentor visível acima do dossel da floresta.",
+        "Não disponível às segundas — o Parque Lage tem acesso reduzido nesse dia. O passeio funciona de terça a domingo.",
+      ],
     },
     {
       id: "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
@@ -1299,6 +1586,13 @@ export const tours = {
         { q: "Os fortes militares históricos são interessantes mesmo para quem não é fã de história?", a: "Absolutamente. A Fortaleza de Santa Cruz e a Fortaleza de São Luís oferecem algumas das vistas mais dramáticas da região metropolitana do Rio -- olhando diretamente para a cidade do outro lado da baía. O contexto histórico que seu guia fornece dá vida à importância estratégica desses fortes dos séculos XVI-XVII." },
         { q: "O almoço perto de Niterói está incluído?", a: "O almoço não está incluído mas há uma parada à beira-mar incorporada ao itinerário. Seu guia levará você à orla de Icaraí onde excelentes restaurantes de frutos do mar têm vistas diretas para o Rio. Calcule USD 20-40 por pessoa para um bom almoço com bebidas." },
       ],
+      tips: [
+        "O MAC Niterói fica em uma falésia acima da Baía de Guanabara — a vista do skyline do Rio a partir da rampa externa do museu é uma das melhores de toda a região metropolitana e vale a pena contemplar com calma.",
+        "A travessia da Ponte Rio–Niterói (13,3 km) oferece vistas espetaculares da baía pelo carro. Deixe a câmera pronta na hora da travessia.",
+        "A Fortaleza de Santa Cruz data do século XVI — o contexto histórico do seu guia transforma o que poderia ser apenas paredes velhas em uma história vívida do passado colonial e importância estratégica do Rio.",
+        "Uma parada para almoço à beira-mar em Icaraí está incluída no itinerário. Leve USD 20–40 por pessoa para uma boa refeição com bebidas.",
+        "Não disponível às segundas — o MAC Niterói fecha nesse dia. O passeio funciona de terça a domingo.",
+      ],
     },
     {
       id: "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
@@ -1329,6 +1623,13 @@ export const tours = {
         { q: "O tour está disponível todos os dias?", a: "Não está disponível às segundas-feiras -- o Museu do Amanhã e o Museu Histórico Nacional fecham às segundas. A experiência de Carnaval está disponível apenas de terça a sábado." },
         { q: "O que é o AquaRio e é adequado para adultos sem crianças?", a: "O AquaRio é o maior aquário da América do Sul com mais de 8.000 animais marinhos. É uma ótima experiência para adultos -- o túnel submarino e as exposições de águas profundas são genuinamente impressionantes. Você não precisa de crianças no grupo para aproveitar." },
         { q: "Qual é a melhor forma de aproveitar a visita à escola de samba?", a: "A visita funciona melhor quando você interage com os artesãos e faz perguntas por meio do guia. São as pessoas que passam meses criando os elaborados carros alegóricos e fantasias para o Carnaval. A energia na oficina é elétrica mesmo fora de temporada." },
+      ],
+      tips: [
+        "O Museu do Amanhã é interativo e genuinamente imersivo — reserve pelo menos 90 minutos dentro. Não apresse por causa das outras atrações.",
+        "A visita à escola de samba do Carnaval só está disponível de terça a sábado. Se o seu passeio for num domingo ou segunda, essa parte é substituída — confirme ao reservar.",
+        "O AquaRio é o maior aquário da América do Sul — o túnel submarino com tubarões e raias sobre sua cabeça é o ponto alto. Reserve pelo menos 60 minutos.",
+        "O distrito portuário (Porto Maravilha) onde essas atrações se concentram foi completamente revitalizado para os Jogos Olímpicos de 2016 — o contexto histórico urbano do seu guia adiciona uma camada fascinante à visita.",
+        "Não disponível às segundas — o Museu do Amanhã fecha nesse dia. O passeio funciona de terça a domingo.",
       ],
     },
     {
@@ -1361,6 +1662,13 @@ export const tours = {
         { q: "O que torna a Confeitaria Colombo especial?", a: "A Confeitaria Colombo, aberta em 1894, é um dos cafés Art Nouveau mais bonitos do mundo -- uma sala impressionante de espelhos belgas, vitrais e azulejos portugueses. É um café em funcionamento real, não um museu. Um café ou doce lá é um passo de volta à Belle Époque carioca." },
         { q: "Quanto de caminhada há e o trajeto é plano?", a: "O tour percorre aproximadamente 3-4 km em 3h30 em ritmo tranquilo com múltiplas paradas. O centro histórico do Rio é relativamente plano. Tênis confortável é recomendado. As Escadarias do Selarón envolvem uma subida curta." },
       ],
+      tips: [
+        "O ponto de encontro é o Theatro Municipal na Cinelândia — facilmente acessível pelo metrô (estação Cinelândia) ou Uber. O passeio não inclui transporte até o ponto de encontro.",
+        "A Confeitaria Colombo (1894) é um dos cafés Art Nouveau mais bonitos do mundo — tome um café ou doce lá. É um café em funcionamento, não um museu, e a experiência faz parte do passeio.",
+        "As Escadarias do Selarón envolvem uma subida curta — tênis confortável com boa aderência é recomendado. Os degraus são revestidos de azulejos e podem estar escorregadios após chuva.",
+        "Não disponível aos domingos — o passeio funciona de segunda a sábado.",
+        "O centro histórico é melhor explorado num dia de semana quando a região está animada com moradores locais. As manhãs de sábado também são ótimas — mais tranquilas mas com boa atmosfera.",
+      ],
     },
     {
       id: "Tour a Pé por Santa Teresa: Arte, História e Cantos Escondidos",
@@ -1392,6 +1700,13 @@ export const tours = {
         { q: "O tour está disponível todos os dias?", a: "Disponível todos os dias exceto domingos. O tour começa no Largo dos Guimarães, o coração social do bairro." },
         { q: "O transporte até o ponto de encontro está incluído?", a: "O transporte para o Largo dos Guimarães não está incluído. A forma clássica de chegar do centro é pelo histórico bonde de Santa Teresa -- consulte seu guia sobre essa opção ao reservar. Uber também está disponível e é simples." },
         { q: "As ruas de Santa Teresa são muito íngremes?", a: "Santa Teresa é um bairro no morro e algumas ruas são íngremes e com paralelepípedos. O tour é projetado em ritmo confortável com muitas paradas. Tênis confortável com boa aderência é recomendado -- evite sandálias rasteiras ou com salto." },
+      ],
+      tips: [
+        "O ponto de encontro é o Largo dos Guimarães — o coração social de Santa Teresa. Considere chegar pelo histórico bonde do centro para uma experiência carioca autêntica. Pergunte ao seu guia sobre essa opção ao reservar.",
+        "Santa Teresa é um bairro no morro — algumas ruas são íngremes e com paralelepípedos. Tênis com boa aderência é recomendado. O ritmo do passeio é tranquilo com muitas paradas.",
+        "O Bar do Gomez é um dos botequins mais antigos do Rio, aberto desde 1919. Uma cerveja gelada ou guaraná aqui faz parte da experiência.",
+        "O Parque das Ruínas oferece uma das melhores vistas do centro do Rio e da baía — chegue nessa parada com a câmera pronta.",
+        "Não disponível aos domingos — o passeio funciona de segunda a sábado.",
       ],
     },
     {
@@ -1426,6 +1741,13 @@ export const tours = {
         { q: "Vegetarianos ou pessoas com restrições alimentares podem participar?", a: "Sim -- mencione qualquer restrição alimentar ao reservar e seu guia adaptará as paradas. Para alergias graves, entre em contato com antecedência para verificar todos os ingredientes em cada parada." },
         { q: "Ficaremos satisfeitos após o tour ou devemos planejar uma refeição separada?", a: "A maioria considera as 8-10 degustações genuinamente satisfatórias. O Tour Gastronômico funciona bem como café da manhã tardio/brunch (começando por volta das 10-11h) ou como substituto do almoço." },
       ],
+      tips: [
+        "Venha com fome — este não é um passeio de petiscos leves. As 8–10 degustações são genuinamente fartas. A maioria dos viajantes não precisa almoçar depois.",
+        "O ponto de encontro é o Restaurante Cortiço Carioca na Lapa — facilmente acessível pelo metrô (estação Cinelândia, 5 minutos a pé) ou Uber. O transporte até o ponto de encontro não está incluído.",
+        "Mencione qualquer restrição alimentar ou alergia ao reservar — seu guia adaptará as paradas. Para alergias graves, entre em contato com antecedência para verificar os ingredientes em cada local.",
+        "O passeio inclui uma degustação de cachaça — a bebida nacional do Brasil, feita de caldo de cana fermentado. Se preferir pular o álcool, basta avisar seu guia.",
+        "Não disponível aos domingos — o passeio funciona de segunda a sábado.",
+      ],
     },
     {
       id: "Pequena África: A Alma do Rio e a Herança Africana Revelada",
@@ -1458,6 +1780,13 @@ export const tours = {
         { q: "O tour está disponível todos os dias?", a: "Disponível de segunda a sábado. Não disponível aos domingos. O tour começa na Estátua do General Osório na Praça XV, facilmente acessível pelo metrô (estação Uruguaiana) ou Uber." },
         { q: "O transporte até o ponto de encontro está incluído?", a: "O transporte para a Praça XV não está incluído. É facilmente acessível pelo metrô (estação Uruguaiana) ou Uber de todos os bairros do Rio." },
       ],
+      tips: [
+        "O Cais do Valongo é Patrimônio Mundial da UNESCO — o vestígio físico mais importante do tráfico de escravos africanos nas Américas. Visitá-lo com um guia experiente fornece o contexto histórico que transforma esse cais em um dos locais mais significativos do hemisfério ocidental.",
+        "Este passeio cobre conteúdo histórico sério, incluindo as realidades da escravidão e seu legado. É abordado com profundidade e respeito. Para crianças menores de 12 anos, considere se o conteúdo é adequado para a idade.",
+        "O ponto de encontro é a Estátua do General Osório na Praça XV — facilmente acessível pelo metrô (estação Uruguaiana) ou Uber. O transporte até o ponto de encontro não está incluído.",
+        "O bairro da Pequena África é melhor explorado num dia de semana quando a região tem seu ritmo de trabalho autêntico. Evite domingos quando muitos locais estão fechados.",
+        "Não disponível aos domingos — o passeio funciona de segunda a sábado.",
+      ],
     },
     {
       id: "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
@@ -1488,6 +1817,13 @@ export const tours = {
         { q: "Como o preço é determinado para um Tour Personalizado?", a: "O preço varia conforme o itinerário, duração, tamanho do grupo e atrações selecionadas. Forneceremos um orçamento completo e transparente antes de você confirmar. Sem custos surpresa no dia do tour." },
         { q: "O Tour Personalizado pode acomodar pessoas com limitações de mobilidade?", a: "Sim -- esta é uma das principais razões pelas quais os viajantes escolhem o Tour Personalizado. Podemos criar um itinerário que evite escadas, terrenos íngremes ou longas caminhadas, mantendo uma experiência excepcional. Mencione qualquer consideração de mobilidade ao entrar em contato." },
         { q: "Podemos combinar múltiplos tours ou atrações que não estão no seu menu padrão?", a: "Com certeza -- esse é o objetivo do Tour Personalizado. Seja um restaurante específico, bairro, evento ou atividade não coberta nos nossos tours padrão, podemos incorporar. O Rio tem muito mais a oferecer do que qualquer tour fixo pode cobrir e o conhecimento local dos nossos guias é extenso." },
+      ],
+      tips: [
+        "Quanto mais detalhes você compartilhar conosco antes do passeio, melhor podemos desenhá-lo. Conte seus interesses, itens imperdíveis, necessidades alimentares, considerações de mobilidade e qualquer coisa que já tenha visto no Rio.",
+        "Passeios personalizados vão de 4 horas (meio dia) até itinerários de vários dias pelo estado do Rio — Petrópolis, Búzios, Ilha Grande, Paraty. Informe seu tempo disponível ao entrar em contato.",
+        "Se você tem limitações de mobilidade, mencione isso desde o início — podemos criar um itinerário totalmente acessível que evite escadas, terrenos íngremes e longas caminhadas, mantendo uma experiência excepcional.",
+        "Não há cobrança pelo processo de planejamento. Entre em contato pelo WhatsApp ou email, criaremos o itinerário, ajustaremos conforme seu feedback e confirmaremos quando estiver satisfeito.",
+        "O preço varia conforme itinerário, duração, tamanho do grupo e atrações específicas. Forneceremos um orçamento completo e transparente antes de confirmar — sem custos surpresa no dia.",
       ],
     }
   ]
