@@ -38,7 +38,7 @@ export const tours = {
     {
       id: "Rio Express: Christ & Sugarloaf in 5 Hours",
       category: "city-tours",
-      isFeatured: false,
+      isFeatured: true,
       slug: "rio-express",
       imageSlug: "rio-flash-5h",
       title: "Rio Express: Christ & Sugarloaf in 5 Hours",
@@ -98,7 +98,7 @@ export const tours = {
     {
       id: "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       category: "city-tours",
-      isFeatured: true,
+      isFeatured: false,
       slug: "golden-hour-rio",
       title: "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       shortDescription: "Experience Rio's golden hour beauty with afternoon visits to Christ the Redeemer and a perfectly timed sunset from Sugarloaf Mountain.",
@@ -153,7 +153,7 @@ export const tours = {
     {
       id: "Island Escape: Ilha Grande by Private Speedboat",
       category: "day-trips",
-      isFeatured: false,
+      isFeatured: true,
       slug: "island-escape-ilha-grande",
       title: "Island Escape: Ilha Grande by Private Speedboat",
       shortDescription: "Embark on an exclusive private speedboat journey around the pristine tropical paradise of Ilha Grande.",
@@ -209,7 +209,7 @@ export const tours = {
     {
       id: "Petrópolis: Imperial Palaces & Mountain Escape",
       category: "day-trips",
-      isFeatured: true,
+      isFeatured: false,
       slug: "petropolis-imperial",
       title: "Petrópolis: Imperial Palaces & Mountain Escape",
       shortDescription: "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
@@ -531,7 +531,7 @@ export const tours = {
     {
       id: "Río Express: Cristo y Pan de Azúcar en 5 Horas",
       category: "city-tours",
-      isFeatured: false,
+      isFeatured: true,
       slug: "rio-express",
       imageSlug: "rio-flash-5h",
       title: "Río Express: Cristo y Pan de Azúcar en 5 Horas",
@@ -592,7 +592,7 @@ export const tours = {
     {
       id: "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
       category: "city-tours",
-      isFeatured: true,
+      isFeatured: false,
       slug: "hora-dorada-rio",
       imageSlug: "golden-hour-rio",
       title: "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
@@ -649,7 +649,7 @@ export const tours = {
     {
       id: "Escape a la Isla: Ilha Grande en Lancha Privada",
       category: "day-trips",
-      isFeatured: false,
+      isFeatured: true,
       slug: "island-escape-ilha-grande",
       title: "Escape a la Isla: Ilha Grande en Lancha Privada",
       shortDescription: "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
@@ -706,7 +706,7 @@ export const tours = {
     {
       id: "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       category: "day-trips",
-      isFeatured: true,
+      isFeatured: false,
       slug: "petropolis-imperial",
       imageSlug: "petropolis-imperial",
       title: "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
@@ -1030,7 +1030,7 @@ export const tours = {
     {
       id: "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       category: "city-tours",
-      isFeatured: false,
+      isFeatured: true,
       slug: "passeio-expresso-rio-5-horas-cristo-pao-acucar",
       imageSlug: "rio-flash-5h",
       title: "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
@@ -1091,7 +1091,7 @@ export const tours = {
     {
       id: "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       category: "city-tours",
-      isFeatured: true,
+      isFeatured: false,
       slug: "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
       imageSlug: "golden-hour-rio",
       title: "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
@@ -1148,7 +1148,7 @@ export const tours = {
     {
       id: "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       category: "day-trips",
-      isFeatured: false,
+      isFeatured: true,
       slug: "island-escape-ilha-grande",
       title: "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       shortDescription: "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
@@ -1205,7 +1205,7 @@ export const tours = {
     {
       id: "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       category: "day-trips",
-      isFeatured: true,
+      isFeatured: false,
       slug: "passeio-privado-petropolis-cidade-imperial",
       imageSlug: "petropolis-imperial",
       title: "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
