@@ -34,32 +34,32 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "12+ Years of Expertise",
-          description: "Since 2013, we've been crafting unforgettable Rio experiences with deep local knowledge and proven excellence."
+          description: "Since 2013, we've guided more than 15,000 travelers through Rio de Janeiro — from honeymooners and solo adventurers to families and cruise passengers. Over 12 years, we've refined every tour to give you the best of this city, without the wasted hours."
         },
         {
           icon: "customize",
           title: "Fully Customizable Experiences",
-          description: "Every tour is tailored to your interests, pace, and preferences. Your Rio adventure, your way."
+          description: "All 14 tours are designed as starting points, not fixed scripts. Want to spend longer at Selarón Steps, skip one attraction, or add a neighborhood off the beaten path? Your guide adapts in real time. No extra charges, no complications."
         },
         {
           icon: "guide",
           title: "Expert Local Guides",
-          description: "Our certified guides are Rio natives who share authentic stories and insider knowledge you won't find in guidebooks."
+          description: "Our guides are certified Rio-born locals who know this city as home — not as a tourist destination. They share the stories, shortcuts, and hidden spots that no guidebook covers, in English, Spanish, or Portuguese."
         },
         {
           icon: "travelers",
           title: "All-Inclusive Pricing",
-          description: "Our prices include all entrance fees unless noted. No hidden costs, no surprises. What you see is what you pay."
+          description: "Tour prices include private transportation, your certified guide, and all entrance tickets listed. Hotel pickup and drop-off anywhere in Rio — hotels, Airbnbs, airports, and the cruise port — is always included. No hidden fees. What you see is what you pay."
         },
         {
           icon: "star",
           title: "Top-Rated on TripAdvisor, Viator & Civitatis",
-          description: "Consistently recognized as one of Rio's best tour operators with outstanding reviews across all major platforms."
+          description: "4.9 out of 5 average rating from more than 600 verified reviews across TripAdvisor, Viator, and Civitatis. Consistently ranked among Rio's top private tour operators — not by us, but by the travelers who've been there."
         },
         {
           icon: "payment",
           title: "Book Now, Pay 72h Before",
-          description: "Reserve your spot with zero payment upfront. Pay only 72 hours before your tour. Free cancellation included."
+          description: "Reserve your tour today with no payment required. You only pay 72 hours before your tour date. Need to cancel? Free cancellation up to 72 hours before your tour — no questions asked, full refund guaranteed."
         }
       ]
     },
@@ -69,13 +69,13 @@ export const homeContent = {
       questions: [
         {
           id: 1,
-          question: "How do I book a tour?",
-          answer: "Booking is easy! Simply browse our tours, select your preferred experience, choose your date and group size, and complete the booking form. You can also contact us directly via WhatsApp or email for personalized assistance. We'll confirm your reservation within 24 hours."
+          question: "How much does a private tour in Rio cost?",
+          answer: "Private city tours in Rio start at USD 335 for a group of 1, with most full-day tours ranging from USD 410 to USD 580 depending on the itinerary and group size. Walking tours are priced per person from USD 65. Day trips to destinations like Petrópolis, Búzios, and Ilha Grande start from USD 360. All prices include private transportation, a certified local guide, and entrance fees to attractions listed. There are no hidden costs."
         },
         {
           id: 2,
           question: "What's included in the tour price?",
-          answer: "All our tours include private transportation with a professional driver, a certified English-speaking guide, entrance fees to attractions, pickup and drop-off anywhere in Rio de Janeiro (including hotels, Airbnbs, airports, and the cruise port), and complimentary bottled water. Meals and gratuities are not included unless specified in the tour description."
+          answer: "All our tours include private transportation with a professional driver, a certified local guide fluent in English, Spanish, and Portuguese, entrance fees to attractions, pickup and drop-off anywhere in Rio de Janeiro (including hotels, Airbnbs, airports, and the cruise port), and complimentary bottled water. Meals and gratuities are not included unless specified in the tour description."
         },
         {
           id: 3,
@@ -85,22 +85,22 @@ export const homeContent = {
         {
           id: 4,
           question: "When do I need to pay for my tour?",
-          answer: "You can reserve your tour with zero payment upfront. Payment is only required 72 hours before your scheduled tour date. This gives you flexibility to plan your trip without immediate financial commitment. We accept credit cards through our secure payment link and PayPal."
+          answer: "You can reserve your tour with zero payment upfront. Payment is only required 72 hours before your scheduled tour date. This gives you flexibility to plan your trip without immediate financial commitment. We accept all major credit cards — Visa, Mastercard, and others — through our secure payment link, as well as PayPal. American Express is not accepted."
         },
         {
           id: 5,
           question: "What's your cancellation policy?",
-          answer: "We offer free cancellation up to 72 hours before your tour start time for a full refund. Cancellations made within 72 hours are non-refundable. Weather-related cancellations decided by our team are fully refundable or can be rescheduled at no extra cost."
+          answer: "We offer free cancellation up to 72 hours before your tour start time for a full refund. Cancellations made within 72 hours are non-refundable. Weather-related cancellations decided by our team are fully refundable or can be rescheduled at no extra cost. Exception: tours that include the Roxy Dinner Show have non-refundable show tickets regardless of notice given — this is stated clearly at booking."
         },
         {
           id: 6,
           question: "Do your guides speak English, Spanish, Portuguese and more?",
-          answer: "Yes! All our guides are fluent in English and Portuguese (their native language). Many also speak Spanish, French, Italian, and German. When booking, let us know your language preference, and we'll match you with the best guide for your needs (subject to availability)."
+          answer: "All our guides are fluent in English and Portuguese, and most also speak Spanish — making Be Free Tours one of the only private tour operators in Rio with full trilingual coverage. For other languages, please contact us when booking and we'll do our best to match you with the right guide based on availability."
         },
         {
           id: 7,
           question: "Do you offer hotel pickup?",
-          answer: "Yes! Complimentary pickup and drop-off is included in all our private tours anywhere in Rio de Janeiro, including all neighborhoods, airports (GIG and SDU), and the cruise port. Just provide your location when booking, and we'll be there."
+          answer: "Yes — complimentary pickup and drop-off is included in all our private tours anywhere in Rio de Janeiro, including all neighborhoods, all three airports (GIG, SDU, and RRJ), and the cruise port at Pier Mauá. When booking, provide your exact address and we'll confirm your pickup time, typically 15 to 30 minutes before the tour start depending on your location."
         },
         {
           id: 8,
@@ -171,32 +171,32 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "Más de 12 Años de Experiencia",
-          description: "Desde 2013, hemos estado creando experiencias inolvidables en Río con profundo conocimiento local y excelencia comprobada."
+          description: "Desde 2013, hemos guiado a más de 15.000 viajeros por Río de Janeiro — parejas en luna de miel, viajeros solos, familias y pasajeros de crucero. Más de 12 años refinando cada excursión para darte lo mejor de la ciudad, sin horas perdidas."
         },
         {
           icon: "customize",
           title: "Experiencias Totalmente Personalizables",
-          description: "Cada tour se adapta a tus intereses, ritmo y preferencias. Tu aventura en Río, a tu manera."
+          description: "Los 14 tours son puntos de partida, no guiones fijos. ¿Quieres más tiempo en las Escaleras de Selarón, saltarte una atracción o agregar un barrio fuera de la ruta habitual? Tu guía se adapta en tiempo real. Sin cargos extra, sin complicaciones."
         },
         {
           icon: "guide",
           title: "Guías Locales Expertos",
-          description: "Nuestros guías certificados son nativos de Río que comparten historias auténticas y conocimientos internos que no encontrarás en las guías."
+          description: "Nuestros guías son locales certificados nacidos en Río que conocen esta ciudad como su hogar — no como destino turístico. Comparten historias, atajos y rincones escondidos que ninguna guía cubre, en inglés, español o portugués."
         },
         {
           icon: "travelers",
           title: "Precios Todo Incluido",
-          description: "Nuestros precios incluyen todas las entradas, salvo que se indique lo contrario. Sin costos ocultos ni sorpresas. Lo que ves es lo que pagas."
+          description: "Los precios incluyen transporte privado, tu guía certificado y todas las entradas indicadas. La recogida y regreso en cualquier lugar de Río — hoteles, Airbnbs, aeropuertos y terminal de cruceros — siempre está incluida. Sin costos ocultos. Lo que ves es lo que pagas."
         },
         {
           icon: "star",
           title: "Mejor Calificado en TripAdvisor, Viator y Civitatis",
-          description: "Consistentemente reconocidos como uno de los mejores operadores turísticos de Río con excelentes reseñas en todas las plataformas principales."
+          description: "Calificación promedio de 4,9 sobre 5 con más de 600 reseñas verificadas en TripAdvisor, Viator y Civitatis. Reconocidos como uno de los mejores operadores privados de Río — no por nosotros, sino por los viajeros que estuvieron allí."
         },
         {
           icon: "payment",
           title: "Reserva Ahora, Paga 72h Antes",
-          description: "Reserva tu lugar sin pago inicial. Paga solo 72 horas antes de tu tour. Cancelación gratuita incluida."
+          description: "Reserva tu tour hoy sin ningún pago inicial. Solo pagas 72 horas antes de la fecha del tour. ¿Necesitas cancelar? Cancelación gratuita hasta 72 horas antes — sin preguntas, reembolso completo garantizado."
         }
       ]
     },
@@ -206,13 +206,13 @@ export const homeContent = {
       questions: [
         {
           id: 1,
-          question: "¿Cómo reservo un tour?",
-          answer: "¡Reservar es fácil! Simplemente explora nuestros tours, selecciona tu experiencia preferida, elige tu fecha y tamaño de grupo, y completa el formulario de reserva. También puedes contactarnos directamente por WhatsApp o email para asistencia personalizada. Confirmaremos tu reserva en 24 horas."
+          question: "¿Cuánto cuesta un tour privado en Río de Janeiro?",
+          answer: "Los tours privados por la ciudad de Río comienzan desde USD 335 para un grupo de 1 persona, con la mayoría de los tours de día completo entre USD 410 y USD 580 según el itinerario y el tamaño del grupo. Los tours a pie tienen precio por persona desde USD 65. Las excursiones de día a Petrópolis, Búzios e Ilha Grande comienzan desde USD 360. Todos los precios incluyen transporte privado, guía local certificado y entradas a las atracciones indicadas. Sin costos ocultos."
         },
         {
           id: 2,
           question: "¿Qué incluye el precio del tour?",
-          answer: "Todos nuestros tours incluyen transporte privado con conductor profesional, guía certificado que habla español, entradas a las atracciones, recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y el puerto de cruceros), y agua embotellada de cortesía. Las comidas y propinas no están incluidas a menos que se especifique en la descripción del tour."
+          answer: "Todos nuestros tours incluyen transporte privado con conductor profesional, guía local certificado con fluidez en inglés, español y portugués, entradas a las atracciones, recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros) y agua embotellada de cortesía. Las comidas y propinas no están incluidas a menos que se especifique en la descripción del tour."
         },
         {
           id: 3,
@@ -222,22 +222,22 @@ export const homeContent = {
         {
           id: 4,
           question: "¿Cuándo necesito pagar por mi tour?",
-          answer: "Puedes reservar tu tour sin pago inicial. El pago solo se requiere 72 horas antes de la fecha programada de tu tour. Esto te da flexibilidad para planificar tu viaje sin compromiso financiero inmediato. Aceptamos tarjetas de crédito a través de nuestro enlace de pago seguro y PayPal."
+          answer: "Puedes reservar tu tour sin pago inicial. El pago solo se requiere 72 horas antes de la fecha programada. Esto te da flexibilidad para planificar tu viaje sin compromiso financiero inmediato. Aceptamos las principales tarjetas de crédito — Visa, Mastercard y otras — a través de nuestro enlace de pago seguro, así como PayPal. No aceptamos American Express."
         },
         {
           id: 5,
           question: "¿Cuál es su política de cancelación?",
-          answer: "Ofrecemos cancelación gratuita hasta 72 horas antes del inicio de tu tour para un reembolso completo. Las cancelaciones hechas dentro de las 72 horas no son reembolsables. Las cancelaciones relacionadas con el clima decididas por nuestro equipo son totalmente reembolsables o pueden reprogramarse sin costo adicional."
+          answer: "Ofrecemos cancelación gratuita hasta 72 horas antes del inicio del tour para reembolso completo. Las cancelaciones dentro de las 72 horas no son reembolsables. Las cancelaciones por clima decididas por nuestro equipo son totalmente reembolsables o pueden reprogramarse sin costo adicional. Excepción: los tours que incluyen el Show Cena Roxy tienen entradas no reembolsables independientemente del aviso dado — esto se indica claramente al reservar."
         },
         {
           id: 6,
           question: "¿Sus guías hablan inglés, español, portugués y más?",
-          answer: "¡Sí! Todos nuestros guías son fluidos en inglés y portugués (su lengua nativa). Muchos también hablan español, francés, italiano y alemán. Al reservar, indícanos tu preferencia de idioma y te emparejaremos con el mejor guía para tus necesidades (sujeto a disponibilidad)."
+          answer: "Todos nuestros guías hablan inglés y portugués con fluidez, y la mayoría también habla español — lo que convierte a Be Free Tours en uno de los únicos operadores privados en Río con cobertura trilingüe completa. Para otros idiomas, contáctanos al reservar y haremos lo posible por asignarte el guía más adecuado según disponibilidad."
         },
         {
           id: 7,
           question: "¿Ofrecen recogida en el hotel?",
-          answer: "¡Sí! La recogida y regreso de cortesía está incluida en todos nuestros tours privados en cualquier lugar de Río de Janeiro, incluyendo todos los barrios, aeropuertos (GIG y SDU), y el puerto de cruceros. Solo proporciona tu ubicación al reservar y estaremos allí."
+          answer: "Sí — la recogida y regreso de cortesía está incluida en todos nuestros tours privados en cualquier lugar de Río, incluyendo todos los barrios, los tres aeropuertos (GIG, SDU y RRJ) y la terminal de cruceros Pier Mauá. Al reservar, indica tu dirección exacta y confirmaremos tu horario de recogida, generalmente entre 15 y 30 minutos antes del inicio del tour según tu ubicación."
         },
         {
           id: 8,
@@ -308,32 +308,32 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "Mais de 12 Anos de Experiência",
-          description: "Desde 2013, criamos experiências inesquecíveis no Rio com profundo conhecimento local e excelência comprovada."
+          description: "Desde 2013, guiamos mais de 15.000 viajantes pelo Rio de Janeiro — casais em lua de mel, viajantes solo, famílias e passageiros de cruzeiro. Mais de 12 anos refinando cada passeio para entregar o melhor desta cidade, sem horas desperdiçadas."
         },
         {
           icon: "customize",
           title: "Experiências Totalmente Personalizáveis",
-          description: "Cada passeio é adaptado aos seus interesses, ritmo e preferências. Sua aventura no Rio, do seu jeito."
+          description: "Os 14 passeios são pontos de partida, não roteiros fixos. Quer mais tempo nas Escadarias do Selarón, pular uma atração ou adicionar um bairro fora do caminho comum? Seu guia se adapta em tempo real. Sem cobranças extras, sem complicações."
         },
         {
           icon: "guide",
           title: "Guias Locais Especializados",
-          description: "Nossos guias certificados são cariocas que compartilham histórias autênticas e conhecimento interno que você não encontra nos guias turísticos."
+          description: "Nossos guias são cariocas certificados que conhecem esta cidade como lar — não como destino turístico. Compartilham histórias, atalhos e lugares escondidos que nenhum guia de viagem cobre, em inglês, espanhol ou português."
         },
         {
           icon: "travelers",
           title: "Preços Tudo Incluído",
-          description: "Nossos preços incluem todas as entradas, salvo indicação em contrário. Sem custos ocultos, sem surpresas. O que você vê é o que você paga."
+          description: "Os preços incluem transporte privado, seu guia certificado e todos os ingressos listados. A busca e retorno em qualquer lugar do Rio — hotéis, Airbnbs, aeroportos e terminal de cruzeiros — está sempre incluída. Sem taxas ocultas. O que você vê é o que você paga."
         },
         {
           icon: "star",
           title: "Melhor Avaliado no TripAdvisor, Viator e Civitatis",
-          description: "Consistentemente reconhecidos como uma das melhores operadoras de turismo do Rio com avaliações excelentes em todas as principais plataformas."
+          description: "Média de 4,9 de 5 com mais de 600 avaliações verificadas no TripAdvisor, Viator e Civitatis. Consistentemente entre os melhores operadores privativos do Rio — não por nós, mas pelos viajantes que estiveram lá."
         },
         {
           icon: "payment",
           title: "Reserve Agora, Pague 72h Antes",
-          description: "Reserve seu lugar sem pagamento inicial. Pague apenas 72 horas antes do seu passeio. Cancelamento gratuito incluído."
+          description: "Reserve seu passeio hoje sem nenhum pagamento inicial. Você só paga 72 horas antes da data do passeio. Precisa cancelar? Cancelamento gratuito até 72 horas antes — sem perguntas, reembolso total garantido."
         }
       ]
     },
@@ -343,13 +343,13 @@ export const homeContent = {
       questions: [
         {
           id: 1,
-          question: "Como faço para reservar um passeio?",
-          answer: "Reservar é fácil! Simplesmente navegue pelos nossos passeios, selecione sua experiência preferida, escolha sua data e tamanho do grupo, e complete o formulário de reserva. Você também pode nos contatar diretamente via WhatsApp ou email para assistência personalizada. Confirmaremos sua reserva em 24 horas."
+          question: "Quanto custa um passeio privado no Rio de Janeiro?",
+          answer: "Os passeios privativos pela cidade começam a partir de USD 335 para um grupo de 1 pessoa, com a maioria dos passeios de dia inteiro entre USD 410 e USD 580 dependendo do roteiro e do tamanho do grupo. Os walking tours têm preço por pessoa a partir de USD 65. Os bate-voltas para Petrópolis, Búzios e Ilha Grande começam a partir de USD 360. Todos os preços incluem transporte privado, guia local certificado e ingressos para as atrações listadas. Sem custos ocultos."
         },
         {
           id: 2,
           question: "O que está incluído no preço do passeio?",
-          answer: "Todos os nossos passeios incluem transporte privado com motorista profissional, guia certificado que fala português, ingressos para as atrações, busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros), e água mineral de cortesia. Refeições e gorjetas não estão incluídas a menos que especificado na descrição do passeio."
+          answer: "Todos os nossos passeios incluem transporte privado com motorista profissional, guia local certificado fluente em inglês, espanhol e português, ingressos para as atrações, busca e retorno em qualquer lugar do Rio de Janeiro (hotéis, Airbnbs, aeroportos e terminal de cruzeiros), e água mineral de cortesia. Refeições e gorjetas não estão incluídas a menos que especificado na descrição do passeio."
         },
         {
           id: 3,
@@ -359,22 +359,22 @@ export const homeContent = {
         {
           id: 4,
           question: "Quando preciso pagar pelo meu passeio?",
-          answer: "Você pode reservar seu passeio sem pagamento inicial. O pagamento só é exigido 72 horas antes da data programada do seu passeio. Isso lhe dá flexibilidade para planejar sua viagem sem compromisso financeiro imediato. Aceitamos cartões de crédito através do nosso link de pagamento seguro e PayPal."
+          answer: "Você pode reservar seu passeio sem pagamento inicial. O pagamento é exigido apenas 72 horas antes da data programada do passeio. Isso oferece flexibilidade para planejar sua viagem sem compromisso financeiro imediato. Aceitamos as principais bandeiras de cartão de crédito — Visa, Mastercard e outras — através do nosso link de pagamento seguro, além de PayPal. American Express não é aceito."
         },
         {
           id: 5,
           question: "Qual é a política de cancelamento?",
-          answer: "Oferecemos cancelamento gratuito até 72 horas antes do início do seu passeio para um reembolso total. Cancelamentos feitos dentro de 72 horas não são reembolsáveis. Cancelamentos relacionados ao clima decididos por nossa equipe são totalmente reembolsáveis ou podem ser reagendados sem custo adicional."
+          answer: "Oferecemos cancelamento gratuito até 72 horas antes do início do passeio para reembolso total. Cancelamentos feitos dentro de 72 horas não são reembolsáveis. Cancelamentos por motivo climático decididos pela nossa equipe são totalmente reembolsáveis ou podem ser reagendados sem custo adicional. Exceção: passeios que incluem o Show Jantar Roxy possuem ingressos não reembolsáveis independentemente do aviso — isso é informado claramente no momento da reserva."
         },
         {
           id: 6,
           question: "Seus guias falam inglês, espanhol, português e mais?",
-          answer: "Sim! Todos os nossos guias são fluentes em inglês e português (sua língua nativa). Muitos também falam espanhol, francês, italiano e alemão. Ao reservar, nos informe sua preferência de idioma e combinaremos você com o melhor guia para suas necessidades (sujeito à disponibilidade)."
+          answer: "Todos os nossos guias são fluentes em inglês e português, e a maioria também fala espanhol — o que torna a Be Free Tours uma das únicas operadoras de passeios privados no Rio com cobertura trilíngue completa. Para outros idiomas, entre em contato ao reservar e faremos o possível para combinar você com o guia mais adequado conforme disponibilidade."
         },
         {
           id: 7,
           question: "Vocês oferecem busca no hotel?",
-          answer: "Sim! Busca e retorno de cortesia está incluído em todos os nossos passeios privados em qualquer lugar do Rio de Janeiro, incluindo todos os bairros, aeroportos (GIG e SDU), e o porto de cruzeiros. Basta fornecer sua localização ao reservar e estaremos lá."
+          answer: "Sim — busca e retorno gratuitos estão incluídos em todos os nossos passeios privativos em qualquer lugar do Rio de Janeiro, incluindo todos os bairros, os três aeroportos (GIG, SDU e RRJ) e o terminal de cruzeiros Pier Mauá. Ao reservar, informe seu endereço exato e confirmaremos seu horário de busca, normalmente entre 15 e 30 minutos antes do início do passeio conforme sua localização."
         },
         {
           id: 8,
