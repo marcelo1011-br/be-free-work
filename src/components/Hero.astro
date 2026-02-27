@@ -2,6 +2,7 @@
 
 
 import { Image } from "astro:assets";
+import { homeContent } from "../data/homeContent.js";
 
 const {
   title,
@@ -15,25 +16,7 @@ const {
 import heroImage from "../images/heroes/home-hero.webp";
 
 
-const trustBadges = {
-  en: [
-    { icon: "star", label: "Top-Rated", value: "Private Tour Operator" },
-    { icon: "guide", label: "Licensed Guides", value: "Local Experts" },
-    { icon: "vehicle", label: "Private Vehicle", value: "Door-to-door" }
-  ],
-  es: [
-    { icon: "star", label: "Mejor Valorado", value: "Operador de Tours Privados" },
-    { icon: "guide", label: "Guías Licenciados", value: "Expertos Locales" },
-    { icon: "vehicle", label: "Vehículo Privado", value: "Puerta a puerta" }
-  ],
-  "pt-br": [
-    { icon: "star", label: "Melhor Avaliado", value: "Operador de Passeios Privados" },
-    { icon: "guide", label: "Guias Licenciados", value: "Especialistas Locais" },
-    { icon: "vehicle", label: "Veículo Privado", value: "Porta a porta" }
-  ]
-};
-
-const badges = trustBadges[lang] || trustBadges.en;
+const badges = (homeContent[lang] ?? homeContent.en).hero.badges;
 
 
 const taglines = {
@@ -106,10 +89,10 @@ const tagline = taglines[lang] || taglines.en;
             )}
             {badge.icon === "vehicle" && (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 17v-5l2-4h14l2 4v5H3z"/>
-                <path d="M8 8l1-3h6l1 3"/>
-                <circle cx="7" cy="17" r="2"/>
-                <circle cx="17" cy="17" r="2"/>
+                <path d="M5 11l2-4h10l2 4v5H5v-5z"/>
+                <path d="M8 7V5h8v2"/>
+                <circle cx="8.5" cy="17" r="2"/>
+                <circle cx="15.5" cy="17" r="2"/>
               </svg>
             )}
           </div>

@@ -12,7 +12,12 @@ export const homeContent = {
       ctaSecondary: {
         text: "Contact Us",
         link: "/en/contact"
-      }
+      },
+      badges: [
+        { icon: "star",    value: "4.9/5 Rating",          label: "600+ Verified Reviews" },
+        { icon: "guide",   value: "Licensed Local Guides",  label: "English, Spanish & Portuguese" },
+        { icon: "vehicle", value: "Private Vehicle",        label: "Door-to-Door Pickup Included" }
+      ]
     },
     whyUs: {
       title: "Why Choose Be Free Tours",
@@ -136,7 +141,12 @@ export const homeContent = {
       ctaSecondary: {
         text: "Contáctanos",
         link: "/es/contacto"
-      }
+      },
+      badges: [
+        { icon: "star",    value: "Calificación 4,9/5",         label: "Más de 600 reseñas verificadas" },
+        { icon: "guide",   value: "Guías Locales Certificados",  label: "Inglés, español y portugués" },
+        { icon: "vehicle", value: "Vehículo Privado",            label: "Recogida puerta a puerta incluida" }
+      ]
     },
     whyUs: {
       title: "Por Qué Elegir Be Free Tours",
@@ -260,7 +270,12 @@ export const homeContent = {
       ctaSecondary: {
         text: "Fale Conosco",
         link: "/pt-br/contato"
-      }
+      },
+      badges: [
+        { icon: "star",    value: "Avaliação 4,9/5",              label: "600+ avaliações verificadas" },
+        { icon: "guide",   value: "Guias Locais Certificados",    label: "Inglês, espanhol e português" },
+        { icon: "vehicle", value: "Veículo Privado",              label: "Busca porta a porta incluída" }
+      ]
     },
     whyUs: {
       title: "Por Que Escolher a Be Free Tours",
