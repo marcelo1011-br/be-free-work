@@ -345,11 +345,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
 
-      
+
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
 
-      
+
       let visibleCount = 0;
 
       tourItems.forEach((item) => {
@@ -363,7 +363,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
         }
       });
 
-      
+
       if (visibleCount === 0) {
         noResults?.removeAttribute("hidden");
       } else {
@@ -371,4 +371,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
       }
     });
   });
+
+  // Activate filter from ?category= URL parameter on page load
+  const urlCategory = new URLSearchParams(window.location.search).get("category");
+  if (urlCategory) {
+    const targetBtn = document.querySelector(`.filter-btn[data-filter="${urlCategory}"]`);
+    if (targetBtn) targetBtn.click();
+  }
 </script>
