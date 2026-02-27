@@ -32,7 +32,7 @@ export const tours = {
         { q: "Are the skip-the-line tickets for Sugarloaf really included?", a: "Yes, skip-the-line cable car tickets for Sugarloaf Mountain are included in the tour price, along with Christ the Redeemer entrance fees. You won't need to queue or purchase anything separately at either attraction." },
         { q: "Is the Royal Portuguese Reading Room always open?", a: "The Royal Portuguese Reading Room is open Monday to Friday only. If your tour falls on a weekend, we'll replace it with an equally impressive cultural alternative -- your guide will suggest the best option based on the day." },
         { q: "Can we adjust the itinerary or add extra stops?", a: "Absolutely -- this is a private tour and the itinerary is completely flexible. If you'd like to spend more time in Santa Teresa, skip a stop, or add a neighborhood not on the standard route, just let your guide know. The 8 hours is yours to use as you wish." },
-        { q: "What's the best starting time for this tour?", a: "We recommend starting at 8:00-9:00 AM to beat the crowds at Christ the Redeemer and have the full day ahead. Your guide will advise on the optimal order of visits based on real-time conditions on the day." },
+        { q: "What's the best starting time for this tour?", a: "To avoid queues at Christ the Redeemer, we recommend starting at 06:30 AM. To catch the sunset at Christ or Sugarloaf, we recommend starting at 11:30 AM." },
       ],
     },
     {
@@ -525,7 +525,7 @@ export const tours = {
         { q: "¿Las entradas sin filas al Pan de Azúcar están realmente incluidas?", a: "Sí, las entradas al teleférico del Pan de Azúcar con acceso preferente están incluidas en el precio, junto con las entradas al Cristo Redentor. No tendrás que hacer cola ni comprar nada por separado en ninguna de las atracciones." },
         { q: "¿El Real Gabinete Portugués de Lectura siempre está abierto?", a: "El Real Gabinete abre de lunes a viernes. Si tu tour es en fin de semana, lo reemplazaremos por una alternativa cultural igualmente impresionante que tu guía recomendará según el día." },
         { q: "¿Podemos ajustar el itinerario o agregar paradas?", a: "Por supuesto -- es un tour privado y el itinerario es completamente flexible. Si quieres más tiempo en Santa Teresa, saltar una parada o agregar un barrio diferente, simplemente díselo a tu guía. Las 8 horas son tuyas." },
-        { q: "¿Cuál es el mejor horario de inicio para este tour?", a: "Recomendamos comenzar entre las 8:00 y las 9:00 AM para evitar aglomeraciones en el Cristo Redentor y aprovechar todo el día. Tu guía te indicará el mejor orden de visitas según las condiciones del día." },
+        { q: "¿Cuál es el mejor horario de inicio para este tour?", a: "Para evitar filas en el Cristo Redentor recomendamos comenzar a las 06:30. Para ver el atardecer en el Cristo o el Pan de Azúcar, recomendamos comenzar a las 11:30." },
       ],
     },
     {
@@ -1024,7 +1024,7 @@ export const tours = {
         { q: "Os ingressos sem fila para o Pão de Açúcar estão mesmo incluídos?", a: "Sim, os ingressos do bondinho do Pão de Açúcar com acesso prioritário estão incluídos no preço, junto com os ingressos do Cristo Redentor. Você não precisará enfrentar filas nem comprar nada separadamente em nenhuma das atrações." },
         { q: "A Real Gabinete Português de Leitura sempre está aberta?", a: "A Real Gabinete funciona de segunda a sexta-feira. Se o seu tour for no fim de semana, substituiremos por uma alternativa cultural igualmente impressionante que seu guia recomendará conforme o dia." },
         { q: "Podemos ajustar o itinerário ou adicionar paradas?", a: "Com certeza -- é um passeio privado e o itinerário é completamente flexível. Se quiser mais tempo em Santa Teresa, pular uma parada ou adicionar um bairro diferente, basta avisar ao guia. As 8 horas são suas." },
-        { q: "Qual o melhor horário de início para este tour?", a: "Recomendamos começar entre 8h e 9h para evitar filas no Cristo Redentor e aproveitar o dia todo. Seu guia indicará a melhor ordem de visitas com base nas condições do dia." },
+        { q: "Qual o melhor horário de início para este tour?", a: "Para evitar filas no Cristo recomendamos começar às 06:30. Para ver o pôr do sol no Cristo ou no Pão de Açúcar, recomendamos começar às 11:30." },
       ],
     },
     {
