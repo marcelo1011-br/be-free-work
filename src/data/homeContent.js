@@ -4,7 +4,7 @@ export const homeContent = {
   en: {
     hero: {
       title: "Private Tours in Rio de Janeiro – Tailored Just for You",
-      subtitle: "Explore Rio's iconic landmarks and hidden gems with expert local guides. Fully customizable private experiences designed around your interests.",
+      subtitle: "Rio's top-rated private tour operator since 2013 — certified local guides, door-to-door pickup, and 12+ years of unforgettable experiences.",
       ctaPrimary: {
         text: "Explore Our Tours",
         link: "/en/private-tours"
@@ -17,6 +17,14 @@ export const homeContent = {
         { icon: "star",    value: "4.9/5 Rating",          label: "600+ Verified Reviews" },
         { icon: "guide",   value: "Licensed Local Guides",  label: "English, Spanish & Portuguese" },
         { icon: "vehicle", value: "Private Vehicle",        label: "Door-to-Door Pickup Included" }
+      ]
+    },
+    howItWorks: {
+      title: "How It Works",
+      steps: [
+        { title: "Choose Your Tour or Tell Us Your Vision", description: "Browse our 14 ready-made private tours — or contact us with your interests and we'll design a custom itinerary from scratch. Either way, every tour is private and fully adjustable." },
+        { title: "We Handle Every Detail", description: "Tickets, transportation, guide assignment, pickup logistics — all confirmed before your tour day. Our team coordinates everything so you arrive ready to enjoy, not to organize." },
+        { title: "Experience Rio, Privately", description: "Your certified local guide picks you up at your hotel, Airbnb, airport, or cruise port and takes you through Rio at your own pace. No crowds, no compromises." }
       ]
     },
     whyUs: {
@@ -133,7 +141,7 @@ export const homeContent = {
   es: {
     hero: {
       title: "Tours Privados en Río de Janeiro – A Tu Medida",
-      subtitle: "Descubre los lugares icónicos y rincones escondidos de Río con guías locales expertos. Experiencias privadas totalmente personalizables según tus intereses.",
+      subtitle: "El operador de tours privados mejor valorado de Río desde 2013 — guías certificados, recogida incluida y más de 12 años de experiencias inolvidables.",
       ctaPrimary: {
         text: "Ver Nuestros Tours",
         link: "/es/tours-privados"
@@ -146,6 +154,14 @@ export const homeContent = {
         { icon: "star",    value: "Calificación 4,9/5",         label: "Más de 600 reseñas verificadas" },
         { icon: "guide",   value: "Guías Locales Certificados",  label: "Inglés, español y portugués" },
         { icon: "vehicle", value: "Vehículo Privado",            label: "Recogida puerta a puerta incluida" }
+      ]
+    },
+    howItWorks: {
+      title: "Cómo Funciona",
+      steps: [
+        { title: "Elige Tu Tour o Cuéntanos Tu Idea", description: "Explora nuestras 14 excursiones privadas listas para reservar — o contáctanos con tus intereses y diseñaremos un itinerario personalizado desde cero. De cualquier manera, cada tour es privado y totalmente flexible." },
+        { title: "Nos Encargamos de Todo", description: "Entradas, transporte, asignación de guía, logística de recogida — todo confirmado antes del día del tour. Nuestro equipo coordina cada detalle para que llegues listo para disfrutar, no para organizar." },
+        { title: "Vive Río en Privado", description: "Tu guía local certificado te recoge en tu hotel, Airbnb, aeropuerto o terminal de cruceros y te lleva por Río a tu propio ritmo. Sin grupos, sin compromisos." }
       ]
     },
     whyUs: {
@@ -262,7 +278,7 @@ export const homeContent = {
   'pt-br': {
     hero: {
       title: "Passeios Privados no Rio de Janeiro – Feitos Sob Medida Para Você",
-      subtitle: "Conheça os pontos turísticos icônicos e cantinhos escondidos do Rio com guias locais especializados. Experiências privadas totalmente personalizáveis de acordo com seus interesses.",
+      subtitle: "A operadora de passeios privativos mais bem avaliada do Rio desde 2013 — guias certificados, busca incluída e mais de 12 anos de experiências inesquecíveis.",
       ctaPrimary: {
         text: "Ver Nossos Passeios",
         link: "/pt-br/passeios-privados"
@@ -275,6 +291,14 @@ export const homeContent = {
         { icon: "star",    value: "Avaliação 4,9/5",              label: "600+ avaliações verificadas" },
         { icon: "guide",   value: "Guias Locais Certificados",    label: "Inglês, espanhol e português" },
         { icon: "vehicle", value: "Veículo Privado",              label: "Busca porta a porta incluída" }
+      ]
+    },
+    howItWorks: {
+      title: "Como Funciona",
+      steps: [
+        { title: "Escolha Seu Passeio ou Conte Sua Ideia", description: "Explore nossos 14 roteiros privativos prontos para reservar — ou entre em contato com seus interesses e criamos um itinerário personalizado do zero. De qualquer forma, todos os passeios são privativos e totalmente flexíveis." },
+        { title: "Cuidamos de Tudo", description: "Ingressos, transporte, guia, logística de busca — tudo confirmado antes do dia do passeio. Nossa equipe coordena cada detalhe para você chegar pronto para aproveitar, não para organizar." },
+        { title: "Viva o Rio em Privado", description: "Seu guia local certificado te busca no hotel, Airbnb, aeroporto ou terminal de cruzeiros e te leva pelo Rio no seu ritmo. Sem grupos, sem compromissos." }
       ]
     },
     whyUs: {

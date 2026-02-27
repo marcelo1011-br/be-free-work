@@ -5,6 +5,7 @@
 import TourCard from "./TourCard.astro";
 import { tours } from "../data/tours.js";
 import { useTranslations } from "../i18n/utils";
+import { homeContent } from "../data/homeContent.js";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -13,79 +14,7 @@ const t = useTranslations(lang);
 const featuredTours = tours[lang].filter((tour) => tour.isFeatured);
 
 
-const howItWorks = {
-  en: {
-    title: "How It Works",
-    steps: [
-      {
-        number: "1",
-        title: "Tell us your vibe",
-        description: "Share your interests and preferences",
-        icon: "chat"
-      },
-      {
-        number: "2", 
-        title: "We design your plan",
-        description: "We craft your perfect Rio itinerary",
-        icon: "map"
-      },
-      {
-        number: "3",
-        title: "You enjoy Rio",
-        description: "We handle everything (guides, tickets, pickup)",
-        icon: "pin"
-      }
-    ]
-  },
-  es: {
-    title: "Cómo Funciona",
-    steps: [
-      {
-        number: "1",
-        title: "Cuéntanos tu estilo",
-        description: "Comparte tus intereses y preferencias",
-        icon: "chat"
-      },
-      {
-        number: "2",
-        title: "Diseñamos tu plan",
-        description: "Creamos tu itinerario perfecto en Río",
-        icon: "map"
-      },
-      {
-        number: "3",
-        title: "Disfruta Río",
-        description: "Nosotros manejamos todo (guías, tickets, pickup)",
-        icon: "pin"
-      }
-    ]
-  },
-  "pt-br": {
-    title: "Como Funciona",
-    steps: [
-      {
-        number: "1",
-        title: "Conte seu estilo",
-        description: "Compartilhe seus interesses e preferências",
-        icon: "chat"
-      },
-      {
-        number: "2",
-        title: "Planejamos seu roteiro",
-        description: "Criamos seu itinerário perfeito no Rio",
-        icon: "map"
-      },
-      {
-        number: "3",
-        title: "Aproveite o Rio",
-        description: "Cuidamos de tudo (guias, ingressos, busca)",
-        icon: "pin"
-      }
-    ]
-  }
-};
-
-const content = howItWorks[lang] || howItWorks.en;
+const content = (homeContent[lang] ?? homeContent.en).howItWorks;
 
 
 const tourBadgeMap = {
@@ -118,7 +47,7 @@ const tourBadgeMap = {
     <div class="steps-grid">
       {content.steps.map((step, index) => (
         <div class="step-card">
-          <div class="step-number">{step.number}</div>
+          <div class="step-number">{index + 1}</div>
           <div class="step-content">
             <h3 class="step-title">{step.title}</h3>
             <p class="step-description">{step.description}</p>
