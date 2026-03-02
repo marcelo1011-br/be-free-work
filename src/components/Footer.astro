@@ -142,6 +142,7 @@ const navLinks = [
       <p class="footer-copyright">
         © {currentYear} Be Free Tours. {t("footer.rights")}.
       </p>
+      <p class="footer-cadastur">CNPJ & Cadastur: 19.400.673/0001-67</p>
       <p class="footer-credit">
         Built by <a href="https://midnightweb.com.br" target="_blank" rel="noopener noreferrer">Midnight Web</a>
       </p>
@@ -308,6 +309,12 @@ const navLinks = [
     margin: 0;
   }
 
+  .footer-cadastur {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-small);
+    margin: 0;
+  }
+
   .footer-credit {
     color: var(--color-text-muted);
     font-size: var(--font-size-small);
@@ -371,6 +378,10 @@ const navLinks = [
   }
 
   :global(html.light) .footer-copyright {
+    color: var(--footer-light-text-muted);
+  }
+
+  :global(html.light) .footer-cadastur {
     color: var(--footer-light-text-muted);
   }
 

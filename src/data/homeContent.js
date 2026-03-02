@@ -119,6 +119,25 @@ export const homeContent = {
         }
       ]
     },
+    paymentPolicy: {
+      title: "Payment Policy",
+      items: [
+        { label: "How it works:", text: "After you click Book Now and submit your booking request, we'll review the details and send a secure payment link by email." },
+        { label: "Payment deadline:", text: "Full payment must be completed at least 72 hours (3 days) before the tour date." },
+        { label: "Last-minute bookings:", text: "Reservations made within 72 hours of the tour require immediate payment to secure availability. The payment link will be sent as soon as possible." },
+        { label: "Accepted methods:", text: "Credit and debit cards, processed securely via Stripe." },
+        { label: "Important:", text: "Bookings that remain unpaid will be automatically released 72 hours before the tour. Reminder notifications are sent by email and WhatsApp." }
+      ]
+    },
+    cancellationPolicy: {
+      title: "Cancellation Policy",
+      items: [
+        { label: "Free cancellation:", text: "Cancel free of charge up to 72 hours (3 days) before your tour start time." },
+        { label: "Changes or rescheduling:", text: "To cancel, modify, or reschedule your tour, please contact us by email or WhatsApp as soon as possible. We'll do our best to accommodate adjustments whenever feasible." },
+        { label: "Late cancellations:", text: "Tours canceled less than 72 hours before the start date are non-refundable." },
+        { label: "Weather Conditions:", text: "If severe weather conditions make the tour unsafe or unviable, we'll offer a full refund or the option to reschedule at no additional cost." }
+      ]
+    },
     ctaFinal: {
       title: "Ready to Discover Rio?",
       subtitle: "Join 15,000+ travelers who experienced Rio the right way. Book your private tour today.",
@@ -256,6 +275,25 @@ export const homeContent = {
         }
       ]
     },
+    paymentPolicy: {
+      title: "Política de pago",
+      items: [
+        { label: "Cómo funciona:", text: "Después de hacer clic en Reservar ahora y enviar tu solicitud de reserva, revisaremos los detalles y te enviaremos un enlace de pago seguro por correo electrónico." },
+        { label: "Plazo de pago:", text: "El pago total debe completarse al menos 72 horas (3 días) antes de la fecha del tour." },
+        { label: "Reservas de último minuto:", text: "Las reservas realizadas dentro de las 72 horas previas al tour requieren pago inmediato para asegurar disponibilidad. El enlace de pago se enviará lo antes posible." },
+        { label: "Métodos aceptados:", text: "Tarjetas de crédito y débito, procesadas de forma segura a través de Stripe." },
+        { label: "Importante:", text: "Las reservas que permanezcan sin pagar se liberarán automáticamente 72 horas antes del tour. Las notificaciones de recordatorio se envían por correo electrónico y WhatsApp." }
+      ]
+    },
+    cancellationPolicy: {
+      title: "Política de cancelación",
+      items: [
+        { label: "Cancelación gratuita:", text: "Cancela sin costo hasta 72 horas (3 días) antes de la hora de inicio de tu tour." },
+        { label: "Cambios o reprogramación:", text: "Para cancelar, modificar o reprogramar tu tour, contáctanos por correo electrónico o WhatsApp lo antes posible. Haremos todo lo posible por adaptarnos a los cambios siempre que sea viable." },
+        { label: "Cancelaciones tardías:", text: "Los tours cancelados con menos de 72 horas antes de la fecha de inicio no son reembolsables." },
+        { label: "Condiciones climáticas:", text: "Si las condiciones climáticas severas hacen que el tour sea inseguro o inviable, ofreceremos un reembolso total o la opción de reprogramar sin costo adicional." }
+      ]
+    },
     ctaFinal: {
       title: "¿Listo para Descubrir Río?",
       subtitle: "Únete a más de 15,000 viajeros que experimentaron Río de la manera correcta. Reserva tu tour privado hoy.",
@@ -391,6 +429,25 @@ export const homeContent = {
           question: "O Rio de Janeiro é um destino LGBTQ+ friendly?",
           answer: "O Rio de Janeiro é amplamente considerado uma cidade LGBTQ+ friendly, especialmente nos bairros da Zona Sul, como Ipanema, Leblon e Copacabana. O casamento entre pessoas do mesmo sexo é legal no Brasil, e a diversidade costuma ser bem aceita no dia a dia e em contextos turísticos. Como em qualquer grande cidade, atenção e bom senso são sempre importantes, mas a maioria dos viajantes LGBTQ+ se sente confortável explorando o Rio de forma aberta. Nossos tours privados oferecem um ambiente discreto, respeitoso e acolhedor, conduzido por profissionais locais que entendem a cidade e adaptam cada experiência ao perfil do viajante — sem rótulos ou pressupostos."
         }
+      ]
+    },
+    paymentPolicy: {
+      title: "Política de pagamento",
+      items: [
+        { label: "Como funciona:", text: "Após clicar em Reservar agora e enviar sua solicitação de reserva, revisaremos os detalhes e enviaremos um link de pagamento seguro por e-mail." },
+        { label: "Prazo de pagamento:", text: "O pagamento total deve ser concluído pelo menos 72 horas (3 dias) antes da data do passeio." },
+        { label: "Reservas de última hora:", text: "Reservas feitas dentro de 72 horas do passeio exigem pagamento imediato para garantir disponibilidade. O link de pagamento será enviado o mais rápido possível." },
+        { label: "Métodos aceitos:", text: "Cartões de crédito e débito, processados com segurança via Stripe." },
+        { label: "Importante:", text: "Reservas que permanecerem sem pagamento serão liberadas automaticamente 72 horas antes do passeio. Notificações de lembrete são enviadas por e-mail e WhatsApp." }
+      ]
+    },
+    cancellationPolicy: {
+      title: "Política de cancelamento",
+      items: [
+        { label: "Cancelamento gratuito:", text: "Cancele sem custo até 72 horas (3 dias) antes do horário de início do seu passeio." },
+        { label: "Alterações ou reagendamento:", text: "Para cancelar, alterar ou reagendar seu passeio, entre em contato por e-mail ou WhatsApp o quanto antes. Faremos o possível para acomodar os ajustes sempre que viável." },
+        { label: "Cancelamentos tardios:", text: "Passeios cancelados com menos de 72 horas antes da data de início não são reembolsáveis." },
+        { label: "Condições climáticas:", text: "Se condições climáticas severas tornarem o passeio inseguro ou inviável, ofereceremos reembolso total ou a opção de reagendamento sem custo adicional." }
       ]
     },
     ctaFinal: {

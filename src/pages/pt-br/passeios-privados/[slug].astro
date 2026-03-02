@@ -8,6 +8,7 @@ import TourCard from "../../../components/TourCard.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro"; 
 import BookingModal from "../../../components/BookingModal.astro";
 import { tours } from "../../../data/tours.js";
+import { homeContent } from "../../../data/homeContent.js";
 import { useTranslations } from "../../../i18n/utils";
 import {
   getTourSEO,
@@ -60,6 +61,7 @@ export async function getStaticPaths() {
 
 const { tour, lang, allTours, heroImage } = Astro.props;
 const t = useTranslations(lang);
+const { paymentPolicy, cancellationPolicy } = homeContent[lang];
 
 
 function getFromPrice(pricing) {
@@ -83,136 +85,7 @@ const relatedTours = allTours
 const tips = tour.tips || [];
 
 
-const tourFAQs = {
-  "Escapada para a Ilha: Ilha Grande de Lancha Privativa": [
-    {
-      q: "Is Ilha Grande worth visiting from Rio de Janeiro?",
-      a: "Absolutely! Ilha Grande offers pristine beaches and crystal-clear waters just 3 hours from Rio. It's a protected paradise with over 100 beaches, perfect for nature lovers and beach enthusiasts.",
-    },
-    {
-      q: "Do I need to be a strong swimmer for Ilha Grande tours?",
-      a: "No, but basic swimming ability is recommended. We provide life jackets and stay in calm, shallow waters. Your captain will assess conditions and choose the best beaches for your group.",
-    },
-    {
-      q: "Can we visit Lopes Mendes beach?",
-      a: "Yes! Lopes Mendes (voted one of the world's best beaches) is available with our premium package. Note: it requires a 20-minute walk through the jungle, so wear appropriate footwear.",
-    },
-    {
-      q: "What if the weather is bad on tour day?",
-      a: "Tours operate rain or shine, but severe weather may require rescheduling. We monitor conditions and prioritize your safety. Alternative dates or full refunds are provided if we cancel.",
-    },
-  ],
-  "O Essencial do Rio: Ícones, Cultura e Joias Escondidas": [
-    {
-      q: "Is this tour good for first-time visitors to Rio?",
-      a: "Perfect for first-timers! This comprehensive 8-hour tour covers all of Rio's iconic landmarks plus hidden gems, giving you the complete Rio experience in one day.",
-    },
-    {
-      q: "Tem acesso sem fila no Cristo Redentor?",
-      a: "Não existem ingressos sem fila para o Cristo Redentor, mas reservamos o horário do trem para subir o Corcovado e visitar a estátua. Ingressos sem filas (skip-the-line) para o Pão de Açúcar incluídos.",
-    },
-    {
-      q: "Can we customize the tour itinerary?",
-      a: "Absolutely! This is a private tour, so we can adjust timing, add stops, or skip locations based on your interests. Just let your guide know.",
-    },
-    {
-      q: "Is lunch included in the tour price?",
-      a: "Lunch is not included, but we can stop at excellent local restaurants. Your guide will recommend options based on your preferences and budget.",
-    },
-  ],
-  "Tour Gastronômico a Pé pelo Rio: Experiência Culinária Brasileira Autêntica": [
-    {
-      q: "How much food is included in the food tour?",
-      a: "Plenty! You'll sample 8-10 different Brazilian specialties including snacks, mains, and desserts. Most people consider this a full meal replacement.",
-    },
-    {
-      q: "Can you accommodate dietary restrictions?",
-      a: "Yes! We can adjust for vegetarian, gluten-free, and most allergies. Please inform us when booking so we can plan appropriate alternatives.",
-    },
-    {
-      q: "How much walking is involved in the food tour?",
-      a: "About 2-3km (1.5-2 miles) at a leisurely pace with frequent food stops. The route is flat and easy for most fitness levels.",
-    },
-    {
-      q: "Do I need to bring money on the food tour?",
-      a: "All tastings are included, but bring cash if you want to purchase extra items, drinks, or take-home goodies from the vendors we visit.",
-    },
-  ],
-  "Centro do Rio a Pé: Escadaria Selarón e Joias Escondidas": [
-    {
-      q: "How much walking is on the historical tour?",
-      a: "3.5 hours of easy-paced walking through downtown Rio. The route is mostly flat with occasional steps. Great for all fitness levels.",
-    },
-    {
-      q: "Are museum entrances included?",
-      a: "Museum fees are not included. Most attractions like Selarón Steps and Paço Imperial are free. Optional paid entries will be mentioned by your guide.",
-    },
-    {
-      q: "What makes this different from self-guided walking?",
-      a: "Our expert guides share Rio's hidden history, architectural secrets, and local stories you won't find in guidebooks. We also know the best photo spots!",
-    },
-    {
-      q: "Is this tour suitable for children?",
-      a: "Yes! Kids usually love the colorful Selarón Steps and stories about Rio's history. The pace is relaxed and we can adjust for family groups.",
-    },
-  ],
-  "Petrópolis: Palácios Imperiais e Refúgio na Montanha": [
-    {
-      q: "Why is Petrópolis called the Imperial City?",
-      a: "Petrópolis was the summer residence of Brazilian emperors in the 19th century. The cooler mountain climate provided relief from Rio's heat, and the city preserves magnificent imperial palaces.",
-    },
-    {
-      q: "How cold is Petrópolis compared to Rio?",
-      a: "Petrópolis is 5-10°C (9-18°F) cooler than Rio. In summer it's pleasantly mild; in winter it can get chilly. Always bring a light jacket.",
-    },
-    {
-      q: "How long is the drive to Petrópolis?",
-      a: "About 1.5 hours from Rio through scenic mountain roads. The journey itself is beautiful, with views of the Atlantic rainforest.",
-    },
-    {
-      q: "Is the Imperial Museum worth visiting?",
-      a: "Absolutely! It's one of Brazil's best-preserved imperial palaces with original furniture, crown jewels, and fascinating history. A must-see for history buffs.",
-    },
-  ],
-  "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer": [
-    {
-      q: "Why is sunrise at Sugarloaf special?",
-      a: "You'll witness Rio awakening with golden light hitting Christ the Redeemer, Copacabana, and the bay. Plus, you'll beat the crowds - it's often just you and nature!",
-    },
-    {
-      q: "What time do we need to start?",
-      a: "5:30 AM pickup recommended. Sunrise times vary by season (5:30-6:30 AM), so we adjust pickup accordingly to catch the perfect moment.",
-    },
-    {
-      q: "Is it very cold at sunrise?",
-      a: "Yes! Bring warm layers. Even in summer, early mornings at 400m elevation can be chilly (15-18°C / 59-64°F). It warms up quickly after sunrise.",
-    },
-    {
-      q: "What if it's cloudy?",
-      a: "Clouds can create dramatic photos! If weather is severe (rain/fog), we'll reschedule. But often, clouds clear as sun rises - it's magical.",
-    },
-  ],
-  default: [
-    {
-      q: "What happens if it rains during the tour?",
-      a: "Tours operate rain or shine. Rio's tropical showers are usually brief. We provide flexibility to adjust timing or locations if needed.",
-    },
-    {
-      q: "Can I customize this tour?",
-      a: "Yes! As a private tour, we can adjust the itinerary to match your interests and pace. Just discuss preferences with your guide.",
-    },
-    {
-      q: "Is hotel pickup included?",
-      a: "Yes! Complimentary pickup and drop-off is included anywhere in Rio de Janeiro, including hotels, Airbnbs, airports, and the cruise port.",
-    },
-    {
-      q: "What is your cancellation policy?",
-      a: "Free cancellation up to 24 hours before your tour. Cancel within 24 hours and we charge 50%. No-shows are charged 100%.",
-    },
-  ],
-};
-
-const faqs = tour.faqs || tourFAQs[tour.id] || tourFAQs["default"];
+const faqs = tour.faqs;
 
 
 
@@ -619,7 +492,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
                   d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"
                 ></path>
               </svg>
-              <span>Política de pagamento</span>
+              <span>{paymentPolicy.title}</span>
             </div>
             <svg
               class="accordion-icon"
@@ -635,26 +508,12 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           <div class="accordion-content">
             <div class="payment-policies">
               <ul class="policy-list">
-                <li>
-                  <strong>Como funciona:</strong>
-                  Após clicar em Reservar agora e enviar sua solicitação de reserva, revisaremos os detalhes e enviaremos um link de pagamento seguro por e-mail.
-                </li>
-                <li>
-                  <strong>Prazo de pagamento:</strong>
-                  O pagamento total deve ser concluído pelo menos 72 horas (3 dias) antes da data do passeio.
-                </li>
-                <li>
-                  <strong>Reservas de última hora:</strong>
-                  Reservas feitas dentro de 72 horas do passeio exigem pagamento imediato para garantir disponibilidade. O link de pagamento será enviado o mais rápido possível.
-                </li>
-                <li>
-                  <strong>Métodos aceitos:</strong>
-                  Cartões de crédito e débito, processados com segurança via Stripe.
-                </li>
-                <li>
-                  <strong>Importante:</strong>
-                  Reservas que permanecerem sem pagamento serão liberadas automaticamente 72 horas antes do passeio. Notificações de lembrete são enviadas por e-mail e WhatsApp.
-                </li>
+                {paymentPolicy.items.map((item) => (
+                  <li>
+                    <strong>{item.label}</strong>
+                    {item.text}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -674,7 +533,7 @@ const pageTitle = `${tour.title} | Be Free Tours`;
                   d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
                 ></path>
               </svg>
-              <span>Política de cancelamento</span>
+              <span>{cancellationPolicy.title}</span>
             </div>
             <svg
               class="accordion-icon"
@@ -690,22 +549,12 @@ const pageTitle = `${tour.title} | Be Free Tours`;
           <div class="accordion-content">
             <div class="payment-policies">
               <ul class="policy-list">
-                <li>
-                  <strong>Cancelamento gratuito:</strong>
-                  Cancele sem custo até 72 horas (3 dias) antes do horário de início do seu passeio.
-                </li>
-                <li>
-                  <strong>Alterações ou reagendamento:</strong>
-                  Para cancelar, alterar ou reagendar seu passeio, entre em contato por e-mail ou WhatsApp o quanto antes. Faremos o possível para acomodar os ajustes sempre que viável.
-                </li>
-                <li>
-                  <strong>Cancelamentos tardios:</strong>
-                  Passeios cancelados com menos de 72 horas antes da data de início não são reembolsáveis.
-                </li>
-                <li>
-                  <strong>Condições climáticas:</strong>
-                  Se condições climáticas severas tornarem o passeio inseguro ou inviável, ofereceremos reembolso total ou a opção de reagendamento sem custo adicional.
-                </li>
+                {cancellationPolicy.items.map((item) => (
+                  <li>
+                    <strong>{item.label}</strong>
+                    {item.text}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
