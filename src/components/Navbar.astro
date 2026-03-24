@@ -63,8 +63,8 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header role="banner">
-  <nav class="navbar" role="navigation" aria-label="Main navigation" id="navigation">
+<header>
+  <nav class="navbar" aria-label="Main navigation" id="navigation">
   <div class="container">
     <div class="navbar-content">
       
@@ -134,7 +134,7 @@ function isActive(href: string): boolean {
             <span class="lang-current">{lang.toUpperCase()}</span>
           </button>
 
-          <div id="lang-dropdown" class="lang-dropdown" hidden>
+          <div id="lang-dropdown" class="lang-dropdown" hidden aria-hidden="true">
             {
               Object.entries(languages).map(([code, name]) => (
                 <a

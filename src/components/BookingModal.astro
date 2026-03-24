@@ -1,105 +1,13 @@
 ---
 import "flatpickr/dist/flatpickr.min.css";
+import { useTranslations } from "../i18n/utils";
 
 const { tour, lang } = Astro.props;
 
 const bookingSlots = Array.isArray(tour.bookingTimeSlots) ? tour.bookingTimeSlots : [];
 const hasFixedSlots = bookingSlots.length > 0 && !bookingSlots.includes("Flexible");
 
-const copyMap = {
-  en: {
-    title: "Request Booking",
-    close: "Close",
-    date: "Date *",
-    time: "Time *",
-    timeFlexibleLabel: "Time (Flexible) *",
-    timeFlexiblePlaceholder: "Preferred time or note",
-    participants: "Number of participants *",
-    pickup: "Pickup location *",
-    pickupPlaceholder: "Hotel name, address, or neighborhood",
-    special: "Special requests (optional)",
-    specialPlaceholder: "Any special requirements or preferences?",
-    name: "Name *",
-    email: "Email *",
-    phone: "Phone *",
-    phonePlaceholder: "+55 21 97927-1637",
-    submit: "Request Booking",
-    priceNote: "No payment required now",
-    success: "Request sent. This is not a confirmation yet — we'll confirm by email within 1 hour.",
-    error: "Please check the highlighted fields.",
-    dateError: "Please select a valid date.",
-    timeError: "Please select a time.",
-    participantsError: "Please enter 1 to 12 participants.",
-    pickupError: "Please enter a pickup location.",
-    nameError: "Please enter your name.",
-    emailError: "Please enter a valid email.",
-    phoneError: "Please enter a valid phone number with country code.",
-    submitError: "Something went wrong. Please try again.",
-    todayError: "Date cannot be in the past.",
-  },
-  es: {
-    title: "Solicitar Reserva",
-    close: "Cerrar",
-    date: "Fecha *",
-    time: "Hora *",
-    timeFlexibleLabel: "Hora (Flexible) *",
-    timeFlexiblePlaceholder: "Hora preferida o nota",
-    participants: "Número de participantes *",
-    pickup: "Lugar de recogida *",
-    pickupPlaceholder: "Nombre del hotel, dirección o barrio",
-    special: "Solicitudes especiales (opcional)",
-    specialPlaceholder: "¿Alguna preferencia o requisito especial?",
-    name: "Nombre *",
-    email: "Email *",
-    phone: "Teléfono *",
-    phonePlaceholder: "+55 21 97927-1637",
-    submit: "Solicitar Reserva",
-    priceNote: "Sin pago ahora",
-    success: "Solicitud enviada. Esto no es una confirmación aún — confirmaremos por email en hasta 1 hora.",
-    error: "Revisa los campos resaltados.",
-    dateError: "Selecciona una fecha válida.",
-    timeError: "Selecciona una hora.",
-    participantsError: "Ingresa de 1 a 12 participantes.",
-    pickupError: "Ingresa un lugar de recogida.",
-    nameError: "Ingresa tu nombre.",
-    emailError: "Ingresa un email válido.",
-    phoneError: "Ingresa un teléfono válido con código de país.",
-    submitError: "Algo salió mal. Inténtalo de nuevo.",
-    todayError: "La fecha no puede ser pasada.",
-  },
-  "pt-br": {
-    title: "Solicitar Reserva",
-    close: "Fechar",
-    date: "Data *",
-    time: "Horário *",
-    timeFlexibleLabel: "Horário (Flexível) *",
-    timeFlexiblePlaceholder: "Horário preferido ou observação",
-    participants: "Número de participantes *",
-    pickup: "Local de busca *",
-    pickupPlaceholder: "Nome do hotel, endereço ou bairro",
-    special: "Pedidos especiais (opcional)",
-    specialPlaceholder: "Alguma preferência ou necessidade especial?",
-    name: "Nome *",
-    email: "Email *",
-    phone: "Telefone *",
-    phonePlaceholder: "+55 21 97927-1637",
-    submit: "Solicitar Reserva",
-    priceNote: "Sem pagamento agora",
-    success: "Solicitação enviada. Isso ainda não é uma confirmação — confirmaremos por email em até 1 hora.",
-    error: "Confira os campos destacados.",
-    dateError: "Selecione uma data válida.",
-    timeError: "Selecione um horário.",
-    participantsError: "Informe de 1 a 12 participantes.",
-    pickupError: "Informe o local de busca.",
-    nameError: "Informe seu nome.",
-    emailError: "Informe um email válido.",
-    phoneError: "Informe um telefone válido com código do país.",
-    submitError: "Algo deu errado. Tente novamente.",
-    todayError: "A data não pode ser no passado.",
-  },
-};
-
-const copy = copyMap[lang] || copyMap.en;
+const t = useTranslations(lang);
 ---
 
 <div
@@ -112,6 +20,15 @@ const copy = copyMap[lang] || copyMap.en;
   data-blocked-weekdays={(tour.bookingBlockedWeekdays || []).join(",")}
   data-blocked-dates={(tour.bookingBlockedDates || []).join(",")}
   data-pricing={JSON.stringify(tour.pricing ?? {})}
+  data-msg-date-error={t('booking.dateError')}
+  data-msg-today-error={t('booking.todayError')}
+  data-msg-time-error={t('booking.timeError')}
+  data-msg-participants-error={t('booking.participantsError')}
+  data-msg-pickup-error={t('booking.pickupError')}
+  data-msg-name-error={t('booking.nameError')}
+  data-msg-email-error={t('booking.emailError')}
+  data-msg-phone-error={t('booking.phoneError')}
+  data-msg-submit-error={t('booking.submitError')}
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
@@ -121,12 +38,12 @@ const copy = copyMap[lang] || copyMap.en;
     <button
       class="booking-modal__close"
       type="button"
-      aria-label={copy.close}
+      aria-label={t('booking.close')}
       data-booking-close
     >
       ×
     </button>
-    <h2 class="booking-modal__title">{copy.title}</h2>
+    <h2 class="booking-modal__title">{t('booking.title')}</h2>
     <form
       class="booking-form"
       data-booking-form
@@ -138,105 +55,117 @@ const copy = copyMap[lang] || copyMap.en;
       <input type="hidden" name="lang" value={lang} />
       <input type="hidden" name="_subject" value={`New Booking Request - ${tour.title}`} />
 
-      <div class="form-field">
-        <label for="booking-date">{copy.date}</label>
-        <input id="booking-date" name="date" type="text" required />
-        <small class="field-error" data-error-for="date"></small>
-      </div>
+      <fieldset class="booking-fieldset">
+        <legend class="booking-fieldset__legend">{t('booking.fieldset.schedule')}</legend>
 
-      {hasFixedSlots ? (
         <div class="form-field">
-          <label for="booking-time">{copy.time}</label>
-          <select id="booking-time" name="time" required>
-            <option value="" selected disabled>
-              --
-            </option>
-            {bookingSlots.map((slot) => (
-              <option value={slot}>{slot}</option>
-            ))}
-          </select>
-          <small class="field-error" data-error-for="time"></small>
+          <label for="booking-date">{t('booking.date')}</label>
+          <input id="booking-date" name="date" type="text" required />
+          <small class="field-error" data-error-for="date"></small>
         </div>
-      ) : (
+
+        {hasFixedSlots ? (
+          <div class="form-field">
+            <label for="booking-time">{t('booking.time')}</label>
+            <select id="booking-time" name="time" required>
+              <option value="" selected disabled>
+                --
+              </option>
+              {bookingSlots.map((slot) => (
+                <option value={slot}>{slot}</option>
+              ))}
+            </select>
+            <small class="field-error" data-error-for="time"></small>
+          </div>
+        ) : (
+          <div class="form-field">
+            <label for="booking-time-flex">{t('booking.timeFlexibleLabel')}</label>
+            <input
+              id="booking-time-flex"
+              name="time"
+              type="text"
+              placeholder={t('booking.timeFlexiblePlaceholder')}
+              required
+            />
+            <small class="field-error" data-error-for="time"></small>
+          </div>
+        )}
+      </fieldset>
+
+      <fieldset class="booking-fieldset">
+        <legend class="booking-fieldset__legend">{t('booking.fieldset.logistics')}</legend>
+
         <div class="form-field">
-          <label for="booking-time-flex">{copy.timeFlexibleLabel}</label>
+          <label for="booking-participants">{t('booking.participants')}</label>
           <input
-            id="booking-time-flex"
-            name="time"
-            type="text"
-            placeholder={copy.timeFlexiblePlaceholder}
+            id="booking-participants"
+            name="participants"
+            type="number"
+            min="1"
+            max="12"
             required
           />
-          <small class="field-error" data-error-for="time"></small>
+          <div class="booking-price" data-booking-price hidden>
+            <div class="booking-price__value" data-booking-price-value></div>
+            <div class="booking-price__note">{t('booking.priceNote')}</div>
+          </div>
+          <small class="field-error" data-error-for="participants"></small>
         </div>
-      )}
 
-      <div class="form-field">
-        <label for="booking-participants">{copy.participants}</label>
-        <input
-          id="booking-participants"
-          name="participants"
-          type="number"
-          min="1"
-          max="12"
-          required
-        />
-        <div class="booking-price" data-booking-price hidden>
-          <div class="booking-price__value" data-booking-price-value></div>
-          <div class="booking-price__note">{copy.priceNote}</div>
+        <div class="form-field">
+          <label for="booking-pickup">{t('booking.pickup')}</label>
+          <input
+            id="booking-pickup"
+            name="pickup"
+            type="text"
+            placeholder={t('booking.pickupPlaceholder')}
+            required
+          />
+          <small class="field-error" data-error-for="pickup"></small>
         </div>
-        <small class="field-error" data-error-for="participants"></small>
-      </div>
 
-      <div class="form-field">
-        <label for="booking-pickup">{copy.pickup}</label>
-        <input
-          id="booking-pickup"
-          name="pickup"
-          type="text"
-          placeholder={copy.pickupPlaceholder}
-          required
-        />
-        <small class="field-error" data-error-for="pickup"></small>
-      </div>
+        <div class="form-field">
+          <label for="booking-special">{t('booking.special')}</label>
+          <textarea
+            id="booking-special"
+            name="specialRequests"
+            placeholder={t('booking.specialPlaceholder')}
+            rows="4"
+          ></textarea>
+        </div>
+      </fieldset>
 
-      <div class="form-field">
-        <label for="booking-special">{copy.special}</label>
-        <textarea
-          id="booking-special"
-          name="specialRequests"
-          placeholder={copy.specialPlaceholder}
-          rows="4"
-        ></textarea>
-      </div>
+      <fieldset class="booking-fieldset">
+        <legend class="booking-fieldset__legend">{t('booking.fieldset.contact')}</legend>
 
-      <div class="form-field">
-        <label for="booking-name">{copy.name}</label>
-        <input id="booking-name" name="name" type="text" required />
-        <small class="field-error" data-error-for="name"></small>
-      </div>
+        <div class="form-field">
+          <label for="booking-name">{t('booking.name')}</label>
+          <input id="booking-name" name="name" type="text" required />
+          <small class="field-error" data-error-for="name"></small>
+        </div>
 
-      <div class="form-field">
-        <label for="booking-email">{copy.email}</label>
-        <input id="booking-email" name="email" type="email" required />
-        <small class="field-error" data-error-for="email"></small>
-      </div>
+        <div class="form-field">
+          <label for="booking-email">{t('booking.email')}</label>
+          <input id="booking-email" name="email" type="email" required />
+          <small class="field-error" data-error-for="email"></small>
+        </div>
 
-      <div class="form-field">
-        <label for="booking-phone">{copy.phone}</label>
-        <input
-          id="booking-phone"
-          name="phone"
-          type="tel"
-          required
-          placeholder={copy.phonePlaceholder}
-          inputmode="tel"
-        />
-        <small class="field-error" data-error-for="phone"></small>
-      </div>
+        <div class="form-field">
+          <label for="booking-phone">{t('booking.phone')}</label>
+          <input
+            id="booking-phone"
+            name="phone"
+            type="tel"
+            required
+            placeholder={t('booking.phonePlaceholder')}
+            inputmode="tel"
+          />
+          <small class="field-error" data-error-for="phone"></small>
+        </div>
+      </fieldset>
 
       <button type="submit" class="btn btn-primary btn-lg booking-submit">
-        {copy.submit}
+        {t('booking.submit')}
       </button>
       <p class="form-error" data-booking-error aria-live="polite"></p>
     </form>
@@ -245,47 +174,12 @@ const copy = copyMap[lang] || copyMap.en;
 </div>
 
 <div class="booking-toast" data-booking-toast aria-live="polite">
-  {copy.success}
+  {t('booking.success')}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script type="module">
   const flatpickr = window.flatpickr;
-  const copyMap = {
-    en: {
-      dateError: "Please select a valid date.",
-      todayError: "Date cannot be in the past.",
-      timeError: "Please select a time.",
-      participantsError: "Please enter 1 to 12 participants.",
-      pickupError: "Please enter a pickup location.",
-      nameError: "Please enter your name.",
-      emailError: "Please enter a valid email.",
-      phoneError: "Please enter a valid phone number with country code.",
-      submitError: "Something went wrong. Please try again.",
-    },
-    es: {
-      dateError: "Selecciona una fecha válida.",
-      todayError: "La fecha no puede ser pasada.",
-      timeError: "Selecciona una hora.",
-      participantsError: "Ingresa de 1 a 12 participantes.",
-      pickupError: "Ingresa un lugar de recogida.",
-      nameError: "Ingresa tu nombre.",
-      emailError: "Ingresa un email válido.",
-      phoneError: "Ingresa un teléfono válido con código de país.",
-      submitError: "Algo salió mal. Inténtalo de nuevo.",
-    },
-    "pt-br": {
-      dateError: "Selecione uma data válida.",
-      todayError: "A data não pode ser no passado.",
-      timeError: "Selecione um horário.",
-      participantsError: "Informe de 1 a 12 participantes.",
-      pickupError: "Informe o local de busca.",
-      nameError: "Informe seu nome.",
-      emailError: "Informe um email válido.",
-      phoneError: "Informe um telefone válido com código do país.",
-      submitError: "Algo deu errado. Tente novamente.",
-    },
-  };
 
   const init = () => {
     const modal = document.querySelector("[data-booking-modal]");
@@ -295,8 +189,17 @@ const copy = copyMap[lang] || copyMap.en;
     const toast = document.querySelector("[data-booking-toast]");
     const errorLine = modal.querySelector("[data-booking-error]");
     const dateInput = modal.querySelector("#booking-date");
-    const lang = modal.dataset.lang || "en";
-    const messages = copyMap[lang] || copyMap.en;
+    const messages = {
+      dateError: modal.dataset.msgDateError,
+      todayError: modal.dataset.msgTodayError,
+      timeError: modal.dataset.msgTimeError,
+      participantsError: modal.dataset.msgParticipantsError,
+      pickupError: modal.dataset.msgPickupError,
+      nameError: modal.dataset.msgNameError,
+      emailError: modal.dataset.msgEmailError,
+      phoneError: modal.dataset.msgPhoneError,
+      submitError: modal.dataset.msgSubmitError,
+    };
     const participantsInput = modal.querySelector("#booking-participants");
     const priceWrap = modal.querySelector("[data-booking-price]");
     const priceValue = modal.querySelector("[data-booking-price-value]");
@@ -660,6 +563,25 @@ const copy = copyMap[lang] || copyMap.en;
   .booking-form {
     display: grid;
     gap: var(--space-sm);
+  }
+
+  .booking-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .booking-fieldset__legend {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-xs);
+    color: color-mix(in srgb, var(--color-text) 60%, transparent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0;
+    margin-bottom: var(--space-2xs);
+    width: 100%;
   }
 
   .form-field {
