@@ -30,6 +30,8 @@ const icons = {
         <a
           href={content.ctaSecondary.link}
           class="btn btn-outline-secondary btn-lg cta-btn-secondary"
+          target={content.ctaSecondary.newTab ? "_blank" : undefined}
+          rel={content.ctaSecondary.newTab ? "noopener noreferrer" : undefined}
         >
           {content.ctaSecondary.text}
         </a>

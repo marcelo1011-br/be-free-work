@@ -224,14 +224,15 @@ export const homeContent = {
     },
     ctaFinal: {
       title: "Ready to Discover Rio?",
-      subtitle: "Join 15,000+ travelers who experienced Rio the right way. Book your private tour today.",
+      subtitle: "Free cancellation up to 72 hours before your tour. No upfront payment. 4.9/5 from 800+ verified reviews.",
       ctaPrimary: {
-        text: "Book Your Tour",
+        text: "Reserve Now — Pay Nothing Until 72h Before",
         link: "/en/private-tours"
       },
       ctaSecondary: {
-        text: "Contact Us",
-        link: "/en/contact"
+        text: "Talk to Us on WhatsApp",
+        link: "https://wa.me/5521979271637?text=Hi%20Be%20Free%20Tours%2C%20I%27d%20like%20to%20know%20more%20about%20your%20private%20tours%20in%20Rio.",
+        newTab: true
       },
       trustBadges: [
         { icon: "calendar", text: "12+ Years Since 2013" },
@@ -437,14 +438,15 @@ export const homeContent = {
     },
     ctaFinal: {
       title: "¿Listo para Descubrir Río?",
-      subtitle: "Únete a más de 15,000 viajeros que experimentaron Río de la manera correcta. Reserva tu tour privado hoy.",
+      subtitle: "Cancelación gratuita hasta 72 horas antes de tu tour. Sin pago por adelantado. 4,9/5 con más de 800 reseñas verificadas.",
       ctaPrimary: {
-        text: "Reservar Tour",
+        text: "Reservar Ahora — Sin Pagar Hasta 72h Antes",
         link: "/es/tours-privados"
       },
       ctaSecondary: {
-        text: "Contáctanos",
-        link: "/es/contacto"
+        text: "Habla con Nosotros por WhatsApp",
+        link: "https://wa.me/5521979271637?text=Hola%20Be%20Free%20Tours%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20tours%20privados%20en%20R%C3%ADo.",
+        newTab: true
       },
       trustBadges: [
         { icon: "calendar", text: "Más de 12 Años Desde 2013" },
@@ -650,14 +652,15 @@ export const homeContent = {
     },
     ctaFinal: {
       title: "Pronto Para Descobrir o Rio?",
-      subtitle: "Junte-se a mais de 15.000 viajantes que experimentaram o Rio da maneira certa. Reserve seu passeio privado hoje.",
+      subtitle: "Cancelamento grátis até 72 horas antes do passeio. Sem pagamento antecipado. 4,9/5 com mais de 800 avaliações verificadas.",
       ctaPrimary: {
-        text: "Reservar Passeio",
+        text: "Reserve Agora — Pague Só 72h Antes",
         link: "/pt-br/passeios-privados"
       },
       ctaSecondary: {
-        text: "Fale Conosco",
-        link: "/pt-br/contato"
+        text: "Fale Conosco pelo WhatsApp",
+        link: "https://wa.me/5521979271637?text=Ol%C3%A1%20Be%20Free%20Tours%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20passeios%20privados%20no%20Rio.",
+        newTab: true
       },
       trustBadges: [
         { icon: "calendar", text: "Mais de 12 Anos Desde 2013" },
