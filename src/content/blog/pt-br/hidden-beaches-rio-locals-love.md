@@ -202,7 +202,7 @@ Quer conhecer esses lugares sem dor de cabeça? Nossos tours privados incluem:
 
 - Prainha & Grumari Day Trip - visite as duas com guia local
 - [Ilha Grande Beach Paradise](/pt-br/passeios-privados/island-escape-Escapada para a Ilha: Ilha Grande de Lancha Privativa) - praias ainda mais preservadas em uma ilha
-- [Búzios Day Trip](/pt-br/passeios-privados/Búzios: A Riviera Brasileira (23 Praias em Um Dia)-charme-costeiro-passeio-privado) - a "Saint-Tropez brasileira" com 20+ praias lindas
+- Búzios Day Trip - a "Saint-Tropez brasileira" com 20+ praias lindas
 - [The Essential Rio](/pt-br/passeios-privados/rio-essencial) - inclua uma parada em praia escondida no seu tour pela cidade
 
 ## Etiqueta local

@@ -27,8 +27,8 @@ const faqSchema = getFAQSchema(content.questions);
   <Breadcrumbs items={breadcrumbItems} />
 
   <HeroPages
-    title="Perguntas Frequentes"
-    subtitle="Tudo o que você precisa saber sobre nossos passeios privados no Rio de Janeiro"
+    title={content.title}
+    subtitle={content.subtitle}
     maxWidth="clamp(40rem, 80vw, 50rem)"
   />
 
@@ -54,8 +54,8 @@ const faqSchema = getFAQSchema(content.questions);
       </div>
 
       <div class="faq-cta">
-        <p>Ainda tem dúvidas? Ficaremos felizes em ajudar!</p>
-        <a href={`/${lang}/contato`} class="btn-primary">Fale Conosco</a>
+        <p>{content.ctaText}</p>
+        <a href={`/${lang}/contato`} class="btn-primary">{content.ctaButton}</a>
       </div>
     </div>
   </section>

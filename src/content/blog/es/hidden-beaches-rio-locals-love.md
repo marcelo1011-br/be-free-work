@@ -202,7 +202,7 @@ Muchas playas son difíciles en transporte público. Opciones:
 
 - Prainha & Grumari Day Trip - visita ambas con guía local
 - [Ilha Grande Beach Paradise](/es/tours-privados/island-escape-Escape a la Isla: Ilha Grande en Lancha Privada) - playas aún más prístinas en una isla
-- [Búzios Day Trip](/es/tours-privados/Búzios: La Riviera de Brasil (23 Playas en Un Día)-riviera) - la "Saint-Tropez" de Brasil con 20+ playas
+- Búzios Day Trip - la "Saint-Tropez" de Brasil con 20+ playas
 - [The Essential Rio](/es/tours-privados/essential-rio) - agrega una parada en playa escondida
 
 ## Etiqueta local

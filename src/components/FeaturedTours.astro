@@ -5,16 +5,11 @@
 import TourCard from "./TourCard.astro";
 import { tours } from "../data/tours.js";
 import { useTranslations } from "../i18n/utils";
-import { homeContent } from "../data/homeContent.js";
-
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 
 const featuredTours = tours[lang].filter((tour) => tour.isFeatured);
-
-
-const content = (homeContent[lang] ?? homeContent.en).howItWorks;
 
 const toursBase = `/${lang}/${lang === "en" ? "private-tours" : lang === "es" ? "tours-privados" : "passeios-privados"}`;
 
@@ -23,19 +18,16 @@ const quickFilters = {
     { label: "All Tours",     href: toursBase },
     { label: "City Tours",    href: `${toursBase}?category=city-tours` },
     { label: "Day Trips",     href: `${toursBase}?category=day-trips` },
-    { label: "Walking Tours", href: `${toursBase}?category=walking-tours` },
   ],
   es: [
     { label: "Todos los Tours",      href: toursBase },
     { label: "Tours por la Ciudad",  href: `${toursBase}?category=city-tours` },
     { label: "Excursiones de Día",   href: `${toursBase}?category=day-trips` },
-    { label: "Tours a Pie",          href: `${toursBase}?category=walking-tours` },
   ],
   "pt-br": [
     { label: "Todos os Passeios",       href: toursBase },
     { label: "City Tours",              href: `${toursBase}?category=city-tours` },
     { label: "Passeios de Dia Inteiro", href: `${toursBase}?category=day-trips` },
-    { label: "Walking Tours",           href: `${toursBase}?category=walking-tours` },
   ],
 };
 
@@ -65,31 +57,6 @@ const tourBadgeMap = {
 ---
 
 
-<section class="how-it-works">
-  <div class="container">
-    <h2 class="section-title-decorated">{content.title}</h2>
-    
-    <div class="steps-grid">
-      {content.steps.map((step, index) => (
-        <div class="step-card">
-          <div class="step-number">{index + 1}</div>
-          <div class="step-content">
-            <h3 class="step-title">{step.title}</h3>
-            <p class="step-description">{step.description}</p>
-          </div>
-          {index < content.steps.length - 1 && (
-            <div class="step-connector">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
 
 <section class="featured-tours">
   <div class="container">
@@ -106,6 +73,7 @@ const tourBadgeMap = {
       ))}
     </div>
 
+    {/* QUICK FILTERS - TEMPORARIAMENTE DESATIVADO
     <nav class="quick-filters" aria-label={lang === "en" ? "Browse by category" : lang === "es" ? "Filtrar por categoría" : "Filtrar por categoria"}>
       {filters.map((f, i) => (
         <span class="qf-item">
@@ -114,6 +82,7 @@ const tourBadgeMap = {
         </span>
       ))}
     </nav>
+    */}
 
     <div class="section-cta">
       <a
@@ -130,96 +99,12 @@ const tourBadgeMap = {
 </section>
 
 <style>
-  
-  .how-it-works {
-    --step-grid-min: 280px;
-    --step-card-lift: -4px;
-    --step-number-size: clamp(3rem, 6vw, 3.5rem);
-    --step-number-border: var(--border-width-strong);
-    --step-connector-offset: -32px;
-    --step-icon-size: clamp(2rem, 4vw, 2.25rem);
+  .featured-tours {
     --section-subtitle-max: clamp(40rem, 75vw, 50rem);
     --cta-btn-gap: var(--space-xs);
 
     padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-white);
-  }
-
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--step-grid-min)), 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-2xl);
-  }
-
-  .step-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-xl);
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
-    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
-  }
-
-  .step-card:hover {
-    transform: translateY(var(--step-card-lift));
-  }
-
-  .step-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--step-number-size);
-    height: var(--step-number-size);
-    border: var(--step-number-border) solid var(--color-border);
-    border-radius: 50%;
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-md);
-  }
-
-  .step-content {
-    flex-grow: 1;
-  }
-
-  .step-title {
-    font-size: var(--font-size-h5);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-sm);
-  }
-
-  .step-description {
-    font-size: var(--font-size-small);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-  }
-
-  .step-connector {
-    display: none;
-    position: absolute;
-    right: var(--step-connector-offset);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-border);
-  }
-
-  @media (min-width: 900px) {
-    .step-connector {
-      display: block;
-    }
-  }
-
-  
-  .featured-tours {
-    padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-soft);
+    background-color: var(--color-bg-alt);
   }
 
   .featured-tours .container {
@@ -237,10 +122,11 @@ const tourBadgeMap = {
   }
 
   .tours-grid {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-xl);
     gap: var(--space-md);
   }
 
+  /* QUICK FILTERS - TEMPORARIAMENTE DESATIVADO
   .quick-filters {
     display: flex;
     flex-wrap: wrap;
@@ -273,6 +159,7 @@ const tourBadgeMap = {
     color: var(--color-text);
     text-decoration: underline;
   }
+  */
 
   .section-cta {
     text-align: center;
@@ -296,7 +183,6 @@ const tourBadgeMap = {
 
   
   @media (max-width: 768px) {
-    .how-it-works,
     .featured-tours {
       padding: var(--space-2xl) 0;
     }
@@ -305,30 +191,6 @@ const tourBadgeMap = {
       text-align: center;
     }
 
-    .steps-grid {
-      margin-top: var(--space-lg);
-      gap: var(--space-md);
-    }
-
-    .step-card {
-      padding: var(--space-md);
-      text-align: center;
-      align-items: center;
-    }
-
-    .step-number {
-      margin-bottom: var(--space-sm);
-    }
-
-    .step-title {
-      font-size: var(--font-size-body);
-    }
-
-    .step-description {
-      font-size: var(--font-size-small);
-    }
-
-
     .section-subtitle {
       margin-bottom: var(--space-xl);
       font-size: var(--font-size-body);
@@ -336,11 +198,7 @@ const tourBadgeMap = {
     }
 
     .tours-grid {
-      margin-bottom: var(--space-sm);
-    }
-
-    .quick-filters {
-      margin-bottom: var(--space-lg);
+      margin-bottom: var(--space-xl);
     }
   }
 </style>

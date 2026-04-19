@@ -1,19 +1,47 @@
 
 
 
-export function getTourSEO(tour, lang, imageUrl) {
-  const langMap = {
+import { pageContent } from "../data/pageContent.js";
+
+function truncateMetaDescription(text, maxLength = 158) {
+  if (text.length <= maxLength) return text;
+  const trimmed = text.slice(0, maxLength + 1);
+  const safeCut = Math.max(trimmed.lastIndexOf(". "), trimmed.lastIndexOf(", "), trimmed.lastIndexOf(" "));
+  const base = safeCut > 110 ? trimmed.slice(0, safeCut) : trimmed.slice(0, maxLength - 1);
+  return `${base.trim().replace(/[.,;:!?-]+$/, "")}.`;
+}
+
+function getIntentDescription(item, lang, section = "tours") {
+  const copy = {
     en: {
-      titleSuffix: 'Private Tour in Rio | Be Free Tours',
-      metaTemplate: 'Book this private tour in Rio de Janeiro. ',
+      tours: `${item.title} is a private guided tour in Rio de Janeiro with iconic landmarks, full logistics, and skip-the-line planning.`,
+      experiences: `${item.title} is a local Rio de Janeiro experience with immersive, walking-based discovery focused on culture, food, history, and things to do.`,
     },
     es: {
-      titleSuffix: 'Tour Privado en Río | Be Free Tours',
-      metaTemplate: 'Reserva este tour privado en Río de Janeiro. ',
+      tours: `${item.title} es un tour privado guiado en Río de Janeiro con lugares icónicos, logística completa y planificación sin filas.`,
+      experiences: `${item.title} es una experiencia local en Río de Janeiro con recorrido inmersivo a pie, enfocada en cultura, comida, historia y qué hacer en Río.`,
+    },
+    "pt-br": {
+      tours: `${item.title} é um passeio privado guiado no Rio de Janeiro com pontos icônicos, logística completa e planejamento sem filas.`,
+      experiences: `${item.title} é uma experiência local no Rio de Janeiro com descoberta imersiva a pé, focada em cultura, comida, história e o que fazer no Rio.`,
+    },
+  };
+
+  const langCopy = copy[lang] || copy.en;
+  const description = langCopy[section === "experiences" ? "experiences" : "tours"];
+  return truncateMetaDescription(description);
+}
+
+export function getTourSEO(tour, lang, imageUrl, section = 'tours') {
+  const langMap = {
+    en: {
+      titleSuffix: section === 'experiences' ? 'Rio de Janeiro Experience' : 'Private Tour in Rio de Janeiro',
+    },
+    es: {
+      titleSuffix: section === 'experiences' ? 'Experiencia en Río de Janeiro' : 'Tour Privado en Río de Janeiro',
     },
     'pt-br': {
-      titleSuffix: 'Passeio Privado no Rio | Be Free Tours',
-      metaTemplate: 'Reserve este passeio privado no Rio de Janeiro. ',
+      titleSuffix: section === 'experiences' ? 'Experiência no Rio de Janeiro' : 'Passeio Privado no Rio de Janeiro',
     },
   };
 
@@ -23,14 +51,14 @@ export function getTourSEO(tour, lang, imageUrl) {
 
   return {
     title: `${tour.title} | ${langText.titleSuffix}`,
-    description: `${langText.metaTemplate}${tour.shortDescription}`,
+    description: getIntentDescription(tour, lang, section),
     image: resolvedImage,
   };
 }
 
 
-export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
-  const tourRoute = getTourRoute(lang);
+export function getOpenGraphTags(tour, lang, siteUrl, imageUrl, section = 'tours') {
+  const tourRoute = getTourRoute(lang, section);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
@@ -66,7 +94,11 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl) {
   };
 }
 
-function getTourRoute(lang) {
+function getTourRoute(lang, section = 'tours') {
+  if (section === 'experiences') {
+    return lang === "en" ? "experiences" : "experiencias";
+  }
+
   return lang === "en"
     ? "private-tours"
     : lang === "es"
@@ -74,20 +106,32 @@ function getTourRoute(lang) {
       : "passeios-privados";
 }
 
+export function getProductRoute(lang, section = 'tours') {
+  return getTourRoute(lang, section);
+}
 
-export function getTourSchema(tour, lang, siteUrl, imageUrl) {
-  
-  let price = 0;
-  if (tour.pricing.from) {
-    price = tour.pricing.from;
-  } else if (tour.pricing.perPerson) {
-    price = tour.pricing.perPerson;
-  } else if (tour.pricing.standard) {
-    const prices = Object.values(tour.pricing.standard);
-    price = Math.min(...prices);
+function getStructuredDataPrice(pricing = {}) {
+  if (!pricing || pricing.custom) return null;
+  if (pricing.from) return pricing.from;
+  if (pricing.perPerson) return pricing.perPerson;
+
+  if (pricing.standard) {
+    const prices = Object.values(pricing.standard).filter(
+      (value) => typeof value === "number" && Number.isFinite(value)
+    );
+
+    if (prices.length > 0) {
+      return Math.min(...prices);
+    }
   }
 
-  const tourRoute = getTourRoute(lang);
+  return null;
+}
+
+
+function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') {
+  const price = getStructuredDataPrice(tour.pricing);
+  const tourRoute = getTourRoute(lang, section);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
@@ -97,23 +141,23 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   
   const rating = tour.reviews?.aggregateRating || {
     ratingValue: '4.9',
-    reviewCount: '600',
+    reviewCount: '800',
     bestRating: '5',
     worstRating: '1',
   };
 
-  return [
-    {
-      '@type': 'Product',
-      '@id': `${tourUrl}#product`,
-      'name': tour.title,
-      'description': tour.fullDescription,
-      'image': absoluteImageUrl,
-      'url': tourUrl,
-      'brand': {
-        '@type': 'Brand',
-        'name': 'Be Free Tours',
-      },
+  return {
+    '@type': 'Product',
+    '@id': `${tourUrl}#product`,
+    'name': tour.title,
+    'description': tour.fullDescription,
+    'image': absoluteImageUrl,
+    'url': tourUrl,
+    'brand': {
+      '@type': 'Brand',
+      'name': 'Be Free Tours',
+    },
+    ...(price !== null && {
       'offers': {
         '@type': 'Offer',
         'url': tourUrl,
@@ -142,14 +186,27 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
           }
         }
       },
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': rating.ratingValue,
-        'reviewCount': rating.reviewCount,
-        'bestRating': rating.bestRating || '5',
-        'worstRating': rating.worstRating || '1',
-      },
+    }),
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': rating.ratingValue,
+      'reviewCount': rating.reviewCount,
+      'bestRating': rating.bestRating || '5',
+      'worstRating': rating.worstRating || '1',
     },
+  };
+}
+
+export function getTourSchema(tour, lang, siteUrl, imageUrl, section = 'tours') {
+  const tourRoute = getTourRoute(lang, section);
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const resolvedImage = imageUrl || '/images/og-default.jpg';
+  const absoluteImageUrl = resolvedImage?.startsWith('http')
+  ? resolvedImage
+  : `${siteUrl}${resolvedImage}`;
+
+  return [
+    getBaseProductSchema(tour, lang, siteUrl, imageUrl, section),
     {
       '@type': 'TouristAttraction',
       '@id': `${tourUrl}#attraction`,
@@ -162,13 +219,53 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl) {
   ];
 }
 
+export function getExperienceSchema(item, lang, siteUrl, imageUrl) {
+  const itemRoute = getTourRoute(lang, 'experiences');
+  const itemUrl = `${siteUrl}/${lang}/${itemRoute}/${item.slug}`;
+  const resolvedImage = imageUrl || '/images/og-default.jpg';
+  const absoluteImageUrl = resolvedImage?.startsWith('http')
+    ? resolvedImage
+    : `${siteUrl}${resolvedImage}`;
 
-export function getReviewSchema(tour, siteUrl, lang) {
+  return [
+    getBaseProductSchema(item, lang, siteUrl, imageUrl, 'experiences'),
+    {
+      '@type': 'TouristAttraction',
+      '@id': `${itemUrl}#attraction`,
+      'name': item.title,
+      'description': item.shortDescription,
+      'image': absoluteImageUrl,
+      'touristType': 'Travelers',
+      'availableLanguage': ['en', 'es', 'pt'],
+    },
+  ];
+}
+
+export function getProductSEO(item, lang, imageUrl, section = 'tours') {
+  return getTourSEO(item, lang, imageUrl, section);
+}
+
+export function getProductSchema(item, lang, siteUrl, imageUrl, section = 'tours') {
+  return section === 'experiences'
+    ? getExperienceSchema(item, lang, siteUrl, imageUrl)
+    : getTourSchema(item, lang, siteUrl, imageUrl, section);
+}
+
+export function getProductReviewSchema(item, siteUrl, lang, section = 'tours') {
+  return getReviewSchema(item, siteUrl, lang, section);
+}
+
+export function getProductOpenGraphTags(item, lang, siteUrl, imageUrl, section = 'tours') {
+  return getOpenGraphTags(item, lang, siteUrl, imageUrl, section);
+}
+
+
+export function getReviewSchema(tour, siteUrl, lang, section = 'tours') {
   if (!tour.reviews || !tour.reviews.reviewsList || tour.reviews.reviewsList.length === 0) {
     return null;
   }
 
-  const tourRoute = getTourRoute(lang);
+  const tourRoute = getTourRoute(lang, section);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
 
   return tour.reviews.reviewsList.map((review, index) => ({
@@ -231,13 +328,124 @@ export function getFAQSchema(faqs) {
 }
 
 
+export function getTourFAQSchema(tour, lang, section = 'tours') {
+  const faqs = [];
+  const hasPickup = tour.included.some((i) => /pickup|busca|recogida/i.test(i));
+  const includedList = tour.included.join(', ');
+  const isExperience = section === 'experiences';
+
+  // Q1: Price
+  let priceAnswer;
+  if (tour.pricing.custom) {
+    const answers = {
+      en: `${tour.title} is a fully customized private tour — pricing depends on your specific itinerary, group size, and chosen attractions. Request a free quote to get a personalized estimate.`,
+      es: `${tour.title} es un tour privado completamente personalizado — el precio depende de tu itinerario específico, tamaño del grupo y atracciones elegidas. Solicita un presupuesto gratuito para obtener una estimación personalizada.`,
+      'pt-br': `${tour.title} é um passeio privado totalmente personalizado — o preço depende do seu itinerário específico, tamanho do grupo e atrações escolhidas. Solicite um orçamento gratuito para obter uma estimativa personalizada.`,
+    };
+    priceAnswer = answers[lang];
+  } else if (tour.pricing.perPerson) {
+    const answers = {
+      en: isExperience
+        ? `${tour.title} is priced at USD ${tour.pricing.perPerson} per person. This experience is walking-based and guide-led, so pricing is per participant rather than per vehicle.`
+        : `${tour.title} is priced at USD ${tour.pricing.perPerson} per person. This walking tour does not require vehicle logistics, so pricing is per participant with a certified guide.`,
+      es: isExperience
+        ? `${tour.title} tiene un precio de USD ${tour.pricing.perPerson} por persona. Esta experiencia es guiada y se realiza a pie, por lo que el precio es por participante y no por vehículo.`
+        : `${tour.title} tiene un precio de USD ${tour.pricing.perPerson} por persona. Este tour a pie no requiere logística de vehículo, por lo que pagas por participante con guía certificado.`,
+      'pt-br': isExperience
+        ? `${tour.title} tem preço de USD ${tour.pricing.perPerson} por pessoa. Esta experiência é guiada e feita a pé, então o valor é por participante e não por veículo.`
+        : `${tour.title} tem preço de USD ${tour.pricing.perPerson} por pessoa. Este passeio a pé não exige logística de veículo, então o valor é por participante com guia certificado.`,
+    };
+    priceAnswer = answers[lang];
+  } else if (tour.pricing.standard) {
+    const minPrice = Math.min(...Object.values(tour.pricing.standard));
+    const entries = Object.entries(tour.pricing.standard).map(([k, v]) => `USD ${v} (${k})`).join(' / ');
+    const answers = {
+      en: `${tour.title} starts from USD ${minPrice} per group. Pricing by group size: ${entries}. The price covers the entire private speedboat — the more people in your group, the lower the cost per person.`,
+      es: `${tour.title} comienza desde USD ${minPrice} por grupo. Precios por tamaño de grupo: ${entries}. El precio cubre la lancha privada completa — cuantas más personas en tu grupo, menor el costo por persona.`,
+      'pt-br': `${tour.title} começa a partir de USD ${minPrice} por grupo. Preços por tamanho de grupo: ${entries}. O preço cobre a lancha privativa completa — quanto mais pessoas no grupo, menor o custo por pessoa.`,
+    };
+    priceAnswer = answers[lang];
+  } else {
+    const answers = {
+      en: `${tour.title} starts from USD ${tour.pricing.from} per group. The tour is priced per group, not per person — for couples and families, the cost per person drops significantly. Payment is only required 72 hours before the tour.`,
+      es: `${tour.title} comienza desde USD ${tour.pricing.from} por grupo. El precio es por grupo, no por persona — para parejas y familias, el costo por persona baja considerablemente. El pago solo se requiere 72 horas antes del tour.`,
+      'pt-br': `${tour.title} começa a partir de USD ${tour.pricing.from} por grupo. O preço é por grupo, não por pessoa — para casais e famílias, o custo por pessoa cai consideravelmente. O pagamento só é necessário 72 horas antes do passeio.`,
+    };
+    priceAnswer = answers[lang];
+  }
+
+  const q1 = { en: `How much does ${tour.title} cost?`, es: `¿Cuánto cuesta ${tour.title}?`, 'pt-br': `Quanto custa ${tour.title}?` };
+  faqs.push({ q: q1[lang], a: priceAnswer });
+
+  // Q2: What's included
+  const q2 = { en: `What is included in ${tour.title}?`, es: `¿Qué incluye ${tour.title}?`, 'pt-br': `O que está incluído em ${tour.title}?` };
+  const a2 = {
+    en: `${tour.title} includes: ${includedList}.`,
+    es: `${tour.title} incluye: ${includedList}.`,
+    'pt-br': `${tour.title} inclui: ${includedList}.`,
+  };
+  faqs.push({ q: q2[lang], a: a2[lang] });
+
+  // Q3: Duration
+  const q3 = { en: `How long is ${tour.title}?`, es: `¿Cuánto dura ${tour.title}?`, 'pt-br': `Qual a duração de ${tour.title}?` };
+  const a3 = {
+    en: `${tour.title} lasts ${tour.duration}. The exact start time depends on your booking preferences and will be confirmed when you reserve.`,
+    es: `${tour.title} dura ${tour.duration}. La hora exacta de inicio depende de tus preferencias de reserva y se confirma al reservar.`,
+    'pt-br': `${tour.title} tem duração de ${tour.duration}. O horário exato de início depende das suas preferências de reserva e é confirmado ao reservar.`,
+  };
+  faqs.push({ q: q3[lang], a: a3[lang] });
+
+  // Q4: Hotel pickup
+  const q4 = { en: `Does ${tour.title} include hotel pickup?`, es: `¿${tour.title} incluye recogida en el hotel?`, 'pt-br': `${tour.title} inclui busca no hotel?` };
+  const a4 = hasPickup
+    ? {
+        en: `Yes. ${tour.title} includes door-to-door pickup from any hotel, Airbnb, cruise terminal, or airport in Rio de Janeiro. Drop-off at the same location is also included.`,
+        es: `Sí. ${tour.title} incluye recogida puerta a puerta desde cualquier hotel, Airbnb, terminal de cruceros o aeropuerto de Río de Janeiro. El traslado de regreso al mismo lugar también está incluido.`,
+        'pt-br': `Sim. ${tour.title} inclui busca porta a porta em qualquer hotel, Airbnb, terminal de cruzeiros ou aeroporto no Rio de Janeiro. O retorno ao mesmo local também está incluído.`,
+      }
+    : {
+        en: isExperience
+          ? `${tour.title} starts at a central meeting point in Rio. This experience does not include private vehicle logistics or hotel pickup — your guide will meet you at the designated starting location.`
+          : `${tour.title} is a walking tour that starts at a central meeting point in Rio. There is no private vehicle or hotel pickup — your certified guide will meet you at the designated starting location.`,
+        es: isExperience
+          ? `${tour.title} comienza en un punto de encuentro céntrico en Río. Esta experiencia no incluye logística de vehículo privado ni recogida en hotel — tu guía te recibirá en el punto de inicio indicado.`
+          : `${tour.title} es un tour a pie que comienza en un punto de encuentro central en Río. No incluye vehículo privado ni recogida en hotel — tu guía certificado te recibirá en el punto de inicio designado.`,
+        'pt-br': isExperience
+          ? `${tour.title} começa em um ponto de encontro central no Rio. Esta experiência não inclui logística de veículo privativo nem busca no hotel — seu guia encontrará você no local combinado.`
+          : `${tour.title} é um passeio a pé que começa em um ponto de encontro central no Rio. Não há veículo privativo ou busca no hotel — seu guia certificado irá te encontrar no ponto de partida designado.`,
+      };
+  faqs.push({ q: q4[lang], a: a4[lang] });
+
+  // Q5: Restrictions (only if present)
+  if (tour.restrictions) {
+    const q5 = {
+      en: `Are there any availability restrictions for ${tour.title}?`,
+      es: `¿Hay restricciones de disponibilidad para ${tour.title}?`,
+      'pt-br': `Há restrições de disponibilidade para ${tour.title}?`,
+    };
+    const a5 = {
+      en: `Yes. ${tour.restrictions} Book in advance to secure your preferred date.`,
+      es: `Sí. ${tour.restrictions} Reserva con anticipación para asegurar tu fecha preferida.`,
+      'pt-br': `Sim. ${tour.restrictions} Reserve com antecedência para garantir sua data preferida.`,
+    };
+    faqs.push({ q: q5[lang], a: a5[lang] });
+  }
+
+  return faqs;
+}
+
+export function getProductFAQSchema(item, lang, section = 'tours') {
+  return getTourFAQSchema(item, lang, section);
+}
+
+
 export function getWebSiteSchema(siteUrl) {
   return {
     '@type': 'WebSite',
     '@id': `${siteUrl}/#website`,
     'url': siteUrl,
     'name': 'Be Free Tours',
-    'description': 'Premium Private Tours in Rio de Janeiro',
+    'description': 'Premium private tours and local experiences in Rio de Janeiro',
     'publisher': {
       '@id': `${siteUrl}/#organization`,
     },
@@ -270,7 +478,17 @@ export function getPageSEO(pageName, lang) {
       privateTours: {
         title: 'Private Tours in Rio de Janeiro | Be Free Tours',
         description:
-        'Explore Rio with our handcrafted private tours. City highlights, day trips, and walking experiences. Skip-the-line access, flexible itineraries, expert local guides.',
+        'Private guided tours in Rio de Janeiro with full logistics, iconic landmarks, local guides, and smooth planning for high-intent travelers.',
+      },
+      experiences: {
+        title: 'Experiences in Rio de Janeiro | Be Free Tours',
+        description:
+        'Discover local things to do in Rio through immersive, walking-based experiences focused on food, culture, history, and everyday city life.',
+      },
+      faq: {
+        title: 'FAQ — Private Tours Rio de Janeiro | Be Free Tours',
+        description:
+        'Answers to the most common questions about private tours in Rio de Janeiro — pricing, what\'s included, cancellation policy, hotel pickup, languages, and more.',
       },
     },
     es: {
@@ -287,7 +505,17 @@ export function getPageSEO(pageName, lang) {
       privateTours: {
         title: 'Tours Privados en Río de Janeiro | Be Free Tours',
         description:
-        'Explora Río con nuestros tours privados personalizados. Tours de ciudad, excursiones y experiencias a pie. Acceso programado, itinerarios flexibles, guías locales expertos.',
+        'Tours privados guiados en Río de Janeiro con logística completa, lugares icónicos, guías locales y planificación fluida para viajeros listos para reservar.',
+      },
+      experiences: {
+        title: 'Experiencias en Río de Janeiro | Be Free Tours',
+        description:
+        'Descubre qué hacer en Río con experiencias locales e inmersivas a pie, centradas en cultura, comida, historia y la vida cotidiana carioca.',
+      },
+      faq: {
+        title: 'Preguntas Frecuentes — Tours Privados Río de Janeiro | Be Free Tours',
+        description:
+        'Respuestas a las preguntas más frecuentes sobre tours privados en Río de Janeiro — precios, qué incluye, cancelación, traslado al hotel, idiomas y más.',
       },
     },
     'pt-br': {
@@ -304,7 +532,17 @@ export function getPageSEO(pageName, lang) {
       privateTours: {
         title: 'Passeios Privados no Rio de Janeiro | Be Free Tours',
         description:
-        'Explore o Rio com nossos passeios privados personalizados. Tours pela cidade, passeios de dia inteiro e experiências a pé. Acesso programado, itinerários flexíveis, guias locais especialistas.',
+        'Passeios privados guiados no Rio de Janeiro com logística completa, pontos icônicos, guias locais e planejamento fluido para viajantes prontos para reservar.',
+      },
+      experiences: {
+        title: 'Experiências no Rio de Janeiro | Be Free Tours',
+        description:
+        'Descubra o que fazer no Rio com experiências locais e imersivas a pé, focadas em cultura, comida, história e no cotidiano carioca.',
+      },
+      faq: {
+        title: 'Perguntas Frequentes — Passeios Privados Rio de Janeiro | Be Free Tours',
+        description:
+        'Respostas às perguntas mais comuns sobre passeios privados no Rio de Janeiro — preços, o que inclui, cancelamento, busca no hotel, idiomas e mais.',
       },
     },
   };
@@ -321,7 +559,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Choose Your Tour",
-          text: "Browse our collection of 14 unique private tours. From iconic landmarks like Christ the Redeemer to hidden gems, pick the experience that matches your interests.",
+          text: "Browse our collection of 12 private tours with transport, logistics, and landmark-focused itineraries. From iconic sights like Christ the Redeemer to full-day escapes, pick the option that matches your plans.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -352,7 +590,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Elige tu Tour",
-          text: "Explora nuestra colección de 14 tours privados únicos. Desde monumentos icónicos como el Cristo Redentor hasta joyas escondidas.",
+          text: "Explora nuestra colección de 12 tours privados con transporte, logística y enfoque en lugares icónicos. Desde el Cristo Redentor hasta escapadas de día completo, elige la opción que mejor se adapta a tu viaje.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -383,7 +621,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Escolha seu Passeio",
-          text: "Navegue por nossa coleção de 14 passeios privados únicos. De marcos icônicos como o Cristo Redentor a joias escondidas.",
+          text: "Explore nossa coleção de 12 passeios privados com transporte, logística e foco em pontos icônicos. Do Cristo Redentor aos bate-voltas de dia inteiro, escolha a opção que melhor combina com a sua viagem.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -487,23 +725,25 @@ export function getArticleSchema(post, lang, siteUrl) {
 }
 
 
-export function getTouristTripSchema(tour, lang, siteUrl) {
+export function getTouristTripSchema(tour, lang, siteUrl, section = 'tours') {
   const langMap = {
     en: 'English',
     es: 'Spanish',
     'pt-br': 'Portuguese'
   };
 
-  const tourRoute = getTourRoute(lang);
+  const tourRoute = getTourRoute(lang, section);
+  const imageSlug = tour.imageSlug || tour.slug;
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const price = getStructuredDataPrice(tour.pricing);
 
   return {
     "@type": "TouristTrip",
     "@id": `${tourUrl}#trip`,
     "name": tour.title,
-    "description": tour.description,
+    "description": tour.shortDescription,
     "url": tourUrl,
-    "image": `${siteUrl}/images/tours/heroes/${tour.slug}-hero.webp`,
+    "image": `${siteUrl}/images/tours/heroes/${imageSlug}-hero.webp`,
     
     
     "touristType": tour.bestFor || ["Families", "Couples", "Solo travelers"],
@@ -528,19 +768,21 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
     },
     
     
-    "offers": {
-      "@type": "Offer",
-      "price": tour.pricing.from || tour.pricing.perPerson || tour.pricing.standard?.['1-3'] || "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": tourUrl,
-      "validFrom": "2026-01-01",
-      "priceValidUntil": "2026-12-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Be Free Tours"
-      }
-    },
+    ...(price !== null && {
+      "offers": {
+        "@type": "Offer",
+        "price": price,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": tourUrl,
+        "validFrom": "2026-01-01",
+        "priceValidUntil": "2026-12-31",
+        "seller": {
+          "@type": "Organization",
+          "name": "Be Free Tours"
+        }
+      },
+    }),
     
     
     "duration": tour.duration,
@@ -567,6 +809,10 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
   };
 }
 
+export function getProductTripSchema(item, lang, siteUrl, section = 'tours') {
+  return section === 'experiences' ? null : getTouristTripSchema(item, lang, siteUrl, section);
+}
+
 
 
 
@@ -574,6 +820,21 @@ export function getTouristTripSchema(tour, lang, siteUrl) {
 
 export function getAboutPageSchema(lang, siteUrl) {
   const route = lang === 'en' ? 'about' : 'sobre';
+  const aiFacts = pageContent.about[lang]?.aiFacts?.items || [];
+  const additionalProperty = aiFacts
+    .map((item) => {
+      const separatorIndex = item.indexOf(':');
+      if (separatorIndex === -1) {
+        return null;
+      }
+
+      return {
+        "@type": "PropertyValue",
+        "name": item.slice(0, separatorIndex).trim(),
+        "value": item.slice(separatorIndex + 1).trim(),
+      };
+    })
+    .filter(Boolean);
 
   return {
     "@type": "AboutPage",
@@ -584,7 +845,16 @@ export function getAboutPageSchema(lang, siteUrl) {
     "mainEntity": {
       "@type": "TravelAgency",
       "@id": `${siteUrl}/#organization`,
-      "name": "Be Free Tours"
+      "name": "Be Free Tours",
+      "foundingDate": "2013",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR",
+      },
+      "availableLanguage": ["English", "Spanish", "Portuguese"],
+      "additionalProperty": additionalProperty
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -595,7 +865,7 @@ export function getAboutPageSchema(lang, siteUrl) {
 
 
 export function getContactPageSchema(lang, siteUrl) {
-  const route = lang === 'en' ? 'contact' : 'contato';
+  const route = lang === 'en' ? 'contact' : lang === 'es' ? 'contacto' : 'contato';
 
   return {
     "@type": "ContactPage",
@@ -622,42 +892,67 @@ export function getBlogSchema(posts, lang, siteUrl) {
     "url": `${siteUrl}/${lang}/blog`,
     "name": "Be Free Tours Blog",
     "description": "Travel tips, guides and insider knowledge about Rio de Janeiro",
-    "blogPost": posts.slice(0, 10).map(post => ({
-      "@type": "BlogPosting",
-      "@id": `${siteUrl}/${lang}/blog/${post.slug.replace(`${lang}/`, '')}#article`,
-      "url": `${siteUrl}/${lang}/blog/${post.slug.replace(`${lang}/`, '')}`,
-      "headline": post.data.title,
-      "description": post.data.description
-    }))
+    "blogPost": posts.slice(0, 10).map(post => {
+      const cleanSlug = String(post.slug).split("/").filter(Boolean).pop();
+      return {
+        "@type": "BlogPosting",
+        "@id": `${siteUrl}/${lang}/blog/${cleanSlug}#article`,
+        "url": `${siteUrl}/${lang}/blog/${cleanSlug}`,
+        "headline": post.data.title,
+        "description": post.data.description
+      };
+    })
   };
 }
 
 
-export function getToursCollectionSchema(tours, lang, siteUrl) {
-  const route = lang === 'en' ? 'private-tours' : lang === 'es' ? 'tours-privados' : 'passeios-privados';
+export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours') {
+  const route = getTourRoute(lang, section);
+  const itemFragment = section === 'experiences' ? 'product' : 'trip';
+  const names = {
+    tours: {
+      en: "Private Tours in Rio de Janeiro",
+      es: "Tours Privados en Río de Janeiro",
+      "pt-br": "Passeios Privados no Rio de Janeiro",
+    },
+    experiences: {
+      en: "Experiences in Rio de Janeiro",
+      es: "Experiencias en Río de Janeiro",
+      "pt-br": "Experiências no Rio de Janeiro",
+    },
+  };
+
+  const descriptions = {
+    tours: "Discover our exclusive collection of private tours in Rio de Janeiro",
+    experiences: "Discover our curated collection of immersive experiences in Rio de Janeiro",
+  };
 
   return {
     "@type": "CollectionPage",
     "@id": `${siteUrl}/${lang}/${route}#collection`,
     "url": `${siteUrl}/${lang}/${route}`,
-    "name": lang === 'en' ? "Private Tours in Rio de Janeiro" : lang === 'es' ? "Tours Privados en Río de Janeiro" : "Passeios Privados no Rio de Janeiro",
-    "description": "Discover our exclusive collection of private tours in Rio de Janeiro",
+    "name": names[section]?.[lang] || names.tours[lang] || names.tours.en,
+    "description": descriptions[section] || descriptions.tours,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": tours.length,
       "itemListElement": tours.slice(0, 15).map((tour, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "item": {
-          "@type": "TouristTrip",
-          "@id": `${siteUrl}/${lang}/${route}/${tour.slug}#trip`,
-          "name": tour.title,
-          "description": tour.description,
+          "item": {
+            "@type": section === 'experiences' ? "Product" : "TouristTrip",
+            "@id": `${siteUrl}/${lang}/${route}/${tour.slug}#${itemFragment}`,
+            "name": tour.title,
+            "description": tour.shortDescription,
           "url": `${siteUrl}/${lang}/${route}/${tour.slug}`
         }
       }))
     }
   };
+}
+
+export function getProductsCollectionSchema(items, lang, siteUrl, section = 'tours') {
+  return getToursCollectionSchema(items, lang, siteUrl, section);
 }
 
 

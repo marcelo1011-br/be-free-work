@@ -19,7 +19,7 @@
       "slug": "essential-rio",
       "name": "The Essential Rio: Icons, Culture & Hidden Gems",
       "duration": "8 hours",
-      "price_from": 415,
+      "price_from": 445,
       "description": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain. Skip-the-line tickets for Sugarloaf included.",
       "highlights": [
         "Christ the Redeemer with priority access",
@@ -43,7 +43,7 @@
       "slug": "rio-express",
       "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
       "duration": "5 hours",
-      "price_from": 410,
+      "price_from": 440,
       "description": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
       "highlights": [
         "Christ the Redeemer statue",
@@ -63,7 +63,7 @@
       "slug": "first-light-sunrise",
       "name": "Rio at First Light: Sunrise Sugarloaf & Christ",
       "duration": "6 hours",
-      "price_from": 580,
+      "price_from": 610,
       "description": "Experience Rio's most breathtaking sunrise from Sugarloaf Mountain, followed by early access to Christ the Redeemer.",
       "highlights": [
         "Exclusive sunrise viewing from Sugarloaf",
@@ -83,7 +83,7 @@
       "slug": "golden-hour-rio",
       "name": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       "duration": "6 hours",
-      "price_from": 430,
+      "price_from": 460,
       "description": "Experience Rio's golden hour beauty with afternoon visits to Christ the Redeemer and a perfectly timed sunset from Sugarloaf Mountain.",
       "highlights": [
         "Christ the Redeemer in golden light",
@@ -104,7 +104,7 @@
       "slug": "sunset-culture-roxy",
       "name": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
       "duration": "9 hours",
-      "price_from": 680,
+      "price_from": 710,
       "description": "Combine Rio's sunset from Sugarloaf with an unforgettable evening at Brazil's premier cultural dinner show.",
       "highlights": [
         "Sunset from Sugarloaf",
@@ -126,7 +126,7 @@
       "slug": "tijuca-rainforest",
       "name": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
       "duration": "8 hours",
-      "price_from": 445,
+      "price_from": 475,
       "description": "Combine Sugarloaf Mountain's stunning vistas with the lush beauty of Tijuca Forest and Botanical Garden.",
       "highlights": [
         "Sugarloaf Mountain",
@@ -148,7 +148,7 @@
       "slug": "niteroi-mac-museum",
       "name": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
       "duration": "8 hours",
-      "price_from": 335,
+      "price_from": 365,
       "description": "Cross Guanabara Bay to discover Niterói's architectural masterpiece MAC Museum and historic military forts.",
       "highlights": [
         "MAC Niterói by Oscar Niemeyer",
@@ -169,7 +169,7 @@
       "slug": "modern-rio-museum-tomorrow",
       "name": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
       "duration": "7 hours",
-      "price_from": 445,
+      "price_from": 475,
       "description": "Explore Rio's innovative Museum of Tomorrow, South America's largest aquarium, and go behind the scenes of Carnival.",
       "highlights": [
         "Museum of Tomorrow",

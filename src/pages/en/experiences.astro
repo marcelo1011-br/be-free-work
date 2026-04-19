@@ -1,0 +1,339 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { experiences } from "../../data/experiences.js";
+import { useTranslations } from "../../i18n/utils";
+import TourCard from "../../components/TourCard.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
+import { getPageSEO, getProductsCollectionSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+
+const lang = "en";
+const t = useTranslations(lang);
+const items = experiences[lang];
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const seo = getPageSEO("experiences", lang);
+const collectionSchema = getProductsCollectionSchema(items, lang, siteUrl, "experiences");
+const contactRoute = "contact";
+const altRoute = "private-tours";
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: "Experiences", url: `/${lang}/experiences` },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+const schemas = [collectionSchema, breadcrumbSchema];
+---
+
+<BaseLayout title={seo.title} description={seo.description} schema={schemas}>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <HeroPages
+    title={t("experiencesHub.title")}
+    subtitle={t("experiencesHub.subtitle")}
+    maxWidth="clamp(40rem, 75vw, 50rem)"
+  />
+
+  <section class="products-filters">
+    <div class="container">
+      <div class="filters-wrapper">
+        <button class="filter-btn active" data-filter="all">
+          {t("experiencesHub.filterAll")}
+          <span class="filter-count">{items.length}</span>
+        </button>
+        <button class="filter-btn" data-filter="walking-tours">
+          {t("experiencesHub.filterWalking")}
+          <span class="filter-count">
+            {items.filter((item) => item.category === "walking-tours").length}
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-grid-section">
+    <div class="container">
+      <div class="product-grid grid grid-4">
+        {
+          items.map((item) => (
+            <div class="product-item" data-category={item.category}>
+              <TourCard item={item} lang={lang} section="experiences" />
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="no-results" hidden>
+        <p>{t("experiencesHub.noResults")}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">{t("experiencesHub.ctaTitle")}</h2>
+        <p class="cta-subtitle">{t("experiencesHub.ctaSubtitle")}</p>
+        <a href={`/${lang}/${contactRoute}`} class="btn btn-primary btn-lg">
+          {t("experiencesHub.ctaButton")}
+        </a>
+        <p class="cta-secondary-text">{t("experiencesHub.altLinkLabel")}</p>
+        <a href={`/${lang}/${altRoute}`} class="btn btn-outline-secondary btn-lg">
+          {t("experiencesHub.altLinkButton")}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .products-hero {
+    --products-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --products-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --products-hero-subtitle-max: clamp(40rem, 75vw, 50rem);
+
+    padding: calc(var(--space-3xl) + var(--products-hero-offset)) 0 var(--space-3xl);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+    text-align: center;
+  }
+
+  .hero-title {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    max-width: var(--products-hero-subtitle-max);
+    margin: 0 auto;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .products-filters {
+    --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
+    --filters-z: 100;
+    --filters-border: var(--border-width-hairline);
+    --filter-padding-block: clamp(0.625rem, 1.2vw, 0.75rem);
+    --filter-padding-inline: clamp(1rem, 2vw, 1.25rem);
+    --filter-border-width: var(--border-width-regular);
+    --filter-transition: var(--transition-duration-slow) var(--transition-easing-default);
+    --filter-count-size: clamp(1.25rem, 3vw, 1.5rem);
+    --filter-count-bg: color-mix(in srgb, black 15%, transparent);
+
+    padding: var(--space-xl) 0;
+    background-color: var(--color-bg-soft);
+    top: var(--filters-top);
+    z-index: var(--filters-z);
+    border-bottom: var(--filters-border) solid var(--color-border);
+  }
+
+  .filters-wrapper {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--filter-padding-block) var(--filter-padding-inline);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    border: var(--filter-border-width) solid var(--color-border);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-white);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color var(--filter-transition), border-color var(--filter-transition), color var(--filter-transition);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .filter-btn.active {
+    background: var(--gradient-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  :root[data-theme="light"] .filter-btn.active {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--filter-count-size);
+    height: var(--filter-count-size);
+    padding: 0 var(--space-xs);
+    background-color: var(--filter-count-bg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .filter-btn.active .filter-count {
+    background-color: color-mix(in srgb, white 25%, transparent);
+    color: white;
+  }
+
+  .products-grid-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .products-grid-section .container {
+    max-width: none;
+    padding-inline: var(--space-xl-compact);
+  }
+
+  .product-grid {
+    margin-bottom: var(--space-2xl);
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 1200px) {
+    .product-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .product-item {
+    transition: opacity var(--transition-duration-slow) var(--transition-easing-default), transform var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  .product-item.hidden {
+    display: none;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: var(--space-3xl) 0;
+  }
+
+  .no-results p {
+    font-size: var(--font-size-h5);
+    color: var(--color-text-light);
+  }
+
+  .cta-secondary-text {
+    margin: var(--space-lg) 0 var(--space-sm);
+    color: var(--color-text-inverse);
+  }
+
+  .products-cta {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 50%,
+      var(--color-bg-dark) 100%
+    );
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: clamp(40rem, 75vw, 50rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .cta-title {
+    color: var(--color-text-inverse);
+    margin: 0;
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-h5);
+    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .products-hero {
+      padding: calc(var(--space-3xl) + var(--products-hero-offset-mobile)) 0 var(--space-xl);
+    }
+
+    .hero-title {
+      font-size: var(--font-size-h3);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-body);
+    }
+
+    .products-filters {
+      padding: var(--space-md) 0;
+    }
+
+    .filters-wrapper {
+      gap: var(--space-xs);
+    }
+
+    .filter-btn {
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--font-size-small);
+    }
+
+    .products-grid-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .products-cta {
+      padding: var(--space-2xl) 0;
+    }
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const items = document.querySelectorAll(".product-item");
+  const noResults = document.querySelector(".no-results");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      let visibleCount = 0;
+
+      items.forEach((item) => {
+        const category = item.getAttribute("data-category");
+
+        if (filter === "all" || category === filter) {
+          item.classList.remove("hidden");
+          visibleCount++;
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults?.removeAttribute("hidden");
+      } else {
+        noResults?.setAttribute("hidden", "");
+      }
+    });
+  });
+
+  const urlCategory = new URLSearchParams(window.location.search).get("category");
+  if (urlCategory) {
+    const targetBtn = document.querySelector(`.filter-btn[data-filter="${urlCategory}"]`);
+    if (targetBtn) targetBtn.click();
+  }
+</script>

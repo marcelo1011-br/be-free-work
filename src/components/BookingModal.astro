@@ -326,17 +326,43 @@ const t = useTranslations(lang);
     updatePrice();
     participantsInput?.addEventListener("input", updatePrice);
 
+    const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let savedTrigger = null;
+
     const openModal = () => {
+      savedTrigger = document.activeElement;
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
+      const focusable = [...modal.querySelectorAll(FOCUSABLE)];
+      focusable[0]?.focus();
     };
 
     const closeModal = () => {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
+      savedTrigger?.focus();
     };
+
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("is-open")) return;
+      const focusable = [...modal.querySelectorAll(FOCUSABLE)];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.key === "Tab") {
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
 
     document.addEventListener("click", (event) => {
       const target = event.target;
@@ -623,8 +649,8 @@ const t = useTranslations(lang);
   }
 
   .form-field select option {
-    color: #111;
-    background: #fff;
+    color: var(--color-text);
+    background: var(--color-bg-card);
   }
 
   .form-field input.is-error,

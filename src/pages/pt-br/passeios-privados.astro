@@ -7,20 +7,16 @@ import { useTranslations } from "../../i18n/utils";
 import TourCard from "../../components/TourCard.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
-import { getPageSEO, getToursCollectionSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+import { getPageSEO, getProductsCollectionSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
 const lang = "pt-br";
 const t = useTranslations(lang);
-
-
-const allTours = tours[lang];
-
-
+const items = tours[lang];
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const seo = getPageSEO("privateTours", lang);
-
-
-const collectionSchema = getToursCollectionSchema(allTours, lang, siteUrl);
+const collectionSchema = getProductsCollectionSchema(items, lang, siteUrl);
+const contactRoute = "contato";
+const altRoute = "experiencias";
 
 
 const breadcrumbItems = [
@@ -43,31 +39,23 @@ const schemas = [collectionSchema, breadcrumbSchema];
   />
 
   
-  <section class="tours-filters">
+  <section class="products-filters">
     <div class="container">
       <div class="filters-wrapper">
         <button class="filter-btn active" data-filter="all">
           {t("toursHub.filterAll")}
-          <span class="filter-count">{allTours.length}</span>
+          <span class="filter-count">{items.length}</span>
         </button>
         <button class="filter-btn" data-filter="city-tours">
           {t("toursHub.filterCity")}
           <span class="filter-count"
-            >{allTours.filter((t) => t.category === "city-tours").length}</span
+            >{items.filter((item) => item.category === "city-tours").length}</span
           >
         </button>
         <button class="filter-btn" data-filter="day-trips">
           {t("toursHub.filterDay")}
           <span class="filter-count"
-            >{allTours.filter((t) => t.category === "day-trips").length}</span
-          >
-        </button>
-        <button class="filter-btn" data-filter="walking-tours">
-          {t("toursHub.filterWalking")}
-          <span class="filter-count"
-            >{
-              allTours.filter((t) => t.category === "walking-tours").length
-            }</span
+            >{items.filter((item) => item.category === "day-trips").length}</span
           >
         </button>
       </div>
@@ -75,13 +63,13 @@ const schemas = [collectionSchema, breadcrumbSchema];
   </section>
 
   
-  <section class="tours-grid-section">
+  <section class="products-grid-section">
     <div class="container">
-      <div class="tours-grid grid grid-4">
+      <div class="product-grid grid grid-4">
         {
-          allTours.map((tour) => (
-            <div class="tour-item" data-category={tour.category}>
-              <TourCard tour={tour} lang={lang} />
+          items.map((item) => (
+            <div class="product-item" data-category={item.category}>
+              <TourCard item={item} lang={lang} />
             </div>
           ))
         }
@@ -95,13 +83,17 @@ const schemas = [collectionSchema, breadcrumbSchema];
   </section>
 
   
-  <section class="tours-cta">
+  <section class="products-cta">
     <div class="container">
       <div class="cta-content">
         <h2 class="cta-title">{t("toursHub.ctaTitle")}</h2>
         <p class="cta-subtitle">{t("toursHub.ctaSubtitle")}</p>
-        <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+        <a href={`/${lang}/${contactRoute}`} class="btn btn-primary btn-lg">
           {t("toursHub.ctaButton")}
+        </a>
+        <p class="cta-secondary-text">{t("toursHub.altLinkLabel")}</p>
+        <a href={`/${lang}/${altRoute}`} class="btn btn-outline-secondary btn-lg">
+          {t("toursHub.altLinkButton")}
         </a>
       </div>
     </div>
@@ -110,12 +102,12 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
 <style>
   
-  .tours-hero {
-    --tours-hero-offset: clamp(2rem, 6vw, 2.5rem);
-    --tours-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
-    --tours-hero-subtitle-max: clamp(40rem, 75vw, 50rem);
+  .products-hero {
+    --products-hero-offset: clamp(2rem, 6vw, 2.5rem);
+    --products-hero-offset-mobile: clamp(2.5rem, 8vw, 3.75rem);
+    --products-hero-subtitle-max: clamp(40rem, 75vw, 50rem);
 
-    padding: calc(var(--space-3xl) + var(--tours-hero-offset)) 0 var(--space-3xl);
+    padding: calc(var(--space-3xl) + var(--products-hero-offset)) 0 var(--space-3xl);
     background: linear-gradient(
       135deg,
       var(--color-bg-dark) 0%,
@@ -133,13 +125,13 @@ const schemas = [collectionSchema, breadcrumbSchema];
   .hero-subtitle {
     font-size: var(--font-size-h5);
     color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
-    max-width: var(--tours-hero-subtitle-max);
+    max-width: var(--products-hero-subtitle-max);
     margin: 0 auto;
     line-height: var(--line-height-relaxed);
   }
 
   
-  .tours-filters {
+  .products-filters {
     --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
     --filters-z: 100;
     --filters-border: var(--border-width-hairline);
@@ -219,34 +211,34 @@ const schemas = [collectionSchema, breadcrumbSchema];
   }
 
   
-  .tours-grid-section {
-    --tours-grid-offset: clamp(2rem, 6vw, 2.5rem);
-    padding: calc(var(--space-3xl) + var(--tours-grid-offset)) 0 var(--space-3xl);
+  .products-grid-section {
+    --products-grid-offset: clamp(2rem, 6vw, 2.5rem);
+    padding: calc(var(--space-3xl) + var(--products-grid-offset)) 0 var(--space-3xl);
   }
 
-  .tours-grid-section .container {
+  .products-grid-section .container {
     max-width: none;
     padding-inline: var(--space-xl-compact);
   }
 
-  .tours-grid {
+  .product-grid {
     margin-bottom: var(--space-2xl);
     gap: var(--space-md);
   }
 
   @media (min-width: 1200px) {
-    .tours-grid {
+    .product-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
-  .tour-item {
+  .product-item {
     transition:
       opacity var(--transition-duration-slow) var(--transition-easing-default),
       transform var(--transition-duration-slow) var(--transition-easing-default);
   }
 
-  .tour-item.hidden {
+  .product-item.hidden {
     display: none;
   }
 
@@ -262,8 +254,13 @@ const schemas = [collectionSchema, breadcrumbSchema];
     color: var(--color-text-light);
   }
 
+  .cta-secondary-text {
+    margin: var(--space-lg) 0 var(--space-sm);
+    color: var(--color-text-inverse);
+  }
+
   
-  .tours-cta {
+  .products-cta {
     padding: var(--space-3xl) 0;
     background: linear-gradient(
       135deg,
@@ -275,7 +272,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
   .cta-content {
     text-align: center;
-    max-width: var(--tours-hero-subtitle-max);
+    max-width: var(--products-hero-subtitle-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -296,8 +293,8 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
   
   @media (max-width: 768px) {
-    .tours-hero {
-      padding: calc(var(--space-3xl) + var(--tours-hero-offset-mobile)) 0 var(--space-xl);
+    .products-hero {
+      padding: calc(var(--space-3xl) + var(--products-hero-offset-mobile)) 0 var(--space-xl);
     }
 
     .hero-title {
@@ -307,11 +304,11 @@ const schemas = [collectionSchema, breadcrumbSchema];
     .hero-subtitle {
       font-size: var(--font-size-body);
     }
-    .tours-hero {
+    .products-hero {
       padding: var(--space-2xl) 0 var(--space-xl);
     }
 
-    .tours-filters {
+    .products-filters {
       padding: var(--space-md) 0;
     }
 
@@ -324,7 +321,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
       font-size: var(--font-size-small);
     }
 
-    .tours-grid-section {
+    .products-grid-section {
       padding: var(--space-2xl) 0;
     }
 
@@ -338,7 +335,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
   
 
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const tourItems = document.querySelectorAll(".tour-item");
+  const items = document.querySelectorAll(".product-item");
   const noResults = document.querySelector(".no-results");
 
   filterButtons.forEach((button) => {
@@ -352,7 +349,7 @@ const schemas = [collectionSchema, breadcrumbSchema];
 
       let visibleCount = 0;
 
-      tourItems.forEach((item) => {
+      items.forEach((item) => {
         const category = item.getAttribute("data-category");
 
         if (filter === "all" || category === filter) {

@@ -479,7 +479,7 @@ Skip the hassle - let us handle everything!
 - Scheduled access
 - Santa Teresa, Selaron Steps
 - Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)
-- From $415 for 2 people
+- From $445 for 2 people
 - [Book The Essential Rio](/en/private-tours/essential-rio)
 
 ### Rio Flash (5 Hours)
@@ -487,7 +487,7 @@ Skip the hassle - let us handle everything!
 - Christ + Sugarloaf
 - Express tour for cruise passengers
 - Scheduled access
-- From $410 for 2 people
+- From $440 for 2 people
 - [Book Rio Flash](/en/private-tours/rio-express)
 
 ### Sunrise at Sugarloaf

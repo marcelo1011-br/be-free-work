@@ -52,7 +52,7 @@ Redirect 301 /en/private-tours/sunrise-sugarloaf /en/private-tours/first-light-s
 Redirect 301 /en/private-tours/sunset-magic /en/private-tours/golden-hour-rio
 Redirect 301 /en/private-tours/sunset-roxy /en/private-tours/sunset-culture-roxy
 Redirect 301 /en/private-tours/ilha-grande /en/private-tours/island-escape-ilha-grande
-Redirect 301 /en/private-tours/buzios /en/private-tours/buzios-riviera
+# Redirect 301 /en/private-tours/buzios /en/private-tours/buzios-riviera  # TEMPORARIAMENTE DESATIVADO
 Redirect 301 /en/private-tours/petropolis /en/private-tours/petropolis-imperial
 Redirect 301 /en/private-tours/sky-high /en/private-tours/tijuca-rainforest
 Redirect 301 /en/private-tours/niteroi /en/private-tours/niteroi-mac-museum
@@ -66,7 +66,7 @@ Redirect 301 /es/tours-privados/amanecer-pao-acucar /es/tours-privados/amanecer-
 Redirect 301 /es/tours-privados/magia-atardecer /es/tours-privados/hora-dorada-rio
 Redirect 301 /es/tours-privados/atardecer-roxy /es/tours-privados/atardecer-cultura-roxy
 Redirect 301 /es/tours-privados/ilha-grande /es/tours-privados/island-escape-ilha-grande
-Redirect 301 /es/tours-privados/buzios /es/tours-privados/buzios-riviera
+# Redirect 301 /es/tours-privados/buzios /es/tours-privados/buzios-riviera  # TEMPORARIAMENTE DESATIVADO
 Redirect 301 /es/tours-privados/petropolis /es/tours-privados/petropolis-imperial
 Redirect 301 /es/tours-privados/cielo-alto /es/tours-privados/bosque-tijuca
 Redirect 301 /es/tours-privados/niteroi /es/tours-privados/niteroi-museo-mac
@@ -80,7 +80,7 @@ Redirect 301 /pt-br/passeios-privados/nascer-sol-pao-acucar /pt-br/passeios-priv
 Redirect 301 /pt-br/passeios-privados/magia-por-do-sol /pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar
 Redirect 301 /pt-br/passeios-privados/por-do-sol-roxy /pt-br/passeios-privados/por-do-sol-cultura-roxy
 Redirect 301 /pt-br/passeios-privados/ilha-grande /pt-br/passeios-privados/island-escape-ilha-grande
-Redirect 301 /pt-br/passeios-privados/buzios /pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado
+# Redirect 301 /pt-br/passeios-privados/buzios /pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado  # TEMPORARIAMENTE DESATIVADO
 Redirect 301 /pt-br/passeios-privados/petropolis /pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial
 Redirect 301 /pt-br/passeios-privados/alto-ceu /pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio
 Redirect 301 /pt-br/passeios-privados/niteroi /pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado
@@ -93,9 +93,107 @@ Redirect 301 /en/contato/ /en/contact
 Redirect 301 /pt-br/contact /pt-br/contato
 Redirect 301 /privacy-policy/ /en/privacy-policy
 
+# Specific /tours-privados/ overrides (must be before catch-alls)
+Redirect 301 /en/tours-privados/downtown-rio-walking /en/private-tours/downtown-rio-walking
+Redirect 301 /pt-br/tours-privados/hora-dorada-rio /pt-br/passeios-privados/por-do-sol-cultura-roxy
+
 # Catch-all fixes
 RedirectMatch 301 ^/en/tours-privados/(.*)$ /en/private-tours
 RedirectMatch 301 ^/pt-br/tours-privados/(.*)$ /pt-br/passeios-privados
+
+# Blog URL duplication fixes (GSC 404s from legacy schema bug)
+RedirectMatch 301 ^/(en|es|pt-br)/blog/blog/(.+)$ /$1/blog/$2
+RedirectMatch 301 ^/en/blog/en/(.+)$ /en/blog/$1
+RedirectMatch 301 ^/es/blog/es/(.+)$ /es/blog/$1
+RedirectMatch 301 ^/pt-br/blog/pt-br/(.+)$ /pt-br/blog/$1
+
+# Tours antigos — estrutura /tours/ → destinos corretos
+Redirect 301 /en/tours/unforgettable-rio-christ-redeemer-sugarloaf-tour /en/private-tours/essential-rio
+Redirect 301 /en/tours/petropolis-imperial-city-private-tour /en/private-tours/petropolis-imperial
+Redirect 301 /en/tours/rio-food-walking-tour-brazilian-cuisine /en/experiences/rio-food-walking-tour
+Redirect 301 /en/tours/little-africa-heritage-tour-rio-afro-brazilian-culture /en/experiences/little-africa-walking-tour
+Redirect 301 /es/tours/tour-privado-petropolis-ciudad-imperial /es/tours-privados/petropolis-imperial
+Redirect 301 /es/tours/tour-herencia-pequena-africa-rio-cultura-afrobrasile /es/experiencias/pequena-africa-tour
+Redirect 301 /pt-br/tours/passeio-privado-petropolis-cidade-imperial /pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial
+Redirect 301 /pt-br/tours/tour-gastronomico-rio-cozinha-brasileira /pt-br/experiencias/food-walking-tour-rio
+Redirect 301 /pt-br/tours/tour-heranca-pequena-africa-rio-cultura-afrobrasileira /pt-br/experiencias/pequena-africa-tour
+
+# Estrutura /private-tours/ em idiomas errados
+Redirect 301 /es/private-tours /es/tours-privados
+Redirect 301 /es/private-tours/ /es/tours-privados/
+Redirect 301 /pt-br/private-tours /pt-br/passeios-privados
+Redirect 301 /pt-br/private-tours/ /pt-br/passeios-privados/
+Redirect 301 /es/private-tours/essential-rio /es/tours-privados/essential-rio
+Redirect 301 /es/private-tours/first-light-sunrise /es/tours-privados/amanecer-rio
+Redirect 301 /pt-br/private-tours/essential-rio /pt-br/passeios-privados/rio-essencial
+
+# URLs de passeios em idioma errado
+Redirect 301 /en/passeios-privados/passeio-personalizado /en/private-tours/custom-tour
+Redirect 301 /es/passeios-privados/passeio-personalizado /es/tours-privados/tour-personalizado
+Redirect 301 /es/passeios-privados/downtown-rio-walking /es/experiencias/downtown-rio-walking
+
+# Galeria e contato com idioma errado
+Redirect 301 /en/galeria /en/gallery
+Redirect 301 /en/galeria/ /en/gallery/
+Redirect 301 /es/contact /es/contacto
+
+# URLs sem idioma (estrutura do site anterior)
+Redirect 301 /private-tours-rio /en/private-tours
+Redirect 301 /private-tours-rio/ /en/private-tours/
+Redirect 301 /private-tour-rio-de-janeiro /en/private-tours
+Redirect 301 /private-tour-rio-de-janeiro/ /en/private-tours/
+Redirect 301 /private-tours-petropolis /en/private-tours/petropolis-imperial
+Redirect 301 /private-tours-petropolis/ /en/private-tours/petropolis-imperial
+Redirect 301 /private-tours-ilha-grande /en/private-tours/island-escape-ilha-grande
+Redirect 301 /private-tours-ilha-grande/ /en/private-tours/island-escape-ilha-grande
+Redirect 301 /private-tours-half-day-rio /en/private-tours/rio-express
+Redirect 301 /private-tours-half-day-rio/ /en/private-tours/rio-express
+Redirect 301 /private-tours-walking-rio /en/experiences
+Redirect 301 /private-tours-walking-rio/ /en/experiences/
+Redirect 301 /private-tours-custom-rio /en/private-tours/custom-tour
+Redirect 301 /private-tours-custom-rio/ /en/private-tours/custom-tour
+Redirect 301 /private-tours-full-day-rio-highlights /en/private-tours/essential-rio
+Redirect 301 /private-tours-full-day-rio-highlights/ /en/private-tours/essential-rio
+Redirect 301 /custom-rio-tour /en/private-tours/custom-tour
+Redirect 301 /custom-rio-tour/ /en/private-tours/custom-tour
+Redirect 301 /design-your-tour /en/private-tours/custom-tour
+Redirect 301 /design-your-tour/ /en/private-tours/custom-tour
+Redirect 301 /walking-tours /en/experiences
+Redirect 301 /walking-tours/ /en/experiences/
+Redirect 301 /walking-rio /en/experiences
+Redirect 301 /walking-rio/ /en/experiences/
+Redirect 301 /explore-rio-your-way /en/private-tours
+Redirect 301 /explore-rio-your-way/ /en/private-tours/
+Redirect 301 /sunrise-at-sugar-loaf-and-christ-the-redeemer /en/private-tours/first-light-sunrise
+Redirect 301 /sunrise-at-sugar-loaf-and-christ-the-redeemer/ /en/private-tours/first-light-sunrise
+
+# Posts antigos do blog sem estrutura de idioma
+Redirect 301 /which-type-of-tour-matches-with-you /en/blog
+Redirect 301 /which-type-of-tour-matches-with-you/ /en/blog
+Redirect 301 /the-plastic-arts-and-brazil-part-1-jean-baptiste-debret-and-brazil /en/blog
+Redirect 301 /the-plastic-arts-and-brazil-part-1-jean-baptiste-debret-and-brazil/ /en/blog
+Redirect 301 /rio-world-capital-of-architecture-by-unesco /en/blog
+Redirect 301 /rio-world-capital-of-architecture-by-unesco/ /en/blog
+Redirect 301 /cachaca-a-very-brazilian-story-saude-cheers /en/blog
+Redirect 301 /cachaca-a-very-brazilian-story-saude-cheers/ /en/blog
+Redirect 301 /foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco /en/blog
+Redirect 301 /foodie-paradise-unveiling-rios-secret-street-food-gems-beyond-churrasco/ /en/blog
+Redirect 301 /rio-free-walking-tour-is-back /en/blog
+Redirect 301 /rio-free-walking-tour-is-back/ /en/blog
+Redirect 301 /museu-nacional-de-belas-artes /en/blog
+Redirect 301 /museu-nacional-de-belas-artes/ /en/blog
+Redirect 301 /sala-cecilia-meirelles /en/blog
+Redirect 301 /sala-cecilia-meirelles/ /en/blog
+Redirect 301 /ccbb-centro-cultural-banco-do-brasil /en/blog
+Redirect 301 /ccbb-centro-cultural-banco-do-brasil/ /en/blog
+Redirect 301 /feira-de-sao-cristovao /en/blog
+Redirect 301 /feira-de-sao-cristovao/ /en/blog
+
+# WordPress e páginas institucionais legadas
+Redirect 301 /wp-content/uploads/2024/07/be-free-tours-brochure-download.pdf /en/private-tours
+Redirect 301 /privacy-policy /en/privacy-policy
+Redirect 301 /cookie-policy-us /en/privacy-policy
+Redirect 301 /cookie-policy-us/ /en/privacy-policy
 
 # --- 5) COMPRESSION ---
 <IfModule mod_deflate.c>
@@ -150,7 +248,7 @@ RedirectMatch 301 ^/pt-br/tours-privados/(.*)$ /pt-br/passeios-privados
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://wa.me"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://formspree.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://wa.me https://formspree.io"
   Header unset X-Powered-By
 </IfModule>
 

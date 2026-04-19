@@ -479,7 +479,7 @@ Déjanos la logística!
 - Acceso programado
 - Santa Teresa, Escalera Selarón
 - Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)
-- Desde US$415 para 2 personas
+- Desde US$445 para 2 personas
 - [Reserva The Essential Rio](/es/tours-privados/essential-rio)
 
 ### Rio Flash (5 horas)
@@ -487,7 +487,7 @@ Déjanos la logística!
 - Cristo + Pan de Azúcar
 - Tour exprés
 - Acceso programado
-- Desde US$410 para 2 personas
+- Desde US$440 para 2 personas
 - [Reserva Rio Flash](/es/tours-privados/rio-express)
 
 ### Sunrise at Sugarloaf

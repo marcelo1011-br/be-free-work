@@ -12,6 +12,8 @@ import "../styles/global.css";
 
 
 const currentLang = getLangFromUrl(Astro.url);
+const htmlLangMap = { 'en': 'en', 'es': 'es', 'pt-br': 'pt-BR' };
+const htmlLang = htmlLangMap[currentLang] ?? currentLang;
 
 const defaultMeta = {
   en: {
@@ -64,7 +66,7 @@ const ogLocaleMap = {
 const siteInfo = {
   name: "Be Free Tours",
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/images/logo/logo.png`,
   email: "contact@befreetours.com.br",
   phone: "+5521979271637",
   address: {
@@ -82,9 +84,9 @@ const siteInfo = {
   priceRange: "$$-$$$",
   aggregateRating: {
     ratingValue: "4.9",
-    reviewCount: "600",
+    reviewCount: "800",
   },
-  openingHours: "Mo-Su 07:00-22:00",
+  openingHours: "Mo-Su 06:00-22:00",
 };
 
 
@@ -173,7 +175,7 @@ const finalSchema = {
 ---
 
 <!doctype html>
-<html lang={currentLang}>
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -199,7 +201,7 @@ const finalSchema = {
     <meta name="intended-audience" content="travelers, tourists, travel-planners" />
     <meta name="service-type" content="private-tour-operator" />
     <meta name="location-served" content="Rio de Janeiro, Brazil" />
-    <meta name="booking-policy" content="24-hour-free-cancellation" />
+    <meta name="booking-policy" content="72-hour-free-cancellation" />
     <meta name="price-range" content="$$$ (Premium)" />
 
     
@@ -400,24 +402,50 @@ const finalSchema = {
 
         const select = modal.querySelector("#tour-select");
         const goButton = modal.querySelector("[data-tour-select-go]");
+        let savedTrigger = null;
 
-        const openModal = () => {
+        const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        const openModal = (triggerEl) => {
+          savedTrigger = triggerEl || document.activeElement;
           modal.classList.add("is-open");
           modal.setAttribute("aria-hidden", "false");
           document.body.classList.add("modal-open");
+          const focusable = [...modal.querySelectorAll(FOCUSABLE)];
+          focusable[0]?.focus();
         };
 
         const closeModal = () => {
           modal.classList.remove("is-open");
           modal.setAttribute("aria-hidden", "true");
           document.body.classList.remove("modal-open");
+          savedTrigger?.focus();
         };
+
+        document.addEventListener("keydown", (e) => {
+          if (!modal.classList.contains("is-open")) return;
+          const focusable = [...modal.querySelectorAll(FOCUSABLE)];
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (e.key === "Tab") {
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+          if (e.key === "Escape") {
+            closeModal();
+          }
+        });
 
         document.addEventListener("click", (event) => {
           const trigger = event.target?.closest?.("[data-tour-select-trigger]");
           if (trigger) {
             event.preventDefault();
-            openModal();
+            openModal(trigger);
           }
         });
 

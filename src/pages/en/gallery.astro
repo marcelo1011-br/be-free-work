@@ -47,7 +47,7 @@ const images = Object.entries(galleryImageFiles)
 const seo = {
   title: "Photo Gallery - Rio de Janeiro | Be Free Tours",
   description: content.hero.subtitle,
-  image: "/images/og-gallery.svg"
+  image: "/images/og-gallery.jpg"
 };
 
 
@@ -424,11 +424,13 @@ const schemas = [gallerySchema, breadcrumbSchema];
     display: flex;
     flex-direction: column;
     align-items: center;
+    aspect-ratio: 16 / 9;
+    max-height: 70vh;
   }
 
   .lightbox-image-wrapper img {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 100%;
     object-fit: contain;
     border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
   }

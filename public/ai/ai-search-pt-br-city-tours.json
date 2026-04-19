@@ -19,7 +19,7 @@
       "slug": "rio-essencial",
       "name": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
       "duration": "8 horas",
-      "price_from": 415,
+      "price_from": 445,
       "description": "Conheça os pontos turísticos mais icônicos do Rio em um passeio privado completo, incluindo Cristo Redentor e Pão de Açúcar com acesso prioritário.",
       "highlights": [
         "Cristo Redentor com acesso prioritário",
@@ -43,7 +43,7 @@
       "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
       "name": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       "duration": "5 horas",
-      "price_from": 410,
+      "price_from": 440,
       "description": "Perfeito para viajantes com tempo limitado - visite os dois pontos turísticos mais icônicos do Rio em apenas 5 horas.",
       "highlights": [
         "Cristo Redentor",
@@ -63,7 +63,7 @@
       "slug": "nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
       "name": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
       "duration": "6 horas",
-      "price_from": 580,
+      "price_from": 610,
       "description": "Experimente o nascer do sol mais impressionante do Rio do Pão de Açúcar, seguido de acesso matinal ao Cristo Redentor.",
       "highlights": [
         "Nascer do sol exclusivo do Pão de Açúcar",
@@ -83,7 +83,7 @@
       "slug": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
       "name": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       "duration": "6 horas",
-      "price_from": 430,
+      "price_from": 460,
       "description": "Experimente a beleza da hora dourada do Rio com visitas à tarde ao Cristo Redentor e um pôr do sol perfeitamente programado.",
       "highlights": [
         "Cristo Redentor com luz dourada",
@@ -104,7 +104,7 @@
       "slug": "por-do-sol-cultura-roxy",
       "name": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
       "duration": "9 horas",
-      "price_from": 680,
+      "price_from": 710,
       "description": "Combine o pôr do sol do Rio do Pão de Açúcar com uma noite inesquecível no show jantar cultural premier do Brasil.",
       "highlights": [
         "Pôr do sol do Pão de Açúcar",
@@ -126,7 +126,7 @@
       "slug": "pao-acucar-floresta-tijuca-jardim-botanico-passeio",
       "name": "Floresta da Tijuca e Museus: Onde a Natureza Encontra a Cultura",
       "duration": "8 horas",
-      "price_from": 445,
+      "price_from": 475,
       "description": "Combine as vistas impressionantes do Pão de Açúcar com a beleza exuberante da Floresta da Tijuca e do Jardim Botânico.",
       "highlights": [
         "Pão de Açúcar",
@@ -148,7 +148,7 @@
       "slug": "niteroi-museo-arte-contemporanea-passeio-privado",
       "name": "Niterói: Museu MAC de Niemeyer e Fortes Coloniais",
       "duration": "8 horas",
-      "price_from": 335,
+      "price_from": 365,
       "description": "Cruze a Baía de Guanabara para descobrir a obra-prima arquitetônica do Museu MAC de Niterói e fortes militares históricos.",
       "highlights": [
         "MAC Niterói de Oscar Niemeyer",
@@ -169,7 +169,7 @@
       "slug": "museu-amanha-experiencia-carnaval-rio-passeio",
       "name": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
       "duration": "7 horas",
-      "price_from": 445,
+      "price_from": 475,
       "description": "Explore o inovador Museu do Amanhã do Rio, o maior aquário da América do Sul, e vá aos bastidores do Carnaval.",
       "highlights": [
         "Museu do Amanhã",

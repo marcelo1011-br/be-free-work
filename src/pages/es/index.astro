@@ -4,7 +4,9 @@
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
+import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
 import WhyUs from "../../components/WhyUs.astro";
 import Testimonials from "../../components/Testimonials.astro";
 import FAQ from "../../components/FAQ.astro";
@@ -12,6 +14,7 @@ import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
 import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
+import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
 const content = homeContent["es"];
@@ -19,28 +22,6 @@ const content = homeContent["es"];
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const websiteSchema = getWebSiteSchema(siteUrl);
-const monthMap = {
-  Jan: "01",
-  Feb: "02",
-  Mar: "03",
-  Apr: "04",
-  May: "05",
-  Jun: "06",
-  Jul: "07",
-  Aug: "08",
-  Sep: "09",
-  Oct: "10",
-  Nov: "11",
-  Dec: "12"
-};
-
-const toIsoDate = (value) => {
-  if (!value) return undefined;
-  const [month, year] = value.split(" ");
-  const mm = monthMap[month];
-  if (!mm || !year) return undefined;
-  return `${year}-${mm}-01`;
-};
 
 
 const organizationSchema = {
@@ -49,7 +30,7 @@ const organizationSchema = {
   "name": "Be Free Tours",
   "alternateName": "Be Free Tours Rio de Janeiro",
   "url": siteUrl,
-  "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 600, "height": 60 },
+  "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 512, "height": 512 },
   "image": `${siteUrl}/images/heroes/home-hero.webp`,
   "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados.",
   "slogan": "Tu Río, A Tu Manera - Tours Privados Desde 2013",
@@ -70,7 +51,7 @@ const organizationSchema = {
   "paymentAccepted": "Credit Card, PayPal",
   "currenciesAccepted": "USD, BRL",
   "openingHours": "Mo-Su 06:00-22:00",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "600", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "800", "bestRating": "5", "worstRating": "1" },
   "sameAs": [
     "https://www.wikidata.org/wiki/Q138495723",
     "https://www.instagram.com/befreeturrj",
@@ -128,8 +109,8 @@ const reviewSchemas = testimonials.map((review) => {
 ---
 
 <BaseLayout
-  title="Tours Privados en Río de Janeiro | Be Free Tours"
-  description="Tours privados premium en Río desde 2013. Guías locales expertos, horario reservado para subir al Corcovado y acceso preferente al teleférico del Pan de Azúcar. Experiencias personalizadas, itinerarios flexibles. ¡Reserva ya!"
+  title="Tours Privados en Río de Janeiro | Be Free Tours Desde 2013"
+  description="Reserva tours privados y experiencias locales en Río de Janeiro con guías certificados en español desde 2013. Traslado incluido. +800 reseñas. Cancelación gratuita hasta 72h."
   image="/images/og-home.jpg"
   schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("es", siteUrl), ...reviewSchemas]}
 >
@@ -141,6 +122,8 @@ const reviewSchemas = testimonials.map((review) => {
     lang="es"
   />
   <FeaturedTours lang="es" />
+  <FeaturedExperiences lang="es" />
+  <HowItWorks lang="es" />
   <WhyUs lang="es" />
   <Testimonials lang="es" />
   <FAQ lang="es" />

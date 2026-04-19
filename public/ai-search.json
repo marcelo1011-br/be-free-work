@@ -7,18 +7,15 @@
   "categories": {
     "en": {
       "city_tours": "https://befreetours.com.br/ai/ai-search-en-city-tours.json",
-      "day_trips": "https://befreetours.com.br/ai/ai-search-en-day-trips.json",
-      "walking_tours": "https://befreetours.com.br/ai/ai-search-en-walking-tours.json"
+      "day_trips": "https://befreetours.com.br/ai/ai-search-en-day-trips.json"
     },
     "es": {
       "city_tours": "https://befreetours.com.br/ai/ai-search-es-city-tours.json",
-      "day_trips": "https://befreetours.com.br/ai/ai-search-es-day-trips.json",
-      "walking_tours": "https://befreetours.com.br/ai/ai-search-es-walking-tours.json"
+      "day_trips": "https://befreetours.com.br/ai/ai-search-es-day-trips.json"
     },
     "pt-br": {
       "city_tours": "https://befreetours.com.br/ai/ai-search-pt-br-city-tours.json",
-      "day_trips": "https://befreetours.com.br/ai/ai-search-pt-br-day-trips.json",
-      "walking_tours": "https://befreetours.com.br/ai/ai-search-pt-br-walking-tours.json"
+      "day_trips": "https://befreetours.com.br/ai/ai-search-pt-br-day-trips.json"
     }
   }
 }

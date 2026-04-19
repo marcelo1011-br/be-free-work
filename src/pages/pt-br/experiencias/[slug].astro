@@ -1,0 +1,77 @@
+---
+import ProductDetailPage from "../../../components/ProductDetailPage.astro";
+import { experiences } from "../../../data/experiences.js";
+import { homeContent } from "../../../data/homeContent.js";
+import {
+  getProductSEO,
+  getProductSchema,
+  getProductTripSchema,
+  getFAQSchema,
+  getProductFAQSchema,
+  getBreadcrumbSchema,
+  getProductReviewSchema,
+  getProductOpenGraphTags,
+  getHowToSchema,
+} from "../../../utils/seoHelpers.js";
+
+export async function getStaticPaths() {
+  const paths = [];
+  const lang = "pt-br";
+  const items = experiences[lang];
+
+  for (const item of items) {
+    const imageSlug = item.imageSlug || item.slug;
+    let heroImage;
+    try {
+      heroImage = await import(`../../../images/tours/heroes/${imageSlug}-hero.webp`);
+    } catch {
+      heroImage = await import(`../../../images/tours/heroes/essential-rio-hero.webp`);
+    }
+
+    paths.push({
+      params: { slug: item.slug },
+      props: {
+        item,
+        lang,
+        allItems: items,
+        heroImage: heroImage.default,
+      },
+    });
+  }
+
+  return paths;
+}
+
+const { item, lang, allItems, heroImage } = Astro.props;
+const { paymentPolicy, cancellationPolicy } = homeContent[lang];
+const faqs = item.faqs || [];
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const seoData = getProductSEO(item, lang, heroImage?.src, "experiences");
+const productSchemas = getProductSchema(item, lang, siteUrl, heroImage?.src, "experiences");
+const productTripSchema = getProductTripSchema(item, lang, siteUrl, "experiences");
+const standardFAQs = getProductFAQSchema(item, lang, "experiences");
+const faqSchema = getFAQSchema([...standardFAQs, ...faqs]);
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: "Experiências", url: `/${lang}/experiencias` },
+  { name: item.title, url: `/${lang}/experiencias/${item.slug}` },
+];
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+const reviewSchema = getProductReviewSchema(item, siteUrl, lang, "experiences");
+const ogTags = getProductOpenGraphTags(item, lang, siteUrl, heroImage?.src, "experiences");
+const howToSchema = getHowToSchema(lang, siteUrl);
+const pageSchemas = [...productSchemas, productTripSchema, faqSchema, breadcrumbSchema, howToSchema, ...(reviewSchema || [])].filter(Boolean);
+---
+
+<ProductDetailPage
+  item={item}
+  type="experience"
+  lang={lang}
+  allItems={allItems}
+  heroImage={heroImage}
+  paymentPolicy={paymentPolicy}
+  cancellationPolicy={cancellationPolicy}
+  seoData={seoData}
+  pageSchemas={pageSchemas}
+  ogTags={ogTags}
+/>

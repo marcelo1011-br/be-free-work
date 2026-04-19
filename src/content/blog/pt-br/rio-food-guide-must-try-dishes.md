@@ -184,7 +184,7 @@ Onde provar:
 
 - Ambulantes na praia - em todo lugar
 - Supermercados - compre o pó e faça em casa
-- [Food Walking Tour](/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira) - mostramos como os locais fazem
+- [Rio Food Walking Tour](/pt-br/experiencias/food-walking-tour-rio) - mostramos como os locais fazem
 
 Peça: "mate gelado, sem açúcar" ou "com limão".
 
@@ -230,7 +230,7 @@ Polo da noite com comida de rua. Pastel e cachorro-quente pós-bar.
 
 ## Participe do nosso tour gastronômico
 
-Quer provar tudo com um guia local? Nosso [Food Walking Tour no Centro](/pt-br/passeios-privados/tour-gastronomico-rio-cozinha-brasileira) inclui:
+Quer provar tudo com um guia local? Nosso [Rio Food Walking Tour](/pt-br/experiencias/food-walking-tour-rio) inclui:
 
 - 8-10 degustações
 - Contexto histórico
@@ -269,10 +269,10 @@ Você vai querer uma soneca, mas vai entender por que carioca ama comida.
 
 ## Posts relacionados
 
-- [Tour Histórico a Pé](/pt-br/passeios-privados/downtown-rio-walking) - inclui paradas gastronômicas
+- [Centro do Rio a Pé](/pt-br/experiencias/downtown-rio-walking) - inclui paradas gastronômicas
 - [Melhor época para visitar o Rio](/pt-br/blog/best-time-visit-rio-2026) - alguns pratos são sazonais
 - [Praias escondidas no Rio](/pt-br/blog/hidden-beaches-rio-locals-love) - combine sol + petiscos
-- [Little Africa Walking Tour](/pt-br/passeios-privados/tour-heranca-pequena-africa-rio-cultura-afrobrasileira) - influência africana na comida carioca
+- [Pequena África Walking Tour](/pt-br/experiencias/pequena-africa-tour) - influência africana na comida carioca
 
 Coma com vontade, saia feliz e talvez 2 kg mais pesado. Vale muito! 🍴
 

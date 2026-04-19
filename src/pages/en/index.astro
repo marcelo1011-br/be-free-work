@@ -4,7 +4,9 @@
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
+import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
 import WhyUs from "../../components/WhyUs.astro";
 import Testimonials from "../../components/Testimonials.astro";
 import FAQ from "../../components/FAQ.astro";
@@ -12,6 +14,7 @@ import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
 import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
+import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
 const content = homeContent["en"];
@@ -19,28 +22,6 @@ const content = homeContent["en"];
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const websiteSchema = getWebSiteSchema(siteUrl);
-const monthMap = {
-  Jan: "01",
-  Feb: "02",
-  Mar: "03",
-  Apr: "04",
-  May: "05",
-  Jun: "06",
-  Jul: "07",
-  Aug: "08",
-  Sep: "09",
-  Oct: "10",
-  Nov: "11",
-  Dec: "12"
-};
-
-const toIsoDate = (value) => {
-  if (!value) return undefined;
-  const [month, year] = value.split(" ");
-  const mm = monthMap[month];
-  if (!mm || !year) return undefined;
-  return `${year}-${mm}-01`;
-};
 
 
 const organizationSchema = {
@@ -52,8 +33,8 @@ const organizationSchema = {
   "logo": {
     "@type": "ImageObject",
     "url": `${siteUrl}/images/logo/logo.png`,
-    "width": 600,
-    "height": 60
+    "width": 512,
+    "height": 512
   },
   "image": `${siteUrl}/images/heroes/home-hero.webp`,
   "description": "Premium private tour operator in Rio de Janeiro since 2013. Customized experiences with certified local guides specializing in Christ the Redeemer, Sugarloaf Mountain, and day trips around Rio.",
@@ -92,7 +73,7 @@ const organizationSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "600",
+    "reviewCount": "800",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -101,7 +82,7 @@ const organizationSchema = {
       "@type": "Offer",
       "name": "The Essential Rio: Icons, Culture & Hidden Gems",
       "description": "Full-day tour including Christ the Redeemer, Sugarloaf Mountain, Santa Teresa, and more",
-      "price": "415",
+      "price": "445",
       "priceCurrency": "USD",
       "url": `${siteUrl}/en/private-tours/essential-rio`
     },
@@ -109,7 +90,7 @@ const organizationSchema = {
       "@type": "Offer",
       "name": "Rio Express 5h",
       "description": "Quick tour of Christ the Redeemer and Sugarloaf Mountain",
-      "price": "410",
+      "price": "440",
       "priceCurrency": "USD",
       "url": `${siteUrl}/en/private-tours/rio-express`
     },
@@ -117,7 +98,7 @@ const organizationSchema = {
       "@type": "Offer",
       "name": "Sunset Magic Tour",
       "description": "Golden hour at Christ the Redeemer and sunset from Sugarloaf",
-      "price": "430",
+      "price": "460",
       "priceCurrency": "USD",
       "url": `${siteUrl}/en/private-tours/golden-hour-rio`
     }
@@ -179,8 +160,8 @@ const reviewSchemas = testimonials.map((review) => {
 ---
 
 <BaseLayout
-  title="Private Tours in Rio de Janeiro | Be Free Tours"
-  description="Premium private tours in Rio since 2013. Expert local guides, scheduled access to Sugarloaf and timed entry to Corcovado. Personalized experiences, flexible itineraries. Book now!"
+  title="Private Tours Rio de Janeiro | Be Free Tours Since 2013"
+  description="Book private tours and local experiences in Rio de Janeiro with licensed English-speaking guides since 2013. Hotel pickup included. 800+ reviews. Free cancellation up to 72h."
   image="/images/og-home.jpg"
   schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("en", siteUrl), ...reviewSchemas]}
 >
@@ -192,6 +173,8 @@ const reviewSchemas = testimonials.map((review) => {
     lang="en"
   />
   <FeaturedTours lang="en" />
+  <FeaturedExperiences lang="en" />
+  <HowItWorks lang="en" />
   <WhyUs lang="en" />
   <Testimonials lang="en" />
   <FAQ lang="en" />

@@ -10,7 +10,7 @@ Last update: 2024/12/27
 Standards: HTML5, CSS3, ES2020+
 Components: Astro.js 5.1, Schema.org, Open Graph
 Software: VS Code, Git, npm
-Languages: English, Spanish, Portuguese (BR)
+Languages: English, Spanish, Portuguese (BR), and more
 
 /* THANKS */
 Built with passion for Rio de Janeiro tourism

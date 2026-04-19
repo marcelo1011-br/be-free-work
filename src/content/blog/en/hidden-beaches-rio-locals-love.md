@@ -202,7 +202,7 @@ Want to visit these secret spots without the hassle? Our private tours include:
 
 - Prainha & Grumari Day Trip - Visit both beaches with a local guide
 - [Ilha Grande Beach Paradise](/en/private-tours/island-escape-Island Escape: Ilha Grande by Private Speedboat) - Even more pristine beaches on an island
-- [Buzios Day Trip](/en/private-tours/Búzios: Brazil's Riviera (23 Beaches in One Day)-riviera) - The Hamptons of Brazil with 20+ beautiful beaches
+- Búzios Day Trip - The Hamptons of Brazil with 20+ beautiful beaches
 - [The Essential Rio](/en/private-tours/essential-rio) - Add a hidden beach stop to your city tour
 
 ## Local Etiquette

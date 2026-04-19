@@ -21,7 +21,7 @@ const content = {
     ctaEmail: "Envíanos un Email",
     dismiss: "Quizás más tarde",
     whatsappUrl: "https://wa.me/5521979271637?text=Hola!%20Estoy%20interesado%20en%20reservar%20un%20tour",
-    emailUrl: "/es/contato"
+    emailUrl: "/es/contacto"
   },
   "pt-br": {
     title: "Tem dúvidas sobre sua viagem ao Rio?",
@@ -39,7 +39,7 @@ const text = content[lang] || content.en;
 
 
 <div id="exit-intent-overlay" class="exit-overlay" aria-hidden="true">
-  <div class="exit-popup" role="dialog" aria-labelledby="exit-popup-title">
+  <div class="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
     <button class="exit-close" aria-label="Close popup">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -262,18 +262,25 @@ const text = content[lang] || content.en;
 
   if (!hasShownPopup) {
     const overlay = document.getElementById('exit-intent-overlay');
+    const dialog = overlay?.querySelector('[role="dialog"]');
     const closeBtn = overlay?.querySelector('.exit-close');
     const dismissBtn = overlay?.querySelector('.exit-dismiss');
     let hasTriggered = false;
+    let savedTrigger = null;
+
+    const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     
     function showPopup() {
-      if (hasTriggered || !overlay) return;
+      if (hasTriggered || !overlay || !dialog) return;
       hasTriggered = true;
+      savedTrigger = document.activeElement;
       overlay.classList.add('show');
       overlay.setAttribute('aria-hidden', 'false');
       sessionStorage.setItem(STORAGE_KEY, 'true');
       document.body.style.overflow = 'hidden';
+      const focusable = [...dialog.querySelectorAll(FOCUSABLE)];
+      focusable[0]?.focus();
     }
 
     
@@ -282,6 +289,7 @@ const text = content[lang] || content.en;
       overlay.classList.remove('show');
       overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      savedTrigger?.focus();
     }
 
     
@@ -305,7 +313,20 @@ const text = content[lang] || content.en;
 
     
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay?.classList.contains('show')) {
+      if (!overlay?.classList.contains('show') || !dialog) return;
+      const focusable = [...dialog.querySelectorAll(FOCUSABLE)];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      if (e.key === 'Escape') {
         closePopup();
       }
     });

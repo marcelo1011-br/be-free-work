@@ -4,10 +4,11 @@
 import { Image } from "astro:assets";
 import { useTranslations } from "../i18n/utils";
 
-const { tour, lang, badge } = Astro.props;
+const { item: itemProp, tour: legacyTour, lang, badge, section = "tours" } = Astro.props;
 const t = useTranslations(lang);
+const item = itemProp || legacyTour;
 
-const isCustomTour = tour.isCustom || tour.pricing?.custom;
+const isCustomItem = item.isCustom || item.pricing?.custom;
 
 function getFromPrice(pricing) {
   if (pricing.custom) return null;
@@ -20,27 +21,37 @@ function getFromPrice(pricing) {
   return null;
 }
 
-const fromPrice = getFromPrice(tour.pricing);
+const fromPrice = getFromPrice(item.pricing);
 
-const customPriceText = tour.pricing?.displayText || "Custom quote";
+const customPriceText = item.pricing?.displayText || "Custom quote";
 
-const tourRoutes = {
-  en: "private-tours",
-  es: "tours-privados",
-  "pt-br": "passeios-privados",
+const routeMaps = {
+  tours: {
+    en: "private-tours",
+    es: "tours-privados",
+    "pt-br": "passeios-privados",
+  },
+  experiences: {
+    en: "experiences",
+    es: "experiencias",
+    "pt-br": "experiencias",
+  },
 };
 
-const tourRoute = tourRoutes[lang] || "private-tours";
+const sectionRoutes = routeMaps[section] || routeMaps.tours;
+const itemRoute = sectionRoutes[lang] || sectionRoutes.en;
 
-const imageSlug = tour.imageSlug || tour.slug;
+const imageSlug = item.imageSlug || item.slug;
 const cardImage = await import(`../images/tours/cards/${imageSlug}-card.webp`).catch(() => {
-  const baseSlug = tour.slug.split('-').slice(0, 2).join('-');
+  const baseSlug = item.slug.split('-').slice(0, 2).join('-');
   return import(`../images/tours/cards/${baseSlug}-card.webp`).catch(() => {
     return import(`../images/tours/cards/essential-rio-card.webp`);
   });
 });
 
-const altText = `${tour.title} - Private ${tour.duration} tour in Rio de Janeiro`;
+const altText = section === "experiences"
+  ? `${item.title} - ${item.duration} experience in Rio de Janeiro`
+  : `${item.title} - Private ${item.duration} tour in Rio de Janeiro`;
 
 const badgeStyles = {
   "Most Popular": "badge-primary",
@@ -55,6 +66,9 @@ const badgeStyles = {
 };
 
 const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
+const itemButtonLabel = section === "experiences"
+  ? (t("general.viewExperience") || t("general.viewTour"))
+  : t("general.viewTour");
 ---
 
 <article class="tour-card">
@@ -78,7 +92,7 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
 
   
   <div class="tour-card-content">
-    <h3 class="tour-card-title">{tour.title}</h3>
+    <h3 class="tour-card-title">{item.title}</h3>
     
     <div class="tour-card-meta">
       <span class="tour-duration">
@@ -86,14 +100,14 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 6v6l4 2"/>
         </svg>
-        {tour.duration}
+        {item.duration}
       </span>
-      <p class="tour-description">{tour.shortDescription}</p>
+      <p class="tour-description">{item.shortDescription}</p>
     </div>
 
     <div class="tour-card-footer">
       <div class="tour-price">
-        {isCustomTour ? (
+        {isCustomItem ? (
           <span class="price-custom">{customPriceText}</span>
         ) : (
           <>
@@ -104,13 +118,15 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
       </div>
       
       <a
-        href={`/${lang}/${tourRoute}/${tour.slug}`}
-        class={`btn btn-sm ${isCustomTour ? 'btn-primary' : 'btn-outline-primary'}`}
+        href={`/${lang}/${itemRoute}/${item.slug}`}
+        class={`btn btn-sm ${isCustomItem ? 'btn-primary' : 'btn-outline-primary'}`}
       >
-        {tour.ctaText || t("general.viewTour")}
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+        {item.ctaText || itemButtonLabel}
+        {!item.ctaText && (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        )}
       </a>
     </div>
   </div>

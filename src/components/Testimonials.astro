@@ -8,6 +8,25 @@ import { useTranslations } from "../i18n/utils";
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
+const routeMaps = {
+  tours: {
+    en: "private-tours",
+    es: "tours-privados",
+    "pt-br": "passeios-privados",
+  },
+  experiences: {
+    en: "experiences",
+    es: "experiencias",
+    "pt-br": "experiencias",
+  },
+};
+
+const getItemUrl = (testimonial) => {
+  const section = testimonial.section === "experiences" ? "experiences" : "tours";
+  const route = routeMaps[section][lang];
+  return `/${lang}/${route}/${testimonial.tourSlug[lang]}`;
+};
+
 
 const firstFour = testimonials.slice(0, 4);
 const secondFour = testimonials.slice(4, 8);
@@ -64,7 +83,7 @@ const renderStars = (rating) => {
                 </span>
               </div>
               <a
-                href={`/${lang}/tours/${testimonial.tourSlug[lang]}`}
+                href={getItemUrl(testimonial)}
                 class="testimonial-tour-link"
               >
                 {t("testimonials.viewTour")} →
@@ -108,7 +127,7 @@ const renderStars = (rating) => {
                 </span>
               </div>
               <a
-                href={`/${lang}/tours/${testimonial.tourSlug[lang]}`}
+                href={getItemUrl(testimonial)}
                 class="testimonial-tour-link"
               >
                 {t("testimonials.viewTour")} →
@@ -152,7 +171,7 @@ const renderStars = (rating) => {
                 </span>
               </div>
               <a
-                href={`/${lang}/tours/${testimonial.tourSlug[lang]}`}
+                href={getItemUrl(testimonial)}
                 class="testimonial-tour-link"
               >
                 {t("testimonials.viewTour")} →
@@ -195,7 +214,7 @@ const renderStars = (rating) => {
                 </span>
               </div>
               <a
-                href={`/${lang}/tours/${testimonial.tourSlug[lang]}`}
+                href={getItemUrl(testimonial)}
                 class="testimonial-tour-link"
               >
                 {t("testimonials.viewTour")} →
@@ -219,6 +238,10 @@ const renderStars = (rating) => {
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </button>
+
+      <button type="button" class="btn btn-primary btn-lg" data-tour-select-trigger>
+        {lang === "pt-br" ? "Reservar Meu Passeio" : lang === "es" ? "Reservar Mi Tour" : "Book My Tour"}
+      </button>
     </div>
   </div>
 </section>
@@ -239,7 +262,7 @@ const renderStars = (rating) => {
     --tripadvisor-green: #00aa6c;
 
     padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-soft);
+    background-color: var(--color-bg-white);
   }
 
   .testimonials .container {
@@ -396,7 +419,23 @@ const renderStars = (rating) => {
   }
 
   .section-cta {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .section-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .section-cta .btn-primary:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
   }
 
   .testimonials .section-cta .btn-outline-primary {

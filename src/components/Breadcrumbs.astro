@@ -28,6 +28,7 @@ const { items } = Astro.props;
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M6 12L10 8L6 4"
@@ -86,9 +87,10 @@ const { items } = Astro.props;
   }
 
   .breadcrumb-list {
-    max-width: var(--container-max);
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--space-md);
+    padding: 0 clamp(1rem, 4vw, 2rem);
     display: flex;
     align-items: center;
     flex-wrap: wrap;

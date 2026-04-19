@@ -3,26 +3,26 @@
 export const homeContent = {
   en: {
     hero: {
-      title: "Private Tours in Rio de Janeiro – Tailored Just for You",
-      subtitle: "Rio's top-rated private tour operator since 2013 — certified local guides, door-to-door pickup, and 12+ years of unforgettable experiences.",
+      title: "Private Tours & Local Experiences<span aria-hidden=\"true\"><br></span>in Rio de Janeiro",
+      subtitle: "Rio de Janeiro's premier private tour operator since 2013 — licensed guides, hotel pickup, and fully customizable itineraries for every travel style.",
       ctaPrimary: {
-        text: "Explore Our Tours",
+        text: "Explore Private Tours",
         link: "/en/private-tours"
       },
       ctaSecondary: {
-        text: "Contact Us",
-        link: "/en/contact"
+        text: "Discover Local Experiences",
+        link: "/en/experiences"
       },
       badges: [
-        { icon: "star",    value: "4.9/5 Rating",          label: "600+ Verified Reviews" },
-        { icon: "guide",   value: "Licensed Local Guides",  label: "English, Spanish & Portuguese" },
+        { icon: "star",    value: "4.9/5 on TripAdvisor, Viator & Civitatis", label: "800+ Verified Reviews" },
+        { icon: "guide",   value: "Licensed Local Guides",  label: "English, Spanish, Portuguese & more" },
         { icon: "vehicle", value: "Private Vehicle",        label: "Door-to-Door Pickup Included" }
       ]
     },
     howItWorks: {
       title: "How It Works",
       steps: [
-        { title: "Choose Your Tour or Tell Us Your Vision", description: "Browse our 14 ready-made private tours — or contact us with your interests and we'll design a custom itinerary from scratch. Either way, every tour is private and fully adjustable." },
+        { title: "Choose Your Tour, Experience or Tell Us Your Vision", description: "Browse our private tours and local experiences — or contact us with your interests and we'll design a custom itinerary from scratch. Either way, every tour is private and fully adjustable." },
         { title: "We Handle Every Detail", description: "Tickets, transportation, guide assignment, pickup logistics — all confirmed before your tour day. Our team coordinates everything so you arrive ready to enjoy, not to organize." },
         { title: "Experience Rio, Privately", description: "Your certified local guide picks you up at your hotel, Airbnb, airport, or cruise port and takes you through Rio at your own pace. No crowds, no compromises." }
       ]
@@ -34,12 +34,12 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "12+ Years of Expertise",
-          description: "Since 2013, we've guided more than 15,000 travelers through Rio de Janeiro — from honeymooners and solo adventurers to families and cruise passengers. Over 12 years, we've refined every tour to give you the best of this city, without the wasted hours."
+          description: "Be Free Tours has operated private tours in Rio de Janeiro since 2013 — over 12 years guiding more than 15,000 travelers. Founded by Marcelo Elias, our licensed Carioca guides speak English, Spanish, and Portuguese."
         },
         {
           icon: "customize",
           title: "Fully Customizable Experiences",
-          description: "All 14 tours are designed as starting points, not fixed scripts. Want to spend longer at Selarón Steps, skip one attraction, or add a neighborhood off the beaten path? Your guide adapts in real time. No extra charges, no complications."
+          description: "Every private tour and local experience is designed as a flexible starting point. Adjust stops, timing, pace, or language — or contact us to build a fully custom itinerary from scratch."
         },
         {
           icon: "guide",
@@ -54,7 +54,7 @@ export const homeContent = {
         {
           icon: "star",
           title: "Top-Rated on TripAdvisor, Viator & Civitatis",
-          description: "4.9 out of 5 average rating from more than 600 verified reviews across TripAdvisor, Viator, and Civitatis. Consistently ranked among Rio's top private tour operators — not by us, but by the travelers who've been there."
+          description: "4.9 out of 5 average rating from more than 800 verified reviews across TripAdvisor, Viator, and Civitatis. Consistently ranked among Rio's top private tour operators — not by us, but by the travelers who've been there."
         },
         {
           icon: "payment",
@@ -65,12 +65,14 @@ export const homeContent = {
     },
     faq: {
       title: "Frequently Asked Questions",
-      subtitle: "Everything you need to know about our private tours in Rio",
+      subtitle: "Everything you need to know about our private tours in Rio de Janeiro",
+      ctaText: "Still have questions? We're happy to help!",
+      ctaButton: "Contact Us",
       questions: [
         {
           id: 1,
           question: "How much does a private tour in Rio cost?",
-          answer: "Private city tours in Rio start at USD 335 for a group of 1, with most full-day tours ranging from USD 410 to USD 580 depending on the itinerary and group size. Walking tours are priced per person from USD 65. Day trips to destinations like Petrópolis, Búzios, and Ilha Grande start from USD 360. All prices include private transportation, a certified local guide, and entrance fees to attractions listed. There are no hidden costs."
+          answer: "Private city tours in Rio start at USD 365 for a group of 1, with most full-day tours ranging from USD 440 to USD 610 depending on the itinerary and group size. Day trips to destinations like Petrópolis, Búzios, and Ilha Grande start from USD 390. All private-tour prices include transportation, a certified local guide, and entrance fees to the listed attractions. Walking-based local experiences are priced separately under our Experiences line."
         },
         {
           id: 2,
@@ -94,8 +96,8 @@ export const homeContent = {
         },
         {
           id: 6,
-          question: "Do your guides speak English, Spanish, Portuguese and more?",
-          answer: "All our guides are fluent in English and Portuguese, and most also speak Spanish — making Be Free Tours one of the only private tour operators in Rio with full trilingual coverage. For other languages, please contact us when booking and we'll do our best to match you with the right guide based on availability."
+          question: "In what languages are the tours conducted?",
+          answer: "Our tours are conducted in English, Portuguese, and Spanish. For other languages, please contact us when booking and we'll do our best to match you with the right guide based on availability."
         },
         {
           id: 7,
@@ -116,6 +118,46 @@ export const homeContent = {
           id: 10,
           question: "Is Rio de Janeiro LGBTQ+ friendly?",
           answer: "Rio de Janeiro is widely considered an LGBTQ+ friendly city, particularly in the South Zone neighborhoods of Ipanema, Leblon, and Copacabana. Same-sex marriage is legal in Brazil, and diversity is generally well accepted in everyday life and in tourist settings. As in any large city, awareness and common-sense precautions are always important, but most LGBTQ+ travelers feel comfortable exploring Rio openly. Our private tours offer a discreet, respectful, and welcoming environment, guided by locals who understand the city and adapt each experience to the traveler — without assumptions or labels."
+        },
+        {
+          id: 11,
+          question: "Are your private tours suitable for families with children?",
+          answer: "Absolutely. Our private tours are well-suited for families traveling with children of any age. The pace, stops, and activities adapt to your group — more time at open spaces, interactive explanations for younger travelers, and flexibility to adjust on the fly. Children under 5 typically do not require paid attraction tickets; your guide will advise based on your specific itinerary."
+        },
+        {
+          id: 12,
+          question: "Do you offer accessible tours for travelers with reduced mobility?",
+          answer: "Yes. We can design tours around reduced mobility, wheelchair users, and travelers who prefer a slower pace. Rio presents genuine accessibility challenges at some landmarks — cobblestone streets in Santa Teresa, steep terrain at certain viewpoints — but with advance notice we select appropriate sites, arrange suitable vehicles, and adapt the itinerary to ensure comfort and enjoyment throughout the day."
+        },
+        {
+          id: 13,
+          question: "How many people can join a private tour?",
+          answer: "Our private tours accommodate groups of 1 to 12 travelers. Vehicle size scales with your group: sedans and SUVs for smaller parties, executive vans for larger ones. For groups above 12 or corporate events, contact us directly — we can arrange multiple guides and vehicles while keeping the experience coordinated and personal."
+        },
+        {
+          id: 14,
+          question: "What payment methods do you accept?",
+          answer: "We accept all major credit and debit cards. Payment is only required 72 hours before your tour — you can reserve your date today with no upfront charge. For last-minute bookings made within 72 hours, full payment is required at the time of reservation."
+        },
+        {
+          id: 15,
+          question: "Can I book a private tour for the same day or the next day?",
+          answer: "Yes, subject to guide and vehicle availability. We do our best to accommodate last-minute requests — contact us via WhatsApp for the fastest response. For peak season (December through March) and specialty tours such as Ilha Grande by speedboat, we recommend booking at least 1 to 2 weeks in advance to secure your preferred date."
+        },
+        {
+          id: 16,
+          question: "Is Be Free Tours a licensed tour operator in Rio de Janeiro?",
+          answer: "Yes. Be Free Tours has operated as a licensed private tour company in Rio de Janeiro since 2013. All our guides hold official Brazilian tourism certification (Cadastur) and are native Rio locals fluent in English, Spanish, and Portuguese."
+        },
+        {
+          id: 17,
+          question: "What is the difference between a private tour and a group tour in Rio de Janeiro?",
+          answer: "A private tour is exclusively for you and your travel companions — no strangers join your group. You get a dedicated licensed guide, a private vehicle with door-to-door hotel pickup, and a fully flexible itinerary. Group tours share a bus with up to 40 strangers and follow a fixed schedule."
+        },
+        {
+          id: 18,
+          question: "Which private tour company in Rio de Janeiro has the best reviews?",
+          answer: "Be Free Tours holds a 4.9 out of 5 rating from over 800 verified reviews across TripAdvisor, Viator, and Civitatis — consistently ranked among the top-rated private tour operators in Rio de Janeiro since 2013."
         }
       ]
     },
@@ -150,35 +192,35 @@ export const homeContent = {
         link: "/en/contact"
       },
       trustBadges: [
-        { icon: "calendar", text: "12+ Years" },
-        { icon: "travelers", text: "15,000+ Happy Guests" },
+        { icon: "calendar", text: "12+ Years Since 2013" },
+        { icon: "travelers", text: "15,000+ Travelers Guided" },
         { icon: "star", text: "Top-Rated" }
       ]
     }
   },
-  
+
   es: {
     hero: {
-      title: "Tours Privados en Río de Janeiro – A Tu Medida",
-      subtitle: "El operador de tours privados mejor valorado de Río desde 2013 — guías certificados, recogida incluida y más de 12 años de experiencias inolvidables.",
+      title: "Tours Privados y Experiencias Locales<span aria-hidden=\"true\"><br></span>en Río de Janeiro",
+      subtitle: "Operadora de tours privados en Río de Janeiro desde 2013 — guías certificados, traslado al hotel y rutas completamente personalizables para cada estilo de viaje.",
       ctaPrimary: {
-        text: "Ver Nuestros Tours",
+        text: "Explorar Tours Privados",
         link: "/es/tours-privados"
       },
       ctaSecondary: {
-        text: "Contáctanos",
-        link: "/es/contacto"
+        text: "Descubrir Experiencias Locales",
+        link: "/es/experiencias"
       },
       badges: [
-        { icon: "star",    value: "Calificación 4,9/5",         label: "Más de 600 reseñas verificadas" },
-        { icon: "guide",   value: "Guías Locales Certificados",  label: "Inglés, español y portugués" },
+        { icon: "star",    value: "4,9/5 en TripAdvisor, Viator y Civitatis", label: "Más de 800 reseñas verificadas" },
+        { icon: "guide",   value: "Guías Locales Certificados",  label: "Inglés, español, portugués y más" },
         { icon: "vehicle", value: "Vehículo Privado",            label: "Recogida puerta a puerta incluida" }
       ]
     },
     howItWorks: {
       title: "Cómo Funciona",
       steps: [
-        { title: "Elige Tu Tour o Cuéntanos Tu Idea", description: "Explora nuestras 14 excursiones privadas listas para reservar — o contáctanos con tus intereses y diseñaremos un itinerario personalizado desde cero. De cualquier manera, cada tour es privado y totalmente flexible." },
+        { title: "Elige Tu Tour, Experiencia o Comparte Tu Visión", description: "Explora nuestros tours privados y experiencias locales — o contáctanos con tus intereses y diseñaremos un itinerario personalizado desde cero. De cualquier manera, cada tour es privado y totalmente flexible." },
         { title: "Nos Encargamos de Todo", description: "Entradas, transporte, asignación de guía, logística de recogida — todo confirmado antes del día del tour. Nuestro equipo coordina cada detalle para que llegues listo para disfrutar, no para organizar." },
         { title: "Vive Río en Privado", description: "Tu guía local certificado te recoge en tu hotel, Airbnb, aeropuerto o terminal de cruceros y te lleva por Río a tu propio ritmo. Sin grupos, sin compromisos." }
       ]
@@ -190,12 +232,12 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "Más de 12 Años de Experiencia",
-          description: "Desde 2013, hemos guiado a más de 15.000 viajeros por Río de Janeiro — parejas en luna de miel, viajeros solos, familias y pasajeros de crucero. Más de 12 años refinando cada excursión para darte lo mejor de la ciudad, sin horas perdidas."
+          description: "Be Free Tours opera tours privados en Río de Janeiro desde 2013 — más de 12 años guiando a más de 15.000 viajeros. Fundada por Marcelo Elias, nuestros guías cariocas certificados hablan inglés, español y portugués."
         },
         {
           icon: "customize",
           title: "Experiencias Totalmente Personalizables",
-          description: "Los 14 tours son puntos de partida, no guiones fijos. ¿Quieres más tiempo en las Escaleras de Selarón, saltarte una atracción o agregar un barrio fuera de la ruta habitual? Tu guía se adapta en tiempo real. Sin cargos extra, sin complicaciones."
+          description: "Cada tour privado y experiencia local es un punto de partida flexible. Ajusta paradas, tiempos, ritmo o idioma — o contáctanos para diseñar un itinerario completamente personalizado."
         },
         {
           icon: "guide",
@@ -210,7 +252,7 @@ export const homeContent = {
         {
           icon: "star",
           title: "Mejor Calificado en TripAdvisor, Viator y Civitatis",
-          description: "Calificación promedio de 4,9 sobre 5 con más de 600 reseñas verificadas en TripAdvisor, Viator y Civitatis. Reconocidos como uno de los mejores operadores privados de Río — no por nosotros, sino por los viajeros que estuvieron allí."
+          description: "Calificación promedio de 4,9 sobre 5 con más de 800 reseñas verificadas en TripAdvisor, Viator y Civitatis. Reconocidos como uno de los mejores operadores privados de Río — no por nosotros, sino por los viajeros que estuvieron allí."
         },
         {
           icon: "payment",
@@ -221,12 +263,14 @@ export const homeContent = {
     },
     faq: {
       title: "Preguntas Frecuentes",
-      subtitle: "Todo lo que necesitas saber sobre nuestros tours privados en Río",
+      subtitle: "Todo lo que necesitas saber sobre nuestros tours privados en Río de Janeiro",
+      ctaText: "¿Tienes más preguntas? ¡Estaremos encantados de ayudarte!",
+      ctaButton: "Contáctanos",
       questions: [
         {
           id: 1,
           question: "¿Cuánto cuesta un tour privado en Río de Janeiro?",
-          answer: "Los tours privados por la ciudad de Río comienzan desde USD 335 para un grupo de 1 persona, con la mayoría de los tours de día completo entre USD 410 y USD 580 según el itinerario y el tamaño del grupo. Los tours a pie tienen precio por persona desde USD 65. Las excursiones de día a Petrópolis, Búzios e Ilha Grande comienzan desde USD 360. Todos los precios incluyen transporte privado, guía local certificado y entradas a las atracciones indicadas. Sin costos ocultos."
+          answer: "Los tours privados por la ciudad de Río comienzan desde USD 365 para un grupo de 1 persona, con la mayoría de los tours de día completo entre USD 440 y USD 610 según el itinerario y el tamaño del grupo. Las excursiones de día a Petrópolis, Búzios e Ilha Grande comienzan desde USD 390. Todos los precios de tours privados incluyen transporte, guía local certificado y entradas a las atracciones indicadas. Las experiencias locales a pie se cotizan por separado dentro de nuestra línea de Experiencias."
         },
         {
           id: 2,
@@ -250,8 +294,8 @@ export const homeContent = {
         },
         {
           id: 6,
-          question: "¿Sus guías hablan inglés, español, portugués y más?",
-          answer: "Todos nuestros guías hablan inglés y portugués con fluidez, y la mayoría también habla español — lo que convierte a Be Free Tours en uno de los únicos operadores privados en Río con cobertura trilingüe completa. Para otros idiomas, contáctanos al reservar y haremos lo posible por asignarte el guía más adecuado según disponibilidad."
+          question: "¿En qué idiomas se realizan los tours?",
+          answer: "Nuestros tours se realizan en inglés, portugués y español. Para otros idiomas, contáctanos al reservar y haremos lo posible por asignarte el guía más adecuado según disponibilidad."
         },
         {
           id: 7,
@@ -272,6 +316,46 @@ export const homeContent = {
           id: 10,
           question: "¿Río de Janeiro es un destino LGBTQ+ friendly?",
           answer: "Río de Janeiro es ampliamente considerada una ciudad LGBTQ+ friendly, especialmente en los barrios de la Zona Sur como Ipanema, Leblon y Copacabana. El matrimonio entre personas del mismo sexo es legal en Brasil, y la diversidad suele ser bien aceptada en la vida cotidiana y en entornos turísticos. Como en cualquier gran ciudad, la atención y el sentido común siempre son importantes, pero la mayoría de los viajeros LGBTQ+ se sienten cómodos explorando Río con naturalidad. Nuestros tours privados ofrecen un entorno discreto, respetuoso y acogedor, guiado por profesionales locales que conocen la ciudad y adaptan cada experiencia al viajero — sin etiquetas ni suposiciones."
+        },
+        {
+          id: 11,
+          question: "¿Sus tours privados son aptos para familias con niños?",
+          answer: "Por supuesto. Nuestros tours privados son ideales para familias con niños de cualquier edad. El ritmo, las paradas y las actividades se adaptan a tu grupo — más tiempo en espacios abiertos, explicaciones interactivas para los más jóvenes y flexibilidad para ajustar sobre la marcha. Los niños menores de 5 años generalmente no requieren entradas pagadas; tu guía te asesorará según tu itinerario específico."
+        },
+        {
+          id: 12,
+          question: "¿Ofrecen tours accesibles para viajeros con movilidad reducida?",
+          answer: "Sí. Podemos diseñar tours para personas con movilidad reducida, usuarios de silla de ruedas y viajeros que prefieren un ritmo más tranquilo. Río presenta desafíos de accesibilidad reales en algunos puntos — calles adoquinadas en Santa Teresa, terreno empinado en ciertos miradores — pero con aviso previo seleccionamos sitios adecuados, organizamos vehículos apropiados y adaptamos el itinerario para garantizar comodidad y disfrute durante todo el día."
+        },
+        {
+          id: 13,
+          question: "¿Cuántas personas pueden unirse a un tour privado?",
+          answer: "Nuestros tours privados admiten grupos de 1 a 12 viajeros. El tamaño del vehículo se adapta a tu grupo: sedanes y SUVs para grupos pequeños, furgonetas ejecutivas para grupos más grandes. Para grupos de más de 12 personas o eventos corporativos, contáctanos directamente — podemos organizar varios guías y vehículos manteniendo la experiencia coordinada y personalizada."
+        },
+        {
+          id: 14,
+          question: "¿Qué métodos de pago aceptan?",
+          answer: "Aceptamos todas las tarjetas de crédito y débito principales. El pago solo se requiere 72 horas antes de tu tour — puedes reservar tu fecha hoy sin cargo inicial. Para reservas de último momento realizadas dentro de las 72 horas, se requiere el pago completo al momento de la reserva."
+        },
+        {
+          id: 15,
+          question: "¿Puedo reservar un tour privado para el mismo día o el día siguiente?",
+          answer: "Sí, sujeto a disponibilidad de guía y vehículo. Hacemos todo lo posible para atender solicitudes de último momento — contáctanos por WhatsApp para una respuesta más rápida. Para la temporada alta (diciembre a marzo) y tours especiales como Ilha Grande en lancha privada, recomendamos reservar con al menos 1 a 2 semanas de anticipación para asegurar tu fecha preferida."
+        },
+        {
+          id: 16,
+          question: "¿Be Free Tours es una operadora de tours privados certificada en Río de Janeiro?",
+          answer: "Sí. Be Free Tours opera como empresa de tours privados certificada en Río de Janeiro desde 2013. Todos nuestros guías tienen certificación oficial de turismo brasileño (Cadastur) y son locales cariocas con fluidez en inglés, español y portugués."
+        },
+        {
+          id: 17,
+          question: "¿Cuál es la diferencia entre un tour privado y un tour en grupo en Río de Janeiro?",
+          answer: "Un tour privado es exclusivo para ti y tus acompañantes — ningún desconocido se une al grupo. Tendrás un guía certificado dedicado, vehículo privado con traslado puerta a puerta y un itinerario completamente flexible. Los tours en grupo comparten un autobús con hasta 40 personas y siguen un horario fijo."
+        },
+        {
+          id: 18,
+          question: "¿Qué empresa de tours privados en Río de Janeiro tiene las mejores reseñas?",
+          answer: "Be Free Tours tiene una calificación de 4,9 sobre 5 basada en más de 800 reseñas verificadas en TripAdvisor, Viator y Civitatis — constantemente ubicada entre las operadoras de tours privados mejor valoradas de Río de Janeiro desde 2013."
         }
       ]
     },
@@ -306,8 +390,8 @@ export const homeContent = {
         link: "/es/contacto"
       },
       trustBadges: [
-        { icon: "calendar", text: "Más de 12 Años" },
-        { icon: "travelers", text: "Más de 15,000 Huéspedes" },
+        { icon: "calendar", text: "Más de 12 Años Desde 2013" },
+        { icon: "travelers", text: "Más de 15.000 Viajeros Guiados" },
         { icon: "star", text: "Mejor Calificado" }
       ]
     }
@@ -315,26 +399,26 @@ export const homeContent = {
   
   'pt-br': {
     hero: {
-      title: "Passeios Privados no Rio de Janeiro – Feitos Sob Medida Para Você",
-      subtitle: "A operadora de passeios privativos mais bem avaliada do Rio desde 2013 — guias certificados, busca incluída e mais de 12 anos de experiências inesquecíveis.",
+      title: "Passeios Privados e Experiências Locais<span aria-hidden=\"true\"><br></span>no Rio de Janeiro",
+      subtitle: "Operadora de passeios privados no Rio de Janeiro desde 2013 — guias certificados, busca no hotel e roteiros completamente personalizáveis para cada estilo de viagem.",
       ctaPrimary: {
-        text: "Ver Nossos Passeios",
+        text: "Explorar Passeios Privados",
         link: "/pt-br/passeios-privados"
       },
       ctaSecondary: {
-        text: "Fale Conosco",
-        link: "/pt-br/contato"
+        text: "Descobrir Experiências Locais",
+        link: "/pt-br/experiencias"
       },
       badges: [
-        { icon: "star",    value: "Avaliação 4,9/5",              label: "600+ avaliações verificadas" },
-        { icon: "guide",   value: "Guias Locais Certificados",    label: "Inglês, espanhol e português" },
+        { icon: "star",    value: "4,9/5 no TripAdvisor, Viator e Civitatis", label: "800+ avaliações verificadas" },
+        { icon: "guide",   value: "Guias Locais Certificados",    label: "Inglês, espanhol, português e mais" },
         { icon: "vehicle", value: "Veículo Privado",              label: "Busca porta a porta incluída" }
       ]
     },
     howItWorks: {
       title: "Como Funciona",
       steps: [
-        { title: "Escolha Seu Passeio ou Conte Sua Ideia", description: "Explore nossos 14 roteiros privativos prontos para reservar — ou entre em contato com seus interesses e criamos um itinerário personalizado do zero. De qualquer forma, todos os passeios são privativos e totalmente flexíveis." },
+        { title: "Escolha Seu Passeio, Experiência ou Nos Conte Sua Visão", description: "Explore nossos passeios privados e experiências locais — ou entre em contato com seus interesses e criamos um itinerário personalizado do zero. De qualquer forma, todos os passeios são privativos e totalmente flexíveis." },
         { title: "Cuidamos de Tudo", description: "Ingressos, transporte, guia, logística de busca — tudo confirmado antes do dia do passeio. Nossa equipe coordena cada detalhe para você chegar pronto para aproveitar, não para organizar." },
         { title: "Viva o Rio em Privado", description: "Seu guia local certificado te busca no hotel, Airbnb, aeroporto ou terminal de cruzeiros e te leva pelo Rio no seu ritmo. Sem grupos, sem compromissos." }
       ]
@@ -346,12 +430,12 @@ export const homeContent = {
         {
           icon: "calendar",
           title: "Mais de 12 Anos de Experiência",
-          description: "Desde 2013, guiamos mais de 15.000 viajantes pelo Rio de Janeiro — casais em lua de mel, viajantes solo, famílias e passageiros de cruzeiro. Mais de 12 anos refinando cada passeio para entregar o melhor desta cidade, sem horas desperdiçadas."
+          description: "A Be Free Tours opera passeios privados no Rio de Janeiro desde 2013 — mais de 12 anos guiando mais de 15.000 viajantes. Fundada por Marcelo Elias, nossos guias cariocas certificados falam inglês, espanhol e português."
         },
         {
           icon: "customize",
           title: "Experiências Totalmente Personalizáveis",
-          description: "Os 14 passeios são pontos de partida, não roteiros fixos. Quer mais tempo nas Escadarias do Selarón, pular uma atração ou adicionar um bairro fora do caminho comum? Seu guia se adapta em tempo real. Sem cobranças extras, sem complicações."
+          description: "Cada passeio privado e experiência local é um ponto de partida flexível. Ajuste paradas, horários, ritmo ou idioma — ou fale conosco para criar um roteiro totalmente personalizado."
         },
         {
           icon: "guide",
@@ -366,7 +450,7 @@ export const homeContent = {
         {
           icon: "star",
           title: "Melhor Avaliado no TripAdvisor, Viator e Civitatis",
-          description: "Média de 4,9 de 5 com mais de 600 avaliações verificadas no TripAdvisor, Viator e Civitatis. Consistentemente entre os melhores operadores privativos do Rio — não por nós, mas pelos viajantes que estiveram lá."
+          description: "Média de 4,9 de 5 com mais de 800 avaliações verificadas no TripAdvisor, Viator e Civitatis. Consistentemente entre os melhores operadores privativos do Rio — não por nós, mas pelos viajantes que estiveram lá."
         },
         {
           icon: "payment",
@@ -377,12 +461,14 @@ export const homeContent = {
     },
     faq: {
       title: "Perguntas Frequentes",
-      subtitle: "Tudo o que você precisa saber sobre nossos passeios privados no Rio",
+      subtitle: "Tudo o que você precisa saber sobre nossos passeios privados no Rio de Janeiro",
+      ctaText: "Ainda tem dúvidas? Ficaremos felizes em ajudar!",
+      ctaButton: "Fale Conosco",
       questions: [
         {
           id: 1,
           question: "Quanto custa um passeio privado no Rio de Janeiro?",
-          answer: "Os passeios privativos pela cidade começam a partir de USD 335 para um grupo de 1 pessoa, com a maioria dos passeios de dia inteiro entre USD 410 e USD 580 dependendo do roteiro e do tamanho do grupo. Os walking tours têm preço por pessoa a partir de USD 65. Os bate-voltas para Petrópolis, Búzios e Ilha Grande começam a partir de USD 360. Todos os preços incluem transporte privado, guia local certificado e ingressos para as atrações listadas. Sem custos ocultos."
+          answer: "Os passeios privativos pela cidade começam a partir de USD 365 para um grupo de 1 pessoa, com a maioria dos passeios de dia inteiro entre USD 440 e USD 610 dependendo do roteiro e do tamanho do grupo. Os bate-voltas para Petrópolis, Búzios e Ilha Grande começam a partir de USD 390. Todos os preços dos passeios privativos incluem transporte, guia local certificado e ingressos para as atrações listadas. As experiências locais a pé são cobradas separadamente dentro da linha de Experiências."
         },
         {
           id: 2,
@@ -406,8 +492,8 @@ export const homeContent = {
         },
         {
           id: 6,
-          question: "Seus guias falam inglês, espanhol, português e mais?",
-          answer: "Todos os nossos guias são fluentes em inglês e português, e a maioria também fala espanhol — o que torna a Be Free Tours uma das únicas operadoras de passeios privados no Rio com cobertura trilíngue completa. Para outros idiomas, entre em contato ao reservar e faremos o possível para combinar você com o guia mais adequado conforme disponibilidade."
+          question: "Em quais idiomas os passeios são realizados?",
+          answer: "Nossos passeios são realizados em inglês, português e espanhol. Para outros idiomas, entre em contato ao reservar e faremos o possível para combinar você com o guia mais adequado conforme disponibilidade."
         },
         {
           id: 7,
@@ -428,6 +514,46 @@ export const homeContent = {
           id: 10,
           question: "O Rio de Janeiro é um destino LGBTQ+ friendly?",
           answer: "O Rio de Janeiro é amplamente considerado uma cidade LGBTQ+ friendly, especialmente nos bairros da Zona Sul, como Ipanema, Leblon e Copacabana. O casamento entre pessoas do mesmo sexo é legal no Brasil, e a diversidade costuma ser bem aceita no dia a dia e em contextos turísticos. Como em qualquer grande cidade, atenção e bom senso são sempre importantes, mas a maioria dos viajantes LGBTQ+ se sente confortável explorando o Rio de forma aberta. Nossos tours privados oferecem um ambiente discreto, respeitoso e acolhedor, conduzido por profissionais locais que entendem a cidade e adaptam cada experiência ao perfil do viajante — sem rótulos ou pressupostos."
+        },
+        {
+          id: 11,
+          question: "Os passeios privativos são adequados para famílias com crianças?",
+          answer: "Com certeza. Nossos passeios privativos são ideais para famílias viajando com crianças de qualquer idade. O ritmo, as paradas e as atividades se adaptam ao seu grupo — mais tempo em espaços abertos, explicações interativas para os mais jovens e flexibilidade para ajustar durante o passeio. Crianças menores de 5 anos geralmente não precisam de ingressos pagos; seu guia orientará conforme o itinerário específico."
+        },
+        {
+          id: 12,
+          question: "Vocês oferecem passeios acessíveis para viajantes com mobilidade reduzida?",
+          answer: "Sim. Podemos criar passeios para pessoas com mobilidade reduzida, cadeirantes e viajantes que preferem um ritmo mais tranquilo. O Rio apresenta desafios reais de acessibilidade em alguns pontos — ruas de paralelepípedos em Santa Teresa, terreno íngreme em certos miradores — mas com aviso prévio selecionamos locais adequados, organizamos veículos apropriados e adaptamos o roteiro para garantir conforto e prazer durante todo o dia."
+        },
+        {
+          id: 13,
+          question: "Quantas pessoas podem participar de um passeio privativo?",
+          answer: "Nossos passeios privativos acomodam grupos de 1 a 12 viajantes. O tamanho do veículo se adapta ao seu grupo: sedans e SUVs para grupos menores, vans executivas para grupos maiores. Para grupos acima de 12 pessoas ou eventos corporativos, entre em contato diretamente — podemos organizar vários guias e veículos mantendo a experiência coordenada e personalizada."
+        },
+        {
+          id: 14,
+          question: "Quais formas de pagamento vocês aceitam?",
+          answer: "Aceitamos todos os principais cartões de crédito e débito. O pagamento só é necessário 72 horas antes do seu passeio — você pode reservar sua data hoje sem cobrança antecipada. Para reservas de última hora feitas dentro de 72 horas, o pagamento completo é exigido no momento da reserva."
+        },
+        {
+          id: 15,
+          question: "Posso reservar um passeio privativo para o mesmo dia ou para o dia seguinte?",
+          answer: "Sim, sujeito à disponibilidade de guia e veículo. Fazemos o possível para atender pedidos de última hora — entre em contato via WhatsApp para uma resposta mais rápida. Para a alta temporada (dezembro a março) e passeios especiais como Ilha Grande de lancha privativa, recomendamos reservar com pelo menos 1 a 2 semanas de antecedência para garantir sua data preferida."
+        },
+        {
+          id: 16,
+          question: "A Be Free Tours é uma operadora de passeios privados licenciada no Rio de Janeiro?",
+          answer: "Sim. A Be Free Tours opera como empresa de passeios privados licenciada no Rio de Janeiro desde 2013. Todos os nossos guias possuem certificação oficial de turismo brasileiro (Cadastur) e são cariocas nativos fluentes em inglês, espanhol e português."
+        },
+        {
+          id: 17,
+          question: "Qual é a diferença entre um passeio privado e um passeio em grupo no Rio de Janeiro?",
+          answer: "Um passeio privado é exclusivo para você e seus acompanhantes — nenhum desconhecido entra no grupo. Você terá um guia certificado dedicado, veículo privado com busca porta a porta e roteiro completamente flexível. Passeios em grupo compartilham um ônibus com até 40 pessoas e seguem horário fixo."
+        },
+        {
+          id: 18,
+          question: "Qual operadora de passeios privados no Rio de Janeiro tem as melhores avaliações?",
+          answer: "A Be Free Tours possui nota 4,9 de 5 com base em mais de 800 avaliações verificadas no TripAdvisor, Viator e Civitatis — consistentemente entre as operadoras de passeios privados mais bem avaliadas do Rio de Janeiro desde 2013."
         }
       ]
     },
@@ -462,8 +588,8 @@ export const homeContent = {
         link: "/pt-br/contato"
       },
       trustBadges: [
-        { icon: "calendar", text: "Mais de 12 Anos" },
-        { icon: "travelers", text: "Mais de 15.000 Hóspedes" },
+        { icon: "calendar", text: "Mais de 12 Anos Desde 2013" },
+        { icon: "travelers", text: "Mais de 15.000 Viajantes Guiados" },
         { icon: "star", text: "Melhor Avaliado" }
       ]
     }

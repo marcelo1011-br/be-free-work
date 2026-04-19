@@ -3,7 +3,7 @@
 
 
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { useTranslations } from "../../../i18n/utils";
@@ -77,7 +77,7 @@ export async function getStaticPaths() {
 }
 
 const { post, relatedPostsData } = Astro.props;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 const t = useTranslations(LANG);
 const getEntrySlug = (entry) => {
   const raw = entry?.slug ?? entry?.id ?? "";
@@ -87,6 +87,7 @@ const getEntrySlug = (entry) => {
   if (normalized.startsWith(prefix)) return normalized.slice(prefix.length);
   return normalized.split("/").pop() || normalized;
 };
+const postSlug = getEntrySlug(post);
 
 
 const postImage = post.data.imageSlug 
@@ -101,7 +102,7 @@ const breadcrumbItems = [
   { name: "Blog", url: `/${LANG}/blog` },
   {
     name: post.data.title,
-    url: `/${LANG}/blog/${post.slug.replace("en/", "")}`,
+    url: `/${LANG}/blog/${postSlug}`,
   },
 ];
 
@@ -111,7 +112,7 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 const articleSchema = getArticleSchema(
   {
     ...post.data,
-    slug: post.slug.replace("es/", ""),
+    slug: postSlug,
     image: postImage?.src,
   },
   LANG,

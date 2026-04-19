@@ -3,6 +3,8 @@
  * Handles different route segments, page names, and tour slugs per language.
  */
 
+import { blogSlugMap } from "./blogSlugMap.js";
+
 // Tour slug mapping: keyed by EN slug, maps to ES and PT-BR equivalents
 const tourSlugMap = {
   "essential-rio":           { es: "essential-rio",                          "pt-br": "rio-essencial" },
@@ -11,16 +13,20 @@ const tourSlugMap = {
   "golden-hour-rio":         { es: "hora-dorada-rio",                        "pt-br": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar" },
   "sunset-culture-roxy":     { es: "atardecer-cultura-roxy",                 "pt-br": "por-do-sol-cultura-roxy" },
   "island-escape-ilha-grande":{ es: "island-escape-ilha-grande",             "pt-br": "island-escape-ilha-grande" },
-  "buzios-riviera":          { es: "buzios-riviera",                         "pt-br": "buzios-charme-costeiro-passeio-privado" },
+  // "buzios-riviera":          { es: "buzios-riviera",                         "pt-br": "buzios-charme-costeiro-passeio-privado" },  // TEMPORARIAMENTE DESATIVADO
   "petropolis-imperial":     { es: "petropolis-imperial",                    "pt-br": "passeio-privado-petropolis-cidade-imperial" },
   "tijuca-rainforest":       { es: "bosque-tijuca",                          "pt-br": "pao-acucar-floresta-tijuca-jardim-botanico-passeio" },
   "niteroi-mac-museum":      { es: "niteroi-museo-mac",                     "pt-br": "niteroi-museo-arte-contemporanea-passeio-privado" },
   "modern-rio-museum-tomorrow":{ es: "rio-moderno-museo-manana",            "pt-br": "museu-amanha-experiencia-carnaval-rio-passeio" },
-  "downtown-rio-walking":    { es: "downtown-rio-walking",                   "pt-br": "downtown-rio-walking" },
-  "santa-teresa-walking":    { es: "santa-teresa-walking",                   "pt-br": "santa-teresa-walking" },
-  "food-walking":            { es: "tour-gastronomico-rio-cocina-brasilena", "pt-br": "tour-gastronomico-rio-cozinha-brasileira" },
-  "little-africa":           { es: "pequena-africa",                         "pt-br": "tour-heranca-pequena-africa-rio-cultura-afrobrasileira" },
   "custom-tour":             { es: "tour-personalizado",                     "pt-br": "passeio-personalizado" },
+};
+
+const experienceSlugMap = {
+  "rio-food-walking-tour":     { es: "tour-gastronomico-rio",    "pt-br": "food-walking-tour-rio" },
+  "little-africa-walking-tour":{ es: "pequena-africa-tour",      "pt-br": "pequena-africa-tour" },
+  "downtown-rio-walking":      { es: "downtown-rio-walking",     "pt-br": "downtown-rio-walking" },
+  "santa-teresa-walking":      { es: "santa-teresa-walking",     "pt-br": "santa-teresa-walking" },
+  "community-based-experience":{ es: "experiencia-comunitaria",  "pt-br": "experiencia-comunidade" },
 };
 
 // Build reverse maps (ES→EN and PT-BR→EN) for lookups from any language
@@ -31,6 +37,21 @@ for (const [enSlug, map] of Object.entries(tourSlugMap)) {
   ptSlugToEn[map["pt-br"]] = enSlug;
 }
 
+const esExperienceSlugToEn = {};
+const ptExperienceSlugToEn = {};
+for (const [enSlug, map] of Object.entries(experienceSlugMap)) {
+  esExperienceSlugToEn[map.es] = enSlug;
+  ptExperienceSlugToEn[map["pt-br"]] = enSlug;
+}
+
+// Build reverse maps for blog slugs (ES→EN and PT-BR→EN)
+const esBlogSlugToEn = {};
+const ptBlogSlugToEn = {};
+for (const [enSlug, map] of Object.entries(blogSlugMap)) {
+  esBlogSlugToEn[map.es] = enSlug;
+  ptBlogSlugToEn[map["pt-br"]] = enSlug;
+}
+
 // Tour route segments per language
 const tourRoutes = {
   en: "private-tours",
@@ -38,16 +59,23 @@ const tourRoutes = {
   "pt-br": "passeios-privados",
 };
 
+const experienceRoutes = {
+  en: "experiences",
+  es: "experiencias",
+  "pt-br": "experiencias",
+};
+
 // Static page name mappings: keyed by EN page name
 const pageMap = {
   "about":            { es: "sobre",                    "pt-br": "sobre" },
-  "contact":          { es: "contato",                  "pt-br": "contato" },
+  "contact":          { es: "contacto",                 "pt-br": "contato" },
   "gallery":          { es: "galeria",                  "pt-br": "galeria" },
   "privacy-policy":   { es: "politica-de-privacidad",   "pt-br": "politica-de-privacidade" },
   "cookie-policy":    { es: "politica-de-cookies",       "pt-br": "politica-de-cookies" },
   "payment-cancellation-policy": { es: "politica-de-pago-y-cancelacion", "pt-br": "politica-de-pagamento-e-cancelamento" },
   "blog":             { es: "blog",                     "pt-br": "blog" },
   "private-tours":    { es: "tours-privados",            "pt-br": "passeios-privados" },
+  "experiences":      { es: "experiencias",              "pt-br": "experiencias" },
   "faq":              { es: "preguntas-frecuentes",      "pt-br": "perguntas-frequentes" },
 };
 
@@ -110,13 +138,53 @@ export function getHreflangPaths(pathname) {
     }
   }
 
+  if (segments.length === 2 && Object.values(experienceRoutes).includes(segments[0])) {
+    const experienceSlug = segments[1];
+    let enSlug;
+    if (currentLang === "en") {
+      enSlug = experienceSlug;
+    } else if (currentLang === "es") {
+      enSlug = esExperienceSlugToEn[experienceSlug] || experienceSlug;
+    } else {
+      enSlug = ptExperienceSlugToEn[experienceSlug] || experienceSlug;
+    }
+
+    const slugMap = experienceSlugMap[enSlug];
+    if (slugMap) {
+      return {
+        en: `/en/${experienceRoutes.en}/${enSlug}`,
+        es: `/es/${experienceRoutes.es}/${slugMap.es}`,
+        "pt-br": `/pt-br/${experienceRoutes["pt-br"]}/${slugMap["pt-br"]}`,
+      };
+    }
+  }
+
   // CASE 2: Blog post (2 segments, first is "blog")
   if (segments.length === 2 && segments[0] === "blog") {
     const blogSlug = segments[1];
+    // Resolve to EN slug first, then look up the correct slug for each language
+    let enSlug;
+    if (currentLang === "en") {
+      enSlug = blogSlug;
+    } else if (currentLang === "es") {
+      enSlug = esBlogSlugToEn[blogSlug] || blogSlug;
+    } else {
+      enSlug = ptBlogSlugToEn[blogSlug] || blogSlug;
+    }
+
+    const slugMap = blogSlugMap[enSlug];
+    if (slugMap) {
+      return {
+        en: `/en/blog/${slugMap.en}`,
+        es: `/es/blog/${slugMap.es}`,
+        "pt-br": `/pt-br/blog/${slugMap["pt-br"]}`,
+      };
+    }
+    // Fallback for blog posts not yet in blogSlugMap (same slug assumed)
     return {
-      en: `/en/blog/${blogSlug}`,
-      es: `/es/blog/${blogSlug}`,
-      "pt-br": `/pt-br/blog/${blogSlug}`,
+      en: `/en/blog/${enSlug}`,
+      es: `/es/blog/${enSlug}`,
+      "pt-br": `/pt-br/blog/${enSlug}`,
     };
   }
 

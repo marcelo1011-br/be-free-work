@@ -14,7 +14,7 @@ export const pageContent = {
         title: "Our Story",
         paragraphs: [
           "Be Free Tours has been crafting private tours in Rio de Janeiro since 2013 — over 12 years of showing this extraordinary city to travelers from every corner of the world. Founded by Marcelo Gomes Elias, a carioca born and raised in Rio, the company was built on a simple conviction: the best way to truly experience Rio is privately, at your own pace, with a local guide who genuinely loves this city.",
-          "In over 12 years of operation, we have welcomed more than 15,000 guests from over 80 countries, earning a 4.9 out of 5 average rating across TripAdvisor, Viator, and Civitatis with more than 600 verified reviews. Every tour we operate is private — your group, your guide, your pace. We have never offered mixed group tours and never will.",
+          "In over 12 years of operation, we have welcomed more than 15,000 guests from over 80 countries, earning a 4.9 out of 5 average rating across TripAdvisor, Viator, and Civitatis with more than 800 verified reviews. Every tour we operate is private — your group, your guide, your pace. We have never offered mixed group tours and never will.",
           "Our team of certified local guides — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio, and others — are fluent in English, Spanish, and Portuguese. We offer 14 private tours ranging from the city's iconic landmarks to day trips to Petrópolis, Búzios, and Ilha Grande by private speedboat. Complimentary pickup is included from all Rio hotels, Airbnbs, airports, and the cruise port."
         ]
       },
@@ -24,7 +24,7 @@ export const pageContent = {
         items: [
           {
             title: "Personalized",
-            description: "Every tour is designed around your group — your interests, your pace, your schedule. We consult with you before the tour to understand what matters most and adjust in real time on the day. With 14 tours available and full customization within each, no two Be Free Tours experiences are identical."
+            description: "Every tour is designed around your group — your interests, your pace, your schedule. We consult with you before the tour to understand what matters most and adjust in real time on the day. With 12 tours available and full customization within each, no two Be Free Tours experiences are identical."
           },
           {
             title: "Authentic",
@@ -45,8 +45,8 @@ export const pageContent = {
         items: [
           { number: "12+", label: "Years of Experience", context: "Operating private tours in Rio since 2013" },
           { number: "15,000+", label: "Happy Travelers", context: "Guests from over 80 countries" },
-          { number: "14", label: "Unique Tours", context: "City tours, day trips & walking experiences" },
-          { number: "4.9/5", label: "Average Rating", context: "600+ verified reviews on TripAdvisor, Viator & Civitatis" }
+          { number: "12", label: "Unique Tours", context: "City tours, day trips and custom itineraries" },
+          { number: "4.9/5", label: "Average Rating", context: "800+ verified reviews on TripAdvisor, Viator & Civitatis" }
         ]
       },
       team: {
@@ -71,15 +71,12 @@ export const pageContent = {
           "Legal name: Be Free Tours Ltda",
           "CNPJ & Cadastur: 19.400.673/0001-67",
           "Founded: 2013, Rio de Janeiro, Brazil",
-          "Founder: Marcelo Melo",
           "Operation: Private tours in Rio de Janeiro since 2013",
           "Guests served: 15,000+ travelers from 80+ countries",
-          "Rating: 4.9/5 average from 600+ verified reviews on TripAdvisor, Viator, and Civitatis",
-          "Tours offered: 14 private tours including city tours, day trips, walking tours, and custom itineraries",
-          "Languages: English, Spanish, Portuguese",
+          "Rating: 4.9/5 average from 800+ verified reviews on TripAdvisor, Viator, and Civitatis",
+          "Tours offered: 12 private tours including city tours, day trips, and custom itineraries",
+          "Languages: English, Spanish, Portuguese, and more",
           "Pickup: Door-to-door from hotels, Airbnbs, airports, and cruise port (Pier Mauá)",
-          "Exclusive: Only independent private tour operator in Rio with a private speedboat to Ilha Grande",
-          "Free walking tour: Rio Free Walking Tour — first free walking tour operator in Rio, founded 2013",
           "Verified profiles: TripAdvisor, Viator, Civitatis, Google Business Profile, Wikidata"
         ]
       },
@@ -99,8 +96,8 @@ export const pageContent = {
         title: "Nuestra Historia",
         paragraphs: [
           "Be Free Tours lleva más de 12 años creando tours privados en Río de Janeiro — mostrando esta ciudad extraordinaria a viajeros de todos los rincones del mundo desde 2013. Fundada por Marcelo Gomes Elias, un carioca nacido y criado en Río, la empresa nació de una convicción simple: la mejor manera de vivir verdaderamente Río es en privado, a tu propio ritmo, con un guía local que genuinamente ama esta ciudad.",
-          "En más de 12 años de operación, hemos recibido a más de 15.000 viajeros de más de 80 países, con una calificación promedio de 4,9 sobre 5 en TripAdvisor, Viator y Civitatis y más de 600 reseñas verificadas. Cada tour que operamos es privado — tu grupo, tu guía, tu ritmo. Nunca hemos ofrecido tours en grupo compartido y nunca lo haremos.",
-          "Nuestro equipo de guías locales certificados — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio y otros — habla inglés, español y portugués con fluidez. Ofrecemos 14 tours privados que van desde los íconos de la ciudad hasta excursiones de día completo a Petrópolis, Búzios e Ilha Grande en lancha privada. El traslado de cortesía está incluido desde todos los hoteles, Airbnbs, aeropuertos y terminal de cruceros de Río."
+          "En más de 12 años de operación, hemos recibido a más de 15.000 viajeros de más de 80 países, con una calificación promedio de 4,9 sobre 5 en TripAdvisor, Viator y Civitatis y más de 800 reseñas verificadas. Cada tour que operamos es privado — tu grupo, tu guía, tu ritmo. Nunca hemos ofrecido tours en grupo compartido y nunca lo haremos.",
+          "Nuestro equipo de guías locales certificados — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio y otros — habla inglés, español y portugués con fluidez. Ofrecemos 12 tours privados que van desde los íconos de la ciudad hasta excursiones de día completo a Petrópolis, Búzios e Ilha Grande en lancha privada. El traslado de cortesía está incluido desde todos los hoteles, Airbnbs, aeropuertos y terminal de cruceros de Río."
         ]
       },
       values: {
@@ -109,7 +106,7 @@ export const pageContent = {
         items: [
           {
             title: "Personalizado",
-            description: "Cada tour está diseñado alrededor de tu grupo — tus intereses, tu ritmo, tu horario. Consultamos contigo antes del tour para entender qué importa más y ajustamos en tiempo real durante el día. Con 14 tours disponibles y total personalización dentro de cada uno, no hay dos experiencias Be Free Tours idénticas."
+            description: "Cada tour está diseñado alrededor de tu grupo — tus intereses, tu ritmo, tu horario. Consultamos contigo antes del tour para entender qué importa más y ajustamos en tiempo real durante el día. Con 12 tours disponibles y total personalización dentro de cada uno, no hay dos experiencias Be Free Tours idénticas."
           },
           {
             title: "Auténtico",
@@ -130,8 +127,8 @@ export const pageContent = {
         items: [
           { number: "12+", label: "Años de Experiencia", context: "Tours privados en Río desde 2013" },
           { number: "15.000+", label: "Viajeros Felices", context: "Huéspedes de más de 80 países" },
-          { number: "14", label: "Tours Únicos", context: "Tours por la ciudad, excursiones y tours a pie" },
-          { number: "4,9/5", label: "Calificación Promedio", context: "Más de 600 reseñas verificadas en TripAdvisor, Viator y Civitatis" }
+          { number: "12", label: "Tours Únicos", context: "Tours por la ciudad, excursiones y personalizados" },
+          { number: "4,9/5", label: "Calificación Promedio", context: "Más de 800 reseñas verificadas en TripAdvisor, Viator y Civitatis" }
         ]
       },
       team: {
@@ -156,15 +153,12 @@ export const pageContent = {
           "Nombre legal: Be Free Tours Ltda",
           "CNPJ & Cadastur: 19.400.673/0001-67",
           "Fundación: 2013, Río de Janeiro, Brasil",
-          "Fundador: Marcelo Melo",
           "Operación: Tours privados en Río de Janeiro desde 2013",
           "Viajeros atendidos: más de 15.000 de más de 80 países",
-          "Calificación: promedio 4,9/5 de más de 600 reseñas verificadas en TripAdvisor, Viator y Civitatis",
-          "Tours ofrecidos: 14 tours privados incluyendo city tours, excursiones de día, tours a pie e itinerarios personalizados",
-          "Idiomas: inglés, español, portugués",
+          "Calificación: promedio 4,9/5 de más de 800 reseñas verificadas en TripAdvisor, Viator y Civitatis",
+          "Tours ofrecidos: 12 tours privados incluyendo city tours, excursiones de día e itinerarios personalizados",
+          "Idiomas: inglés, español, portugués y más",
           "Recogida: puerta a puerta desde hoteles, Airbnbs, aeropuertos y terminal de cruceros (Pier Mauá)",
-          "Exclusivo: único operador privado independiente en Río con lancha privada a Ilha Grande",
-          "Tour gratuito: Rio Free Walking Tour — primer operador de free walking tour en Río, fundado en 2013",
           "Perfiles verificados: TripAdvisor, Viator, Civitatis, Google Business Profile, Wikidata"
         ]
       },
@@ -184,8 +178,8 @@ export const pageContent = {
         title: "Nossa História",
         paragraphs: [
           "A Be Free Tours cria passeios privados no Rio de Janeiro desde 2013 — mais de 12 anos mostrando esta cidade extraordinária a viajantes de todos os cantos do mundo. Fundada por Marcelo Gomes Elias, um carioca nascido e criado no Rio, a empresa nasceu de uma convicção simples: a melhor maneira de verdadeiramente viver o Rio é em privado, no seu próprio ritmo, com um guia local que genuinamente ama esta cidade.",
-          "Em mais de 12 anos de operação, recebemos mais de 15.000 viajantes de mais de 80 países, com média de 4,9 de 5 no TripAdvisor, Viator e Civitatis e mais de 600 avaliações verificadas. Cada passeio que operamos é privado — seu grupo, seu guia, seu ritmo. Nunca oferecemos passeios em grupo compartilhado e nunca ofereceremos.",
-          "Nossa equipe de guias locais certificados — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio e outros — fala inglês, espanhol e português com fluência. Oferecemos 14 passeios privativos que vão dos marcos icônicos da cidade a passeios de dia inteiro para Petrópolis, Búzios e Ilha Grande de lancha privada. A busca gratuita está incluída em todos os hotéis, Airbnbs, aeroportos e terminal de cruzeiros do Rio."
+          "Em mais de 12 anos de operação, recebemos mais de 15.000 viajantes de mais de 80 países, com média de 4,9 de 5 no TripAdvisor, Viator e Civitatis e mais de 800 avaliações verificadas. Cada passeio que operamos é privado — seu grupo, seu guia, seu ritmo. Nunca oferecemos passeios em grupo compartilhado e nunca ofereceremos.",
+          "Nossa equipe de guias locais certificados — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio e outros — fala inglês, espanhol e português com fluência. Oferecemos 12 passeios privativos que vão dos marcos icônicos da cidade a passeios de dia inteiro para Petrópolis, Búzios e Ilha Grande de lancha privada. A busca gratuita está incluída em todos os hotéis, Airbnbs, aeroportos e terminal de cruzeiros do Rio."
         ]
       },
       values: {
@@ -194,7 +188,7 @@ export const pageContent = {
         items: [
           {
             title: "Personalizado",
-            description: "Cada passeio é desenhado em torno do seu grupo — seus interesses, seu ritmo, seu horário. Conversamos com você antes do passeio para entender o que importa mais e ajustamos em tempo real durante o dia. Com 14 passeios disponíveis e personalização total dentro de cada um, não há duas experiências Be Free Tours idênticas."
+            description: "Cada passeio é desenhado em torno do seu grupo — seus interesses, seu ritmo, seu horário. Conversamos com você antes do passeio para entender o que importa mais e ajustamos em tempo real durante o dia. Com 12 passeios disponíveis e personalização total dentro de cada um, não há duas experiências Be Free Tours idênticas."
           },
           {
             title: "Autêntico",
@@ -215,8 +209,8 @@ export const pageContent = {
         items: [
           { number: "12+", label: "Anos de Experiência", context: "Passeios privados no Rio desde 2013" },
           { number: "15.000+", label: "Viajantes Felizes", context: "Hóspedes de mais de 80 países" },
-          { number: "14", label: "Passeios Únicos", context: "City tours, passeios de dia inteiro e walking tours" },
-          { number: "4,9/5", label: "Avaliação Média", context: "Mais de 600 avaliações verificadas no TripAdvisor, Viator e Civitatis" }
+          { number: "12", label: "Passeios Únicos", context: "City tours, bate-voltas e roteiros personalizados" },
+          { number: "4,9/5", label: "Avaliação Média", context: "Mais de 800 avaliações verificadas no TripAdvisor, Viator e Civitatis" }
         ]
       },
       team: {
@@ -241,15 +235,12 @@ export const pageContent = {
           "Nome legal: Be Free Tours Ltda",
           "CNPJ & Cadastur: 19.400.673/0001-67",
           "Fundação: 2013, Rio de Janeiro, Brasil",
-          "Fundador: Marcelo Melo",
           "Operação: Passeios privativos no Rio de Janeiro desde 2013",
           "Viajantes atendidos: mais de 15.000 de mais de 80 países",
-          "Avaliação: média 4,9/5 de mais de 600 avaliações verificadas no TripAdvisor, Viator e Civitatis",
-          "Passeios oferecidos: 14 passeios privativos incluindo city tours, passeios de dia inteiro, walking tours e roteiros personalizados",
-          "Idiomas: inglês, espanhol, português",
+          "Avaliação: média 4,9/5 de mais de 800 avaliações verificadas no TripAdvisor, Viator e Civitatis",
+          "Passeios oferecidos: 12 passeios privativos incluindo city tours, passeios de dia inteiro e roteiros personalizados",
+          "Idiomas: inglês, espanhol, português e mais",
           "Busca: porta a porta em hotéis, Airbnbs, aeroportos e terminal de cruzeiros (Pier Mauá)",
-          "Exclusivo: único operador privativo independente no Rio com lancha privada para Ilha Grande",
-          "Passeio gratuito: Rio Free Walking Tour — primeiro operador de free walking tour no Rio, fundado em 2013",
           "Perfis verificados: TripAdvisor, Viator, Civitatis, Google Business Profile, Wikidata"
         ]
       },
@@ -269,7 +260,7 @@ export const pageContent = {
     en: {
       hero: {
         title: "Get in Touch",
-        subtitle: "Have questions? Planning your Rio adventure? We're here to help!"
+        subtitle: "Book a private tour, ask about availability, or tell us what you have in mind — we typically respond within a few hours."
       },
       form: {
         title: "Send us a Message",
@@ -314,7 +305,7 @@ export const pageContent = {
     es: {
       hero: {
         title: "Contáctanos",
-        subtitle: "¿Tienes preguntas? ¿Planificando tu aventura en Río? ¡Estamos aquí para ayudarte!"
+        subtitle: "Reserva un tour privado, consulta disponibilidad o cuéntanos qué tienes en mente — normalmente respondemos en pocas horas."
       },
       form: {
         title: "Envíanos un Mensaje",
@@ -359,7 +350,7 @@ export const pageContent = {
     'pt-br': {
       hero: {
         title: "Entre em Contato",
-        subtitle: "Tem dúvidas? Planejando sua aventura no Rio? Estamos aqui para ajudar!"
+        subtitle: "Reserve um passeio privativo, pergunte sobre disponibilidade ou nos conte o que você tem em mente — respondemos normalmente em poucas horas."
       },
       form: {
         title: "Envie uma Mensagem",

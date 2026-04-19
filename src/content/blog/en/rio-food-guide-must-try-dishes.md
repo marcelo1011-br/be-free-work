@@ -269,10 +269,10 @@ You'll need a nap, but you'll understand why Cariocas love food so much!
 
 ## Related Posts
 
-- [Historical Walking Tour](/en/private-tours/downtown-rio-walking) - Includes food stops
+- [Downtown Rio on Foot](/en/experiences/downtown-rio-walking) - Includes food stops
 - [Best Time to Visit Rio](/en/blog/best-time-visit-rio-2026) - Some dishes are seasonal
 - [Hidden Beaches Rio Locals Love](/en/blog/hidden-beaches-rio-locals-love) - Pair sun + snacks like a local
-- [Little Africa Walking Tour](/en/private-tours/Little Africa: Rio's Soul & African Heritage Unveiled) - Explores African influence on Rio food
+- [Little Africa Walking Tour](/en/experiences/little-africa-walking-tour) - Explores African influence on Rio food
 
 Come hungry, leave happy, and probably 5 pounds heavier. Worth it!
 

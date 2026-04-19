@@ -19,7 +19,7 @@
       "slug": "island-escape-ilha-grande",
       "name": "Island Escape: Ilha Grande by Private Speedboat",
       "duration": "10 hours",
-      "price_from": 875,
+      "price_from": 925,
       "description": "Embark on an exclusive private speedboat journey around the pristine tropical paradise of Ilha Grande.",
       "highlights": [
         "Private speedboat for your group",
@@ -37,33 +37,11 @@
       "tour_type": "private_day_trip"
     },
     {
-      "id": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
-      "slug": "buzios-riviera",
-      "name": "Búzios: Brazil's Riviera (23 Beaches in One Day)",
-      "duration": "10 hours",
-      "price_from": 430,
-      "description": "Discover the sophisticated beach resort of Búzios, famous for its Mediterranean atmosphere and over 20 stunning beaches.",
-      "highlights": [
-        "Multiple peninsula beaches",
-        "Rua das Pedras shopping",
-        "Orla Bardot waterfront",
-        "Mediterranean atmosphere"
-      ],
-      "best_for": [
-        "beach lovers",
-        "couples",
-        "relaxation seekers",
-        "foodies"
-      ],
-      "url": "https://befreetours.com.br/en/private-tours/buzios-riviera",
-      "tour_type": "private_day_trip"
-    },
-    {
       "id": "Petrópolis: Imperial Palaces & Mountain Escape",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Imperial Palaces & Mountain Escape",
       "duration": "8 hours",
-      "price_from": 360,
+      "price_from": 390,
       "description": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
       "highlights": [
         "Quitandinha Palace",

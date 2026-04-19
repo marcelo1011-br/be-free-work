@@ -1218,6 +1218,8 @@
   
 
   
+  /* Remove default outline for all elements — :focus-visible below re-adds
+     a styled outline only for keyboard navigation (not mouse/touch clicks). */
   *:focus {
     outline: none;
   }

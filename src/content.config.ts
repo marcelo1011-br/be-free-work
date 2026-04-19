@@ -1,18 +1,19 @@
-
-
-
-import { defineCollection, z } from 'astro:content';
-
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({
+    base: "./src/content/blog",
+    pattern: "**/*.{md,mdx}",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    author: z.string().default('Be Free Tours'),
+    author: z.string().default("Be Free Tours"),
     publishDate: z.string(),
     updateDate: z.string().optional(),
-    imageSlug: z.string(), 
+    imageSlug: z.string(),
     category: z.string(),
     readTime: z.string(),
     relatedTours: z.array(z.string()).optional(),
@@ -29,7 +30,6 @@ const blog = defineCollection({
     featured: z.boolean().default(false),
   }),
 });
-
 
 export const collections = {
   blog,

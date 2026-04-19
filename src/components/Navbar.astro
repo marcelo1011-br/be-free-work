@@ -17,6 +17,7 @@ const routes = {
   en: {
     home: "/",
     privateTours: "/private-tours",
+    experiences: "/experiences",
     gallery: "/gallery",
     blog: "/blog",
     about: "/about",
@@ -25,14 +26,16 @@ const routes = {
   es: {
     home: "/",
     privateTours: "/tours-privados",
+    experiences: "/experiencias",
     gallery: "/galeria",
     blog: "/blog",
     about: "/sobre",
-    contact: "/contato",
+    contact: "/contacto",
   },
   "pt-br": {
     home: "/",
     privateTours: "/passeios-privados",
+    experiences: "/experiencias",
     gallery: "/galeria",
     blog: "/blog",
     about: "/sobre",
@@ -46,6 +49,7 @@ const r = routes[lang];
 const navLinks = [
   { href: `/${lang}${r.home}`, label: t("nav.home") },
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
+  { href: `/${lang}${r.experiences}`, label: t("nav.experiences") },
   { href: `/${lang}${r.gallery}`, label: t("nav.gallery") },
   { href: `/${lang}${r.blog}`, label: t("nav.blog") },
   { href: `/${lang}${r.about}`, label: t("nav.about") },
@@ -159,7 +163,9 @@ function isActive(href: string): boolean {
         <button
           id="mobile-menu-toggle"
           class="mobile-menu-button"
-          aria-label="Toggle menu"
+          aria-label={t('nav.openMenu')}
+          data-label-open={t('nav.openMenu')}
+          data-label-close={t('nav.closeMenu')}
         >
           <svg
             class="menu-icon"
@@ -236,6 +242,7 @@ function isActive(href: string): boolean {
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: var(--navbar-z);
     background: var(--navbar-bg);
     backdrop-filter: blur(var(--navbar-blur));
@@ -257,6 +264,11 @@ function isActive(href: string): boolean {
 
   :global(html.light) .navbar.scrolled {
     --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 98%, transparent);
+  }
+
+  .navbar :global(.container) {
+    max-inline-size: 100%;
+    padding-inline: clamp(1rem, 4vw, 2rem);
   }
 
   .navbar-content {
@@ -437,7 +449,7 @@ function isActive(href: string): boolean {
 
   .lang-option.active {
     background: var(--gradient-accent);
-    color: white;
+    color: var(--color-text-inverse);
   }
 
   .lang-code {
@@ -509,7 +521,7 @@ function isActive(href: string): boolean {
 
   .mobile-nav-cta {
     background: var(--gradient-accent);
-    color: white;
+    color: var(--color-text-inverse);
     text-align: center;
     font-weight: var(--font-weight-semibold);
   }
@@ -599,9 +611,11 @@ function isActive(href: string): boolean {
 
     if (isExpanded) {
       mobileMenuToggle.setAttribute("aria-expanded", "false");
+      mobileMenuToggle.setAttribute("aria-label", mobileMenuToggle.dataset.labelOpen);
       mobileMenu?.setAttribute("hidden", "");
     } else {
       mobileMenuToggle.setAttribute("aria-expanded", "true");
+      mobileMenuToggle.setAttribute("aria-label", mobileMenuToggle.dataset.labelClose);
       mobileMenu?.removeAttribute("hidden");
     }
   });

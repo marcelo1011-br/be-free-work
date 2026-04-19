@@ -7,7 +7,6 @@
   "currency": "USD",
   "categories": {
     "city_tours": "/ai/ai-search-es-city-tours.json",
-    "day_trips": "/ai/ai-search-es-day-trips.json",
-    "walking_tours": "/ai/ai-search-es-walking-tours.json"
+    "day_trips": "/ai/ai-search-es-day-trips.json"
   }
 }

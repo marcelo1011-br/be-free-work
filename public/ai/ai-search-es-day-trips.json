@@ -19,7 +19,7 @@
       "slug": "island-escape-ilha-grande",
       "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "duration": "10 horas",
-      "price_from": 875,
+      "price_from": 925,
       "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
       "highlights": [
         "Lancha privada para tu grupo",
@@ -37,33 +37,11 @@
       "tour_type": "private_day_trip"
     },
     {
-      "id": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
-      "slug": "buzios-riviera",
-      "name": "Búzios: La Riviera de Brasil (23 Playas en Un Día)",
-      "duration": "10 horas",
-      "price_from": 430,
-      "description": "Descubre el sofisticado resort de playa de Búzios, famoso por su atmósfera mediterránea y más de 20 playas impresionantes.",
-      "highlights": [
-        "Múltiples playas de la península",
-        "Compras en Rua das Pedras",
-        "Paseo marítimo Orla Bardot",
-        "Atmósfera mediterránea"
-      ],
-      "best_for": [
-        "amantes de la playa",
-        "parejas",
-        "buscadores de relajación",
-        "amantes de la gastronomía"
-      ],
-      "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera",
-      "tour_type": "private_day_trip"
-    },
-    {
       "id": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "duration": "8 horas",
-      "price_from": 360,
+      "price_from": 390,
       "description": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
       "highlights": [
         "Palacio Quitandinha",
