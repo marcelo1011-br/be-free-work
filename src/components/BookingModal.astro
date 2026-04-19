@@ -29,6 +29,7 @@ const t = useTranslations(lang);
   data-msg-email-error={t('booking.emailError')}
   data-msg-phone-error={t('booking.phoneError')}
   data-msg-submit-error={t('booking.submitError')}
+  data-msg-price-note={t('booking.priceNote')}
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
@@ -44,6 +45,7 @@ const t = useTranslations(lang);
       ×
     </button>
     <h2 class="booking-modal__title">{t('booking.title')}</h2>
+    <p class="booking-modal__subtitle">{t('booking.subtitle')}</p>
     <form
       class="booking-form"
       data-booking-form
@@ -107,7 +109,6 @@ const t = useTranslations(lang);
           />
           <div class="booking-price" data-booking-price hidden>
             <div class="booking-price__value" data-booking-price-value></div>
-            <div class="booking-price__note">{t('booking.priceNote')}</div>
           </div>
           <small class="field-error" data-error-for="participants"></small>
         </div>
@@ -199,6 +200,7 @@ const t = useTranslations(lang);
       emailError: modal.dataset.msgEmailError,
       phoneError: modal.dataset.msgPhoneError,
       submitError: modal.dataset.msgSubmitError,
+      priceNote: modal.dataset.msgPriceNote,
     };
     const participantsInput = modal.querySelector("#booking-participants");
     const priceWrap = modal.querySelector("[data-booking-price]");
@@ -244,7 +246,7 @@ const t = useTranslations(lang);
         priceValue.textContent = "";
         return;
       }
-      priceValue.textContent = `US$ ${price}`;
+      priceValue.textContent = messages.priceNote.replace('{price}', price);
       priceWrap.hidden = false;
     };
 
@@ -581,9 +583,16 @@ const t = useTranslations(lang);
   }
 
   .booking-modal__title {
-    margin: 0 0 var(--space-lg);
+    margin: 0 0 var(--space-xs);
     font-size: var(--font-size-h3);
     color: var(--color-text);
+  }
+
+  .booking-modal__subtitle {
+    margin: 0 0 var(--space-lg);
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
   }
 
   .booking-form {
@@ -641,11 +650,7 @@ const t = useTranslations(lang);
 
   .booking-price__value {
     font-weight: var(--font-weight-semibold);
-  }
-
-  .booking-price__note {
-    font-size: var(--font-size-xs);
-    color: color-mix(in srgb, var(--color-text) 75%, transparent);
+    font-size: var(--font-size-small);
   }
 
   .form-field select option {
