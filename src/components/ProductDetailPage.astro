@@ -71,33 +71,46 @@ const fromPrice = getFromPrice(item.pricing || {});
 const copyByType = {
   tour: {
     en: {
-      bookThisItem: "Book This Tour",
+      bookThisItem: "Reserve — Pay Nothing Until 72h Before",
       viewAllItems: "View All Tours",
+      whatsappText: "Questions? WhatsApp us",
     },
     es: {
-      bookThisItem: "Reservar Este Tour",
+      bookThisItem: "Reservar — Sin Pagar Hasta 72h Antes",
       viewAllItems: "Ver Todos los Tours",
+      whatsappText: "¿Dudas? Escríbenos por WhatsApp",
     },
     "pt-br": {
-      bookThisItem: "Reservar Este Passeio",
+      bookThisItem: "Reserve — Pague Só 72h Antes",
       viewAllItems: "Ver Todos os Passeios",
+      whatsappText: "Dúvidas? Fale pelo WhatsApp",
     },
   },
   experience: {
     en: {
-      bookThisItem: "Book This Experience",
+      bookThisItem: "Reserve — Pay Nothing Until 72h Before",
       viewAllItems: "View All Experiences",
+      whatsappText: "Questions? WhatsApp us",
     },
     es: {
-      bookThisItem: "Reservar Esta Experiencia",
+      bookThisItem: "Reservar — Sin Pagar Hasta 72h Antes",
       viewAllItems: "Ver Todas las Experiencias",
+      whatsappText: "¿Dudas? Escríbenos por WhatsApp",
     },
     "pt-br": {
-      bookThisItem: "Reservar Esta Experiência",
+      bookThisItem: "Reserve — Pague Só 72h Antes",
       viewAllItems: "Ver Todas as Experiências",
+      whatsappText: "Dúvidas? Fale pelo WhatsApp",
     },
   },
 };
+
+const waMessages = {
+  en: `Hi, I have a question about the ${item.title} tour.`,
+  es: `Hola, tengo una pregunta sobre el tour ${item.title}.`,
+  "pt-br": `Olá, tenho uma dúvida sobre o passeio ${item.title}.`,
+};
+const waLink = `https://wa.me/5521979271637?text=${encodeURIComponent(waMessages[lang] || waMessages.en)}`;
 
 const copy = copyByType[type]?.[lang] || copyByType.tour.en;
 const breadcrumbItems = [
@@ -514,6 +527,14 @@ const breadcrumbItems = [
             {copy.viewAllItems}
           </a>
         </div>
+        <a
+          href={waLink}
+          class="product-cta__whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {copy.whatsappText}
+        </a>
       </div>
     </div>
   </section>
@@ -943,6 +964,20 @@ const breadcrumbItems = [
   .cta-buttons .btn-outline-secondary:hover {
     background-color: var(--color-text-inverse);
     color: var(--color-primary);
+  }
+
+  .product-cta__whatsapp {
+    display: block;
+    margin-top: var(--space-md);
+    font-size: var(--font-size-small);
+    color: color-mix(in srgb, var(--color-text-inverse) 70%, transparent);
+    text-decoration: none;
+    transition: color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  .product-cta__whatsapp:hover {
+    color: var(--color-text-inverse);
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {
