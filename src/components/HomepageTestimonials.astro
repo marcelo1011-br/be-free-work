@@ -1,0 +1,193 @@
+---
+
+
+
+import { homeContent } from "../data/homeContent.js";
+
+const { lang } = Astro.props;
+const section = homeContent[lang].testimonialsSection;
+---
+
+<section class="homepage-testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{section.title}</h2>
+      <p class="section-subtitle">{section.subtitle}</p>
+    </div>
+
+    <div class="quotes-stack">
+      {section.quotes.map((quote) => (
+        <article class="quote-card">
+          <div class="quote-card__header">
+            <div class="quote-card__stars" aria-label={`${quote.rating} out of 5 stars`}>
+              {"★".repeat(quote.rating)}{"☆".repeat(5 - quote.rating)}
+            </div>
+            <span class="quote-card__source">{quote.source}</span>
+          </div>
+
+          <blockquote class="quote-card__body">
+            <p class="quote-card__text">"{quote.text}"</p>
+          </blockquote>
+
+          <footer class="quote-card__footer">
+            <div class="quote-card__author">
+              <strong class="quote-card__author-name">{quote.author}</strong>
+              <span class="quote-card__context">{quote.context}</span>
+              <span class="quote-card__tour">{quote.tour} · {quote.source}</span>
+            </div>
+            {section.originalLanguageNote && (
+              <p class="quote-card__lang-note">{section.originalLanguageNote}</p>
+            )}
+          </footer>
+        </article>
+      ))}
+    </div>
+
+    <p class="aggregate-line">{section.aggregateLine}</p>
+  </div>
+</section>
+
+<style>
+  .homepage-testimonials {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-bg-white);
+  }
+
+  .homepage-testimonials .container {
+    max-width: 52rem;
+    padding-inline: var(--space-xl-compact);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-title {
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-h5);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .quotes-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .quote-card {
+    padding: var(--space-xl);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .quote-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--border-width-hairline) solid var(--color-border-light);
+  }
+
+  .quote-card__stars {
+    font-size: var(--font-size-h5);
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+  }
+
+  .quote-card__source {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: #00aa6c;
+  }
+
+  .quote-card__body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .quote-card__text {
+    font-size: var(--font-size-body);
+    font-style: italic;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .quote-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-top: var(--space-sm);
+    border-top: var(--border-width-hairline) solid var(--color-border-light);
+  }
+
+  .quote-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .quote-card__author-name {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  .quote-card__context {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+  }
+
+  .quote-card__tour {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+  }
+
+  .quote-card__lang-note {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .aggregate-line {
+    text-align: center;
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .homepage-testimonials {
+      padding: var(--space-2xl) 0;
+    }
+
+    .section-header {
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-subtitle {
+      font-size: var(--font-size-body);
+    }
+
+    .quote-card {
+      padding: var(--space-md);
+    }
+
+    .quotes-stack {
+      gap: var(--space-md);
+    }
+  }
+</style>

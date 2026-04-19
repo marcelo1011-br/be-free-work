@@ -4,11 +4,12 @@
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
+import TrustBar from "../../components/TrustBar.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
 import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
 import WhyUs from "../../components/WhyUs.astro";
-import Testimonials from "../../components/Testimonials.astro";
+import HomepageTestimonials from "../../components/HomepageTestimonials.astro";
 import FAQ from "../../components/FAQ.astro";
 import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
@@ -66,6 +67,33 @@ const organizationSchema = {
   ]
 };
 
+const homepageQuoteSchemas = [
+  {
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "Ellen N." },
+    "datePublished": "2026-02-01",
+    "reviewBody": "Flavio's English is also excellent. Language was an unexpected challenge in Brazil where few speak English and everything — signs, maps, menus — are in Portuguese, even at the airport. Flavio's articulate English was a tremendous help in overcoming that barrier. A very heartfelt thank you to Flavio for our wonderful experience in Rio de Janeiro.",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "itemReviewed": { "@type": "TouristTrip", "name": "The Essential Rio: Icons, Culture & Hidden Gems" }
+  },
+  {
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "Kayleen K." },
+    "datePublished": "2026-01-15",
+    "reviewBody": "We had already seen Sugarloaf the day before so Gabrielle changed the tour for us. Loved having this flexibility. Gabrielle spoke outstanding English and was very knowledgeable. She took us to sites that were very interesting that we knew nothing about in advance. Would highly recommend.",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "itemReviewed": { "@type": "TouristTrip", "name": "The Essential Rio: Icons, Culture & Hidden Gems" }
+  },
+  {
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "Kathy W." },
+    "datePublished": "2026-01-15",
+    "reviewBody": "Izabelle was wonderful. By the end of our private tour, my husband and I felt like we had a new friend. She was kind, thorough, thoughtful, knowledgeable and patient. She took us to every place on our wish list and embellished it with some of her own ideas. By the end of a very rainy day, we felt amazingly satisfied and pampered. This is the tour for anyone wanting the complete tour of Rio in one day.",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "itemReviewed": { "@type": "TouristTrip", "name": "The Essential Rio: Icons, Culture & Hidden Gems" }
+  }
+];
+
 const reviewSchemas = testimonials.map((review) => {
   const published = toIsoDate(review.date);
   const schema = {
@@ -112,7 +140,7 @@ const reviewSchemas = testimonials.map((review) => {
   title="Passeios Privados no Rio de Janeiro | Be Free Tours"
   description="Reserve passeios privados e experiências locais no Rio de Janeiro com guias certificados desde 2013. Busca no hotel incluída. +800 avaliações. Cancelamento grátis até 72h."
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("pt-br", siteUrl), ...reviewSchemas]}
+  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("pt-br", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
   <Hero
     title={content.hero.title}
@@ -121,11 +149,12 @@ const reviewSchemas = testimonials.map((review) => {
     ctaSecondary={content.hero.ctaSecondary}
     lang="pt-br"
   />
+  <TrustBar lang="pt-br" />
+  <HowItWorks lang="pt-br" />
   <FeaturedTours lang="pt-br" />
   <FeaturedExperiences lang="pt-br" />
-  <HowItWorks lang="pt-br" />
   <WhyUs lang="pt-br" />
-  <Testimonials lang="pt-br" />
+  <HomepageTestimonials lang="pt-br" />
   <FAQ lang="pt-br" />
   <CTAFinal lang="pt-br" />
 </BaseLayout>

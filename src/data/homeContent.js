@@ -1,5 +1,32 @@
 
 
+const HOMEPAGE_TESTIMONIAL_QUOTES = [
+  {
+    text: "Flavio's English is also excellent. Language was an unexpected challenge in Brazil where few speak English and everything — signs, maps, menus — are in Portuguese, even at the airport. Flavio's articulate English was a tremendous help in overcoming that barrier. A very heartfelt thank you to Flavio for our wonderful experience in Rio de Janeiro.",
+    author: "Ellen N.",
+    context: "Cruise passenger, February 2026",
+    tour: "The Essential Rio",
+    source: "Viator",
+    rating: 5
+  },
+  {
+    text: "We had already seen Sugarloaf the day before so Gabrielle changed the tour for us. Loved having this flexibility. Gabrielle spoke outstanding English and was very knowledgeable. She took us to sites that were very interesting that we knew nothing about in advance. Would highly recommend.",
+    author: "Kayleen K.",
+    context: "Group of friends, January 2026",
+    tour: "The Essential Rio",
+    source: "Viator",
+    rating: 5
+  },
+  {
+    text: "Izabelle was wonderful. By the end of our private tour, my husband and I felt like we had a new friend. She was kind, thorough, thoughtful, knowledgeable and patient. She took us to every place on our wish list and embellished it with some of her own ideas. By the end of a very rainy day, we felt amazingly satisfied and pampered. This is the tour for anyone wanting the complete tour of Rio in one day.",
+    author: "Kathy W.",
+    context: "Couple, January 2026",
+    tour: "The Essential Rio",
+    source: "Viator",
+    rating: 5
+  }
+];
+
 export const homeContent = {
   en: {
     hero: {
@@ -17,6 +44,14 @@ export const homeContent = {
         { icon: "star",    value: "4.9/5 on TripAdvisor, Viator & Civitatis", label: "800+ Verified Reviews" },
         { icon: "guide",   value: "Licensed Local Guides",  label: "English, Spanish, Portuguese & more" },
         { icon: "vehicle", value: "Private Vehicle",        label: "Door-to-Door Pickup Included" }
+      ]
+    },
+    trustBar: {
+      items: [
+        { icon: "star",      text: "4.9 / 5" },
+        { icon: "reviews",   text: "800+ Verified Reviews" },
+        { icon: "platforms", text: "TripAdvisor · Viator · Civitatis" },
+        { icon: "calendar",  text: "Operating Since 2013" }
       ]
     },
     howItWorks: {
@@ -62,6 +97,13 @@ export const homeContent = {
           description: "Reserve your tour today with no payment required. You only pay 72 hours before your tour date. Need to cancel? Free cancellation up to 72 hours before your tour — no questions asked, full refund guaranteed."
         }
       ]
+    },
+    testimonialsSection: {
+      title: "What Travelers Say",
+      subtitle: "Verified reviews from recent private tours across Viator, TripAdvisor, and Civitatis",
+      originalLanguageNote: null,
+      quotes: HOMEPAGE_TESTIMONIAL_QUOTES,
+      aggregateLine: "4.9 out of 5 from 800+ verified reviews across TripAdvisor, Viator, and Civitatis"
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -217,6 +259,14 @@ export const homeContent = {
         { icon: "vehicle", value: "Vehículo Privado",            label: "Recogida puerta a puerta incluida" }
       ]
     },
+    trustBar: {
+      items: [
+        { icon: "star",      text: "4,9 / 5" },
+        { icon: "reviews",   text: "Más de 800 reseñas verificadas" },
+        { icon: "platforms", text: "TripAdvisor · Viator · Civitatis" },
+        { icon: "calendar",  text: "Operando desde 2013" }
+      ]
+    },
     howItWorks: {
       title: "Cómo Funciona",
       steps: [
@@ -260,6 +310,13 @@ export const homeContent = {
           description: "Reserva tu tour hoy sin ningún pago inicial. Solo pagas 72 horas antes de la fecha del tour. ¿Necesitas cancelar? Cancelación gratuita hasta 72 horas antes — sin preguntas, reembolso completo garantizado."
         }
       ]
+    },
+    testimonialsSection: {
+      title: "Lo que dicen los viajeros",
+      subtitle: "Reseñas verificadas de tours privados recientes en Viator, TripAdvisor y Civitatis",
+      originalLanguageNote: "Reseña original en inglés",
+      quotes: HOMEPAGE_TESTIMONIAL_QUOTES,
+      aggregateLine: "4,9 de 5 con más de 800 reseñas verificadas en TripAdvisor, Viator y Civitatis"
     },
     faq: {
       title: "Preguntas Frecuentes",
@@ -415,6 +472,14 @@ export const homeContent = {
         { icon: "vehicle", value: "Veículo Privado",              label: "Busca porta a porta incluída" }
       ]
     },
+    trustBar: {
+      items: [
+        { icon: "star",      text: "4,9 / 5" },
+        { icon: "reviews",   text: "Mais de 800 avaliações verificadas" },
+        { icon: "platforms", text: "TripAdvisor · Viator · Civitatis" },
+        { icon: "calendar",  text: "Operando desde 2013" }
+      ]
+    },
     howItWorks: {
       title: "Como Funciona",
       steps: [
@@ -458,6 +523,13 @@ export const homeContent = {
           description: "Reserve seu passeio hoje sem nenhum pagamento inicial. Você só paga 72 horas antes da data do passeio. Precisa cancelar? Cancelamento gratuito até 72 horas antes — sem perguntas, reembolso total garantido."
         }
       ]
+    },
+    testimonialsSection: {
+      title: "O que dizem os viajantes",
+      subtitle: "Avaliações verificadas de tours privados recentes no Viator, TripAdvisor e Civitatis",
+      originalLanguageNote: "Avaliação original em inglês",
+      quotes: HOMEPAGE_TESTIMONIAL_QUOTES,
+      aggregateLine: "4,9 de 5 com mais de 800 avaliações verificadas no TripAdvisor, Viator e Civitatis"
     },
     faq: {
       title: "Perguntas Frequentes",
