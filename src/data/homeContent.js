@@ -4,7 +4,7 @@ export const homeContent = {
   en: {
     hero: {
       title: "Private Tours & Local Experiences<span aria-hidden=\"true\"><br></span>in Rio de Janeiro",
-      subtitle: "Rio de Janeiro's premier private tour operator since 2013 — licensed guides, hotel pickup, and fully customizable itineraries for every travel style.",
+      subtitle: "Rio de Janeiro's highest-rated private tour operator since 2013 — 800+ verified reviews, licensed local guides, and fully customizable itineraries for every travel style.",
       ctaPrimary: {
         text: "Explore Private Tours",
         link: "/en/private-tours"

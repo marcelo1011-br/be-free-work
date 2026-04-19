@@ -13,7 +13,7 @@ export const pageContent = {
       story: {
         title: "Our Story",
         paragraphs: [
-          "Be Free Tours has been crafting private tours in Rio de Janeiro since 2013 — over 12 years of showing this extraordinary city to travelers from every corner of the world. Founded by Marcelo Gomes Elias, a carioca born and raised in Rio, the company was built on a simple conviction: the best way to truly experience Rio is privately, at your own pace, with a local guide who genuinely loves this city.",
+          "Be Free Tours has been operating private tours in Rio de Janeiro since 2013 — over 12 years of showing this extraordinary city to travelers from every corner of the world. Founded by Marcelo Gomes Elias, a carioca born and raised in Rio, the company was built on a simple conviction: the best way to truly experience Rio is privately, at your own pace, with a local guide who genuinely loves this city.",
           "In over 12 years of operation, we have welcomed more than 15,000 guests from over 80 countries, earning a 4.9 out of 5 average rating across TripAdvisor, Viator, and Civitatis with more than 800 verified reviews. Every tour we operate is private — your group, your guide, your pace. We have never offered mixed group tours and never will.",
           "Our team of certified local guides — Karina, Flavio, Higor, Wagner, Gabrielle, Nathaly, Julio, and others — are fluent in English, Spanish, and Portuguese. We offer 14 private tours ranging from the city's iconic landmarks to day trips to Petrópolis, Búzios, and Ilha Grande by private speedboat. Complimentary pickup is included from all Rio hotels, Airbnbs, airports, and the cruise port."
         ]
