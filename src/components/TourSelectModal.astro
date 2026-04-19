@@ -38,22 +38,40 @@ const primaryTitles = {
 
 const copyMap = {
   en: {
-    title: "Choose Your Tour",
+    title: "Let's Find Your Tour",
+    subtitle: "No payment required — reserve now, pay 72h before your tour",
+    badges: ["★ 4.9/5 · 800+ reviews", "Free cancellation", "Since 2013"],
+    placeholder: "Select a tour",
     ctaPrimary: "View Tour",
     ctaSecondary: "See All Tours",
-    placeholder: "Select a tour",
+    whatsappPrompt: "Need help choosing?",
+    whatsappCta: "Talk to us on WhatsApp →",
+    whatsappLink: "https://wa.me/5521979271637?text=Hi%20Be%20Free%20Tours%2C%20I%27d%20like%20help%20choosing%20a%20tour.",
+    closeAriaLabel: "Close",
   },
   es: {
-    title: "Elige tu Tour",
+    title: "Encontremos tu Tour",
+    subtitle: "Sin pago por adelantado — reserva ahora, paga 72h antes de tu tour",
+    badges: ["★ 4,9/5 · más de 800 reseñas", "Cancelación gratuita", "Desde 2013"],
+    placeholder: "Selecciona un tour",
     ctaPrimary: "Ver Tour",
     ctaSecondary: "Ver Todos los Tours",
-    placeholder: "Selecciona un tour",
+    whatsappPrompt: "¿Necesitas ayuda para elegir?",
+    whatsappCta: "Habla con nosotros por WhatsApp →",
+    whatsappLink: "https://wa.me/5521979271637?text=Hola%20Be%20Free%20Tours%2C%20necesito%20ayuda%20para%20elegir%20un%20tour.",
+    closeAriaLabel: "Cerrar",
   },
   "pt-br": {
-    title: "Escolha seu Passeio",
+    title: "Vamos Encontrar seu Passeio",
+    subtitle: "Sem pagamento antecipado — reserve agora, pague 72h antes do passeio",
+    badges: ["★ 4,9/5 · mais de 800 avaliações", "Cancelamento grátis", "Desde 2013"],
+    placeholder: "Selecione um passeio",
     ctaPrimary: "Ver Passeio",
     ctaSecondary: "Ver Todos os Passeios",
-    placeholder: "Selecione um passeio",
+    whatsappPrompt: "Precisa de ajuda para escolher?",
+    whatsappCta: "Fale conosco pelo WhatsApp →",
+    whatsappLink: "https://wa.me/5521979271637?text=Ol%C3%A1%20Be%20Free%20Tours%2C%20preciso%20de%20ajuda%20para%20escolher%20um%20passeio.",
+    closeAriaLabel: "Fechar",
   },
 };
 
@@ -74,10 +92,19 @@ const copy = copyMap[lang] || copyMap.en;
 <div class="tour-select-modal" data-tour-select-modal aria-hidden="true" role="dialog" aria-modal="true">
   <div class="tour-select-modal__backdrop" data-tour-select-close></div>
   <div class="tour-select-modal__panel" role="document">
-    <button class="tour-select-modal__close" type="button" aria-label="Close" data-tour-select-close>
+    <button class="tour-select-modal__close" type="button" aria-label={copy.closeAriaLabel} data-tour-select-close>
       ×
     </button>
     <h2 class="tour-select-modal__title">{copy.title}</h2>
+    <p class="tour-select-modal__subtitle">{copy.subtitle}</p>
+    <div class="tour-select-modal__badges" aria-hidden="true">
+      {copy.badges.map((badge, i) => (
+        <>
+          <span class="tour-select-modal__badge">{badge}</span>
+          {i < copy.badges.length - 1 && <span class="tour-select-modal__badge-sep">·</span>}
+        </>
+      ))}
+    </div>
     <div class="tour-select-modal__form">
       <select id="tour-select" class="tour-select-modal__select" aria-label={copy.placeholder}>
         <option value="" selected disabled>{copy.placeholder}</option>
@@ -95,6 +122,15 @@ const copy = copyMap[lang] || copyMap.en;
         </a>
       </div>
     </div>
+    <p class="tour-select-modal__wa-footer">
+      {copy.whatsappPrompt}{" "}
+      <a
+        href={copy.whatsappLink}
+        class="tour-select-modal__wa-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >{copy.whatsappCta}</a>
+    </p>
   </div>
 </div>
 
@@ -200,6 +236,51 @@ const copy = copyMap[lang] || copyMap.en;
   .tour-select-modal__actions .btn-outline-secondary:hover {
     background: color-mix(in srgb, var(--color-text) 10%, transparent);
   }
+
+  .tour-select-modal__subtitle {
+    margin: 0 0 var(--space-sm);
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .tour-select-modal__badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs) var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .tour-select-modal__badge {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .tour-select-modal__badge-sep {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    opacity: 0.4;
+  }
+
+  .tour-select-modal__wa-footer {
+    margin: var(--space-md) 0 0;
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+
+  .tour-select-modal__wa-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .tour-select-modal__wa-link:hover {
+    text-decoration: underline;
+  }
+
   @keyframes modalIn {
     from {
       transform: translateY(12px) scale(0.98);
