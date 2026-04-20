@@ -943,7 +943,7 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
           "@type": "ListItem",
           "position": index + 1,
           "item": {
-            "@type": section === 'experiences' ? "Product" : "TouristTrip",
+            "@type": "TouristTrip",
             "@id": `${itemUrl}#${itemFragment}`,
             "name": tour.title,
             "description": tour.shortDescription,
