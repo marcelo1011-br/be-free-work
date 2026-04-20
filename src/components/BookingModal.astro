@@ -1,6 +1,7 @@
 ---
 import "flatpickr/dist/flatpickr.min.css";
 import { useTranslations } from "../i18n/utils";
+import { getFormspreeEndpoint } from "../config/formspree.js";
 
 const { tour, lang } = Astro.props;
 
@@ -8,6 +9,7 @@ const bookingSlots = Array.isArray(tour.bookingTimeSlots) ? tour.bookingTimeSlot
 const hasFixedSlots = bookingSlots.length > 0 && !bookingSlots.includes("Flexible");
 
 const t = useTranslations(lang);
+const formspreeEndpoint = getFormspreeEndpoint("booking");
 ---
 
 <div
@@ -49,7 +51,7 @@ const t = useTranslations(lang);
     <form
       class="booking-form"
       data-booking-form
-      action="https://formspree.io/f/mgoeyojz"
+      action={formspreeEndpoint}
       method="POST"
     >
       <input type="hidden" name="tourName" value={tour.title} />
