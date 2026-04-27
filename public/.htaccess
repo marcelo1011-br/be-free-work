@@ -29,6 +29,16 @@ RewriteRule ^$ /en/ [R=302,L]
 # --- 3) OPTIONAL URL NORMALIZATION ---
 RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
 
+# --- 3b) REMOVE TRAILING SLASH (canonical: no-slash) ---
+# Skips: existing files, site root, language roots (/en/, /es/, /pt-br/),
+# and URLs ending with a file extension.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/(en|es|pt-br)/?$
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]+)$
+RewriteCond %{REQUEST_URI} /$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 # --------------------------------------------
 # 4) REDIRECTS (SEO PRESERVATION)
 # --------------------------------------------
