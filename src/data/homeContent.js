@@ -34,11 +34,11 @@ export const homeContent = {
       subtitle: "Rio de Janeiro's highest-rated private tour operator since 2013 — 800+ verified reviews, licensed local guides, and fully customizable itineraries for every travel style.",
       ctaPrimary: {
         text: "Explore Private Tours",
-        link: "/en/private-tours"
+        link: "/en/private-tours/"
       },
       ctaSecondary: {
         text: "Discover Local Experiences",
-        link: "/en/experiences"
+        link: "/en/experiences/"
       },
       badges: [
         { icon: "star",    value: "4.9/5 on TripAdvisor, Viator & Civitatis", label: "800+ Verified Reviews" },
@@ -227,7 +227,7 @@ export const homeContent = {
       subtitle: "Free cancellation up to 72 hours before your tour. No upfront payment. 4.9/5 from 800+ verified reviews.",
       ctaPrimary: {
         text: "Reserve Now — Pay Nothing Until 72h Before",
-        link: "/en/private-tours"
+        link: "/en/private-tours/"
       },
       ctaSecondary: {
         text: "Talk to Us on WhatsApp",
@@ -248,11 +248,11 @@ export const homeContent = {
       subtitle: "Operadora de tours privados en Río de Janeiro desde 2013 — guías certificados, traslado al hotel y rutas completamente personalizables para cada estilo de viaje.",
       ctaPrimary: {
         text: "Explorar Tours Privados",
-        link: "/es/tours-privados"
+        link: "/es/tours-privados/"
       },
       ctaSecondary: {
         text: "Descubrir Experiencias Locales",
-        link: "/es/experiencias"
+        link: "/es/experiencias/"
       },
       badges: [
         { icon: "star",    value: "4,9/5 en TripAdvisor, Viator y Civitatis", label: "Más de 800 reseñas verificadas" },
@@ -441,7 +441,7 @@ export const homeContent = {
       subtitle: "Cancelación gratuita hasta 72 horas antes de tu tour. Sin pago por adelantado. 4,9/5 con más de 800 reseñas verificadas.",
       ctaPrimary: {
         text: "Reservar Ahora — Sin Pagar Hasta 72h Antes",
-        link: "/es/tours-privados"
+        link: "/es/tours-privados/"
       },
       ctaSecondary: {
         text: "Habla con Nosotros por WhatsApp",
@@ -462,11 +462,11 @@ export const homeContent = {
       subtitle: "Operadora de passeios privados no Rio de Janeiro desde 2013 — guias certificados, busca no hotel e roteiros completamente personalizáveis para cada estilo de viagem.",
       ctaPrimary: {
         text: "Explorar Passeios Privados",
-        link: "/pt-br/passeios-privados"
+        link: "/pt-br/passeios-privados/"
       },
       ctaSecondary: {
         text: "Descobrir Experiências Locais",
-        link: "/pt-br/experiencias"
+        link: "/pt-br/experiencias/"
       },
       badges: [
         { icon: "star",    value: "4,9/5 no TripAdvisor, Viator e Civitatis", label: "800+ avaliações verificadas" },
@@ -655,7 +655,7 @@ export const homeContent = {
       subtitle: "Cancelamento grátis até 72 horas antes do passeio. Sem pagamento antecipado. 4,9/5 com mais de 800 avaliações verificadas.",
       ctaPrimary: {
         text: "Reserve Agora — Pague Só 72h Antes",
-        link: "/pt-br/passeios-privados"
+        link: "/pt-br/passeios-privados/"
       },
       ctaSecondary: {
         text: "Fale Conosco pelo WhatsApp",

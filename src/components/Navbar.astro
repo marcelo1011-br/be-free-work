@@ -4,6 +4,7 @@
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { languages } from "../i18n/ui.js";
+import { routes } from "../i18n/routes.js";
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -11,37 +12,6 @@ const t = useTranslations(lang);
 
 
 const currentPath = Astro.url.pathname;
-
-
-const routes = {
-  en: {
-    home: "/",
-    privateTours: "/private-tours",
-    experiences: "/experiences",
-    gallery: "/gallery",
-    blog: "/blog",
-    about: "/about",
-    contact: "/contact",
-  },
-  es: {
-    home: "/",
-    privateTours: "/tours-privados",
-    experiences: "/experiencias",
-    gallery: "/galeria",
-    blog: "/blog",
-    about: "/sobre",
-    contact: "/contacto",
-  },
-  "pt-br": {
-    home: "/",
-    privateTours: "/passeios-privados",
-    experiences: "/experiencias",
-    gallery: "/galeria",
-    blog: "/blog",
-    about: "/sobre",
-    contact: "/contato",
-  },
-};
 
 const r = routes[lang];
 
@@ -72,7 +42,7 @@ function isActive(href: string): boolean {
   <div class="container">
     <div class="navbar-content">
       
-      <a href={`/${lang}`} class="navbar-logo">
+      <a href={`/${lang}/`} class="navbar-logo">
         <img 
           src="/images/logo/logo.svg"
           alt="Be Free Tours" 
@@ -142,7 +112,7 @@ function isActive(href: string): boolean {
             {
               Object.entries(languages).map(([code, name]) => (
                 <a
-                  href={`/${code}`}
+                  href={`/${code}/`}
                   class={`lang-option ${code === lang ? "active" : ""}`}
                   data-lang={code}
                 >

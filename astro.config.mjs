@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://befreetours.com.br',
 
   
-  trailingSlash: 'never',
+  trailingSlash: 'always',
 
   integrations: [
     

@@ -3,46 +3,13 @@
 
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { routes } from "../i18n/routes.js";
 
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
-
-
-const routes = {
-  en: {
-    home: "/",
-    privateTours: "/private-tours",
-    experiences: "/experiences",
-    gallery: "/gallery",
-    blog: "/blog",
-    about: "/about",
-    contact: "/contact",
-    paymentPolicy: "/payment-cancellation-policy",
-  },
-  es: {
-    home: "/",
-    privateTours: "/tours-privados",
-    experiences: "/experiencias",
-    gallery: "/galeria",
-    blog: "/blog",
-    about: "/sobre",
-    contact: "/contacto",
-    paymentPolicy: "/politica-de-pago-y-cancelacion",
-  },
-  "pt-br": {
-    home: "/",
-    privateTours: "/passeios-privados",
-    experiences: "/experiencias",
-    gallery: "/galeria",
-    blog: "/blog",
-    about: "/sobre",
-    contact: "/contato",
-    paymentPolicy: "/politica-de-pagamento-e-cancelamento",
-  },
-};
 
 const r = routes[lang];
 
@@ -72,7 +39,7 @@ const navLinks = [
     <div class="footer-content">
       
       <div class="footer-col">
-        <a href={`/${lang}`} class="footer-logo">
+        <a href={`/${lang}/`} class="footer-logo">
           <img 
             src="/images/logo/logo.svg"
             alt="Be Free Tours" 

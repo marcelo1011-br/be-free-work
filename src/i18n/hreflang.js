@@ -92,24 +92,19 @@ for (const [enPage, map] of Object.entries(pageMap)) {
  * Falls back to simple prefix replacement for unknown paths.
  */
 export function getHreflangPaths(pathname) {
-  // Remove trailing slash for consistency
-  const path = pathname.endsWith("/") && pathname.length > 1
-    ? pathname.slice(0, -1)
-    : pathname;
-
   // Extract current language and the rest of the path
-  const match = path.match(/^\/(en|es|pt-br)(\/.*)?$/);
+  const match = pathname.match(/^\/(en|es|pt-br)(\/.*)?$/);
   if (!match) {
     // Root or unknown path - return defaults
-    return { en: "/en", es: "/es", "pt-br": "/pt-br" };
+    return { en: "/en/", es: "/es/", "pt-br": "/pt-br/" };
   }
 
   const currentLang = match[1];
-  const rest = match[2] || ""; // e.g., "/private-tours/essential-rio" or "/about" or ""
+  const rest = match[2] || ""; // e.g., "/private-tours/essential-rio/" or "/about/" or ""
 
   // Home page (no rest or just "/")
   if (!rest || rest === "/") {
-    return { en: "/en", es: "/es", "pt-br": "/pt-br" };
+    return { en: "/en/", es: "/es/", "pt-br": "/pt-br/" };
   }
 
   // Split rest into segments: ["private-tours", "essential-rio"] or ["about"]
@@ -131,9 +126,9 @@ export function getHreflangPaths(pathname) {
     const slugMap = tourSlugMap[enSlug];
     if (slugMap) {
       return {
-        en: `/en/${tourRoutes.en}/${enSlug}`,
-        es: `/es/${tourRoutes.es}/${slugMap.es}`,
-        "pt-br": `/pt-br/${tourRoutes["pt-br"]}/${slugMap["pt-br"]}`,
+        en: `/en/${tourRoutes.en}/${enSlug}/`,
+        es: `/es/${tourRoutes.es}/${slugMap.es}/`,
+        "pt-br": `/pt-br/${tourRoutes["pt-br"]}/${slugMap["pt-br"]}/`,
       };
     }
   }
@@ -152,9 +147,9 @@ export function getHreflangPaths(pathname) {
     const slugMap = experienceSlugMap[enSlug];
     if (slugMap) {
       return {
-        en: `/en/${experienceRoutes.en}/${enSlug}`,
-        es: `/es/${experienceRoutes.es}/${slugMap.es}`,
-        "pt-br": `/pt-br/${experienceRoutes["pt-br"]}/${slugMap["pt-br"]}`,
+        en: `/en/${experienceRoutes.en}/${enSlug}/`,
+        es: `/es/${experienceRoutes.es}/${slugMap.es}/`,
+        "pt-br": `/pt-br/${experienceRoutes["pt-br"]}/${slugMap["pt-br"]}/`,
       };
     }
   }
@@ -175,16 +170,16 @@ export function getHreflangPaths(pathname) {
     const slugMap = blogSlugMap[enSlug];
     if (slugMap) {
       return {
-        en: `/en/blog/${slugMap.en}`,
-        es: `/es/blog/${slugMap.es}`,
-        "pt-br": `/pt-br/blog/${slugMap["pt-br"]}`,
+        en: `/en/blog/${slugMap.en}/`,
+        es: `/es/blog/${slugMap.es}/`,
+        "pt-br": `/pt-br/blog/${slugMap["pt-br"]}/`,
       };
     }
     // Fallback for blog posts not yet in blogSlugMap (same slug assumed)
     return {
-      en: `/en/blog/${enSlug}`,
-      es: `/es/blog/${enSlug}`,
-      "pt-br": `/pt-br/blog/${enSlug}`,
+      en: `/en/blog/${enSlug}/`,
+      es: `/es/blog/${enSlug}/`,
+      "pt-br": `/pt-br/blog/${enSlug}/`,
     };
   }
 
@@ -204,9 +199,9 @@ export function getHreflangPaths(pathname) {
     const map = pageMap[enPage];
     if (map) {
       return {
-        en: `/en/${enPage}`,
-        es: `/es/${map.es}`,
-        "pt-br": `/pt-br/${map["pt-br"]}`,
+        en: `/en/${enPage}/`,
+        es: `/es/${map.es}/`,
+        "pt-br": `/pt-br/${map["pt-br"]}/`,
       };
     }
   }
@@ -215,9 +210,10 @@ export function getHreflangPaths(pathname) {
   // Already handled by CASE 3 via pageMap "private-tours" entry
 
   // Fallback: simple prefix replacement (for any unmapped paths)
+  const normalised = pathname.endsWith("/") ? pathname : pathname + "/";
   return {
-    en: path.replace(/^\/(es|pt-br)/, "/en"),
-    es: path.replace(/^\/(en|pt-br)/, "/es"),
-    "pt-br": path.replace(/^\/(en|es)/, "/pt-br"),
+    en: normalised.replace(/^\/(es|pt-br)/, "/en"),
+    es: normalised.replace(/^\/(en|pt-br)/, "/es"),
+    "pt-br": normalised.replace(/^\/(en|es)/, "/pt-br"),
   };
 }

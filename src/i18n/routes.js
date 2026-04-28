@@ -1,0 +1,32 @@
+export const routes = {
+  en: {
+    home: "/",
+    privateTours: "/private-tours/",
+    experiences: "/experiences/",
+    gallery: "/gallery/",
+    blog: "/blog/",
+    about: "/about/",
+    contact: "/contact/",
+    paymentPolicy: "/payment-cancellation-policy/",
+  },
+  es: {
+    home: "/",
+    privateTours: "/tours-privados/",
+    experiences: "/experiencias/",
+    gallery: "/galeria/",
+    blog: "/blog/",
+    about: "/sobre/",
+    contact: "/contacto/",
+    paymentPolicy: "/politica-de-pago-y-cancelacion/",
+  },
+  "pt-br": {
+    home: "/",
+    privateTours: "/passeios-privados/",
+    experiences: "/experiencias/",
+    gallery: "/galeria/",
+    blog: "/blog/",
+    about: "/sobre/",
+    contact: "/contato/",
+    paymentPolicy: "/politica-de-pagamento-e-cancelamento/",
+  },
+};

@@ -59,7 +59,7 @@ export function getTourSEO(tour, lang, imageUrl, section = 'tours') {
 
 export function getOpenGraphTags(tour, lang, siteUrl, imageUrl, section = 'tours') {
   const tourRoute = getTourRoute(lang, section);
-  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
@@ -132,7 +132,7 @@ function getStructuredDataPrice(pricing = {}) {
 function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') {
   const price = getStructuredDataPrice(tour.pricing);
   const tourRoute = getTourRoute(lang, section);
-  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
@@ -199,7 +199,7 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
 
 export function getTourSchema(tour, lang, siteUrl, imageUrl, section = 'tours') {
   const tourRoute = getTourRoute(lang, section);
-  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
@@ -221,7 +221,7 @@ export function getTourSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
 
 export function getExperienceSchema(item, lang, siteUrl, imageUrl) {
   const itemRoute = getTourRoute(lang, 'experiences');
-  const itemUrl = `${siteUrl}/${lang}/${itemRoute}/${item.slug}`;
+  const itemUrl = `${siteUrl}/${lang}/${itemRoute}/${item.slug}/`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
   const absoluteImageUrl = resolvedImage?.startsWith('http')
     ? resolvedImage
@@ -266,7 +266,7 @@ export function getReviewSchema(tour, siteUrl, lang, section = 'tours') {
   }
 
   const tourRoute = getTourRoute(lang, section);
-  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
 
   return tour.reviews.reviewsList.map((review, index) => ({
     '@type': 'Review',
@@ -303,7 +303,7 @@ export function getBreadcrumbSchema(items, siteUrl) {
       '@type': 'ListItem',
       'position': index + 1,
       'name': item.name,
-      'item': `${siteUrl}${item.url}`,
+      'item': `${siteUrl}${item.url.endsWith('/') ? item.url : item.url + '/'}`,
     })),
   };
 }
@@ -652,7 +652,7 @@ export function getHowToSchema(lang, siteUrl) {
 
   return {
     "@type": "HowTo",
-    "@id": `${siteUrl}/${lang}#howto`,
+    "@id": `${siteUrl}/${lang}/#howto`,
     name: content.name,
     description: content.description,
     step: content.steps.map((step, index) => ({
@@ -668,7 +668,7 @@ export function getHowToSchema(lang, siteUrl) {
 
 
 export function getArticleSchema(post, lang, siteUrl) {
-  const postUrl = `${siteUrl}/${lang}/blog/${post.slug}`;
+  const postUrl = `${siteUrl}/${lang}/blog/${post.slug}/`;
   const imageUrl = post.image?.startsWith("http")
     ? post.image
     : post.image
@@ -734,7 +734,7 @@ export function getTouristTripSchema(tour, lang, siteUrl, section = 'tours') {
 
   const tourRoute = getTourRoute(lang, section);
   const imageSlug = tour.imageSlug || tour.slug;
-  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}`;
+  const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
   const price = getStructuredDataPrice(tour.pricing);
 
   return {
@@ -838,8 +838,8 @@ export function getAboutPageSchema(lang, siteUrl) {
 
   return {
     "@type": "AboutPage",
-    "@id": `${siteUrl}/${lang}/${route}#webpage`,
-    "url": `${siteUrl}/${lang}/${route}`,
+    "@id": `${siteUrl}/${lang}/${route}/#webpage`,
+    "url": `${siteUrl}/${lang}/${route}/`,
     "name": lang === 'en' ? "About Be Free Tours" : lang === 'es' ? "Sobre Be Free Tours" : "Sobre a Be Free Tours",
     "description": "Premium private tour operator in Rio de Janeiro since 2013",
     "mainEntity": {
@@ -869,8 +869,8 @@ export function getContactPageSchema(lang, siteUrl) {
 
   return {
     "@type": "ContactPage",
-    "@id": `${siteUrl}/${lang}/${route}#webpage`,
-    "url": `${siteUrl}/${lang}/${route}`,
+    "@id": `${siteUrl}/${lang}/${route}/#webpage`,
+    "url": `${siteUrl}/${lang}/${route}/`,
     "name": lang === 'en' ? "Contact Be Free Tours" : lang === 'es' ? "Contacto Be Free Tours" : "Contato Be Free Tours",
     "description": "Get in touch with Be Free Tours for your private Rio tour",
     "mainEntity": {
@@ -888,16 +888,16 @@ export function getContactPageSchema(lang, siteUrl) {
 export function getBlogSchema(posts, lang, siteUrl) {
   return {
     "@type": "Blog",
-    "@id": `${siteUrl}/${lang}/blog#blog`,
-    "url": `${siteUrl}/${lang}/blog`,
+    "@id": `${siteUrl}/${lang}/blog/#blog`,
+    "url": `${siteUrl}/${lang}/blog/`,
     "name": "Be Free Tours Blog",
     "description": "Travel tips, guides and insider knowledge about Rio de Janeiro",
     "blogPost": posts.slice(0, 10).map(post => {
       const cleanSlug = String(post.slug).split("/").filter(Boolean).pop();
       return {
         "@type": "BlogPosting",
-        "@id": `${siteUrl}/${lang}/blog/${cleanSlug}#article`,
-        "url": `${siteUrl}/${lang}/blog/${cleanSlug}`,
+        "@id": `${siteUrl}/${lang}/blog/${cleanSlug}/#article`,
+        "url": `${siteUrl}/${lang}/blog/${cleanSlug}/`,
         "headline": post.data.title,
         "description": post.data.description
       };
@@ -929,15 +929,15 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
 
   return {
     "@type": "CollectionPage",
-    "@id": `${siteUrl}/${lang}/${route}#collection`,
-    "url": `${siteUrl}/${lang}/${route}`,
+    "@id": `${siteUrl}/${lang}/${route}/#collection`,
+    "url": `${siteUrl}/${lang}/${route}/`,
     "name": names[section]?.[lang] || names.tours[lang] || names.tours.en,
     "description": descriptions[section] || descriptions.tours,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": tours.length,
       "itemListElement": tours.slice(0, 15).map((tour, index) => {
-        const itemUrl = `${siteUrl}/${lang}/${route}/${tour.slug}`;
+        const itemUrl = `${siteUrl}/${lang}/${route}/${tour.slug}/`;
         const price = getStructuredDataPrice(tour.pricing);
         return {
           "@type": "ListItem",
@@ -1005,8 +1005,8 @@ export function getImageGallerySchema(images, lang, siteUrl) {
 
   return {
     "@type": "ImageGallery",
-    "@id": `${siteUrl}/${lang}/${route}#gallery`,
-    "url": `${siteUrl}/${lang}/${route}`,
+    "@id": `${siteUrl}/${lang}/${route}/#gallery`,
+    "url": `${siteUrl}/${lang}/${route}/`,
     "name": titles[lang] || titles.en,
     "description": descriptions[lang] || descriptions.en,
     "publisher": {
