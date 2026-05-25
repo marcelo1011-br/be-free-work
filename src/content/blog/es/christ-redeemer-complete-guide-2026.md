@@ -36,7 +36,7 @@ faqs:
 featured: true
 ---
 
-# Cristo Redentor: Guía Completa del Visitante 2026
+## Cristo Redentor: Guía Completa del Visitante 2026
 
 Por Be Free Tours - 7 de noviembre de 2025 - 15 min de lectura
 

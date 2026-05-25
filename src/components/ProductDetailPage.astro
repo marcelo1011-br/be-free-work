@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TourCard from "./TourCard.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
@@ -42,6 +42,10 @@ const relatedItems = allItems
 const tips = item.tips || [];
 const faqs = item.faqs || [];
 const isCustomItem = item.isCustom || item.pricing?.custom;
+const isPetropolisItem = type === "tour"
+  && (item.slug === "petropolis-imperial"
+    || item.slug === "passeio-privado-petropolis-cidade-imperial");
+const isIlhaGrandeItem = type === "tour" && item.slug === "island-escape-ilha-grande";
 const customPriceText = item.pricing?.displayText || "Custom quote";
 const contactRoutes = {
   en: "contact",
@@ -54,6 +58,274 @@ const overviewTitle = type === "experience" ? t("product.aboutExperience") : t("
 const overviewIntro = type === "experience" ? t("product.overviewIntroExperience") : t("product.overviewIntroTour");
 const alternateLabel = type === "experience" ? t("product.altLineExperienceLabel") : t("product.altLineTourLabel");
 const alternateButton = type === "experience" ? t("product.altLineExperienceButton") : t("product.altLineTourButton");
+
+const supportingGuideMap = {
+  "en:tour:essential-rio": {
+    prefix: "For more planning context, see our ",
+    href: "/en/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "Christ the Redeemer visitor guide",
+    suffix: ".",
+  },
+  "en:tour:island-escape-ilha-grande": {
+    prefix: "For beach planning around the city, see our guide to ",
+    href: "/en/blog/hidden-beaches-rio-locals-love/",
+    anchor: "hidden beaches near Rio",
+    suffix: ".",
+  },
+  "en:tour:rio-express": {
+    prefix: "For timing and access details, see our guide to ",
+    href: "/en/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "Christ the Redeemer and Sugarloaf logistics",
+    suffix: ".",
+  },
+  "en:experience:rio-food-walking-tour": {
+    prefix: "For a broader introduction to local dishes, see our ",
+    href: "/en/blog/rio-food-guide-must-try-dishes/",
+    anchor: "Rio food guide",
+    suffix: ".",
+  },
+  "es:tour:essential-rio": {
+    prefix: "Para planificar mejor la visita, consulta nuestra ",
+    href: "/es/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "guía para visitar el Cristo Redentor",
+    suffix: ".",
+  },
+  "es:tour:island-escape-ilha-grande": {
+    prefix: "Para complementar la planificación de playa, consulta nuestra guía de ",
+    href: "/es/blog/hidden-beaches-rio-locals-love/",
+    anchor: "playas escondidas cerca de Río",
+    suffix: ".",
+  },
+  "es:tour:rio-express": {
+    prefix: "Para detalles de horarios y accesos, consulta nuestra guía de ",
+    href: "/es/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "logística del Cristo Redentor y el Pan de Azúcar",
+    suffix: ".",
+  },
+  "es:experience:tour-gastronomico-rio": {
+    prefix: "Para una introducción más amplia a los sabores locales, consulta nuestra ",
+    href: "/es/blog/rio-food-guide-must-try-dishes/",
+    anchor: "guía gastronómica de Río",
+    suffix: ".",
+  },
+  "pt-br:tour:rio-essencial": {
+    prefix: "Para planejar melhor a visita, veja nosso ",
+    href: "/pt-br/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "guia para visitar o Cristo Redentor",
+    suffix: ".",
+  },
+  "pt-br:tour:island-escape-ilha-grande": {
+    prefix: "Para complementar o planejamento de praia, veja nosso guia de ",
+    href: "/pt-br/blog/hidden-beaches-rio-locals-love/",
+    anchor: "praias escondidas perto do Rio",
+    suffix: ".",
+  },
+  "pt-br:tour:passeio-expresso-rio-5-horas-cristo-pao-acucar": {
+    prefix: "Para detalhes de horários e acessos, veja nosso guia de ",
+    href: "/pt-br/blog/christ-redeemer-complete-guide-2026/",
+    anchor: "logística do Cristo Redentor e do Pão de Açúcar",
+    suffix: ".",
+  },
+  "pt-br:experience:food-walking-tour-rio": {
+    prefix: "Para uma introdução mais ampla aos sabores locais, veja nosso ",
+    href: "/pt-br/blog/rio-food-guide-must-try-dishes/",
+    anchor: "guia gastronômico do Rio",
+    suffix: ".",
+  },
+};
+
+const supportingGuide = supportingGuideMap[`${lang}:${type}:${item.slug}`];
+
+const dayTripsGuideMap = {
+  "en:tour:petropolis-imperial": {
+    prefix: "If you are comparing escapes from Rio, use our ",
+    href: "/en/rio-day-trips/",
+    anchor: "private day trips guide",
+    suffix: " to choose between Petrópolis, Ilha Grande and custom routes.",
+  },
+  "en:tour:island-escape-ilha-grande": {
+    prefix: "If you are deciding between island nature and mountain history, compare options in our ",
+    href: "/en/rio-day-trips/",
+    anchor: "private day trips from Rio guide",
+    suffix: ".",
+  },
+  "es:tour:petropolis-imperial": {
+    prefix: "Si estás comparando escapadas desde Río, usa nuestra ",
+    href: "/es/excursiones-desde-rio/",
+    anchor: "guía de excursiones privadas",
+    suffix: " para elegir entre Petrópolis, Ilha Grande y rutas a medida.",
+  },
+  "es:tour:island-escape-ilha-grande": {
+    prefix: "Si estás decidiendo entre naturaleza de isla e historia de montaña, compara opciones en nuestra ",
+    href: "/es/excursiones-desde-rio/",
+    anchor: "guía de excursiones desde Río",
+    suffix: ".",
+  },
+  "pt-br:tour:passeio-privado-petropolis-cidade-imperial": {
+    prefix: "Se você está comparando escapadas saindo do Rio, use nosso ",
+    href: "/pt-br/bate-voltas-saindo-do-rio/",
+    anchor: "guia de bate-voltas privativos",
+    suffix: " para escolher entre Petrópolis, Ilha Grande e rotas sob medida.",
+  },
+  "pt-br:tour:island-escape-ilha-grande": {
+    prefix: "Se você está decidindo entre natureza em ilha e história na serra, compare as opções no nosso ",
+    href: "/pt-br/bate-voltas-saindo-do-rio/",
+    anchor: "guia de bate-voltas saindo do Rio",
+    suffix: ".",
+  },
+};
+
+const dayTripsGuide = dayTripsGuideMap[`${lang}:${type}:${item.slug}`];
+
+const petropolisDecisionContent = {
+  en: {
+    title: "Why choose Petrópolis?",
+    bullets: [
+      "You want a private day trip beyond Rio's beaches and landmarks.",
+      "You enjoy history, architecture, mountain scenery and imperial Brazil.",
+      "You prefer a slower cultural day with private logistics from Rio.",
+      "You want context from a local guide instead of visiting the city on your own.",
+    ],
+    customText: "Want to adapt the route or combine Petrópolis with other interests?",
+    customHref: "/en/private-tours/custom-tour/",
+    customAnchor: "See our custom private tour in Rio",
+  },
+  es: {
+    title: "Cuándo elegir Petrópolis",
+    bullets: [
+      "Quieres una excursión privada más allá de las playas y monumentos de Río.",
+      "Te interesan la historia, la arquitectura, el paisaje de sierra y el Brasil imperial.",
+      "Prefieres un día cultural más tranquilo con logística privada desde Río.",
+      "Quieres contexto de un guía local en lugar de visitar la ciudad por tu cuenta.",
+    ],
+    customText: "¿Quieres adaptar la ruta o combinar Petrópolis con otros intereses?",
+    customHref: "/es/tours-privados/tour-personalizado/",
+    customAnchor: "Ver nuestro tour privado personalizado",
+  },
+  "pt-br": {
+    title: "Quando escolher Petrópolis",
+    bullets: [
+      "Você quer um bate-volta privativo além das praias e cartões-postais do Rio.",
+      "Você gosta de história, arquitetura, clima de serra e Brasil imperial.",
+      "Você prefere um dia cultural mais tranquilo com logística privativa saindo do Rio.",
+      "Você quer contexto de um guia local em vez de visitar a cidade por conta própria.",
+    ],
+    customText: "Quer adaptar o roteiro ou combinar Petrópolis com outros interesses?",
+    customHref: "/pt-br/passeios-privados/passeio-personalizado/",
+    customAnchor: "Veja nosso passeio personalizado no Rio",
+  },
+};
+
+const petropolisDecision = petropolisDecisionContent[lang] || petropolisDecisionContent.en;
+
+const ilhaGrandeDecisionContent = {
+  en: {
+    title: "Why choose Ilha Grande?",
+    bullets: [
+      "You want a private island day with beaches, nature and time on the water.",
+      "You understand this is a long day from Rio, with road travel and a private boat.",
+      "You prefer a flexible route shaped by weather, sea conditions and your pace.",
+      "You want a more private alternative to shared boat tours.",
+    ],
+    customText: "Want to adapt the island day around your pace, weather conditions or beach preferences?",
+    customHref: "/en/private-tours/custom-tour/",
+    customAnchor: "See our custom private tour in Rio",
+  },
+  es: {
+    title: "Cuándo elegir Ilha Grande",
+    bullets: [
+      "Quieres un día privado de isla con playas, naturaleza y tiempo en el agua.",
+      "Entiendes que es un día largo desde Río, con trayecto por carretera y lancha privada.",
+      "Prefieres una ruta flexible según el clima, el estado del mar y tu ritmo.",
+      "Quieres una alternativa más privada a los paseos compartidos en barco.",
+    ],
+    customText: "¿Quieres adaptar el día en la isla a tu ritmo, al clima o a tus preferencias de playa?",
+    customHref: "/es/tours-privados/tour-personalizado/",
+    customAnchor: "Ver nuestro tour privado personalizado",
+  },
+  "pt-br": {
+    title: "Quando escolher Ilha Grande",
+    bullets: [
+      "Você quer um dia privativo de ilha com praias, natureza e tempo na água.",
+      "Você entende que é um dia longo saindo do Rio, com trajeto por estrada e lancha privativa.",
+      "Você prefere um roteiro flexível conforme clima, condições do mar e seu ritmo.",
+      "Você quer uma alternativa mais privativa aos passeios compartilhados de barco.",
+    ],
+    customText: "Quer adaptar o dia na ilha ao seu ritmo, ao clima ou às suas preferências de praia?",
+    customHref: "/pt-br/passeios-privados/passeio-personalizado/",
+    customAnchor: "Veja nosso passeio personalizado no Rio",
+  },
+};
+
+const ilhaGrandeDecision = ilhaGrandeDecisionContent[lang] || ilhaGrandeDecisionContent.en;
+
+const customTourContent = {
+  en: {
+    title: "How your custom tour works",
+    steps: [
+      "Tell us your interests, timing and travel style.",
+      "We suggest a realistic route based on Rio's geography, traffic, weather and opening hours.",
+      "Your guide adjusts the pace during the day whenever possible.",
+      "You can combine landmarks, neighborhoods, food, viewpoints, history or nature.",
+    ],
+    links: [
+      {
+        text: "Need more guidance and local context?",
+        href: "/en/private-guide-rio-de-janeiro/",
+        anchor: "See Private Guide in Rio de Janeiro",
+      },
+      {
+        text: "Comparing escapes outside the city?",
+        href: "/en/rio-day-trips/",
+        anchor: "See Private Day Trips from Rio",
+      },
+    ],
+  },
+  es: {
+    title: "Cómo funciona tu tour personalizado",
+    steps: [
+      "Cuéntanos tus intereses, horarios y estilo de viaje.",
+      "Sugerimos una ruta realista según la geografía, el tráfico, el clima y los horarios de Río.",
+      "Tu guía ajusta el ritmo durante el día siempre que sea posible.",
+      "Puedes combinar monumentos, barrios, gastronomía, miradores, historia o naturaleza.",
+    ],
+    links: [
+      {
+        text: "¿Buscas más orientación y contexto local?",
+        href: "/es/guia-privado-rio-de-janeiro/",
+        anchor: "Ver Guía privado en Río de Janeiro",
+      },
+      {
+        text: "¿Estás comparando escapadas fuera de la ciudad?",
+        href: "/es/excursiones-desde-rio/",
+        anchor: "Ver Excursiones desde Río",
+      },
+    ],
+  },
+  "pt-br": {
+    title: "Como funciona seu passeio personalizado",
+    steps: [
+      "Conte seus interesses, horários e estilo de viagem.",
+      "Sugerimos uma rota realista com base na geografia, trânsito, clima e horários do Rio.",
+      "Seu guia ajusta o ritmo durante o dia sempre que possível.",
+      "Você pode combinar pontos turísticos, bairros, gastronomia, mirantes, história ou natureza.",
+    ],
+    links: [
+      {
+        text: "Quer mais orientação e contexto local?",
+        href: "/pt-br/guia-privativo-rio-de-janeiro/",
+        anchor: "Veja Guia privativo no Rio de Janeiro",
+      },
+      {
+        text: "Está comparando bate-voltas fora da cidade?",
+        href: "/pt-br/bate-voltas-saindo-do-rio/",
+        anchor: "Veja Bate-voltas saindo do Rio",
+      },
+    ],
+  },
+};
+
+const customTourGuide = customTourContent[lang] || customTourContent.en;
 
 function getFromPrice(pricing = {}) {
   if (pricing.custom) return null;
@@ -113,6 +385,16 @@ const waMessages = {
 const waLink = `https://wa.me/5521979271637?text=${encodeURIComponent(waMessages[lang] || waMessages.en)}`;
 
 const copy = copyByType[type]?.[lang] || copyByType.tour.en;
+const productHeroWidths = [640, 960, 1280, 1600, 1920];
+const productHeroSizes = "100vw";
+const heroPreloadImage = await getImage({
+  src: heroImage,
+  widths: productHeroWidths,
+  width: 1920,
+  height: 1080,
+  format: "webp",
+  quality: 85,
+});
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   {
@@ -130,6 +412,9 @@ const breadcrumbItems = [
   type="product"
   schema={pageSchemas}
   ogTags={ogTags}
+  preloadImage={heroPreloadImage.src}
+  preloadImageSrcSet={heroPreloadImage.srcSet.attribute}
+  preloadImageSizes={productHeroSizes}
 >
   <Breadcrumbs items={breadcrumbItems} />
 
@@ -140,9 +425,13 @@ const breadcrumbItems = [
         alt={`${item.title} - ${t("product.heroImageAlt")} ${item.highlights[0]}`}
         width={1920}
         height={1080}
+        widths={productHeroWidths}
+        sizes={productHeroSizes}
         format="webp"
         quality={85}
         loading="eager"
+        fetchpriority="high"
+        priority
       />
       <div class="hero-overlay"></div>
     </div>
@@ -185,6 +474,20 @@ const breadcrumbItems = [
       {item.fullDescription.split("\n\n").map((paragraph) => (
         <p class="overview-text">{paragraph}</p>
       ))}
+      {supportingGuide && (
+        <p class="overview-text">
+          {supportingGuide.prefix}
+          <a href={supportingGuide.href}>{supportingGuide.anchor}</a>
+          {supportingGuide.suffix}
+        </p>
+      )}
+      {dayTripsGuide && (
+        <p class="overview-text">
+          {dayTripsGuide.prefix}
+          <a href={dayTripsGuide.href}>{dayTripsGuide.anchor}</a>
+          {dayTripsGuide.suffix}
+        </p>
+      )}
       <div class="product-cross-link">
         <p class="cross-link-text">{alternateLabel}</p>
         <a href={`/${lang}/${alternateRoute}`} class="btn btn-outline-secondary btn-md">
@@ -193,6 +496,72 @@ const breadcrumbItems = [
       </div>
     </div>
   </section>
+
+  {
+    isPetropolisItem && (
+      <section class="petropolis-decision">
+        <div class="container">
+          <div class="petropolis-decision__inner">
+            <h2 class="section-title">{petropolisDecision.title}</h2>
+            <ul class="petropolis-decision__list">
+              {petropolisDecision.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+            <p class="petropolis-decision__custom">
+              {petropolisDecision.customText}{" "}
+              <a href={petropolisDecision.customHref}>{petropolisDecision.customAnchor}</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    isIlhaGrandeItem && (
+      <section class="island-decision">
+        <div class="container">
+          <div class="island-decision__inner">
+            <h2 class="section-title">{ilhaGrandeDecision.title}</h2>
+            <ul class="island-decision__list">
+              {ilhaGrandeDecision.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+            <p class="island-decision__custom">
+              {ilhaGrandeDecision.customText}{" "}
+              <a href={ilhaGrandeDecision.customHref}>{ilhaGrandeDecision.customAnchor}</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    isCustomItem && (
+      <section class="custom-tour-guide">
+        <div class="container">
+          <div class="custom-tour-guide__inner">
+            <h2 class="section-title">{customTourGuide.title}</h2>
+            <ol class="custom-tour-steps">
+              {customTourGuide.steps.map((step) => (
+                <li>{step}</li>
+              ))}
+            </ol>
+            <div class="custom-tour-links">
+              {customTourGuide.links.map((link) => (
+                <p>
+                  {link.text} <a href={link.href}>{link.anchor}</a>.
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   <section class="product-details">
     <div class="container">
@@ -698,6 +1067,97 @@ const breadcrumbItems = [
 
   .overview-text + .overview-text {
     margin-top: var(--space-md);
+  }
+
+  .petropolis-decision,
+  .island-decision {
+    padding: 0 0 var(--space-3xl);
+  }
+
+  .petropolis-decision__inner,
+  .island-decision__inner {
+    max-width: var(--accordion-max);
+    margin: 0 auto;
+    padding: var(--space-xl);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-soft);
+  }
+
+  .petropolis-decision__inner .section-title,
+  .island-decision__inner .section-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .petropolis-decision__list,
+  .island-decision__list {
+    margin: 0;
+    padding-left: var(--space-lg);
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .petropolis-decision__list li + li,
+  .island-decision__list li + li {
+    margin-top: var(--space-xs);
+  }
+
+  .petropolis-decision__custom,
+  .island-decision__custom {
+    margin: var(--space-lg) 0 0;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .petropolis-decision__custom a,
+  .island-decision__custom a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .custom-tour-guide {
+    padding: 0 0 var(--space-3xl);
+  }
+
+  .custom-tour-guide__inner {
+    max-width: var(--accordion-max);
+    margin: 0 auto;
+    padding: var(--space-xl);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-soft);
+  }
+
+  .custom-tour-guide__inner .section-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .custom-tour-steps {
+    margin: 0;
+    padding-left: var(--space-lg);
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .custom-tour-steps li + li {
+    margin-top: var(--space-xs);
+  }
+
+  .custom-tour-links {
+    display: grid;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+  }
+
+  .custom-tour-links p {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .custom-tour-links a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
   }
 
   .product-details {

@@ -3,6 +3,12 @@
   "category": "day_trips",
   "label": "Day Trips",
   "description": "Full-day escapes to beaches, islands, and mountain towns outside Rio. Operated as private day trips departing from Rio de Janeiro.",
+  "pillar_page": {
+    "title": "Private Day Trips from Rio de Janeiro",
+    "url": "https://befreetours.com.br/en/rio-day-trips/",
+    "purpose": "Official planning and comparison page for travelers choosing between private day trips from Rio, especially Petrópolis and Ilha Grande.",
+    "classification": "service_pillar_not_tour_or_experience"
+  },
   "faqs": [
     {
       "question": "How far are day trips from Rio?",

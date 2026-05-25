@@ -4,6 +4,20 @@
     "es": "https://befreetours.com.br/ai-search-es.json",
     "pt-br": "https://befreetours.com.br/ai-search-pt-br.json"
   },
+  "service_pages": {
+    "private_guide": {
+      "en": "https://befreetours.com.br/en/private-guide-rio-de-janeiro/",
+      "es": "https://befreetours.com.br/es/guia-privado-rio-de-janeiro/",
+      "pt-br": "https://befreetours.com.br/pt-br/guia-privativo-rio-de-janeiro/",
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "en": "https://befreetours.com.br/en/rio-day-trips/",
+      "es": "https://befreetours.com.br/es/excursiones-desde-rio/",
+      "pt-br": "https://befreetours.com.br/pt-br/bate-voltas-saindo-do-rio/",
+      "classification": "service_pillar_not_tour_or_experience"
+    }
+  },
   "categories": {
     "en": {
       "city_tours": "https://befreetours.com.br/ai/ai-search-en-city-tours.json",

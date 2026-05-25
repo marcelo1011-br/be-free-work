@@ -87,7 +87,7 @@ Rio is generous enough to reward both approaches. The city's landmarks are genui
 
 ## Explore Your Options
 
-If you're leaning toward a private tour, [browse our full catalog of private tours in Rio](/en/private-tours) — from half-day city highlights to full-day immersions and day trips to Ilha Grande, Búzios, and Petrópolis.
+If you're leaning toward a private tour, [browse our full catalog of private tours in Rio](/en/private-tours) — from a [full-day private Rio tour](/en/private-tours/essential-rio/) to day trips to Ilha Grande and Petrópolis.
 
 If you'd prefer something more flexible and personalized, our [custom private tour](/en/private-tours/custom-tour) lets you design the day from scratch with your guide.
 

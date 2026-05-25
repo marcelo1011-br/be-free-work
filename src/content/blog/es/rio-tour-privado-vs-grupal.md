@@ -87,7 +87,7 @@ Río es lo suficientemente generosa como para recompensar ambos enfoques. Los lu
 
 ## Explora Tus Opciones
 
-Si te inclinas por un tour privado, [explora nuestro catálogo completo de tours privados en Río](/es/tours-privados) — desde los puntos destacados de medio día hasta inmersiones de día completo y excursiones a Ilha Grande, Búzios y Petrópolis.
+Si te inclinas por un tour privado, [explora nuestro catálogo completo de tours privados en Río](/es/tours-privados) — desde un [tour privado de día completo en Río](/es/tours-privados/essential-rio/) hasta excursiones a Ilha Grande y Petrópolis.
 
 Si prefieres algo más flexible y personalizado, nuestro [tour privado personalizado](/es/tours-privados/tour-personalizado) te permite diseñar el día desde cero con tu guía.
 

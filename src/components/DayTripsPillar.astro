@@ -1,0 +1,351 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="pillar-section pillar-intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <p class="eyebrow">{content.intro.kicker}</p>
+        <h2>{content.intro.title}</h2>
+      </div>
+      <div class="intro-copy">
+        {content.intro.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section soft-section">
+  <div class="container">
+    <h2 class="section-title text-center">{content.comparison.title}</h2>
+    <div class="card-grid three">
+      {content.comparison.items.map((item) => (
+        <article class="pillar-card">
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section">
+  <div class="container">
+    <h2 class="section-title text-center">{content.featured.title}</h2>
+    <div class="featured-grid">
+      {content.featured.items.map((item) => (
+        <a class="featured-card" href={item.href}>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section soft-section">
+  <div class="container">
+    <div class="decision-panel">
+      <div>
+        <h2>{content.closer.title}</h2>
+        <p>{content.closer.text}</p>
+      </div>
+      <div class="link-list">
+        {content.closer.links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section">
+  <div class="container">
+    <div class="decision-panel accent-panel">
+      <div>
+        <h2>{content.notSure.title}</h2>
+        <p>{content.notSure.text}</p>
+      </div>
+      <div class="cta-actions compact">
+        <a href={content.notSure.primaryHref} class="btn btn-primary btn-lg">{content.notSure.primaryLabel}</a>
+        <a href={content.notSure.secondaryHref} class="btn btn-outline-secondary btn-lg">{content.notSure.secondaryLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section soft-section">
+  <div class="container">
+    <div class="why-panel">
+      <h2>{content.why.title}</h2>
+      <div class="why-grid">
+        {content.why.items.map((item) => (
+          <div class="why-item">
+            <span aria-hidden="true">+</span>
+            <p>{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section">
+  <div class="container">
+    <h2 class="section-title text-center">{content.faqTitle}</h2>
+    <div class="faq-grid">
+      {content.faqs.map((faq) => (
+        <article class="faq-card">
+          <h3>{faq.q}</h3>
+          <p>{faq.a}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="pillar-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{content.cta.title}</h2>
+      <p>{content.cta.text}</p>
+      <div class="cta-actions">
+        <a href={content.cta.primaryHref} class="btn btn-primary btn-lg">{content.cta.primaryLabel}</a>
+        <a href={content.cta.secondaryHref} class="btn btn-outline-secondary btn-lg">{content.cta.secondaryLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pillar-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .soft-section {
+    background: var(--color-bg-soft);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .eyebrow {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .intro-grid h2,
+  .decision-panel h2,
+  .why-panel h2,
+  .pillar-cta h2 {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .intro-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .intro-copy p,
+  .pillar-card p,
+  .featured-card p,
+  .decision-panel p,
+  .why-item p,
+  .faq-card p,
+  .pillar-cta p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .section-title {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .card-grid,
+  .featured-grid,
+  .why-grid,
+  .faq-grid {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .card-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .featured-grid,
+  .why-grid,
+  .faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pillar-card,
+  .featured-card,
+  .faq-card,
+  .why-panel,
+  .decision-panel {
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .pillar-card,
+  .featured-card,
+  .faq-card {
+    padding: var(--space-lg);
+  }
+
+  .pillar-card h3,
+  .featured-card h3,
+  .faq-card h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .featured-card {
+    text-decoration: none;
+    transition:
+      transform var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+
+  .featured-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-accent);
+  }
+
+  .featured-card span,
+  .link-list a {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .decision-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+    gap: var(--space-xl);
+    align-items: center;
+    padding: var(--space-2xl);
+  }
+
+  .accent-panel {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      var(--glass-bg)
+    );
+  }
+
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .why-panel {
+    padding: var(--space-2xl);
+  }
+
+  .why-panel h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .why-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .why-item span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: 0 0 1.75rem;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .why-item p {
+    margin: 0;
+  }
+
+  .pillar-cta {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-dark) 0%,
+      var(--color-primary) 52%,
+      var(--color-bg-dark) 100%
+    );
+  }
+
+  .pillar-cta .cta-content {
+    max-width: clamp(42rem, 75vw, 54rem);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pillar-cta h2,
+  .pillar-cta p {
+    color: var(--color-text-inverse);
+  }
+
+  .pillar-cta p {
+    font-size: var(--font-size-h5);
+    margin: var(--space-md) 0 var(--space-xl);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-actions.compact {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .intro-grid,
+    .card-grid.three,
+    .featured-grid,
+    .decision-panel,
+    .why-grid,
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pillar-section,
+    .pillar-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .why-panel,
+    .decision-panel {
+      padding: var(--space-lg);
+    }
+  }
+</style>

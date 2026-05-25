@@ -33,7 +33,7 @@ faqs:
 featured: true
 ---
 
-# O Rio de Janeiro é Seguro para Turistas? A Visão Honesta de Quem Vive Aqui
+## O Rio de Janeiro é Seguro para Turistas? A Visão Honesta de Quem Vive Aqui
 
 Por Be Free Tours - 10 de fevereiro de 2026 - 8 min de leitura
 
@@ -89,7 +89,7 @@ Mais do que segurança, um guia local traz fluidez.
 
 Saber horários, trajetos, ritmo da cidade e detalhes culturais muda completamente a experiência. Em tours privados, você passa a maior parte do tempo em transporte, evitando situações desnecessárias.
 
-Experiências como [O Essencial do Rio](/pt-br/passeios-privados/essential-rio) ou um [Passeio Privado Personalizado](/pt-br/passeios-privados/custom-tour) permitem conhecer a cidade com conforto, eficiência e tranquilidade.
+Experiências como [O Essencial do Rio](/pt-br/passeios-privados/rio-essencial) ou um [Passeio Privado Personalizado](/pt-br/passeios-privados/passeio-personalizado) permitem conhecer a cidade com conforto, eficiência e tranquilidade.
 
 ## O Rio que não aparece nas manchetes
 
@@ -103,7 +103,7 @@ O Rio está te esperando - e vale muito a pena.
 
 ## Considerações finais
 
-Marcelo conduz tours privados no Rio desde 2013 pela Be Free Tours. Se quiser conhecer a cidade com segurança, conforto e no seu ritmo, explore nossos tours ou fale conosco para criar uma experiência sob medida.
+Marcelo conduz tours privados no Rio desde 2013 pela Be Free Tours. Se quiser conhecer a cidade com segurança, conforto e no seu ritmo, explore nossos [passeios privativos no Rio de Janeiro](/pt-br/passeios-privados/) ou fale conosco para criar uma experiência sob medida.
 
 ## Perguntas frequentes
 

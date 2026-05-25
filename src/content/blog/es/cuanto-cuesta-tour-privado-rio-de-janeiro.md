@@ -26,7 +26,7 @@ tags:
   - "tour privado rio de janeiro precio"
 faqs:
   - question: "¿Cuánto cuesta un tour privado en Río de Janeiro?"
-    answer: "Los tours privados por la ciudad en Río comienzan desde USD 365 por grupo. Los tours de día completo con el Cristo Redentor y el Pan de Azúcar van de USD 440 a USD 610. Las excursiones de día a Petrópolis, Búzios e Ilha Grande en lancha privada comienzan desde USD 390, USD 460 y USD 925 respectivamente. Consulta nuestra página de tours para precios actualizados."
+    answer: "Los tours privados por la ciudad en Río comienzan desde USD 365 por grupo. Los tours de día completo con el Cristo Redentor y el Pan de Azúcar van de USD 440 a USD 610. Las excursiones publicadas a Petrópolis e Ilha Grande en lancha privada comienzan desde USD 390 y USD 925 respectivamente. Consulta nuestra página de tours para precios actualizados."
   - question: "¿Los precios de los tours privados en Río son por persona o por grupo?"
     answer: "La mayoría de los tours privados en Río se cotizan por grupo, no por persona. Esto significa que las parejas y familias obtienen un valor significativamente mejor que los viajeros solos."
   - question: "¿Qué incluye el precio de un tour privado en Río?"
@@ -54,7 +54,7 @@ featured: true
 
 ## Respuesta Rápida ⚡
 
-Los tours privados en Río comienzan desde **USD 365/grupo** para tours con vehículo privado. Los tours de día completo por la ciudad con Cristo Redentor y Pan de Azúcar van de **USD 440 a USD 610 por grupo**. Las excursiones de día a Petrópolis, Búzios e Ilha Grande comienzan desde **USD 390, USD 460 y USD 925** respectivamente.
+Los tours privados en Río comienzan desde **USD 365/grupo** para tours con vehículo privado. Los tours de día completo por la ciudad con Cristo Redentor y Pan de Azúcar van de **USD 440 a USD 610 por grupo**. Las excursiones publicadas a Petrópolis e Ilha Grande comienzan desde **USD 390 y USD 925** respectivamente.
 
 Todos los precios incluyen guía local certificado, transporte privado y traslado al hotel. Las entradas a las principales atracciones están incluidas en la mayoría de los tours.
 
@@ -97,12 +97,11 @@ Los precios de salida son para 1 viajero. Los precios aumentan gradualmente con 
 
 ## Precios de Excursiones de Día
 
-Las excursiones de día te llevan fuera de Río a destinos como Petrópolis, Búzios e Ilha Grande — todo incluido en el precio con transporte privado y guía.
+Las excursiones de día te llevan fuera de Río a destinos como Petrópolis e Ilha Grande — con transporte privado y guía incluidos en los itinerarios publicados.
 
 | Tour | Duración | Precio desde (por grupo) |
 |------|----------|--------------------------|
-| Petrópolis: Palacios Imperiales y Escape a la Montaña | 8 horas | USD 390 |
-| Búzios: La Riviera Brasileña (23 Playas en Un Día) | 9 horas | USD 460 |
+| [precio de una excursión privada a Petrópolis](/es/tours-privados/petropolis-imperial/) | 8 horas | USD 390 |
 | Escape a las Islas: Ilha Grande en Lancha Privada | 10 horas | USD 925 (1–4 viajeros) |
 
 **Nota sobre Ilha Grande:** el tour en lancha privada incluye el alquiler de una embarcación privada. USD 925 cubre grupos de 1–4 viajeros; USD 1.125 para grupos de 5–10.
@@ -183,7 +182,7 @@ Para una pareja, el costo total de un tour en grupo y el de un tour privado suel
 
 ### ¿Cuánto cuesta un tour privado en Río de Janeiro?
 
-Los tours privados por la ciudad comienzan desde USD 365 por grupo para experiencias más cortas y USD 440–610 para tours de día completo. Las excursiones a Petrópolis comienzan desde USD 390; Búzios desde USD 460; Ilha Grande en lancha privada desde USD 925 para 1–4 viajeros. Las experiencias a pie se cotizan por persona desde USD 65. Consulta nuestra [página de tours](/es/tours-privados) para precios actualizados.
+Los tours privados por la ciudad comienzan desde USD 365 por grupo para experiencias más cortas y USD 440–610 para tours de día completo. Las excursiones publicadas a Petrópolis comienzan desde USD 390; Ilha Grande en lancha privada desde USD 925 para 1–4 viajeros. Las experiencias a pie se cotizan por persona desde USD 65. Consulta nuestra [página de tours](/es/tours-privados) para precios actualizados.
 
 ### ¿Los precios son por persona o por grupo?
 

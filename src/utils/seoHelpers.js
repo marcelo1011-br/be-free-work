@@ -11,7 +11,84 @@ function truncateMetaDescription(text, maxLength = 158) {
   return `${base.trim().replace(/[.,;:!?-]+$/, "")}.`;
 }
 
+function getCustomTourSEO(tour, lang, section = "tours") {
+  if (section === "experiences" || !(tour?.isCustom || tour?.pricing?.custom)) return null;
+
+  const copy = {
+    en: {
+      title: "Custom Tour in Rio de Janeiro | Private Tailor-Made Itinerary",
+      description: "Design a private custom tour in Rio de Janeiro around your pace, interests and travel style, with a local guide and flexible itinerary planning.",
+    },
+    es: {
+      title: "Tour personalizado en Río de Janeiro | Itinerario privado a medida",
+      description: "Diseña un tour privado personalizado en Río de Janeiro, adaptado a tu ritmo, intereses y estilo de viaje, con guía local e itinerario flexible.",
+    },
+    "pt-br": {
+      title: "Passeio personalizado no Rio de Janeiro | Roteiro privativo sob medida",
+      description: "Crie um passeio privativo personalizado no Rio de Janeiro, adaptado ao seu ritmo, interesses e estilo de viagem, com guia local e roteiro flexível.",
+    },
+  };
+
+  return copy[lang] || copy.en;
+}
+
+function getPetropolisTourSEO(tour, lang, section = "tours") {
+  if (section === "experiences") return null;
+
+  const isPetropolisTour = tour?.slug === "petropolis-imperial"
+    || tour?.slug === "passeio-privado-petropolis-cidade-imperial";
+
+  if (!isPetropolisTour) return null;
+
+  const copy = {
+    en: {
+      title: "Petrópolis Day Trip from Rio | Private Imperial City Tour",
+      description: "Take a private day trip from Rio to Petrópolis, with a local guide, private transportation, imperial history, mountain scenery and a flexible pace.",
+    },
+    es: {
+      title: "Excursión privada a Petrópolis desde Río | Ciudad Imperial",
+      description: "Disfruta una excursión privada desde Río a Petrópolis, con guía local, transporte privado, historia imperial, paisaje de sierra y ritmo flexible.",
+    },
+    "pt-br": {
+      title: "Passeio privativo para Petrópolis saindo do Rio | Cidade Imperial",
+      description: "Faça um passeio privativo para Petrópolis saindo do Rio, com guia local, transporte privativo, história imperial, clima de serra e roteiro flexível.",
+    },
+  };
+
+  return copy[lang] || copy.en;
+}
+
+function getIlhaGrandeTourSEO(tour, lang, section = "tours") {
+  if (section === "experiences" || tour?.slug !== "island-escape-ilha-grande") return null;
+
+  const copy = {
+    en: {
+      title: "Ilha Grande Private Boat Tour from Rio | Island Escape",
+      description: "Take a private Ilha Grande day trip from Rio with door-to-door logistics, a private speedboat, beaches, nature and a flexible island route shaped by weather and sea conditions.",
+    },
+    es: {
+      title: "Tour privado a Ilha Grande desde Río | Lancha privada",
+      description: "Disfruta una excursión privada a Ilha Grande desde Río, con logística puerta a puerta, lancha privada, playas, naturaleza y una ruta flexible según el clima y el mar.",
+    },
+    "pt-br": {
+      title: "Passeio privativo para Ilha Grande saindo do Rio | Lancha privativa",
+      description: "Faça um passeio privativo para Ilha Grande saindo do Rio, com logística porta a porta, lancha privativa, praias, natureza e roteiro flexível conforme clima e mar.",
+    },
+  };
+
+  return copy[lang] || copy.en;
+}
+
 function getIntentDescription(item, lang, section = "tours") {
+  const customTourSEO = getCustomTourSEO(item, lang, section);
+  if (customTourSEO) return customTourSEO.description;
+
+  const petropolisTourSEO = getPetropolisTourSEO(item, lang, section);
+  if (petropolisTourSEO) return petropolisTourSEO.description;
+
+  const ilhaGrandeTourSEO = getIlhaGrandeTourSEO(item, lang, section);
+  if (ilhaGrandeTourSEO) return ilhaGrandeTourSEO.description;
+
   const copy = {
     en: {
       tours: `${item.title} is a private guided tour in Rio de Janeiro with iconic landmarks, full logistics, and skip-the-line planning.`,
@@ -48,6 +125,30 @@ export function getTourSEO(tour, lang, imageUrl, section = 'tours') {
   const langText = langMap[lang] || langMap.en;
 
   const resolvedImage = imageUrl || '/images/og-default.jpg';
+  const customTourSEO = getCustomTourSEO(tour, lang, section);
+  const petropolisTourSEO = getPetropolisTourSEO(tour, lang, section);
+  const ilhaGrandeTourSEO = getIlhaGrandeTourSEO(tour, lang, section);
+
+  if (customTourSEO) {
+    return {
+      ...customTourSEO,
+      image: resolvedImage,
+    };
+  }
+
+  if (petropolisTourSEO) {
+    return {
+      ...petropolisTourSEO,
+      image: resolvedImage,
+    };
+  }
+
+  if (ilhaGrandeTourSEO) {
+    return {
+      ...ilhaGrandeTourSEO,
+      image: resolvedImage,
+    };
+  }
 
   return {
     title: `${tour.title} | ${langText.titleSuffix}`,
@@ -61,6 +162,12 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl, section = 'tours
   const tourRoute = getTourRoute(lang, section);
   const tourUrl = `${siteUrl}/${lang}/${tourRoute}/${tour.slug}/`;
   const resolvedImage = imageUrl || '/images/og-default.jpg';
+  const customTourSEO = getCustomTourSEO(tour, lang, section);
+  const petropolisTourSEO = getPetropolisTourSEO(tour, lang, section);
+  const ilhaGrandeTourSEO = getIlhaGrandeTourSEO(tour, lang, section);
+  const pageSpecificSEO = customTourSEO || petropolisTourSEO || ilhaGrandeTourSEO;
+  const socialTitle = pageSpecificSEO?.title || tour.title;
+  const socialDescription = pageSpecificSEO?.description || tour.shortDescription;
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
@@ -72,8 +179,8 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl, section = 'tours
   return {
     'og:type': 'product',
     'og:url': tourUrl,
-    'og:title': tour.title,
-    'og:description': tour.shortDescription,
+    'og:title': socialTitle,
+    'og:description': socialDescription,
     'og:image': absoluteImageUrl,
     'og:image:width': '1200',
     'og:image:height': '630',
@@ -82,8 +189,8 @@ export function getOpenGraphTags(tour, lang, siteUrl, imageUrl, section = 'tours
 
     
     'twitter:card': 'summary_large_image',
-    'twitter:title': tour.title,
-    'twitter:description': tour.shortDescription,
+    'twitter:title': socialTitle,
+    'twitter:description': socialDescription,
     'twitter:image': absoluteImageUrl,
 
     
@@ -139,12 +246,7 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
   : `${siteUrl}${resolvedImage}`;
 
   
-  const rating = tour.reviews?.aggregateRating || {
-    ratingValue: '4.9',
-    reviewCount: '800',
-    bestRating: '5',
-    worstRating: '1',
-  };
+  const rating = tour.reviews?.aggregateRating || null;
 
   return {
     '@type': 'Product',
@@ -176,6 +278,7 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
         'seller': {
           '@type': 'Organization',
           'name': 'Be Free Tours',
+          '@id': `${siteUrl}/#organization`,
         },
         'itemCondition': 'https://schema.org/NewCondition',
         'shippingDetails': {
@@ -187,13 +290,20 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
         }
       },
     }),
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': rating.ratingValue,
-      'reviewCount': rating.reviewCount,
-      'bestRating': rating.bestRating || '5',
-      'worstRating': rating.worstRating || '1',
+    'provider': {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      'name': 'Be Free Tours',
     },
+    ...(rating && {
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': rating.ratingValue,
+        'reviewCount': rating.reviewCount,
+        'bestRating': rating.bestRating || '5',
+        'worstRating': rating.worstRating || '1',
+      },
+    }),
   };
 }
 
@@ -449,14 +559,6 @@ export function getWebSiteSchema(siteUrl) {
     'publisher': {
       '@id': `${siteUrl}/#organization`,
     },
-    'potentialAction': {
-      '@type': 'SearchAction',
-      'target': {
-        '@type': 'EntryPoint',
-        'urlTemplate': `${siteUrl}/en/private-tours?search={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
     'inLanguage': ['en', 'es', 'pt-BR'],
   };
 }
@@ -559,7 +661,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Choose Your Tour",
-          text: "Browse our collection of 12 private tours with transport, logistics, and landmark-focused itineraries. From iconic sights like Christ the Redeemer to full-day escapes, pick the option that matches your plans.",
+          text: "Browse our curated portfolio of private tours and local experiences with transport, logistics, and landmark-focused itineraries. From iconic sights like Christ the Redeemer to full-day escapes, pick the option that matches your plans.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -590,7 +692,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Elige tu Tour",
-          text: "Explora nuestra colección de 12 tours privados con transporte, logística y enfoque en lugares icónicos. Desde el Cristo Redentor hasta escapadas de día completo, elige la opción que mejor se adapta a tu viaje.",
+          text: "Explora nuestro portafolio curado de tours privados y experiencias locales con transporte, logística y enfoque en lugares icónicos. Desde el Cristo Redentor hasta escapadas de día completo, elige la opción que mejor se adapta a tu viaje.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -621,7 +723,7 @@ export function getHowToSchema(lang, siteUrl) {
       steps: [
         {
           name: "Escolha seu Passeio",
-          text: "Explore nossa coleção de 12 passeios privados com transporte, logística e foco em pontos icônicos. Do Cristo Redentor aos bate-voltas de dia inteiro, escolha a opção que melhor combina com a sua viagem.",
+          text: "Explore nosso portfólio curado de passeios privados e experiências locais com transporte, logística e foco em pontos icônicos. Do Cristo Redentor aos bate-voltas de dia inteiro, escolha a opção que melhor combina com a sua viagem.",
           image: `${siteUrl}/images/step-choose.jpg`,
         },
         {
@@ -692,11 +794,13 @@ export function getArticleSchema(post, lang, siteUrl) {
     "dateModified": post.updateDate || post.publishDate,
     "author": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": post.author || "Be Free Tours",
       "url": siteUrl,
     },
     "publisher": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "Be Free Tours",
       "url": siteUrl,
       "logo": {
@@ -779,6 +883,7 @@ export function getTouristTripSchema(tour, lang, siteUrl, section = 'tours') {
         "priceValidUntil": "2026-12-31",
         "seller": {
           "@type": "Organization",
+          "@id": `${siteUrl}/#organization`,
           "name": "Be Free Tours"
         }
       },
@@ -801,7 +906,8 @@ export function getTouristTripSchema(tour, lang, siteUrl, section = 'tours') {
     
     
     "provider": {
-      "@type": "TravelAgency",
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "Be Free Tours",
       "url": siteUrl,
       "telephone": "+5521979271637"
@@ -843,7 +949,7 @@ export function getAboutPageSchema(lang, siteUrl) {
     "name": lang === 'en' ? "About Be Free Tours" : lang === 'es' ? "Sobre Be Free Tours" : "Sobre a Be Free Tours",
     "description": "Premium private tour operator in Rio de Janeiro since 2013",
     "mainEntity": {
-      "@type": "TravelAgency",
+      "@type": ["Organization", "TravelAgency"],
       "@id": `${siteUrl}/#organization`,
       "name": "Be Free Tours",
       "foundingDate": "2013",
@@ -923,8 +1029,16 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
   };
 
   const descriptions = {
-    tours: "Discover our exclusive collection of private tours in Rio de Janeiro",
-    experiences: "Discover our curated collection of immersive experiences in Rio de Janeiro",
+    tours: {
+      en: "Discover our exclusive collection of private tours in Rio de Janeiro",
+      es: "Descubre nuestra colección de tours privados en Río de Janeiro",
+      "pt-br": "Conheça nossa coleção de passeios privativos no Rio de Janeiro",
+    },
+    experiences: {
+      en: "Discover our curated collection of immersive experiences in Rio de Janeiro",
+      es: "Descubre nuestra colección de experiencias inmersivas en Río de Janeiro",
+      "pt-br": "Conheça nossa coleção de experiências imersivas no Rio de Janeiro",
+    },
   };
 
   return {
@@ -932,7 +1046,7 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
     "@id": `${siteUrl}/${lang}/${route}/#collection`,
     "url": `${siteUrl}/${lang}/${route}/`,
     "name": names[section]?.[lang] || names.tours[lang] || names.tours.en,
-    "description": descriptions[section] || descriptions.tours,
+    "description": descriptions[section]?.[lang] || descriptions[section]?.en || descriptions.tours.en,
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": tours.length,
@@ -948,21 +1062,19 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
             "name": tour.title,
             "description": tour.shortDescription,
             "url": itemUrl,
-            ...(section === 'experiences' && {
+            "provider": {
+              "@type": "Organization",
+              "@id": `${siteUrl}/#organization`,
+              "name": "Be Free Tours",
+            },
+            ...(section === 'experiences' && price !== null && {
               "offers": {
                 "@type": "Offer",
-                "price": price !== null ? price.toString() : "0",
+                "price": price.toString(),
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "url": itemUrl,
                 "validFrom": new Date().toISOString().split('T')[0],
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "800",
-                "bestRating": "5",
-                "worstRating": "1",
               },
             }),
           },

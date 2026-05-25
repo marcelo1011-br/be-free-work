@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HeroPages from "../../components/HeroPages.astro";
+import DayTripsPillar from "../../components/DayTripsPillar.astro";
+import { dayTripsContent } from "../../data/dayTripsContent.js";
+import { getBreadcrumbSchema, getFAQSchema } from "../../utils/seoHelpers.js";
+
+const lang = "es";
+const content = dayTripsContent[lang];
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const pageUrl = `${siteUrl}${content.path}`;
+
+const breadcrumbItems = [
+  { name: content.breadcrumbHome, url: `/${lang}` },
+  { name: content.breadcrumbCurrent, url: content.path.replace(/\/$/, "") },
+];
+
+const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
+const faqSchema = getFAQSchema(content.faqs);
+const webPageSchema = {
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: content.hero.title,
+  description: content.description,
+  inLanguage: "es",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${pageUrl}#service` },
+  mainEntity: { "@id": `${pageUrl}#service` },
+  provider: { "@id": `${siteUrl}/#organization` },
+};
+
+const serviceSchema = {
+  "@type": "Service",
+  "@id": `${pageUrl}#service`,
+  name: "Excursiones privadas desde Río de Janeiro",
+  serviceType: "Excursiones privadas desde Río de Janeiro",
+  description: content.description,
+  url: pageUrl,
+  provider: {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: "Be Free Tours",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Rio de Janeiro",
+    addressCountry: "BR",
+  },
+  availableLanguage: ["English", "Spanish", "Portuguese"],
+  audience: {
+    "@type": "Audience",
+    audienceType: "Viajeros privados, familias, parejas y grupos pequeños",
+  },
+};
+
+const schemas = [webPageSchema, serviceSchema, faqSchema, breadcrumbSchema];
+---
+
+<BaseLayout title={content.title} description={content.description} schema={schemas}>
+  <Breadcrumbs items={breadcrumbItems} />
+  <HeroPages
+    title={content.hero.title}
+    subtitle={content.hero.subtitle}
+    primaryCta={content.hero.primaryCta}
+    secondaryCta={content.hero.secondaryCta}
+    maxWidth="clamp(42rem, 78vw, 56rem)"
+  />
+  <DayTripsPillar content={content} />
+</BaseLayout>

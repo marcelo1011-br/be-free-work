@@ -10,7 +10,7 @@ readTime: "12 min read"
 relatedTours:
   - "Island Escape: Ilha Grande by Private Speedboat"
   - "The Essential Rio: Icons, Culture & Hidden Gems"
-  - "Búzios: Brazil's Riviera (23 Beaches in One Day)"
+  - "Petrópolis: Imperial Palaces & Mountain Escape"
   - "Rio at First Light: Sunrise Sugarloaf & Christ"
 relatedPosts:
   - "hidden-beaches-rio-locals-love"
@@ -34,7 +34,7 @@ faqs:
     answer: "Rain is most frequent from December to March, usually as brief afternoon showers."
 featured: true
 ---
-# Best Time to Visit Rio de Janeiro in 2026: Month-by-Month Guide
+## Best Time to Visit Rio de Janeiro in 2026: Month-by-Month Guide
 
 By Be Free Tours - November 14, 2025 - 12 min read
 
@@ -110,9 +110,9 @@ Beach lovers, party-goers, first-time visitors who want the full "Rio experience
 
 ### Perfect Summer Tours
 
-- Ilha Grande Beach Paradise - Crystal-clear waters at their warmest
+- [Ilha Grande private speedboat day trip](/en/private-tours/island-escape-ilha-grande/) - Crystal-clear waters at their warmest
 - The Essential Rio - Skip the lines when crowds peak
-- Búzios Day Trip - Best beach weather of the year
+- Coastal beach days - Best beach weather of the year
 
 ## Autumn (April-June): Shoulder Season Gem
 
@@ -131,7 +131,7 @@ Budget travelers, photographers (great light!), cultural exploration over beach 
 ### Perfect Autumn Tours
 
 - Historical Downtown Walking Tour - Comfortable weather for walking
-- Petrópolis Imperial City - Cooler mountain climate is refreshing
+- [Petrópolis day trip from Rio](/en/private-tours/petropolis-imperial/) - Cooler mountain climate is refreshing
 
 ## Winter (July-September): Low Season Value
 

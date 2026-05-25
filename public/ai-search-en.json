@@ -6,6 +6,7 @@
     "description": "Premium Rio de Janeiro operator offering two product lines: private guided tours and local immersive experiences with certified local guides",
     "founded": "2013",
     "website": "https://befreetours.com.br",
+    "instagram": "https://www.instagram.com/befreetoursrio/",
     "type": "tour_and_experience_operator",
     "specializations": [
       "Private Tours",
@@ -24,6 +25,32 @@
     "experiences": {
       "label": "Local Experiences",
       "description": "Guided walking-based, cultural, food, and community experiences for travelers seeking deeper local immersion."
+    }
+  },
+  "service_pages": {
+    "private_guide": {
+      "title": "Private Guide in Rio de Janeiro",
+      "url": "https://befreetours.com.br/en/private-guide-rio-de-janeiro/",
+      "purpose": "Official page for travelers looking for a private local guide in Rio de Janeiro, with flexible guidance, local context, and links to suitable private tours.",
+      "intent": [
+        "private guide in Rio de Janeiro",
+        "hire a private guide in Rio",
+        "local guide in Rio de Janeiro",
+        "English-speaking private guide in Rio"
+      ],
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "title": "Private Day Trips from Rio de Janeiro",
+      "url": "https://befreetours.com.br/en/rio-day-trips/",
+      "purpose": "Official page for travelers comparing private day trips from Rio de Janeiro, especially Petrópolis and Ilha Grande, and choosing the right private escape for their travel style.",
+      "intent": [
+        "private day trips from Rio de Janeiro",
+        "best day trips from Rio",
+        "Rio day trips",
+        "Petrópolis or Ilha Grande from Rio"
+      ],
+      "classification": "service_pillar_not_tour_or_experience"
     }
   },
   "contact": {

@@ -25,48 +25,6 @@ const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace
 const websiteSchema = getWebSiteSchema(siteUrl);
 
 
-const organizationSchema = {
-  "@type": "TravelAgency",
-  "@id": `${siteUrl}/#organization`,
-  "name": "Be Free Tours",
-  "alternateName": "Be Free Tours Rio de Janeiro",
-  "url": siteUrl,
-  "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 512, "height": 512 },
-  "image": `${siteUrl}/images/heroes/home-hero.webp`,
-  "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados.",
-  "slogan": "Tu Río, A Tu Manera - Tours Privados Desde 2013",
-  "foundingDate": "2013",
-  "telephone": "+55-21-97927-1637",
-  "email": "contact@befreetours.com.br",
-  "address": { "@type": "PostalAddress", "addressLocality": "Rio de Janeiro", "addressRegion": "RJ", "addressCountry": "BR" },
-  "areaServed": [{ "@type": "City", "name": "Rio de Janeiro" }],
-  "geo": { "@type": "GeoCoordinates", "latitude": "-22.9068", "longitude": "-43.1729" },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55-21-97927-1637",
-    "contactType": "Customer Service",
-    "availableLanguage": ["English", "Spanish", "Portuguese"],
-    "areaServed": "BR"
-  },
-  "priceRange": "$$$",
-  "paymentAccepted": "Credit Card, PayPal",
-  "currenciesAccepted": "USD, BRL",
-  "openingHours": "Mo-Su 06:00-22:00",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "800", "bestRating": "5", "worstRating": "1" },
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q138495723",
-    "https://www.instagram.com/befreeturrj",
-    "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html"
-  ],
-  "knowsAbout": [
-    "Cristo Redentor",
-    "Pan de Azúcar",
-    "Turismo en Río de Janeiro",
-    "Tours Privados",
-    "Cultura Brasileña"
-  ]
-};
-
 const homepageQuoteSchemas = [
   {
     "@type": "Review",
@@ -112,6 +70,7 @@ const reviewSchemas = testimonials.map((review) => {
     "name": review.title,
     "itemReviewed": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "Be Free Tours",
       "url": siteUrl
     }
@@ -140,7 +99,7 @@ const reviewSchemas = testimonials.map((review) => {
   title="Tours Privados en Río de Janeiro | Be Free Tours Desde 2013"
   description="Reserva tours privados y experiencias locales en Río de Janeiro con guías certificados en español desde 2013. Traslado incluido. +800 reseñas. Cancelación gratuita hasta 72h."
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("es", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
+  schema={[websiteSchema, getFAQSchema(content.faq.questions), getHowToSchema("es", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
   <Hero
     title={content.hero.title}

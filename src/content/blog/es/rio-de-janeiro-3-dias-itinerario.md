@@ -27,7 +27,7 @@ tags:
   - "planificación de viaje río de janeiro"
 faqs:
   - question: "¿Son suficientes 3 días para Río de Janeiro?"
-    answer: "Sí. Tres días son suficientes para ver los monumentos icónicos, explorar al menos un barrio en profundidad y vivir la ciudad más allá del turismo. Un cuarto día permite una excursión a Petrópolis, Búzios o Ilha Grande."
+    answer: "Sí. Tres días son suficientes para ver los monumentos icónicos, explorar al menos un barrio en profundidad y vivir la ciudad más allá del turismo. Un cuarto día permite una excursión a Petrópolis o Ilha Grande."
   - question: "¿Cuál es el mejor orden para visitar los atractivos de Río?"
     answer: "Visita Cristo Redentor y Pan de Azúcar el primer día completo, cuando tu energía está más alta. Reserva el segundo día para los barrios y la cultura. Usa el tercer día para las playas o una excursión."
   - question: "¿Debo visitar el Cristo Redentor por la mañana o por la tarde?"
@@ -39,7 +39,7 @@ faqs:
 featured: true
 ---
 
-# Río de Janeiro en 3 Días: El Itinerario Perfecto de Tour Privado (2026)
+## Río de Janeiro en 3 Días: El Itinerario Perfecto de Tour Privado (2026)
 
 Por Be Free Tours - 7 de marzo de 2026 - 13 min de lectura
 
@@ -62,7 +62,7 @@ Tres días en Río son suficientes para ver los monumentos esenciales, explorar 
 
 Lo que tres días bien aprovechados te dan: Cristo Redentor, Pan de Azúcar, Santa Teresa, las Escaleras Selarón, el centro histórico, un atardecer en la playa y una comida o dos que recordarás meses después.
 
-Lo que tres días no te dan: una excursión de un día a Petrópolis, Ilha Grande o Búzios. Para eso necesitas un cuarto día — y vale la pena.
+Lo que tres días no te dan: una excursión de un día a Petrópolis o Ilha Grande. Para eso necesitas un cuarto día — y vale la pena.
 
 Este itinerario está diseñado con enfoque en el tour privado: tu propio guía, tu propio vehículo, traslado incluido desde el hotel y la flexibilidad de ajustar según la luz, el estado de ánimo y el clima. El orden es deliberado. El Día 1 cubre los iconos mientras tu energía está en su punto más alto. El Día 2 se adentra en los barrios y la cultura. El Día 3 te da a elegir según lo que más te importe.
 
@@ -74,7 +74,7 @@ Este itinerario está diseñado con enfoque en el tour privado: tu propio guía,
 Cristo Redentor y Pan de Azúcar son experiencias distintas según la hora del día. Por la mañana (antes de las 9 AM) hay luz suave y pocas personas. A última hora de la tarde hay luz dorada y la ciudad luce exactamente como en sus fotografías. Si solo puedes elegir una: la tarde, especialmente si llegas a Río con los ojos frescos y quieres que tu primer día completo termine con algo inolvidable.
 
 **2. ¿Quieres hacer una excursión el Día 3?**
-Petrópolis, Búzios e Ilha Grande requieren cada uno un día completo. Si alguno de ellos te importa, planifícalo para el Día 3 y mueve el tiempo de playa o barrios a la tarde del Día 2.
+Petrópolis e Ilha Grande requieren cada uno un día completo. Si alguno de ellos te importa, planifícalo para el Día 3 y mueve el tiempo de playa o barrios a la tarde del Día 2.
 
 **3. ¿Dónde te hospedas?**
 Todos los tours incluyen traslado desde cualquier lugar de Río — hoteles, Airbnbs, la terminal de cruceros en el Pier Mauá o los aeropuertos. Tu ubicación no cambia el itinerario, pero sí afecta el horario de recogida.
@@ -83,7 +83,7 @@ Todos los tours incluyen traslado desde cualquier lugar de Río — hoteles, Air
 
 ## Día 1: El Río Icónico — Cristo, Pan de Azúcar y las Capas de la Ciudad
 
-**Tour recomendado:** [El Río Esencial: Íconos, Cultura y Joyas Ocultas](/es/private-tours/essential-rio) (8 horas) o [Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer](/es/private-tours/hora-dorada-rio) (6 horas)
+**Tour recomendado:** [El Río Esencial: Íconos, Cultura y Joyas Ocultas](/es/tours-privados/essential-rio) (8 horas) o [Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer](/es/tours-privados/hora-dorada-rio) (6 horas)
 
 ### Inicio en la mañana (recogida a las 6:30 AM)
 
@@ -142,7 +142,7 @@ El Día 3 es una elección entre tres experiencias completamente distintas. No s
 
 ### Opción A: Excursión a Petrópolis
 
-**Tour recomendado:** [Petrópolis: Palacios Imperiales y Refugio en la Montaña](/es/private-tours/petropolis-imperial) (8 horas)
+**Tour recomendado:** [Petrópolis: Palacios Imperiales y Refugio en la Montaña](/es/tours-privados/petropolis-imperial) (8 horas)
 
 68 kilómetros al norte de Río, 840 metros sobre el nivel del mar y 5–8 grados más fresco. En 1843, el Emperador Dom Pedro II estableció aquí su corte de verano — lo que dejó es uno de los ejemplos más intactos de urbanismo imperial del siglo XIX en las Américas.
 
@@ -156,21 +156,21 @@ La Catedral neogótica, iniciada en 1884 y completada en 1939, alberga el mausol
 
 ---
 
-### Opción B: Excursión a Búzios
+### Opción B: Playas escondidas cerca de Río
 
-**Tour recomendado:** Búzios: La Riviera de Brasil (23 Playas en Un Día) (9 horas)
+**Enfoque recomendado:** [tour privado personalizado en Río](/es/tours-privados/tour-personalizado/) enfocado en playas y miradores
 
-160 kilómetros al este de Río, Búzios es una península con 23 playas en un área reducida — desde grandes olas del Atlántico hasta calas protegidas con agua tan clara que se puede hacer snorkel sin equipo. Brigitte Bardot pasó aquí una famosa temporada en 1964 y puso al pueblo en el mapa internacional.
+Si quieres un día de playa sin comprometerte con el itinerario largo de Ilha Grande, usa el Día 3 para las playas del oeste de Río: Prainha, Grumari, Joatinga, Barra o una ruta que tu guía adapte según clima y tráfico.
 
-La calle principal adoquinada (**Rua das Pedras**) está bordeada de restaurantes y bares. El puerto es pequeño y se puede recorrer a pie. Las playas varían dramáticamente en carácter: **Ferradura** para nado tranquilo, **Geribá** para surf, **João Fernandes** para snorkel, **Azeda** para el ambiente de cala apartada.
+Estas playas son difíciles de organizar en transporte público y más cómodas con conductor-guía local. Búzios es otro destino costero que muchos viajeros consideran desde Río, pero no forma parte de nuestro portafolio principal actual de tours privados.
 
-Un buen día en Búzios: dos playas por la mañana, almuerzo en un restaurante a orillas del agua, otra playa por la tarde, regreso por la costa.
+Un buen día: dos playas por la mañana, almuerzo cerca de la costa, una parada panorámica por la tarde y regreso tranquilo antes de la cena.
 
 ---
 
 ### Opción C: Ilha Grande en Lancha Privada
 
-**Tour recomendado:** [Escape a la Isla: Ilha Grande en Lancha Privada](/es/private-tours/island-escape-ilha-grande) (10 horas)
+**Tour recomendado:** [Escape a la Isla: Ilha Grande en Lancha Privada](/es/tours-privados/island-escape-ilha-grande) (10 horas)
 
 La opción más lejana y exigente — y la que con más probabilidad produce el recuerdo más fuerte del viaje.
 
@@ -186,7 +186,7 @@ La recogida es a las 5:30–6:30 AM. El día es largo. Vale la pena.
 
 ## La Opción del 4.° Día
 
-Si tienes un cuarto día, el mejor uso es cualquiera de las opciones del Día 3 que no hayas elegido — o el **Tour del Amanecer** ([Río al Amanecer: Pan de Azúcar y Cristo al Alba](/es/private-tours/amanecer-rio)), que requiere una recogida a las 4:00 AM y te muestra una versión de Río que la mayoría de los visitantes nunca ve.
+Si tienes un cuarto día, el mejor uso es cualquiera de las opciones del Día 3 que no hayas elegido — o el **Tour del Amanecer** ([Río al Amanecer: Pan de Azúcar y Cristo al Alba](/es/tours-privados/amanecer-rio)), que requiere una recogida a las 4:00 AM y te muestra una versión de Río que la mayoría de los visitantes nunca ve.
 
 Un cuarto día también te da tiempo para **Santa Teresa** a un ritmo adecuado si lo visitaste rápidamente el Día 1 — un almuerzo largo, una tarde en uno de los estudios de arte, una noche en el Bar do Mineiro con música en vivo.
 
@@ -212,7 +212,7 @@ Un cuarto día también te da tiempo para **Santa Teresa** a un ritmo adecuado s
 
 ### ¿Son suficientes 3 días para Río de Janeiro?
 
-Sí, para la experiencia esencial. Tres días cubren Cristo Redentor, Pan de Azúcar, Santa Teresa, el centro histórico, las playas y la gastronomía. Un cuarto día permite una excursión fuera de la ciudad — Petrópolis, Búzios o Ilha Grande — cada una de las cuales añade una dimensión completamente distinta al viaje.
+Sí, para la experiencia esencial. Tres días cubren Cristo Redentor, Pan de Azúcar, Santa Teresa, el centro histórico, las playas y la gastronomía. Un cuarto día permite una excursión fuera de la ciudad — Petrópolis o Ilha Grande — cada una de las cuales añade una dimensión completamente distinta al viaje.
 
 ### ¿Cuál es el mejor orden para ver Río de Janeiro?
 

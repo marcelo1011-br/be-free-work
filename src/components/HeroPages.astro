@@ -4,6 +4,14 @@ interface Props {
   subtitle?: string;
   maxWidth?: string;
   subtitleSize?: "body" | "h5";
+  primaryCta?: {
+    label: string;
+    href: string;
+  };
+  secondaryCta?: {
+    label: string;
+    href: string;
+  };
 }
 
 const {
@@ -11,6 +19,8 @@ const {
   subtitle,
   maxWidth = "clamp(34rem, 70vw, 43.75rem)",
   subtitleSize = "h5",
+  primaryCta,
+  secondaryCta,
 } = Astro.props;
 ---
 
@@ -22,6 +32,20 @@ const {
         <p class={`page-hero-subtitle ${subtitleSize === "body" ? "subtitle-body" : ""}`}>
           {subtitle}
         </p>
+      )}
+      {(primaryCta || secondaryCta) && (
+        <div class="page-hero-actions">
+          {primaryCta && (
+            <a href={primaryCta.href} class="btn btn-primary btn-lg">
+              {primaryCta.label}
+            </a>
+          )}
+          {secondaryCta && (
+            <a href={secondaryCta.href} class="btn btn-outline-secondary btn-lg">
+              {secondaryCta.label}
+            </a>
+          )}
+        </div>
       )}
     </div>
   </div>
@@ -66,6 +90,14 @@ const {
     color: color-mix(in srgb, var(--color-text-inverse) 80%, transparent);
   }
 
+  .page-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
   @media (max-width: 768px) {
     .page-hero {
       padding: calc(var(--space-xl) + var(--space-lg)) 0 var(--space-xl);
@@ -77,6 +109,11 @@ const {
 
     .page-hero-subtitle {
       font-size: var(--font-size-body);
+    }
+
+    .page-hero-actions {
+      align-items: stretch;
+      flex-direction: column;
     }
   }
 </style>

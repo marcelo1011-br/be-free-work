@@ -77,6 +77,8 @@ const pageMap = {
   "private-tours":    { es: "tours-privados",            "pt-br": "passeios-privados" },
   "experiences":      { es: "experiencias",              "pt-br": "experiencias" },
   "faq":              { es: "preguntas-frecuentes",      "pt-br": "perguntas-frequentes" },
+  "private-guide-rio-de-janeiro": { es: "guia-privado-rio-de-janeiro", "pt-br": "guia-privativo-rio-de-janeiro" },
+  "rio-day-trips":    { es: "excursiones-desde-rio",     "pt-br": "bate-voltas-saindo-do-rio" },
 };
 
 // Build reverse maps for pages too

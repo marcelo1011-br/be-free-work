@@ -3,6 +3,7 @@
 
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getHreflangPaths } from "../i18n/hreflang";
 import { languages } from "../i18n/ui.js";
 import { routes } from "../i18n/routes.js";
 
@@ -12,8 +13,14 @@ const t = useTranslations(lang);
 
 
 const currentPath = Astro.url.pathname;
+const languagePaths = getHreflangPaths(currentPath);
 
 const r = routes[lang];
+
+
+function getLanguageHref(code: string): string {
+  return languagePaths[code] || `/${code}/`;
+}
 
 
 const navLinks = [
@@ -112,7 +119,7 @@ function isActive(href: string): boolean {
             {
               Object.entries(languages).map(([code, name]) => (
                 <a
-                  href={`/${code}/`}
+                  href={getLanguageHref(code)}
                   class={`lang-option ${code === lang ? "active" : ""}`}
                   data-lang={code}
                 >

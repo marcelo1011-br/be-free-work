@@ -9,7 +9,7 @@ category: "Tesouros Escondidos"
 readTime: "10 min de leitura"
 relatedTours:
   - "Escapada para a Ilha: Ilha Grande de Lancha Privativa"
-  - "Búzios: A Riviera Brasileira (23 Praias em Um Dia)"
+  - "Seu Rio, do Seu Jeito: Passeio Privado Personalizado"
   - "O Essencial do Rio: Ícones, Cultura e Joias Escondidas"
 relatedPosts:
   - "best-time-visit-rio-2026"
@@ -34,7 +34,7 @@ faqs:
 featured: true
 ---
 
-# 6 Praias Escondidas no Rio que os Locais Amam (Guia 2026)
+## 6 Praias Escondidas no Rio que os Locais Amam (Guia 2026)
 
 Por Be Free Tours - 1 de dezembro de 2025 - 10 min de leitura
 
@@ -196,14 +196,15 @@ Muitas praias são difíceis de acessar de transporte público. Opções:
 - Sapatilha de praia para entradas com pedras
 - Sacos de lixo (leave no trace)
 
-## Combine praias escondidas com nossos tours
+## Combine praias escondidas com um dia privativo
 
-Quer conhecer esses lugares sem dor de cabeça? Nossos tours privados incluem:
+Quer conhecer esses lugares sem dor de cabeça? Um dia privativo flexível pode incluir:
 
-- Prainha & Grumari Day Trip - visite as duas com guia local
-- [Ilha Grande Beach Paradise](/pt-br/passeios-privados/island-escape-Escapada para a Ilha: Ilha Grande de Lancha Privativa) - praias ainda mais preservadas em uma ilha
-- Búzios Day Trip - a "Saint-Tropez brasileira" com 20+ praias lindas
+- Prainha e Grumari - visite as duas com guia local em um [tour personalizado no Rio](/pt-br/passeios-privados/passeio-personalizado/)
+- [Ilha Grande Beach Paradise](/pt-br/passeios-privados/island-escape-ilha-grande) - praias ainda mais preservadas em uma ilha
 - [The Essential Rio](/pt-br/passeios-privados/rio-essencial) - inclua uma parada em praia escondida no seu tour pela cidade
+
+Búzios é outro destino costeiro considerado por muitos viajantes saindo do Rio, mas não faz parte do nosso portfólio principal atual de passeios privativos.
 
 ## Etiqueta local
 

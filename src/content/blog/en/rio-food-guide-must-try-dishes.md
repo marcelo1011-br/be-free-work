@@ -34,7 +34,7 @@ faqs:
 featured: true
 ---
 
-# Rio Food Guide: 13 Must-Try Dishes & Where to Find Them
+## Rio Food Guide: 13 Must-Try Dishes & Where to Find Them
 
 By Be Free Tours - December 17, 2025 - 12 min read
 
@@ -184,7 +184,7 @@ Where to Try:
 
 - Beach vendors - Literally everywhere
 - Supermercados - Buy the powder, make at home
-- [Food Walking Tour](/en/private-tours/Rio Food Walking Tour: Authentic Brazilian Culinary Experience) - We'll show you how locals make it
+- [Food Walking Tour](/en/experiences/rio-food-walking-tour) - We'll show you how locals make it
 
 Order: "Mate gelado, sem acucar" (no sugar) or "com limao" (with lemon).
 
@@ -230,14 +230,14 @@ Nightlife hub with street food vendors. Post-bar pasteis and cachorro-quente.
 
 ## Join Our Food Walking Tour
 
-Want to try everything on this list with a local guide? Our [Centro Food Walking Tour](/en/private-tours/Rio Food Walking Tour: Authentic Brazilian Culinary Experience) includes:
+Want to try everything on this list with a local guide? Our [Centro Food Walking Tour](/en/experiences/rio-food-walking-tour) includes:
 
 - 8-10 tastings
 - Historical context
 - Hidden spots tourists never find
 - No tourist traps!
 
-Or customize: Tell us your food preferences, and we'll design a private custom tour just for you.
+Or customize: Tell us your food preferences, and we'll design a [custom private tour in Rio](/en/private-tours/custom-tour/) just for you.
 
 ## Food Etiquette Tips
 

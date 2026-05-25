@@ -1,0 +1,105 @@
+---
+const { lang = "en", context = "tours" } = Astro.props;
+
+const copy = {
+  en: {
+    href: "/en/private-guide-rio-de-janeiro/",
+    tours: {
+      title: "Need a private guide in Rio?",
+      text: "If you want flexible local guidance before choosing a fixed itinerary, learn how Be Free pairs certified guides with private logistics.",
+      label: "Explore private guide service",
+    },
+    about: {
+      title: "Our guides are part of the experience",
+      text: "Learn how a private local guide can help shape the pace, context and comfort of your time in Rio.",
+      label: "Private guide in Rio",
+    },
+  },
+  es: {
+    href: "/es/guia-privado-rio-de-janeiro/",
+    tours: {
+      title: "¿Necesitas un guía privado en Río?",
+      text: "Si buscas orientación local flexible antes de elegir un itinerario cerrado, conoce cómo Be Free combina guías certificados y logística privada.",
+      label: "Ver servicio de guía privado",
+    },
+    about: {
+      title: "Nuestros guías son parte de la experiencia",
+      text: "Conoce cómo un guía local privado puede ayudarte con el ritmo, el contexto y la comodidad de tu tiempo en Río.",
+      label: "Guía privado en Río",
+    },
+  },
+  "pt-br": {
+    href: "/pt-br/guia-privativo-rio-de-janeiro/",
+    tours: {
+      title: "Precisa de um guia privativo no Rio?",
+      text: "Se você busca orientação local flexível antes de escolher um roteiro fechado, veja como a Be Free combina guias certificados e logística privativa.",
+      label: "Ver serviço de guia privativo",
+    },
+    about: {
+      title: "Nossos guias fazem parte da experiência",
+      text: "Entenda como um guia local privativo pode ajudar no ritmo, no contexto e no conforto da sua viagem pelo Rio.",
+      label: "Guia privativo no Rio",
+    },
+  },
+};
+
+const item = copy[lang] || copy.en;
+const content = item[context] || item.tours;
+---
+
+<section class={`private-guide-teaser ${context}`}>
+  <div class="container">
+    <div class="teaser-card">
+      <div>
+        <h2>{content.title}</h2>
+        <p>{content.text}</p>
+      </div>
+      <a href={item.href} class="btn btn-outline-primary">{content.label}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .private-guide-teaser {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg-white);
+  }
+
+  .private-guide-teaser.about {
+    background: var(--color-bg-soft);
+  }
+
+  .teaser-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .teaser-card h2 {
+    margin: 0 0 var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .teaser-card p {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .teaser-card .btn {
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .teaser-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

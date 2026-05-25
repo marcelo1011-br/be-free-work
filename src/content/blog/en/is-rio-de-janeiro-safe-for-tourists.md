@@ -33,7 +33,7 @@ faqs:
 featured: true
 ---
 
-# Is Rio de Janeiro Safe for Tourists? A Local Guide's Honest Take
+## Is Rio de Janeiro Safe for Tourists? A Local Guide's Honest Take
 
 By Be Free Tours - February 10, 2026 - 8 min read
 
@@ -103,7 +103,7 @@ Rio is waiting - and it's worth it.
 
 ## Final Thoughts
 
-Marcelo has been leading private tours in Rio de Janeiro since 2013 through Be Free Tours. If you're planning a trip and want to experience Rio safely, comfortably, and without stress, explore our curated private experiences or get in touch to design your own.
+Marcelo has been leading private tours in Rio de Janeiro since 2013 through Be Free Tours. If you're planning a trip and want to experience Rio safely, comfortably, and without stress, explore our [private tours in Rio de Janeiro](/en/private-tours/) or get in touch to design your own.
 
 ## Frequently Asked Questions
 

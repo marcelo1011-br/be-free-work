@@ -26,7 +26,7 @@ tags:
   - "passeio privativo rio de janeiro preço"
 faqs:
   - question: "Quanto custa um passeio privativo no Rio de Janeiro?"
-    answer: "Os passeios privativos pela cidade no Rio começam a partir de USD 365 por grupo. Os passeios de dia inteiro com Cristo Redentor e Pão de Açúcar variam de USD 440 a USD 610. Os passeios de dia inteiro para Petrópolis, Búzios e Ilha Grande de lancha privativa começam a partir de USD 390, USD 460 e USD 925 respectivamente. Consulte nossa página de passeios para preços atualizados."
+    answer: "Os passeios privativos pela cidade no Rio começam a partir de USD 365 por grupo. Os passeios de dia inteiro com Cristo Redentor e Pão de Açúcar variam de USD 440 a USD 610. Os passeios publicados para Petrópolis e Ilha Grande de lancha privativa começam a partir de USD 390 e USD 925 respectivamente. Consulte nossa página de passeios para preços atualizados."
   - question: "Os preços dos passeios privativos no Rio são por pessoa ou por grupo?"
     answer: "A maioria dos passeios privativos no Rio é cotada por grupo, não por pessoa. Isso significa que casais e famílias têm um custo-benefício significativamente melhor do que viajantes solo."
   - question: "O que está incluído no preço de um passeio privativo no Rio?"
@@ -54,7 +54,7 @@ featured: true
 
 ## Resposta Rápida ⚡
 
-Os passeios privativos no Rio começam a partir de **USD 365/grupo** para passeios com veículo privado. Os city tours de dia inteiro com Cristo Redentor e Pão de Açúcar variam de **USD 440 a USD 610 por grupo**. Os passeios de dia inteiro para Petrópolis, Búzios e Ilha Grande começam a partir de **USD 390, USD 460 e USD 925** respectivamente.
+Os passeios privativos no Rio começam a partir de **USD 365/grupo** para passeios com veículo privado. Os city tours de dia inteiro com Cristo Redentor e Pão de Açúcar variam de **USD 440 a USD 610 por grupo**. Os passeios publicados para Petrópolis e Ilha Grande começam a partir de **USD 390 e USD 925** respectivamente.
 
 Todos os preços incluem guia local certificado, transporte privado e busca no hotel. Os ingressos para as principais atrações estão incluídos na maioria dos passeios.
 
@@ -97,12 +97,11 @@ Os preços de saída são para 1 viajante. Os preços aumentam gradualmente com 
 
 ## Preços dos Passeios de Dia Inteiro
 
-Os passeios de dia inteiro levam você para fora do Rio a destinos como Petrópolis, Búzios e Ilha Grande — tudo incluído no preço com transporte privado e guia.
+Os passeios de dia inteiro levam você para fora do Rio a destinos como Petrópolis e Ilha Grande — com transporte privado e guia incluídos nos roteiros publicados.
 
 | Passeio | Duração | Preço a partir de (por grupo) |
 |---------|---------|-------------------------------|
-| Petrópolis: Palácios Imperiais e Fuga para a Montanha | 8 horas | USD 390 |
-| Búzios: A Riviera Brasileira (23 Praias em Um Dia) | 9 horas | USD 460 |
+| [preço de um passeio privativo para Petrópolis](/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial/) | 8 horas | USD 390 |
 | Fuga para as Ilhas: Ilha Grande de Lancha Privativa | 10 horas | USD 925 (1–4 viajantes) |
 
 **Nota sobre a Ilha Grande:** o passeio de lancha privativa inclui o aluguel de uma embarcação privada. USD 925 cobre grupos de 1–4 viajantes; USD 1.125 para grupos de 5–10.
@@ -183,7 +182,7 @@ Para um casal, o custo total de um passeio em grupo e o de um passeio privativo 
 
 ### Quanto custa um passeio privativo no Rio de Janeiro?
 
-Os city tours privativos começam a partir de USD 365 por grupo para experiências mais curtas e USD 440–610 para passeios de dia inteiro. Os passeios de dia inteiro para Petrópolis começam a partir de USD 390; Búzios a partir de USD 460; Ilha Grande de lancha privativa a partir de USD 925 para 1–4 viajantes. As experiências a pé são cotadas por pessoa a partir de USD 65. Consulte nossa [página de passeios](/pt-br/passeios-privados) para valores atualizados.
+Os city tours privativos começam a partir de USD 365 por grupo para experiências mais curtas e USD 440–610 para passeios de dia inteiro. Os passeios publicados para Petrópolis começam a partir de USD 390; Ilha Grande de lancha privativa a partir de USD 925 para 1–4 viajantes. As experiências a pé são cotadas por pessoa a partir de USD 65. Consulte nossa [página de passeios](/pt-br/passeios-privados) para valores atualizados.
 
 ### Os preços são por pessoa ou por grupo?
 

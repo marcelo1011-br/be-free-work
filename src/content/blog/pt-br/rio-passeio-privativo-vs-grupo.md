@@ -87,7 +87,7 @@ O Rio é generoso o suficiente para recompensar os dois enfoques. Os pontos tur�
 
 ## Explore Suas Opções
 
-Se você está inclinado para um passeio privativo, [confira nosso catálogo completo de passeios privativos no Rio](/pt-br/passeios-privados) — de meios períodos pelos principais pontos a imersões de dia inteiro e passeios para Ilha Grande, Búzios e Petrópolis.
+Se você está inclinado para um passeio privativo, [confira nosso catálogo completo de passeios privativos no Rio](/pt-br/passeios-privados) — de um [passeio privativo de dia inteiro no Rio](/pt-br/passeios-privados/rio-essencial/) a passeios para Ilha Grande e Petrópolis.
 
 Se preferir algo mais flexível e personalizado, nosso [passeio privativo personalizado](/pt-br/passeios-privados/passeio-personalizado) permite que você desenhe o dia do zero com seu guia.
 

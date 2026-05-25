@@ -27,7 +27,7 @@ tags:
   - "rio de janeiro trip planning"
 faqs:
   - question: "Is 3 days enough for Rio de Janeiro?"
-    answer: "Yes. Three days is enough to see Rio's iconic landmarks, explore at least one neighborhood in depth, and experience the city beyond sightseeing. A fourth day allows a day trip to Petrópolis, Búzios, or Ilha Grande."
+    answer: "Yes. Three days is enough to see Rio's iconic landmarks, explore at least one neighborhood in depth, and experience the city beyond sightseeing. A fourth day allows a day trip to Petrópolis or Ilha Grande."
   - question: "What is the best order to visit Rio attractions?"
     answer: "Visit Christ the Redeemer and Sugarloaf on your first full day while your energy is highest. Reserve the second day for neighborhoods and culture. Use the third day for beaches or a day trip."
   - question: "Should I visit Christ the Redeemer in the morning or afternoon?"
@@ -39,7 +39,7 @@ faqs:
 featured: true
 ---
 
-# Rio de Janeiro in 3 Days: The Perfect Private Tour Itinerary (2026)
+## Rio de Janeiro in 3 Days: The Perfect Private Tour Itinerary (2026)
 
 By Be Free Tours - March 7, 2026 - 13 min read
 
@@ -62,7 +62,7 @@ Three days in Rio is enough to see the essential landmarks, explore at least two
 
 What three days gives you, done well: Christ the Redeemer, Sugarloaf Mountain, Santa Teresa, the Selarón Steps, the city center, a proper beach sunset, and a meal or two that you'll still think about months later.
 
-What three days won't give you: a day trip to Petrópolis, Ilha Grande, or Búzios. For that you need a fourth day — and it's worth it.
+What three days won't give you: a day trip to Petrópolis or Ilha Grande. For that you need a fourth day — and it's worth it.
 
 This itinerary is built around a private tour approach: your own guide, your own vehicle, hotel pickup included, and the flexibility to adjust based on light, mood, and weather. The order is deliberate. Day 1 hits the icons while your energy is highest. Day 2 slows down into neighborhoods and culture. Day 3 gives you a choice based on what matters most to you.
 
@@ -74,7 +74,7 @@ This itinerary is built around a private tour approach: your own guide, your own
 Christ the Redeemer and Sugarloaf are different experiences depending on the time of day. Morning (before 9 AM) offers soft light and small crowds. Late afternoon offers golden hour light and a city that looks exactly like its photographs. If you can only choose one: afternoon, especially if you're arriving in Rio with fresh eyes and want your first full day to end with something unforgettable.
 
 **2. Do you want a day trip on Day 3?**
-Petrópolis, Búzios, and Ilha Grande each require a full day. If one of them matters to you, plan it for Day 3 and move the beach/neighborhood time to Day 2's afternoon.
+Petrópolis and Ilha Grande each require a full day. If one of them matters to you, plan it for Day 3 and move the beach/neighborhood time to Day 2's afternoon.
 
 **3. Where are you staying?**
 All tours include hotel pickup from anywhere in Rio — hotels, Airbnbs, the cruise port at Pier Mauá, or the airports. Your location doesn't change the itinerary, but it affects pickup time.
@@ -156,15 +156,15 @@ The neo-Gothic Cathedral, begun in 1884 and completed in 1939, contains the impe
 
 ---
 
-### Option B: Day Trip to Búzios
+### Option B: Hidden Beaches Near Rio
 
-**Recommended tour:** Búzios: Brazil's Riviera (23 Beaches in One Day) (9 hours)
+**Recommended approach:** [Custom private tour in Rio](/en/private-tours/custom-tour/) built around beaches and viewpoints
 
-160 kilometres east of Rio, Búzios is a peninsula with 23 beaches in a small area — from open Atlantic swells to protected coves with water clear enough to snorkel without equipment. Brigitte Bardot famously spent time here in 1964 and put the town on the international map.
+If you want a beach-focused day without committing to the long Ilha Grande itinerary, use Day 3 for Rio's western beaches: Prainha, Grumari, Joatinga, Barra, or a route your guide adapts around weather and traffic.
 
-The cobblestone main street (**Rua das Pedras**) is lined with restaurants and bars. The harbor is small and navigable on foot. The beaches vary dramatically in character: **Ferradura** for calm swimming, **Geribá** for surf, **João Fernandes** for snorkeling, **Azeda** for a secluded cove feel.
+These beaches are harder to manage by public transport and easier with a local driver-guide. Búzios is another coastal destination often considered from Rio, though it is not part of our current core private tour portfolio.
 
-A good day in Búzios: two beaches in the morning, lunch at a waterfront restaurant, one more beach in the afternoon, drive back along the coast.
+A good day: two beaches in the morning, lunch near the coast, one scenic stop in the afternoon, and a relaxed return before dinner.
 
 ---
 
@@ -212,7 +212,7 @@ A fourth day also gives you time for **Santa Teresa** at proper pace if you rush
 
 ### Is 3 days enough for Rio de Janeiro?
 
-Yes, for the essential experience. Three days covers Christ the Redeemer, Sugarloaf, Santa Teresa, the city center, beaches, and food. A fourth day allows a day trip outside the city — Petrópolis, Búzios, or Ilha Grande — each of which adds a completely different dimension to the trip.
+Yes, for the essential experience. Three days covers Christ the Redeemer, Sugarloaf, Santa Teresa, the city center, beaches, and food. A fourth day allows a day trip outside the city — Petrópolis or Ilha Grande — each of which adds a completely different dimension to the trip.
 
 ### What is the best order to see Rio de Janeiro?
 

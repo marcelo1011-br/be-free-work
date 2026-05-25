@@ -3,6 +3,12 @@
   "category": "day_trips",
   "label": "Excursiones de un día",
   "description": "Escapadas de día completo a playas, islas y ciudades de montaña. Operadas como excursiones privadas de un día con salida desde Río de Janeiro.",
+  "pillar_page": {
+    "title": "Excursiones privadas desde Río de Janeiro",
+    "url": "https://befreetours.com.br/es/excursiones-desde-rio/",
+    "purpose": "Página oficial de planificación y comparación para viajeros que eligen entre excursiones privadas desde Río, especialmente Petrópolis e Ilha Grande.",
+    "classification": "service_pillar_not_tour_or_experience"
+  },
   "faqs": [
     {
       "question": "¿Qué tan lejos están las excursiones?",

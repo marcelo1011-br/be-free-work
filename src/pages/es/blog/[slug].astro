@@ -2,7 +2,7 @@
 
 
 
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
@@ -93,6 +93,18 @@ const postSlug = getEntrySlug(post);
 const postImage = post.data.imageSlug 
   ? await getBlogImage(post.data.imageSlug)
   : null;
+const blogHeroWidths = [640, 960, 1000];
+const blogHeroSizes = "(max-width: 768px) 100vw, 1000px";
+const blogHeroPreloadImage = postImage
+  ? await getImage({
+      src: postImage,
+      widths: blogHeroWidths,
+      width: 1000,
+      height: 563,
+      format: "webp",
+      quality: 85,
+    })
+  : null;
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 
@@ -158,7 +170,9 @@ const tx = {
   type="article"
   schema={schemas}
   ogTags={articleOGTags}
-  preloadImage={postImage?.src}
+  preloadImage={blogHeroPreloadImage?.src}
+  preloadImageSrcSet={blogHeroPreloadImage?.srcSet.attribute}
+  preloadImageSizes={blogHeroSizes}
 >
   
   <Breadcrumbs items={breadcrumbItems} />
@@ -184,6 +198,8 @@ const tx = {
             alt={post.data.title}
             width={1000}
             height={563}
+            widths={blogHeroWidths}
+            sizes={blogHeroSizes}
             format="webp"
             quality={85}
             loading="eager"

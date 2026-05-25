@@ -2,11 +2,35 @@
 import { defineConfig } from 'astro/config';
 import VitePWA from '@vite-pwa/astro';
 import sitemap from '@astrojs/sitemap';
+import { getHreflangPaths } from './src/i18n/hreflang.js';
+
+const siteUrl = 'https://befreetours.com.br';
+
+function toAbsoluteUrl(pathname) {
+  return new URL(pathname, siteUrl).href;
+}
+
+function getSitemapAlternates(url) {
+  const { pathname } = new URL(url);
+
+  if (!/^\/(en|es|pt-br)(\/|$)/.test(pathname)) {
+    return undefined;
+  }
+
+  const paths = getHreflangPaths(pathname);
+
+  return [
+    { lang: 'en', url: toAbsoluteUrl(paths.en) },
+    { lang: 'es', url: toAbsoluteUrl(paths.es) },
+    { lang: 'pt-BR', url: toAbsoluteUrl(paths['pt-br']) },
+    { lang: 'x-default', url: toAbsoluteUrl(paths.en) },
+  ];
+}
 
 
 export default defineConfig({
   
-  site: 'https://befreetours.com.br',
+  site: siteUrl,
 
   
   trailingSlash: 'always',
@@ -14,11 +38,20 @@ export default defineConfig({
   integrations: [
     
     sitemap({
+      filter(page) {
+        return page !== 'https://befreetours.com.br/';
+      },
       serialize(item) {
         
         if (item.url.includes('https://befreetours.com.br//')) {
           item.url = item.url.replace('https://befreetours.com.br//', 'https://befreetours.com.br/');
         }
+
+        const links = getSitemapAlternates(item.url);
+        if (links) {
+          item.links = links;
+        }
+
         return item;
       },
     }),

@@ -47,7 +47,7 @@
       "name": "Browse Tours",
       "short_name": "Tours",
       "description": "Browse all available tours in Rio",
-      "url": "/en/tours",
+      "url": "/en/private-tours/",
       "icons": [
         {
           "src": "/favicon-96x96.png",
@@ -71,7 +71,7 @@
       "name": "Unforgettable Rio",
       "short_name": "Best Tour",
       "description": "Our most popular full-day tour",
-      "url": "/en/private-tours/unforgettable-rio",
+      "url": "/en/private-tours/essential-rio/",
       "icons": [
         {
           "src": "/favicon-96x96.png",

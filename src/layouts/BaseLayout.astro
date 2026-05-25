@@ -39,6 +39,8 @@ const {
   type = "website",
   noindex = false,
   preloadImage,
+  preloadImageSrcSet,
+  preloadImageSizes,
   schema, 
   ogTags, 
 } = Astro.props;
@@ -56,15 +58,55 @@ const langMap = getHreflangPaths(currentPath);
 
 const ogImage = new URL(image, siteUrl);
 const preloadImageUrl = preloadImage ? new URL(preloadImage, siteUrl) : null;
+const preloadImageSrcSetValue = preloadImageSrcSet
+  ? preloadImageSrcSet.replaceAll("/_astro/", `${siteUrl}/_astro/`)
+  : null;
 const ogLocaleMap = {
   en: "en_US",
   es: "es_ES",
   "pt-br": "pt_BR",
 };
+const socialOverrides = ogTags || {};
+const reservedSocialTags = new Set([
+  "og:type",
+  "og:url",
+  "og:title",
+  "og:description",
+  "og:image",
+  "og:image:width",
+  "og:image:height",
+  "og:site_name",
+  "og:locale",
+  "twitter:card",
+  "twitter:title",
+  "twitter:description",
+  "twitter:image",
+  "twitter:image:alt",
+]);
+const twitterPrefix = "twitter:";
+const isTwitterProfileTag = (property) =>
+  property.startsWith(twitterPrefix) && ["site", "creator"].includes(property.slice(twitterPrefix.length));
+const socialType = socialOverrides["og:type"] || type;
+const socialTitle = socialOverrides["og:title"] || title;
+const socialDescription = socialOverrides["og:description"] || description;
+const socialUrl = socialOverrides["og:url"] || canonicalURL;
+const socialImage = socialOverrides["og:image"] || ogImage;
+const socialImageWidth = socialOverrides["og:image:width"] || "1200";
+const socialImageHeight = socialOverrides["og:image:height"] || "630";
+const socialLocale = socialOverrides["og:locale"] || ogLocaleMap[currentLang] || "en_US";
+const twitterCard = socialOverrides["twitter:card"] || "summary_large_image";
+const twitterTitle = socialOverrides["twitter:title"] || socialTitle;
+const twitterDescription = socialOverrides["twitter:description"] || socialDescription;
+const twitterImage = socialOverrides["twitter:image"] || socialImage;
+const twitterImageAlt = socialOverrides["twitter:image:alt"] || socialTitle;
+const extraSocialTags = Object.entries(socialOverrides).filter(
+  ([property, content]) => content && !reservedSocialTags.has(property) && !isTwitterProfileTag(property)
+);
 
 
 const siteInfo = {
   name: "Be Free Tours",
+  legalName: "Be Free Tours Ltda",
   url: siteUrl,
   logo: `${siteUrl}/images/logo/logo.png`,
   email: "contact@befreetours.com.br",
@@ -94,33 +136,23 @@ const baseSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "TravelAgency", "LocalBusiness"],
       "@id": `${siteUrl}/#organization`,
       name: siteInfo.name,
+      legalName: siteInfo.legalName,
+      alternateName: "Be Free Tours Rio de Janeiro",
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
         url: siteInfo.logo,
       },
+      image: siteInfo.logo,
+      description: "Premium private tour operator in Rio de Janeiro since 2013.",
       sameAs: [
         "https://www.wikidata.org/wiki/Q138495723",
-        "https://www.instagram.com/befreeturrj",
+        "https://www.instagram.com/befreetoursrio/",
         "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html",
       ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: siteInfo.phone,
-        contactType: "customer service",
-        email: siteInfo.email,
-        areaServed: "BR",
-        availableLanguage: ["en", "es", "pt"],
-      },
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": `${siteUrl}/#localbusiness`,
-      name: siteInfo.name,
-      image: siteInfo.logo,
       address: {
         "@type": "PostalAddress",
         streetAddress: siteInfo.address.streetAddress,
@@ -134,10 +166,15 @@ const baseSchema = {
         latitude: siteInfo.geo.latitude,
         longitude: siteInfo.geo.longitude,
       },
-      url: siteUrl,
+      areaServed: {
+        "@type": "City",
+        name: siteInfo.areaServed,
+      },
       telephone: siteInfo.phone,
       email: siteInfo.email,
       priceRange: siteInfo.priceRange,
+      paymentAccepted: "Credit Card, PayPal",
+      currenciesAccepted: "USD, BRL",
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
@@ -152,11 +189,29 @@ const baseSchema = {
         opens: "07:00",
         closes: "22:00",
       },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: siteInfo.phone,
+        contactType: "customer service",
+        email: siteInfo.email,
+        areaServed: "BR",
+        availableLanguage: ["en", "es", "pt"],
+      },
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: siteInfo.aggregateRating.ratingValue,
         reviewCount: siteInfo.aggregateRating.reviewCount,
+        bestRating: "5",
+        worstRating: "1",
       },
+      knowsAbout: [
+        "Private tours in Rio de Janeiro",
+        "Rio de Janeiro tourism",
+        "Christ the Redeemer",
+        "Sugarloaf Mountain",
+        "Petrópolis day trips",
+        "Ilha Grande tours",
+      ],
     },
   ],
 };
@@ -212,7 +267,15 @@ const finalSchema = {
     <link rel="preload" as="image" href="/images/logo/logo.svg" />
     <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/plus-jakarta-sans-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
-    {preloadImageUrl && <link rel="preload" as="image" href={preloadImageUrl} />}
+    {preloadImageUrl && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImageUrl}
+        imagesrcset={preloadImageSrcSetValue}
+        imagesizes={preloadImageSizes}
+      />
+    )}
 
     
     <link rel="dns-prefetch" href="https://formspree.io" />
@@ -251,18 +314,15 @@ const finalSchema = {
     />
 
     
-    <meta property="og:type" content={type} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content={socialType} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:url" content={socialUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content={socialImageWidth} />
+    <meta property="og:image:height" content={socialImageHeight} />
     <meta property="og:site_name" content="Be Free Tours" />
-    <meta
-      property="og:locale"
-      content={ogLocaleMap[currentLang] || "en_US"}
-    />
+    <meta property="og:locale" content={socialLocale} />
     {
       Object.entries(ogLocaleMap)
         .filter(([lang]) => lang !== currentLang)
@@ -272,13 +332,11 @@ const finalSchema = {
     }
 
     
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@befreetours" />
-    <meta name="twitter:creator" content="@befreetours" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={twitterTitle} />
+    <meta name="twitter:description" content={twitterDescription} />
+    <meta name="twitter:image" content={twitterImage} />
+    <meta name="twitter:image:alt" content={twitterImageAlt} />
 
     
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,9 +346,10 @@ const finalSchema = {
 
     
     {
-      ogTags &&
-        Object.entries(ogTags).map(([property, content]) => (
-          <meta property={property} content={content} />
+      extraSocialTags.map(([property, content]) => (
+          property.startsWith("twitter:")
+            ? <meta name={property} content={content} />
+            : <meta property={property} content={content} />
         ))
     }
 

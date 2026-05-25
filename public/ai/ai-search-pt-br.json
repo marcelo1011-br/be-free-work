@@ -5,6 +5,20 @@
   "description": "Passeios privativos premium no Rio de Janeiro operados por guias locais certificados. Todas as experiências são privadas, personalizáveis e pensadas para quem valoriza conforto, eficiência e conhecimento local.",
   "operation_model": "private_only_no_mixed_groups",
   "currency": "USD",
+  "service_pages": {
+    "private_guide": {
+      "title": "Guia privativo no Rio de Janeiro",
+      "url": "https://befreetours.com.br/pt-br/guia-privativo-rio-de-janeiro/",
+      "purpose": "Página oficial para viajantes que buscam um guia privativo no Rio de Janeiro, com roteiro flexível, contexto local e links para passeios privativos adequados.",
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "title": "Bate-voltas privativos saindo do Rio de Janeiro",
+      "url": "https://befreetours.com.br/pt-br/bate-voltas-saindo-do-rio/",
+      "purpose": "Página oficial para viajantes que comparam bate-voltas privativos saindo do Rio de Janeiro, especialmente Petrópolis e Ilha Grande, e querem escolher a experiência mais adequada ao seu estilo de viagem.",
+      "classification": "service_pillar_not_tour_or_experience"
+    }
+  },
   "categories": {
     "city_tours": "/ai/ai-search-pt-br-city-tours.json",
     "day_trips": "/ai/ai-search-pt-br-day-trips.json"

@@ -34,7 +34,7 @@ faqs:
 featured: true
 ---
 
-# Guia Gastronômico do Rio: 13 Pratos Imperdíveis e Onde Comer
+## Guia Gastronômico do Rio: 13 Pratos Imperdíveis e Onde Comer
 
 Por Be Free Tours - 17 de dezembro de 2025 - 12 min de leitura
 
@@ -237,7 +237,7 @@ Quer provar tudo com um guia local? Nosso [Rio Food Walking Tour](/pt-br/experie
 - Lugares escondidos
 - Nada de armadilhas para turista
 
-Ou personalize: conte suas preferências e criamos um tour privado sob medida.
+Ou personalize: conte suas preferências e criamos um [tour personalizado no Rio](/pt-br/passeios-privados/passeio-personalizado/) sob medida.
 
 ## Etiqueta à mesa
 

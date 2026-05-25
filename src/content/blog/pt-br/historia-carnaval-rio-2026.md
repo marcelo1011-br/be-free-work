@@ -32,7 +32,7 @@ faqs:
 featured: false
 ---
 
-# A História do Carnaval do Rio: Como o Caos se Tornou o Maior Espetáculo do Mundo
+## A História do Carnaval do Rio: Como o Caos se Tornou o Maior Espetáculo do Mundo
 
 Por Be Free Tours - 27 de janeiro de 2026 - 9 min de leitura
 

@@ -114,7 +114,7 @@ export const homeContent = {
         {
           id: 1,
           question: "How much does a private tour in Rio cost?",
-          answer: "Private city tours in Rio start at USD 365 for a group of 1, with most full-day tours ranging from USD 440 to USD 610 depending on the itinerary and group size. Day trips to destinations like Petrópolis, Búzios, and Ilha Grande start from USD 390. All private-tour prices include transportation, a certified local guide, and entrance fees to the listed attractions. Walking-based local experiences are priced separately under our Experiences line."
+          answer: "Private city tours in Rio start at USD 365 for a group of 1, with most full-day tours ranging from USD 440 to USD 610 depending on the itinerary and group size. Published day trips to destinations like Petrópolis and Ilha Grande start from USD 390. All private-tour prices include transportation, a certified local guide, and entrance fees to the listed attractions. Walking-based local experiences are priced separately under our Experiences line."
         },
         {
           id: 2,
@@ -328,7 +328,7 @@ export const homeContent = {
         {
           id: 1,
           question: "¿Cuánto cuesta un tour privado en Río de Janeiro?",
-          answer: "Los tours privados por la ciudad de Río comienzan desde USD 365 para un grupo de 1 persona, con la mayoría de los tours de día completo entre USD 440 y USD 610 según el itinerario y el tamaño del grupo. Las excursiones de día a Petrópolis, Búzios e Ilha Grande comienzan desde USD 390. Todos los precios de tours privados incluyen transporte, guía local certificado y entradas a las atracciones indicadas. Las experiencias locales a pie se cotizan por separado dentro de nuestra línea de Experiencias."
+          answer: "Los tours privados por la ciudad de Río comienzan desde USD 365 para un grupo de 1 persona, con la mayoría de los tours de día completo entre USD 440 y USD 610 según el itinerario y el tamaño del grupo. Las excursiones de día publicadas a Petrópolis e Ilha Grande comienzan desde USD 390. Todos los precios de tours privados incluyen transporte, guía local certificado y entradas a las atracciones indicadas. Las experiencias locales a pie se cotizan por separado dentro de nuestra línea de Experiencias."
         },
         {
           id: 2,
@@ -542,7 +542,7 @@ export const homeContent = {
         {
           id: 1,
           question: "Quanto custa um passeio privado no Rio de Janeiro?",
-          answer: "Os passeios privativos pela cidade começam a partir de USD 365 para um grupo de 1 pessoa, com a maioria dos passeios de dia inteiro entre USD 440 e USD 610 dependendo do roteiro e do tamanho do grupo. Os bate-voltas para Petrópolis, Búzios e Ilha Grande começam a partir de USD 390. Todos os preços dos passeios privativos incluem transporte, guia local certificado e ingressos para as atrações listadas. As experiências locais a pé são cobradas separadamente dentro da linha de Experiências."
+          answer: "Os passeios privativos pela cidade começam a partir de USD 365 para um grupo de 1 pessoa, com a maioria dos passeios de dia inteiro entre USD 440 e USD 610 dependendo do roteiro e do tamanho do grupo. Os bate-voltas publicados para Petrópolis e Ilha Grande começam a partir de USD 390. Todos os preços dos passeios privativos incluem transporte, guia local certificado e ingressos para as atrações listadas. As experiências locais a pé são cobradas separadamente dentro da linha de Experiências."
         },
         {
           id: 2,

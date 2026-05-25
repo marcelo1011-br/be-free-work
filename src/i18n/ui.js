@@ -73,7 +73,7 @@ export const ui = {
     'toursHub.altLinkButton': 'See Experiences',
 
     'experiencesHub.title': 'Experiences in Rio de Janeiro',
-    'experiencesHub.subtitle': 'Discover things to do in Rio through smaller, immersive experiences focused on local culture, food, history, and everyday Rio.',
+    'experiencesHub.subtitle': 'Discover things to do in Rio through curated, immersive experiences focused on local culture, food, history, and everyday Rio.',
     'experiencesHub.filterAll': 'All Experiences',
     'experiencesHub.filterWalking': 'Walking Experiences',
     'experiencesHub.noResults': 'No experiences found in this category.',
@@ -255,7 +255,7 @@ export const ui = {
     'toursHub.altLinkButton': 'Ver Experiencias',
 
     'experiencesHub.title': 'Experiencias en Río de Janeiro',
-    'experiencesHub.subtitle': 'Descubre qué hacer en Río con experiencias pequeñas e inmersivas centradas en cultura local, comida, historia y el Río cotidiano.',
+    'experiencesHub.subtitle': 'Descubre qué hacer en Río con experiencias locales curadas e inmersivas a pie, centradas en cultura, comida, historia y el Río cotidiano.',
     'experiencesHub.filterAll': 'Todas las Experiencias',
     'experiencesHub.filterWalking': 'Experiencias a Pie',
     'experiencesHub.noResults': 'No se encontraron experiencias en esta categoría.',
@@ -437,7 +437,7 @@ export const ui = {
     'toursHub.altLinkButton': 'Ver Experiências',
 
     'experiencesHub.title': 'Experiências no Rio de Janeiro',
-    'experiencesHub.subtitle': 'Descubra o que fazer no Rio com experiências menores e imersivas focadas em cultura local, comida, história e no Rio do dia a dia.',
+    'experiencesHub.subtitle': 'Descubra o que fazer no Rio com experiências locais curadas e imersivas a pé, focadas em cultura, comida, história e no Rio do dia a dia.',
     'experiencesHub.filterAll': 'Todas as Experiências',
     'experiencesHub.filterWalking': 'Experiências a Pé',
     'experiencesHub.noResults': 'Nenhuma experiência encontrada nesta categoria.',

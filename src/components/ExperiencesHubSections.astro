@@ -1,0 +1,206 @@
+---
+import { experiencesHubContent } from "../data/experiencesHubContent.js";
+
+const { lang = "en", showFaqOnly = false } = Astro.props;
+const content = experiencesHubContent[lang] || experiencesHubContent.en;
+---
+
+{!showFaqOnly && (
+  <section class="experiences-hub-intro" aria-label="Local experiences guide">
+    <div class="container">
+      <div class="experience-actions">
+        <a href={content.cta.primaryHref} class="btn btn-primary btn-lg">
+          {content.cta.primaryLabel}
+        </a>
+        <a href={content.cta.secondaryHref} class="btn btn-outline-primary btn-lg">
+          {content.cta.secondaryLabel}
+        </a>
+      </div>
+
+      <div class="experience-guide-grid">
+        <article class="experience-guide-card experience-guide-card--intro">
+          <h2>{content.intro.title}</h2>
+          <p>{content.intro.text}</p>
+          <ul>
+            {content.intro.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </article>
+
+        <article class="experience-guide-card">
+          <h2>{content.chooser.title}</h2>
+          <div class="experience-choice-list">
+            {content.chooser.cards.map((card) => (
+              <div class="experience-choice">
+                <h3>{card.label}</h3>
+                <p>{card.text}</p>
+                <a href={card.href}>{card.linkLabel}</a>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+)}
+
+{showFaqOnly && (
+  <section class="experiences-hub-faq">
+    <div class="container">
+      <div class="section-heading">
+        <h2>{content.faq.title}</h2>
+      </div>
+      <div class="faq-list">
+        {content.faq.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .experiences-hub-intro,
+  .experiences-hub-faq {
+    background: var(--color-bg-white);
+  }
+
+  .experiences-hub-intro {
+    padding: var(--space-xl) 0 0;
+  }
+
+  .experience-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .experience-guide-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-lg);
+  }
+
+  .experience-guide-card,
+  .faq-list details {
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-soft);
+  }
+
+  .experience-guide-card {
+    padding: var(--space-lg);
+  }
+
+  .experience-guide-card h2,
+  .experience-guide-card h3,
+  .experience-guide-card p {
+    margin: 0;
+  }
+
+  .experience-guide-card h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .experience-guide-card p,
+  .experience-guide-card li {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .experience-guide-card ul {
+    margin: var(--space-md) 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .experience-choice-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+  }
+
+  .experience-choice {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .experience-choice h3 {
+    font-size: var(--font-size-h6);
+    color: var(--color-text);
+  }
+
+  .experience-choice a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .experiences-hub-faq {
+    padding: 0 0 var(--space-3xl);
+  }
+
+  .section-heading {
+    max-width: 56rem;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .faq-list {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .faq-list details {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .faq-list p {
+    margin: var(--space-sm) 0 0;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  @media (max-width: 900px) {
+    .experience-guide-grid,
+    .experience-choice-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experience-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .experiences-hub-faq {
+      padding-bottom: var(--space-2xl);
+    }
+  }
+</style>

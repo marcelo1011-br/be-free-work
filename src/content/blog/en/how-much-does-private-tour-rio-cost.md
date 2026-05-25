@@ -26,7 +26,7 @@ tags:
   - "rio de janeiro tour cost 2026"
 faqs:
   - question: "How much does a private tour in Rio de Janeiro cost?"
-    answer: "Private city tours in Rio start at USD 365 per group. Full-day tours with Christ the Redeemer and Sugarloaf range from USD 440–610. Day trips to Petrópolis, Búzios, and Ilha Grande by speedboat start from USD 390, USD 460, and USD 925 respectively."
+    answer: "Private city tours in Rio start at USD 365 per group. Full-day tours with Christ the Redeemer and Sugarloaf range from USD 440–610. Published day trips to Petrópolis and Ilha Grande by speedboat start from USD 390 and USD 925 respectively."
   - question: "Are Rio private tour prices per person or per group?"
     answer: "Most private tours in Rio are priced per group, not per person. This means couples and families get significantly better value than solo travelers."
   - question: "What is included in the price of a private tour in Rio?"
@@ -38,7 +38,7 @@ faqs:
 featured: true
 ---
 
-# How Much Does a Private Tour in Rio de Janeiro Cost? (2026 Guide)
+## How Much Does a Private Tour in Rio de Janeiro Cost? (2026 Guide)
 
 By Be Free Tours - March 7, 2026 - 10 min read
 
@@ -58,7 +58,7 @@ By Be Free Tours - March 7, 2026 - 10 min read
 
 ## Quick Answer ⚡
 
-Private tours in Rio start at **USD 365/group** for private vehicle tours. Full-day city tours with Christ the Redeemer and Sugarloaf range from **USD 440–610 per group**. Day trips to Petrópolis, Búzios, and Ilha Grande start from **USD 390, USD 460, and USD 925** respectively.
+Private tours in Rio start at **USD 365/group** for private vehicle tours. Full-day city tours with Christ the Redeemer and Sugarloaf range from **USD 440–610 per group**. Published day trips to Petrópolis and Ilha Grande start from **USD 390 and USD 925** respectively.
 
 All prices include a certified local guide, private transportation, and hotel pickup. Entrance tickets to major attractions are included in most tours.
 
@@ -101,12 +101,11 @@ City tours cover Rio's most iconic landmarks — Christ the Redeemer, Sugarloaf 
 
 ## Day Trip Prices
 
-Day trips take you outside Rio to destinations like Petrópolis, Búzios, and Ilha Grande — all included in the price with private transportation and guide.
+Day trips take you outside Rio to destinations like Petrópolis and Ilha Grande — with private transportation and guide included in the published itineraries.
 
 | Tour | Duration | Starting Price (per group) |
 |------|----------|---------------------------|
-| Petrópolis: Imperial Palaces & Mountain Escape | 8 hours | USD 390 |
-| Búzios: Brazil's Riviera (23 Beaches in One Day) | 9 hours | USD 460 |
+| [Petrópolis private day trip pricing](/en/private-tours/petropolis-imperial/) | 8 hours | USD 390 |
 | Island Escape: Ilha Grande by Private Speedboat | 10 hours | USD 925 (1–4 travelers) |
 
 **Ilha Grande pricing note:** The speedboat tour is priced differently from other tours because it includes a private boat rental. USD 925 covers groups of 1–4 travelers; USD 1,125 for groups of 5–10. This makes it one of the best-value tours for larger groups in Rio.
@@ -195,7 +194,7 @@ For a family of four, the math changes significantly. Four group tour tickets co
 
 ### How much does a private tour in Rio de Janeiro cost?
 
-Private city tours start at USD 365 per group for shorter experiences and USD 440–610 for full-day tours covering Christ the Redeemer, Sugarloaf, Santa Teresa, and more. Day trips to Petrópolis start at USD 390; Búzios at USD 460; Ilha Grande by speedboat at USD 925 for 1–4 travelers. Walking tours are priced per person from USD 65.
+Private city tours start at USD 365 per group for shorter experiences and USD 440–610 for full-day tours covering Christ the Redeemer, Sugarloaf, Santa Teresa, and more. Published day trips to Petrópolis start at USD 390; Ilha Grande by speedboat starts at USD 925 for 1–4 travelers. Walking tours are priced per person from USD 65.
 
 ### Are Rio private tour prices per person or per group?
 

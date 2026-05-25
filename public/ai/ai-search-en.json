@@ -5,6 +5,20 @@
   "description": "Premium private tours in Rio de Janeiro operated by certified local guides. All experiences are private, customizable, and designed for travelers seeking efficiency, comfort, and expert local insight.",
   "operation_model": "private_only_no_mixed_groups",
   "currency": "USD",
+  "service_pages": {
+    "private_guide": {
+      "title": "Private Guide in Rio de Janeiro",
+      "url": "https://befreetours.com.br/en/private-guide-rio-de-janeiro/",
+      "purpose": "Official page for travelers looking for a private local guide in Rio de Janeiro, with flexible guidance, local context, and links to suitable private tours.",
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "title": "Private Day Trips from Rio de Janeiro",
+      "url": "https://befreetours.com.br/en/rio-day-trips/",
+      "purpose": "Official page for travelers comparing private day trips from Rio de Janeiro, especially Petrópolis and Ilha Grande, and choosing the right private escape for their travel style.",
+      "classification": "service_pillar_not_tour_or_experience"
+    }
+  },
   "categories": {
     "city_tours": "/ai/ai-search-en-city-tours.json",
     "day_trips": "/ai/ai-search-en-day-trips.json"

@@ -31,7 +31,7 @@ faqs:
     answer: "The Sambadrome was inaugurated in 1984, designed by Oscar Niemeyer as a permanent home for samba school parades."
 featured: false
 ---
-# The History of Rio Carnaval: How Chaos Became the Greatest Show on Earth
+## The History of Rio Carnaval: How Chaos Became the Greatest Show on Earth
 
 By Be Free Tours - January 27, 2026 - 9 min read
 

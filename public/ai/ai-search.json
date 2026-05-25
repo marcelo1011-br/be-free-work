@@ -11,6 +11,20 @@
     "pt-br"
   ],
   "base_path": "/ai/",
+  "service_pages": {
+    "private_guide": {
+      "en": "/en/private-guide-rio-de-janeiro/",
+      "es": "/es/guia-privado-rio-de-janeiro/",
+      "pt-br": "/pt-br/guia-privativo-rio-de-janeiro/",
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "en": "/en/rio-day-trips/",
+      "es": "/es/excursiones-desde-rio/",
+      "pt-br": "/pt-br/bate-voltas-saindo-do-rio/",
+      "classification": "service_pillar_not_tour_or_experience"
+    }
+  },
   "language_indexes": {
     "en": "/ai/ai-search-en.json",
     "es": "/ai/ai-search-es.json",

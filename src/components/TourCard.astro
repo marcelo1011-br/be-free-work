@@ -69,6 +69,8 @@ const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
 const itemButtonLabel = section === "experiences"
   ? (t("general.viewExperience") || t("general.viewTour"))
   : t("general.viewTour");
+const cardImageWidths = [320, 480, 640, 800];
+const cardImageSizes = "(max-width: 640px) calc(100vw - 4rem), (max-width: 1024px) calc(50vw - 3rem), (max-width: 1400px) calc(33vw - 2rem), 25vw";
 ---
 
 <article class="tour-card">
@@ -78,7 +80,10 @@ const itemButtonLabel = section === "experiences"
       alt={altText}
       width={800}
       height={600}
+      widths={cardImageWidths}
+      sizes={cardImageSizes}
       loading="lazy"
+      decoding="async"
       format="webp"
     />
     <div class="image-overlay"></div>

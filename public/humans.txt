@@ -22,7 +22,7 @@ Name: Be Free Tours
 Purpose: Premium Private Tours in Rio de Janeiro
 Founded: 2013
 Specialization: Private tours, skip-the-line access, local expertise
-Tours: 14 unique experiences across Rio and surroundings
+Tours: 11 private tours and 4 local experiences across Rio and surroundings
 
 /* TECHNICAL */
 Framework: Astro.js 5.1 (Static Site Generation)

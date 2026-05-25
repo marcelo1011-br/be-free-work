@@ -8,6 +8,7 @@ import { pageContent } from "../../data/pageContent.js";
 import { getPageSEO, getAboutPageSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
+import PrivateGuideTeaser from "../../components/PrivateGuideTeaser.astro";
 
 
 import aboutImage from "../../images/about/about-rio.webp";
@@ -156,6 +157,8 @@ const schemas = [aboutPageSchema, breadcrumbSchema];
       <p class="team-note">{content.team.note}</p>
     </div>
   </section>
+
+  <PrivateGuideTeaser lang={lang} context="about" />
 
   <section class="about-cta">
     <div class="container">

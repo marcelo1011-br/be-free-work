@@ -36,7 +36,7 @@ faqs:
 featured: true
 ---
 
-# Christ the Redeemer: Complete 2026 Visitor's Guide
+## Christ the Redeemer: Complete 2026 Visitor's Guide
 
 By Be Free Tours - November 7, 2025 - 15 min read
 

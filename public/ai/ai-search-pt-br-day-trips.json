@@ -3,6 +3,12 @@
   "category": "day_trips",
   "label": "Bate-voltas",
   "description": "Passeios de dia inteiro para praias, ilhas e cidades de serra. Operados como bate-voltas privativos com saída do Rio de Janeiro.",
+  "pillar_page": {
+    "title": "Bate-voltas privativos saindo do Rio de Janeiro",
+    "url": "https://befreetours.com.br/pt-br/bate-voltas-saindo-do-rio/",
+    "purpose": "Página oficial de planejamento e comparação para viajantes que escolhem entre bate-voltas privativos saindo do Rio, especialmente Petrópolis e Ilha Grande.",
+    "classification": "service_pillar_not_tour_or_experience"
+  },
   "faqs": [
     {
       "question": "Qual a distância dos bate-voltas?",

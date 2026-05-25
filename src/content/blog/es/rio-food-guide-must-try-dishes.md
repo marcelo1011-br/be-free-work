@@ -34,7 +34,7 @@ faqs:
 featured: true
 ---
 
-# Guía Gastronómica de Río: 13 Platos Imperdibles y Dónde Comer
+## Guía Gastronómica de Río: 13 Platos Imperdibles y Dónde Comer
 
 Por Be Free Tours - 17 de diciembre de 2025 - 12 min de lectura
 
@@ -237,7 +237,7 @@ Zona nocturna con comida callejera. Pasteles y hot dogs post-bar.
 - Lugares ocultos
 - Sin trampas para turistas
 
-O personaliza: dinos tus preferencias y diseñamos un tour privado a tu medida.
+O personaliza: dinos tus preferencias y diseñamos un [tour privado personalizado en Río](/es/tours-privados/tour-personalizado/) a tu medida.
 
 ## Etiqueta de mesa
 

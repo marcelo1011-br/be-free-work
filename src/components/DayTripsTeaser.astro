@@ -1,0 +1,79 @@
+---
+const { lang = "en" } = Astro.props;
+
+const copy = {
+  en: {
+    href: "/en/rio-day-trips/",
+    title: "Choosing between Petropolis and Ilha Grande?",
+    text: "Use our private day trips guide to compare mountain history, island nature, timing and logistics before choosing the right escape from Rio.",
+    label: "Compare private day trips",
+  },
+  es: {
+    href: "/es/excursiones-desde-rio/",
+    title: "¿Petropolis o Ilha Grande?",
+    text: "Usa nuestra guía de excursiones privadas para comparar historia de montaña, naturaleza de isla, tiempos y logística antes de elegir tu escapada desde Río.",
+    label: "Comparar excursiones privadas",
+  },
+  "pt-br": {
+    href: "/pt-br/bate-voltas-saindo-do-rio/",
+    title: "Petropolis ou Ilha Grande?",
+    text: "Use nosso guia de bate-voltas privativos para comparar história na serra, natureza em ilha, horários e logística antes de escolher sua escapada saindo do Rio.",
+    label: "Comparar bate-voltas privativos",
+  },
+};
+
+const content = copy[lang] || copy.en;
+---
+
+<section class="day-trips-teaser">
+  <div class="container">
+    <div class="teaser-card">
+      <div>
+        <h2>{content.title}</h2>
+        <p>{content.text}</p>
+      </div>
+      <a href={content.href} class="btn btn-outline-primary">{content.label}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .day-trips-teaser {
+    padding: 0 0 var(--space-xl);
+    background: var(--color-bg-white);
+  }
+
+  .teaser-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--glass-bg);
+    border: var(--border-width-hairline) solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .teaser-card h2 {
+    margin: 0 0 var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .teaser-card p {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .teaser-card .btn {
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .teaser-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

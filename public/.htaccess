@@ -9,21 +9,7 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^befreetours\.com\.br$ [NC]
 RewriteRule ^ https://befreetours.com.br%{REQUEST_URI} [R=301,L]
 
-# --- 2) LANGUAGE REDIRECT (ROOT ONLY) ---
-<IfModule mod_headers.c>
-  SetEnvIf Request_URI "^/$" IS_ROOT=1
-  Header merge Vary "Accept-Language" env=IS_ROOT
-</IfModule>
-
-RewriteCond %{REQUEST_URI} ^/$
-RewriteCond %{HTTP:Accept-Language} ^pt [NC]
-RewriteRule ^$ /pt-br/ [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/$
-RewriteCond %{HTTP:Accept-Language} ^es [NC]
-RewriteRule ^$ /es/ [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/$
+# --- 2) ROOT REDIRECT (SEO-SAFE, LANGUAGE-STABLE) ---
 RewriteRule ^$ /en/ [R=302,L]
 
 # --- 3) OPTIONAL URL NORMALIZATION ---

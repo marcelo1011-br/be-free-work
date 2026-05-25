@@ -25,99 +25,6 @@ const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace
 const websiteSchema = getWebSiteSchema(siteUrl);
 
 
-const organizationSchema = {
-  "@type": "TravelAgency",
-  "@id": `${siteUrl}/#organization`,
-  "name": "Be Free Tours",
-  "alternateName": "Be Free Tours Rio de Janeiro",
-  "url": siteUrl,
-  "logo": {
-    "@type": "ImageObject",
-    "url": `${siteUrl}/images/logo/logo.png`,
-    "width": 512,
-    "height": 512
-  },
-  "image": `${siteUrl}/images/heroes/home-hero.webp`,
-  "description": "Premium private tour operator in Rio de Janeiro since 2013. Customized experiences with certified local guides specializing in Christ the Redeemer, Sugarloaf Mountain, and day trips around Rio.",
-  "slogan": "Your Rio, Your Way - Private Tours Since 2013",
-  "foundingDate": "2013",
-  "telephone": "+55-21-97927-1637",
-  "email": "contact@befreetours.com.br",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Rio de Janeiro",
-    "addressRegion": "RJ",
-    "addressCountry": "BR"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Rio de Janeiro"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "-22.9068",
-    "longitude": "-43.1729"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55-21-97927-1637",
-    "contactType": "Customer Service",
-    "availableLanguage": ["English", "Spanish", "Portuguese"],
-    "areaServed": "BR"
-  },
-  "priceRange": "$$$",
-  "paymentAccepted": "Credit Card, PayPal",
-  "currenciesAccepted": "USD, BRL",
-  "openingHours": "Mo-Su 06:00-22:00",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "800",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "The Essential Rio: Icons, Culture & Hidden Gems",
-      "description": "Full-day tour including Christ the Redeemer, Sugarloaf Mountain, Santa Teresa, and more",
-      "price": "445",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/essential-rio/`
-    },
-    {
-      "@type": "Offer",
-      "name": "Rio Express 5h",
-      "description": "Quick tour of Christ the Redeemer and Sugarloaf Mountain",
-      "price": "440",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/rio-express/`
-    },
-    {
-      "@type": "Offer",
-      "name": "Sunset Magic Tour",
-      "description": "Golden hour at Christ the Redeemer and sunset from Sugarloaf",
-      "price": "460",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/golden-hour-rio/`
-    }
-  ],
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q138495723",
-    "https://www.instagram.com/befreeturrj",
-    "https://www.tripadvisor.com/Attraction_Review-g303506-d11807672-Reviews-Be_Free-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html"
-  ],
-  "knowsAbout": [
-    "Christ the Redeemer",
-    "Sugarloaf Mountain",
-    "Rio de Janeiro Tourism",
-    "Private Tours",
-    "Brazilian Culture"
-  ]
-};
-
 const homepageQuoteSchemas = [
   {
     "@type": "Review",
@@ -163,6 +70,7 @@ const reviewSchemas = testimonials.map((review) => {
     "name": review.title,
     "itemReviewed": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
       "name": "Be Free Tours",
       "url": siteUrl
     }
@@ -191,7 +99,7 @@ const reviewSchemas = testimonials.map((review) => {
   title="Private Tours Rio de Janeiro | Be Free Tours Since 2013"
   description="Book private tours and local experiences in Rio de Janeiro with licensed English-speaking guides since 2013. Hotel pickup included. 800+ reviews. Free cancellation up to 72h."
   image="/images/og-home.jpg"
-  schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("en", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
+  schema={[websiteSchema, getFAQSchema(content.faq.questions), getHowToSchema("en", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
   <Hero
     title={content.hero.title}

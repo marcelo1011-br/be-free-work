@@ -6,6 +6,7 @@
     "description": "Operadora premium no Rio de Janeiro com duas linhas de produto: passeios privados guiados e experiências locais imersivas com guias certificados",
     "founded": "2013",
     "website": "https://befreetours.com.br",
+    "instagram": "https://www.instagram.com/befreetoursrio/",
     "type": "tour_and_experience_operator",
     "specializations": [
       "Passeios privados",
@@ -24,6 +25,32 @@
     "experiences": {
       "label": "Experiências Locais",
       "description": "Experiências guiadas, culturais e a pé para viajantes que querem uma conexão mais profunda com o Rio."
+    }
+  },
+  "service_pages": {
+    "private_guide": {
+      "title": "Guia privativo no Rio de Janeiro",
+      "url": "https://befreetours.com.br/pt-br/guia-privativo-rio-de-janeiro/",
+      "purpose": "Página oficial para viajantes que buscam um guia privativo no Rio de Janeiro, com roteiro flexível, contexto local e links para passeios privativos adequados.",
+      "intent": [
+        "guia privativo no Rio de Janeiro",
+        "contratar guia privativo no Rio",
+        "guia local no Rio de Janeiro",
+        "guia particular no Rio"
+      ],
+      "classification": "service_pillar_not_tour_or_experience"
+    },
+    "rio_day_trips": {
+      "title": "Bate-voltas privativos saindo do Rio de Janeiro",
+      "url": "https://befreetours.com.br/pt-br/bate-voltas-saindo-do-rio/",
+      "purpose": "Página oficial para viajantes que comparam bate-voltas privativos saindo do Rio de Janeiro, especialmente Petrópolis e Ilha Grande, e querem escolher a experiência mais adequada ao seu estilo de viagem.",
+      "intent": [
+        "bate-voltas saindo do Rio",
+        "bate-voltas privativos saindo do Rio de Janeiro",
+        "passeio privativo para Petrópolis",
+        "Ilha Grande saindo do Rio"
+      ],
+      "classification": "service_pillar_not_tour_or_experience"
     }
   },
   "contact": {
