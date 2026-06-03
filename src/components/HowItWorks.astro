@@ -3,127 +3,140 @@ import { homeContent } from "../data/homeContent.js";
 
 const { lang } = Astro.props;
 const content = (homeContent[lang] ?? homeContent.en).howItWorks;
+
+const editorialIntro = {
+  en: {
+    kicker: "Private, flexible, local",
+    text: "Start with a proven Rio route or tell us what you care about. Our team turns that into a private day with the right guide, timing, transport and pace."
+  },
+  es: {
+    kicker: "Privado, flexible y local",
+    text: "Comienza con una ruta probada en Río o cuéntanos qué te interesa. Nuestro equipo lo convierte en un día privado con el guía, los tiempos, el transporte y el ritmo adecuados."
+  },
+  "pt-br": {
+    kicker: "Privativo, flexível e local",
+    text: "Comece com um roteiro já testado no Rio ou conte o que você quer viver. Nossa equipe transforma isso em um dia privativo com guia, horários, transporte e ritmo certos."
+  }
+};
+
+const intro = editorialIntro[lang] ?? editorialIntro.en;
 ---
 
-<section class="how-it-works">
-  <div class="container">
-    <h2 class="section-title-decorated">{content.title}</h2>
-
-    <div class="steps-grid">
-      {content.steps.map((step, index) => (
-        <div class="step-card">
-          <div class="step-number">{index + 1}</div>
-          <div class="step-content">
-            <h3 class="step-title">{step.title}</h3>
-            <p class="step-description">{step.description}</p>
-          </div>
-          {index < content.steps.length - 1 && (
-            <div class="step-connector">
-              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-          )}
+<section class="how-it-works section-spacious">
+  <div class="container-editorial">
+    <div class="process-layout">
+      <div class="process-copy">
+        <p class="editorial-kicker">{intro.kicker}</p>
+        <h2 class="section-title">{content.title}</h2>
+        <p class="process-intro measure">{intro.text}</p>
+        <div class="section-cta">
+          <button type="button" class="btn btn-primary btn-lg" data-tour-select-trigger>
+            {lang === "pt-br" ? "Reservar Meu Passeio" : lang === "es" ? "Reservar Mi Tour" : "Book My Tour"}
+          </button>
         </div>
-      ))}
-    </div>
+      </div>
 
-    <div class="section-cta">
-      <button type="button" class="btn btn-primary btn-lg" data-tour-select-trigger>
-        {lang === "pt-br" ? "Reservar Meu Passeio" : lang === "es" ? "Reservar Mi Tour" : "Book My Tour"}
-      </button>
+      <ol class="process-steps" aria-label={content.title}>
+        {content.steps.map((step, index) => (
+          <li class="process-step">
+            <div class="process-step__number">{index + 1}</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">{step.title}</h3>
+              <p class="process-step__description">{step.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </div>
 </section>
 
 <style>
   .how-it-works {
-    --step-grid-min: 280px;
-    --step-card-lift: -4px;
-    --step-number-size: clamp(3rem, 6vw, 3.5rem);
-    --step-number-border: var(--border-width-strong);
-    --step-connector-offset: -32px;
-    --step-icon-size: clamp(2rem, 4vw, 2.25rem);
+    --process-step-number-size: clamp(2.75rem, 5vw, 3.25rem);
+    --process-divider: color-mix(in srgb, var(--color-text-light) 14%, transparent);
 
-    padding: var(--space-3xl) 0;
     background-color: var(--color-bg-white);
   }
 
-  .steps-grid {
+  .process-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--step-grid-min)), 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-2xl);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-3xl);
+    align-items: start;
   }
 
-  .step-card {
-    position: relative;
+  .process-copy {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-xl);
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
-    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
+    gap: var(--space-md);
+    position: sticky;
+    top: calc(var(--space-3xl) + var(--space-lg));
   }
 
-  .step-card:hover {
-    transform: translateY(var(--step-card-lift));
+  .section-title {
+    color: var(--color-text);
+    margin: 0;
   }
 
-  .step-number {
+  .process-intro {
+    color: var(--color-text-light);
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    counter-reset: process;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: var(--process-step-number-size) minmax(0, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-xl) 0;
+    border-top: var(--border-width-hairline) solid var(--process-divider);
+  }
+
+  .process-step:last-child {
+    border-bottom: var(--border-width-hairline) solid var(--process-divider);
+  }
+
+  .process-step__number {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--step-number-size);
-    height: var(--step-number-size);
-    border: var(--step-number-border) solid var(--color-border);
+    width: var(--process-step-number-size);
+    height: var(--process-step-number-size);
+    border: var(--border-width-hairline) solid var(--color-border);
     border-radius: 50%;
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
   }
 
-  .step-content {
-    flex-grow: 1;
-  }
-
-  .step-title {
+  .process-step__title {
     font-size: var(--font-size-h5);
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
     margin-bottom: var(--space-sm);
   }
 
-  .step-description {
-    font-size: var(--font-size-small);
+  .process-step__description {
+    font-size: var(--font-size-body);
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
-  }
-
-  .step-connector {
-    display: none;
-    position: absolute;
-    right: var(--step-connector-offset);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-border);
-  }
-
-  @media (min-width: 900px) {
-    .step-connector {
-      display: block;
-    }
+    margin: 0;
   }
 
   .section-cta {
     display: flex;
-    justify-content: center;
-    margin-top: var(--space-2xl);
+    justify-content: flex-start;
+    margin-top: var(--space-xl);
   }
 
   .section-cta .btn {
@@ -138,35 +151,45 @@ const content = (homeContent[lang] ?? homeContent.en).howItWorks;
     color: white;
   }
 
+  @media (max-width: 900px) {
+    .process-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .process-copy {
+      position: static;
+    }
+
+    .section-cta {
+      justify-content: center;
+    }
+  }
+
   @media (max-width: 768px) {
     .how-it-works {
-      padding: var(--space-2xl) 0;
+      padding-block: var(--section-space-md);
     }
 
-    .section-title-decorated {
-      text-align: center;
+    .process-layout {
+      gap: var(--space-lg);
     }
 
-    .steps-grid {
-      margin-top: var(--space-lg);
-      gap: var(--space-md);
-    }
-
-    .step-card {
-      padding: var(--space-md);
-      text-align: center;
-      align-items: center;
-    }
-
-    .step-number {
-      margin-bottom: var(--space-sm);
-    }
-
-    .step-title {
+    .process-intro {
       font-size: var(--font-size-body);
     }
 
-    .step-description {
+    .process-step {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      padding: var(--space-lg) 0;
+    }
+
+    .process-step__title {
+      font-size: var(--font-size-body);
+    }
+
+    .process-step__description {
       font-size: var(--font-size-small);
     }
   }

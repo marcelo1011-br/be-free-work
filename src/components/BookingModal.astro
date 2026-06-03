@@ -180,9 +180,43 @@ const formspreeEndpoint = getFormspreeEndpoint("booking");
   {t('booking.success')}
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script type="module">
-  const flatpickr = window.flatpickr;
+  const FLATPICKR_SRC = "https://cdn.jsdelivr.net/npm/flatpickr";
+  let flatpickrLoadPromise = null;
+
+  const loadFlatpickrOnce = () => {
+    if (window.flatpickr) return Promise.resolve(window.flatpickr);
+    if (flatpickrLoadPromise) return flatpickrLoadPromise;
+
+    flatpickrLoadPromise = new Promise((resolve, reject) => {
+      const existingScript = document.querySelector(`script[src="${FLATPICKR_SRC}"]`);
+      const script = existingScript || document.createElement("script");
+
+      script.addEventListener("load", () => {
+        if (window.flatpickr) {
+          resolve(window.flatpickr);
+        } else {
+          flatpickrLoadPromise = null;
+          reject(new Error("Flatpickr did not initialize"));
+        }
+      }, { once: true });
+
+      script.addEventListener("error", () => {
+        flatpickrLoadPromise = null;
+        script.remove();
+        reject(new Error("Flatpickr failed to load"));
+      }, { once: true });
+
+      if (!existingScript) {
+        script.src = FLATPICKR_SRC;
+        script.async = true;
+        script.dataset.bookingFlatpickrLoader = "true";
+        document.head.appendChild(script);
+      }
+    });
+
+    return flatpickrLoadPromise;
+  };
 
   const init = () => {
     const modal = document.querySelector("[data-booking-modal]");
@@ -252,7 +286,7 @@ const formspreeEndpoint = getFormspreeEndpoint("booking");
       priceWrap.hidden = false;
     };
 
-    if (dateInput) {
+    const getDatePickerOptions = () => {
       const cutoffDays = Number(modal.dataset.cutoffDays || 1);
       const cutoffHour = 19;
       const timeZone = "America/Sao_Paulo";
@@ -320,15 +354,42 @@ const formspreeEndpoint = getFormspreeEndpoint("booking");
         disabledRules.push((date) => blockedSet.has(date.getDay()));
       }
 
-      flatpickr(dateInput, {
+      return {
         dateFormat: "d/m/Y",
         minDate,
         disable: disabledRules,
-      });
-    }
+      };
+    };
+
+    const initDatePicker = async ({ openWhenReady = false } = {}) => {
+      if (!dateInput) return null;
+      if (dateInput._flatpickr) {
+        if (openWhenReady) dateInput._flatpickr.open();
+        return dateInput._flatpickr;
+      }
+
+      try {
+        const flatpickr = await loadFlatpickrOnce();
+        if (!dateInput._flatpickr) {
+          flatpickr(dateInput, getDatePickerOptions());
+        }
+        if (openWhenReady && dateInput._flatpickr) {
+          dateInput._flatpickr.open();
+        }
+        return dateInput._flatpickr || null;
+      } catch {
+        return null;
+      }
+    };
 
     updatePrice();
     participantsInput?.addEventListener("input", updatePrice);
+    dateInput?.addEventListener("focus", () => {
+      initDatePicker({ openWhenReady: true });
+    });
+    dateInput?.addEventListener("click", () => {
+      initDatePicker({ openWhenReady: true });
+    });
 
     const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
     let savedTrigger = null;
@@ -338,6 +399,7 @@ const formspreeEndpoint = getFormspreeEndpoint("booking");
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
+      initDatePicker();
       const focusable = [...modal.querySelectorAll(FOCUSABLE)];
       focusable[0]?.focus();
     };

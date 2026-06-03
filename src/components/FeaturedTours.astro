@@ -10,6 +10,7 @@ const t = useTranslations(lang);
 
 
 const featuredTours = tours[lang].filter((tour) => tour.isFeatured);
+const [primaryTour, ...secondaryTours] = featuredTours;
 
 const toursBase = `/${lang}/${lang === "en" ? "private-tours" : lang === "es" ? "tours-privados" : "passeios-privados"}`;
 
@@ -32,6 +33,12 @@ const quickFilters = {
 };
 
 const filters = quickFilters[lang] ?? quickFilters.en;
+
+const sectionKicker = {
+  en: "Signature private tours",
+  es: "Tours privados destacados",
+  "pt-br": "Passeios privativos em destaque"
+};
 
 
 const tourBadgeMap = {
@@ -59,18 +66,35 @@ const tourBadgeMap = {
 
 
 <section class="featured-tours">
-  <div class="container">
-    <h2 class="section-title-decorated">{t("featuredTours.title")}</h2>
-    <p class="section-subtitle">{t("featuredTours.subtitle")}</p>
+  <div class="container-wide">
+    <div class="featured-tours-header">
+      <p class="editorial-kicker">{sectionKicker[lang] ?? sectionKicker.en}</p>
+      <h2 class="section-title">{t("featuredTours.title")}</h2>
+      <p class="section-subtitle measure-wide">{t("featuredTours.subtitle")}</p>
+    </div>
 
-    <div class="tours-grid grid grid-3">
-      {featuredTours.map((tour) => (
-        <TourCard
-          tour={tour}
-          lang={lang}
-          badge={tourBadgeMap[lang]?.[tour.id]}
-        />
-      ))}
+    <div class="featured-tour-layout">
+      {primaryTour && (
+        <div class="featured-tour-primary">
+          <TourCard
+            tour={primaryTour}
+            lang={lang}
+            badge={tourBadgeMap[lang]?.[primaryTour.id]}
+          />
+        </div>
+      )}
+
+      <div class="featured-tour-secondary">
+        {secondaryTours.map((tour) => (
+          <div class="featured-tour-secondary__item">
+            <TourCard
+              tour={tour}
+              lang={lang}
+              badge={tourBadgeMap[lang]?.[tour.id]}
+            />
+          </div>
+        ))}
+      </div>
     </div>
 
     {/* QUICK FILTERS - TEMPORARIAMENTE DESATIVADO
@@ -103,26 +127,60 @@ const tourBadgeMap = {
     --section-subtitle-max: clamp(40rem, 75vw, 50rem);
     --cta-btn-gap: var(--space-xs);
 
-    padding: var(--space-3xl) 0;
+    padding: var(--section-space-lg) 0;
     background-color: var(--color-bg-alt);
   }
 
-  .featured-tours .container {
-    max-width: none;
-    padding-inline: var(--space-xl-compact);
+  .featured-tours-header {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: end;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .featured-tours-header .editorial-kicker {
+    grid-column: 1 / -1;
+  }
+
+  .section-title {
+    color: var(--color-text);
+    margin: 0;
   }
 
   .section-subtitle {
-    text-align: center;
     font-size: var(--font-size-h5);
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
-    max-width: var(--section-subtitle-max);
-    margin: var(--space-md) auto var(--space-2xl);
+    margin: 0;
+    justify-self: end;
   }
 
-  .tours-grid {
+  .featured-tour-layout {
+    display: grid;
+    grid-template-columns: minmax(20rem, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-lg);
     margin-bottom: var(--space-xl);
+    align-items: stretch;
+  }
+
+  .featured-tour-primary,
+  .featured-tour-secondary__item {
+    min-width: 0;
+  }
+
+  .featured-tour-primary :global(.tour-card),
+  .featured-tour-secondary__item :global(.tour-card) {
+    height: 100%;
+  }
+
+  .featured-tour-primary :global(.tour-card) {
+    box-shadow: 0 24px 60px color-mix(in srgb, black 22%, transparent);
+  }
+
+  .featured-tour-secondary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-md);
   }
 
@@ -184,21 +242,23 @@ const tourBadgeMap = {
   
   @media (max-width: 768px) {
     .featured-tours {
-      padding: var(--space-2xl) 0;
+      padding: var(--section-space-md) 0;
     }
 
-    .section-title-decorated {
-      text-align: center;
+    .featured-tours-header,
+    .featured-tour-layout,
+    .featured-tour-secondary {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-tours-header {
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
     }
 
     .section-subtitle {
-      margin-bottom: var(--space-xl);
       font-size: var(--font-size-body);
-      padding-inline: var(--space-md);
-    }
-
-    .tours-grid {
-      margin-bottom: var(--space-xl);
+      justify-self: stretch;
     }
   }
 </style>

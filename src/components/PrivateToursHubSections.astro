@@ -8,7 +8,7 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
 {!showFaqOnly && (
   <>
     <section class="private-tours-action" aria-label="Private tour planning actions">
-      <div class="container">
+      <div class="container-editorial">
         <div class="action-card">
           <a href={content.cta.primaryHref} class="btn btn-primary btn-lg">
             {content.cta.primaryLabel}
@@ -24,39 +24,49 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
     </section>
 
     <section class="private-tours-difference">
-      <div class="container">
-        <div class="section-heading">
-          <h2>{content.differentiators.title}</h2>
-        </div>
-        <div class="difference-grid">
-          {content.differentiators.items.map((item) => (
-            <article class="difference-card">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
+      <div class="container-wide">
+        <div class="difference-layout">
+          <div class="section-heading section-heading-editorial">
+            <h2>{content.differentiators.title}</h2>
+          </div>
+          <div class="difference-list">
+            {content.differentiators.items.map((item, index) => (
+              <article class="difference-card">
+                <span class="difference-number">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
     <section class="private-tours-chooser">
-      <div class="container">
-        <div class="section-heading">
-          <h2>{content.chooser.title}</h2>
-          <p>{content.chooser.intro}</p>
-        </div>
-        <div class="chooser-grid">
-          {content.chooser.cards.map((card) => (
-            <article class="chooser-card">
-              <span class="chooser-label">{card.label}</span>
-              <p>{card.text}</p>
-              <div class="chooser-links">
-                {card.links.map((link) => (
-                  <a href={link.href}>{link.label}</a>
-                ))}
-              </div>
-            </article>
-          ))}
+      <div class="container-editorial">
+        <div class="chooser-layout">
+          <div class="section-heading section-heading-editorial">
+            <h2>{content.chooser.title}</h2>
+            <p>{content.chooser.intro}</p>
+          </div>
+          <div class="chooser-guide">
+            {content.chooser.cards.map((card, index) => (
+              <article class="chooser-card">
+                <span class="chooser-index">{String(index + 1).padStart(2, "0")}</span>
+                <div class="chooser-card-content">
+                  <span class="chooser-label">{card.label}</span>
+                  <p>{card.text}</p>
+                  <div class="chooser-links">
+                    {card.links.map((link) => (
+                      <a href={link.href}>{link.label}</a>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -90,7 +100,7 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
   }
 
   .private-tours-action {
-    padding: var(--space-xl) 0 0;
+    padding: var(--section-space-sm) 0 0;
   }
 
   .action-card {
@@ -99,15 +109,13 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
     justify-content: center;
     gap: var(--space-md);
     flex-wrap: wrap;
-    padding: var(--space-lg);
-    background: var(--glass-bg);
-    border: var(--border-width-hairline) solid var(--glass-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--glass-shadow);
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
+    border-top: var(--border-width-hairline) solid var(--glass-border);
+    border-bottom: var(--border-width-hairline) solid var(--glass-border);
   }
 
   .tour-list-shortcut {
-    color: var(--color-primary);
+    color: var(--color-accent);
     font-weight: var(--font-weight-semibold);
     text-decoration: underline;
     text-underline-offset: 0.2em;
@@ -115,7 +123,7 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
 
   .private-tours-difference,
   .private-tours-chooser {
-    padding: var(--space-2xl) 0 0;
+    padding: var(--section-space-md) 0 0;
   }
 
   .private-tours-faq {
@@ -126,6 +134,12 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
     max-width: 56rem;
     margin: 0 auto var(--space-xl);
     text-align: center;
+  }
+
+  .section-heading-editorial {
+    max-width: var(--content-measure-wide);
+    margin: 0;
+    text-align: left;
   }
 
   .section-heading h2 {
@@ -139,28 +153,44 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
     line-height: var(--line-height-relaxed);
   }
 
-  .difference-grid,
-  .chooser-grid {
+  .difference-layout {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.4fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
   }
 
-  .chooser-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .difference-list {
+    display: grid;
+    gap: 0;
+    border-top: var(--border-width-hairline) solid var(--color-border);
+  }
+
+  .chooser-layout {
+    display: grid;
+    gap: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .chooser-guide {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+    gap: var(--space-md);
+    align-items: start;
   }
 
   .difference-card,
-  .chooser-card,
   .faq-list details {
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
     background: var(--color-bg-soft);
   }
 
-  .difference-card,
-  .chooser-card {
-    padding: var(--space-lg);
+  .difference-card {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: var(--space-md);
+    padding: clamp(1.1rem, 2vw, 1.5rem) 0;
+    border-width: 0 0 var(--border-width-hairline);
+    background: transparent;
   }
 
   .difference-card h3,
@@ -173,16 +203,48 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
     color: var(--color-text);
   }
 
+  .difference-number,
+  .chooser-index {
+    color: var(--color-accent);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0;
+  }
+
   .difference-card p {
     margin: var(--space-sm) 0 0;
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
   }
 
+  .chooser-card {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: var(--space-md);
+    min-height: 100%;
+    padding: clamp(1.15rem, 2vw, 1.5rem);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-soft);
+  }
+
+  .chooser-card:nth-child(-n + 3) {
+    grid-column: 1;
+  }
+
+  .chooser-card:nth-child(n + 4) {
+    grid-column: 2;
+    background: transparent;
+  }
+
+  .chooser-card-content {
+    min-width: 0;
+  }
+
   .chooser-label {
     display: inline-block;
     margin-bottom: var(--space-sm);
-    color: var(--color-accent);
+    color: var(--color-text);
     font-weight: var(--font-weight-bold);
   }
 
@@ -199,7 +261,7 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
   }
 
   .chooser-links a {
-    color: var(--color-primary);
+    color: var(--color-accent);
     font-weight: var(--font-weight-semibold);
     text-decoration: underline;
     text-underline-offset: 0.2em;
@@ -214,6 +276,7 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
 
   .faq-list details {
     padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
   }
 
   .faq-list summary {
@@ -229,33 +292,53 @@ const content = privateToursHubContent[lang] || privateToursHubContent.en;
   }
 
   @media (max-width: 1100px) {
-    .difference-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .difference-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
     }
 
-    .chooser-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .chooser-guide {
+      grid-template-columns: 1fr;
+    }
+
+    .chooser-card:nth-child(-n + 3),
+    .chooser-card:nth-child(n + 4) {
+      grid-column: auto;
     }
   }
 
   @media (max-width: 768px) {
     .private-tours-difference,
     .private-tours-chooser {
-      padding-top: var(--space-xl);
+      padding-top: var(--section-space-sm);
     }
 
     .private-tours-faq {
       padding-bottom: var(--space-2xl);
     }
 
-    .difference-grid,
-    .chooser-grid {
-      grid-template-columns: 1fr;
+    .difference-card,
+    .chooser-card {
+      grid-template-columns: 2.35rem minmax(0, 1fr);
+      gap: var(--space-sm);
+    }
+
+    .chooser-guide {
+      gap: 0;
+      border-top: var(--border-width-hairline) solid var(--color-border);
+    }
+
+    .chooser-card {
+      padding: var(--space-md) 0;
+      border-width: 0 0 var(--border-width-hairline);
+      border-radius: 0;
+      background: transparent;
     }
 
     .action-card {
       align-items: stretch;
       flex-direction: column;
+      padding-inline: 0;
     }
 
     .tour-list-shortcut {
