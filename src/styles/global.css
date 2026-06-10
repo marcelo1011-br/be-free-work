@@ -3,6 +3,22 @@
 
 @layer reset, base, themes, components, utilities, overrides;
 
+/* Newsreader — self-hosted (latin + latin-ext, normal + italic). Mesma
+   convenção url(/fonts/...) da Plus Jakarta. tokens.css só referencia a família
+   via --font-display; os @font-face vivem aqui. */
+@font-face { font-family:"Newsreader"; font-style:normal; font-weight:200 800; font-display:swap;
+  src:url("/fonts/newsreader-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:"Newsreader"; font-style:normal; font-weight:200 800; font-display:swap;
+  src:url("/fonts/newsreader-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:"Newsreader"; font-style:italic; font-weight:200 800; font-display:swap;
+  src:url("/fonts/newsreader-italic-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:"Newsreader"; font-style:italic; font-weight:200 800; font-display:swap;
+  src:url("/fonts/newsreader-italic-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
 
 @layer reset {
   *,
@@ -32,11 +48,11 @@
 
   body {
     min-height: 100vh;
-    line-height: var(--line-height-normal);
-    font-family: var(--font-family);
+    line-height: var(--line-normal);
+    font-family: var(--font-body);
     font-weight: 400;
     color: var(--color-text);
-    background-color: var(--color-bg-white);
+    background-color: var(--color-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -104,16 +120,16 @@
   @supports (color: oklch(0% 0 0)) {
     :root {
       
-      --color-primary-base: oklch(15% 0.08 255);
-      --color-primary: var(--color-primary-base);
-      --color-primary-light: oklch(from var(--color-primary-base) calc(l + 10%) c h);
-      --color-primary-dark: oklch(from var(--color-primary-base) calc(l - 5%) c h);
+      --color-primary-base: var(--color-blue);
+      --color-primary: var(--color-blue);
+      --color-primary-light: color-mix(in srgb, var(--color-blue) 85%, white);
+      --color-primary-dark: color-mix(in srgb, var(--color-blue) 85%, black);
 
       
-      --color-accent-base: oklch(65% 0.18 45);
-      --color-accent: var(--color-accent-base);
-      --color-accent-light: oklch(from var(--color-accent-base) calc(l + 10%) c h);
-      --color-accent-dark: oklch(from var(--color-accent-base) calc(l - 10%) c h);
+      --color-accent-base: var(--color-amber);
+      --color-accent: var(--color-amber);
+      --color-accent-light: color-mix(in srgb, var(--color-amber) 85%, white);
+      --color-accent-dark: color-mix(in srgb, var(--color-amber) 85%, black);
 
       
       --color-secondary-base: oklch(60% 0.15 205);
@@ -122,21 +138,19 @@
       --color-secondary-dark: oklch(from var(--color-secondary-base) calc(l - 10%) c h);
 
       
-      --color-bg-base: oklch(15% 0.08 255);
-      --color-bg-white: var(--color-bg-base);
-      --color-bg-soft: oklch(18% 0.08 255);
-      --color-bg-dark: oklch(10% 0.08 255);
-      --color-bg-card: color-mix(in oklch, var(--color-bg-soft) 80%, transparent);
+      --color-bg-base: var(--color-base);
+      --color-bg-white: var(--color-base);
+      --color-bg-soft: var(--color-surface);
+      --color-bg-dark: var(--color-base);
+      --color-bg-card: var(--color-surface);
+      --color-bg-alt: color-mix(in srgb, var(--color-base) 94%, var(--color-ink));
 
       
-      --color-text: oklch(98% 0.01 255);
-      --color-text-light: oklch(70% 0.02 255);
-      --color-text-muted: oklch(55% 0.02 255);
-      --color-text-inverse: oklch(98% 0.01 255);
+      --color-text-light: var(--color-text-muted);
+      --color-text-inverse: var(--color-on-blue);
 
       
-      --color-border: color-mix(in oklch, var(--color-text-light) 20%, transparent);
-      --color-border-light: color-mix(in oklch, var(--color-text-light) 10%, transparent);
+      --color-border-light: var(--color-hairline);
       --color-success: oklch(65% 0.18 145);
       --color-error: oklch(60% 0.20 25);
 
@@ -169,14 +183,14 @@
   @supports not (color: oklch(0% 0 0)) {
     :root {
       
-      --color-primary: #0a1628;
-      --color-primary-light: #1a2d4a;
-      --color-primary-dark: #050d18;
+      --color-primary: var(--color-blue);
+      --color-primary-light: var(--color-blue);
+      --color-primary-dark: var(--color-blue);
 
       
-      --color-accent: #f97316;
-      --color-accent-light: #fb923c;
-      --color-accent-dark: #ea580c;
+      --color-accent: var(--color-amber);
+      --color-accent-light: color-mix(in srgb, var(--color-amber) 85%, white);
+      --color-accent-dark: color-mix(in srgb, var(--color-amber) 85%, black);
 
       
       --color-secondary: #06b6d4;
@@ -184,20 +198,18 @@
       --color-secondary-dark: #0891b2;
 
       
-      --color-bg-white: #0a1628;
-      --color-bg-soft: #0f1e32;
-      --color-bg-dark: #050d18;
-      --color-bg-card: rgba(15, 30, 50, 0.8);
+      --color-bg-white: var(--color-base);
+      --color-bg-soft: var(--color-surface);
+      --color-bg-dark: var(--color-base);
+      --color-bg-card: var(--color-surface);
+      --color-bg-alt: color-mix(in srgb, var(--color-base) 94%, var(--color-ink));
 
-      
-      --color-text: #f8fafc;
-      --color-text-light: #94a3b8;
-      --color-text-muted: #64748b;
-      --color-text-inverse: #f8fafc;
 
-      
-      --color-border: rgba(148, 163, 184, 0.2);
-      --color-border-light: rgba(148, 163, 184, 0.1);
+      --color-text-light: var(--color-text-muted);
+      --color-text-inverse: var(--color-on-blue);
+
+
+      --color-border-light: var(--color-hairline);
       --color-success: #22c55e;
       --color-error: #ef4444;
 
@@ -216,7 +228,7 @@
   
   :root {
     
-    --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-family: var(--font-body);
 
     
     --tracking-tight: -0.015em;
@@ -240,25 +252,23 @@
     --font-weight-bold: 700;
 
     
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.6;
+    --line-height-tight: var(--line-tight);
+    --line-height-normal: var(--line-normal);
     --line-height-relaxed: 1.8;
   }
 
   
   :root {
-    --space-2xs: clamp(0.25rem, 0.4vw, 0.375rem);
-    --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    /* --space-2xs, --space-xs, --space-xl, --space-2xl, --space-3xl agora
+       vêm de tokens.css (fonte única). Mantidos aqui só os nomes legados
+       sem equivalente direto no token set ("sm/md/lg" + variantes -compact). */
     --space-sm: clamp(0.5rem, 1vw, 0.75rem);
     --space-sm-compact: clamp(0.625rem, 1.2vw, 0.75rem);
     --space-md: clamp(1rem, 2vw, 1.5rem);
     --space-md-compact: clamp(0.75rem, 1.5vw, 0.875rem);
     --space-lg: clamp(1.5rem, 3vw, 2.5rem);
     --space-lg-compact: clamp(1.5rem, 2.5vw, 1.75rem);
-    --space-xl: clamp(2rem, 5vw, 4rem);
     --space-xl-compact: clamp(2rem, 4vw, 2.25rem);
-    --space-2xl: clamp(3rem, 8vw, 6rem);
-    --space-3xl: clamp(4rem, 10vw, 8rem);
 
     
     --container-max: 1200px;
@@ -321,6 +331,10 @@
   }
 
   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
   h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
@@ -386,8 +400,7 @@
 
   
   @supports (color: oklch(0% 0 0)) {
-    html.light,
-    :root.light {
+    :root:not([data-theme="dark"]) {
       
       --color-primary-base: oklch(18% 0.08 255);
       --color-primary: var(--color-primary-base);
@@ -432,8 +445,7 @@
   }
 
   @supports not (color: oklch(0% 0 0)) {
-    html.light,
-    :root.light {
+    :root:not([data-theme="dark"]) {
       --color-primary: #0f172a;
       --color-primary-light: #1e293b;
       --color-primary-dark: #020617;
@@ -461,9 +473,9 @@
     }
   }
 
-  
-  html.light {
-    
+
+  :root:not([data-theme="dark"]) {
+
     .navbar {
       background: color-mix(in srgb, var(--color-primary) 95%, transparent);
       backdrop-filter: blur(var(--blur-md));
@@ -852,11 +864,15 @@
   
   .container {
     inline-size: 100%;
-    max-inline-size: var(--container-max);
+    max-inline-size: var(--container-wide);
     margin-inline: auto;
-    padding-inline: max(var(--container-padding), env(safe-area-inset-inline-start));
+    padding-inline: max(var(--gutter), env(safe-area-inset-inline-start));
     container-type: inline-size;
     container-name: main-container;
+  }
+
+  .measure {
+    max-inline-size: var(--measure);
   }
 
   

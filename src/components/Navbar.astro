@@ -222,7 +222,7 @@ function isActive(href: string): boolean {
   }
 
   
-  :global(html.light) .navbar {
+  :global(:root:not([data-theme="dark"])) .navbar {
     --navbar-bg: color-mix(in srgb, var(--color-primary) 95%, transparent);
     --navbar-border-color: color-mix(in srgb, white 10%, transparent);
     --navbar-light-text: color-mix(in srgb, white 90%, transparent);
@@ -232,7 +232,7 @@ function isActive(href: string): boolean {
     background: var(--navbar-bg-scrolled);
   }
 
-  :global(html.light) .navbar.scrolled {
+  :global(:root:not([data-theme="dark"])) .navbar.scrolled {
     --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 98%, transparent);
   }
 
@@ -301,12 +301,12 @@ function isActive(href: string): boolean {
   }
 
   
-  :global(html.light) .nav-link {
+  :global(:root:not([data-theme="dark"])) .nav-link {
     color: var(--navbar-light-text);
   }
 
-  :global(html.light) .nav-link:hover,
-  :global(html.light) .nav-link.active {
+  :global(:root:not([data-theme="dark"])) .nav-link:hover,
+  :global(:root:not([data-theme="dark"])) .nav-link.active {
     color: var(--navbar-cta-text);
     background-color: var(--navbar-hover-bg);
   }
@@ -338,16 +338,16 @@ function isActive(href: string): boolean {
   }
 
   
-  :global(html.light) .icon-button {
+  :global(:root:not([data-theme="dark"])) .icon-button {
     color: var(--navbar-light-text);
   }
 
-  :global(html.light) .icon-button:hover {
+  :global(:root:not([data-theme="dark"])) .icon-button:hover {
     color: var(--navbar-cta-text);
     background-color: var(--navbar-hover-bg);
   }
 
-  :global(html.light) .lang-current {
+  :global(:root:not([data-theme="dark"])) .lang-current {
     color: var(--navbar-light-text);
   }
 
@@ -360,19 +360,19 @@ function isActive(href: string): boolean {
     display: none;
   }
 
-  :global(html.light) .sun-icon {
+  :global(:root:not([data-theme="dark"])) .sun-icon {
     display: none;
   }
 
-  :global(html.light) .moon-icon {
+  :global(:root:not([data-theme="dark"])) .moon-icon {
     display: block;
   }
 
-  :global(html.dark) .sun-icon {
+  :global([data-theme="dark"]) .sun-icon {
     display: block;
   }
 
-  :global(html.dark) .moon-icon {
+  :global([data-theme="dark"]) .moon-icon {
     display: none;
   }
 
@@ -521,31 +521,30 @@ function isActive(href: string): boolean {
 
   
   const themeToggle = document.getElementById("theme-toggle");
-  const html = document.documentElement;
+  const root = document.documentElement;
+  const THEME_KEY = "bft-theme";
 
   
-  const savedTheme = localStorage.getItem("theme") || "dark";
+  // tema inicial já aplicado pelo script anti-FOUC no <head> (chave "bft-theme")
 
   
   function applyTheme(theme: string) {
-    if (theme === "light") {
-      html.classList.add("light");
-      html.classList.remove("dark");
+    if (theme === "dark") {
+      root.setAttribute("data-theme", "dark");
     } else {
-      html.classList.add("dark");
-      html.classList.remove("light");
+      root.removeAttribute("data-theme");
     }
   }
 
   
-  applyTheme(savedTheme);
+  // (não reaplica no load: o <head> já definiu data-theme sem flash)
 
   themeToggle?.addEventListener("click", () => {
-    const isCurrentlyLight = html.classList.contains("light");
-    const newTheme = isCurrentlyLight ? "dark" : "light";
+    const isDark = root.getAttribute("data-theme") === "dark";
+    const newTheme = isDark ? "light" : "dark";
     
     applyTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    try { localStorage.setItem(THEME_KEY, newTheme); } catch (e) {}
   });
 
   

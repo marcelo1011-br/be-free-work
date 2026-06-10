@@ -378,56 +378,56 @@ const tagline = taglines[lang] || taglines.en;
   }
 
   
-  :global(html.light) .hero-tagline,
-  :global(html.light) .hero-title,
-  :global(html.light) .hero-subtitle {
+  :global(:root:not([data-theme="dark"])) .hero-tagline,
+  :global(:root:not([data-theme="dark"])) .hero-title,
+  :global(:root:not([data-theme="dark"])) .hero-subtitle {
     color: var(--hero-light-text);
   }
 
-  :global(html.light) .hero-tagline {
+  :global(:root:not([data-theme="dark"])) .hero-tagline {
     color: var(--hero-light-text-soft);
   }
 
-  :global(html.light) .hero-subtitle {
+  :global(:root:not([data-theme="dark"])) .hero-subtitle {
     color: var(--hero-light-text-subtle);
   }
 
   
-  :global(html.light) .trust-badges {
+  :global(:root:not([data-theme="dark"])) .trust-badges {
     background: color-mix(in srgb, var(--color-primary) 50%, transparent);
     backdrop-filter: blur(var(--blur-md));
     -webkit-backdrop-filter: blur(var(--blur-md));
     border: var(--border-width-hairline) solid var(--trust-light-border);
   }
 
-  :global(html.light) .badge-label {
+  :global(:root:not([data-theme="dark"])) .badge-label {
     color: var(--hero-light-text);
   }
 
-  :global(html.light) .badge-value {
+  :global(:root:not([data-theme="dark"])) .badge-value {
     color: var(--trust-light-text-soft);
   }
 
-  :global(html.light) .trust-badge {
+  :global(:root:not([data-theme="dark"])) .trust-badge {
     border-bottom-color: var(--trust-light-border-soft);
   }
 
-  :global(html.light) .btn-outline-secondary {
+  :global(:root:not([data-theme="dark"])) .btn-outline-secondary {
     border-color: var(--outline-cta-border);
     color: var(--hero-light-text);
   }
 
-  :global(html.light) .btn-outline-secondary:hover {
+  :global(:root:not([data-theme="dark"])) .btn-outline-secondary:hover {
     background-color: var(--outline-cta-hover);
     border-color: var(--hero-light-text);
   }
 
-  :global(html.light) .btn-outline-primary {
+  :global(:root:not([data-theme="dark"])) .btn-outline-primary {
     border-color: var(--outline-cta-border);
     color: var(--hero-light-text);
   }
 
-  :global(html.light) .btn-outline-primary:hover {
+  :global(:root:not([data-theme="dark"])) .btn-outline-primary:hover {
     background-color: var(--outline-cta-hover);
     border-color: var(--hero-light-text);
   }

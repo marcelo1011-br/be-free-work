@@ -203,33 +203,33 @@ const text = content[lang] || content.en;
   }
 
   
-  :global(html.light) .exit-overlay {
+  :global(:root:not([data-theme="dark"])) .exit-overlay {
     background: var(--exit-overlay-bg-light);
   }
 
-  :global(html.light) .exit-popup {
+  :global(:root:not([data-theme="dark"])) .exit-popup {
     background: var(--color-bg-card);
     border-color: color-mix(in srgb, var(--color-text) 10%, transparent);
   }
 
-  :global(html.light) .exit-title {
+  :global(:root:not([data-theme="dark"])) .exit-title {
     color: var(--color-text);
   }
 
-  :global(html.light) .exit-subtitle {
+  :global(:root:not([data-theme="dark"])) .exit-subtitle {
     color: var(--color-text-light);
   }
 
-  :global(html.light) .exit-close {
+  :global(:root:not([data-theme="dark"])) .exit-close {
     color: var(--color-text-light);
   }
 
-  :global(html.light) .exit-close:hover {
+  :global(:root:not([data-theme="dark"])) .exit-close:hover {
     background: color-mix(in srgb, var(--color-text) 5%, transparent);
     color: var(--color-text);
   }
 
-  :global(html.light) .exit-dismiss {
+  :global(:root:not([data-theme="dark"])) .exit-dismiss {
     color: var(--color-text-light);
   }
 
