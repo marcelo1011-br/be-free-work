@@ -4,6 +4,7 @@
 
 import { getLangFromUrl } from "../i18n/utils";
 import { getHreflangPaths } from "../i18n/hreflang";
+import { aggregateRating } from "../data/siteData.js";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ExitIntentPopup from "../components/ExitIntentPopup.astro";
@@ -83,10 +84,7 @@ const siteInfo = {
   },
   areaServed: "Rio de Janeiro",
   priceRange: "$$-$$$",
-  aggregateRating: {
-    ratingValue: "4.9",
-    reviewCount: "800",
-  },
+  aggregateRating,
   openingHours: "Mo-Su 06:00-22:00",
 };
 

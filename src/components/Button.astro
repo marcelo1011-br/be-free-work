@@ -1,0 +1,62 @@
+---
+/**
+ * Button.astro — sistema de CTA presentacional.
+ *
+ * DISCIPLINA DO ÂMBAR (travada): só variant="book" pinta âmbar (ação de reserva).
+ * Toda outra ação usa ghost/outline (azul/ink). Não há variante âmbar fora de "book".
+ *
+ * Reusa as classes .btn já tokenizadas em global.css — não redefine cor/estilo.
+ *   book    -> .btn .btn-primary          (âmbar — reserva)
+ *   ghost   -> .btn .btn-ghost-secondary  (texto azul, sem fundo)
+ *   outline -> .btn .btn-outline-secondary (contorno azul)
+ *
+ * Polimórfico: href => <a>; senão <button>. Demais atributos (data-*, target,
+ * rel, aria-*, type, id...) passam direto via ...rest. Ícone via <slot name="icon" />.
+ */
+const {
+  variant = "outline",
+  href,
+  size,
+  type = "button",
+  class: className = "",
+  ...rest
+} = Astro.props;
+
+const variantClass = {
+  book: "btn-primary",
+  ghost: "btn-ghost-secondary",
+  outline: "btn-outline-secondary",
+}[variant] ?? "btn-outline-secondary";
+
+const sizeClass = size === "sm" ? "btn-sm" : size === "lg" ? "btn-lg" : "";
+
+const classes = ["btn", variantClass, sizeClass, "btn-cta", className]
+  .filter(Boolean)
+  .join(" ");
+
+const Tag = href ? "a" : "button";
+---
+
+{
+  href ? (
+    <a href={href} class={classes} {...rest}>
+      <slot name="icon" />
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} {...rest}>
+      <slot name="icon" />
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  /* Alvo de toque ≥44px (a11y/mobile) — sem redefinir cor/estilo do .btn. */
+  .btn-cta {
+    min-block-size: 2.75rem;
+  }
+  .btn-cta.btn-sm {
+    min-block-size: 2.75rem;
+  }
+</style>

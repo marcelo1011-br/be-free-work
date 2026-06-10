@@ -36,6 +36,14 @@ export const ui = {
     'footer.email': 'Email',
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Review us on TripAdvisor',
+    'nav.allIncluded': 'All-Included',
+    'footer.colTours': 'Tours',
+    'footer.colCompany': 'Company',
+    'footer.colPlan': 'Plan Your Trip',
+    'footer.paymentPolicy': 'Payment & Cancellation',
+    'footer.dayTrips': 'Day Trips from Rio',
+    'footer.privateGuide': 'Private Guide',
+    'footer.halfDay': 'Half-Day Tours',
     
     
     'btn.learnMore': 'Learn More',
@@ -218,6 +226,14 @@ export const ui = {
     'footer.email': 'Email',
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Califícanos en TripAdvisor',
+    'nav.allIncluded': 'Todo Incluido',
+    'footer.colTours': 'Tours',
+    'footer.colCompany': 'Empresa',
+    'footer.colPlan': 'Planifica tu Viaje',
+    'footer.paymentPolicy': 'Pago y Cancelación',
+    'footer.dayTrips': 'Excursiones desde Río',
+    'footer.privateGuide': 'Guía Privado',
+    'footer.halfDay': 'Tours de Medio Día',
     
     
     'btn.learnMore': 'Más Información',
@@ -400,6 +416,14 @@ export const ui = {
     'footer.email': 'Email',
     'footer.whatsapp': 'WhatsApp',
     'footer.reviewUs': 'Avalie-nos no TripAdvisor',
+    'nav.allIncluded': 'Tudo Incluído',
+    'footer.colTours': 'Passeios',
+    'footer.colCompany': 'Empresa',
+    'footer.colPlan': 'Planeje sua Viagem',
+    'footer.paymentPolicy': 'Pagamento e Cancelamento',
+    'footer.dayTrips': 'Bate-Voltas do Rio',
+    'footer.privateGuide': 'Guia Privativo',
+    'footer.halfDay': 'Passeios de Meio Dia',
     
     
     'btn.learnMore': 'Saiba Mais',
