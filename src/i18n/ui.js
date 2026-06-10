@@ -44,6 +44,9 @@ export const ui = {
     'footer.dayTrips': 'Day Trips from Rio',
     'footer.privateGuide': 'Private Guide',
     'footer.halfDay': 'Half-Day Tours',
+    'trust.reviews': '{n}+ Verified Reviews',
+    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
+    'trust.since': 'Operating Since 2013',
     
     
     'btn.learnMore': 'Learn More',
@@ -234,6 +237,9 @@ export const ui = {
     'footer.dayTrips': 'Excursiones desde Río',
     'footer.privateGuide': 'Guía Privado',
     'footer.halfDay': 'Tours de Medio Día',
+    'trust.reviews': 'Más de {n} reseñas verificadas',
+    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
+    'trust.since': 'Operando desde 2013',
     
     
     'btn.learnMore': 'Más Información',
@@ -424,6 +430,9 @@ export const ui = {
     'footer.dayTrips': 'Bate-Voltas do Rio',
     'footer.privateGuide': 'Guia Privativo',
     'footer.halfDay': 'Passeios de Meio Dia',
+    'trust.reviews': 'Mais de {n} avaliações verificadas',
+    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
+    'trust.since': 'Operando desde 2013',
     
     
     'btn.learnMore': 'Saiba Mais',
