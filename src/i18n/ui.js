@@ -45,6 +45,9 @@ export const ui = {
     'footer.privateGuide': 'Private Guide',
     'footer.halfDay': 'Half-Day Tours',
     'trust.reviews': '{n}+ Verified Reviews',
+    'card.ticketsIncluded': 'Tickets Included',
+    'general.onRequest': 'On Request',
+    'general.perPerson': 'per person',
     'trust.platforms': 'TripAdvisor · Viator · Civitatis',
     'trust.since': 'Operating Since 2013',
     
@@ -238,6 +241,9 @@ export const ui = {
     'footer.privateGuide': 'Guía Privado',
     'footer.halfDay': 'Tours de Medio Día',
     'trust.reviews': 'Más de {n} reseñas verificadas',
+    'card.ticketsIncluded': 'Entradas Incluidas',
+    'general.onRequest': 'Bajo Consulta',
+    'general.perPerson': 'por persona',
     'trust.platforms': 'TripAdvisor · Viator · Civitatis',
     'trust.since': 'Operando desde 2013',
     
@@ -431,6 +437,9 @@ export const ui = {
     'footer.privateGuide': 'Guia Privativo',
     'footer.halfDay': 'Passeios de Meio Dia',
     'trust.reviews': 'Mais de {n} avaliações verificadas',
+    'card.ticketsIncluded': 'Ingressos Inclusos',
+    'general.onRequest': 'Sob Consulta',
+    'general.perPerson': 'por pessoa',
     'trust.platforms': 'TripAdvisor · Viator · Civitatis',
     'trust.since': 'Operando desde 2013',
     

@@ -3,27 +3,27 @@
 
 import { Image } from "astro:assets";
 import { useTranslations } from "../i18n/utils";
+import { getPrice } from "../utils/priceHelper.js";
 
 const { item: itemProp, tour: legacyTour, lang, badge, section = "tours" } = Astro.props;
 const t = useTranslations(lang);
 const item = itemProp || legacyTour;
 
-const isCustomItem = item.isCustom || item.pricing?.custom;
+// Preço via helper (fonte única) — USD agora (PT→BRL é passo 4, troca de config).
+const price = getPrice(item, 1, "USD");
+const isCustomItem = price.basis === "custom";
+const isQuote = price.basis === "quote";
+const isPerPerson = price.basis === "perPerson";
+const customPriceText = item.pricing?.displayText || t("general.onRequest");
 
-function getFromPrice(pricing) {
-  if (pricing.custom) return null;
-  if (pricing.from) return pricing.from;
-  if (pricing.perPerson) return pricing.perPerson;
-  if (pricing.standard) {
-    const prices = Object.values(pricing.standard);
-    return Math.min(...prices);
-  }
-  return null;
-}
-
-const fromPrice = getFromPrice(item.pricing);
-
-const customPriceText = item.pricing?.displayText || "Custom quote";
+// Badge "tickets included": prop normalizada (passo 4) com fallback derivado do dado atual.
+const ticketsIncluded =
+  item.ticketsIncluded ??
+  (section === "tours" &&
+    !isCustomItem &&
+    (item.included || []).some((i) =>
+      /ticket|ingresso|entrada|skip-the-line|sem fila|sin fila/i.test(i)
+    ));
 
 const routeMaps = {
   tours: {
@@ -88,6 +88,15 @@ const itemButtonLabel = section === "experiences"
         {badge}
       </span>
     )}
+
+    {ticketsIncluded && (
+      <span class="tickets-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        {t("card.ticketsIncluded")}
+      </span>
+    )}
   </div>
 
   
@@ -107,19 +116,24 @@ const itemButtonLabel = section === "experiences"
 
     <div class="tour-card-footer">
       <div class="tour-price">
-        {isCustomItem ? (
-          <span class="price-custom">{customPriceText}</span>
+        {isCustomItem || isQuote ? (
+          <span class="price-custom">{isQuote ? t("general.onRequest") : customPriceText}</span>
+        ) : isPerPerson ? (
+          <>
+            <span class="price-value">{price.fromLabel}</span>
+            <span class="price-label">{t("general.perPerson")}</span>
+          </>
         ) : (
           <>
             <span class="price-label">{t("general.fromPrice")}</span>
-            <span class="price-value">US$ {fromPrice}</span>
+            <span class="price-value">{price.fromLabel}</span>
           </>
         )}
       </div>
-      
+
       <a
         href={`/${lang}/${itemRoute}/${item.slug}/`}
-        class={`btn btn-sm ${isCustomItem ? 'btn-primary' : 'btn-outline-primary'}`}
+        class="btn btn-sm btn-ghost-secondary tour-card-cta"
       >
         {item.ctaText || itemButtonLabel}
         {!item.ctaText && (
@@ -262,17 +276,39 @@ const itemButtonLabel = section === "experiences"
     color: var(--color-text-muted);
   }
 
+  /* Preço sem âmbar — âmbar é só ação de reserva; cards nunca pintam âmbar. */
   .price-value {
     font-size: var(--font-size-h5);
     font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
+    color: var(--color-text);
   }
 
   .price-custom {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-style: italic;
+  }
+
+  /* Badge "ingressos inclusos" — sinal anti-marketplace, azul estrutural (não âmbar). */
+  .tickets-badge {
+    position: absolute;
+    bottom: var(--space-md);
+    left: var(--space-md);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--color-primary) 92%, black);
+    color: var(--color-on-blue);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .tickets-badge svg {
+    flex-shrink: 0;
   }
 
   .tour-card-footer .btn {
