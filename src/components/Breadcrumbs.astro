@@ -9,6 +9,9 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+// trailingSlash:'always' — garante barra final em cada nível (link interno sem redirect).
+const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
 ---
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -18,7 +21,7 @@ const { items } = Astro.props;
         <li class="breadcrumb-item">
           {index < items.length - 1 ? (
             <>
-              <a href={item.url} class="breadcrumb-link">
+              <a href={withSlash(item.url)} class="breadcrumb-link">
                 {item.name}
               </a>
               <svg
@@ -145,12 +148,12 @@ const { items } = Astro.props;
   }
 
   
-  :global(.dark) .breadcrumbs {
+  :global([data-theme="dark"]) .breadcrumbs {
     --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-soft) 95%, transparent);
     border-bottom-color: color-mix(in srgb, white 10%, transparent);
   }
 
-  :global(.dark) .breadcrumbs.scrolled {
+  :global([data-theme="dark"]) .breadcrumbs.scrolled {
     box-shadow: var(--breadcrumbs-shadow-dark);
   }
 </style>
