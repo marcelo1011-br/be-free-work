@@ -3,8 +3,10 @@
 
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getHreflangPaths } from "../i18n/hreflang.js";
 import { languages } from "../i18n/ui.js";
 import { routes } from "../i18n/routes.js";
+import Button from "./Button.astro";
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -15,11 +17,14 @@ const currentPath = Astro.url.pathname;
 
 const r = routes[lang];
 
+// Equivalência de slug entre idiomas — MESMA fonte do hreflang do <head>.
+const langPaths = getHreflangPaths(currentPath);
 
 const navLinks = [
   { href: `/${lang}${r.home}`, label: t("nav.home") },
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
   { href: `/${lang}${r.experiences}`, label: t("nav.experiences") },
+  { href: `/${lang}${r.allIncluded}`, label: t("nav.allIncluded") },
   { href: `/${lang}${r.gallery}`, label: t("nav.gallery") },
   { href: `/${lang}${r.blog}`, label: t("nav.blog") },
   { href: `/${lang}${r.about}`, label: t("nav.about") },
@@ -112,7 +117,7 @@ function isActive(href: string): boolean {
             {
               Object.entries(languages).map(([code, name]) => (
                 <a
-                  href={`/${code}/`}
+                  href={langPaths[code]}
                   class={`lang-option ${code === lang ? "active" : ""}`}
                   data-lang={code}
                 >
@@ -125,9 +130,9 @@ function isActive(href: string): boolean {
         </div>
 
         
-        <button type="button" class="btn btn-primary btn-sm navbar-cta" data-tour-select-trigger>
-          {t("nav.book")}
-        </button>
+        <div class="navbar-cta">
+          <Button variant="book" size="sm" data-tour-select-trigger>{t("nav.book")}</Button>
+        </div>
 
         
         <button
@@ -182,10 +187,8 @@ function isActive(href: string): boolean {
             </li>
           ))
         }
-        <li>
-          <button type="button" class="mobile-nav-link mobile-nav-cta" data-tour-select-trigger>
-            {t("nav.book")}
-          </button>
+        <li class="mobile-cta">
+          <Button variant="book" class="btn-block" data-tour-select-trigger>{t("nav.book")}</Button>
         </li>
       </ul>
     </div>
@@ -417,9 +420,11 @@ function isActive(href: string): boolean {
     background-color: var(--navbar-hover-bg);
   }
 
+  /* Idioma ativo: indicador neutro (azul/ink), NÃO âmbar — âmbar é só reserva. */
   .lang-option.active {
-    background: var(--gradient-accent);
-    color: var(--color-text-inverse);
+    background: color-mix(in srgb, var(--color-primary) 14%, transparent);
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
   }
 
   .lang-code {
