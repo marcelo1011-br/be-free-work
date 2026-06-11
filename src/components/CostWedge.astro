@@ -1,0 +1,196 @@
+---
+/**
+ * CostWedge — comparativo POR PESSOA, anti-marketplace (BIBLIOTECA p/ passo 4).
+ *
+ * Nós (tudo incluído: guia + transporte + INGRESSOS + sem fila) vs. "marketplace típico"
+ * (base + ingressos à parte + filas). Comparador rotulado "marketplace típico" — NUNCA
+ * nomeia concorrente. O peso do ingresso varia POR TOUR.
+ *
+ * NÚMEROS são insumo do passo 4 (`tour.costWedge = { ourTotal, marketplaceBase, ticketDelta }`).
+ * Se faltar dado → degrada para comparativo QUALITATIVO (sem número), marcado como ilustrativo.
+ * NUNCA fabrica número que pareça autoritativo. CTA NÃO âmbar (ghost/link).
+ */
+import { useTranslations } from "../i18n/utils";
+import { formatMoney } from "../utils/priceHelper.js";
+import { routes } from "../i18n/routes.js";
+
+const {
+  lang = "en",
+  wedge = null,        // { ourTotal, marketplaceBase, ticketDelta } por pessoa — ou null
+  currency = "USD",
+  included = null,     // string[] opcional (passo 4); fallback abaixo
+  marketplaceExtras = null, // string[] opcional
+} = Astro.props;
+
+const t = useTranslations(lang);
+const r = routes[lang];
+
+const hasNumbers =
+  wedge &&
+  Number.isFinite(Number(wedge.ourTotal)) &&
+  Number.isFinite(Number(wedge.marketplaceBase));
+
+// Marketplace total estimado = base + ingressos à parte (delta). Só com dado real.
+const marketplaceTotal = hasNumbers
+  ? Number(wedge.marketplaceBase) + Number(wedge.ticketDelta ?? 0)
+  : null;
+
+const fallbackIncluded = {
+  en: ["Expert local guide", "Private transport", "All entrance tickets", "Skip-the-line access"],
+  es: ["Guía local experto", "Transporte privado", "Todas las entradas", "Acceso sin filas"],
+  "pt-br": ["Guia local especialista", "Transporte privativo", "Todos os ingressos", "Acesso sem fila"],
+};
+const fallbackExtras = {
+  en: ["Base price only", "Tickets bought separately", "Queues at each site", "Self-managed logistics"],
+  es: ["Solo precio base", "Entradas aparte", "Filas en cada lugar", "Logística por tu cuenta"],
+  "pt-br": ["Apenas preço base", "Ingressos à parte", "Filas em cada ponto", "Logística por sua conta"],
+};
+
+const usList = included ?? fallbackIncluded[lang] ?? fallbackIncluded.en;
+const themList = marketplaceExtras ?? fallbackExtras[lang] ?? fallbackExtras.en;
+---
+
+<section class="wedge" aria-label={t("wedge.title")}>
+  <div class="container">
+    <h2 class="wedge__title">{t("wedge.title")}</h2>
+
+    <div class="wedge__grid">
+      <article class="wedge__col wedge__col--us">
+        <h3 class="wedge__col-title">{t("wedge.usLabel")}</h3>
+        {hasNumbers && (
+          <p class="wedge__amount">
+            {formatMoney(Number(wedge.ourTotal), currency)}
+            <span class="wedge__per">{t("general.perPerson")}</span>
+          </p>
+        )}
+        <ul class="wedge__list wedge__list--in">
+          {usList.map((i) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              {i}
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      <article class="wedge__col wedge__col--them">
+        <h3 class="wedge__col-title">{t("wedge.marketLabel")}</h3>
+        {hasNumbers && marketplaceTotal !== null && (
+          <p class="wedge__amount wedge__amount--them">
+            {formatMoney(marketplaceTotal, currency)}
+            <span class="wedge__per">{t("general.perPerson")}</span>
+          </p>
+        )}
+        <ul class="wedge__list wedge__list--out">
+          {themList.map((i) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              {i}
+            </li>
+          ))}
+        </ul>
+      </article>
+    </div>
+
+    {!hasNumbers && <p class="wedge__note">{t("wedge.illustrative")}</p>}
+
+    <a href={`/${lang}${r.allIncluded}`} class="btn btn-ghost-secondary wedge__cta">
+      {t("wedge.cta")}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  .wedge {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-alt);
+  }
+  .wedge__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3);
+    color: var(--color-text);
+    text-align: center;
+    margin: 0 0 var(--space-l);
+  }
+  .wedge__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-m);
+    max-inline-size: 56rem;
+    margin-inline: auto;
+  }
+  .wedge__col {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-l);
+  }
+  .wedge__col--us {
+    border-color: color-mix(in srgb, var(--color-blue) 40%, transparent);
+  }
+  .wedge__col-title {
+    font-size: var(--text-0);
+    color: var(--color-text);
+    margin: 0 0 var(--space-s);
+  }
+  .wedge__amount {
+    font-family: var(--font-display);
+    font-size: var(--text-3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-blue);
+    margin: 0 0 var(--space-s);
+  }
+  .wedge__amount--them {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+    text-decoration-color: color-mix(in srgb, var(--color-text-muted) 50%, transparent);
+  }
+  .wedge__per {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;
+    color: var(--color-text-muted);
+    margin-inline-start: var(--space-3xs);
+  }
+  .wedge__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .wedge__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2xs);
+    font-size: var(--text-0);
+    color: var(--color-text);
+  }
+  .wedge__list svg { flex-shrink: 0; margin-block-start: 0.2em; }
+  .wedge__list--in svg { color: var(--color-blue); }
+  .wedge__list--out { color: var(--color-text-muted); }
+  .wedge__list--out li { color: var(--color-text-muted); }
+  .wedge__note {
+    text-align: center;
+    font-size: var(--text--1);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: var(--space-m) 0 0;
+  }
+  .wedge__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    margin: var(--space-l) auto 0;
+  }
+  .wedge .container { display: flex; flex-direction: column; }
+  .wedge__cta { align-self: center; }
+
+  @media (max-width: 600px) {
+    .wedge__grid { grid-template-columns: 1fr; }
+  }
+</style>
