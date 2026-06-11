@@ -1,0 +1,182 @@
+---
+/**
+ * QuoteForm — pedido de orçamento SEM preço (BIBLIOTECA p/ passo 4).
+ * Serve Búzios (basis=quote) E custom-tour (basis=custom). Vanilla, sem React.
+ *
+ * Estabelece a PLUMBING compartilhada de form (submit Formspree + loading/success/error)
+ * que o BookingForm vai reusar na sessão seguinte.
+ *
+ * Endpoint: PUBLIC_FORMSPREE_QUOTE está vazio → roteia pro 'booking' (mgoeyojz) com
+ * _subject "Quote — {subject}". FOLLOW-UP: provisionar endpoint dedicado de orçamento.
+ */
+import { useTranslations } from "../i18n/utils";
+import { getFormspreeEndpoint } from "../config/formspree.js";
+
+const {
+  lang = "en",
+  subject = "Custom",   // "Búzios" | "Custom" | string
+  tourTitle = "",
+} = Astro.props;
+
+const t = useTranslations(lang);
+const endpoint = getFormspreeEndpoint("booking"); // TODO: trocar p/ 'quote' quando provisionado
+const subjectLine = `Quote — ${subject}`;
+---
+
+<form
+  class="quote-form"
+  data-quote-form
+  action={endpoint}
+  method="POST"
+  data-sending={t("quote.sending")}
+  data-success={t("booking.success")}
+  data-error={t("booking.submitError")}
+>
+  <h2 class="quote-form__title">{t("quote.title")}</h2>
+  <p class="quote-form__subtitle">{t("quote.subtitle")}</p>
+
+  <input type="hidden" name="_subject" value={subjectLine} />
+  {tourTitle && <input type="hidden" name="tour" value={tourTitle} />}
+  <input type="hidden" name="quoteType" value={subject} />
+  <!-- honeypot anti-spam -->
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="quote-form__gotcha" aria-hidden="true" />
+
+  <div class="quote-form__field">
+    <label for="quote-name">{t("booking.name")}</label>
+    <input id="quote-name" name="name" type="text" required autocomplete="name" />
+  </div>
+
+  <div class="quote-form__field">
+    <label for="quote-email">{t("booking.email")}</label>
+    <input id="quote-email" name="email" type="email" required autocomplete="email" />
+  </div>
+
+  <div class="quote-form__field">
+    <label for="quote-phone">{t("booking.phone")}</label>
+    <input id="quote-phone" name="phone" type="tel" autocomplete="tel" placeholder={t("booking.phonePlaceholder")} />
+  </div>
+
+  <div class="quote-form__field">
+    <label for="quote-message">{t("booking.special")}</label>
+    <textarea id="quote-message" name="message" rows="4" placeholder={t("booking.specialPlaceholder")}></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg quote-form__submit" data-quote-submit>
+    <span data-quote-label>{t("booking.submit")}</span>
+  </button>
+
+  <p class="quote-form__status" data-quote-status role="status" aria-live="polite" hidden></p>
+</form>
+
+<style>
+  .quote-form {
+    display: grid;
+    gap: var(--space-s);
+    max-inline-size: 34rem;
+    padding: var(--space-l);
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .quote-form__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    color: var(--color-text);
+    margin: 0;
+  }
+  .quote-form__subtitle {
+    font-size: var(--text-0);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2xs);
+  }
+  .quote-form__field { display: grid; gap: var(--space-3xs); }
+  .quote-form__field label {
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+  .quote-form__field input,
+  .quote-form__field textarea {
+    min-block-size: 2.75rem;
+    padding: var(--space-2xs) var(--space-s);
+    font: inherit;
+    color: var(--color-text);
+    background: var(--color-base);
+    border: var(--border-width-regular) solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .quote-form__field textarea { min-block-size: 6rem; resize: vertical; }
+  .quote-form__field input:focus-visible,
+  .quote-form__field textarea:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-blue);
+    outline-offset: 1px;
+  }
+  .quote-form__gotcha {
+    position: absolute !important;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .quote-form__submit { justify-self: start; }
+  .quote-form__submit[aria-busy="true"] { opacity: 0.7; pointer-events: none; }
+  .quote-form__status {
+    font-size: var(--text-0);
+    margin: 0;
+    padding: var(--space-2xs) var(--space-s);
+    border-radius: var(--radius-md);
+  }
+  .quote-form__status[data-state="success"] {
+    color: var(--color-success);
+    background: color-mix(in srgb, var(--color-success) 12%, transparent);
+  }
+  .quote-form__status[data-state="error"] {
+    color: var(--color-error);
+    background: color-mix(in srgb, var(--color-error) 12%, transparent);
+  }
+</style>
+
+<script>
+  // Plumbing compartilhada de form (o BookingForm vai reusar este padrão).
+  document.querySelectorAll("[data-quote-form]").forEach((node) => {
+    const form = node as HTMLFormElement;
+    const submit = form.querySelector("[data-quote-submit]") as HTMLButtonElement | null;
+    const label = form.querySelector("[data-quote-label]");
+    const status = form.querySelector("[data-quote-status]") as HTMLElement | null;
+    const sendingText = form.getAttribute("data-sending") || "…";
+    const okText = form.getAttribute("data-success") || "";
+    const errText = form.getAttribute("data-error") || "";
+    const labelText = label?.textContent || "";
+
+    const setStatus = (state: string, msg: string) => {
+      if (!status) return;
+      status.hidden = false;
+      status.dataset.state = state;
+      status.textContent = msg;
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (submit) submit.setAttribute("aria-busy", "true");
+      if (label && sendingText !== "…") label.textContent = sendingText;
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          form.reset();
+          setStatus("success", okText || "✓");
+        } else {
+          setStatus("error", errText || "✕");
+        }
+      } catch (err) {
+        setStatus("error", errText || "✕");
+      } finally {
+        if (submit) submit.removeAttribute("aria-busy");
+        if (label) label.textContent = labelText;
+      }
+    });
+  });
+</script>
