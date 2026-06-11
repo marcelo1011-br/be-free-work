@@ -2,9 +2,9 @@
 /**
  * GroupSelector — seleção de grupo com preço AO VIVO (BIBLIOTECA p/ tour page, passo 4).
  *
- * Consome o price helper JÁ VERIFICADO: o passo 4 pré-computa `prices` (um item por tamanho
- * de grupo) via getPrice(tour, n, currency) e passa por prop. O componente NÃO recalcula —
- * só faz lookup no mapa embutido. Controles ≥44px.
+ * Consome o price helper JÁ VERIFICADO: recebe o `tour` por prop e GERA o price map no build
+ * via getPrice(tour, n, currency) — FONTE ÚNICA, sem cópia manual. O cliente só faz lookup.
+ * Controles ≥44px.
  *
  * ───────────────────────────────────────────────────────────────────────────
  * CONTRATO GroupSelector → BookingForm (sessão seguinte). Duas formas, mesmo shape:
@@ -17,26 +17,30 @@
  * ───────────────────────────────────────────────────────────────────────────
  */
 import { useTranslations } from "../i18n/utils";
+import { getPrice } from "../utils/priceHelper.js";
 
 const {
   lang = "en",
-  tourSlug = "",
+  tour,                 // objeto do tours.js — FONTE ÚNICA do preço (não passar mapa à mão)
   currency = "USD",
   min = 1,
   max = 12,
   initial = 2,
-  // prices: [{ size, groupTotal, perPerson }] — pré-computado pelo helper no passo 4
-  prices = [],
 } = Astro.props;
 
 const t = useTranslations(lang);
+const tourSlug = tour?.slug ?? "";
+
+// Price map gerado NO BUILD a partir do `tour` via getPrice — MESMA fonte do preço da página.
+// Sem segunda cópia: o mapa do cliente e o getPrice do servidor nunca divergem.
+const priceMap = {};
+for (let n = min; n <= max; n++) {
+  const p = getPrice(tour, n, currency);
+  priceMap[n] = { groupTotal: p.groupTotal, perPerson: p.perPerson };
+}
 
 const start = Math.min(Math.max(initial, min), max);
-const priceMap = Object.fromEntries(
-  (prices || []).map((p) => [Number(p.size), { groupTotal: p.groupTotal, perPerson: p.perPerson }])
-);
 const initialPrice = priceMap[start] ?? { groupTotal: null, perPerson: null };
-
 const symbol = currency === "BRL" ? "R$" : "$";
 const fmt = (n) => (Number.isFinite(Number(n)) ? `${symbol}${n}` : "—");
 ---
