@@ -4,8 +4,14 @@
 
 import { homeContent } from "../data/homeContent.js";
 
-const { lang } = Astro.props;
-const content = homeContent[lang].faq;
+// Reusável: templates podem passar title/subtitle/questions; sem props, usa a FAQ da home.
+const { lang, title, subtitle, questions } = Astro.props;
+const fallback = homeContent[lang].faq;
+const content = {
+  title: title ?? fallback.title,
+  subtitle: subtitle ?? fallback.subtitle,
+  questions: questions ?? fallback.questions,
+};
 ---
 
 <section class="faq">
@@ -18,8 +24,8 @@ const content = homeContent[lang].faq;
     <div class="faq-list">
       {
         content.questions.map((item) => (
-          <article class="faq-item" data-faq-id={item.id} data-expanded="false">
-            <button class="faq-question" aria-expanded="false">
+          <details class="faq-item" name="home-faq">
+            <summary class="faq-question">
               <span class="faq-question-text">{item.question}</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg
@@ -32,28 +38,15 @@ const content = homeContent[lang].faq;
                   stroke-linejoin="round"
                   viewBox="0 0 24 24"
                 >
-                  <line
-                    class="faq-icon-horizontal"
-                    x1="12"
-                    y1="5"
-                    x2="12"
-                    y2="19"
-                  />
-                  <line
-                    class="faq-icon-vertical"
-                    x1="5"
-                    y1="12"
-                    x2="19"
-                    y2="12"
-                  />
+                  <polyline points="6 9 12 15 18 9" />
                 </svg>
               </span>
-            </button>
+            </summary>
 
             <div class="faq-answer">
               <p class="faq-answer-content">{item.answer}</p>
             </div>
-          </article>
+          </details>
         ))
       }
     </div>
@@ -68,7 +61,7 @@ const content = homeContent[lang].faq;
       </p>
       <a
         href="https://wa.me/5521979271637"
-        class="btn btn-primary btn-lg faq-whatsapp-btn"
+        class="btn btn-outline-secondary btn-lg faq-whatsapp-btn"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -132,20 +125,13 @@ const content = homeContent[lang].faq;
     box-shadow: var(--glass-shadow);
     overflow: hidden;
     transition: box-shadow var(--faq-transition);
-    display: grid;
-    grid-template-rows: auto 0fr;
-    transition: grid-template-rows var(--faq-transition);
   }
 
   .faq-item:hover {
     box-shadow: var(--faq-shadow-hover);
   }
 
-  
-  .faq-item[data-expanded="true"] {
-    grid-template-rows: auto 1fr;
-  }
-
+  /* <summary> nativo: sem marcador, alvo de toque >=44px. */
   .faq-question {
     width: 100%;
     display: flex;
@@ -153,11 +139,17 @@ const content = homeContent[lang].faq;
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-lg);
+    min-block-size: 2.75rem;
     text-align: left;
     background: none;
     border: none;
     cursor: pointer;
+    list-style: none;
     transition: background-color var(--faq-transition-fast);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
   }
 
   .faq-question:hover {
@@ -165,7 +157,7 @@ const content = homeContent[lang].faq;
   }
 
   .faq-question:focus-visible {
-    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline: var(--focus-outline-width) solid var(--color-primary);
     outline-offset: var(--faq-focus-offset);
   }
 
@@ -176,39 +168,27 @@ const content = homeContent[lang].faq;
     line-height: var(--line-height-tight);
   }
 
+  /* Ícone chevron em azul estrutural (sem âmbar); gira no estado [open] nativo. */
   .faq-icon {
     flex-shrink: 0;
     width: var(--faq-icon-size);
     height: var(--faq-icon-size);
-    color: var(--color-accent);
+    color: var(--color-primary);
     transition: transform var(--faq-transition);
   }
 
-  
-  .faq-icon-horizontal {
-    transition: transform var(--faq-transition);
-  }
-
-  .faq-question[aria-expanded="true"] .faq-icon-horizontal {
-    transform: rotate(90deg);
-    opacity: 0;
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
   }
 
   .faq-answer {
-    overflow: hidden;
-    transition: padding var(--faq-transition);
-    padding: 0 var(--space-lg);
+    padding: 0 var(--space-lg) var(--space-lg);
   }
 
   .faq-answer-content {
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
     margin: 0;
-  }
-
-  
-  .faq-item[data-expanded="true"] .faq-answer {
-    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
   }
 
   
@@ -255,54 +235,12 @@ const content = homeContent[lang].faq;
     }
 
     .faq-answer {
-      padding: 0 var(--space-md);
+      padding: 0 var(--space-md) var(--space-md);
     }
 
     .faq-answer-content {
       font-size: var(--font-size-small);
     }
-
-    .faq-item[data-expanded="true"] .faq-answer {
-      padding: var(--space-md);
-    }
   }
 </style>
 
-<script>
-  
-
-  
-  const faqButtons = document.querySelectorAll(".faq-question");
-
-  
-  faqButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      
-      const faqItem = button.closest(".faq-item") as HTMLElement;
-
-      
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-      
-      if (!isExpanded) {
-        
-        faqButtons.forEach((otherButton) => {
-          const otherItem = otherButton.closest(".faq-item") as HTMLElement;
-          otherButton.setAttribute("aria-expanded", "false");
-          if (otherItem) otherItem.setAttribute("data-expanded", "false");
-        });
-      }
-
-      
-      if (isExpanded) {
-        
-        button.setAttribute("aria-expanded", "false");
-        if (faqItem) faqItem.setAttribute("data-expanded", "false");
-      } else {
-        
-        button.setAttribute("aria-expanded", "true");
-        if (faqItem) faqItem.setAttribute("data-expanded", "true");
-      }
-    });
-  });
-</script>

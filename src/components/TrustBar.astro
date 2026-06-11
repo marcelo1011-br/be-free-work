@@ -2,10 +2,25 @@
 
 
 
-import { homeContent } from "../data/homeContent.js";
+import { useTranslations } from "../i18n/utils";
+import { aggregateRating } from "../data/siteData.js";
 
 const { lang } = Astro.props;
-const { items } = homeContent[lang].trustBar;
+const t = useTranslations(lang);
+
+// Rating vem da FONTE ÚNICA (siteData) — a MESMA do aggregateRating no schema.
+// Número visível e dado estruturado nunca divergem.
+const ratingDisplay =
+  lang === "en"
+    ? aggregateRating.ratingValue
+    : aggregateRating.ratingValue.replace(".", ",");
+
+const items = [
+  { icon: "star", text: `${ratingDisplay} / 5` },
+  { icon: "reviews", text: t("trust.reviews").replace("{n}", aggregateRating.reviewCount) },
+  { icon: "platforms", text: t("trust.platforms") },
+  { icon: "calendar", text: t("trust.since") },
+];
 
 
 const icons = {
@@ -45,10 +60,11 @@ const icons = {
     white-space: nowrap;
   }
 
+  /* Ícones em azul estrutural — NÃO âmbar (âmbar é só ação de reserva). */
   .trust-bar__icon {
     display: flex;
     align-items: center;
-    color: var(--color-accent);
+    color: var(--color-primary);
     flex-shrink: 0;
   }
 

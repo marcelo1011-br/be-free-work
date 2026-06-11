@@ -14,23 +14,26 @@ const currentYear = new Date().getFullYear();
 const r = routes[lang];
 
 
-const navLinks = [
-  { href: `/${lang}${r.home}`, label: t("nav.home") },
+// Todos os alvos saem de routes.js (fonte única). Labels via ui.js (3 idiomas).
+const toursLinks = [
   { href: `/${lang}${r.privateTours}`, label: t("nav.privateTours") },
   { href: `/${lang}${r.experiences}`, label: t("nav.experiences") },
   { href: `/${lang}${r.gallery}`, label: t("nav.gallery") },
-  { href: `/${lang}${r.blog}`, label: t("nav.blog") },
+];
+
+const companyLinks = [
   { href: `/${lang}${r.about}`, label: t("nav.about") },
+  { href: `/${lang}${r.blog}`, label: t("nav.blog") },
   { href: `/${lang}${r.contact}`, label: t("nav.contact") },
-  {
-    href: `/${lang}${r.paymentPolicy}`,
-    label:
-      lang === "en"
-        ? "Payment & Cancellation Policy"
-        : lang === "es"
-          ? "Política de Pago y Cancelación"
-          : "Política de Pagamento e Cancelamento",
-  },
+  { href: `/${lang}${r.paymentPolicy}`, label: t("footer.paymentPolicy") },
+];
+
+// Pillars de slug aberto (routes.js // TODO) — podem 404ar até os passos 3-4.
+const planLinks = [
+  { href: `/${lang}${r.allIncluded}`, label: t("nav.allIncluded") },
+  { href: `/${lang}${r.dayTrips}`, label: t("footer.dayTrips") },
+  { href: `/${lang}${r.privateGuide}`, label: t("footer.privateGuide") },
+  { href: `/${lang}${r.halfDay}`, label: t("footer.halfDay") },
 ];
 ---
 
@@ -58,21 +61,41 @@ const navLinks = [
           class="tripadvisor-link"
         >
           <img src="/images/tripadvisor-logo.png" alt="TripAdvisor" class="tripadvisor-logo" />
-          <span>Check Our Reviews</span>
+          <span>{t("footer.reviewUs")}</span>
         </a>
       </div>
 
       
       <div class="footer-col">
-        <h3 class="footer-title">{t("footer.links")}</h3>
+        <h3 class="footer-title">{t("footer.colTours")}</h3>
         <ul class="footer-links">
-          {
-            navLinks.map((link) => (
-              <li>
-                <a href={link.href}>{link.label}</a>
-              </li>
-            ))
-          }
+          {toursLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">{t("footer.colCompany")}</h3>
+        <ul class="footer-links">
+          {companyLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">{t("footer.colPlan")}</h3>
+        <ul class="footer-links">
+          {planLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
         </ul>
       </div>
 
