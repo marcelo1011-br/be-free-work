@@ -1,0 +1,210 @@
+---
+/**
+ * HeroBlock — herói full-bleed variant-driven (BIBLIOTECA p/ passo 4).
+ * NÃO é o herói da home (Hero.astro) nem o de páginas estáticas (HeroPages.astro).
+ *
+ * variant:
+ *   product   → âncora "from" (price helper) + Book âmbar (abre o modal EXISTENTE via data-booking-trigger)
+ *   hub       → título + 1 CTA (prop cta)
+ *   editorial → manchete + CTA suave (ghost)
+ *   article   → header + data "atualizado" visível (updatedDate)
+ *   quote     → badge "sob consulta" + CTA orçamento = SLOT ÂMBAR (Búzios, decidido)
+ *
+ * DISCIPLINA DO ÂMBAR: âmbar só no Book (product) e no orçamento (quote). hub/editorial = CTA ghost/suave.
+ * Conteúdo via props (objeto normalizado pelo adapter do passo 4); CTAs custom via <slot name="actions" />.
+ */
+import { useTranslations } from "../i18n/utils";
+import Button from "./Button.astro";
+
+const {
+  variant = "hub",
+  lang = "en",
+  kicker,
+  title,
+  subtitle,
+  image,
+  imageAlt = "",
+  price,            // resultado do priceHelper (product): { fromLabel, fromGroupMax, basis }
+  cta,              // { label, href, variant?: 'ghost'|'outline'|'book' }
+  updatedDate,      // ISO string (article)
+} = Astro.props;
+
+const t = useTranslations(lang);
+const hasCustomActions = Astro.slots.has("actions");
+
+const fromGroupHint =
+  price && price.fromGroupMax && price.fromGroupMax > 1 ? price.fromGroupMax : null;
+---
+
+<section class={`hero-block hero-block--${variant}`} data-variant={variant}>
+  {image && (
+    <div class="hero-block__media">
+      <img src={image} alt={imageAlt} loading="eager" decoding="async" />
+      <div class="hero-block__scrim" aria-hidden="true"></div>
+    </div>
+  )}
+
+  <div class="container hero-block__inner">
+    {kicker && <p class="hero-block__kicker">{kicker}</p>}
+
+    {variant === "quote" && (
+      <span class="hero-block__badge">{t("general.onRequest")}</span>
+    )}
+
+    <h1 class="hero-block__title">{title}</h1>
+
+    {subtitle && <p class="hero-block__subtitle measure">{subtitle}</p>}
+
+    {variant === "article" && updatedDate && (
+      <p class="hero-block__date">
+        {t("hero.updated")} <time datetime={updatedDate}>{updatedDate}</time>
+      </p>
+    )}
+
+    {variant === "product" && price && price.basis !== "custom" && price.basis !== "quote" && (
+      <p class="hero-block__price">
+        <span class="hero-block__price-label">{t("general.fromPrice")}</span>
+        <span class="hero-block__price-value">{price.fromLabel}</span>
+        {price.basis === "perPerson"
+          ? <span class="hero-block__price-base">{t("general.perPerson")}</span>
+          : fromGroupHint && <span class="hero-block__price-base">· {t("general.fromPrice")} {fromGroupHint}</span>}
+      </p>
+    )}
+
+    <div class="hero-block__actions">
+      {hasCustomActions ? (
+        <slot name="actions" />
+      ) : cta ? (
+        variant === "product" ? (
+          <Button variant="book" size="lg" data-booking-trigger>{cta.label}</Button>
+        ) : variant === "quote" ? (
+          <Button variant="book" size="lg" href={cta.href}>{cta.label}</Button>
+        ) : (
+          <Button variant={cta.variant ?? (variant === "hub" ? "outline" : "ghost")} size="lg" href={cta.href}>
+            {cta.label}
+          </Button>
+        )
+      ) : null}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-block {
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-block-size: clamp(22rem, 60vh, 38rem);
+    padding-block: var(--space-3xl) var(--space-2xl);
+    overflow: hidden;
+    isolation: isolate;
+    color: var(--color-on-blue);
+  }
+
+  /* Full-bleed: a foto do Rio carrega a cor; scrim garante legibilidade do texto. */
+  .hero-block__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  .hero-block__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-block__scrim {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+  }
+
+  /* Sem mídia (editorial/hub sem foto): fundo estrutural azul. */
+  .hero-block:not(:has(.hero-block__media)) {
+    background: var(--color-blue);
+  }
+
+  .hero-block__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .hero-block__kicker {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    color: color-mix(in srgb, var(--color-on-blue) 85%, transparent);
+    margin: 0;
+  }
+
+  .hero-block__badge {
+    align-self: start;
+    padding: var(--space-3xs) var(--space-s);
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--color-on-blue) 16%, transparent);
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 30%, transparent);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .hero-block__title {
+    font-family: var(--font-display);
+    font-size: var(--text-5);
+    line-height: var(--line-tight);
+    color: var(--color-on-blue);
+    margin: 0;
+    max-inline-size: 18ch;
+  }
+
+  .hero-block__subtitle {
+    font-size: var(--text-1);
+    line-height: var(--line-snug);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    margin: 0;
+  }
+
+  .hero-block__date {
+    font-size: var(--text--1);
+    color: color-mix(in srgb, var(--color-on-blue) 80%, transparent);
+    margin: 0;
+  }
+
+  .hero-block__price {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-2xs);
+    margin: 0;
+  }
+  .hero-block__price-label {
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: color-mix(in srgb, var(--color-on-blue) 80%, transparent);
+  }
+  .hero-block__price-value {
+    font-family: var(--font-display);
+    font-size: var(--text-3);
+    font-weight: var(--font-weight-bold);
+  }
+  .hero-block__price-base {
+    font-size: var(--text--1);
+    color: color-mix(in srgb, var(--color-on-blue) 80%, transparent);
+  }
+
+  .hero-block__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-block-start: var(--space-xs);
+  }
+
+  @media (max-width: 600px) {
+    .hero-block {
+      min-block-size: clamp(20rem, 70vh, 30rem);
+    }
+    .hero-block__title {
+      font-size: var(--text-4);
+    }
+  }
+</style>

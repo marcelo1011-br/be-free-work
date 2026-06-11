@@ -1,0 +1,102 @@
+---
+/**
+ * RelatedItems — cross-link tours/posts (BIBLIOTECA p/ passo 4).
+ * blog→tour, tour→relacionados. Localizado. "→" em link/ghost (NÃO âmbar).
+ * Itens via prop normalizada (passo 4 monta a partir de relatedTours/relatedPosts).
+ */
+import { useTranslations } from "../i18n/utils";
+
+const {
+  lang = "en",
+  title,
+  items = [], // [{ title, href, image?, kind?: 'tour'|'post', meta? }]
+} = Astro.props;
+
+const t = useTranslations(lang);
+const heading = title ?? t("related.title");
+const list = (items || []).filter((i) => i && i.href && i.title);
+---
+
+{list.length > 0 && (
+  <section class="related" aria-label={heading}>
+    <div class="container">
+      <h2 class="related__title">{heading}</h2>
+      <ul class="related__grid">
+        {list.map((item) => (
+          <li class="related__item">
+            <a href={item.href} class="related__link">
+              {item.image && (
+                <span class="related__media">
+                  <img src={item.image} alt="" loading="lazy" decoding="async" />
+                </span>
+              )}
+              <span class="related__body">
+                {item.meta && <span class="related__meta">{item.meta}</span>}
+                <span class="related__name">{item.title}</span>
+                <span class="related__arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .related { padding: var(--space-2xl) 0; }
+  .related__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    color: var(--color-text);
+    margin: 0 0 var(--space-l);
+  }
+  .related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-m);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .related__link {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color var(--transition-duration-normal) var(--transition-easing-default),
+      transform var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  .related__link:hover {
+    border-color: color-mix(in srgb, var(--color-blue) 50%, transparent);
+    transform: translateY(-2px);
+  }
+  .related__media { aspect-ratio: 16 / 10; overflow: hidden; }
+  .related__media img { width: 100%; height: 100%; object-fit: cover; }
+  .related__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+    padding: var(--space-m);
+    min-block-size: 2.75rem;
+  }
+  .related__meta {
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+  }
+  .related__name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    line-height: var(--line-snug);
+  }
+  .related__arrow { color: var(--color-blue); margin-block-start: var(--space-2xs); }
+</style>

@@ -1,0 +1,198 @@
+---
+/**
+ * GroupSelector — seleção de grupo com preço AO VIVO (BIBLIOTECA p/ tour page, passo 4).
+ *
+ * Consome o price helper JÁ VERIFICADO: recebe o `tour` por prop e GERA o price map no build
+ * via getPrice(tour, n, currency) — FONTE ÚNICA, sem cópia manual. O cliente só faz lookup.
+ * Controles ≥44px.
+ *
+ * ───────────────────────────────────────────────────────────────────────────
+ * CONTRATO GroupSelector → BookingForm (sessão seguinte). Duas formas, mesmo shape:
+ *   1) Campos hidden dentro de [data-group-selector] (form-friendly):
+ *        name="groupSize"  name="groupTotal"  name="currency"  name="tourSlug"
+ *   2) CustomEvent em document: "bft:group-change"
+ *        detail = { tourSlug, groupSize, groupTotal, currency }
+ * O BookingForm lê os hidden (no submit) OU escuta o evento (pra refletir o total ao vivo).
+ * O GroupSelector fecha COMPLETO contra esse contrato, sem depender do BookingForm existir.
+ * ───────────────────────────────────────────────────────────────────────────
+ */
+import { useTranslations } from "../i18n/utils";
+import { getPrice } from "../utils/priceHelper.js";
+
+const {
+  lang = "en",
+  tour,                 // objeto do tours.js — FONTE ÚNICA do preço (não passar mapa à mão)
+  currency = "USD",
+  min = 1,
+  max = 12,
+  initial = 2,
+} = Astro.props;
+
+const t = useTranslations(lang);
+const tourSlug = tour?.slug ?? "";
+
+// Price map gerado NO BUILD a partir do `tour` via getPrice — MESMA fonte do preço da página.
+// Sem segunda cópia: o mapa do cliente e o getPrice do servidor nunca divergem.
+const priceMap = {};
+for (let n = min; n <= max; n++) {
+  const p = getPrice(tour, n, currency);
+  priceMap[n] = { groupTotal: p.groupTotal, perPerson: p.perPerson };
+}
+
+const start = Math.min(Math.max(initial, min), max);
+const initialPrice = priceMap[start] ?? { groupTotal: null, perPerson: null };
+const symbol = currency === "BRL" ? "R$" : "$";
+const fmt = (n) => (Number.isFinite(Number(n)) ? `${symbol}${n}` : "—");
+---
+
+<div
+  class="group-selector"
+  data-group-selector
+  data-tour-slug={tourSlug}
+  data-currency={currency}
+  data-min={min}
+  data-max={max}
+  data-symbol={symbol}
+  data-prices={JSON.stringify(priceMap)}
+>
+  <label class="group-selector__label" id={`gs-label-${tourSlug}`}>{t("group.label")}</label>
+
+  <div class="group-selector__stepper" role="group" aria-labelledby={`gs-label-${tourSlug}`}>
+    <button type="button" class="group-selector__btn" data-gs-dec aria-label={t("group.decrease")}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+    <output class="group-selector__value" data-gs-value aria-live="polite">{start}</output>
+    <button type="button" class="group-selector__btn" data-gs-inc aria-label={t("group.increase")}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+  </div>
+
+  <div class="group-selector__price">
+    <span class="group-selector__total" data-gs-total>{fmt(initialPrice.groupTotal)}</span>
+    <span class="group-selector__per">
+      <span data-gs-per>{fmt(initialPrice.perPerson)}</span> {t("general.perPerson")}
+    </span>
+    <span class="group-selector__total-label">{t("group.total")}</span>
+  </div>
+
+  <!-- Contrato p/ o BookingForm (hidden inputs) -->
+  <input type="hidden" name="tourSlug" value={tourSlug} />
+  <input type="hidden" name="currency" value={currency} />
+  <input type="hidden" name="groupSize" data-gs-input-size value={start} />
+  <input type="hidden" name="groupTotal" data-gs-input-total value={initialPrice.groupTotal ?? ""} />
+</div>
+
+<style>
+  .group-selector {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-m);
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .group-selector__label {
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+  .group-selector__stepper {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-s);
+    width: fit-content;
+  }
+  .group-selector__btn {
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-width-regular) solid var(--color-blue);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: background-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  .group-selector__btn:hover { background: color-mix(in srgb, var(--color-blue) 12%, transparent); }
+  .group-selector__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .group-selector__value {
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    min-inline-size: 2ch;
+    text-align: center;
+  }
+  .group-selector__price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2xs) var(--space-s);
+  }
+  .group-selector__total {
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+  }
+  .group-selector__per { font-size: var(--text--1); color: var(--color-text-muted); }
+  .group-selector__total-label {
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+    flex-basis: 100%;
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-group-selector]").forEach((root) => {
+    const el = root as HTMLElement;
+    const min = Number(el.dataset.min) || 1;
+    const max = Number(el.dataset.max) || 12;
+    const symbol = el.dataset.symbol || "$";
+    const tourSlug = el.dataset.tourSlug || "";
+    const currency = el.dataset.currency || "USD";
+    let prices: Record<string, { groupTotal: number | null; perPerson: number | null }> = {};
+    try { prices = JSON.parse(el.dataset.prices || "{}"); } catch (e) {}
+
+    const valueEl = el.querySelector("[data-gs-value]");
+    const totalEl = el.querySelector("[data-gs-total]");
+    const perEl = el.querySelector("[data-gs-per]");
+    const inputSize = el.querySelector("[data-gs-input-size]") as HTMLInputElement | null;
+    const inputTotal = el.querySelector("[data-gs-input-total]") as HTMLInputElement | null;
+    const decBtn = el.querySelector("[data-gs-dec]") as HTMLButtonElement | null;
+    const incBtn = el.querySelector("[data-gs-inc]") as HTMLButtonElement | null;
+
+    const fmt = (n: number | null) =>
+      Number.isFinite(Number(n)) ? `${symbol}${n}` : "—";
+
+    let size = Number(valueEl?.textContent) || min;
+
+    const render = () => {
+      const p = prices[String(size)] || { groupTotal: null, perPerson: null };
+      if (valueEl) valueEl.textContent = String(size);
+      if (totalEl) totalEl.textContent = fmt(p.groupTotal);
+      if (perEl) perEl.textContent = fmt(p.perPerson);
+      if (inputSize) inputSize.value = String(size);
+      if (inputTotal) inputTotal.value = p.groupTotal == null ? "" : String(p.groupTotal);
+      if (decBtn) decBtn.disabled = size <= min;
+      if (incBtn) incBtn.disabled = size >= max;
+
+      // CONTRATO: evento que o BookingForm vai escutar.
+      document.dispatchEvent(
+        new CustomEvent("bft:group-change", {
+          detail: { tourSlug, groupSize: size, groupTotal: p.groupTotal, currency },
+        })
+      );
+    };
+
+    decBtn?.addEventListener("click", () => { if (size > min) { size--; render(); } });
+    incBtn?.addEventListener("click", () => { if (size < max) { size++; render(); } });
+    render();
+  });
+</script>
