@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TourCard from "./TourCard.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
-import BookingModal from "./BookingModal.astro";
+import BookingForm from "./BookingForm.astro";
 import { useTranslations } from "../i18n/utils";
 
 const {
@@ -539,7 +539,7 @@ const breadcrumbItems = [
     </div>
   </section>
 
-  <BookingModal tour={item} lang={lang} />
+  <BookingForm tour={item} lang={lang} />
 </BaseLayout>
 
 <style>
