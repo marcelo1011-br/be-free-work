@@ -633,7 +633,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "All tickets included",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
@@ -681,7 +682,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "All tickets included",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
@@ -742,7 +744,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "All tickets included",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Dinner (optional stops available)",
@@ -791,7 +794,8 @@ const prose = {
         "Private transportation",
         "All tickets included",
         "Roxy dinner and show",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Drinks at Roxy",
@@ -849,7 +853,8 @@ const prose = {
         "Private transportation to/from pier",
         "Private speedboat rental",
         "Snorkeling equipment",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
@@ -903,7 +908,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "Museum entrance fees",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Lunch and drinks",
@@ -960,7 +966,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "All entrance fees",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
@@ -1016,7 +1023,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "Museum and fort entrance",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Lunch and drinks",
@@ -1074,7 +1082,8 @@ const prose = {
         "Private transportation",
         "English-speaking guide",
         "All museum entrance fees",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)"
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
@@ -1136,7 +1145,8 @@ const prose = {
         "Personalized itinerary planning consultation",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Local tips, recommendations, and insider access",
-        "Flexible scheduling and real-time adjustments"
+        "Flexible scheduling and real-time adjustments",
+        "Complimentary bottled water"
       ],
       "notIncluded": [
         "Attraction tickets (quoted separately based on your itinerary)",
@@ -1197,7 +1207,8 @@ const prose = {
         "Transporte privado",
         "Guía certificado en español",
         "Todas las entradas incluidas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1249,7 +1260,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Todas las entradas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1297,7 +1309,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Todas las entradas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1358,7 +1371,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Todas las entradas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Cena (paradas opcionales)",
@@ -1407,7 +1421,8 @@ const prose = {
         "Transporte privado",
         "Todas las entradas",
         "Cena y show en Roxy",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Bebidas en Roxy",
@@ -1465,7 +1480,8 @@ const prose = {
         "Transporte privado",
         "Alquiler de lancha privada",
         "Equipo de snorkel",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1519,7 +1535,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Entradas a museos",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Almuerzo y bebidas",
@@ -1576,7 +1593,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Todas las entradas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1632,7 +1650,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Entrada al museo y fuertes",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Almuerzo y bebidas",
@@ -1690,7 +1709,8 @@ const prose = {
         "Transporte privado",
         "Guía en español",
         "Todas las entradas",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1752,7 +1772,8 @@ const prose = {
         "Consulta de planificación de itinerario personalizado",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Tips locales, recomendaciones y acceso privilegiado",
-        "Horarios flexibles y ajustes en tiempo real"
+        "Horarios flexibles y ajustes en tiempo real",
+        "Agua mineral"
       ],
       "notIncluded": [
         "Entradas a atracciones (cotizadas por separado según tu itinerario)",
@@ -1813,7 +1834,8 @@ const prose = {
         "Transporte privado",
         "Guia certificado em português",
         "Todos os ingressos incluídos",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -1865,7 +1887,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Todos os ingressos",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -1913,7 +1936,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Todos os ingressos",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -1974,7 +1998,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Todos os ingressos",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Jantar (paradas opcionais)",
@@ -2023,7 +2048,8 @@ const prose = {
         "Transporte privado",
         "Todos os ingressos",
         "Jantar e show no Roxy",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Bebidas no Roxy",
@@ -2081,7 +2107,8 @@ const prose = {
         "Transporte privado",
         "Aluguel de lancha privada",
         "Equipamento de mergulho",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -2135,7 +2162,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Ingressos para museus",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Almoço e bebidas",
@@ -2192,7 +2220,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Todas as entradas",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -2248,7 +2277,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Entrada no museu e fortes",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Almoço e bebidas",
@@ -2306,7 +2336,8 @@ const prose = {
         "Transporte privado",
         "Guia em português",
         "Todas as entradas",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Água mineral"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -2368,7 +2399,8 @@ const prose = {
         "Consulta de planejamento de roteiro personalizado",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Dicas locais, recomendações e acesso privilegiado",
-        "Horários flexíveis e ajustes em tempo real"
+        "Horários flexíveis e ajustes em tempo real",
+        "Água mineral"
       ],
       "notIncluded": [
         "Ingressos para atrações (cotados separadamente conforme seu roteiro)",
