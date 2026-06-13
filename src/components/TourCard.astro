@@ -53,19 +53,8 @@ const altText = section === "experiences"
   ? `${item.title} - ${item.duration} experience in Rio de Janeiro`
   : `${item.title} - Private ${item.duration} tour in Rio de Janeiro`;
 
-const badgeStyles = {
-  "Most Popular": "badge-primary",
-  "Best Value": "badge-secondary",
-  "Hidden Gem": "badge-outline",
-  "Más Popular": "badge-primary",
-  "Mejor Valor": "badge-secondary",
-  "Joya Oculta": "badge-outline",
-  "Mais Popular": "badge-primary",
-  "Melhor Custo-Benefício": "badge-secondary",
-  "Joia Escondida": "badge-outline",
-};
-
-const badgeClass = badge ? badgeStyles[badge] || "badge-primary" : null;
+// Badge é rótulo secundário: tratamento neutro/quieto (ver .tour-badge no estilo).
+// Sem âmbar — âmbar é exclusivo de CTA de reserva (disciplina travada em tokens.css).
 const itemButtonLabel = section === "experiences"
   ? (t("general.viewExperience") || t("general.viewTour"))
   : t("general.viewTour");
@@ -84,7 +73,7 @@ const itemButtonLabel = section === "experiences"
     <div class="image-overlay"></div>
     
     {badge && (
-      <span class={`tour-badge badge ${badgeClass}`}>
+      <span class="tour-badge badge">
         {badge}
       </span>
     )}
@@ -204,11 +193,16 @@ const itemButtonLabel = section === "experiences"
   }
 
   
+  /* Rótulo secundário neutro — chip opaco (legível sobre a foto), sem âmbar.
+     Surface + texto ink + hairline: quieto, não compete com o CTA de reserva. */
   .tour-badge {
     position: absolute;
     top: var(--space-md);
     left: var(--space-md);
     z-index: 2;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: var(--border-width-hairline) solid var(--color-border);
   }
 
   
