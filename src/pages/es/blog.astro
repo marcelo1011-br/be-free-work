@@ -32,9 +32,7 @@ const seo = {
 
 
 
-const allPosts = await getCollection("blog", ({ id, slug }) => {
-  return (slug ?? id ?? "").startsWith(`${lang}/`);
-});
+const allPosts = await getCollection(`blog-${lang}`);
 
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()

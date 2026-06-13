@@ -49,9 +49,7 @@ export async function getStaticPaths() {
     return normalized.split("/").pop() || normalized;
   };
 
-  const allPosts = await getCollection("blog");
-
-  const langPosts = allPosts.filter((post) => getEntryId(post).startsWith(`${lang}/`));
+  const langPosts = await getCollection(`blog-${lang}`);
 
   return langPosts.map((post) => {
     const slug = getEntrySlug(post);
