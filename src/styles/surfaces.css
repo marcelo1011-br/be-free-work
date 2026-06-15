@@ -21,19 +21,11 @@
 
   --surface-fg: var(--color-text);
   --surface-fg-muted: var(--color-text-muted);
-  --surface-heading: var(--color-blue);   /* azul estrutural sobre bone claro (~7:1) */
+  /* Título display = cor de TEXTO do tema (ink), NUNCA o azul estrutural.
+     --color-text já é tema-aware: #15212E sobre bone (light) / #F3EEE3 sobre
+     navy (dark) → ~16:1 e ~15:1. O azul fica só como banda/superfície. */
+  --surface-heading: var(--color-text);
   --surface-rule: var(--color-hairline);
-}
-
-/* No dark o bone vira navy: o azul estrutural não tem contraste (~2.2:1).
-   Heading passa a ink claro (token existente) → ~15:1 no navy. */
-[data-theme="dark"] .surface-bone {
-  --surface-heading: var(--color-ink);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .surface-bone {
-    --surface-heading: var(--color-ink);
-  }
 }
 
 .surface-blue {

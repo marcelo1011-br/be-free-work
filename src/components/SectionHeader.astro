@@ -65,7 +65,9 @@ const showAside = Boolean(intro || linkHref || hasLinkSlot);
     /* fluido 320→1240: ~2rem → ~3.5rem */
     font-size: clamp(2rem, 1.28rem + 3.6vw, 3.5rem);
     line-height: var(--line-tight);
-    color: var(--surface-heading, var(--color-blue));
+    /* Fallback = token de TEXTO do tema (nunca acento/azul), p/ herdar correto
+       em qualquer reuso, mesmo fora de uma .surface-*. */
+    color: var(--surface-heading, var(--color-text));
     max-inline-size: 16ch;
     text-wrap: balance;
   }
