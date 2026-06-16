@@ -1,0 +1,255 @@
+---
+/**
+ * TourCardRich — B1c (primitivo de card da home, linguagem do mockup).
+ * Supersede o TourCard atual (o wire com dados reais é o B2). Primitivo isolado,
+ * props-driven, flexa à célula do grid (a assimetria do grid é decidida no B2).
+ *
+ * Estrutura (vertical): imagem (slot/placeholder) → eyebrow de localidade (caps,
+ * neutro) → título Newsreader <h3> → descrição curta → checklist de inclusões →
+ * rodapé ("A PARTIR DE" + preço + basis + "Ver passeio →").
+ *
+ * DISCIPLINA DO ÂMBAR: ZERO âmbar. Eyebrow, checkmarks e "Ver passeio →" neutros
+ * (ink/mutado). Sem --color-accent/gradient. (Absorve o fix de âmbar do TourCard.)
+ *
+ * Acessível como link: o card inteiro é <a>; "Ver passeio →" é a affordance
+ * visível; :focus-visible no card. Sem microdata hardcoded (schema é B2/B3).
+ *
+ * Props: href, image, imageAlt, eyebrow, title, description, inclusions[],
+ *        priceFrom, priceBasis (group|person|boat), currency, ctaLabel.
+ * Slot "image" sobrescreve o placeholder.
+ */
+const {
+  href = "#",
+  image,
+  imageAlt = "",
+  eyebrow,
+  title,
+  description,
+  inclusions = [],
+  priceFrom,
+  priceBasis = "group",
+  currency = "USD",
+  ctaLabel = "Ver passeio",
+} = Astro.props;
+
+const basisLabels = { group: "/grupo", person: "/pessoa", boat: "/barco" };
+const basisLabel = basisLabels[priceBasis] ?? "";
+const hasImageSlot = Astro.slots.has("image");
+---
+
+<a class="tcard" href={href}>
+  <div class="tcard__media">
+    {hasImageSlot ? (
+      <slot name="image" />
+    ) : image ? (
+      <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+    ) : (
+      <div class="tcard__ph" role="img" aria-label="Espaço reservado para a foto do passeio">
+        <span>Foto · placeholder</span>
+      </div>
+    )}
+  </div>
+
+  <div class="tcard__body">
+    {eyebrow && <p class="tcard__eyebrow">{eyebrow}</p>}
+    <h3 class="tcard__title">{title}</h3>
+    {description && <p class="tcard__desc">{description}</p>}
+
+    {inclusions.length > 0 && (
+      <ul class="tcard__list">
+        {inclusions.map((item) => (
+          <li class="tcard__item">
+            <svg class="tcard__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div class="tcard__footer">
+      <div class="tcard__price">
+        <span class="tcard__price-label">A partir de</span>
+        <span class="tcard__price-value">
+          <span class="tcard__price-cur">{currency}</span>{priceFrom}<span class="tcard__price-basis">{basisLabel}</span>
+        </span>
+      </div>
+      <span class="tcard__cta">
+        {ctaLabel}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .tcard {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default),
+      box-shadow var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  @media (hover: hover) {
+    .tcard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px color-mix(in srgb, var(--color-ink) 14%, transparent);
+    }
+    .tcard:hover .tcard__cta svg {
+      transform: translateX(0.2em);
+    }
+  }
+
+  .tcard:focus-visible {
+    outline: var(--border-width-strong) solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  /* Mídia / placeholder */
+  .tcard__media {
+    aspect-ratio: 4 / 3;
+    background: color-mix(in srgb, var(--color-text) 6%, var(--color-surface));
+  }
+  .tcard__media :global(img) {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+  .tcard__ph {
+    inline-size: 100%;
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-block-end: var(--border-width-hairline) dashed var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .tcard__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding: var(--space-m);
+    flex-grow: 1;
+  }
+
+  /* Eyebrow de localidade — caps, neutro mutado (nunca âmbar) */
+  .tcard__eyebrow {
+    margin: 0;
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+  }
+
+  /* Título serif, cor de texto do tema (ink light / bone dark) */
+  .tcard__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--text-2);
+    line-height: var(--line-snug);
+    color: var(--color-text);
+    text-wrap: balance;
+  }
+
+  .tcard__desc {
+    margin: 0;
+    font-size: var(--text-0);
+    line-height: var(--line-snug);
+    color: var(--color-text-muted);
+  }
+
+  /* Checklist de inclusões — checkmarks neutros (ink), itens mutados */
+  .tcard__list {
+    list-style: none;
+    margin: var(--space-2xs) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+  }
+  .tcard__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2xs);
+    font-size: var(--text--1);
+    line-height: var(--line-snug);
+    color: var(--color-text-muted);
+  }
+  .tcard__check {
+    flex-shrink: 0;
+    margin-block-start: 0.15em;
+    color: var(--color-text);
+  }
+
+  /* Rodapé: preço proeminente + "Ver passeio →" neutro, colado embaixo */
+  .tcard__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    margin-block-start: auto;
+    padding-block-start: var(--space-s);
+    border-block-start: var(--border-width-hairline) solid var(--color-border);
+  }
+  .tcard__price {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+  }
+  .tcard__price-label {
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+  }
+  .tcard__price-value {
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: 1;
+  }
+  .tcard__price-cur {
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    margin-inline-end: 0.25em;
+  }
+  .tcard__price-basis {
+    font-family: var(--font-body);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-muted);
+    margin-inline-start: 0.15em;
+  }
+
+  /* affordance neutra (ink), nunca âmbar */
+  .tcard__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+  .tcard__cta svg {
+    transition: transform var(--transition-duration-normal) var(--transition-easing-default);
+  }
+</style>
