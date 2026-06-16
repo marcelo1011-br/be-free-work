@@ -59,4 +59,27 @@ const Tag = href ? "a" : "button";
   .btn-cta.btn-sm {
     min-block-size: 2.75rem;
   }
+
+  /* variant="book" (âmbar de reserva): CHAPADO em repouso — EXATAMENTE o token de
+     acento do tema (#D9742A light / #E8843C dark), sem gradient e SEM glow/bloom.
+     `background:` (shorthand) zera o background-image do gradient herdado.
+     Elevação/glow só em :hover e :focus-visible.
+     Escopo: só botões renderizados por este Button (atributo de escopo do Astro)
+     — não toca .btn-primary legado. Estilo do Astro não é @layer → vence o .btn de
+     global.css, que está em @layer components. */
+  .btn-primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: none;
+  }
+  @media (hover: hover) {
+    .btn-primary:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-accent-md);
+    }
+  }
+  .btn-primary:focus-visible {
+    box-shadow: var(--shadow-accent-sm);
+  }
 </style>
