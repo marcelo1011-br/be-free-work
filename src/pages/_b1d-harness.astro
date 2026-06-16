@@ -1,0 +1,61 @@
+---
+/**
+ * HARNESS TEMPORÁRIA — B1d (NÃO é página de produção).
+ * Prefixo "_" → fora do build/sitemap. Preview via `astro dev` (cópia temporária).
+ * Um tour (Cristo + Pão de Açúcar). NÚMEROS PLACEHOLDER — reais entram no B2.
+ */
+import "../styles/tokens.css";
+import "../styles/global.css";
+import CostWedge from "../components/CostWedge.astro";
+
+const demo = {
+  tour: "Cristo & Pão de Açúcar",
+  title: "O preço honesto, lado a lado",
+  intro: "O mesmo dia no Rio, somado de duas formas. Veja o que entra — e o que aparece depois — antes de decidir.",
+  allInItems: [
+    "Guia local certificado (Cadastur)",
+    "Transporte privativo porta a porta",
+    "Ingresso do Cristo Redentor",
+    "Sem fila no Pão de Açúcar",
+    "Água mineral a bordo",
+  ],
+  allInTotal: "299",
+  marketplaceItems: [
+    { label: "Preço-base do passeio", kind: "base", price: "189" },
+    { label: "Ingresso do Cristo Redentor", price: "33" },
+    { label: "Bondinho do Pão de Açúcar", price: "44" },
+    { label: "Transfer ida e volta", price: "60" },
+    { label: "~2h de fila no bondinho", kind: "time" },
+  ],
+  marketplaceTotal: "326",
+  currency: "USD",
+  ctaLabel: "Reservar o tudo-incluso",
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B1d harness — CostWedge</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/plus-jakarta-sans.css" />
+    <style>
+      .ph-warn {
+        background: var(--color-base);
+        color: var(--color-text);
+        padding: var(--space-s) var(--gutter);
+        text-align: center;
+        font-size: var(--text--1);
+        font-weight: var(--font-weight-semibold);
+        border-block-end: var(--border-width-hairline) solid var(--color-hairline);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="ph-warn">⚠ Números placeholder — valores reais entram no B2 (operador + partes verificáveis).</p>
+    <CostWedge {...demo} />
+  </body>
+</html>

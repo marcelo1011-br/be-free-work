@@ -1,196 +1,317 @@
 ---
 /**
- * CostWedge — comparativo POR PESSOA, anti-marketplace (BIBLIOTECA p/ passo 4).
+ * CostWedge — B1d (primitivo anti-marketplace, sobre banda azul). Reusa SectionHeader (B1a).
+ * Supersede a versão biblioteca (passo 3, não usada). Per-tour, 100% data-driven.
+ * Primitivo isolado: o wire com números reais do operador é o B2.
  *
- * Nós (tudo incluído: guia + transporte + INGRESSOS + sem fila) vs. "marketplace típico"
- * (base + ingressos à parte + filas). Comparador rotulado "marketplace típico" — NUNCA
- * nomeia concorrente. O peso do ingresso varia POR TOUR.
+ * Banda azul #2A4F91 full-width, CONSTANTE em light E dark → texto bone. Contraste é
+ * ESTRUTURAL (painéis/hierarquia), não via âmbar. Selos, números e totais todos neutros/bone.
  *
- * NÚMEROS são insumo do passo 4 (`tour.costWedge = { ourTotal, marketplaceBase, ticketDelta }`).
- * Se faltar dado → degrada para comparativo QUALITATIVO (sem número), marcado como ilustrativo.
- * NUNCA fabrica número que pareça autoritativo. CTA NÃO âmbar (ghost/link).
+ * DISCIPLINA DO ÂMBAR: ZERO âmbar exceto o CTA (Button variant="book"). No B2 este é o
+ * âmbar #2 da home (nav + hero + wedge = teto 3; CTA final da home sai outline).
+ *
+ * Props (nada hardcodado):
+ *   tour, title, intro, allInItems[] (string label), allInTotal,
+ *   marketplaceItems[] ({label, price} | {label, kind:"base"} | {label, kind:"time"}),
+ *   marketplaceTotal, currency, ctaLabel, ctaHref, note.
  */
-import { useTranslations } from "../i18n/utils";
-import { formatMoney } from "../utils/priceHelper.js";
-import { routes } from "../i18n/routes.js";
+import SectionHeader from "./SectionHeader.astro";
+import Button from "./Button.astro";
 
 const {
-  lang = "en",
-  wedge = null,        // { ourTotal, marketplaceBase, ticketDelta } por pessoa — ou null
+  tour,
+  title = "O preço honesto, lado a lado",
+  intro,
+  allInItems = [],
+  allInTotal,
+  marketplaceItems = [],
+  marketplaceTotal,
   currency = "USD",
-  included = null,     // string[] opcional (passo 4); fallback abaixo
-  marketplaceExtras = null, // string[] opcional
+  ctaLabel = "Reservar o tudo-incluso",
+  ctaHref = "#",
+  note = "Preços ilustrativos, por pessoa, grupo de dois. Sua tour page mostra o detalhe exato antes de pagar.",
 } = Astro.props;
-
-const t = useTranslations(lang);
-const r = routes[lang];
-
-const hasNumbers =
-  wedge &&
-  Number.isFinite(Number(wedge.ourTotal)) &&
-  Number.isFinite(Number(wedge.marketplaceBase));
-
-// Marketplace total estimado = base + ingressos à parte (delta). Só com dado real.
-const marketplaceTotal = hasNumbers
-  ? Number(wedge.marketplaceBase) + Number(wedge.ticketDelta ?? 0)
-  : null;
-
-const fallbackIncluded = {
-  en: ["Expert local guide", "Private transport", "All entrance tickets", "Skip-the-line access"],
-  es: ["Guía local experto", "Transporte privado", "Todas las entradas", "Acceso sin filas"],
-  "pt-br": ["Guia local especialista", "Transporte privativo", "Todos os ingressos", "Acesso sem fila"],
-};
-const fallbackExtras = {
-  en: ["Base price only", "Tickets bought separately", "Queues at each site", "Self-managed logistics"],
-  es: ["Solo precio base", "Entradas aparte", "Filas en cada lugar", "Logística por tu cuenta"],
-  "pt-br": ["Apenas preço base", "Ingressos à parte", "Filas em cada ponto", "Logística por sua conta"],
-};
-
-const usList = included ?? fallbackIncluded[lang] ?? fallbackIncluded.en;
-const themList = marketplaceExtras ?? fallbackExtras[lang] ?? fallbackExtras.en;
 ---
 
-<section class="wedge" aria-label={t("wedge.title")}>
+<section class="cost-wedge" aria-label={tour ? `Comparativo de custo — ${tour}` : "Comparativo de custo"}>
   <div class="container">
-    <h2 class="wedge__title">{t("wedge.title")}</h2>
+    <SectionHeader title={title} intro={intro} />
 
-    <div class="wedge__grid">
-      <article class="wedge__col wedge__col--us">
-        <h3 class="wedge__col-title">{t("wedge.usLabel")}</h3>
-        {hasNumbers && (
-          <p class="wedge__amount">
-            {formatMoney(Number(wedge.ourTotal), currency)}
-            <span class="wedge__per">{t("general.perPerson")}</span>
-          </p>
-        )}
-        <ul class="wedge__list wedge__list--in">
-          {usList.map((i) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              {i}
+    <div class="cost-wedge__cols">
+      <!-- ESQ: TUDO INCLUSO (recomendada, painel mais sólido) -->
+      <div class="cw-panel cw-panel--allin">
+        <header class="cw-panel__head">
+          <h3 class="cw-panel__title">Com a Be Free — tudo incluso</h3>
+          <p class="cw-panel__lead">Uma conta, nada a somar.</p>
+          <p class="cw-panel__sub">Guia, transporte e ingressos num preço só — confirmado antes do passeio.</p>
+        </header>
+
+        <ul class="cw-list">
+          {allInItems.map((label) => (
+            <li class="cw-row cw-row--in">
+              <span class="cw-row__label">
+                <svg class="cw-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {label}
+              </span>
+              <span class="cw-tag cw-tag--in">incluso</span>
             </li>
           ))}
         </ul>
-      </article>
 
-      <article class="wedge__col wedge__col--them">
-        <h3 class="wedge__col-title">{t("wedge.marketLabel")}</h3>
-        {hasNumbers && marketplaceTotal !== null && (
-          <p class="wedge__amount wedge__amount--them">
-            {formatMoney(marketplaceTotal, currency)}
-            <span class="wedge__per">{t("general.perPerson")}</span>
-          </p>
-        )}
-        <ul class="wedge__list wedge__list--out">
-          {themList.map((i) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              {i}
+        <div class="cw-total">
+          <span class="cw-total__label">Total hoje</span>
+          <span class="cw-total__value cw-total__value--strong">
+            <span class="cw-cur">{currency}</span>{allInTotal}
+          </span>
+        </div>
+        <p class="cw-foot">Sem extras na hora. O que você vê é o que paga.</p>
+      </div>
+
+      <!-- DIR: PEÇA POR PEÇA / MARKETPLACE (painel outline, mais flat) -->
+      <div class="cw-panel cw-panel--mkt">
+        <header class="cw-panel__head">
+          <h3 class="cw-panel__title">Peça por peça — marketplace</h3>
+          <p class="cw-panel__lead">Um preço-base tentador…</p>
+          <p class="cw-panel__sub">…que vira outro quando você soma ingressos, extras e o tempo na fila.</p>
+        </header>
+
+        <ul class="cw-list">
+          {marketplaceItems.map((it) => (
+            <li class={`cw-row ${it.kind === "time" ? "cw-row--time" : it.kind === "base" ? "cw-row--base" : "cw-row--add"}`}>
+              <span class="cw-row__label">
+                {it.kind !== "base" && <span class="cw-plus" aria-hidden="true">+</span>}
+                {it.label}
+                {it.kind === "time" && <span class="cw-tag cw-tag--time">seu tempo</span>}
+                {(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">não incluso</span>}
+              </span>
+              <span class="cw-row__price">
+                {it.kind === "time" ? <span class="cw-time">—</span> : (<><span class="cw-cur">{currency}</span>{it.price}</>)}
+              </span>
             </li>
           ))}
         </ul>
-      </article>
+
+        <div class="cw-total">
+          <span class="cw-total__label">Total real</span>
+          <span class="cw-total__value cw-total__value--wary">
+            <span class="cw-cur">{currency}</span>{marketplaceTotal}
+          </span>
+        </div>
+        <p class="cw-foot">Antes de contar o tempo perdido entre filas e bilheterias.</p>
+      </div>
     </div>
 
-    {!hasNumbers && <p class="wedge__note">{t("wedge.illustrative")}</p>}
-
-    <a href={`/${lang}${r.allIncluded}`} class="btn btn-ghost-secondary wedge__cta">
-      {t("wedge.cta")}
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <div class="cost-wedge__cta">
+      <Button variant="book" size="lg" href={ctaHref}>
+        {ctaLabel}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </Button>
+      <p class="cost-wedge__note">{note}</p>
+    </div>
   </div>
 </section>
 
 <style>
-  .wedge {
-    padding: var(--space-2xl) 0;
-    background: var(--color-bg-alt);
+  /* Banda azul constante nos dois temas; expõe as vars de superfície p/ o SectionHeader. */
+  .cost-wedge {
+    background-color: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: var(--space-3xl);
+
+    --surface-fg: var(--color-on-blue);
+    --surface-fg-muted: color-mix(in srgb, var(--color-on-blue) 82%, transparent);
+    --surface-heading: var(--color-on-blue);
   }
-  .wedge__title {
-    font-family: var(--font-display);
-    font-size: var(--text-3);
-    color: var(--color-text);
-    text-align: center;
-    margin: 0 0 var(--space-l);
-  }
-  .wedge__grid {
+
+  .cost-wedge__cols {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-m);
-    max-inline-size: 56rem;
-    margin-inline: auto;
+    margin-block-start: var(--space-2xl);
+    align-items: stretch;
   }
-  .wedge__col {
-    background: var(--color-surface);
-    border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-l);
-  }
-  .wedge__col--us {
-    border-color: color-mix(in srgb, var(--color-blue) 40%, transparent);
-  }
-  .wedge__col-title {
-    font-size: var(--text-0);
-    color: var(--color-text);
-    margin: 0 0 var(--space-s);
-  }
-  .wedge__amount {
-    font-family: var(--font-display);
-    font-size: var(--text-3);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-blue);
-    margin: 0 0 var(--space-s);
-  }
-  .wedge__amount--them {
-    color: var(--color-text-muted);
-    text-decoration: line-through;
-    text-decoration-color: color-mix(in srgb, var(--color-text-muted) 50%, transparent);
-  }
-  .wedge__per {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: var(--text--1);
-    font-weight: var(--font-weight-regular);
-    text-decoration: none;
-    color: var(--color-text-muted);
-    margin-inline-start: var(--space-3xs);
-  }
-  .wedge__list {
+
+  .cw-panel {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xs);
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    gap: var(--space-s);
+    padding: clamp(1.25rem, 1rem + 1.6vw, 2.25rem);
+    border-radius: var(--radius-lg);
   }
-  .wedge__list li {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-2xs);
-    font-size: var(--text-0);
-    color: var(--color-text);
-  }
-  .wedge__list svg { flex-shrink: 0; margin-block-start: 0.2em; }
-  .wedge__list--in svg { color: var(--color-blue); }
-  .wedge__list--out { color: var(--color-text-muted); }
-  .wedge__list--out li { color: var(--color-text-muted); }
-  .wedge__note {
-    text-align: center;
-    font-size: var(--text--1);
-    color: var(--color-text-muted);
-    font-style: italic;
-    margin: var(--space-m) 0 0;
-  }
-  .wedge__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    margin: var(--space-l) auto 0;
-  }
-  .wedge .container { display: flex; flex-direction: column; }
-  .wedge__cta { align-self: center; }
 
-  @media (max-width: 600px) {
-    .wedge__grid { grid-template-columns: 1fr; }
+  /* ESQ — recomendada: painel mais sólido (fill + borda mais presente). */
+  .cw-panel--allin {
+    background: color-mix(in srgb, var(--color-on-blue) 10%, var(--color-blue));
+    border: var(--border-width-regular) solid color-mix(in srgb, var(--color-on-blue) 30%, transparent);
+  }
+
+  /* DIR — marketplace: mais flat/outline. */
+  .cw-panel--mkt {
+    background: transparent;
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 18%, transparent);
+  }
+
+  .cw-panel__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+  }
+  .cw-panel__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-1);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-on-blue);
+  }
+  .cw-panel__lead {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-2);
+    line-height: var(--line-snug);
+    color: var(--color-on-blue);
+  }
+  .cw-panel__sub {
+    margin: 0;
+    font-size: var(--text-0);
+    line-height: var(--line-snug);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+  }
+
+  .cw-list {
+    list-style: none;
+    margin: var(--space-2xs) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .cw-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s);
+    font-size: var(--text-0);
+    color: var(--color-on-blue);
+  }
+  .cw-row__label {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+  .cw-check {
+    align-self: center;
+    flex-shrink: 0;
+    color: var(--color-on-blue); /* neutro/bone — nunca âmbar */
+  }
+  .cw-plus {
+    color: color-mix(in srgb, var(--color-on-blue) 70%, transparent);
+    font-weight: var(--font-weight-bold);
+  }
+  .cw-row--time .cw-row__label,
+  .cw-row__price {
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+  }
+  .cw-row__price {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .cw-time { color: color-mix(in srgb, var(--color-on-blue) 55%, transparent); }
+  .cw-cur {
+    font-size: 0.78em;
+    color: color-mix(in srgb, var(--color-on-blue) 70%, transparent);
+    margin-inline-end: 0.2em;
+  }
+
+  /* Selos/tags — neutros/bone, nunca âmbar. */
+  .cw-tag {
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    padding: 0.1em 0.55em;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+  .cw-tag--in {
+    background: color-mix(in srgb, var(--color-on-blue) 16%, transparent);
+    color: var(--color-on-blue);
+  }
+  .cw-tag--out,
+  .cw-tag--time {
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 30%, transparent);
+    color: color-mix(in srgb, var(--color-on-blue) 72%, transparent);
+  }
+
+  .cw-total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s);
+    margin-block-start: auto;
+    padding-block-start: var(--space-s);
+    border-block-start: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 22%, transparent);
+  }
+  .cw-total__label {
+    font-size: var(--text--1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+  }
+  .cw-total__value {
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .cw-total__value--strong {
+    font-size: var(--text-4);
+    color: var(--color-on-blue);
+  }
+  .cw-total__value--wary {
+    font-size: var(--text-3);
+    color: color-mix(in srgb, var(--color-on-blue) 86%, transparent);
+  }
+
+  .cw-foot {
+    margin: 0;
+    font-size: var(--text--1);
+    color: color-mix(in srgb, var(--color-on-blue) 66%, transparent);
+  }
+
+  .cost-wedge__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+    margin-block-start: var(--space-2xl);
+    text-align: center;
+  }
+  .cost-wedge__note {
+    margin: 0;
+    max-inline-size: 52ch;
+    font-size: var(--text--1);
+    color: color-mix(in srgb, var(--color-on-blue) 70%, transparent);
+  }
+
+  /* Desktop: duas colunas. */
+  @media (min-width: 56rem) {
+    .cost-wedge__cols {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-l);
+    }
+  }
+
+  /* Mobile: empilha (TUDO INCLUSO primeiro, já é o 1º no DOM); CTA full-width. */
+  @media (max-width: 36rem) {
+    .cost-wedge__cta :global(.btn) {
+      inline-size: 100%;
+    }
   }
 </style>
