@@ -49,13 +49,10 @@ const {
         <ul class="cw-list">
           {allInItems.map((label) => (
             <li class="cw-row cw-row--in">
-              <span class="cw-row__label">
-                <svg class="cw-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                {label}
-              </span>
-              <span class="cw-tag cw-tag--in">incluso</span>
+              <svg class="cw-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span class="cw-row__body"><span class="cw-row__label">{label}</span><span class="cw-tag cw-tag--in">incluso</span></span>
             </li>
           ))}
         </ul>
@@ -80,12 +77,8 @@ const {
         <ul class="cw-list">
           {marketplaceItems.map((it) => (
             <li class={`cw-row ${it.kind === "time" ? "cw-row--time" : it.kind === "base" ? "cw-row--base" : "cw-row--add"}`}>
-              <span class="cw-row__label">
-                {it.kind !== "base" && <span class="cw-plus" aria-hidden="true">+</span>}
-                {it.label}
-                {it.kind === "time" && <span class="cw-tag cw-tag--time">seu tempo</span>}
-                {(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">não incluso</span>}
-              </span>
+              {it.kind !== "base" && <span class="cw-plus" aria-hidden="true">+</span>}
+              <span class="cw-row__body"><span class="cw-row__label">{it.label}</span>{it.kind === "time" && <span class="cw-tag cw-tag--time">seu tempo</span>}{(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">não incluso</span>}</span>
               <span class="cw-row__price">
                 {it.kind === "time" ? <span class="cw-time">—</span> : (<><span class="cw-cur">{currency}</span>{it.price}</>)}
               </span>
@@ -191,36 +184,49 @@ const {
     flex-direction: column;
     gap: var(--space-xs);
   }
+  /* [ícone/prefixo] e [body] são irmãos numa row que NÃO quebra → o ícone nunca
+     se separa do rótulo. O que quebra é o conteúdo do __body (rótulo + selo),
+     sempre indentado além do ícone. Preço fica à direita, na 1ª linha. */
   .cw-row {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-s);
+    align-items: flex-start;
+    gap: var(--space-2xs);
     font-size: var(--text-0);
     color: var(--color-on-blue);
   }
-  .cw-row__label {
-    display: inline-flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
-  }
   .cw-check {
-    align-self: center;
     flex-shrink: 0;
+    margin-block-start: 0.18em; /* alinha à 1ª linha do rótulo */
     color: var(--color-on-blue); /* neutro/bone — nunca âmbar */
   }
   .cw-plus {
+    flex-shrink: 0;
     color: color-mix(in srgb, var(--color-on-blue) 70%, transparent);
     font-weight: var(--font-weight-bold);
   }
-  .cw-row--time .cw-row__label,
-  .cw-row__price {
+  .cw-row__body {
+    flex: 1 1 auto;
+    min-inline-size: 0; /* permite o rótulo quebrar dentro do bloco */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between; /* wide: selo à direita; narrow: selo quebra p/ baixo-esquerda */
+    column-gap: var(--space-2xs);
+    row-gap: var(--space-3xs);
+  }
+  .cw-row__label {
+    flex: 1 1 auto;
+    min-inline-size: 0; /* o rótulo quebra antes de empurrar o selo */
+  }
+  .cw-row--time .cw-row__label {
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
   }
   .cw-row__price {
+    flex-shrink: 0;
+    margin-inline-start: var(--space-s);
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
   }
   .cw-time { color: color-mix(in srgb, var(--color-on-blue) 55%, transparent); }
   .cw-cur {
@@ -230,7 +236,10 @@ const {
   }
 
   /* Selos/tags — neutros/bone, nunca âmbar. */
+  /* Selo: filho do __body, fluxo inline após o rótulo — quebra natural p/ a
+     linha de baixo (dentro do body → indentado além do ícone), nunca antes. */
   .cw-tag {
+    flex: 0 0 auto;
     font-size: var(--text--1);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
