@@ -1,0 +1,27 @@
+---
+/**
+ * HARNESS TEMPORÁRIA — B1b (NÃO é página de produção).
+ * Prefixo "_" → excluída do build e do sitemap. Preview via `astro dev` numa
+ * rota não-underscore (cópia temporária). Isola o primitivo HeroContained.
+ */
+import "../styles/tokens.css";
+import "../styles/global.css";
+import HeroContained from "../components/HeroContained.astro";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B1b harness — HeroContained</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/plus-jakarta-sans.css" />
+  </head>
+  <body>
+    <HeroContained>
+      Cada detalhe do <em>seu</em> Rio resolvido antes de você chegar à cidade
+    </HeroContained>
+  </body>
+</html>
