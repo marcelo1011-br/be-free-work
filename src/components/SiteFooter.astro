@@ -1,0 +1,55 @@
+---
+/**
+ * SiteFooter — B2 wiring localizado do FooterEditorial (substitui Footer.astro no BaseLayout).
+ * Monta colunas/links de routes.js + labels de ui.js, por locale. Linha legal localizada
+ * (fatos reais: Cadastur + CNPJ, número uma vez só). Disciplina de âmbar: zero (herda do primitivo).
+ */
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { routes } from "../i18n/routes.js";
+import FooterEditorial from "./FooterEditorial.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const r = routes[lang];
+const base = (p) => `/${lang}${p}`;
+
+const columns = [
+  {
+    title: t("footer.colTours"),
+    links: [
+      { label: t("nav.privateTours"), href: base(r.privateTours) },
+      { label: t("nav.experiences"), href: base(r.experiences) },
+      { label: t("nav.allIncluded"), href: base(r.allIncluded) },
+      { label: t("nav.gallery"), href: base(r.gallery) },
+    ],
+  },
+  {
+    title: t("footer.colCompany"),
+    links: [
+      { label: t("nav.about"), href: base(r.about) },
+      { label: t("nav.blog"), href: base(r.blog) },
+      { label: t("nav.contact"), href: base(r.contact) },
+    ],
+  },
+  {
+    title: t("footer.colPlan"),
+    links: [
+      { label: "+55 21 97927-1637", href: "https://wa.me/5521979271637" },
+      { label: "contact@befreetours.com.br", href: "mailto:contact@befreetours.com.br" },
+      { label: t("footer.paymentPolicy"), href: base(r.paymentPolicy) },
+    ],
+  },
+];
+
+const legalByLang = {
+  en: "© 2026 Be Free Tours · Rio de Janeiro · since 2013 · registered with Cadastur · CNPJ 19.400.673/0001-67 · licensed local guides",
+  es: "© 2026 Be Free Tours · Río de Janeiro · desde 2013 · registrada en Cadastur · CNPJ 19.400.673/0001-67 · guías locales licenciados",
+  "pt-br": "© 2026 Be Free Tours · Rio de Janeiro · desde 2013 · cadastrada no Cadastur · CNPJ 19.400.673/0001-67 · guias locais licenciados",
+};
+---
+
+<FooterEditorial
+  tagline={t("footer.tagline")}
+  columns={columns}
+  legal={legalByLang[lang] ?? legalByLang.en}
+/>
