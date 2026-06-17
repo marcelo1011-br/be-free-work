@@ -62,7 +62,7 @@ const {
                           <rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" />
                         </svg>
                       )}
-                      <span>{l.label}</span>
+                      <span class="footer__label">{l.label}</span>
                       {l.note && <span class="footer__tag">{l.note}</span>}
                     </a>
                   </li>
@@ -119,6 +119,10 @@ const {
     gap: var(--space-l) var(--space-m);
   }
 
+  .footer__col {
+    min-inline-size: 0; /* nada vaza o padding da banda */
+  }
+
   .footer__col-title {
     margin: 0 0 var(--space-2xs);
     font-size: var(--text--1);
@@ -138,11 +142,18 @@ const {
   .footer__link {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap; /* pill desce como unidade quando não cabe ao lado do rótulo */
     gap: var(--space-2xs);
     min-block-size: 2.75rem;
+    max-inline-size: 100%; /* link nunca excede a coluna */
     color: color-mix(in srgb, var(--color-on-blue) 82%, transparent);
     text-decoration: none;
     font-size: var(--text-0);
+  }
+  /* Rótulo encolhe e quebra DENTRO da coluna (ex.: e-mail longo) — nunca vaza. */
+  .footer__label {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
   }
   @media (hover: hover) {
     .footer__link:hover {
@@ -160,6 +171,8 @@ const {
 
   /* "sob consulta" etc. — etiqueta mutada, nunca âmbar. */
   .footer__tag {
+    flex-shrink: 0;
+    white-space: nowrap; /* texto da pill sempre em 1 linha; a pill inteira é que quebra */
     font-size: var(--text--1);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
