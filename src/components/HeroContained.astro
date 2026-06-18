@@ -179,6 +179,15 @@ const hasTitleSlot = Astro.slots.has("default");
     display: flex;
   }
 
+  /* Foto real (slot "image"): preenche a coluna, casa a altura do painel. */
+  .hero-contained__media :global(img) {
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: clamp(14rem, 28vw, 24rem);
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
   .hero-contained__placeholder {
     inline-size: 100%;
     min-block-size: clamp(14rem, 28vw, 24rem);

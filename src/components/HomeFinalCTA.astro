@@ -1,10 +1,10 @@
 ---
 /**
- * HomeFinalCTA — passo 4 (home). Faixa de fechamento no azul estrutural.
- * Conteúdo real via homeContent.ctaFinal (intacto).
+ * HomeFinalCTA — B2. Fechamento da home sobre bone.
  *
- * DISCIPLINA DO ÂMBAR: este é o ÚNICO CTA âmbar da home (variant="book").
- * A secundária (WhatsApp) é outline clara sobre o azul. nav Book + este = máx 1 CTA.
+ * DISCIPLINA DO ÂMBAR: o teto de 3 já foi atingido (nav + hero + cunha), então
+ * AQUI não há âmbar — o CTA primário é OUTLINE (azul estrutural), o secundário
+ * (WhatsApp) idem. Conteúdo real via homeContent.ctaFinal.
  *
  * NÃO substitui o CTAFinal.astro legado (que segue em uso nas páginas de FAQ).
  */
@@ -12,7 +12,7 @@ import { homeContent } from "../data/homeContent.js";
 import Button from "./Button.astro";
 
 const { lang } = Astro.props;
-const content = homeContent[lang].ctaFinal;
+const content = (homeContent[lang] ?? homeContent.en).ctaFinal;
 
 const icons = {
   calendar:
@@ -30,9 +30,9 @@ const icons = {
     <p class="home-cta__subtitle measure">{content.subtitle}</p>
 
     <div class="home-cta__actions">
-      <Button variant="book" size="lg" href={content.ctaPrimary.link}>{content.ctaPrimary.text}</Button>
+      <Button variant="outline" size="lg" href={content.ctaPrimary.link}>{content.ctaPrimary.text}</Button>
       <Button
-        variant="outline"
+        variant="ghost"
         size="lg"
         href={content.ctaSecondary.link}
         target={content.ctaSecondary.newTab ? "_blank" : undefined}
@@ -56,8 +56,8 @@ const icons = {
 <style>
   .home-cta {
     padding-block: var(--space-3xl);
-    background-color: var(--color-blue);
-    color: var(--color-on-blue);
+    background-color: var(--color-base);
+    color: var(--color-text);
   }
 
   .home-cta__inner {
@@ -72,14 +72,14 @@ const icons = {
     font-family: var(--font-display);
     font-size: var(--text-4);
     line-height: var(--line-tight);
-    color: var(--color-on-blue);
+    color: var(--color-blue);
     margin: 0;
   }
 
   .home-cta__subtitle {
     font-size: var(--text-1);
     line-height: var(--line-snug);
-    color: color-mix(in srgb, var(--color-on-blue) 85%, transparent);
+    color: var(--color-text-muted);
     margin: 0;
   }
 
@@ -91,25 +91,12 @@ const icons = {
     margin-block-start: var(--space-s);
   }
 
-  /* Secundária: outline clara sobre o azul (a primária âmbar carrega o reserve). */
-  .home-cta__actions :global(.btn-outline-secondary) {
-    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
-    color: var(--color-on-blue);
-  }
-  @media (hover: hover) {
-    .home-cta__actions :global(.btn-outline-secondary:hover) {
-      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
-      border-color: var(--color-on-blue);
-      color: var(--color-on-blue);
-    }
-  }
-
   .home-cta__badges {
     list-style: none;
     margin: var(--space-l) 0 0;
     padding: var(--space-l) 0 0;
     inline-size: 100%;
-    border-block-start: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 22%, transparent);
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -122,12 +109,13 @@ const icons = {
     gap: var(--space-2xs);
     font-size: var(--text--1);
     font-weight: var(--font-weight-semibold);
-    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    color: var(--color-text-muted);
   }
 
+  /* Ícone azul estrutural — nunca âmbar. */
   .home-cta__badge-icon {
     display: inline-flex;
-    color: var(--color-on-blue);
+    color: var(--color-blue);
   }
 
   @media (max-width: 600px) {

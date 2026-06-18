@@ -3,15 +3,13 @@
 
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroBlock from "../../components/HeroBlock.astro";
-import Button from "../../components/Button.astro";
-import TrustBar from "../../components/TrustBar.astro";
+import HeroContained from "../../components/HeroContained.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
 import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
 import WhyUs from "../../components/WhyUs.astro";
 import HomepageTestimonials from "../../components/HomepageTestimonials.astro";
-import AllIncludedTeaser from "../../components/AllIncludedTeaser.astro";
+import HomeCostWedge from "../../components/HomeCostWedge.astro";
 import FAQ from "../../components/FAQ.astro";
 import HomeFinalCTA from "../../components/HomeFinalCTA.astro";
 import heroImage from "../../images/heroes/home-hero.webp";
@@ -22,6 +20,13 @@ import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
 const content = homeContent["pt-br"];
+
+// Hero contido: trust fundida + CTA primário âmbar (#2) + WhatsApp outline.
+const heroEyebrow = "Operadora local de passeios privados · desde 2013";
+const heroSecondaryLabel = "Falar no WhatsApp";
+const heroImageAlt = "Cristo Redentor sobre o Rio de Janeiro ao pôr do sol";
+const heroTrust = content.trustBar.items.map((i) => i.text);
+const heroWhatsApp = content.ctaFinal.ctaSecondary.link;
 
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
@@ -145,27 +150,24 @@ const reviewSchemas = testimonials.map((review) => {
   image="/images/og-home.jpg"
   schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("pt-br", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
-  <HeroBlock
-    variant="hub"
-    lang="pt-br"
-    image={heroImage.src}
-    imageAlt="Cristo Redentor sobre o Rio de Janeiro ao pôr do sol"
-    kicker="Sob Medida, Com Especialistas, Sem Estresse"
-    title={content.hero.title.replace(/<span[\s\S]*?<\/span>/, " ")}
-    subtitle={content.hero.subtitle}
+  <HeroContained
+    eyebrow={heroEyebrow}
+    subhead={content.hero.subtitle}
+    primaryLabel={content.hero.ctaPrimary.text}
+    primaryHref={content.hero.ctaPrimary.link}
+    secondaryLabel={heroSecondaryLabel}
+    secondaryHref={heroWhatsApp}
+    trust={heroTrust}
   >
-    <Fragment slot="actions">
-      <Button variant="outline" size="lg" href={content.hero.ctaPrimary.link}>{content.hero.ctaPrimary.text}</Button>
-      <Button variant="ghost" size="lg" href={content.hero.ctaSecondary.link}>{content.hero.ctaSecondary.text}</Button>
-    </Fragment>
-  </HeroBlock>
-  <TrustBar lang="pt-br" />
+    <Fragment>Passeios privativos no Rio de Janeiro, no <em>seu</em> ritmo</Fragment>
+    <img slot="image" src={heroImage.src} alt={heroImageAlt} width="1200" height="900" fetchpriority="high" decoding="async" />
+  </HeroContained>
+  <FeaturedTours lang="pt-br" />
   <HowItWorks lang="pt-br" />
   <WhyUs lang="pt-br" />
+  <HomeCostWedge lang="pt-br" />
   <HomepageTestimonials lang="pt-br" />
-  <FeaturedTours lang="pt-br" />
   <FeaturedExperiences lang="pt-br" />
-  <AllIncludedTeaser lang="pt-br" />
   <FAQ lang="pt-br" />
   <HomeFinalCTA lang="pt-br" />
 </BaseLayout>

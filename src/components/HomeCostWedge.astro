@@ -1,0 +1,177 @@
+---
+/**
+ * HomeCostWedge — B2. Wire dos números REAIS no primitivo CostWedge (B1d).
+ *
+ * Banda azul = o único beat azul do miolo da home. CTA âmbar = o 3º e ÚLTIMO da
+ * página (nav + hero + wedge = teto 3; FinalCTA sai outline).
+ *
+ * Escopo casado: a coluna "tudo incluso" é o Rio Express (Cristo + Pão de Açúcar
+ * em 5h), per-person numa base de grupo declarada (2 pax) lida do tours.js. A
+ * coluna "peça por peça" são as MESMAS admissões compradas avulsas no marketplace.
+ *
+ * Números (alta temporada, base = adulto estrangeiro, nunca tarifa carioca):
+ *   Cristo Redentor (ingresso):           R$ 134/pessoa → US$ 30 (÷4,9, arred. 5/0)
+ *   Pão de Açúcar (bondinho skip-line):   R$ 350–400/pessoa → US$ 75–85
+ *   Subtotal admissões:                   R$ 484–534 ≈ US$ 105–115/pessoa
+ * A Be Free inclui só o skip-line no Pão de Açúcar — o comparável avulso é o
+ * skip-line. A copy nunca insinua skip-line no Cristo (linha do Corcovado é de
+ * terceiro, sem ingresso que a pule). PT mostra R$ nativo, sem conversão.
+ *
+ * GUARDRAIL: sem total numérico no marketplace (preço-base = placeholder do
+ * operador). O ≤ só valeria contra produto privado; contra compartilhado a copy
+ * é tudo-incluso / sem fila / só o seu grupo / uma conta — valor e transparência,
+ * nunca "mais barato".
+ */
+import CostWedge from "./CostWedge.astro";
+import { tours } from "../data/tours.js";
+import { getPrice } from "../utils/priceHelper.js";
+
+const { lang } = Astro.props;
+
+const rioSlug = {
+  en: "rio-express",
+  es: "rio-express",
+  "pt-br": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
+};
+const routeSeg = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
+
+const list = tours[lang] ?? tours.en;
+const tour = list.find((t) => t.slug === rioSlug[lang]) ?? list[1];
+
+// Per-person numa base declarada de 2 pax (total do grupo / 2).
+const groupOf2 = getPrice(tour, 2, "USD").groupTotal; // 515
+const perPersonUSD = groupOf2 / 2; // 257,5
+
+const isPT = lang === "pt-br";
+const round5up = (n) => Math.ceil(n / 5) * 5;
+const ptBR = (n) => n.toLocaleString("pt-BR");
+
+const allInTotal = isPT
+  ? ptBR(round5up(perPersonUSD * 4.9)) // 1.265
+  : String(Math.round(perPersonUSD)); // 258
+const currency = isPT ? "R$" : "US$";
+
+const ctaHref = `/${lang}/${routeSeg[lang] ?? routeSeg.en}/${tour.slug}/`;
+
+const COPY = {
+  en: {
+    title: "The honest price, side by side",
+    intro:
+      "Two icons, a private vehicle and a certified guide — bundled into one bill. Here's the same day bought à la carte.",
+    allInHeading: "With Be Free — all in",
+    allInLead: "One bill, nothing to add.",
+    allInSub: "Guide, private vehicle and both tickets in a single price — confirmed before you go.",
+    allInItems: [
+      "Christ the Redeemer — entry ticket",
+      "Sugarloaf — skip-the-line cable car",
+      "Certified local guide (EN · ES · PT)",
+      "Private vehicle — hotel & cruise-port pickup",
+      "Bottled water on board",
+    ],
+    allInTotalLabel: "Per person · group of 2",
+    allInFoot: "No extras on the day. What you see is what you pay.",
+    marketplaceHeading: "Piece by piece — marketplace",
+    marketplaceLead: "A tempting base price…",
+    marketplaceSub: "…that becomes another once you add tickets, extras and the time in line.",
+    marketplaceItems: [
+      { label: "Christ the Redeemer — entry ticket", price: "30" },
+      { label: "Sugarloaf — skip-the-line cable car", price: "75–85" },
+      { label: "Time in line — up to ~2h in high season", kind: "time" },
+    ],
+    marketplaceTotalNote:
+      "Base tour apart + the tickets above (US$ 105–115/person) + the queue — a sum that only shows up at the end.",
+    marketplaceFoot:
+      "Christ the Redeemer entry and Sugarloaf skip-the-line aren't optional — Be Free already includes both.",
+    ctaLabel: "Book the all-in tour",
+    note: "Illustrative prices, per person, group of two. Your tour page shows the exact breakdown before you pay.",
+  },
+  es: {
+    title: "El precio honesto, lado a lado",
+    intro:
+      "Dos íconos, un vehículo privado y un guía certificado — en una sola cuenta. Así se ve el mismo día comprado por partes.",
+    allInHeading: "Con Be Free — todo incluido",
+    allInLead: "Una cuenta, nada que sumar.",
+    allInSub: "Guía, vehículo privado y ambas entradas en un solo precio — confirmado antes de salir.",
+    allInItems: [
+      "Cristo Redentor — entrada",
+      "Pan de Azúcar — teleférico sin fila",
+      "Guía local certificado (EN · ES · PT)",
+      "Vehículo privado — recogida en hotel y puerto",
+      "Agua a bordo",
+    ],
+    allInTotalLabel: "Por persona · grupo de 2",
+    allInFoot: "Sin extras el día del tour. Lo que ves es lo que pagas.",
+    marketplaceHeading: "Por partes — marketplace",
+    marketplaceLead: "Un precio base tentador…",
+    marketplaceSub: "…que se vuelve otro cuando sumas entradas, extras y el tiempo en la fila.",
+    marketplaceItems: [
+      { label: "Cristo Redentor — entrada", price: "30" },
+      { label: "Pan de Azúcar — teleférico sin fila", price: "75–85" },
+      { label: "Tiempo en la fila — hasta ~2h en temporada alta", kind: "time" },
+    ],
+    marketplaceTotalNote:
+      "El tour base aparte + las entradas de arriba (US$ 105–115/persona) + la fila — una suma que solo aparece al final.",
+    marketplaceFoot:
+      "La entrada al Cristo y el acceso sin fila al Pan de Azúcar no son opcionales — Be Free ya incluye ambos.",
+    ctaLabel: "Reservar el tour todo incluido",
+    note: "Precios ilustrativos, por persona, grupo de dos. Tu página del tour muestra el detalle exacto antes de pagar.",
+  },
+  "pt-br": {
+    title: "O preço honesto, lado a lado",
+    intro:
+      "Dois ícones, um veículo privativo e um guia certificado — numa conta só. Veja o mesmo dia comprado em pedaços.",
+    allInHeading: "Com a Be Free — tudo incluso",
+    allInLead: "Uma conta, nada a somar.",
+    allInSub: "Guia, veículo privativo e os dois ingressos num preço só — confirmado antes do passeio.",
+    allInItems: [
+      "Cristo Redentor — ingresso",
+      "Pão de Açúcar — bondinho sem fila",
+      "Guia local certificado (EN · ES · PT)",
+      "Veículo privativo — busca no hotel e no porto",
+      "Água a bordo",
+    ],
+    allInTotalLabel: "Por pessoa · grupo de 2",
+    allInFoot: "Sem extras na hora. O que você vê é o que paga.",
+    marketplaceHeading: "Em pedaços — marketplace",
+    marketplaceLead: "Um preço-base tentador…",
+    marketplaceSub: "…que vira outro quando você soma ingressos, extras e o tempo na fila.",
+    marketplaceItems: [
+      { label: "Cristo Redentor — ingresso", price: "134" },
+      { label: "Pão de Açúcar — bondinho sem fila", price: "350–400" },
+      { label: "Tempo na fila — até ~2h na alta temporada", kind: "time" },
+    ],
+    marketplaceTotalNote:
+      "O passeio-base à parte + os ingressos acima (R$ 484–534/pessoa) + a fila — soma que só aparece no fim.",
+    marketplaceFoot:
+      "Ingresso do Cristo e o sem-fila do Pão de Açúcar não são opcionais — a Be Free já inclui os dois.",
+    ctaLabel: "Reservar o passeio tudo-incluso",
+    note: "Preços ilustrativos, por pessoa, grupo de dois. Sua página do passeio mostra o detalhe exato antes de pagar.",
+  },
+};
+
+const t = COPY[lang] ?? COPY.en;
+---
+
+<CostWedge
+  tour={tour.title}
+  title={t.title}
+  intro={t.intro}
+  currency={currency}
+  allInHeading={t.allInHeading}
+  allInLead={t.allInLead}
+  allInSub={t.allInSub}
+  allInItems={t.allInItems}
+  allInTotal={allInTotal}
+  allInTotalLabel={t.allInTotalLabel}
+  allInFoot={t.allInFoot}
+  marketplaceHeading={t.marketplaceHeading}
+  marketplaceLead={t.marketplaceLead}
+  marketplaceSub={t.marketplaceSub}
+  marketplaceItems={t.marketplaceItems}
+  marketplaceTotal={null}
+  marketplaceTotalNote={t.marketplaceTotalNote}
+  marketplaceFoot={t.marketplaceFoot}
+  ctaLabel={t.ctaLabel}
+  ctaHref={ctaHref}
+  note={t.note}
+/>

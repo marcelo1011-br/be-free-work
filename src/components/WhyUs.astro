@@ -1,13 +1,22 @@
 ---
 /**
- * WhyUs — passo 4 (home reautorada no vocabulário "mar e sol").
- * Conteúdo real via homeContent (intacto). Header editorial + grid de razões.
- * Ícones em azul estrutural (sem âmbar).
+ * WhyUs — B2 ("Built around you"). Os moats do Private reautorados sobre bone.
+ * SectionHeader assimétrico + grid de razões. A substância de confiança do
+ * original é preservada; o ângulo é a flexibilidade de roteiro, o timing sob
+ * medida e a privacidade real.
+ *
+ * O valor "all-inclusive" do original foi RELOCADO pra cunha (HomeCostWedge),
+ * sem perda — por isso o card de preço-tudo-incluso sai daqui (filtra icon
+ * "travelers"). Ícones em azul estrutural. Âmbar: NÃO (não há CTA de reserva).
  */
 import { homeContent } from "../data/homeContent.js";
+import SectionHeader from "./SectionHeader.astro";
 
 const { lang } = Astro.props;
-const content = homeContent[lang].whyUs;
+const content = (homeContent[lang] ?? homeContent.en).whyUs;
+
+// O all-inclusive (icon "travelers") migra pra cunha — aqui ficam os moats + trust.
+const reasons = content.reasons.filter((r) => r.icon !== "travelers");
 
 const icons = {
   calendar:
@@ -16,8 +25,6 @@ const icons = {
     '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
   guide:
     '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
-  travelers:
-    '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
   star: '<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
   payment:
     '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
@@ -26,13 +33,10 @@ const icons = {
 
 <section class="why-us">
   <div class="container">
-    <header class="why-head">
-      <h2 class="why-headline">{content.title}</h2>
-      <p class="why-intro measure">{content.subtitle}</p>
-    </header>
+    <SectionHeader title={content.title} intro={content.subtitle} />
 
     <div class="why-grid">
-      {content.reasons.map((reason) => (
+      {reasons.map((reason) => (
         <article class="why-card">
           <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
           <h3 class="why-card__title">{reason.title}</h3>
@@ -49,27 +53,8 @@ const icons = {
     background-color: var(--color-base);
   }
 
-  .why-head {
-    max-inline-size: var(--measure);
-    margin-block-end: var(--space-2xl);
-  }
-
-  .why-headline {
-    font-family: var(--font-display);
-    font-size: var(--text-4);
-    line-height: var(--line-tight);
-    color: var(--color-blue);
-    margin: 0;
-  }
-
-  .why-intro {
-    font-size: var(--text-1);
-    line-height: var(--line-snug);
-    color: var(--color-text-muted);
-    margin: var(--space-s) 0 0;
-  }
-
   .why-grid {
+    margin-block-start: var(--space-2xl);
     display: grid;
     gap: var(--space-m);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
@@ -113,11 +98,5 @@ const icons = {
     line-height: var(--line-normal);
     color: var(--color-text-muted);
     margin: 0;
-  }
-
-  @media (max-width: 600px) {
-    .why-headline {
-      font-size: var(--text-3);
-    }
   }
 </style>
