@@ -29,11 +29,14 @@ const {
   priceFrom,
   priceBasis = "group",
   currency = "USD",
+  fromLabel = "A partir de",
+  basisLabel: basisLabelProp,
+  priceLabel = null, // sobrescreve preço (ex.: "Sob consulta" p/ custom/quote)
   ctaLabel = "Ver passeio",
 } = Astro.props;
 
 const basisLabels = { group: "/grupo", person: "/pessoa", boat: "/barco" };
-const basisLabel = basisLabels[priceBasis] ?? "";
+const basisLabel = basisLabelProp ?? basisLabels[priceBasis] ?? "";
 const hasImageSlot = Astro.slots.has("image");
 ---
 
@@ -70,10 +73,16 @@ const hasImageSlot = Astro.slots.has("image");
 
     <div class="tcard__footer">
       <div class="tcard__price">
-        <span class="tcard__price-label">A partir de</span>
-        <span class="tcard__price-value">
-          <span class="tcard__price-cur">{currency}</span>{priceFrom}<span class="tcard__price-basis">{basisLabel}</span>
-        </span>
+        {priceLabel ? (
+          <span class="tcard__price-value tcard__price-value--label">{priceLabel}</span>
+        ) : (
+          <>
+            <span class="tcard__price-label">{fromLabel}</span>
+            <span class="tcard__price-value">
+              <span class="tcard__price-cur">{currency}</span>{priceFrom}<span class="tcard__price-basis">{basisLabel}</span>
+            </span>
+          </>
+        )}
       </div>
       <span class="tcard__cta">
         {ctaLabel}

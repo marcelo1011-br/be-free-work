@@ -1,67 +1,112 @@
 ---
 /**
- * FeaturedTours — passo 4 (home reautorada no vocabulário "mar e sol").
- * Lógica intacta: tours em destaque (single-source) + TourCard + badges por locale.
- * Âmbar: NÃO. "Ver todos" é outline; cards nunca pintam âmbar.
+ * FeaturedTours — B2. Grid de TourCardRich a partir do tours.js (flag isFeatured).
+ * Superfície bone; SectionHeader assimétrico (h2 + intro + "ver todos →").
+ * Âmbar: NÃO (cards e link neutros). Preço por locale (USD en/es; R$ pt convertido).
  */
-import TourCard from "./TourCard.astro";
-import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
+import TourCardRich from "./TourCardRich.astro";
 import { tours } from "../data/tours.js";
+import { getPrice } from "../utils/priceHelper.js";
 import { useTranslations } from "../i18n/utils";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const featuredTours = tours[lang].filter((tour) => tour.isFeatured);
+const routeBySeg = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
+const toursBase = `/${lang}/${routeBySeg[lang] ?? routeBySeg.en}`;
 
-const toursBase = `/${lang}/${lang === "en" ? "private-tours" : lang === "es" ? "tours-privados" : "passeios-privados"}`;
+const featured = (tours[lang] ?? tours.en).filter((tour) => tour.isFeatured);
 
-const tourBadgeMap = {
-  en: {
-    "The Essential Rio: Icons, Culture & Hidden Gems": "Most Popular",
-    "Rio Express: Christ & Sugarloaf in 5 Hours": "Best for Cruise Passengers",
-    "Island Escape: Ilha Grande by Private Speedboat": "Private Speedboat",
-    "Your Rio, Your Way: Custom Private Tour": "Fully Customizable"
-  },
-  es: {
-    "El Río Esencial: Íconos, Cultura y Joyas Ocultas": "Más Popular",
-    "Río Express: Cristo y Pan de Azúcar en 5 Horas": "Ideal para Cruceristas",
-    "Escape a la Isla: Ilha Grande en Lancha Privada": "Lancha Privada",
-    "Tu Río, a Tu Manera: Tour Privado Personalizado": "Totalmente Personalizable"
-  },
-  "pt-br": {
-    "O Essencial do Rio: Ícones, Cultura e Joias Escondidas": "Mais Popular",
-    "Rio Express: Cristo e Pão de Açúcar em 5 Horas": "Ideal para Cruzeiros",
-    "Escapada para a Ilha: Ilha Grande de Lancha Privativa": "Lancha Privada",
-    "Seu Rio, do Seu Jeito: Passeio Privado Personalizado": "Totalmente Personalizável"
-  }
+// Eyebrow de localidade (não há campo no source — derivado; nomes próprios = locale-agnóstico).
+const localityBySlug = {
+  "essential-rio": "Rio de Janeiro",
+  "rio-express": "Rio de Janeiro",
+  "first-light-sunrise": "Rio de Janeiro",
+  "golden-hour-rio": "Rio de Janeiro",
+  "sunset-culture-roxy": "Rio de Janeiro",
+  "island-escape-ilha-grande": "Ilha Grande",
+  "petropolis-imperial": "Petrópolis",
+  "tijuca-rainforest": "Floresta da Tijuca",
+  "niteroi-mac-museum": "Niterói",
+  "modern-rio-museum-tomorrow": "Rio de Janeiro",
+  "custom-tour": "Rio de Janeiro",
 };
+
+const basisText = {
+  en: { group: "/group", person: "/person", boat: "/boat" },
+  es: { group: "/grupo", person: "/persona", boat: "/barco" },
+  "pt-br": { group: "/grupo", person: "/pessoa", boat: "/barco" },
+}[lang] ?? { group: "/group", person: "/person", boat: "/boat" };
+
+const isPT = lang === "pt-br";
+const curSymbol = isPT ? "R$" : "US$";
+const round5up = (n) => Math.ceil(n / 5) * 5;
+const toDisplay = (usd) => (isPT ? round5up(usd * 4.9) : usd); // PT: USD→BRL ×4,9 arred. 5/0
+
+const cards = await Promise.all(
+  featured.map(async (tour) => {
+    const price = getPrice(tour, 1, "USD");
+    const isBoat = Boolean(tour.pricing?.standard);
+    const mappedBasis = isBoat ? "boat" : price.basis === "perPerson" ? "person" : "group";
+    const noPrice = price.basis === "custom" || price.basis === "quote";
+
+    const imageSlug = tour.imageSlug || tour.slug;
+    let img;
+    try {
+      img = (await import(`../images/tours/cards/${imageSlug}-card.webp`)).default;
+    } catch {
+      try {
+        const baseSlug = tour.slug.split("-").slice(0, 2).join("-");
+        img = (await import(`../images/tours/cards/${baseSlug}-card.webp`)).default;
+      } catch {
+        img = (await import(`../images/tours/cards/essential-rio-card.webp`)).default;
+      }
+    }
+
+    return {
+      href: `${toursBase}/${tour.slug}/`,
+      image: img.src,
+      imageAlt: tour.title,
+      eyebrow: localityBySlug[tour.slug] ?? "Rio de Janeiro",
+      title: tour.title,
+      description: tour.shortDescription,
+      inclusions: (tour.included || []).slice(0, 3),
+      priceFrom: noPrice ? null : toDisplay(price.from),
+      priceLabel: noPrice ? t("general.onRequest") : null,
+      basisLabel: basisText[mappedBasis],
+    };
+  })
+);
 ---
 
 <section class="featured-tours">
   <div class="container">
-    <header class="ft-head">
-      <h2 class="ft-headline">{t("featuredTours.title")}</h2>
-      <p class="ft-intro measure">{t("featuredTours.subtitle")}</p>
-    </header>
+    <SectionHeader
+      title={t("featuredTours.title")}
+      intro={t("featuredTours.subtitle")}
+      linkHref={toursBase}
+      linkLabel={t("featuredTours.viewAll")}
+    />
 
     <div class="ft-grid">
-      {featuredTours.map((tour) => (
-        <TourCard
-          tour={tour}
-          lang={lang}
-          badge={tourBadgeMap[lang]?.[tour.id]}
+      {cards.map((c) => (
+        <TourCardRich
+          href={c.href}
+          image={c.image}
+          imageAlt={c.imageAlt}
+          eyebrow={c.eyebrow}
+          title={c.title}
+          description={c.description}
+          inclusions={c.inclusions}
+          priceFrom={c.priceFrom}
+          priceLabel={c.priceLabel}
+          currency={curSymbol}
+          basisLabel={c.basisLabel}
+          fromLabel={t("general.fromPrice")}
+          ctaLabel={t("general.viewTour")}
         />
       ))}
-    </div>
-
-    <div class="ft-cta">
-      <Button variant="outline" size="lg" href={toursBase}>
-        {t("featuredTours.viewAll")}
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </Button>
     </div>
   </div>
 </section>
@@ -71,45 +116,10 @@ const tourBadgeMap = {
     padding-block: var(--space-3xl);
     background-color: var(--color-base);
   }
-
-  .ft-head {
-    max-inline-size: var(--measure);
-    margin-block-end: var(--space-2xl);
-  }
-
-  .ft-headline {
-    font-family: var(--font-display);
-    font-size: var(--text-4);
-    line-height: var(--line-tight);
-    color: var(--color-blue);
-    margin: 0;
-  }
-
-  .ft-intro {
-    font-size: var(--text-1);
-    line-height: var(--line-snug);
-    color: var(--color-text-muted);
-    margin: var(--space-s) 0 0;
-  }
-
   .ft-grid {
+    margin-block-start: var(--space-2xl);
     display: grid;
     gap: var(--space-m);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-  }
-
-  .ft-cta {
-    display: flex;
-    justify-content: center;
-    margin-block-start: var(--space-2xl);
-  }
-
-  @media (max-width: 600px) {
-    .ft-headline {
-      font-size: var(--text-3);
-    }
-    .ft-cta :global(.btn) {
-      inline-size: 100%;
-    }
   }
 </style>

@@ -32,6 +32,7 @@ const {
   secondaryLabel = "Falar no WhatsApp",
   secondaryHref = "https://wa.me/5521979271637",
   credential = "EST. 2013 · CADASTUR",
+  trust = [], // sinais de confiança fundidos no hero (4.9★ / 800+ / plataformas)
 } = Astro.props;
 
 const hasImageSlot = Astro.slots.has("image");
@@ -68,6 +69,12 @@ const hasTitleSlot = Astro.slots.has("default");
           {secondaryLabel}
         </Button>
       </div>
+
+      {trust.length > 0 && (
+        <ul class="hero-contained__trust">
+          {trust.map((item) => <li>{item}</li>)}
+        </ul>
+      )}
     </div>
 
     <div class="hero-contained__media">

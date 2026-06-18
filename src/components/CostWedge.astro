@@ -25,11 +25,23 @@ const {
   allInItems = [],
   allInTotal,
   marketplaceItems = [],
-  marketplaceTotal,
+  marketplaceTotal = null,         // null → enquadramento valor (sem total numérico)
   currency = "USD",
   ctaLabel = "Reservar o tudo-incluso",
   ctaHref = "#",
   note = "Preços ilustrativos, por pessoa, grupo de dois. Sua tour page mostra o detalhe exato antes de pagar.",
+  // strings localizáveis (defaults PT p/ a harness do B1d)
+  allInHeading = "Com a Be Free — tudo incluso",
+  allInLead = "Uma conta, nada a somar.",
+  allInSub = "Guia, transporte e ingressos num preço só — confirmado antes do passeio.",
+  allInTotalLabel = "Total hoje",
+  allInFoot = "Sem extras na hora. O que você vê é o que paga.",
+  marketplaceHeading = "Peça por peça — marketplace",
+  marketplaceLead = "Um preço-base tentador…",
+  marketplaceSub = "…que vira outro quando você soma ingressos, extras e o tempo na fila.",
+  marketplaceTotalLabel = "Total real",
+  marketplaceTotalNote = "Preço-base à parte + ingressos acima + a fila — soma que só aparece no fim.",
+  marketplaceFoot = "Antes de contar o tempo perdido entre filas e bilheterias.",
 } = Astro.props;
 ---
 
@@ -41,9 +53,9 @@ const {
       <!-- ESQ: TUDO INCLUSO (recomendada, painel mais sólido) -->
       <div class="cw-panel cw-panel--allin">
         <header class="cw-panel__head">
-          <h3 class="cw-panel__title">Com a Be Free — tudo incluso</h3>
-          <p class="cw-panel__lead">Uma conta, nada a somar.</p>
-          <p class="cw-panel__sub">Guia, transporte e ingressos num preço só — confirmado antes do passeio.</p>
+          <h3 class="cw-panel__title">{allInHeading}</h3>
+          <p class="cw-panel__lead">{allInLead}</p>
+          <p class="cw-panel__sub">{allInSub}</p>
         </header>
 
         <ul class="cw-list">
@@ -58,20 +70,20 @@ const {
         </ul>
 
         <div class="cw-total">
-          <span class="cw-total__label">Total hoje</span>
+          <span class="cw-total__label">{allInTotalLabel}</span>
           <span class="cw-total__value cw-total__value--strong">
             <span class="cw-cur">{currency}</span>{allInTotal}
           </span>
         </div>
-        <p class="cw-foot">Sem extras na hora. O que você vê é o que paga.</p>
+        <p class="cw-foot">{allInFoot}</p>
       </div>
 
       <!-- DIR: PEÇA POR PEÇA / MARKETPLACE (painel outline, mais flat) -->
       <div class="cw-panel cw-panel--mkt">
         <header class="cw-panel__head">
-          <h3 class="cw-panel__title">Peça por peça — marketplace</h3>
-          <p class="cw-panel__lead">Um preço-base tentador…</p>
-          <p class="cw-panel__sub">…que vira outro quando você soma ingressos, extras e o tempo na fila.</p>
+          <h3 class="cw-panel__title">{marketplaceHeading}</h3>
+          <p class="cw-panel__lead">{marketplaceLead}</p>
+          <p class="cw-panel__sub">{marketplaceSub}</p>
         </header>
 
         <ul class="cw-list">
@@ -86,13 +98,17 @@ const {
           ))}
         </ul>
 
-        <div class="cw-total">
-          <span class="cw-total__label">Total real</span>
-          <span class="cw-total__value cw-total__value--wary">
-            <span class="cw-cur">{currency}</span>{marketplaceTotal}
-          </span>
-        </div>
-        <p class="cw-foot">Antes de contar o tempo perdido entre filas e bilheterias.</p>
+        {marketplaceTotal != null ? (
+          <div class="cw-total">
+            <span class="cw-total__label">{marketplaceTotalLabel}</span>
+            <span class="cw-total__value cw-total__value--wary">
+              <span class="cw-cur">{currency}</span>{marketplaceTotal}
+            </span>
+          </div>
+        ) : (
+          <p class="cw-total cw-total--note">{marketplaceTotalNote}</p>
+        )}
+        <p class="cw-foot">{marketplaceFoot}</p>
       </div>
     </div>
 
@@ -286,6 +302,16 @@ const {
   .cw-total__value--wary {
     font-size: var(--text-3);
     color: color-mix(in srgb, var(--color-on-blue) 86%, transparent);
+  }
+
+  /* Enquadramento valor: sem total numérico (base do marketplace = placeholder). */
+  .cw-total--note {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--text-0);
+    line-height: var(--line-snug);
+    color: color-mix(in srgb, var(--color-on-blue) 82%, transparent);
   }
 
   .cw-foot {

@@ -6,6 +6,7 @@
  */
 import { homeContent } from "../data/homeContent.js";
 import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
 
 const { lang } = Astro.props;
 const content = (homeContent[lang] ?? homeContent.en).howItWorks;
@@ -16,9 +17,7 @@ const ctaLabel =
 
 <section class="how-it-works">
   <div class="container">
-    <header class="how-head">
-      <h2 class="how-headline">{content.title}</h2>
-    </header>
+    <SectionHeader title={content.title} />
 
     <ol class="how-steps">
       {content.steps.map((step, index) => (
