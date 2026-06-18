@@ -1,0 +1,320 @@
+---
+/**
+ * HeroFull — B (evolução do B1b HeroContained). Hero FULL-BLEED com painel sobreposto.
+ *
+ * A imagem (Cristo ao golden hour) cobre 100% da seção como fundo (object-fit cover,
+ * foco no Cristo). Um scrim de navy translúcido — mais forte à ESQUERDA — garante
+ * contraste. O painel de texto (mesmo material navy do hero antigo) flutua na
+ * metade-inferior ESQUERDA, contido (inset da borda via gutter do container),
+ * largura ~40–46% no desktop, cantos 6px. Filete vertical "EST. 2013 · CADASTUR"
+ * na borda direita.
+ *
+ * Navy derivado dos tokens mar e sol (--color-blue + black) — sem cor crua.
+ * Constante em light E dark (o hero é sempre sobre foto/navy → texto bone).
+ *
+ * H1: Newsreader serif, bone, com ênfase em UMA palavra em itálico. ÚNICO <h1> da
+ * página (SectionHeaders são <h2>).
+ *
+ * DISCIPLINA DO ÂMBAR: o CTA primário (Button variant="book") é a ÚNICA instância
+ * de âmbar do hero. Secundário (WhatsApp) = outline bone (não âmbar).
+ *
+ * Props: eyebrow, title (slot p/ <em>), subhead, primaryLabel, primaryHref,
+ *   secondaryLabel, secondaryHref, credential, trust[]. Slot "image" = foto de fundo.
+ */
+import Button from "./Button.astro";
+
+const {
+  eyebrow = "Operadora local · privada",
+  subhead = "Texto de apoio estrutural para validar três linhas de subtítulo sobre a foto, com peso leve e medida confortável de leitura dentro do painel.",
+  primaryLabel = "Reservar passeio privado",
+  primaryHref = "#",
+  secondaryLabel = "Falar no WhatsApp",
+  secondaryHref = "https://wa.me/5521979271637",
+  credential = "EST. 2013 · CADASTUR",
+  trust = [], // sinais de confiança fundidos no hero (4.9★ / 800+ / plataformas)
+} = Astro.props;
+
+const hasImageSlot = Astro.slots.has("image");
+const hasTitleSlot = Astro.slots.has("default");
+---
+
+<section class="hero-full">
+  <div class="hero-full__bg">
+    {hasImageSlot ? (
+      <slot name="image" />
+    ) : (
+      <div class="hero-full__placeholder" role="img" aria-label="Espaço reservado para foto do Rio de Janeiro">
+        <span>Foto do Rio · placeholder</span>
+      </div>
+    )}
+    <div class="hero-full__scrim" aria-hidden="true"></div>
+  </div>
+
+  <div class="container hero-full__inner">
+    <div class="hero-full__panel">
+      <p class="hero-full__eyebrow">{eyebrow}</p>
+
+      <h1 class="hero-full__title">
+        {hasTitleSlot ? (
+          <slot />
+        ) : (
+          <Fragment>Roteiros privados desenhados ao redor do <em>seu</em> tempo no Rio de Janeiro</Fragment>
+        )}
+      </h1>
+
+      <p class="hero-full__subhead">{subhead}</p>
+
+      <div class="hero-full__ctas">
+        <Button variant="book" size="lg" href={primaryHref} class="hero-full__cta-primary">
+          {primaryLabel}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Button>
+
+        <Button variant="outline" size="lg" href={secondaryHref} class="hero-full__cta-secondary" target="_blank" rel="noopener noreferrer">
+          <svg slot="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          {secondaryLabel}
+        </Button>
+      </div>
+
+      {trust.length > 0 && (
+        <ul class="hero-full__trust">
+          {trust.map((item) => <li>{item}</li>)}
+        </ul>
+      )}
+    </div>
+  </div>
+
+  <span class="hero-full__rule">{credential}</span>
+</section>
+
+<style>
+  /* Navy derivado dos tokens (sem cor crua); base p/ scrim, painel e fallback. */
+  .hero-full {
+    --hero-navy: color-mix(in srgb, var(--color-blue) 50%, black);
+
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-items: end; /* painel ancorado embaixo */
+    /* Altura cheia do viewport (svh = small viewport, estável no mobile com a
+       barra de UI). min- (não fixo) p/ crescer se o conteúdo passar da tela. */
+    min-block-size: 100svh;
+    overflow: hidden;
+    /* Top: piso de folga abaixo do nav fixo. O nav (fixed) mede ~109px (~6.8rem);
+       o mínimo aqui fica ACIMA disso p/ o topo do painel content-height nunca
+       colidir com a navbar, em qualquer viewport.
+       Bottom: respiro p/ o painel flutuar embaixo, não colado na borda. */
+    padding-block-start: clamp(7.5rem, 15vh, 10rem);
+    padding-block-end: clamp(var(--space-l), 6vh, var(--space-2xl));
+    background-color: var(--hero-navy); /* fallback enquanto a foto carrega */
+    color: var(--color-on-blue);
+  }
+
+  /* Camada de fundo: foto full-bleed + scrim. */
+  .hero-full__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* Foto (slot "image"): cobre a seção inteira; foco no Cristo (acima do centro). */
+  .hero-full__bg :global(img) {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+  }
+
+  .hero-full__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--color-on-blue) 8%, var(--color-blue));
+    color: color-mix(in srgb, var(--color-on-blue) 60%, transparent);
+    font-size: var(--text--1);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  /* Scrim: ÚNICA fonte de contraste (não há mais caixa). Denso na coluna de texto
+     à ESQUERDA, topo a base (não só rodapé) — o H1 sobre o céu lilás claro
+     (superior-esquerda) é a zona crítica. Desbota em direção ao Cristo/céu à
+     direita. Derivado de --hero-navy (rgba via color-mix), sem cor crua.
+       1) horizontal: plateau denso 0→44%, fade até ~88% (cobre a coluna inteira);
+       2) vertical leve no rodapé: reforço extra sob a linha de trust (texto pequeno). */
+  .hero-full__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(
+        95deg,
+        color-mix(in srgb, var(--hero-navy) 95%, transparent) 0%,
+        color-mix(in srgb, var(--hero-navy) 90%, transparent) 44%,
+        color-mix(in srgb, var(--hero-navy) 58%, transparent) 60%,
+        color-mix(in srgb, var(--hero-navy) 18%, transparent) 76%,
+        transparent 90%
+      ),
+      linear-gradient(
+        to top,
+        color-mix(in srgb, var(--hero-navy) 42%, transparent) 0%,
+        transparent 34%
+      );
+  }
+
+  /* Container do conteúdo: à frente do scrim; painel ancorado à esquerda. */
+  .hero-full__inner {
+    position: relative;
+    z-index: 2;
+    inline-size: 100%;
+  }
+
+  /* SEM CAIXA: o texto flutua direto sobre a imagem (editorial). O container
+     permanece só p/ layout/posicionamento/max-width — perde fundo, borda, sombra
+     e blur. Contraste passa a depender 100% do scrim abaixo. */
+  .hero-full__panel {
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs); /* compacto — altura dirigida pelo conteúdo */
+    padding: 0;
+  }
+
+  .hero-full__eyebrow {
+    margin: 0;
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    /* 86% (não 74%): eyebrow fica no topo do painel, zona de scrim mais leve no
+       mobile — alpha maior garante AA sem escurecer mais a foto. */
+    color: color-mix(in srgb, var(--color-on-blue) 86%, transparent);
+  }
+
+  .hero-full__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.5rem);
+    line-height: var(--line-tight);
+    color: var(--color-on-blue);
+    text-wrap: balance;
+    max-inline-size: 16ch;
+  }
+
+  .hero-full__title :global(em) {
+    font-style: italic;
+    font-weight: inherit;
+  }
+
+  .hero-full__subhead {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-1);
+    line-height: var(--line-snug);
+    color: color-mix(in srgb, var(--color-on-blue) 84%, transparent);
+    max-inline-size: 42ch;
+  }
+
+  .hero-full__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-block-start: var(--space-2xs);
+  }
+
+  /* Secundário: outline bone (NÃO âmbar) sobre o painel. */
+  .hero-full__ctas :global(.hero-full__cta-secondary.btn-outline-secondary) {
+    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+    background-color: transparent;
+  }
+  @media (hover: hover) {
+    .hero-full__ctas :global(.hero-full__cta-secondary.btn-outline-secondary:hover) {
+      border-color: var(--color-on-blue);
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      color: var(--color-on-blue);
+    }
+  }
+
+  /* Trust fundida: linha horizontal mutada, separadores em ponto. */
+  .hero-full__trust {
+    list-style: none;
+    margin: var(--space-2xs) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-s);
+    font-size: var(--text--1);
+    color: color-mix(in srgb, var(--color-on-blue) 80%, transparent);
+  }
+  .hero-full__trust li {
+    display: inline-flex;
+    align-items: center;
+  }
+  .hero-full__trust li:not(:first-child)::before {
+    content: "·";
+    margin-inline-end: var(--space-s);
+    color: color-mix(in srgb, var(--color-on-blue) 45%, transparent);
+  }
+
+  /* Filete vertical "EST. 2013 · CADASTUR" na borda direita. */
+  .hero-full__rule {
+    position: absolute;
+    z-index: 2;
+    right: var(--space-xs);
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-on-blue) 60%, transparent);
+    pointer-events: none;
+  }
+
+  /* Desktop: painel contido a ~46–52% da largura, ancorado à esquerda. */
+  @media (min-width: 56rem) {
+    .hero-full__panel {
+      inline-size: clamp(26rem, 49vw, 40rem);
+      margin-inline-end: auto;
+    }
+  }
+
+  /* Mobile: texto em largura cheia sobre a foto; o scrim vira VERTICAL e denso
+     (a imagem ocupa pouca altura e o texto é longo) — leve no topo p/ a foto
+     respirar, muito denso embaixo onde mora a trust pequena. Some o filete. */
+  @media (max-width: 56rem) {
+    .hero-full__scrim {
+      background:
+        linear-gradient(
+          180deg,
+          color-mix(in srgb, var(--hero-navy) 36%, transparent) 0%,
+          color-mix(in srgb, var(--hero-navy) 56%, transparent) 38%,
+          color-mix(in srgb, var(--hero-navy) 92%, transparent) 100%
+        );
+    }
+    .hero-full__rule {
+      display: none;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    .hero-full__ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-full__ctas :global(.btn) {
+      inline-size: 100%;
+    }
+  }
+</style>

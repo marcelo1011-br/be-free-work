@@ -112,9 +112,11 @@ const cards = await Promise.all(
 </section>
 
 <style>
+  /* `background` (shorthand) zera o gradiente legado de .featured-tours (@layer
+     themes, global.css). Scoped unlayered vence o layered → bone limpo. */
   .featured-tours {
     padding-block: var(--space-3xl);
-    background-color: var(--color-base);
+    background: var(--color-base);
   }
   .ft-grid {
     margin-block-start: var(--space-2xl);

@@ -3,7 +3,7 @@
 
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroContained from "../../components/HeroContained.astro";
+import HeroFull from "../../components/HeroFull.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
 import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
@@ -150,7 +150,7 @@ const reviewSchemas = testimonials.map((review) => {
   image="/images/og-home.jpg"
   schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("pt-br", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
-  <HeroContained
+  <HeroFull
     eyebrow={heroEyebrow}
     subhead={content.hero.subtitle}
     primaryLabel={content.hero.ctaPrimary.text}
@@ -161,7 +161,7 @@ const reviewSchemas = testimonials.map((review) => {
   >
     <Fragment>Passeios privativos no Rio de Janeiro, no <em>seu</em> ritmo</Fragment>
     <img slot="image" src={heroImage.src} alt={heroImageAlt} width="1200" height="900" fetchpriority="high" decoding="async" />
-  </HeroContained>
+  </HeroFull>
   <FeaturedTours lang="pt-br" />
   <HowItWorks lang="pt-br" />
   <WhyUs lang="pt-br" />

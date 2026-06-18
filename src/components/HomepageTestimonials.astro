@@ -46,9 +46,11 @@ const [feature, ...rest] = section.quotes;
 </section>
 
 <style>
+  /* `background` (shorthand) zera o gradiente legado de .testimonials (@layer
+     themes, global.css). Scoped unlayered vence o layered → bone limpo. */
   .testimonials {
     padding-block: var(--space-3xl);
-    background-color: var(--color-base);
+    background: var(--color-base);
   }
 
   /* 1 grande / 2 pequenos: feature ocupa a linha cheia; os outros dois dividem. */

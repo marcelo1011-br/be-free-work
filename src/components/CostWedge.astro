@@ -92,7 +92,7 @@ const {
               {it.kind !== "base" && <span class="cw-plus" aria-hidden="true">+</span>}
               <span class="cw-row__body"><span class="cw-row__label">{it.label}</span>{it.kind === "time" && <span class="cw-tag cw-tag--time">seu tempo</span>}{(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">não incluso</span>}</span>
               <span class="cw-row__price">
-                {it.kind === "time" ? <span class="cw-time">—</span> : (<><span class="cw-cur">{currency}</span>{it.price}</>)}
+                {it.kind === "time" ? <span class="cw-time">—</span> : it.priceText ? <span class="cw-time">{it.priceText}</span> : (<><span class="cw-cur">{currency}</span>{it.price}</>)}
               </span>
             </li>
           ))}

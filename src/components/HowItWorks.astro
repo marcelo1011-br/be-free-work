@@ -36,9 +36,11 @@ const ctaLabel =
 </section>
 
 <style>
+  /* `background` (shorthand) zera o background legado de .how-it-works (@layer
+     themes, global.css). Scoped unlayered vence o layered → bone limpo. */
   .how-it-works {
     padding-block: var(--space-3xl);
-    background-color: var(--color-base);
+    background: var(--color-base);
   }
 
   .how-head {

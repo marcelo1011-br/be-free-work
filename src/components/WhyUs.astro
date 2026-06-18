@@ -48,9 +48,13 @@ const icons = {
 </section>
 
 <style>
+  /* `background` (shorthand) — zera o gradiente legado de .why-us que vive em
+     @layer themes (global.css). Estilo scoped é unlayered → vence o layered.
+     Garante bone em light e navy-flat em dark, sem segunda banda azul colada
+     na cunha. */
   .why-us {
     padding-block: var(--space-3xl);
-    background-color: var(--color-base);
+    background: var(--color-base);
   }
 
   .why-grid {
