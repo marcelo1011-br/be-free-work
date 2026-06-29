@@ -1,173 +1,116 @@
 ---
+/**
+ * HowItWorks — passo 4 (home reautorada no vocabulário "mar e sol").
+ * Conteúdo real via homeContent (intacto). Header editorial à esquerda + passos numerados.
+ * Âmbar: NÃO. O CTA aqui é solid-navy (azul estrutural chapado, peso sem âmbar) —
+ * o âmbar de reserva da home é nav + hero + cunha (teto 3); este fica fora dele.
+ */
 import { homeContent } from "../data/homeContent.js";
+import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
 
 const { lang } = Astro.props;
 const content = (homeContent[lang] ?? homeContent.en).howItWorks;
+
+const ctaLabel =
+  lang === "pt-br" ? "Reservar Meu Passeio" : lang === "es" ? "Reservar Mi Tour" : "Book My Tour";
 ---
 
 <section class="how-it-works">
   <div class="container">
-    <h2 class="section-title-decorated">{content.title}</h2>
+    <SectionHeader title={content.title} />
 
-    <div class="steps-grid">
+    <ol class="how-steps">
       {content.steps.map((step, index) => (
-        <div class="step-card">
-          <div class="step-number">{index + 1}</div>
-          <div class="step-content">
-            <h3 class="step-title">{step.title}</h3>
-            <p class="step-description">{step.description}</p>
-          </div>
-          {index < content.steps.length - 1 && (
-            <div class="step-connector">
-              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-          )}
-        </div>
+        <li class="how-step">
+          <span class="how-step__num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <h3 class="how-step__title">{step.title}</h3>
+          <p class="how-step__desc measure">{step.description}</p>
+        </li>
       ))}
-    </div>
+    </ol>
 
-    <div class="section-cta">
-      <button type="button" class="btn btn-primary btn-lg" data-tour-select-trigger>
-        {lang === "pt-br" ? "Reservar Meu Passeio" : lang === "es" ? "Reservar Mi Tour" : "Book My Tour"}
-      </button>
+    <div class="how-cta">
+      <Button variant="solid-navy" size="lg" data-tour-select-trigger>{ctaLabel}</Button>
     </div>
   </div>
 </section>
 
 <style>
+  /* Superfície BRANCA (token --color-surface, não cor crua) — quebra a emenda com
+     o Why Choose (bone) adjacente: Featured Tours (bone) → How It Works (branco) →
+     Why Choose (bone) → cunha (azul). `background` (shorthand) zera o gradiente
+     legado de .how-it-works (@layer themes); scoped unlayered vence o layered. */
   .how-it-works {
-    --step-grid-min: 280px;
-    --step-card-lift: -4px;
-    --step-number-size: clamp(3rem, 6vw, 3.5rem);
-    --step-number-border: var(--border-width-strong);
-    --step-connector-offset: -32px;
-    --step-icon-size: clamp(2rem, 4vw, 2.25rem);
-
-    padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-white);
+    padding-block: var(--space-3xl);
+    background: var(--color-surface);
   }
 
-  .steps-grid {
+  .how-head {
+    max-inline-size: var(--measure);
+    margin-block-end: var(--space-2xl);
+  }
+
+  .how-headline {
+    font-family: var(--font-display);
+    font-size: var(--text-4);
+    line-height: var(--line-tight);
+    color: var(--color-blue);
+    margin: 0;
+  }
+
+  /* Passos: grid assimétrico — números serifados grandes, alinhados à esquerda. */
+  .how-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--step-grid-min)), 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-2xl);
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   }
 
-  .step-card {
-    position: relative;
+  .how-step {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-xl);
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
-    transition: transform var(--transition-duration-slow) var(--transition-easing-default);
+    gap: var(--space-2xs);
+    padding-block-start: var(--space-s);
+    border-block-start: var(--border-width-strong) solid var(--color-blue);
   }
 
-  .step-card:hover {
-    transform: translateY(var(--step-card-lift));
-  }
-
-  .step-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--step-number-size);
-    height: var(--step-number-size);
-    border: var(--step-number-border) solid var(--color-border);
-    border-radius: 50%;
-    font-size: var(--font-size-h4);
+  .how-step__num {
+    font-family: var(--font-display);
+    font-size: var(--text-3);
     font-weight: var(--font-weight-bold);
+    line-height: 1;
+    color: color-mix(in srgb, var(--color-blue) 40%, transparent);
+  }
+
+  .how-step__title {
+    font-size: var(--text-1);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-snug);
     color: var(--color-text);
-    margin-bottom: var(--space-md);
+    margin: var(--space-2xs) 0 0;
   }
 
-  .step-content {
-    flex-grow: 1;
+  .how-step__desc {
+    font-size: var(--text-0);
+    line-height: var(--line-normal);
+    color: var(--color-text-muted);
+    margin: 0;
   }
 
-  .step-title {
-    font-size: var(--font-size-h5);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-sm);
-  }
-
-  .step-description {
-    font-size: var(--font-size-small);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-  }
-
-  .step-connector {
-    display: none;
-    position: absolute;
-    right: var(--step-connector-offset);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-border);
-  }
-
-  @media (min-width: 900px) {
-    .step-connector {
-      display: block;
-    }
-  }
-
-  .section-cta {
+  .how-cta {
     display: flex;
-    justify-content: center;
-    margin-top: var(--space-2xl);
+    margin-block-start: var(--space-2xl);
   }
 
-  .section-cta .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  .section-cta .btn-primary:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .how-it-works {
-      padding: var(--space-2xl) 0;
+  @media (max-width: 600px) {
+    .how-headline {
+      font-size: var(--text-3);
     }
-
-    .section-title-decorated {
-      text-align: center;
-    }
-
-    .steps-grid {
-      margin-top: var(--space-lg);
-      gap: var(--space-md);
-    }
-
-    .step-card {
-      padding: var(--space-md);
-      text-align: center;
-      align-items: center;
-    }
-
-    .step-number {
-      margin-bottom: var(--space-sm);
-    }
-
-    .step-title {
-      font-size: var(--font-size-body);
-    }
-
-    .step-description {
-      font-size: var(--font-size-small);
+    .how-cta :global(.btn) {
+      inline-size: 100%;
     }
   }
 </style>

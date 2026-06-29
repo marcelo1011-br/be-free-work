@@ -3,15 +3,16 @@
 
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.astro";
-import TrustBar from "../../components/TrustBar.astro";
+import HeroFull from "../../components/HeroFull.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import FeaturedTours from "../../components/FeaturedTours.astro";
 import FeaturedExperiences from "../../components/FeaturedExperiences.astro";
 import WhyUs from "../../components/WhyUs.astro";
 import HomepageTestimonials from "../../components/HomepageTestimonials.astro";
+import HomeCostWedge from "../../components/HomeCostWedge.astro";
 import FAQ from "../../components/FAQ.astro";
-import CTAFinal from "../../components/CTAFinal.astro";
+import HomeFinalCTA from "../../components/HomeFinalCTA.astro";
+import heroImage from "../../images/heroes/home-hero.webp";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
 import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
@@ -19,6 +20,13 @@ import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
 const content = homeContent["es"];
+
+// Hero contido: trust fundida + CTA primário âmbar (#2) + WhatsApp outline.
+const heroEyebrow = "Operadora local de tours privados · desde 2013";
+const heroSecondaryLabel = "Hablar por WhatsApp";
+const heroImageAlt = "El Cristo Redentor sobre Río de Janeiro al atardecer";
+const heroTrust = content.trustBar.items.map((i) => i.text);
+const heroWhatsApp = content.ctaFinal.ctaSecondary.link;
 
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
@@ -142,19 +150,24 @@ const reviewSchemas = testimonials.map((review) => {
   image="/images/og-home.jpg"
   schema={[websiteSchema, organizationSchema, getFAQSchema(content.faq.questions), getHowToSchema("es", siteUrl), ...reviewSchemas, ...homepageQuoteSchemas]}
 >
-  <Hero
-    title={content.hero.title}
-    subtitle={content.hero.subtitle}
-    ctaPrimary={content.hero.ctaPrimary}
-    ctaSecondary={content.hero.ctaSecondary}
-    lang="es"
-  />
-  <TrustBar lang="es" />
+  <HeroFull
+    eyebrow={heroEyebrow}
+    subhead={content.hero.subtitle}
+    primaryLabel={content.hero.ctaPrimary.text}
+    primaryHref={content.hero.ctaPrimary.link}
+    secondaryLabel={heroSecondaryLabel}
+    secondaryHref={heroWhatsApp}
+    trust={heroTrust}
+  >
+    <Fragment>Tours privados en Río de Janeiro con guía, a <em>tu</em> ritmo</Fragment>
+    <img slot="image" src={heroImage.src} alt={heroImageAlt} width="1200" height="900" fetchpriority="high" decoding="async" />
+  </HeroFull>
+  <FeaturedTours lang="es" />
   <HowItWorks lang="es" />
   <WhyUs lang="es" />
+  <HomeCostWedge lang="es" />
   <HomepageTestimonials lang="es" />
-  <FeaturedTours lang="es" />
   <FeaturedExperiences lang="es" />
   <FAQ lang="es" />
-  <CTAFinal lang="es" />
+  <HomeFinalCTA lang="es" />
 </BaseLayout>

@@ -1,0 +1,39 @@
+/* B1a — Sistema de superfície de seção ("mar e sol").
+   Duas superfícies que alternam ao longo da home, SEM gradiente:
+     .surface-bone  → bone quente (--color-base, #F6F1E8 no light)
+     .surface-blue  → banda azul estrutural (--color-blue, #2A4F91)
+   Cada superfície declara as variáveis de contraste (--surface-*) que os
+   filhos (ex.: SectionHeader) consomem — então o mesmo componente fica
+   legível sobre qualquer das duas, em light e dark.
+
+   Tema-aware via tokens: no dark, o bone vira navy (--color-base escuro) e o
+   azul segue o mesmo estrutural; as cores de texto acompanham os tokens.
+   NÃO importado pelo global.css — é aditivo e só entra nas páginas que o usam
+   (mantém o CSS/head das páginas de produção inalterado até o B2). */
+
+.surface {
+  padding-block: var(--space-3xl);
+}
+
+.surface-bone {
+  background-color: var(--color-base);
+  color: var(--color-text);
+
+  --surface-fg: var(--color-text);
+  --surface-fg-muted: var(--color-text-muted);
+  /* Título display = cor de TEXTO do tema (ink), NUNCA o azul estrutural.
+     --color-text já é tema-aware: #15212E sobre bone (light) / #F3EEE3 sobre
+     navy (dark) → ~16:1 e ~15:1. O azul fica só como banda/superfície. */
+  --surface-heading: var(--color-text);
+  --surface-rule: var(--color-hairline);
+}
+
+.surface-blue {
+  background-color: var(--color-blue);
+  color: var(--color-on-blue);
+
+  --surface-fg: var(--color-on-blue);
+  --surface-fg-muted: color-mix(in srgb, var(--color-on-blue) 82%, transparent);
+  --surface-heading: var(--color-on-blue);
+  --surface-rule: color-mix(in srgb, var(--color-on-blue) 28%, transparent);
+}

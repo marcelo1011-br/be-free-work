@@ -1,0 +1,139 @@
+---
+/**
+ * HomeFinalCTA — B2. Fechamento da home sobre bone.
+ *
+ * DISCIPLINA DO ÂMBAR: o teto de 3 já foi atingido (nav + hero + cunha), então
+ * AQUI não há âmbar. Regra A (papel): primário = navy sólido (solid-navy);
+ * secundário (WhatsApp) = outline. Conteúdo real via homeContent.ctaFinal.
+ *
+ * NÃO substitui o CTAFinal.astro legado (que segue em uso nas páginas de FAQ).
+ */
+import { homeContent } from "../data/homeContent.js";
+import Button from "./Button.astro";
+
+const { lang } = Astro.props;
+const content = (homeContent[lang] ?? homeContent.en).ctaFinal;
+
+const icons = {
+  calendar:
+    '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+  travelers:
+    '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  star:
+    '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+};
+---
+
+<section class="home-cta">
+  <div class="container home-cta__inner">
+    <h2 class="home-cta__title">{content.title}</h2>
+    <p class="home-cta__subtitle measure">{content.subtitle}</p>
+
+    <div class="home-cta__actions">
+      <Button variant="solid-navy" size="lg" href={content.ctaPrimary.link}>{content.ctaPrimary.text}</Button>
+      <Button
+        variant="outline"
+        size="lg"
+        href={content.ctaSecondary.link}
+        target={content.ctaSecondary.newTab ? "_blank" : undefined}
+        rel={content.ctaSecondary.newTab ? "noopener noreferrer" : undefined}
+      >
+        {content.ctaSecondary.text}
+      </Button>
+    </div>
+
+    <ul class="home-cta__badges">
+      {content.trustBadges.map((badge) => (
+        <li class="home-cta__badge">
+          <span class="home-cta__badge-icon" set:html={icons[badge.icon] ?? ""} />
+          <span>{badge.text}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .home-cta {
+    padding-block: var(--space-3xl);
+    background-color: var(--color-base);
+    color: var(--color-text);
+    /* Separador bone→bone (segue FAQ, ambos bone) — mesma hairline tematizada
+       (--color-hairline). Pertence à seção de baixo p/ evitar linha dupla. O
+       fim (Ready→Footer navy) já separa por cor, sem hairline ali. */
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+  }
+
+  .home-cta__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-s);
+  }
+
+  .home-cta__title {
+    font-family: var(--font-display);
+    font-size: var(--text-4);
+    line-height: var(--line-tight);
+    color: var(--color-blue);
+    margin: 0;
+  }
+
+  .home-cta__subtitle {
+    font-size: var(--text-1);
+    line-height: var(--line-snug);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .home-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-s);
+    margin-block-start: var(--space-s);
+  }
+
+  .home-cta__badges {
+    list-style: none;
+    margin: var(--space-l) 0 0;
+    padding: var(--space-l) 0 0;
+    inline-size: 100%;
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-m) var(--space-xl);
+  }
+
+  .home-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+  }
+
+  /* Ícone azul estrutural — nunca âmbar. */
+  .home-cta__badge-icon {
+    display: inline-flex;
+    color: var(--color-blue);
+  }
+
+  @media (max-width: 600px) {
+    .home-cta__title {
+      font-size: var(--text-3);
+    }
+    .home-cta__actions {
+      flex-direction: column;
+      align-items: stretch;
+      inline-size: 100%;
+      max-inline-size: 22rem;
+    }
+    .home-cta__actions :global(.btn) {
+      inline-size: 100%;
+    }
+  }
+</style>

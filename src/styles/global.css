@@ -275,9 +275,12 @@
     --container-padding: clamp(1rem, 4vw, 2rem);
 
     
-    --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 1rem;
+    /* Raio único = var(--radius) (6px, tokens.css). sm/md/lg convergem p/ o
+       padrão global; --radius-full preservado p/ pills/círculos (exceção
+       intencional). */
+    --radius-sm: var(--radius);
+    --radius-md: var(--radius);
+    --radius-lg: var(--radius);
     --radius-full: 9999px;
   }
 

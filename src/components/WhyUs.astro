@@ -1,170 +1,241 @@
 ---
-
-
-
+/**
+ * WhyUs — B2 ("Built around you"). Os moats do Private reautorados sobre bone.
+ * SectionHeader assimétrico + grid de razões. A substância de confiança do
+ * original é preservada; o ângulo é a flexibilidade de roteiro, o timing sob
+ * medida e a privacidade real.
+ *
+ * O valor "all-inclusive" do original foi RELOCADO pra cunha (HomeCostWedge),
+ * sem perda — por isso o card de preço-tudo-incluso sai daqui (filtra icon
+ * "travelers"). Ícones em azul estrutural. Âmbar: NÃO (não há CTA de reserva).
+ */
 import { homeContent } from "../data/homeContent.js";
+import SectionHeader from "./SectionHeader.astro";
 
 const { lang } = Astro.props;
-const content = homeContent[lang].whyUs;
+const content = (homeContent[lang] ?? homeContent.en).whyUs;
 
+// O all-inclusive (icon "travelers") migra pra cunha — aqui ficam os moats + trust.
+const reasons = content.reasons.filter((r) => r.icon !== "travelers");
+
+// Pull-stats do flagship: ÊNFASE VISUAL de números que JÁ estão na descrição do card
+// ("over 12 years guiding more than 15,000 travelers"). Não há fato novo — o parágrafo
+// segue integral; estes são recorte visual (só desktop). Rótulo localizado, número da copy.
+const flagshipStats = {
+  en: [{ value: "12+", label: "years" }, { value: "15,000+", label: "travelers" }],
+  es: [{ value: "12+", label: "años" }, { value: "15.000+", label: "viajeros" }],
+  "pt-br": [{ value: "12+", label: "anos" }, { value: "15.000+", label: "viajantes" }],
+}[lang] ?? [{ value: "12+", label: "years" }, { value: "15,000+", label: "travelers" }];
 
 const icons = {
   calendar:
-    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
   customize:
-    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+    '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
   guide:
-    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
-  travelers:
-    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-  star: '<svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+    '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+  star: '<svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
   payment:
-    '<svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
+    '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
 };
 ---
 
 <section class="why-us">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{content.title}</h2>
-      <p class="section-subtitle">{content.subtitle}</p>
-    </div>
+    <SectionHeader title={content.title} intro={content.subtitle} />
 
-    <div class="reasons-grid grid grid-3">
-      {
-        content.reasons.map((reason) => (
-          <article class="reason-card">
-            <div class="reason-icon" set:html={icons[reason.icon]} />
-            <h3 class="reason-title">{reason.title}</h3>
-            <p class="reason-description">{reason.description}</p>
-          </article>
-        ))
-      }
+    <div class="why-grid">
+      {reasons.map((reason, i) => (
+        <article class={`why-card${i === 0 ? " why-card--flagship" : ""}`}>
+          {i === 0 ? (
+            <div class="why-card__rail">
+              <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
+              <div class="why-card__stats" aria-hidden="true">
+                {flagshipStats.map((s) => (
+                  <p class="why-card__stat">
+                    <strong class="why-card__stat-value">{s.value}</strong>
+                    <span class="why-card__stat-label">{s.label}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
+          )}
+          <div class="why-card__body">
+            <h3 class="why-card__title">{reason.title}</h3>
+            <p class="why-card__desc">{reason.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
+  /* `background` (shorthand) — zera o gradiente legado de .why-us que vive em
+     @layer themes (global.css). Estilo scoped é unlayered → vence o layered.
+     Garante bone em light e navy-flat em dark, sem segunda banda azul colada
+     na cunha. */
   .why-us {
-    --why-header-max: clamp(40rem, 75vw, 50rem);
-    --why-card-blur: var(--blur-md);
-    --why-card-border: var(--border-width-hairline);
-    --why-card-lift: -4px;
-    --why-card-shadow: 0 12px 24px color-mix(in srgb, black 30%, transparent);
-    --why-card-transition: var(--transition-duration-slow) var(--transition-easing-default);
-    --why-icon-size: clamp(2.5rem, 5vw, 3rem);
-    --why-icon-size-mobile: clamp(2.25rem, 6vw, 2.5rem);
-
-    padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-alt);
+    padding-block: var(--space-3xl);
+    background: var(--color-base);
   }
 
-  .section-header {
-    text-align: center;
-    max-width: var(--why-header-max);
-    margin: 0 auto var(--space-2xl);
+  /* Grid assimétrico com spans EXPLÍCITOS (não auto-fit) — 5 cards sem órfão em
+     nenhuma largura: mobile 1 col; tablet 2 cols (flagship ocupa a linha, resto 2×2);
+     desktop 12 cols com flagship span 8 + quatro span 4 → (8+4)/(4+4+4). */
+  .why-grid {
+    margin-block-start: var(--space-2xl);
+    display: grid;
+    gap: var(--space-m);
+    grid-template-columns: 1fr;
   }
 
-  .section-title {
-    color: var(--color-text);
-    margin-bottom: var(--space-md);
-  }
-
-  .section-subtitle {
-    font-size: var(--font-size-h5);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-  }
-
-  .reasons-grid {
-    margin-top: var(--space-2xl);
-    gap: var(--space-md);
-  }
-
-  .reason-card {
-    padding: var(--space-xl);
-    background: none;
-    border: none;
-    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
-    box-shadow: none;
-    transition: transform var(--why-card-transition), box-shadow var(--why-card-transition);
-    text-align: center;
+  .why-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-xs);
+    padding: var(--space-l);
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-hairline);
+    border-radius: var(--radius-md);
+    min-inline-size: 0;
+    transition: transform var(--transition-duration-slow) var(--transition-easing-default),
+      box-shadow var(--transition-duration-slow) var(--transition-easing-default);
   }
 
-  .reason-card:hover {
-    transform: translateY(var(--why-card-lift));
-    box-shadow: none;
+  /* Corpo (título+desc) agrupado — permite o flagship virar horizontal (ícone | texto)
+     sem mexer no empilhamento dos demais. */
+  .why-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-inline-size: 0;
   }
 
-  .reason-icon {
-    width: var(--why-icon-size);
-    height: var(--why-icon-size);
-    color: var(--color-accent);
-    flex-shrink: 0;
+  /* Rail do flagship (ícone + pull-stats). Mobile/tablet: comporta-se como o ícone
+     (stats ocultos) → layouts já aprovados intactos. Pull-stats só no desktop. */
+  .why-card__rail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
   }
-
-  .reason-title {
-    font-size: var(--font-size-h5);
+  .why-card__stats {
+    display: none; /* visível só no desktop (≥64rem) */
+  }
+  .why-card__stat {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  /* Display type (Newsreader) — ink/azul, NUNCA âmbar. --color-text passa AA nas duas
+     superfícies (ink no branco / bone no navy escuro); azul cru falharia no dark. */
+  .why-card__stat-value {
+    font-family: var(--font-display);
+    font-size: var(--text-4);
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
-    line-height: var(--line-height-tight);
+  }
+  .why-card__stat-label {
+    margin-block-start: var(--space-3xs);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+  }
+
+  /* Tablet: 2 colunas; flagship ocupa a linha inteira (horizontal), resto vira 2×2. */
+  @media (min-width: 48rem) {
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .why-card--flagship {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--space-l);
+    }
+    .why-card--flagship .why-card__rail {
+      flex-shrink: 0;
+    }
+    .why-card--flagship .why-card__icon :global(svg) {
+      inline-size: 44px;
+      block-size: 44px;
+    }
+    .why-card--flagship .why-card__title {
+      font-size: var(--text-2);
+    }
+    .why-card--flagship .why-card__body {
+      max-inline-size: var(--measure);
+    }
+  }
+
+  /* Desktop: 12 colunas — flagship span 8 + quatro span 4 = (8+4)/(4+4+4), sem órfão. */
+  @media (min-width: 64rem) {
+    .why-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .why-card {
+      grid-column: span 4;
+    }
+    /* Flagship MERECE o span-8: grid [rail auto | texto 1fr], conteúdo centrado
+       verticalmente (altura residual = respiro), texto preenche até a borda direita. */
+    .why-card--flagship {
+      grid-column: span 8;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+    /* Rail: ícone + pull-stats, centrado, com divisória à direita (hairline). */
+    .why-card--flagship .why-card__rail {
+      block-size: 100%;
+      justify-content: center;
+      padding-inline-end: var(--space-2xl);
+      border-inline-end: var(--border-width-hairline) solid var(--color-hairline);
+    }
+    .why-card--flagship .why-card__stats {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+    }
+    /* Texto preenche a coluna 1fr; measure confortável na própria frase. */
+    .why-card--flagship .why-card__body {
+      max-inline-size: none;
+    }
+    .why-card--flagship .why-card__desc {
+      max-inline-size: 58ch;
+    }
+  }
+
+  @media (hover: hover) {
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--color-ink) 12%, transparent);
+    }
+  }
+
+  /* Ícone azul estrutural — nunca âmbar. */
+  .why-card__icon {
+    display: inline-flex;
+    color: var(--color-blue);
+  }
+
+  .why-card__title {
+    font-size: var(--text-1);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-snug);
+    color: var(--color-text);
     margin: 0;
   }
 
-  .reason-description {
-    font-size: var(--font-size-body);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+  .why-card__desc {
+    font-size: var(--text-0);
+    line-height: var(--line-normal);
+    color: var(--color-text-muted);
     margin: 0;
-  }
-
-  
-  @media (max-width: 768px) {
-    .why-us {
-      padding: var(--space-2xl) 0;
-    }
-
-    .section-header {
-      margin-bottom: var(--space-xl);
-      padding-inline: var(--space-md);
-    }
-
-    .section-subtitle {
-      font-size: var(--font-size-body);
-    }
-
-    .reasons-grid {
-      margin-top: var(--space-lg);
-      gap: var(--space-md);
-    }
-
-    .reason-card {
-      padding: var(--space-lg);
-      background: none;
-      border: none;
-      box-shadow: none;
-    }
-
-    .reason-icon {
-      width: var(--why-icon-size-mobile);
-      height: var(--why-icon-size-mobile);
-    }
-
-    .reason-icon :global(svg) {
-      width: var(--why-icon-size-mobile);
-      height: var(--why-icon-size-mobile);
-    }
-
-    .reason-title {
-      font-size: var(--font-size-body);
-    }
-
-    .reason-description {
-      font-size: var(--font-size-small);
-    }
   }
 </style>
