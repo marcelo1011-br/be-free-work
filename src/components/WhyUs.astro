@@ -18,6 +18,15 @@ const content = (homeContent[lang] ?? homeContent.en).whyUs;
 // O all-inclusive (icon "travelers") migra pra cunha — aqui ficam os moats + trust.
 const reasons = content.reasons.filter((r) => r.icon !== "travelers");
 
+// Pull-stats do flagship: ÊNFASE VISUAL de números que JÁ estão na descrição do card
+// ("over 12 years guiding more than 15,000 travelers"). Não há fato novo — o parágrafo
+// segue integral; estes são recorte visual (só desktop). Rótulo localizado, número da copy.
+const flagshipStats = {
+  en: [{ value: "12+", label: "years" }, { value: "15,000+", label: "travelers" }],
+  es: [{ value: "12+", label: "años" }, { value: "15.000+", label: "viajeros" }],
+  "pt-br": [{ value: "12+", label: "anos" }, { value: "15.000+", label: "viajantes" }],
+}[lang] ?? [{ value: "12+", label: "years" }, { value: "15,000+", label: "travelers" }];
+
 const icons = {
   calendar:
     '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
@@ -36,11 +45,27 @@ const icons = {
     <SectionHeader title={content.title} intro={content.subtitle} />
 
     <div class="why-grid">
-      {reasons.map((reason) => (
-        <article class="why-card">
-          <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
-          <h3 class="why-card__title">{reason.title}</h3>
-          <p class="why-card__desc">{reason.description}</p>
+      {reasons.map((reason, i) => (
+        <article class={`why-card${i === 0 ? " why-card--flagship" : ""}`}>
+          {i === 0 ? (
+            <div class="why-card__rail">
+              <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
+              <div class="why-card__stats" aria-hidden="true">
+                {flagshipStats.map((s) => (
+                  <p class="why-card__stat">
+                    <strong class="why-card__stat-value">{s.value}</strong>
+                    <span class="why-card__stat-label">{s.label}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <span class="why-card__icon" set:html={icons[reason.icon] ?? ""} />
+          )}
+          <div class="why-card__body">
+            <h3 class="why-card__title">{reason.title}</h3>
+            <p class="why-card__desc">{reason.description}</p>
+          </div>
         </article>
       ))}
     </div>
@@ -57,11 +82,14 @@ const icons = {
     background: var(--color-base);
   }
 
+  /* Grid assimétrico com spans EXPLÍCITOS (não auto-fit) — 5 cards sem órfão em
+     nenhuma largura: mobile 1 col; tablet 2 cols (flagship ocupa a linha, resto 2×2);
+     desktop 12 cols com flagship span 8 + quatro span 4 → (8+4)/(4+4+4). */
   .why-grid {
     margin-block-start: var(--space-2xl);
     display: grid;
     gap: var(--space-m);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: 1fr;
   }
 
   .why-card {
@@ -72,8 +100,115 @@ const icons = {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-hairline);
     border-radius: var(--radius-md);
+    min-inline-size: 0;
     transition: transform var(--transition-duration-slow) var(--transition-easing-default),
       box-shadow var(--transition-duration-slow) var(--transition-easing-default);
+  }
+
+  /* Corpo (título+desc) agrupado — permite o flagship virar horizontal (ícone | texto)
+     sem mexer no empilhamento dos demais. */
+  .why-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-inline-size: 0;
+  }
+
+  /* Rail do flagship (ícone + pull-stats). Mobile/tablet: comporta-se como o ícone
+     (stats ocultos) → layouts já aprovados intactos. Pull-stats só no desktop. */
+  .why-card__rail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+  .why-card__stats {
+    display: none; /* visível só no desktop (≥64rem) */
+  }
+  .why-card__stat {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  /* Display type (Newsreader) — ink/azul, NUNCA âmbar. --color-text passa AA nas duas
+     superfícies (ink no branco / bone no navy escuro); azul cru falharia no dark. */
+  .why-card__stat-value {
+    font-family: var(--font-display);
+    font-size: var(--text-4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+  }
+  .why-card__stat-label {
+    margin-block-start: var(--space-3xs);
+    font-size: var(--text--1);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-muted);
+  }
+
+  /* Tablet: 2 colunas; flagship ocupa a linha inteira (horizontal), resto vira 2×2. */
+  @media (min-width: 48rem) {
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .why-card--flagship {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--space-l);
+    }
+    .why-card--flagship .why-card__rail {
+      flex-shrink: 0;
+    }
+    .why-card--flagship .why-card__icon :global(svg) {
+      inline-size: 44px;
+      block-size: 44px;
+    }
+    .why-card--flagship .why-card__title {
+      font-size: var(--text-2);
+    }
+    .why-card--flagship .why-card__body {
+      max-inline-size: var(--measure);
+    }
+  }
+
+  /* Desktop: 12 colunas — flagship span 8 + quatro span 4 = (8+4)/(4+4+4), sem órfão. */
+  @media (min-width: 64rem) {
+    .why-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .why-card {
+      grid-column: span 4;
+    }
+    /* Flagship MERECE o span-8: grid [rail auto | texto 1fr], conteúdo centrado
+       verticalmente (altura residual = respiro), texto preenche até a borda direita. */
+    .why-card--flagship {
+      grid-column: span 8;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+    /* Rail: ícone + pull-stats, centrado, com divisória à direita (hairline). */
+    .why-card--flagship .why-card__rail {
+      block-size: 100%;
+      justify-content: center;
+      padding-inline-end: var(--space-2xl);
+      border-inline-end: var(--border-width-hairline) solid var(--color-hairline);
+    }
+    .why-card--flagship .why-card__stats {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+    }
+    /* Texto preenche a coluna 1fr; measure confortável na própria frase. */
+    .why-card--flagship .why-card__body {
+      max-inline-size: none;
+    }
+    .why-card--flagship .why-card__desc {
+      max-inline-size: 58ch;
+    }
   }
 
   @media (hover: hover) {

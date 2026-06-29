@@ -1,6 +1,10 @@
 ---
 /**
- * FeaturedTours — B2. Grid de TourCardRich a partir do tours.js (flag isFeatured).
+ * FeaturedTours — B2. Grid ASSIMÉTRICO de TourCardRich a partir do tours.js (flag
+ * isFeatured). Tecido entrelaçado 7-5 / 5-7 (12 col) que ecoa o header deslocado:
+ * carro-chefe (1º featured = ordem do source = essential-rio) com span 7 + imagem
+ * maior; demais alternam 5/7. Sem flag flagship explícita no source → flagship = 1º
+ * isFeatured na ordem de `order` (honra o source). Peso por tamanho+imagem, sem âmbar.
  * Superfície bone; SectionHeader assimétrico (h2 + intro + "ver todos →").
  * Âmbar: NÃO (cards e link neutros). Preço por locale (USD en/es; R$ pt convertido).
  */
@@ -17,6 +21,14 @@ const routeBySeg = { en: "private-tours", es: "tours-privados", "pt-br": "passei
 const toursBase = `/${lang}/${routeBySeg[lang] ?? routeBySeg.en}`;
 
 const featured = (tours[lang] ?? tours.en).filter((tour) => tour.isFeatured);
+
+// Tecido entrelaçado: 2 cards por linha; linha par = wide-LEFT (7-5),
+// linha ímpar = wide-RIGHT (5-7). Índice 0 = carro-chefe (span 7).
+const spanFor = (i) => {
+  const wideLeft = Math.floor(i / 2) % 2 === 0;
+  const pos = i % 2;
+  return wideLeft ? (pos === 0 ? 7 : 5) : (pos === 0 ? 5 : 7);
+};
 
 // Eyebrow de localidade (não há campo no source — derivado; nomes próprios = locale-agnóstico).
 const localityBySlug = {
@@ -90,22 +102,24 @@ const cards = await Promise.all(
     />
 
     <div class="ft-grid">
-      {cards.map((c) => (
-        <TourCardRich
-          href={c.href}
-          image={c.image}
-          imageAlt={c.imageAlt}
-          eyebrow={c.eyebrow}
-          title={c.title}
-          description={c.description}
-          inclusions={c.inclusions}
-          priceFrom={c.priceFrom}
-          priceLabel={c.priceLabel}
-          currency={curSymbol}
-          basisLabel={c.basisLabel}
-          fromLabel={t("general.fromPrice")}
-          ctaLabel={t("general.viewTour")}
-        />
+      {cards.map((c, i) => (
+        <div class={`ft-cell ft-cell--span${spanFor(i)}${i === 0 ? " ft-cell--flagship" : ""}`}>
+          <TourCardRich
+            href={c.href}
+            image={c.image}
+            imageAlt={c.imageAlt}
+            eyebrow={c.eyebrow}
+            title={c.title}
+            description={c.description}
+            inclusions={c.inclusions}
+            priceFrom={c.priceFrom}
+            priceLabel={c.priceLabel}
+            currency={curSymbol}
+            basisLabel={c.basisLabel}
+            fromLabel={t("general.fromPrice")}
+            ctaLabel={t("general.viewTour")}
+          />
+        </div>
       ))}
     </div>
   </div>
@@ -118,10 +132,48 @@ const cards = await Promise.all(
     padding-block: var(--space-3xl);
     background: var(--color-base);
   }
+  /* Grid assimétrico entrelaçado. Mobile = 1 coluna (ordem do source: essential →
+     rio express → island → custom). Tablet = 2 colunas equilibradas. Desktop = 12
+     colunas com o tecido 7-5 / 5-7 (spans aplicados às .ft-cell). */
   .ft-grid {
     margin-block-start: var(--space-2xl);
     display: grid;
     gap: var(--space-m);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: 1fr;
+  }
+  /* Célula = grid de 1 filho → o <a.tcard> estica à altura da linha (rodapés
+     preço/CTA alinhados na base entre cards vizinhos). */
+  .ft-cell {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  @media (min-width: 48rem) {
+    .ft-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .ft-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .ft-cell--span7 {
+      grid-column: span 7;
+    }
+    .ft-cell--span5 {
+      grid-column: span 5;
+    }
+    /* Carro-chefe: imagem maior/cinematográfica + mais respiro interno. Peso por
+       tamanho, não por cor (sem âmbar). Sobrescreve o primitivo via :global, sem
+       editar TourCardRich. */
+    .ft-cell--flagship :global(.tcard__media) {
+      aspect-ratio: 16 / 9;
+    }
+    /* Respiro extra no topo/laterais; padding-block-end = igual aos vizinhos p/ o
+       rodapé (preço/CTA, bottom-pinned) alinhar na base com o card ao lado. */
+    .ft-cell--flagship :global(.tcard__body) {
+      padding: var(--space-l) var(--space-l) var(--space-m);
+    }
   }
 </style>

@@ -3,8 +3,8 @@
  * HomeFinalCTA — B2. Fechamento da home sobre bone.
  *
  * DISCIPLINA DO ÂMBAR: o teto de 3 já foi atingido (nav + hero + cunha), então
- * AQUI não há âmbar — o CTA primário é OUTLINE (azul estrutural), o secundário
- * (WhatsApp) idem. Conteúdo real via homeContent.ctaFinal.
+ * AQUI não há âmbar. Regra A (papel): primário = navy sólido (solid-navy);
+ * secundário (WhatsApp) = outline. Conteúdo real via homeContent.ctaFinal.
  *
  * NÃO substitui o CTAFinal.astro legado (que segue em uso nas páginas de FAQ).
  */
@@ -30,9 +30,9 @@ const icons = {
     <p class="home-cta__subtitle measure">{content.subtitle}</p>
 
     <div class="home-cta__actions">
-      <Button variant="outline" size="lg" href={content.ctaPrimary.link}>{content.ctaPrimary.text}</Button>
+      <Button variant="solid-navy" size="lg" href={content.ctaPrimary.link}>{content.ctaPrimary.text}</Button>
       <Button
-        variant="ghost"
+        variant="outline"
         size="lg"
         href={content.ctaSecondary.link}
         target={content.ctaSecondary.newTab ? "_blank" : undefined}
@@ -58,6 +58,10 @@ const icons = {
     padding-block: var(--space-3xl);
     background-color: var(--color-base);
     color: var(--color-text);
+    /* Separador bone→bone (segue FAQ, ambos bone) — mesma hairline tematizada
+       (--color-hairline). Pertence à seção de baixo p/ evitar linha dupla. O
+       fim (Ready→Footer navy) já separa por cor, sem hairline ali. */
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
   }
 
   .home-cta__inner {

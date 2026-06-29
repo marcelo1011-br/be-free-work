@@ -62,7 +62,11 @@ const {
                           <rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" />
                         </svg>
                       )}
-                      <span class="footer__label">{l.label}</span>
+                      {isMail ? (
+                        <span class="footer__label" set:html={l.label.replace(/([@.])/g, "$1<wbr>")} />
+                      ) : (
+                        <span class="footer__label">{l.label}</span>
+                      )}
                       {l.note && <span class="footer__tag">{l.note}</span>}
                     </a>
                   </li>
@@ -125,7 +129,9 @@ const {
 
   .footer__col-title {
     margin: 0 0 var(--space-2xs);
-    font-size: var(--text--1);
+    /* Escala de footer reduzida (tipografia secundária): heading fica um tier ABAIXO
+       do link (xs ~14px desktop vs text--1 ~16px) — hierarquia preservada, menor. */
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
@@ -148,12 +154,17 @@ const {
     max-inline-size: 100%; /* link nunca excede a coluna */
     color: color-mix(in srgb, var(--color-on-blue) 82%, transparent);
     text-decoration: none;
-    font-size: var(--text-0);
+    /* Footer = tipografia secundária: link desce de --text-0 (~18-20px) p/ --text--1
+       (~15-16px). Encolhe o e-mail na origem, aliviando o aperto da col 4. */
+    font-size: var(--text--1);
   }
-  /* Rótulo encolhe e quebra DENTRO da coluna (ex.: e-mail longo) — nunca vaza. */
+  /* Rótulo encolhe e quebra DENTRO da coluna (ex.: e-mail longo) — nunca vaza.
+     break-word (não `anywhere`): só quebra mid-word em último recurso. O e-mail
+     recebe <wbr> após @ e `.` (no markup) → quebra SEMPRE em ponto limpo
+     (contact@ / befreetours. / com.), nunca em "befreetour|s". */
   .footer__label {
     min-inline-size: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
   @media (hover: hover) {
     .footer__link:hover {
@@ -173,7 +184,7 @@ const {
   .footer__tag {
     flex-shrink: 0;
     white-space: nowrap; /* texto da pill sempre em 1 linha; a pill inteira é que quebra */
-    font-size: var(--text--1);
+    font-size: var(--font-size-xs); /* proporcional ao heading na escala reduzida */
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
     color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
@@ -191,14 +202,22 @@ const {
     color: color-mix(in srgb, var(--color-on-blue) 60%, transparent);
   }
 
-  /* Desktop: brand à esquerda, colunas (3) à direita. */
+  /* Desktop: brand à esquerda, colunas (3) à direita. Bloco de colunas recebe peso
+     maior (1fr:2fr, era 1.7fr) — a brand tem folga (tagline cap 28ch ~252px numa
+     coluna de ~360px), e as colunas precisam da largura p/ o e-mail longo da col3
+     sem espremer Tours/Company. */
   @media (min-width: 56rem) {
     .footer__top {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
       gap: var(--space-3xl);
     }
+    /* Col 3 (Plan Your Trip) tem o conteúdo mais largo do footer — o e-mail
+       (~290px de rótulo + ícone). Recebe peso maior (1.3fr) p/ o e-mail quebrar
+       no máximo em 2 linhas LIMPAS (via <wbr>) e o "Payment & Cancellation" caber;
+       Tours/Company (122/92px) seguem folgados em 1fr (≥ ~136px em todo desktop).
+       Colunas de grid não precisam ser iguais. */
     .footer__cols {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr);
     }
   }
 

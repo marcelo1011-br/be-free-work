@@ -20,7 +20,7 @@ import Button from "./Button.astro";
 
 const {
   tour,
-  title = "O preço honesto, lado a lado",
+  title = "Tudo incluído, lado a lado",
   intro,
   allInItems = [],
   allInTotal,
@@ -36,16 +36,21 @@ const {
   allInSub = "Guia, transporte e ingressos num preço só — confirmado antes do passeio.",
   allInTotalLabel = "Total hoje",
   allInFoot = "Sem extras na hora. O que você vê é o que paga.",
-  marketplaceHeading = "Peça por peça — marketplace",
+  marketplaceHeading = "Peça por peça — por conta própria",
   marketplaceLead = "Um preço-base tentador…",
   marketplaceSub = "…que vira outro quando você soma ingressos, extras e o tempo na fila.",
   marketplaceTotalLabel = "Total real",
   marketplaceTotalNote = "Preço-base à parte + ingressos acima + a fila — soma que só aparece no fim.",
   marketplaceFoot = "Antes de contar o tempo perdido entre filas e bilheterias.",
+  // selos + label de a11y localizáveis (defaults PT p/ a harness do B1d)
+  tagIncluded = "incluído",
+  tagNotIncluded = "não incluído",
+  tagTime = "seu tempo",
+  comparisonLabel = "Comparativo de custo",
 } = Astro.props;
 ---
 
-<section class="cost-wedge" aria-label={tour ? `Comparativo de custo — ${tour}` : "Comparativo de custo"}>
+<section class="cost-wedge" aria-label={tour ? `${comparisonLabel} — ${tour}` : comparisonLabel}>
   <div class="container">
     <SectionHeader title={title} intro={intro} />
 
@@ -64,7 +69,7 @@ const {
               <svg class="cw-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span class="cw-row__body"><span class="cw-row__label">{label}</span><span class="cw-tag cw-tag--in">incluso</span></span>
+              <span class="cw-row__body"><span class="cw-row__label">{label}</span><span class="cw-tag cw-tag--in">{tagIncluded}</span></span>
             </li>
           ))}
         </ul>
@@ -78,7 +83,7 @@ const {
         <p class="cw-foot">{allInFoot}</p>
       </div>
 
-      <!-- DIR: PEÇA POR PEÇA / MARKETPLACE (painel outline, mais flat) -->
+      <!-- DIR: PEÇA POR PEÇA / POR CONTA PRÓPRIA (painel outline, mais flat) -->
       <div class="cw-panel cw-panel--mkt">
         <header class="cw-panel__head">
           <h3 class="cw-panel__title">{marketplaceHeading}</h3>
@@ -90,7 +95,7 @@ const {
           {marketplaceItems.map((it) => (
             <li class={`cw-row ${it.kind === "time" ? "cw-row--time" : it.kind === "base" ? "cw-row--base" : "cw-row--add"}`}>
               {it.kind !== "base" && <span class="cw-plus" aria-hidden="true">+</span>}
-              <span class="cw-row__body"><span class="cw-row__label">{it.label}</span>{it.kind === "time" && <span class="cw-tag cw-tag--time">seu tempo</span>}{(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">não incluso</span>}</span>
+              <span class="cw-row__body"><span class="cw-row__label">{it.label}</span>{it.kind === "time" && <span class="cw-tag cw-tag--time">{tagTime}</span>}{(!it.kind || it.kind === "add") && <span class="cw-tag cw-tag--out">{tagNotIncluded}</span>}</span>
               <span class="cw-row__price">
                 {it.kind === "time" ? <span class="cw-time">—</span> : it.priceText ? <span class="cw-time">{it.priceText}</span> : (<><span class="cw-cur">{currency}</span>{it.price}</>)}
               </span>

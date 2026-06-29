@@ -2,7 +2,8 @@
 /**
  * HowItWorks — passo 4 (home reautorada no vocabulário "mar e sol").
  * Conteúdo real via homeContent (intacto). Header editorial à esquerda + passos numerados.
- * Âmbar: NÃO. O CTA aqui é outline/ghost — o único âmbar de reserva da home é o HomeFinalCTA.
+ * Âmbar: NÃO. O CTA aqui é solid-navy (azul estrutural chapado, peso sem âmbar) —
+ * o âmbar de reserva da home é nav + hero + cunha (teto 3); este fica fora dele.
  */
 import { homeContent } from "../data/homeContent.js";
 import Button from "./Button.astro";
@@ -30,17 +31,19 @@ const ctaLabel =
     </ol>
 
     <div class="how-cta">
-      <Button variant="outline" size="lg" data-tour-select-trigger>{ctaLabel}</Button>
+      <Button variant="solid-navy" size="lg" data-tour-select-trigger>{ctaLabel}</Button>
     </div>
   </div>
 </section>
 
 <style>
-  /* `background` (shorthand) zera o background legado de .how-it-works (@layer
-     themes, global.css). Scoped unlayered vence o layered → bone limpo. */
+  /* Superfície BRANCA (token --color-surface, não cor crua) — quebra a emenda com
+     o Why Choose (bone) adjacente: Featured Tours (bone) → How It Works (branco) →
+     Why Choose (bone) → cunha (azul). `background` (shorthand) zera o gradiente
+     legado de .how-it-works (@layer themes); scoped unlayered vence o layered. */
   .how-it-works {
     padding-block: var(--space-3xl);
-    background: var(--color-base);
+    background: var(--color-surface);
   }
 
   .how-head {

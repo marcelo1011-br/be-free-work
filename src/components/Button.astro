@@ -6,9 +6,10 @@
  * Toda outra ação usa ghost/outline (azul/ink). Não há variante âmbar fora de "book".
  *
  * Reusa as classes .btn já tokenizadas em global.css — não redefine cor/estilo.
- *   book    -> .btn .btn-primary          (âmbar — reserva)
- *   ghost   -> .btn .btn-ghost-secondary  (texto azul, sem fundo)
- *   outline -> .btn .btn-outline-secondary (contorno azul)
+ *   book       -> .btn .btn-primary          (âmbar — reserva)
+ *   ghost      -> .btn .btn-ghost-secondary  (texto azul, sem fundo)
+ *   outline    -> .btn .btn-outline-secondary (contorno azul)
+ *   solid-navy -> .btn .btn-solid-navy        (azul estrutural chapado — peso s/ âmbar)
  *
  * Polimórfico: href => <a>; senão <button>. Demais atributos (data-*, target,
  * rel, aria-*, type, id...) passam direto via ...rest. Ícone via <slot name="icon" />.
@@ -26,6 +27,7 @@ const variantClass = {
   book: "btn-primary",
   ghost: "btn-ghost-secondary",
   outline: "btn-outline-secondary",
+  "solid-navy": "btn-solid-navy",
 }[variant] ?? "btn-outline-secondary";
 
 const sizeClass = size === "sm" ? "btn-sm" : size === "lg" ? "btn-lg" : "";
@@ -81,5 +83,72 @@ const Tag = href ? "a" : "button";
   }
   .btn-primary:focus-visible {
     box-shadow: var(--shadow-accent-sm);
+  }
+
+  /* variant="solid-navy" (NÃO âmbar): azul estrutural CHAPADO + texto on-blue —
+     peso sem gastar âmbar (mesmos tokens da banda da cunha; AA já provado lá).
+     --color-blue é igual em light e dark, então o botão fica DISTINTO tanto no
+     branco (light) quanto na surface escura (dark). Hover: um passo mais escuro +
+     elevação suave (a base .btn já faz translateY e tem a transição). Escopo: só
+     botões deste Button (atributo de escopo do Astro) → não toca .btn-* global. */
+  .btn-solid-navy {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-on-blue);
+    box-shadow: none;
+  }
+  @media (hover: hover) {
+    .btn-solid-navy:hover {
+      background: color-mix(in srgb, var(--color-blue) 86%, black);
+      border-color: color-mix(in srgb, var(--color-blue) 86%, black);
+      color: var(--color-on-blue);
+      box-shadow: 0 8px 22px color-mix(in srgb, var(--color-ink) 20%, transparent);
+    }
+  }
+  .btn-solid-navy:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-blue) 35%, transparent);
+  }
+  /* Dark: o fill (#2A4F91) fica perto da surface escura (~1.9:1) — borda bone sutil
+     dá ≥3:1 de definição (non-text contrast), sem tocar o light (lá a borda = fill,
+     invisível, e o fill já contrasta 8:1 com o branco). Cobre os dois casos de dark
+     (atributo explícito + SO escuro sem atributo). */
+  :global([data-theme="dark"]) .btn-solid-navy {
+    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme])) .btn-solid-navy {
+      border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    }
+  }
+
+  /* variant="outline" no DARK = tratamento BONE, idêntico ao hero. O default global
+     usa navy (--color-primary) p/ texto+borda; sobre a base escura (#0E1A2B) isso dá
+     ~1.9:1 (FAIL AA). Aqui, escopado a botões DESTE Button (cid) e SÓ no dark, texto
+     e borda viram bone (--color-on-blue) → ~12:1, consistente com o WhatsApp do hero.
+     Light intocado (navy sobre bone já passa). NÃO toca .btn-outline-secondary global
+     nem <a> raw. Cobre data-theme="dark" + SO escuro sem atributo. */
+  :global([data-theme="dark"]) .btn-outline-secondary {
+    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+  }
+  @media (hover: hover) {
+    :global([data-theme="dark"]) .btn-outline-secondary:hover {
+      border-color: var(--color-on-blue);
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      color: var(--color-on-blue);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme])) .btn-outline-secondary {
+      border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+      color: var(--color-on-blue);
+    }
+  }
+  @media (prefers-color-scheme: dark) and (hover: hover) {
+    :global(:root:not([data-theme])) .btn-outline-secondary:hover {
+      border-color: var(--color-on-blue);
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      color: var(--color-on-blue);
+    }
   }
 </style>

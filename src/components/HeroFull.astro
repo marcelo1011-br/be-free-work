@@ -260,9 +260,11 @@ const hasTitleSlot = Astro.slots.has("default");
     display: inline-flex;
     align-items: center;
   }
-  .hero-full__trust li:not(:first-child)::before {
+  /* Separador como ::after no FIM de cada item (menos o último): pertence à linha
+     de cima e, ao quebrar, fica grudado nela — a nova linha começa com texto limpo. */
+  .hero-full__trust li:not(:last-child)::after {
     content: "·";
-    margin-inline-end: var(--space-s);
+    margin-inline-start: var(--space-s);
     color: color-mix(in srgb, var(--color-on-blue) 45%, transparent);
   }
 

@@ -55,7 +55,11 @@ const ctaHref = `/${lang}/${routeSeg[lang] ?? routeSeg.en}/${tour.slug}/`;
 
 const COPY = {
   en: {
-    title: "The honest price, side by side",
+    title: "Everything included, side by side",
+    comparisonLabel: "Cost comparison",
+    tagIncluded: "included",
+    tagNotIncluded: "not included",
+    tagTime: "your time",
     intro:
       "Two icons, a private vehicle and a certified guide — bundled into one bill. Here's the same day bought à la carte.",
     allInHeading: "With Be Free — all in",
@@ -70,7 +74,7 @@ const COPY = {
     ],
     allInTotalLabel: "Per person · 2 travelers",
     allInFoot: "No extras on the day. What you see is what you pay.",
-    marketplaceHeading: "Piece by piece — marketplace",
+    marketplaceHeading: "Piece by piece — on your own",
     marketplaceLead: "A tempting base price…",
     marketplaceSub: "…that becomes another once each piece is on you, plus the time in line.",
     marketplaceItems: [
@@ -89,7 +93,11 @@ const COPY = {
     note: "Illustrative prices, per person, group of two. Your tour page shows the exact breakdown before you pay.",
   },
   es: {
-    title: "El precio honesto, lado a lado",
+    title: "Todo incluido, lado a lado",
+    comparisonLabel: "Comparación de costos",
+    tagIncluded: "incluido",
+    tagNotIncluded: "no incluido",
+    tagTime: "tu tiempo",
     intro:
       "Dos íconos, un vehículo privado y un guía certificado — en una sola cuenta. Así se ve el mismo día comprado por partes.",
     allInHeading: "Con Be Free — todo incluido",
@@ -104,7 +112,7 @@ const COPY = {
     ],
     allInTotalLabel: "Por persona · 2 viajeros",
     allInFoot: "Sin extras el día del tour. Lo que ves es lo que pagas.",
-    marketplaceHeading: "Por partes — marketplace",
+    marketplaceHeading: "Por partes — por tu cuenta",
     marketplaceLead: "Un precio base tentador…",
     marketplaceSub: "…que se vuelve otro cuando cada parte corre por tu cuenta, más el tiempo en la fila.",
     marketplaceItems: [
@@ -123,7 +131,11 @@ const COPY = {
     note: "Precios ilustrativos, por persona, grupo de dos. Tu página del tour muestra el detalle exacto antes de pagar.",
   },
   "pt-br": {
-    title: "O preço honesto, lado a lado",
+    title: "Tudo incluído, lado a lado",
+    comparisonLabel: "Comparativo de custo",
+    tagIncluded: "incluído",
+    tagNotIncluded: "não incluído",
+    tagTime: "seu tempo",
     intro:
       "Dois ícones, um veículo privativo e um guia certificado — numa conta só. Veja o mesmo dia comprado em pedaços.",
     allInHeading: "Com a Be Free — tudo incluso",
@@ -138,7 +150,7 @@ const COPY = {
     ],
     allInTotalLabel: "Por pessoa · 2 viajantes",
     allInFoot: "Sem extras na hora. O que você vê é o que paga.",
-    marketplaceHeading: "Em pedaços — marketplace",
+    marketplaceHeading: "Em pedaços — por conta própria",
     marketplaceLead: "Um preço-base tentador…",
     marketplaceSub: "…que vira outro quando cada peça fica por sua conta, mais o tempo na fila.",
     marketplaceItems: [
@@ -166,6 +178,10 @@ const t = COPY[lang] ?? COPY.en;
   title={t.title}
   intro={t.intro}
   currency={currency}
+  comparisonLabel={t.comparisonLabel}
+  tagIncluded={t.tagIncluded}
+  tagNotIncluded={t.tagNotIncluded}
+  tagTime={t.tagTime}
   allInHeading={t.allInHeading}
   allInLead={t.allInLead}
   allInSub={t.allInSub}

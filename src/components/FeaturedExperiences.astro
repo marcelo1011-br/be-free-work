@@ -92,6 +92,10 @@ const cards = await Promise.all(
   .featured-experiences {
     padding-block: var(--space-3xl);
     background-color: var(--color-base);
+    /* Separador bone→bone (segue Depoimentos, ambos bone) — hairline tematizada,
+       a mesma rule dos trust badges (--color-hairline: ink-α no light, bone-α no
+       dark). Pertence à seção de baixo p/ evitar linha dupla. */
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
   }
   .fx-grid {
     margin-block-start: var(--space-2xl);

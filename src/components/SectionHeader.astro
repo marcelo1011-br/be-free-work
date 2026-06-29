@@ -62,8 +62,10 @@ const showAside = Boolean(intro || linkHref || hasLinkSlot);
     margin: 0;
     font-family: var(--font-display);
     font-weight: var(--font-weight-bold);
-    /* fluido 320→1240: ~2rem → ~3.5rem */
-    font-size: clamp(2rem, 1.28rem + 3.6vw, 3.5rem);
+    /* Um degrau ABAIXO do H1 do hero (clamp(2.1rem … 3.5rem)) nos dois extremos,
+       p/ hierarquia visível H1 > H2 > resto. Governado só aqui (primitiva).
+       fluido 320→1240: ~1.75rem (28px) → ~2.75rem (44px); H1 fica sempre maior. */
+    font-size: clamp(1.75rem, 1.3rem + 2.25vw, 2.75rem);
     line-height: var(--line-tight);
     /* Fallback = token de TEXTO do tema (nunca acento/azul), p/ herdar correto
        em qualquer reuso, mesmo fora de uma .surface-*. */
@@ -118,19 +120,20 @@ const showAside = Boolean(intro || linkHref || hasLinkSlot);
   }
 
   /* Assimetria a partir de ~48rem: título largo à esquerda, intro+link
-     deslocados na coluna direita e alinhados embaixo (baseline editorial). */
+     deslocados na coluna direita e centralizados verticalmente em relação ao
+     título (o H2 segue sendo a âncora; só o eixo vertical da direita muda). */
   @media (min-width: 48rem) {
     .section-header {
       grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
       gap: var(--space-xl);
+      align-items: center;
     }
     .section-header__lead {
       grid-column: 1;
     }
     .section-header__aside {
       grid-column: 2;
-      align-self: end;
-      padding-block-end: var(--space-2xs);
+      align-self: center;
     }
   }
 </style>

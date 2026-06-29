@@ -534,19 +534,20 @@ function isActive(href: string): boolean {
 
   
   function applyTheme(theme: string) {
-    if (theme === "dark") {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.removeAttribute("data-theme");
-    }
+    // Light precisa ser EXPLÍCITO: data-theme="light". Se removêssemos o atributo,
+    // o @media (prefers-color-scheme: dark) :root:not([data-theme]) (tokens.css)
+    // reaplicaria o dark num SO em modo escuro → toggle vira no-op visual.
+    root.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
   }
 
   
   // (não reaplica no load: o <head> já definiu data-theme sem flash)
 
   themeToggle?.addEventListener("click", () => {
-    const isDark = root.getAttribute("data-theme") === "dark";
-    const newTheme = isDark ? "light" : "dark";
+    // Tema efetivo: atributo explícito ou, na 1ª interação sem atributo, o do SO.
+    const current = root.getAttribute("data-theme")
+      || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const newTheme = current === "dark" ? "light" : "dark";
     
     applyTheme(newTheme);
     try { localStorage.setItem(THEME_KEY, newTheme); } catch (e) {}

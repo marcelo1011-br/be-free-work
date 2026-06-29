@@ -183,8 +183,10 @@ const finalSchema = {
     <script is:inline>
       (() => { try {
         const s = localStorage.getItem('bft-theme');
-        const d = s || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
-        if (d === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        // Escolha salva = explícita nos dois sentidos (light precisa do atributo p/
+        // vencer o @media prefers-color-scheme num SO escuro). Sem preferência salva:
+        // deixa o atributo ausente e o @media (tokens.css) segue o SO.
+        if (s === 'dark' || s === 'light') document.documentElement.setAttribute('data-theme', s);
       } catch(e){} })();
     </script>
 
@@ -531,6 +533,10 @@ const finalSchema = {
         box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
       }
 
+      /* FAB scroll-to-top: superfície NEUTRA (não-conversão). Espelha o secundário B2
+         "solid-navy" — azul estrutural chapado + texto on-blue = peso sem gastar âmbar
+         (teto âmbar = 3: nav Quick Book + hero Explore + cunha Book). NÃO é âmbar em
+         nenhum tema. O FAB verde do WhatsApp é canal (fora do sistema âmbar) e não muda. */
       #back-to-top {
         position: fixed;
         bottom: 100px;
@@ -538,19 +544,30 @@ const finalSchema = {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: var(--color-accent);
-        color: white;
-        border: none;
+        background: var(--color-blue);
+        color: var(--color-on-blue);
+        border: var(--border-width-hairline) solid var(--color-blue);
         display: none;
         align-items: center;
         justify-content: center;
         font-size: 24px;
         cursor: pointer;
         z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-ink) 20%, transparent);
         transition: transform 0.3s ease;
       }
-      
+      /* Dark: o navy (#2A4F91) fica perto da base escura — borda bone sutil dá ≥3:1 de
+         definição (non-text contrast), sem tocar o light. Cobre data-theme="dark" e SO
+         escuro sem atributo. Mesmo tratamento provado no .btn-solid-navy do B2. */
+      [data-theme="dark"] #back-to-top {
+        border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) #back-to-top {
+          border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+        }
+      }
+
       #back-to-top:hover {
         transform: translateY(-2px);
       }
