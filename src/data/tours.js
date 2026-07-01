@@ -17,6 +17,7 @@ const order = [
   "sunset-culture-roxy",
   "island-escape-ilha-grande",
   "petropolis-imperial",
+  "buzios-riviera",
   "tijuca-rainforest",
   "niteroi-mac-museum",
   "modern-rio-museum-tomorrow",
@@ -517,6 +518,32 @@ const facts = {
     "startTime": "10:00 - 12:00",
     "durationValue": 7
   },
+  "buzios-riviera": {
+    "category": "day-trips",
+    "isFeatured": false,
+    "pricing": {
+      "custom": true
+    },
+    "bookingTimeSlots": [
+      "Flexible"
+    ],
+    "bookingBlockedDates": [
+      "2026-02-13",
+      "2026-02-14",
+      "2026-02-15",
+      "2026-02-16",
+      "2026-02-17",
+      "2026-02-18",
+      "2026-02-19",
+      "2026-02-20",
+      "2026-02-21",
+      "2026-02-22",
+      "2026-12-31",
+      "2027-01-01"
+    ],
+    "bookingCutoffDays": 1,
+    "startTime": "Flexible"
+  },
   "custom-tour": {
     "category": "city-tours",
     "isFeatured": true,
@@ -547,12 +574,15 @@ const facts = {
 
 const pricingDisplayText = {
   "en": {
+    "buzios-riviera": "On request",
     "custom-tour": "Varies by itinerary"
   },
   "es": {
+    "buzios-riviera": "Bajo consulta",
     "custom-tour": "Varía según itinerario"
   },
   "pt-br": {
+    "buzios-riviera": "Sob consulta",
     "custom-tour": "Varia conforme roteiro"
   }
 };
@@ -1121,6 +1151,49 @@ const prose = {
         "AquaRio is South America's largest aquarium — the submarine tunnel walk-through with sharks and rays overhead is the highlight. Budget at least 60 minutes.",
         "The port district (Porto Maravilha) where these attractions are clustered was completely revitalized for the 2016 Olympics — your guide's urban history context adds a fascinating layer to the visit.",
         "Not available on Mondays — Museum of Tomorrow is closed. The tour runs Tuesday to Sunday."
+      ]
+    },
+    "buzios-riviera": {
+      "id": "Búzios Day Trip from Rio",
+      "isCustom": true,
+      "slug": "buzios-riviera",
+      "imageSlug": "buzios-riviera",
+      "title": "Búzios Day Trip from Rio",
+      "shortDescription": "A private day trip to Búzios, the chic beach town on the coast east of Rio — arranged on request, tailored to your dates and quoted directly.",
+      "fullDescription": "Búzios is a former fishing village turned chic beach town on the coast east of Rio, known for its string of beaches and the cobblestoned Rua das Pedras waterfront. We arrange this as a private day trip from Rio on request — dates, timing and inclusions are tailored and quoted directly, as we currently run Búzios by request rather than on a fixed schedule.",
+      "highlights": [
+        "Private day trip to Búzios, tailored to your dates",
+        "Chic beach town with dozens of beaches and the Rua das Pedras waterfront",
+        "Certified local guide and private transport from Rio",
+        "Arranged on request — timing and inclusions built around your group"
+      ],
+      "included": [
+        "Private transportation from Rio with professional driver",
+        "Certified local guide",
+        "Pickup and drop-off in Rio (hotels, Airbnbs, and the cruise port)",
+        "Complimentary bottled water"
+      ],
+      "notIncluded": [
+        "Meals and drinks",
+        "Beach club or boat-tour tickets (quoted with your itinerary)",
+        "Gratuities (optional)"
+      ],
+      "duration": "Full day (on request)",
+      "recommendations": "Búzios is roughly a 2.5-hour drive from Rio each way, so it works best as a full day. Contact us with your dates and group size for a tailored quote.",
+      "ctaText": "Request a Quote",
+      "faqs": [
+        {
+          "q": "Is Búzios available as a fixed tour?",
+          "a": "We currently offer Búzios on request. Tell us your dates and group size and we'll build a private day trip and send a quote."
+        },
+        {
+          "q": "How far is Búzios from Rio?",
+          "a": "Roughly a 2.5-hour drive each way along the coast, so it works best as a full-day private trip."
+        }
+      ],
+      "tips": [
+        "Búzios works best as a full-day private trip — roughly 2.5 hours each way along the coast.",
+        "Tell us your dates, group size and interests and we'll build the itinerary and send a transparent quote."
       ]
     },
     "custom-tour": {
@@ -1750,6 +1823,49 @@ const prose = {
         "No disponible los lunes — el Museo del Mañana cierra ese día. El tour opera de martes a domingo."
       ]
     },
+    "buzios-riviera": {
+      "id": "Excursión a Búzios desde Río",
+      "isCustom": true,
+      "slug": "buzios-riviera",
+      "imageSlug": "buzios-riviera",
+      "title": "Excursión a Búzios desde Río",
+      "shortDescription": "Una excursión privada de un día a Búzios, el elegante balneario en la costa al este de Río — bajo consulta, a medida de tus fechas y cotizada directamente.",
+      "fullDescription": "Búzios es un antiguo pueblo de pescadores convertido en un elegante balneario en la costa al este de Río, famoso por sus playas y la Rua das Pedras junto al mar. Lo organizamos como excursión privada de un día desde Río bajo consulta: fechas, horarios e inclusiones se arman a medida y se cotizan directamente, ya que por ahora operamos Búzios a pedido y no con salidas fijas.",
+      "highlights": [
+        "Excursión privada de un día a Búzios, a medida de tus fechas",
+        "Elegante balneario con decenas de playas y la Rua das Pedras junto al mar",
+        "Guía local certificado y transporte privado desde Río",
+        "Bajo consulta — horarios e inclusiones armados según tu grupo"
+      ],
+      "included": [
+        "Transporte privado desde Río con conductor profesional",
+        "Guía local certificado",
+        "Recogida y regreso en Río (hoteles, Airbnbs y terminal de cruceros)",
+        "Agua mineral de cortesía"
+      ],
+      "notIncluded": [
+        "Comidas y bebidas",
+        "Entradas a clubes de playa o paseos en barco (se cotizan con tu itinerario)",
+        "Propinas (opcionales)"
+      ],
+      "duration": "Día completo (bajo consulta)",
+      "recommendations": "Búzios está a unas 2,5 horas en coche desde Río en cada sentido, así que conviene reservar el día completo. Escríbenos con tus fechas y el tamaño del grupo para una cotización a medida.",
+      "ctaText": "Solicitar cotización",
+      "faqs": [
+        {
+          "q": "¿Búzios está disponible como tour fijo?",
+          "a": "Por ahora ofrecemos Búzios bajo consulta. Cuéntanos tus fechas y el tamaño del grupo y armamos una excursión privada con su cotización."
+        },
+        {
+          "q": "¿A qué distancia está Búzios de Río?",
+          "a": "Cerca de 2,5 horas de viaje por la costa en cada sentido, así que funciona mejor como excursión privada de día completo."
+        }
+      ],
+      "tips": [
+        "Búzios funciona mejor como excursión privada de día completo — unas 2,5 horas por la costa en cada sentido.",
+        "Cuéntanos tus fechas, el tamaño del grupo y tus intereses y armamos el itinerario con una cotización transparente."
+      ]
+    },
     "custom-tour": {
       "id": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "isCustom": true,
@@ -2375,6 +2491,49 @@ const prose = {
         "O AquaRio é o maior aquário da América do Sul — o túnel submarino com tubarões e raias sobre sua cabeça é o ponto alto. Reserve pelo menos 60 minutos.",
         "O distrito portuário (Porto Maravilha) onde essas atrações se concentram foi completamente revitalizado para os Jogos Olímpicos de 2016 — o contexto histórico urbano do seu guia adiciona uma camada fascinante à visita.",
         "Não disponível às segundas — o Museu do Amanhã fecha nesse dia. O passeio funciona de terça a domingo."
+      ]
+    },
+    "buzios-riviera": {
+      "id": "Passeio a Búzios saindo do Rio",
+      "isCustom": true,
+      "slug": "buzios-charme-costeiro-passeio-privado",
+      "imageSlug": "buzios-riviera",
+      "title": "Passeio a Búzios saindo do Rio",
+      "shortDescription": "Um passeio privativo de um dia a Búzios, o charmoso balneário no litoral a leste do Rio — sob consulta, sob medida para as suas datas e orçado diretamente.",
+      "fullDescription": "Búzios é uma antiga vila de pescadores que virou um charmoso balneário no litoral a leste do Rio, conhecida pelas praias e pela Rua das Pedras à beira-mar. Organizamos como um passeio privativo de um dia saindo do Rio sob consulta — datas, horários e o que está incluído são montados sob medida e orçados diretamente, já que no momento operamos Búzios a pedido, sem saídas fixas.",
+      "highlights": [
+        "Passeio privativo de um dia a Búzios, sob medida para as suas datas",
+        "Balneário charmoso com dezenas de praias e a Rua das Pedras à beira-mar",
+        "Guia local certificado e transporte privativo saindo do Rio",
+        "Sob consulta — horários e inclusões montados conforme o seu grupo"
+      ],
+      "included": [
+        "Transporte privativo saindo do Rio com motorista profissional",
+        "Guia local certificado",
+        "Busca e retorno no Rio (hotéis, Airbnbs e terminal de cruzeiros)",
+        "Água mineral de cortesia"
+      ],
+      "notIncluded": [
+        "Refeições e bebidas",
+        "Ingressos de clube de praia ou passeios de barco (orçados com o seu roteiro)",
+        "Gorjetas (opcionais)"
+      ],
+      "duration": "Dia inteiro (sob consulta)",
+      "recommendations": "Búzios fica a cerca de 2h30 de carro do Rio em cada sentido, então reserve o dia inteiro. Fale com a gente com as suas datas e o tamanho do grupo para um orçamento sob medida.",
+      "ctaText": "Pedir orçamento",
+      "faqs": [
+        {
+          "q": "Búzios está disponível como passeio fixo?",
+          "a": "No momento oferecemos Búzios sob consulta. Conte suas datas e o tamanho do grupo e montamos um passeio privativo com o orçamento."
+        },
+        {
+          "q": "Qual a distância de Búzios até o Rio?",
+          "a": "Cerca de 2h30 de viagem pela costa em cada sentido, então funciona melhor como um passeio privativo de dia inteiro."
+        }
+      ],
+      "tips": [
+        "Búzios funciona melhor como passeio privativo de dia inteiro — cerca de 2h30 pela costa em cada sentido.",
+        "Conte suas datas, o tamanho do grupo e seus interesses e montamos o roteiro com um orçamento transparente."
       ]
     },
     "custom-tour": {

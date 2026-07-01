@@ -13,7 +13,7 @@ const tourSlugMap = {
   "golden-hour-rio":         { es: "hora-dorada-rio",                        "pt-br": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar" },
   "sunset-culture-roxy":     { es: "atardecer-cultura-roxy",                 "pt-br": "por-do-sol-cultura-roxy" },
   "island-escape-ilha-grande":{ es: "island-escape-ilha-grande",             "pt-br": "island-escape-ilha-grande" },
-  // "buzios-riviera":          { es: "buzios-riviera",                         "pt-br": "buzios-charme-costeiro-passeio-privado" },  // TEMPORARIAMENTE DESATIVADO
+  "buzios-riviera":          { es: "buzios-riviera",                         "pt-br": "buzios-charme-costeiro-passeio-privado" },
   "petropolis-imperial":     { es: "petropolis-imperial",                    "pt-br": "passeio-privado-petropolis-cidade-imperial" },
   "tijuca-rainforest":       { es: "bosque-tijuca",                          "pt-br": "pao-acucar-floresta-tijuca-jardim-botanico-passeio" },
   "niteroi-mac-museum":      { es: "niteroi-museo-mac",                     "pt-br": "niteroi-museo-arte-contemporanea-passeio-privado" },
