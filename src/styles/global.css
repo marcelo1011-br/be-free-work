@@ -295,6 +295,14 @@
 
     --focus-outline-width: var(--border-width-strong);
     --focus-outline-offset: 2px;
+    /* Anel de foco de ALTO CONTRASTE (WCAG 2.4.7 + 1.4.11). Anel DUPLO: outline
+       (--color-focus) + halo box-shadow (--color-focus-halo). Como --color-ink e
+       --color-base invertem por tema em direções OPOSTAS, o par é sempre
+       {escuro, claro} → garante ≥3:1 sobre QUALQUER superfície (bone/navy/âmbar/
+       surface) nos dois temas. Light: outline ink (escuro) + halo base (bone).
+       Dark: outline ink→bone (claro) + halo base→navy-escuro. */
+    --color-focus: var(--color-ink);
+    --color-focus-halo: var(--color-base);
 
     --motion-lift-sm: -2px;
     --motion-press-scale: 0.98;
@@ -1034,12 +1042,14 @@
     border-radius: var(--btn-border-radius);
     cursor: pointer;
     transform: translateZ(0); 
+    /* box-shadow FORA da transição: o halo do anel de foco deve aparecer instantâneo
+       (não "entrar" com fade) em TODOS os .btn — Button e crus. Demais propriedades
+       seguem animando suave no hover. */
     transition:
       background-color var(--btn-transition-duration) var(--btn-transition-easing),
       color var(--btn-transition-duration) var(--btn-transition-easing),
       border-color var(--btn-transition-duration) var(--btn-transition-easing),
-      transform var(--btn-transition-duration) var(--btn-transition-easing),
-      box-shadow var(--btn-transition-duration) var(--btn-transition-easing);
+      transform var(--btn-transition-duration) var(--btn-transition-easing);
 
     
     contain: layout style;
@@ -1063,8 +1073,9 @@
     }
 
     &:focus-visible {
-      outline: var(--focus-outline-width) solid var(--color-accent-light);
+      outline: var(--focus-outline-width) solid var(--color-focus);
       outline-offset: var(--focus-outline-offset);
+      box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-focus-halo);
     }
 
     
@@ -1244,15 +1255,17 @@
   }
 
   *:focus-visible {
-    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline: var(--focus-outline-width) solid var(--color-focus);
     outline-offset: var(--focus-outline-offset);
+    box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-focus-halo);
     border-radius: var(--radius-sm);
   }
 
   a:focus-visible,
   button:focus-visible {
-    outline: var(--focus-outline-width) solid var(--color-accent);
+    outline: var(--focus-outline-width) solid var(--color-focus);
     outline-offset: var(--focus-outline-offset);
+    box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-focus-halo);
   }
 
   

@@ -62,6 +62,7 @@ const Tag = href ? "a" : "button";
     min-block-size: 2.75rem;
   }
 
+
   /* variant="book" (âmbar de reserva): CHAPADO em repouso — EXATAMENTE o token de
      acento do tema (#D9742A light / #E8843C dark), sem gradient e SEM glow/bloom.
      `background:` (shorthand) zera o background-image do gradient herdado.
@@ -81,8 +82,10 @@ const Tag = href ? "a" : "button";
       box-shadow: var(--shadow-accent-md);
     }
   }
+  /* Foco: halo claro/escuro do anel global (--color-focus-halo) — garante ≥3:1
+     mesmo com o botão âmbar (o glow âmbar não daria contraste sobre âmbar). */
   .btn-primary:focus-visible {
-    box-shadow: var(--shadow-accent-sm);
+    box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-focus-halo);
   }
 
   /* variant="solid-navy" (NÃO âmbar): azul estrutural CHAPADO + texto on-blue —
@@ -106,7 +109,7 @@ const Tag = href ? "a" : "button";
     }
   }
   .btn-solid-navy:focus-visible {
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-blue) 35%, transparent);
+    box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-focus-halo);
   }
   /* Dark: o fill (#2A4F91) fica perto da surface escura (~1.9:1) — borda bone sutil
      dá ≥3:1 de definição (non-text contrast), sem tocar o light (lá a borda = fill,
