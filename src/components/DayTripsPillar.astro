@@ -1,0 +1,437 @@
+---
+/**
+ * DayTripsPillar.astro — pillar "day trips / bate e volta" (mar-e-sol).
+ *
+ * Consome dayTripsContent.js (prose por locale + fatos + contato). Recebe `lang`.
+ * Hero é INLINE aqui (HeroPages é rígido: só title/subtitle, sem CTAs).
+ *
+ * RESOLUÇÃO DE HREF (nada hardcodado):
+ *  - Cards de destino: tourKey -> slug localizado via tours.js. tours.en[i].slug
+ *    é a chave EN canônica; o índice i é consistente entre locales (mesmo `order`
+ *    em build()). Logo tours[lang][idx].slug = slug localizado do mesmo tour.
+ *  - 'quote' (hero primário + finalCta): routes[lang].contact (single-source).
+ *  - 'destinations' (hero secundário): âncora #destinations nesta página.
+ *
+ * DISCIPLINA ÂMBAR: 1 único âmbar no corpo = hero primaryCta (variant="book").
+ * finalCta = solid-navy (peso sem âmbar, padrão HomeFinalCTA). Cards = outline.
+ * Hero secundário = ghost bone escopado. FAQ reusa FAQ.astro (footer outline).
+ *
+ * Superfícies: hero navy sólido (--color-blue / --color-on-blue, par AA estável);
+ * demais seções bone (--color-base); cards elevados em --color-surface. Sem
+ * laranja fora do único âmbar. global.css intocado — tudo scoped aqui.
+ */
+import { tours } from "../data/tours.js";
+import { routes } from "../i18n/routes.js";
+import {
+  dayTripsProse,
+  dayTripsDestinations,
+} from "../data/dayTripsContent.js";
+import Button from "./Button.astro";
+import FAQ from "./FAQ.astro";
+import { Image } from "astro:assets";
+
+const { lang } = Astro.props;
+const t = dayTripsProse[lang];
+
+// Segmento de rota do tour por locale (mesmo mapa que TourCard/hreflang usam inline).
+const tourRoutes = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
+
+// tours.en[i].slug === chave EN; índice consistente entre locales (build() usa o mesmo order).
+const enSlugs = tours.en.map((tt) => tt.slug);
+function tourHref(tourKey) {
+  const idx = enSlugs.indexOf(tourKey);
+  if (idx === -1) return null;
+  return `/${lang}/${tourRoutes[lang]}/${tours[lang][idx].slug}/`;
+}
+
+// Token 'quote' -> página de contato localizada (routes.js já traz "/contact/" etc.).
+const quoteHref = `/${lang}${routes[lang].contact}`;
+
+// Imagens de destino (hero webp por tourKey) — glob estático, resolvido no build.
+const heroImages = import.meta.glob("../images/tours/heroes/*-hero.webp", { eager: true });
+function destImage(tourKey) {
+  return heroImages[`../images/tours/heroes/${tourKey}-hero.webp`]?.default;
+}
+
+// Blocos de destino: fatos + href localizado + prose do locale.
+const destBlocks = dayTripsDestinations.map((d) => ({
+  ...d,
+  href: tourHref(d.tourKey),
+  image: destImage(d.tourKey),
+  prose: t.destinations[d.key],
+}));
+
+// FAQ.astro espera {question, answer}; a prose usa {q, a}.
+const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
+
+const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
+---
+
+<!-- HERO (navy sólido, inline) -->
+<section class="dt-hero">
+  <div class="container dt-hero__inner">
+    <h1 class="dt-hero__title">{t.hero.title}</h1>
+    <p class="dt-hero__subtitle">{t.hero.subtitle}</p>
+    <div class="dt-hero__actions">
+      <Button variant="book" size="lg" href={quoteHref}>{t.hero.primaryCta.label}</Button>
+      <a class="dt-hero__ghost" href="#destinations">{t.hero.secondaryCta.label}</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO (bone, coluna estreita ~65ch) -->
+<section class="dt-intro">
+  <div class="container">
+    <div class="dt-intro__inner">
+      <p class="dt-kicker">{t.intro.kicker}</p>
+      <div class="dt-intro__copy">
+        {t.intro.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOOD MENU (bone, 3 cards -> âncora do destino) -->
+<section class="dt-mood">
+  <div class="container">
+    <h2 class="dt-h2">{t.moodMenu.title}</h2>
+    <ul class="dt-mood__grid">
+      {t.moodMenu.items.map((m) => (
+        <li>
+          <a class="dt-mood__card" href={`#dest-${m.destKey}`}>
+            <span class="dt-mood__label">{m.label}</span>
+            <span class="dt-mood__text">{m.text}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- DESTINATIONS (bone, blocos alternando foto/texto) -->
+<section class="dt-destinations" id="destinations">
+  <div class="container">
+    {destBlocks.map((d, i) => (
+      <article class="dt-dest" id={`dest-${d.key}`}>
+        <div class="dt-dest__media">
+          {d.image && (
+            <Image
+              src={d.image}
+              alt={d.prose.name}
+              width={760}
+              height={560}
+              class="dt-dest__img"
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          )}
+        </div>
+        <div class="dt-dest__body">
+          <h2 class="dt-dest__name">{d.prose.name}</h2>
+          <p class="dt-dest__blurb">{d.prose.blurb}</p>
+          {d.href ? (
+            <Button variant="outline" href={d.href}>{d.prose.ctaLabel}</Button>
+          ) : (
+            <span class="dt-dest__todo">[href TODO: {d.tourKey}]</span>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<!-- WHY PRIVATE (checklist em painel surface) -->
+<section class="dt-why">
+  <div class="container">
+    <div class="dt-why__panel">
+      <h2 class="dt-h2">{t.whyPrivate.title}</h2>
+      <ul class="dt-why__list">
+        {t.whyPrivate.items.map((it) => (
+          <li>
+            <span class="dt-why__mark" aria-hidden="true">+</span>
+            <span>{it}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (reusa FAQ.astro; accordion FAQPage-ready) -->
+<FAQ lang={lang} title={t.faqTitle} subtitle="" questions={faqQuestions} />
+
+<!-- FINAL CTA (bone + solid-navy; NÃO é um segundo âmbar) -->
+<section class="dt-final">
+  <div class="container dt-final__inner">
+    <h2 class="dt-h2">{t.finalCta.title}</h2>
+    <p class="dt-final__text">{t.finalCta.text}</p>
+    <Button variant="solid-navy" size="lg" href={quoteHref}>{t.finalCta.ctaLabel}</Button>
+  </div>
+</section>
+
+<style>
+  /* ---- HERO: banda navy sólida (par AA --color-blue / --color-on-blue) ---- */
+  .dt-hero {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+  }
+  .dt-hero__inner {
+    max-width: clamp(40rem, 78vw, 56rem);
+    text-align: center;
+  }
+  .dt-hero__title {
+    color: var(--color-on-blue);
+    margin: 0 0 var(--space-md);
+  }
+  .dt-hero__subtitle {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-relaxed);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    margin: 0 auto var(--space-xl);
+    max-width: 48ch;
+  }
+  .dt-hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  /* Secundário 'destinations': ghost bone sobre navy (escopado; não toca Button/global) */
+  .dt-hero__ghost {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: var(--space-lg);
+    border-radius: var(--radius);
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  @media (hover: hover) {
+    .dt-hero__ghost:hover {
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      border-color: var(--color-on-blue);
+    }
+  }
+  .dt-hero__ghost:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-on-blue);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  /* ---- Seções bone padrão ---- */
+  .dt-intro,
+  .dt-mood,
+  .dt-destinations,
+  .dt-why {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+  }
+
+  .dt-h2 {
+    color: var(--color-text);
+  }
+
+  /* ---- INTRO ---- */
+  .dt-intro__inner {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+  .dt-kicker {
+    color: var(--color-blue);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--font-size-small);
+    margin: 0 0 var(--space-sm);
+  }
+  .dt-intro__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .dt-intro__copy p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-size: var(--font-size-h5);
+  }
+
+  /* ---- MOOD MENU ---- */
+  .dt-mood__grid {
+    list-style: none;
+    margin: var(--space-2xl) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+  .dt-mood__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    height: 100%;
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition:
+      transform var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  @media (hover: hover) {
+    .dt-mood__card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-blue);
+    }
+  }
+  .dt-mood__label {
+    font-family: var(--font-display);
+    font-size: var(--font-size-h5);
+    color: var(--color-blue);
+  }
+  .dt-mood__text {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* ---- DESTINATIONS (alternando foto/texto) ---- */
+  .dt-dest {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-2xl);
+    align-items: center;
+    scroll-margin-top: 6rem;
+  }
+  .dt-dest + .dt-dest {
+    margin-top: var(--space-3xl);
+  }
+  .dt-dest:nth-child(even) .dt-dest__media {
+    order: 2;
+  }
+  .dt-dest__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+  }
+  .dt-dest__name {
+    margin: 0 0 var(--space-sm);
+    color: var(--color-text);
+  }
+  .dt-dest__blurb {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0 0 var(--space-lg);
+  }
+  .dt-dest__todo {
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* ---- WHY PRIVATE ---- */
+  .dt-why__panel {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .dt-why__panel .dt-h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: var(--space-xl);
+  }
+  .dt-why__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+  .dt-why__list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+  .dt-why__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-full);
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  .dt-final {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+  }
+  .dt-final__inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .dt-final .dt-h2 {
+    margin-top: 0;
+  }
+  .dt-final__text {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-h5);
+    margin: var(--space-md) auto var(--space-xl);
+    max-width: 54ch;
+  }
+
+  /* ---- Responsivo ---- */
+  @media (max-width: 768px) {
+    .dt-intro,
+    .dt-mood,
+    .dt-destinations,
+    .dt-why,
+    .dt-final {
+      padding-block: var(--space-2xl);
+    }
+    .dt-hero__title {
+      font-size: var(--font-size-h3);
+    }
+    .dt-hero__subtitle,
+    .dt-intro__copy p,
+    .dt-final__text {
+      font-size: var(--font-size-body);
+    }
+    .dt-mood__grid,
+    .dt-why__list {
+      grid-template-columns: 1fr;
+    }
+    .dt-dest {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+    .dt-dest:nth-child(even) .dt-dest__media {
+      order: 0;
+    }
+    .dt-why__panel {
+      padding: var(--space-lg);
+    }
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import DayTripsPillar from "../../components/DayTripsPillar.astro";
+import { dayTripsProse } from "../../data/dayTripsContent.js";
+
+const lang = "pt-br";
+const t = dayTripsProse[lang];
+
+const breadcrumbItems = [
+  { name: "Início", url: `/${lang}` },
+  { name: t.hero.title, url: `/${lang}/bate-e-volta-saindo-do-rio` },
+];
+---
+
+<BaseLayout title={t.seo.title} description={t.seo.description}>
+  <Breadcrumbs items={breadcrumbItems} />
+  <DayTripsPillar lang={lang} />
+</BaseLayout>
