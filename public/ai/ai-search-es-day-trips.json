@@ -1,47 +1,41 @@
 {
   "language": "es",
   "category": "day_trips",
-  "label": "Excursiones de un día",
-  "description": "Escapadas de día completo a playas, islas y ciudades de montaña. Operadas como excursiones privadas de un día con salida desde Río de Janeiro.",
+  "label": "Excursiones desde Río de Janeiro",
+  "description": "Compara las excursiones privadas desde Río: Petrópolis imperial, Ilha Grande en lancha privada o Búzios bajo consulta. Un guía habilitado se ocupa de la logística; tú disfrutas el día.",
   "faqs": [
     {
-      "question": "¿Qué tan lejos están las excursiones?",
-      "answer": "La mayoría están a 2-3 horas por trayecto."
+      "question": "¿Cuál excursión vale más la pena?",
+      "answer": "Depende de lo que busques: Petrópolis para historia y clima de montaña, Ilha Grande para agua clara y lancha privada, y Búzios para un día de playas. Si dudas, cuéntanos tus fechas y tu estilo de viaje y te recomendamos una."
     },
     {
-      "question": "¿Las comidas están incluidas?",
-      "answer": "Normalmente no, salvo que se especifique."
+      "question": "¿Cuál es la mejor época para cada excursión?",
+      "answer": "Petrópolis funciona todo el año porque depende poco del clima. Para Ilha Grande conviene un día de mar tranquilo y buen tiempo, más habitual en primavera y verano; en días de mar agitado la experiencia cambia. Búzios se adapta a la temporada al organizarse bajo consulta."
+    },
+    {
+      "question": "¿Se puede visitar Búzios en el día desde Río?",
+      "answer": "Sí. Búzios se puede hacer como excursión privada de un día; al organizarse bajo consulta, ajustamos la salida y el ritmo a tu grupo. Escríbenos para un presupuesto."
+    },
+    {
+      "question": "¿Están incluidos el transporte y la recogida?",
+      "answer": "Sí. Cada excursión privada incluye vehículo y conductor, y recogida en tu hotel, Airbnb o puerto cuando forma parte de la ruta planificada."
+    },
+    {
+      "question": "¿Las excursiones son privadas?",
+      "answer": "Sí, cada salida es privada y solo para tu grupo, con tu propio guía. Nunca compartes el vehículo ni la lancha con otros viajeros."
+    },
+    {
+      "question": "¿Necesito reservar con antelación?",
+      "answer": "Sí, lo recomendamos, sobre todo para Ilha Grande, que tiene salidas limitadas de madrugada. Para planificar o pedir un presupuesto de Búzios, escribe a contact@befreetours.com.br o por WhatsApp al +55 21 97927-1637."
     }
   ],
   "tours": [
-    {
-      "id": "Escape a la Isla: Ilha Grande en Lancha Privada",
-      "slug": "island-escape-ilha-grande",
-      "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
-      "duration": "10 horas",
-      "price_from": 925,
-      "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
-      "highlights": [
-        "Lancha privada para tu grupo",
-        "5 horas de exploración",
-        "Natación y snorkel",
-        "Playas y calas aisladas"
-      ],
-      "best_for": [
-        "amantes de la naturaleza",
-        "entusiastas de la playa",
-        "aventureros",
-        "fanáticos del snorkel"
-      ],
-      "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande",
-      "tour_type": "private_day_trip"
-    },
     {
       "id": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "duration": "8 horas",
-      "price_from": 390,
+      "price_from": 360,
       "description": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
       "highlights": [
         "Palacio Quitandinha",
@@ -50,13 +44,39 @@
         "Catedral Metropolitana",
         "Centro de estilo europeo"
       ],
-      "best_for": [
-        "amantes de la historia",
-        "familias",
-        "buscadores de clima fresco",
-        "entusiastas de la cultura"
+      "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Escape a la Isla: Ilha Grande en Lancha Privada",
+      "slug": "island-escape-ilha-grande",
+      "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
+      "duration": "10 horas",
+      "price_from": 875,
+      "description": "Embárcate en un viaje en lancha privada a algunas de las playas de aguas más claras de la isla.",
+      "highlights": [
+        "Lancha privada para tu grupo",
+        "5 horas de exploración",
+        "Natación y snorkel",
+        "Playas y calas aisladas"
       ],
-      "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial",
+      "url": "https://befreetours.com.br/es/tours-privados/island-escape-ilha-grande/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Excursión a Búzios desde Río",
+      "slug": "buzios-riviera",
+      "name": "Excursión a Búzios desde Río",
+      "duration": "Día completo (bajo consulta)",
+      "pricing": "on_request",
+      "description": "Una excursión privada de un día a Búzios, el elegante balneario en la costa al este de Río — bajo consulta, a medida de tus fechas y cotizada directamente.",
+      "highlights": [
+        "Excursión privada de un día a Búzios, a medida de tus fechas",
+        "Elegante balneario con decenas de playas y la Rua das Pedras junto al mar",
+        "Guía local certificado y transporte privado desde Río",
+        "Bajo consulta — horarios e inclusiones armados según tu grupo"
+      ],
+      "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera/",
       "tour_type": "private_day_trip"
     }
   ],

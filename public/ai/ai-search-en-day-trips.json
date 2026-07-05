@@ -2,46 +2,40 @@
   "language": "en",
   "category": "day_trips",
   "label": "Day Trips",
-  "description": "Full-day escapes to beaches, islands, and mountain towns outside Rio. Operated as private day trips departing from Rio de Janeiro.",
+  "description": "Compare private day trips from Rio — imperial Petrópolis, an Ilha Grande speedboat escape, or Búzios on request. A licensed guide handles the logistics; you enjoy the day.",
   "faqs": [
     {
-      "question": "How far are day trips from Rio?",
-      "answer": "Most destinations are 2-3 hours each way."
+      "question": "Which day trip should I choose?",
+      "answer": "For history and cooler mountain air, choose Petrópolis. For clear water and time on a private boat, choose Ilha Grande. For easygoing beach hopping, choose Búzios. If you're still unsure, tell us your dates and travel style and we'll recommend one."
     },
     {
-      "question": "Are meals included?",
-      "answer": "Meals are typically not included unless specified."
+      "question": "How long do the day trips take?",
+      "answer": "Plan on a full day. For Petrópolis we suggest starting between 08:00 and 10:30 to allow time to see everything, and it runs about 8 hours; Ilha Grande starts very early (around 05:30–07:30) and runs roughly 10 hours because of the drive and boat time. Búzios is arranged on request."
+    },
+    {
+      "question": "Is transport and pickup included?",
+      "answer": "Yes. Each private day trip includes a vehicle and driver, and pickup from your hotel, Airbnb or port when it's part of the planned route."
+    },
+    {
+      "question": "Is lunch included?",
+      "answer": "Lunch is on your own so you can choose what you like. On Ilha Grande there's an optional beach stop where lunch runs roughly USD 20–40 per person, and you can also add an onboard barbecue on request."
+    },
+    {
+      "question": "Are the day trips private?",
+      "answer": "Yes — every trip runs privately for your group only, with your own guide. You never share the vehicle or boat with other travelers."
+    },
+    {
+      "question": "Do I need to book in advance?",
+      "answer": "Yes, we recommend booking ahead — Ilha Grande in particular has limited early-morning departures. To plan a trip or get a Búzios quote, email contact@befreetours.com.br or WhatsApp +55 21 97927-1637."
     }
   ],
   "tours": [
-    {
-      "id": "Island Escape: Ilha Grande by Private Speedboat",
-      "slug": "island-escape-ilha-grande",
-      "name": "Island Escape: Ilha Grande by Private Speedboat",
-      "duration": "10 hours",
-      "price_from": 925,
-      "description": "Embark on an exclusive private speedboat journey around the pristine tropical paradise of Ilha Grande.",
-      "highlights": [
-        "Private speedboat for your group",
-        "5-hour island exploration",
-        "Swimming and snorkeling",
-        "Secluded beaches and coves"
-      ],
-      "best_for": [
-        "nature lovers",
-        "beach enthusiasts",
-        "adventurers",
-        "snorkeling fans"
-      ],
-      "url": "https://befreetours.com.br/en/private-tours/island-escape-ilha-grande",
-      "tour_type": "private_day_trip"
-    },
     {
       "id": "Petrópolis: Imperial Palaces & Mountain Escape",
       "slug": "petropolis-imperial",
       "name": "Petrópolis: Imperial Palaces & Mountain Escape",
       "duration": "8 hours",
-      "price_from": 390,
+      "price_from": 360,
       "description": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
       "highlights": [
         "Quitandinha Palace",
@@ -50,13 +44,39 @@
         "Metropolitan Cathedral",
         "European-style town center"
       ],
-      "best_for": [
-        "history lovers",
-        "families",
-        "cool climate seekers",
-        "culture enthusiasts"
+      "url": "https://befreetours.com.br/en/private-tours/petropolis-imperial/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Island Escape: Ilha Grande by Private Speedboat",
+      "slug": "island-escape-ilha-grande",
+      "name": "Island Escape: Ilha Grande by Private Speedboat",
+      "duration": "10 hours",
+      "price_from": 875,
+      "description": "Embark on a private speedboat trip to some of the island's clear-water beaches.",
+      "highlights": [
+        "Private speedboat for your group",
+        "5-hour island exploration",
+        "Swimming and snorkeling",
+        "Secluded beaches and coves"
       ],
-      "url": "https://befreetours.com.br/en/private-tours/petropolis-imperial",
+      "url": "https://befreetours.com.br/en/private-tours/island-escape-ilha-grande/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Búzios Day Trip from Rio",
+      "slug": "buzios-riviera",
+      "name": "Búzios Day Trip from Rio",
+      "duration": "Full day (on request)",
+      "pricing": "on_request",
+      "description": "A private day trip to Búzios, the chic beach town on the coast east of Rio — arranged on request, tailored to your dates and quoted directly.",
+      "highlights": [
+        "Private day trip to Búzios, tailored to your dates",
+        "Chic beach town with dozens of beaches and the Rua das Pedras waterfront",
+        "Certified local guide and private transport from Rio",
+        "Arranged on request — timing and inclusions built around your group"
+      ],
+      "url": "https://befreetours.com.br/en/private-tours/buzios-riviera/",
       "tour_type": "private_day_trip"
     }
   ],

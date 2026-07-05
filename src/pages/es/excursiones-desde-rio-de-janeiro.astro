@@ -3,9 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import DayTripsPillar from "../../components/DayTripsPillar.astro";
 import { dayTripsProse } from "../../data/dayTripsContent.js";
+import { getDayTripsSchema } from "../../utils/dayTripsSchema.js";
 
 const lang = "es";
 const t = dayTripsProse[lang];
+
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const schema = getDayTripsSchema(lang, siteUrl);
 
 const breadcrumbItems = [
   { name: "Inicio", url: `/${lang}` },
@@ -13,7 +17,7 @@ const breadcrumbItems = [
 ];
 ---
 
-<BaseLayout title={t.seo.title} description={t.seo.description}>
+<BaseLayout title={t.seo.title} description={t.seo.description} schema={schema}>
   <Breadcrumbs items={breadcrumbItems} />
   <DayTripsPillar lang={lang} />
 </BaseLayout>

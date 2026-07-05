@@ -1,47 +1,41 @@
 {
   "language": "pt-br",
   "category": "day_trips",
-  "label": "Bate-voltas",
-  "description": "Passeios de dia inteiro para praias, ilhas e cidades de serra. Operados como bate-voltas privativos com saída do Rio de Janeiro.",
+  "label": "Bate e volta saindo do Rio",
+  "description": "Guia dos bate-voltas privativos saindo do Rio: Petrópolis imperial, Ilha Grande de lancha ou Búzios sob consulta. Quanto tempo leva, o que esperar e quando vale a pena.",
   "faqs": [
     {
-      "question": "Qual a distância dos bate-voltas?",
-      "answer": "A maioria fica a 2-3 horas de carro."
+      "question": "Quanto tempo leva um bate-volta saindo do Rio?",
+      "answer": "Conte com o dia inteiro. Para Petrópolis, sugerimos sair entre 08:00 e 10:30 para dar tempo de ver tudo, e leva cerca de 8 horas. Ilha Grande sai bem cedo (por volta de 05:30 às 07:30) e leva perto de 10 horas, por causa da estrada e do tempo de lancha. Búzios é organizado sob consulta."
     },
     {
-      "question": "As refeições estão incluídas?",
-      "answer": "Normalmente não, salvo indicação no tour."
+      "question": "Vale a pena fazer Ilha Grande em um dia ou preciso dormir lá?",
+      "answer": "Dá pra fazer em um dia como passeio privativo, com saída cedo, traslado e tempo de lancha. É um dia longo, mas evita hospedagem na ilha. Se você quer um ritmo mais devagar, dormir uma noite é uma opção — mas não é obrigatório."
+    },
+    {
+      "question": "Petrópolis ou Ilha Grande: qual escolher?",
+      "answer": "Petrópolis é mais tranquilo, cultural e independe do clima — bom o ano todo. Ilha Grande é mais aventureiro, focado em praia e lancha, e depende mais do mar e do tempo. Se é sua primeira vez e quer um dia sem sustos, Petrópolis; se quer água clara e barco, Ilha Grande."
+    },
+    {
+      "question": "Dá pra fazer Búzios de bate-volta saindo do Rio?",
+      "answer": "Dá, embora seja mais puxado num dia só. Como é organizado sob consulta, a gente ajusta a saída e o ritmo ao seu grupo. Chame pra montar o roteiro e receber um orçamento."
+    },
+    {
+      "question": "O que está incluído no passeio?",
+      "answer": "Cada bate-volta privativo inclui veículo e motorista, guia credenciado e água mineral, além da busca no hotel, Airbnb ou porto quando faz parte da rota. Ingressos e almoço ficam por conta própria."
+    },
+    {
+      "question": "Precisa reservar com antecedência?",
+      "answer": "Sim, recomendamos — Ilha Grande, em especial, tem poucas saídas de madrugada. Para planejar ou pedir um orçamento de Búzios, escreva para contact@befreetours.com.br ou pelo WhatsApp +55 21 97927-1637."
     }
   ],
   "tours": [
-    {
-      "id": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
-      "slug": "island-escape-ilha-grande",
-      "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
-      "duration": "10 horas",
-      "price_from": 925,
-      "description": "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
-      "highlights": [
-        "Lancha privada para seu grupo",
-        "5 horas de exploração",
-        "Natação e mergulho",
-        "Praias e enseadas isoladas"
-      ],
-      "best_for": [
-        "amantes da natureza",
-        "entusiastas de praia",
-        "aventureiros",
-        "fãs de mergulho"
-      ],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande",
-      "tour_type": "private_day_trip"
-    },
     {
       "id": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       "slug": "passeio-privado-petropolis-cidade-imperial",
       "name": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       "duration": "8 horas",
-      "price_from": 390,
+      "price_from": 360,
       "description": "Fuja para as montanhas e explore a história imperial do Brasil em Petrópolis, residência de verão dos imperadores brasileiros.",
       "highlights": [
         "Palácio Quitandinha",
@@ -50,13 +44,39 @@
         "Catedral Metropolitana",
         "Centro de estilo europeu"
       ],
-      "best_for": [
-        "amantes da história",
-        "famílias",
-        "buscadores de clima ameno",
-        "entusiastas da cultura"
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
+      "slug": "island-escape-ilha-grande",
+      "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
+      "duration": "10 horas",
+      "price_from": 875,
+      "description": "Embarque em um passeio de lancha privada por algumas das praias de água mais clara da ilha.",
+      "highlights": [
+        "Lancha privada para seu grupo",
+        "5 horas de exploração",
+        "Natação e mergulho",
+        "Praias e enseadas isoladas"
       ],
-      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial",
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/island-escape-ilha-grande/",
+      "tour_type": "private_day_trip"
+    },
+    {
+      "id": "Passeio a Búzios saindo do Rio",
+      "slug": "buzios-charme-costeiro-passeio-privado",
+      "name": "Passeio a Búzios saindo do Rio",
+      "duration": "Dia inteiro (sob consulta)",
+      "pricing": "on_request",
+      "description": "Um passeio privativo de um dia a Búzios, o charmoso balneário no litoral a leste do Rio — sob consulta, sob medida para as suas datas e orçado diretamente.",
+      "highlights": [
+        "Passeio privativo de um dia a Búzios, sob medida para as suas datas",
+        "Balneário charmoso com dezenas de praias e a Rua das Pedras à beira-mar",
+        "Guia local certificado e transporte privativo saindo do Rio",
+        "Sob consulta — horários e inclusões montados conforme o seu grupo"
+      ],
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado/",
       "tour_type": "private_day_trip"
     }
   ],
