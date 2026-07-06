@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HalfDayPillar from "../../components/HalfDayPillar.astro";
+import { halfDayProse } from "../../data/halfDayContent.js";
+import { routes } from "../../i18n/routes.js";
+import { getHalfDaySchema } from "../../utils/halfDaySchema.js";
+
+const lang = "pt-br";
+const t = halfDayProse[lang];
+
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const schema = getHalfDaySchema(lang, siteUrl);
+
+const breadcrumbItems = [
+  { name: "Início", url: `/${lang}` },
+  { name: t.hero.title, url: `/${lang}${routes[lang].halfDay}` },
+];
+---
+
+<BaseLayout title={t.title} description={t.metaDescription} schema={schema}>
+  <Breadcrumbs items={breadcrumbItems} />
+  <HalfDayPillar lang={lang} />
+</BaseLayout>

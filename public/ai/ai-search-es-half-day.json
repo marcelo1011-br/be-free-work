@@ -1,0 +1,66 @@
+{
+  "language": "es",
+  "category": "half_day",
+  "label": "Tours de Medio Día en Río de Janeiro",
+  "description": "Visita el Cristo Redentor y el Pan de Azúcar en una sola mañana o tarde — tours privados de medio día en Río, pensados según tu tiempo. Amanecer, diurno flexible o atardecer.",
+  "faqs": [
+    {
+      "question": "¿Alcanzan cinco o seis horas para ver lo principal de Río?",
+      "answer": "Sí. Con guía privado, traslado puerta a puerta y acceso sin fila en el teleférico del Pan de Azúcar, un medio día cubre el Cristo Redentor y el Pan de Azúcar con comodidad. El tiempo va a las vistas y no a las colas ni a los traslados."
+    },
+    {
+      "question": "¿Cuál tour de medio día elijo?",
+      "answer": "Depende de la luz que quieras. Río Express es la opción diurna flexible y la mejor para agendas ajustadas. Río al Amanecer es un tour de amanecer que sale los sábados a las 4 AM. Hora Dorada gira en torno al atardecer. Dinos tus fechas y te orientamos."
+    },
+    {
+      "question": "¿Sirven para pasajeros de crucero?",
+      "answer": "Sí — Río Express está pensado para días de puerto. Incluye el traslado desde la terminal de cruceros de Pier Mauá, y el formato de cinco horas entra cómodo en la mayoría de las ventanas de puerto; tu guía se asegura de que vuelvas a tiempo."
+    },
+    {
+      "question": "¿Puedo hacer un medio día el día de llegada o de salida?",
+      "answer": "Muchas veces, sí. Si tus horarios de vuelo lo permiten, un medio día aprovecha bien un día de llegada o salida que quedaría vacío. Cuéntanos tu itinerario y te decimos con honestidad si es viable."
+    },
+    {
+      "question": "¿Está incluido el acceso sin fila?",
+      "answer": "El acceso sin fila corresponde al teleférico del Pan de Azúcar y está incluido. Las entradas del Cristo Redentor también están incluidas en el precio."
+    },
+    {
+      "question": "¿Los tours son privados?",
+      "answer": "Sí. Cada tour de medio día es privado para tu grupo: tu propio guía, tu propio vehículo y el ritmo que marques."
+    }
+  ],
+  "tours": [
+    {
+      "id": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
+      "slug": "amanecer-rio",
+      "name": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
+      "duration": "6 horas",
+      "price_from": 580,
+      "description": "Fotógrafos y madrugadores que quieren el Pan de Azúcar y el Cristo sin multitudes",
+      "url": "https://befreetours.com.br/es/tours-privados/amanecer-rio/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
+      "slug": "rio-express",
+      "name": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
+      "duration": "5 horas",
+      "price_from": 410,
+      "description": "Pasajeros de crucero y agendas ajustadas: la ventana más eficiente sobre los íconos",
+      "url": "https://befreetours.com.br/es/tours-privados/rio-express/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
+      "slug": "hora-dorada-rio",
+      "name": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
+      "duration": "6 horas",
+      "price_from": 430,
+      "description": "El Cristo con luz cálida y luego el atardecer desde el Pan de Azúcar, con la ciudad encendiéndose abajo",
+      "url": "https://befreetours.com.br/es/tours-privados/hora-dorada-rio/",
+      "tour_type": "private_tour"
+    }
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
+}

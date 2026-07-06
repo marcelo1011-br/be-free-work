@@ -1,0 +1,495 @@
+---
+/**
+ * HalfDayPillar.astro — pillar "half-day / meio período" (mar-e-sol).
+ *
+ * Consome halfDayContent.js (prose por locale + fatos). Recebe `lang`.
+ * Hero é INLINE aqui (HeroPages é rígido: só title/subtitle, sem CTAs).
+ *
+ * Seções: hero navy (H1 único) → intro → comparison (tabela) → idealFor+help (2 col)
+ * → recommended (TourCard por key + link hub) → why → costWedge (banda azul) → FAQ
+ * (reusa FAQ.astro) → finalCta.
+ *
+ * RESOLUÇÃO DE HREF (nada hardcodado — mesmo resolvedor do PrivateGuidePillar):
+ *  - Cards recommended: TourCard resolve o slug localizado internamente a partir do item.
+ *  - Token 'contact'       -> routes[lang].contact.
+ *  - Token 'private-tours' -> routes[lang].privateTours.
+ *
+ * DISCIPLINA ÂMBAR: 1 único âmbar VISÍVEL no corpo = hero primaryCta (variant="book").
+ * costWedge = banda azul (única batida azul do corpo, invariante mar-e-sol); seu CTA é
+ * bone/outline escopado (contrasta sobre azul, NÃO âmbar). finalCta = solid-navy + outline.
+ *
+ * Superfícies: hero navy sólido; miolo bone (--color-base); cards/painéis em --color-surface;
+ * costWedge navy/azul (--color-blue / --color-on-blue). global.css intocado — tudo scoped.
+ */
+import { tours } from "../data/tours.js";
+import { routes } from "../i18n/routes.js";
+import { halfDayProse, halfDayTourKeys } from "../data/halfDayContent.js";
+import Button from "./Button.astro";
+import FAQ from "./FAQ.astro";
+import TourCard from "./TourCard.astro";
+
+const { lang } = Astro.props;
+const t = halfDayProse[lang];
+
+// tours.en[i].slug === chave EN; índice consistente entre locales.
+const enSlugs = tours.en.map((tt) => tt.slug);
+const recommendedItems = halfDayTourKeys
+  .map((key) => {
+    const idx = enSlugs.indexOf(key);
+    return idx === -1 ? null : tours[lang][idx];
+  })
+  .filter(Boolean);
+
+// Tokens de navegação -> rota localizada (single-source em routes.js).
+function tokenHref(token) {
+  if (token === "contact") return `/${lang}${routes[lang].contact}`;
+  if (token === "private-tours") return `/${lang}${routes[lang].privateTours}`;
+  return null;
+}
+
+const heroPrimaryHref = tokenHref(t.hero.primaryCta.token);
+const recHubHref = tokenHref(t.recommended.hubToken);
+const wedgeCtaHref = tokenHref(t.costWedge.ctaToken);
+const finalPrimaryHref = tokenHref(t.finalCta.primaryToken);
+const finalSecondaryHref = tokenHref(t.finalCta.secondaryToken);
+
+// FAQ.astro espera {question, answer}; a prose usa {q, a}.
+const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
+---
+
+<!-- HERO (navy sólido, inline) -->
+<section class="hd-hero">
+  <div class="container hd-hero__inner">
+    <h1 class="hd-hero__title">{t.hero.title}</h1>
+    <p class="hd-hero__subtitle">{t.hero.subtitle}</p>
+    <div class="hd-hero__actions">
+      <Button variant="book" size="lg" href={heroPrimaryHref}>{t.hero.primaryCta.label}</Button>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO (bone, coluna estreita ~65ch) -->
+<section class="hd-intro">
+  <div class="container">
+    <div class="hd-intro__inner">
+      {t.intro.paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON (bone, tabela — escolha sua luz) -->
+<section class="hd-compare">
+  <div class="container">
+    <h2 class="hd-h2 hd-center">{t.comparison.title}</h2>
+    <p class="hd-compare__intro">{t.comparison.intro}</p>
+    <div class="hd-compare__wrap">
+      <table class="hd-compare__table">
+        <thead>
+          <tr>
+            <th scope="col">{t.comparison.columns.tour}</th>
+            <th scope="col">{t.comparison.columns.length}</th>
+            <th scope="col">{t.comparison.columns.when}</th>
+            <th scope="col">{t.comparison.columns.bestFor}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {t.comparison.items.map((row) => (
+            <tr>
+              <th scope="row">{row.tour}</th>
+              <td>{row.length}</td>
+              <td>{row.when}</td>
+              <td>{row.bestFor}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL FOR + HELP (bone, duas colunas) -->
+<section class="hd-two">
+  <div class="container">
+    <div class="hd-two__grid">
+      <div class="hd-list-block">
+        <h2 class="hd-h2">{t.idealFor.title}</h2>
+        <ul class="hd-list">
+          {t.idealFor.items.map((it) => (
+            <li>
+              <span class="hd-mark" aria-hidden="true">+</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="hd-list-block hd-list-block--accent">
+        <h2 class="hd-h2">{t.help.title}</h2>
+        {t.help.paragraphs.map((p) => <p class="hd-help__p">{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDED (bone, TourCard por key + link hub) -->
+<section class="hd-rec">
+  <div class="container">
+    <h2 class="hd-h2 hd-center">{t.recommended.title}</h2>
+    <div class="hd-rec__grid">
+      {recommendedItems.map((item) => (
+        <TourCard item={item} lang={lang} />
+      ))}
+    </div>
+    <div class="hd-rec__hub">
+      <Button variant="outline" href={recHubHref}>{t.recommended.hubLabel}</Button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY (checklist em painel surface) -->
+<section class="hd-why">
+  <div class="container">
+    <div class="hd-why__panel">
+      <h2 class="hd-h2 hd-center">{t.why.title}</h2>
+      <ul class="hd-why__list">
+        {t.why.items.map((it) => (
+          <li>
+            <span class="hd-mark" aria-hidden="true">+</span>
+            <span>{it}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COST WEDGE (banda azul — única batida azul do corpo) -->
+<section class="hd-wedge">
+  <div class="container hd-wedge__inner">
+    <p class="hd-wedge__text">{t.costWedge.text}</p>
+    <a class="hd-wedge__cta" href={wedgeCtaHref}>{t.costWedge.ctaLabel}</a>
+  </div>
+</section>
+
+<!-- FAQ (reusa FAQ.astro; accordion FAQPage-ready) -->
+<FAQ lang={lang} title={t.faqTitle} subtitle="" questions={faqQuestions} />
+
+<!-- FINAL CTA (bone; solid-navy + outline — NÃO é um segundo âmbar) -->
+<section class="hd-final">
+  <div class="container hd-final__inner">
+    <h2 class="hd-h2">{t.finalCta.title}</h2>
+    <p class="hd-final__text">{t.finalCta.text}</p>
+    <div class="hd-final__actions">
+      <Button variant="solid-navy" size="lg" href={finalPrimaryHref}>{t.finalCta.primaryLabel}</Button>
+      <Button variant="outline" size="lg" href={finalSecondaryHref}>{t.finalCta.secondaryLabel}</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---- HERO: banda navy sólida (par AA --color-blue / --color-on-blue) ---- */
+  .hd-hero {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+  }
+  .hd-hero__inner {
+    max-width: clamp(40rem, 78vw, 56rem);
+    text-align: center;
+  }
+  .hd-hero__title {
+    color: var(--color-on-blue);
+    margin: 0 0 var(--space-md);
+  }
+  .hd-hero__subtitle {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-relaxed);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    margin: 0 auto var(--space-xl);
+    max-width: 52ch;
+  }
+  .hd-hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ---- Seções bone padrão ---- */
+  .hd-intro,
+  .hd-compare,
+  .hd-two,
+  .hd-rec,
+  .hd-why {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+  }
+
+  .hd-h2 {
+    color: var(--color-text);
+  }
+  .hd-center {
+    text-align: center;
+  }
+
+  /* ---- INTRO ---- */
+  .hd-intro__inner {
+    max-width: 65ch;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .hd-intro__inner p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-size: var(--font-size-h5);
+  }
+
+  /* ---- COMPARISON (tabela) ---- */
+  .hd-compare__intro {
+    max-width: 60ch;
+    margin: var(--space-md) auto var(--space-2xl);
+    text-align: center;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+  .hd-compare__wrap {
+    overflow-x: auto;
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+  .hd-compare__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 40rem;
+  }
+  .hd-compare__table th,
+  .hd-compare__table td {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    vertical-align: top;
+    line-height: var(--line-height-relaxed);
+  }
+  .hd-compare__table thead th {
+    font-family: var(--font-display);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-blue);
+    border-block-end: var(--border-width-regular) solid var(--color-border);
+  }
+  .hd-compare__table tbody th {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+  .hd-compare__table tbody td {
+    color: var(--color-text-light);
+  }
+  .hd-compare__table tbody tr + tr th,
+  .hd-compare__table tbody tr + tr td {
+    border-block-start: var(--border-width-hairline) solid var(--color-border);
+  }
+
+  /* ---- IDEAL FOR + HELP (duas colunas) ---- */
+  .hd-two__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-xl);
+  }
+  .hd-list-block {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+  }
+  .hd-list-block--accent {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-blue) 10%, transparent),
+      var(--color-surface)
+    );
+  }
+  .hd-list-block .hd-h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+  }
+  .hd-help__p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* ---- Listas com marca "+" (idealFor, why) ---- */
+  .hd-list,
+  .hd-why__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+  .hd-list li,
+  .hd-why__list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+  .hd-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-full);
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* ---- RECOMMENDED (grid de TourCard) ---- */
+  .hd-rec__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+  }
+  .hd-rec__hub {
+    margin-top: var(--space-2xl);
+    text-align: center;
+  }
+
+  /* ---- WHY (painel surface, checklist 2 col) ---- */
+  .hd-why__panel {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .hd-why__panel .hd-h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-xl);
+  }
+  .hd-why__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* ---- COST WEDGE (banda azul — única batida azul do corpo) ---- */
+  .hd-wedge {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: var(--space-3xl);
+  }
+  .hd-wedge__inner {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+  .hd-wedge__text {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-relaxed);
+    color: color-mix(in srgb, var(--color-on-blue) 90%, transparent);
+    margin: 0;
+    max-width: 54ch;
+  }
+  /* CTA bone/outline sobre azul (contrasta; NÃO âmbar) — mesmo tratamento do ghost do hero */
+  .hd-wedge__cta {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: var(--space-lg);
+    border-radius: var(--radius);
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  @media (hover: hover) {
+    .hd-wedge__cta:hover {
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      border-color: var(--color-on-blue);
+    }
+  }
+  .hd-wedge__cta:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-on-blue);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  .hd-final {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+  }
+  .hd-final__inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hd-final .hd-h2 {
+    margin-top: 0;
+  }
+  .hd-final__text {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-h5);
+    margin: var(--space-md) auto var(--space-xl);
+    max-width: 54ch;
+  }
+  .hd-final__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ---- Responsivo ---- */
+  @media (max-width: 768px) {
+    .hd-intro,
+    .hd-compare,
+    .hd-two,
+    .hd-rec,
+    .hd-why,
+    .hd-wedge,
+    .hd-final {
+      padding-block: var(--space-2xl);
+    }
+    .hd-hero__title {
+      font-size: var(--font-size-h3);
+    }
+    .hd-hero__subtitle,
+    .hd-intro__inner p,
+    .hd-wedge__text,
+    .hd-final__text {
+      font-size: var(--font-size-body);
+    }
+    .hd-two__grid,
+    .hd-why__list,
+    .hd-rec__grid {
+      grid-template-columns: 1fr;
+    }
+    .hd-list-block,
+    .hd-why__panel {
+      padding: var(--space-lg);
+    }
+  }
+</style>
