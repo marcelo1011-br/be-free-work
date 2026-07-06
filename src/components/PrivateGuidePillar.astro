@@ -1,0 +1,491 @@
+---
+/**
+ * PrivateGuidePillar.astro — pillar "private guide / guia particular" (mar-e-sol).
+ *
+ * Consome privateGuideContent.js (prose por locale + fatos). Recebe `lang`.
+ * Hero é INLINE aqui (HeroPages é rígido: só title/subtitle, sem CTAs).
+ *
+ * RESOLUÇÃO DE HREF (nada hardcodado — mesmo resolvedor do DayTripsPillar):
+ *  - Cards recommended: tourKey -> slug localizado via tours.js. tours.en[i].slug é a
+ *    chave EN canônica; o índice i é consistente entre locales (mesmo `order` em build()).
+ *    Logo tours[lang][idx].slug = slug localizado do mesmo tour (ex.: Rio Express PT sai
+ *    com o slug longo correto sozinho). O nome do card = tours[lang][idx].title.
+ *  - Token 'contact'       -> routes[lang].contact (single-source).
+ *  - Token 'private-tours' -> routes[lang].privateTours (single-source).
+ *
+ * DISCIPLINA ÂMBAR: 1 único âmbar no corpo = hero primaryCta (variant="book").
+ * Hero secundário = ghost bone escopado. Hub de recommended + finalCta (primary
+ * solid-navy + secondary outline) = peso navy/outline, SEM 2º âmbar.
+ *
+ * Superfícies: hero navy sólido (--color-blue / --color-on-blue, par AA estável);
+ * demais seções bone (--color-base); cards/painel elevados em --color-surface. Sem
+ * laranja fora do único âmbar. global.css intocado — tudo scoped aqui. --radius via token.
+ */
+import { tours } from "../data/tours.js";
+import { routes } from "../i18n/routes.js";
+import { privateGuideProse } from "../data/privateGuideContent.js";
+import Button from "./Button.astro";
+import FAQ from "./FAQ.astro";
+
+const { lang } = Astro.props;
+const t = privateGuideProse[lang];
+
+// Segmento de rota do tour por locale (mesmo mapa que TourCard/hreflang usam inline).
+const tourRoutes = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
+
+// tours.en[i].slug === chave EN; índice consistente entre locales (build() usa o mesmo order).
+const enSlugs = tours.en.map((tt) => tt.slug);
+function tourHref(tourKey) {
+  const idx = enSlugs.indexOf(tourKey);
+  if (idx === -1) return null;
+  return `/${lang}/${tourRoutes[lang]}/${tours[lang][idx].slug}/`;
+}
+function tourTitle(tourKey) {
+  const idx = enSlugs.indexOf(tourKey);
+  if (idx === -1) return null;
+  return tours[lang][idx].title;
+}
+
+// Tokens de navegação -> rota localizada (single-source em routes.js).
+function tokenHref(token) {
+  if (token === "contact") return `/${lang}${routes[lang].contact}`;
+  if (token === "private-tours") return `/${lang}${routes[lang].privateTours}`;
+  return null;
+}
+
+// Cards recommended: nome localizado + href resolvido + texto da prose.
+const recBlocks = t.recommended.items.map((it) => ({
+  ...it,
+  href: tourHref(it.tourKey),
+  name: tourTitle(it.tourKey),
+}));
+
+const heroPrimaryHref = tokenHref(t.hero.primaryCta.token);
+const heroSecondaryHref = tokenHref(t.hero.secondaryCta.token);
+const recHubHref = tokenHref(t.recommended.hubToken);
+const finalPrimaryHref = tokenHref(t.finalCta.primaryToken);
+const finalSecondaryHref = tokenHref(t.finalCta.secondaryToken);
+
+// FAQ.astro espera {question, answer}; a prose usa {q, a}.
+const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
+---
+
+<!-- HERO (navy sólido, inline) -->
+<section class="pg-hero">
+  <div class="container pg-hero__inner">
+    <h1 class="pg-hero__title">{t.hero.title}</h1>
+    <p class="pg-hero__subtitle">{t.hero.subtitle}</p>
+    <div class="pg-hero__actions">
+      <Button variant="book" size="lg" href={heroPrimaryHref}>{t.hero.primaryCta.label}</Button>
+      <a class="pg-hero__ghost" href={heroSecondaryHref}>{t.hero.secondaryCta.label}</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO (bone, coluna estreita ~65ch) -->
+<section class="pg-intro">
+  <div class="container">
+    <div class="pg-intro__inner">
+      <p class="pg-kicker">{t.intro.kicker}</p>
+      <h2 class="pg-intro__title">{t.intro.title}</h2>
+      <div class="pg-intro__copy">
+        {t.intro.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON (bone, 3 cards) -->
+<section class="pg-compare">
+  <div class="container">
+    <h2 class="pg-h2 pg-center">{t.comparison.title}</h2>
+    <ul class="pg-compare__grid">
+      {t.comparison.items.map((item) => (
+        <li class="pg-card">
+          <h3 class="pg-card__title">{item.title}</h3>
+          <p class="pg-card__text">{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- IDEAL FOR + HELP (bone, duas colunas) -->
+<section class="pg-two">
+  <div class="container">
+    <div class="pg-two__grid">
+      <div class="pg-list-block">
+        <h2 class="pg-h2">{t.idealFor.title}</h2>
+        <ul class="pg-list">
+          {t.idealFor.items.map((it) => (
+            <li>
+              <span class="pg-mark" aria-hidden="true">+</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="pg-list-block pg-list-block--accent">
+        <h2 class="pg-h2">{t.help.title}</h2>
+        <ul class="pg-list">
+          {t.help.items.map((it) => (
+            <li>
+              <span class="pg-mark" aria-hidden="true">+</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDED (bone, 3 cards por tourKey + link do hub) -->
+<section class="pg-rec">
+  <div class="container">
+    <h2 class="pg-h2 pg-center">{t.recommended.title}</h2>
+    <ul class="pg-rec__grid">
+      {recBlocks.map((r) => (
+        r.href ? (
+          <li>
+            <a class="pg-rec__card" href={r.href}>
+              <h3 class="pg-card__title">{r.name}</h3>
+              <p class="pg-card__text">{r.text}</p>
+            </a>
+          </li>
+        ) : (
+          <li>
+            <div class="pg-rec__card">
+              <h3 class="pg-card__title">{r.name}</h3>
+              <p class="pg-card__text">{r.text}</p>
+              <span class="pg-rec__todo">[href TODO: {r.tourKey}]</span>
+            </div>
+          </li>
+        )
+      ))}
+    </ul>
+    <div class="pg-rec__hub">
+      <Button variant="outline" href={recHubHref}>{t.recommended.hubLabel}</Button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY (checklist em painel surface) -->
+<section class="pg-why">
+  <div class="container">
+    <div class="pg-why__panel">
+      <h2 class="pg-h2 pg-center">{t.why.title}</h2>
+      <ul class="pg-why__list">
+        {t.why.items.map((it) => (
+          <li>
+            <span class="pg-mark" aria-hidden="true">+</span>
+            <span>{it}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (reusa FAQ.astro; accordion FAQPage-ready) -->
+<FAQ lang={lang} title={t.faqTitle} subtitle="" questions={faqQuestions} />
+
+<!-- FINAL CTA (bone; solid-navy + outline — NÃO é um segundo âmbar) -->
+<section class="pg-final">
+  <div class="container pg-final__inner">
+    <h2 class="pg-h2">{t.finalCta.title}</h2>
+    <p class="pg-final__text">{t.finalCta.text}</p>
+    <div class="pg-final__actions">
+      <Button variant="solid-navy" size="lg" href={finalPrimaryHref}>{t.finalCta.primaryLabel}</Button>
+      <Button variant="outline" size="lg" href={finalSecondaryHref}>{t.finalCta.secondaryLabel}</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---- HERO: banda navy sólida (par AA --color-blue / --color-on-blue) ---- */
+  .pg-hero {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+  }
+  .pg-hero__inner {
+    max-width: clamp(40rem, 78vw, 56rem);
+    text-align: center;
+  }
+  .pg-hero__title {
+    color: var(--color-on-blue);
+    margin: 0 0 var(--space-md);
+  }
+  .pg-hero__subtitle {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-relaxed);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    margin: 0 auto var(--space-xl);
+    max-width: 48ch;
+  }
+  .pg-hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  /* Secundário 'private-tours': ghost bone sobre navy (escopado; não toca Button/global) */
+  .pg-hero__ghost {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: var(--space-lg);
+    border-radius: var(--radius);
+    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  @media (hover: hover) {
+    .pg-hero__ghost:hover {
+      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+      border-color: var(--color-on-blue);
+    }
+  }
+  .pg-hero__ghost:focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-on-blue);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  /* ---- Seções bone padrão ---- */
+  .pg-intro,
+  .pg-compare,
+  .pg-two,
+  .pg-rec,
+  .pg-why {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+  }
+
+  .pg-h2 {
+    color: var(--color-text);
+  }
+  .pg-center {
+    text-align: center;
+  }
+
+  /* ---- INTRO ---- */
+  .pg-intro__inner {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+  .pg-kicker {
+    color: var(--color-blue);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--font-size-small);
+    margin: 0 0 var(--space-sm);
+  }
+  .pg-intro__title {
+    margin: 0 0 var(--space-lg);
+  }
+  .pg-intro__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .pg-intro__copy p {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-size: var(--font-size-h5);
+  }
+
+  /* ---- Cards (comparison + recommended) ---- */
+  .pg-compare__grid,
+  .pg-rec__grid {
+    list-style: none;
+    margin: var(--space-2xl) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+  .pg-card,
+  .pg-rec__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    height: 100%;
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .pg-rec__card {
+    text-decoration: none;
+    transition:
+      transform var(--transition-duration-normal) var(--transition-easing-default),
+      border-color var(--transition-duration-normal) var(--transition-easing-default);
+  }
+  @media (hover: hover) {
+    .pg-rec__card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-blue);
+    }
+  }
+  .pg-card__title {
+    margin: 0 0 var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--font-size-h5);
+    color: var(--color-blue);
+  }
+  .pg-card__text {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+  .pg-rec__todo {
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
+  }
+  .pg-rec__hub {
+    margin-top: var(--space-2xl);
+    text-align: center;
+  }
+
+  /* ---- IDEAL FOR + HELP (duas colunas) ---- */
+  .pg-two__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-xl);
+  }
+  .pg-list-block {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+  }
+  .pg-list-block--accent {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-blue) 10%, transparent),
+      var(--color-surface)
+    );
+  }
+  .pg-list-block .pg-h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ---- Listas com marca "+" (idealFor, help, why) ---- */
+  .pg-list,
+  .pg-why__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+  }
+  .pg-list li,
+  .pg-why__list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+  }
+  .pg-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-full);
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* ---- WHY (painel surface, checklist em 2 colunas) ---- */
+  .pg-why__panel {
+    background: var(--color-surface);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2xl);
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .pg-why__panel .pg-h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-xl);
+  }
+  .pg-why__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  .pg-final {
+    background: var(--color-base);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+  }
+  .pg-final__inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pg-final .pg-h2 {
+    margin-top: 0;
+  }
+  .pg-final__text {
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-h5);
+    margin: var(--space-md) auto var(--space-xl);
+    max-width: 54ch;
+  }
+  .pg-final__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ---- Responsivo ---- */
+  @media (max-width: 768px) {
+    .pg-intro,
+    .pg-compare,
+    .pg-two,
+    .pg-rec,
+    .pg-why,
+    .pg-final {
+      padding-block: var(--space-2xl);
+    }
+    .pg-hero__title {
+      font-size: var(--font-size-h3);
+    }
+    .pg-hero__subtitle,
+    .pg-intro__copy p,
+    .pg-final__text {
+      font-size: var(--font-size-body);
+    }
+    .pg-compare__grid,
+    .pg-rec__grid,
+    .pg-two__grid,
+    .pg-why__list {
+      grid-template-columns: 1fr;
+    }
+    .pg-list-block,
+    .pg-why__panel {
+      padding: var(--space-lg);
+    }
+  }
+</style>

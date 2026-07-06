@@ -76,6 +76,7 @@ const pageMap = {
   "blog":             { es: "blog",                     "pt-br": "blog" },
   "private-tours":    { es: "tours-privados",            "pt-br": "passeios-privados" },
   "day-trips-from-rio": { es: "excursiones-desde-rio-de-janeiro", "pt-br": "bate-e-volta-saindo-do-rio" },
+  "private-guide-rio-de-janeiro": { es: "guia-privado-rio-de-janeiro", "pt-br": "guia-particular-rio-de-janeiro" },
   "experiences":      { es: "experiencias",              "pt-br": "experiencias" },
   "faq":              { es: "preguntas-frecuentes",      "pt-br": "perguntas-frequentes" },
 };

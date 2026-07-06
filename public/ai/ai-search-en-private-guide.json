@@ -1,0 +1,66 @@
+{
+  "language": "en",
+  "category": "private_guide",
+  "label": "Private Guide in Rio de Janeiro",
+  "description": "Explore Rio with a private, licensed local guide who shapes the day around your pace, interests and travel style — flexible planning, real local context, one dedicated group.",
+  "faqs": [
+    {
+      "question": "Can I hire a private guide without a fixed itinerary?",
+      "answer": "Yes. The Custom Private Tour is built for exactly that — a guide-led day shaped from scratch around your interests, timing and pace."
+    },
+    {
+      "question": "Is transport included?",
+      "answer": "It's included on the private tours that need a vehicle. Walking-based experiences start from a central meeting point instead."
+    },
+    {
+      "question": "Can the guide change the plan as we go?",
+      "answer": "Yes — a private day flexes in a way a group schedule can't, especially around pace, viewpoints, food stops and the weather."
+    },
+    {
+      "question": "Do you offer guides in English, Spanish and Portuguese?",
+      "answer": "Yes. We work with local guides who can lead the day in English, Spanish or Portuguese, subject to availability."
+    },
+    {
+      "question": "Is this a good option for families or seniors?",
+      "answer": "Often the best one — a private guide means a calmer pace and far fewer logistics for families, seniors and anyone who'd rather not manage the details."
+    },
+    {
+      "question": "Should I pick a custom tour or an existing private tour?",
+      "answer": "Take an existing private tour if one already matches your plans. Choose a custom day if you'd rather have the guide, route and timing designed around you."
+    }
+  ],
+  "tours": [
+    {
+      "id": "Your Rio, Your Way: Custom Private Tour",
+      "slug": "custom-tour",
+      "name": "Your Rio, Your Way: Custom Private Tour",
+      "duration": "Flexible (4-10+ hours)",
+      "pricing": "custom_quote",
+      "description": "Build the day from scratch around your interests, timing and pace.",
+      "url": "https://befreetours.com.br/en/private-tours/custom-tour/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "The Essential Rio: Icons, Culture & Hidden Gems",
+      "slug": "essential-rio",
+      "name": "The Essential Rio: Icons, Culture & Hidden Gems",
+      "duration": "8 hours",
+      "price_from": 415,
+      "description": "A full-day private route through Rio's essentials — made for a first visit.",
+      "url": "https://befreetours.com.br/en/private-tours/essential-rio/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "Rio Express: Christ & Sugarloaf in 5 Hours",
+      "slug": "rio-express",
+      "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
+      "duration": "5 hours",
+      "price_from": 410,
+      "description": "A focused private half-day for travelers short on time.",
+      "url": "https://befreetours.com.br/en/private-tours/rio-express/",
+      "tour_type": "private_tour"
+    }
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
+}

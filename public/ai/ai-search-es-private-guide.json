@@ -1,0 +1,66 @@
+{
+  "language": "es",
+  "category": "private_guide",
+  "label": "Guía privado en Río de Janeiro",
+  "description": "Descubre Río con un guía privado local y licenciado que organiza el día según tu ritmo, tus intereses y tu forma de viajar — planificación flexible, contexto local real y atención para un solo grupo.",
+  "faqs": [
+    {
+      "question": "¿Puedo contratar un guía privado sin un itinerario fijo?",
+      "answer": "Sí. El Tour Privado a Medida está pensado justo para eso — un día guiado que se arma desde cero según tus intereses, tus tiempos y tu ritmo."
+    },
+    {
+      "question": "¿El transporte está incluido?",
+      "answer": "Está incluido en los tours privados que necesitan vehículo. Las experiencias a pie parten, en cambio, desde un punto de encuentro central."
+    },
+    {
+      "question": "¿El guía puede cambiar el plan sobre la marcha?",
+      "answer": "Sí — un día privado se adapta como un horario de grupo no puede, sobre todo con el ritmo, los miradores, las paradas de comida y el clima."
+    },
+    {
+      "question": "¿Ofrecen guías en inglés, español y portugués?",
+      "answer": "Sí. Trabajamos con guías locales que pueden guiar el día en inglés, español o portugués, según disponibilidad."
+    },
+    {
+      "question": "¿Es una buena opción para familias o personas mayores?",
+      "answer": "Muchas veces la mejor — un guía privado significa un ritmo más tranquilo y mucha menos logística para familias, personas mayores y quien prefiere no ocuparse de los detalles."
+    },
+    {
+      "question": "¿Elijo un tour a medida o un tour privado ya existente?",
+      "answer": "Toma un tour ya existente si alguno coincide con tus planes. Elige un día a medida si prefieres que el guía, la ruta y los tiempos se diseñen para ti."
+    }
+  ],
+  "tours": [
+    {
+      "id": "Tu Río, a Tu Manera: Tour Privado Personalizado",
+      "slug": "tour-personalizado",
+      "name": "Tu Río, a Tu Manera: Tour Privado Personalizado",
+      "duration": "Flexible (4-10+ horas)",
+      "pricing": "custom_quote",
+      "description": "Arma el día desde cero según tus intereses, tus tiempos y tu ritmo.",
+      "url": "https://befreetours.com.br/es/tours-privados/tour-personalizado/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
+      "slug": "essential-rio",
+      "name": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
+      "duration": "8 horas",
+      "price_from": 415,
+      "description": "Una ruta privada de día completo por lo esencial de Río — pensada para una primera visita.",
+      "url": "https://befreetours.com.br/es/tours-privados/essential-rio/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
+      "slug": "rio-express",
+      "name": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
+      "duration": "5 horas",
+      "price_from": 410,
+      "description": "Un medio día privado y directo para quien tiene el tiempo justo.",
+      "url": "https://befreetours.com.br/es/tours-privados/rio-express/",
+      "tour_type": "private_tour"
+    }
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
+}

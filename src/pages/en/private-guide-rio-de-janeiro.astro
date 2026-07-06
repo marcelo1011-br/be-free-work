@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PrivateGuidePillar from "../../components/PrivateGuidePillar.astro";
+import { privateGuideProse } from "../../data/privateGuideContent.js";
+import { routes } from "../../i18n/routes.js";
+import { getPrivateGuideSchema } from "../../utils/privateGuideSchema.js";
+
+const lang = "en";
+const t = privateGuideProse[lang];
+
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const schema = getPrivateGuideSchema(lang, siteUrl);
+
+const breadcrumbItems = [
+  { name: "Home", url: `/${lang}` },
+  { name: t.hero.title, url: `/${lang}${routes[lang].privateGuide}` },
+];
+---
+
+<BaseLayout title={t.title} description={t.metaDescription} schema={schema}>
+  <Breadcrumbs items={breadcrumbItems} />
+  <PrivateGuidePillar lang={lang} />
+</BaseLayout>

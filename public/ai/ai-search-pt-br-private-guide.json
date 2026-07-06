@@ -1,0 +1,66 @@
+{
+  "language": "pt-br",
+  "category": "private_guide",
+  "label": "Guia particular no Rio de Janeiro",
+  "description": "Conheça o Rio com um guia de turismo particular e licenciado, que organiza o dia conforme o seu ritmo, seus interesses e seu jeito de viajar — planejamento flexível, contexto local real e atenção para um único grupo.",
+  "faqs": [
+    {
+      "question": "Posso contratar um guia particular sem roteiro fixo?",
+      "answer": "Sim. O Passeio Personalizado foi feito exatamente para isso — um dia guiado montado do zero conforme seus interesses, seu tempo e seu ritmo."
+    },
+    {
+      "question": "O transporte está incluído?",
+      "answer": "Está incluído nos passeios privativos que precisam de veículo. Já as experiências a pé começam num ponto de encontro central."
+    },
+    {
+      "question": "O guia pode mudar o plano durante o passeio?",
+      "answer": "Sim — um dia privativo se adapta como um horário de grupo não consegue, principalmente no ritmo, nos mirantes, nas paradas gastronômicas e no clima."
+    },
+    {
+      "question": "Vocês oferecem guias em inglês, espanhol e português?",
+      "answer": "Sim. Trabalhamos com guias locais que podem conduzir o dia em inglês, espanhol ou português, sujeito à disponibilidade."
+    },
+    {
+      "question": "É uma boa opção para famílias ou pessoas idosas?",
+      "answer": "Muitas vezes a melhor — um guia particular significa um ritmo mais tranquilo e bem menos logística para famílias, pessoas idosas e quem prefere não cuidar dos detalhes."
+    },
+    {
+      "question": "Escolho um passeio personalizado ou um passeio privativo já existente?",
+      "answer": "Pegue um passeio já existente se algum combina com seus planos. Escolha um dia personalizado se prefere guia, rota e horários desenhados para você."
+    }
+  ],
+  "tours": [
+    {
+      "id": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
+      "slug": "passeio-personalizado",
+      "name": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
+      "duration": "Flexível (4-10+ horas)",
+      "pricing": "custom_quote",
+      "description": "Monte o dia do zero conforme seus interesses, seu tempo e seu ritmo.",
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-personalizado/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
+      "slug": "rio-essencial",
+      "name": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
+      "duration": "8 horas",
+      "price_from": 415,
+      "description": "Uma rota privativa de dia inteiro pelo essencial do Rio — feita para a primeira visita.",
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/rio-essencial/",
+      "tour_type": "private_tour"
+    },
+    {
+      "id": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
+      "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
+      "name": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
+      "duration": "5 horas",
+      "price_from": 410,
+      "description": "Um meio dia privativo e direto para quem tem o tempo contado.",
+      "url": "https://befreetours.com.br/pt-br/passeios-privados/passeio-expresso-rio-5-horas-cristo-pao-acucar/",
+      "tour_type": "private_tour"
+    }
+  ],
+  "currency": "USD",
+  "operation_model": "private_only_no_mixed_groups"
+}
