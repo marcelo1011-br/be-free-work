@@ -15,7 +15,8 @@ import HomeFinalCTA from "../../components/HomeFinalCTA.astro";
 import heroImage from "../../images/heroes/home-hero.webp";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
-import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
+import { getWebSiteSchema, getFAQSchema, getHowToSchema, getMakesOffer } from "../../utils/seoHelpers.js";
+import { tours } from "../../data/tours.js";
 import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
@@ -35,7 +36,7 @@ const websiteSchema = getWebSiteSchema(siteUrl);
 
 const organizationSchema = {
   "@type": "TravelAgency",
-  "@id": `${siteUrl}/#organization`,
+  "@id": `${siteUrl}/#travelagency`,
   "name": "Be Free Tours",
   "alternateName": "Be Free Tours Rio de Janeiro",
   "url": siteUrl,
@@ -79,39 +80,7 @@ const organizationSchema = {
   "paymentAccepted": "Credit Card, PayPal",
   "currenciesAccepted": "USD, BRL",
   "openingHours": "Mo-Su 06:00-22:00",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "800",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "The Essential Rio: Icons, Culture & Hidden Gems",
-      "description": "Full-day tour including Christ the Redeemer, Sugarloaf Mountain, Santa Teresa, and more",
-      "price": "445",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/essential-rio/`
-    },
-    {
-      "@type": "Offer",
-      "name": "Rio Express 5h",
-      "description": "Quick tour of Christ the Redeemer and Sugarloaf Mountain",
-      "price": "440",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/rio-express/`
-    },
-    {
-      "@type": "Offer",
-      "name": "Sunset Magic Tour",
-      "description": "Golden hour at Christ the Redeemer and sunset from Sugarloaf",
-      "price": "460",
-      "priceCurrency": "USD",
-      "url": `${siteUrl}/en/private-tours/golden-hour-rio/`
-    }
-  ],
+  "makesOffer": getMakesOffer(tours, "en", siteUrl, ["essential-rio", "rio-express", "golden-hour-rio"]),
   "sameAs": [
     "https://www.wikidata.org/wiki/Q138495723",
     "https://www.instagram.com/befreeturrj",

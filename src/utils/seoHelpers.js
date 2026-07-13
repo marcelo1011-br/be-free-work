@@ -106,6 +106,29 @@ function getTourRoute(lang, section = 'tours') {
       : "passeios-privados";
 }
 
+// Gera makesOffer[] a partir da fonte (tours.js), localizado por locale.
+// name/url/description = dados localizados de tours[lang]; price = pricing.from (USD).
+// Nenhum preço/nome digitado no código — tudo vem da fonte.
+export function getMakesOffer(tours, lang, siteUrl, keys, section = 'tours') {
+  const route = getTourRoute(lang, section);
+  return keys
+    .map((key) => {
+      const idx = tours.en.findIndex((t) => t.slug === key);
+      if (idx === -1) return null;
+      const item = tours[lang]?.[idx];
+      if (!item) return null;
+      return {
+        "@type": "Offer",
+        "name": item.title,
+        ...(item.shortDescription && { "description": item.shortDescription }),
+        "price": String(item.pricing.from),
+        "priceCurrency": "USD",
+        "url": `${siteUrl}/${lang}/${route}/${item.slug}/`,
+      };
+    })
+    .filter(Boolean);
+}
+
 export function getProductRoute(lang, section = 'tours') {
   return getTourRoute(lang, section);
 }
@@ -137,14 +160,6 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
   const absoluteImageUrl = resolvedImage?.startsWith('http')
   ? resolvedImage
   : `${siteUrl}${resolvedImage}`;
-
-  
-  const rating = tour.reviews?.aggregateRating || {
-    ratingValue: '4.9',
-    reviewCount: '800',
-    bestRating: '5',
-    worstRating: '1',
-  };
 
   return {
     '@type': 'Product',
@@ -187,13 +202,6 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
         }
       },
     }),
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': rating.ratingValue,
-      'reviewCount': rating.reviewCount,
-      'bestRating': rating.bestRating || '5',
-      'worstRating': rating.worstRating || '1',
-    },
   };
 }
 
@@ -956,13 +964,6 @@ export function getToursCollectionSchema(tours, lang, siteUrl, section = 'tours'
                 "availability": "https://schema.org/InStock",
                 "url": itemUrl,
                 "validFrom": new Date().toISOString().split('T')[0],
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "800",
-                "bestRating": "5",
-                "worstRating": "1",
               },
             }),
           },

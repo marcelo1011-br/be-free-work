@@ -15,7 +15,8 @@ import HomeFinalCTA from "../../components/HomeFinalCTA.astro";
 import heroImage from "../../images/heroes/home-hero.webp";
 import { homeContent } from "../../data/homeContent.js";
 import { testimonials } from "../../data/testimonials.js";
-import { getWebSiteSchema, getFAQSchema, getHowToSchema } from "../../utils/seoHelpers.js";
+import { getWebSiteSchema, getFAQSchema, getHowToSchema, getMakesOffer } from "../../utils/seoHelpers.js";
+import { tours } from "../../data/tours.js";
 import { monthMap, toIsoDate } from "../../utils/dateHelpers.js";
 
 
@@ -35,13 +36,13 @@ const websiteSchema = getWebSiteSchema(siteUrl);
 
 const organizationSchema = {
   "@type": "TravelAgency",
-  "@id": `${siteUrl}/#organization`,
+  "@id": `${siteUrl}/#travelagency`,
   "name": "Be Free Tours",
   "alternateName": "Be Free Tours Rio de Janeiro",
   "url": siteUrl,
   "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/logo/logo.png`, "width": 512, "height": 512 },
   "image": `${siteUrl}/images/heroes/home-hero.webp`,
-  "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados.",
+  "description": "Operador premium de tours privados en Río de Janeiro desde 2013. Experiencias personalizadas con guías locales certificados, especializados en el Cristo Redentor, el Pan de Azúcar y excursiones de un día por los alrededores de Río.",
   "slogan": "Tu Río, A Tu Manera - Tours Privados Desde 2013",
   "foundingDate": "2013",
   "telephone": "+55-21-97927-1637",
@@ -60,7 +61,7 @@ const organizationSchema = {
   "paymentAccepted": "Credit Card, PayPal",
   "currenciesAccepted": "USD, BRL",
   "openingHours": "Mo-Su 06:00-22:00",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "800", "bestRating": "5", "worstRating": "1" },
+  "makesOffer": getMakesOffer(tours, "es", siteUrl, ["essential-rio", "rio-express", "golden-hour-rio"]),
   "sameAs": [
     "https://www.wikidata.org/wiki/Q138495723",
     "https://www.instagram.com/befreeturrj",
