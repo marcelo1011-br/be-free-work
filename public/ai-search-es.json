@@ -309,6 +309,26 @@
             "entusiastas de la cultura"
           ],
           "url": "https://befreetours.com.br/es/tours-privados/petropolis-imperial"
+        },
+        {
+          "id": "Excursión a Búzios desde Río",
+          "slug": "buzios-riviera",
+          "name": "Excursión a Búzios desde Río",
+          "duration": "Día completo (bajo consulta)",
+          "price_from": "Bajo consulta",
+          "description": "Una excursión privada de un día a Búzios, el elegante balneario en la costa al este de Río, famoso por sus playas y la Rua das Pedras junto al mar. Se organiza bajo consulta y a medida de tus fechas; se puede añadir un paseo en barco opcional para ver las playas desde el mar.",
+          "highlights": [
+            "Excursión privada a medida de tus fechas",
+            "Las playas de Búzios y la Rua das Pedras junto al mar",
+            "Guía certificado y transporte privado desde Río",
+            "Paseo en barco opcional para ver las playas desde el mar"
+          ],
+          "best_for": [
+            "amantes de la playa",
+            "parejas",
+            "viajeros que buscan un día en la costa desde Río"
+          ],
+          "url": "https://befreetours.com.br/es/tours-privados/buzios-riviera"
         }
       ]
     }

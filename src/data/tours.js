@@ -1164,11 +1164,11 @@ const prose = {
       "imageSlug": "buzios-riviera",
       "title": "Búzios Day Trip from Rio",
       "shortDescription": "A private day trip to Búzios, the chic beach town on the coast east of Rio — arranged on request, tailored to your dates and quoted directly.",
-      "fullDescription": "Búzios is a former fishing village turned chic beach town on the coast east of Rio, known for its string of beaches and the cobblestoned Rua das Pedras waterfront. We arrange this as a private day trip from Rio on request — dates, timing and inclusions are tailored and quoted directly, as we currently run Búzios by request rather than on a fixed schedule.",
+      "fullDescription": "Búzios is a former fishing village turned chic beach town on the coast east of Rio, known for its string of beaches and the cobblestoned Rua das Pedras waterfront. We arrange this as a private day trip from Rio on request — dates, timing and inclusions are tailored and quoted directly, as we currently run Búzios by request rather than on a fixed schedule. An optional boat trip to see the beaches from the water can be added on request.",
       "highlights": [
         "Private day trip to Búzios, tailored to your dates",
         "Chic beach town with dozens of beaches and the Rua das Pedras waterfront",
-        "Certified local guide and private transport from Rio",
+        "Certified guide and private transport from Rio",
         "Arranged on request — timing and inclusions built around your group"
       ],
       "included": [
@@ -1838,11 +1838,11 @@ const prose = {
       "imageSlug": "buzios-riviera",
       "title": "Excursión a Búzios desde Río",
       "shortDescription": "Una excursión privada de un día a Búzios, el elegante balneario en la costa al este de Río — bajo consulta, a medida de tus fechas y cotizada directamente.",
-      "fullDescription": "Búzios es un antiguo pueblo de pescadores convertido en un elegante balneario en la costa al este de Río, famoso por sus playas y la Rua das Pedras junto al mar. Lo organizamos como excursión privada de un día desde Río bajo consulta: fechas, horarios e inclusiones se arman a medida y se cotizan directamente, ya que por ahora operamos Búzios a pedido y no con salidas fijas.",
+      "fullDescription": "Búzios es un antiguo pueblo de pescadores convertido en un elegante balneario en la costa al este de Río, famoso por sus playas y la Rua das Pedras junto al mar. Lo organizamos como excursión privada de un día desde Río bajo consulta: fechas, horarios e inclusiones se arman a medida y se cotizan directamente, ya que por ahora operamos Búzios a pedido y no con salidas fijas. Se puede añadir un paseo en barco opcional para ver las playas desde el mar, bajo consulta.",
       "highlights": [
         "Excursión privada de un día a Búzios, a medida de tus fechas",
         "Elegante balneario con decenas de playas y la Rua das Pedras junto al mar",
-        "Guía local certificado y transporte privado desde Río",
+        "Guía certificado y transporte privado desde Río",
         "Bajo consulta — horarios e inclusiones armados según tu grupo"
       ],
       "included": [
@@ -2512,11 +2512,11 @@ const prose = {
       "imageSlug": "buzios-riviera",
       "title": "Passeio a Búzios saindo do Rio",
       "shortDescription": "Um passeio privativo de um dia a Búzios, o charmoso balneário no litoral a leste do Rio — sob consulta, sob medida para as suas datas e orçado diretamente.",
-      "fullDescription": "Búzios é uma antiga vila de pescadores que virou um charmoso balneário no litoral a leste do Rio, conhecida pelas praias e pela Rua das Pedras à beira-mar. Organizamos como um passeio privativo de um dia saindo do Rio sob consulta — datas, horários e o que está incluído são montados sob medida e orçados diretamente, já que no momento operamos Búzios a pedido, sem saídas fixas.",
+      "fullDescription": "Búzios é uma antiga vila de pescadores que virou um charmoso balneário no litoral a leste do Rio, conhecida pelas praias e pela Rua das Pedras à beira-mar. Organizamos como um passeio privativo de um dia saindo do Rio sob consulta — datas, horários e o que está incluído são montados sob medida e orçados diretamente, já que no momento operamos Búzios a pedido, sem saídas fixas. Um passeio de barco opcional para ver as praias a partir do mar pode ser incluído sob consulta.",
       "highlights": [
         "Passeio privativo de um dia a Búzios, sob medida para as suas datas",
         "Balneário charmoso com dezenas de praias e a Rua das Pedras à beira-mar",
-        "Guia local certificado e transporte privativo saindo do Rio",
+        "Guia certificado e transporte privativo saindo do Rio",
         "Sob consulta — horários e inclusões montados conforme o seu grupo"
       ],
       "included": [

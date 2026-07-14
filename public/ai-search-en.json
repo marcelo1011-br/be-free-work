@@ -309,6 +309,26 @@
             "culture enthusiasts"
           ],
           "url": "https://befreetours.com.br/en/private-tours/petropolis-imperial"
+        },
+        {
+          "id": "Búzios Day Trip from Rio",
+          "slug": "buzios-riviera",
+          "name": "Búzios Day Trip from Rio",
+          "duration": "Full day (on request)",
+          "price_from": "On request",
+          "description": "A private day trip to Búzios, the chic beach town on the coast east of Rio, known for its many beaches and the cobblestoned Rua das Pedras waterfront. Arranged on request and tailored to your dates; an optional boat trip to see the beaches from the water can be added.",
+          "highlights": [
+            "Private day trip tailored to your dates",
+            "Búzios beaches and the Rua das Pedras waterfront",
+            "Certified guide and private transport from Rio",
+            "Optional boat trip to see the beaches from the water"
+          ],
+          "best_for": [
+            "beach lovers",
+            "couples",
+            "coastal day-trippers from Rio"
+          ],
+          "url": "https://befreetours.com.br/en/private-tours/buzios-riviera"
         }
       ]
     }
