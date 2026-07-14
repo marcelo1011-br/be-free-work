@@ -133,7 +133,7 @@ export function getProductRoute(lang, section = 'tours') {
   return getTourRoute(lang, section);
 }
 
-function getStructuredDataPrice(pricing = {}) {
+export function getStructuredDataPrice(pricing = {}) {
   if (!pricing || pricing.custom) return null;
   if (pricing.from) return pricing.from;
   if (pricing.perPerson) return pricing.perPerson;

@@ -69,7 +69,7 @@
           "slug": "essential-rio",
           "name": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
           "duration": "8 horas",
-          "price_from": 445,
+          "price_from": 415,
           "description": "Descubre los monumentos más emblemáticos de Río en un tour privado completo, incluyendo el Cristo Redentor y el Pan de Azúcar con acceso preferente.",
           "highlights": [
             "Cristo Redentor con acceso prioritario",
@@ -92,7 +92,7 @@
           "slug": "rio-express",
           "name": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
           "duration": "5 horas",
-          "price_from": 440,
+          "price_from": 410,
           "description": "Perfecto para viajeros con tiempo limitado - visita los dos monumentos más icónicos de Río en solo 5 horas.",
           "highlights": [
             "Cristo Redentor",
@@ -111,7 +111,7 @@
           "slug": "amanecer-rio",
           "name": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
           "duration": "6 horas",
-          "price_from": 610,
+          "price_from": 580,
           "description": "Experimenta el amanecer más impresionante de Río desde el Pan de Azúcar, seguido de acceso temprano al Cristo Redentor.",
           "highlights": [
             "Amanecer exclusivo desde el Pan de Azúcar",
@@ -130,7 +130,7 @@
           "slug": "hora-dorada-rio",
           "name": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
           "duration": "6 horas",
-          "price_from": 460,
+          "price_from": 430,
           "description": "Experimenta la belleza de la hora dorada de Río con visitas vespertinas al Cristo Redentor y un atardecer perfectamente programado.",
           "highlights": [
             "Cristo Redentor con luz dorada",
@@ -150,7 +150,7 @@
           "slug": "atardecer-cultura-roxy",
           "name": "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
           "duration": "9 horas",
-          "price_from": 710,
+          "price_from": 680,
           "description": "Combina el atardecer de Río desde el Pan de Azúcar con una velada inolvidable en el show cena cultural premier de Brasil.",
           "highlights": [
             "Atardecer desde el Pan de Azúcar",
@@ -171,7 +171,7 @@
           "slug": "bosque-tijuca",
           "name": "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
           "duration": "8 horas",
-          "price_from": 475,
+          "price_from": 445,
           "description": "Combina las vistas impresionantes del Pan de Azúcar con la belleza exuberante del Bosque de Tijuca y el Jardín Botánico.",
           "highlights": [
             "Pan de Azúcar",
@@ -192,7 +192,7 @@
           "slug": "niteroi-museo-mac",
           "name": "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
           "duration": "8 horas",
-          "price_from": 365,
+          "price_from": 335,
           "description": "Cruza la Bahía de Guanabara para descubrir la obra maestra arquitectónica del Museo MAC de Niterói y fuertes militares históricos.",
           "highlights": [
             "MAC Niterói de Oscar Niemeyer",
@@ -212,7 +212,7 @@
           "slug": "rio-moderno-museo-manana",
           "name": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
           "duration": "7 horas",
-          "price_from": 475,
+          "price_from": 445,
           "description": "Explora el innovador Museo del Mañana de Río, el acuario más grande de Sudamérica, y ve tras bambalinas del Carnaval.",
           "highlights": [
             "Museo del Mañana",
@@ -272,7 +272,7 @@
           "slug": "island-escape-ilha-grande",
           "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
           "duration": "10 horas",
-          "price_from": 925,
+          "price_from": 875,
           "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
           "highlights": [
             "Lancha privada para tu grupo",
@@ -293,7 +293,7 @@
           "slug": "petropolis-imperial",
           "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
           "duration": "8 horas",
-          "price_from": 390,
+          "price_from": 360,
           "description": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
           "highlights": [
             "Palacio Quitandinha",
