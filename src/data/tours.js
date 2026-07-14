@@ -595,7 +595,7 @@ const prose = {
       "imageSlug": "essential-rio",
       "title": "The Essential Rio: Icons, Culture & Hidden Gems",
       "shortDescription": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain.",
-      "fullDescription": "Rio de Janeiro is one of the world's great cities — a place where a 700-meter granite peak rises directly from the urban fabric, where a century-old Art Nouveau café sits a few blocks from a favela, where a Chilean artist spent 23 years tiling an entire staircase one mosaic at a time. The Essential Rio private tour was designed to show you all of it, in a single day, without the crowds and compromises of a group bus.\n\nYour day begins at Christ the Redeemer atop Corcovado Mountain — one of the Seven Wonders of the Modern World and arguably the most recognizable statue on earth. At 38 meters tall, the figure of Christ stands with arms extended over a city of 7 million people, at an altitude that puts you above the clouds on misty mornings and rewards you with 360-degree panoramic views of Guanabara Bay, the Tijuca Forest, the beaches of Ipanema and Copacabana, and the Atlantic beyond. Your Christ the Redeemer tickets are included. One straight note: Corcovado is run by a third party, the voucher-to-ticket exchange at street level is required for everyone, and no ticket skips that line — up or down. We'd rather tell you plainly than oversell.\n\nFrom Corcovado, your private tour continues to Sugarloaf Mountain — the 396-meter granite monolith rising from the sea at the mouth of Guanabara Bay that has defined Rio's skyline since Portuguese sailors named it in the 16th century. Two cable car stages take you first to Morro da Urca, then to the Sugarloaf summit, where the view south to Copacabana and east across the bay to Niterói is one of the finest urban panoramas in the world. Skip-the-line tickets for the Sugarloaf cable car are included.\n\nThe afternoon moves into Rio's cultural districts. Santa Teresa is a hillside bohemian neighborhood of cobblestone streets, colonial mansions converted into artist studios, and some of the city's best restaurants and bars. For over a century it has been the home of musicians, painters, and writers who were drawn by the altitude, the light, and the distance from downtown's commercial intensity. Your guide will take you through streets that most tourists never see.\n\nA short walk brings you to the Selarón Steps — 215 steps connecting Lapa and Santa Teresa, each one covered in hand-placed ceramic tiles from over 60 countries. Chilean artist Jorge Selarón began the project in 1990 as a tribute to the Brazilian people and worked on it daily until his death in 2013. The result is one of the most vivid and joyful public art installations in the world.\n\nThe tour also includes two of Rio's most extraordinary architectural interiors: the Royal Portuguese Reading Room, a neo-Manueline masterpiece from 1837 housing 350,000 rare volumes under a stained glass ceiling — open weekdays only — and the Metropolitan Cathedral of São Sebastião, a brutalist cone completed in 1979 that seats 20,000 people and filters natural light through four enormous stained glass panels reaching 64 meters to the ceiling. Entry to both is included.\n\nThroughout the day, your certified private guide — a Rio-born local who has spent years refining this itinerary — provides historical context, local stories, and the kind of knowledge that doesn't appear in any guidebook. The pace is yours. If you want to spend an extra 30 minutes at Selarón Steps for photography, or skip one attraction entirely in favor of lunch in a neighborhood restaurant your guide recommends, that's exactly what happens.\n\nTransportation is private door-to-door: your air-conditioned vehicle with a professional driver picks you up at your hotel, Airbnb, airport or cruise port at the start of the day and returns you at the end. All entrance tickets are included. Complimentary bottled water is provided throughout.\n\nThe Essential Rio is the most comprehensive private tour of the city's iconic landmarks and cultural gems. For first-time visitors to Rio, it is the single best day available.",
+      "fullDescription": "Rio de Janeiro is one of the world's great cities — a place where a 700-meter granite peak rises directly from the urban fabric, where a century-old Art Nouveau café sits a few blocks from a favela, where a Chilean artist spent 23 years tiling an entire staircase one mosaic at a time. The Essential Rio private tour was designed to show you all of it, in a single day, without the crowds and compromises of a group bus.\n\nYour day begins at Christ the Redeemer atop Corcovado Mountain — one of the Seven Wonders of the Modern World and arguably the most recognizable statue on earth. At 38 meters tall, the figure of Christ stands with arms extended over a city of 7 million people, at an altitude that puts you above the clouds on misty mornings and rewards you with 360-degree panoramic views of Guanabara Bay, the Tijuca Forest, the beaches of Ipanema and Copacabana, and the Atlantic beyond. Your Christ the Redeemer tickets are included. One straight note: Corcovado is run by a third party, the voucher-to-ticket exchange at street level is required for everyone, and no ticket skips that line — up or down. We'd rather tell you plainly than oversell.\n\nFrom Corcovado, your private tour continues to Sugarloaf Mountain — the 396-meter granite monolith rising from the sea at the mouth of Guanabara Bay that has defined Rio's skyline since Portuguese sailors named it in the 16th century. Two cable car stages take you first to Morro da Urca, then to the Sugarloaf summit, where the view south to Copacabana and east across the bay to Niterói is one of the finest urban panoramas in the world. Skip-the-line tickets for the Sugarloaf cable car are included.\n\nThe afternoon moves into Rio's cultural districts. Santa Teresa is a hillside bohemian neighborhood of cobblestone streets, colonial mansions converted into artist studios, and some of the city's best restaurants and bars. For over a century it has been the home of musicians, painters, and writers who were drawn by the altitude, the light, and the distance from downtown's commercial intensity. Your guide will take you through streets that most tourists never see.\n\nA short walk brings you to the Selarón Steps — 215 steps connecting Lapa and Santa Teresa, each one covered in hand-placed ceramic tiles from over 60 countries. Chilean artist Jorge Selarón began the project in 1990 as a tribute to the Brazilian people and worked on it daily until his death in 2013. The result is one of the most vivid and joyful public art installations in the world.\n\nThe tour also includes two of Rio's most extraordinary architectural interiors: the Royal Portuguese Reading Room, a neo-Manueline masterpiece from 1837 housing 350,000 rare volumes under a stained glass ceiling — open weekdays only — and the Metropolitan Cathedral of São Sebastião, a brutalist cone completed in 1979 that seats 20,000 people and filters natural light through four enormous stained glass panels reaching 64 meters to the ceiling. Entry to both is included.\n\nThroughout the day, your certified private guide — a Rio-born local who has spent years refining this itinerary — provides historical context, local stories, and the kind of knowledge that doesn't appear in any guidebook. The pace is yours. If you want to spend an extra 30 minutes at Selarón Steps for photography, or skip one attraction entirely in favor of lunch in a neighborhood restaurant your guide recommends, that's exactly what happens.\n\nTransportation is private door-to-door: your air-conditioned vehicle with a professional driver picks you up at your hotel, Airbnb, airport or cruise port at the start of the day and returns you at the end. All entrance tickets are included. Complimentary bottled water is provided throughout.\n\nThe Essential Rio is the most comprehensive private tour of the city's iconic landmarks and cultural gems. For first-time visitors to Rio, it is the fullest single day on our program.",
       "highlights": [
         "Christ the Redeemer",
         "Sugarloaf Mountain cable car",
@@ -606,9 +606,9 @@ const prose = {
       ],
       "included": [
         "Private transportation with professional driver",
-        "Certified English-speaking tour guide",
+        "Certified local guide (English)",
         "Christ the Redeemer tickets",
-        "Skip-the-line tickets for Sugarloaf included.",
+        "Skip-the-line Sugarloaf cable car tickets",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
       ],
@@ -653,7 +653,7 @@ const prose = {
       "imageSlug": "rio-flash-5h",
       "title": "Rio Express: Christ & Sugarloaf in 5 Hours",
       "shortDescription": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
-      "fullDescription": "Five hours is enough time to see Rio's two greatest landmarks — if the logistics are perfect. The Rio Express private tour was built specifically for cruise passengers docking at Pier Mauá and travelers with tight schedules who want to see Christ the Redeemer and Sugarloaf Mountain without sacrificing the experience for the sake of speed.\n\nMost visitors to Rio only have time for one of the two — a full-day tour covering both with time to spare can feel rushed when you're watching the clock. The Rio Express solves this by eliminating everything that isn't essential: no scenic detours, no optional stops, no time lost to group bus coordination. Just two of the greatest viewpoints on earth, a certified local guide, and a private vehicle that moves on your schedule.\n\nChrist the Redeemer stands 38 meters tall atop the 710-meter Corcovado peak, arms extended over the entire city. The statue was completed in 1931 after nine years of construction, and declared one of the Seven Wonders of the Modern World in 2007. From the viewing platform beneath the statue, you can see the full sweep of Rio: Guanabara Bay, the beaches of Copacabana and Ipanema, the Tijuca Forest, the Maracanã stadium, and the Atlantic horizon beyond. Your Christ the Redeemer tickets are included, and we time the visit for the quieter windows — fewer crowds and clearer views at the top. The Corcovado line itself is run by a third party, and no ticket skips it.\n\nSugarloaf Mountain sits at the opposite end of Rio's geography, rising 396 meters directly from the sea at the bay's entrance. The two-stage cable car — first to Morro da Urca at 220 meters, then to the Sugarloaf summit — was one of the world's first aerial cable cars when it opened in 1912. The view from the top looking back at Christ the Redeemer across the city, with Copacabana below and the Atlantic behind you, is one of the most complete urban panoramas anywhere. Skip-the-line access to the Sugarloaf cable car is included.\n\nThe tour begins with pickup directly from Pier Mauá cruise terminal or your hotel, and returns you with time to spare before your ship's all-aboard. When booking, provide your ship's departure time and we will confirm your pickup time and build in a comfortable buffer — typically 45 to 60 minutes before the terminal deadline.\n\nEverything is included: private air-conditioned vehicle, professional driver, certified English and Portuguese-speaking guide, skip-the-line cable car tickets for Sugarloaf plus entrance tickets for Christ the Redeemer, and complimentary bottled water. No hidden costs, no surprises.\n\nThe Rio Express is the most efficient private tour of Rio's essential landmarks. In five focused hours, you will have stood at the feet of Christ the Redeemer and watched Rio spread out beneath you from the top of Sugarloaf — two experiences that stay with travelers for decades.",
+      "fullDescription": "Five hours is enough time to see Rio's two greatest landmarks — if the logistics are perfect. The Rio Express private tour was built specifically for cruise passengers docking at Pier Mauá and travelers with tight schedules who want to see Christ the Redeemer and Sugarloaf Mountain without sacrificing the experience for the sake of speed.\n\nMost visitors to Rio only have time for one of the two — a full-day tour covering both with time to spare can feel rushed when you're watching the clock. The Rio Express solves this by eliminating everything that isn't essential: no scenic detours, no optional stops, no time lost to group bus coordination. Just two of the greatest viewpoints on earth, a certified local guide, and a private vehicle that moves on your schedule.\n\nChrist the Redeemer stands 38 meters tall atop the 710-meter Corcovado peak, arms extended over the entire city. The statue was completed in 1931 after nine years of construction, and declared one of the Seven Wonders of the Modern World in 2007. From the viewing platform beneath the statue, you can see the full sweep of Rio: Guanabara Bay, the beaches of Copacabana and Ipanema, the Tijuca Forest, the Maracanã stadium, and the Atlantic horizon beyond. Your Christ the Redeemer tickets are included, and we time the visit for the quieter windows — fewer crowds and clearer views at the top. The Corcovado line itself is run by a third party, and no ticket skips it.\n\nSugarloaf Mountain sits at the opposite end of Rio's geography, rising 396 meters directly from the sea at the bay's entrance. The two-stage cable car — first to Morro da Urca at 220 meters, then to the Sugarloaf summit — was one of the world's first aerial cable cars when it opened in 1912. The view from the top looking back at Christ the Redeemer across the city, with Copacabana below and the Atlantic behind you, is one of the most complete urban panoramas anywhere. Skip-the-line access to the Sugarloaf cable car is included.\n\nThe tour begins with pickup directly from Pier Mauá cruise terminal or your hotel, and returns you with time to spare before your ship's all-aboard. When booking, provide your ship's departure time and we will confirm your pickup time and build in a comfortable buffer — typically 45 to 60 minutes before the terminal deadline.\n\nEverything is included: private air-conditioned vehicle, professional driver, certified English and Portuguese-speaking guide, skip-the-line cable car tickets for Sugarloaf plus entrance tickets for Christ the Redeemer, and complimentary bottled water. No hidden costs, no surprises.\n\nThe Rio Express is our shortest itinerary covering both of Rio's essential landmarks. In five focused hours, you will have stood at the feet of Christ the Redeemer and watched Rio spread out beneath you from the top of Sugarloaf — two experiences that stay with travelers for decades.",
       "highlights": [
         "Christ the Redeemer statue",
         "Sugarloaf Mountain cable car",
@@ -661,8 +661,9 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
-        "All tickets included",
+        "Certified local guide (English)",
+        "Christ the Redeemer entrance tickets",
+        "Skip-the-line Sugarloaf cable car tickets",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
       ],
@@ -704,14 +705,15 @@ const prose = {
       "shortDescription": "Experience Rio's most breathtaking sunrise from Sugarloaf Mountain, followed by early access to Christ the Redeemer.",
       "fullDescription": "There is one moment in Rio that photographers and early risers describe as transformative: standing on the summit of Sugarloaf Mountain in the dark, watching the sky over Guanabara Bay begin to shift from black to deep blue to amber as the sun rises behind the Serra do Mar mountains. The Rio at First Light private tour was built around this single moment — and around the logistical precision required to reach it.\n\nYour pickup is at 4:00 AM. Your private vehicle arrives at your hotel, Airbnb, or cruise ship accommodation exactly on time. The drive to Sugarloaf takes approximately 20 minutes at that hour, with the city entirely empty and the bay visible below the highway in the darkness. The first cable car of the day carries you to the 220-meter intermediate station at Morro da Urca, and the second to the 396-meter summit, arriving before dawn breaks.\n\nWhat happens next depends on the morning. On clear days, the bay below turns progressively lighter as the sun approaches the horizon — first a deep indigo, then violet, then the first orange edges appear above the mountains across the bay. The moment of sunrise itself, when the first direct light strikes the summit and the bay becomes copper and gold, lasts approximately 15 minutes. On partly cloudy days, the clouds themselves become the spectacle — layers of color at different altitudes, the city emerging gradually from darkness below.\n\nAt this hour, the summit has a quality it never has later in the day: silence. No crowds, no groups, no queues. Just the bay, the sky, and Rio spread out in every direction as the city wakes up beneath you.\n\nAfter sunrise at Sugarloaf, your private tour continues to Christ the Redeemer on Corcovado Mountain. The early morning access is one of the most significant advantages of this tour. By the time the standard day-trip groups begin arriving — typically between 9:00 and 10:00 AM — you will have already been there and left. The 38-meter statue in the early morning light, with the city still relatively quiet below and a light mist sometimes drifting through the Tijuca Forest on the slopes, is a different experience from the midday visit.\n\nSkip-the-line tickets are included for the Sugarloaf cable car, and entrance tickets for Christ the Redeemer. The tour is available on Saturdays only, when the first cable car schedule accommodates the 4:00 AM start. Saturday slots fill weeks in advance — book early.\n\nIncluded: private door-to-door transportation, certified local guide, skip-the-line entrance to Sugarloaf Mountain, entrance tickets to Christ the Redeemer, and complimentary bottled water. Breakfast is not included but your guide can recommend excellent options near Christ the Redeemer after the sunrise.\n\nThis tour is not for everyone — the 4:00 AM start requires commitment. For those willing to set two alarms and sacrifice one morning's sleep, the reward is Rio at its most extraordinary.",
       "highlights": [
-        "Exclusive sunrise viewing from Sugarloaf",
+        "Sunrise from the Sugarloaf summit, before the crowds",
         "Early morning Christ the Redeemer visit",
         "Professional photography opportunities"
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
-        "All tickets included",
+        "Certified local guide (English)",
+        "Christ the Redeemer entrance tickets",
+        "Skip-the-line Sugarloaf cable car tickets",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
       ],
@@ -772,8 +774,9 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
-        "All tickets included",
+        "Certified local guide (English)",
+        "Christ the Redeemer entrance tickets",
+        "Skip-the-line Sugarloaf cable car tickets",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
       ],
@@ -822,7 +825,9 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "All tickets included",
+        "Certified local guide (English), throughout the day and the show",
+        "Christ the Redeemer entrance tickets",
+        "Skip-the-line Sugarloaf cable car tickets",
         "Roxy dinner and show",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
@@ -872,7 +877,7 @@ const prose = {
       "imageSlug": "island-escape-ilha-grande",
       "title": "Island Escape: Ilha Grande by Private Speedboat",
       "shortDescription": "Embark on an exclusive private speedboat trip to some of the island's most beautiful beaches.",
-      "fullDescription": "Ilha Grande is consistently ranked among the world's most beautiful islands — a 193-square-kilometer protected Atlantic Forest reserve with over 100 beaches, no cars, no roads between villages, and water so clear you can see the seafloor at 10 meters depth. It sits 150 kilometers southwest of Rio de Janeiro, and the only way to reach it is by boat.\n\nThe journey begins before dawn. Your private vehicle picks you up in Rio between 6:00 and 7:00 AM for the three-hour coastal drive through the Green Coast (Costa Verde) — one of Brazil's most scenic stretches of Atlantic coastline, passing through Mangaratiba where your private speedboat is waiting. The boat is exclusively yours for the day: no other passengers, no fixed itinerary imposed by a group schedule, no waiting for strangers to finish their swim. An on-board barbecue can be added on request (USD 120 per boat for up to 6 guests; USD 240 for 7–12).\n\nIlha Grande was a maximum-security prison island until 1994 — its isolation that made it ideal for incarceration also preserved its ecosystem entirely. When the prison closed, the Brazilian government declared it an environmental protection area. Today it is one of the last remaining intact sections of Atlantic Forest in Brazil, home to rare primates, over 200 bird species, sea turtles, and dolphins. The waters around the island contain some of the best snorkeling sites on the South Atlantic coast.\n\nThe private speedboat covers five hours visiting some of the island's most beautiful beaches. Stops are chosen based on sea conditions, tides, and your interests discussed in advance — typically including Lopes Mendes, consistently rated one of the top five beaches in Brazil for its three kilometers of white sand and translucent surf, the sheltered waters of Lagoa Azul for snorkeling, with an optional lunch stop at one of the beaches. The Atlantic Forest interior is accessible on foot from Abraão for those who want to explore the trails.\n\nLopes Mendes is accessible only by boat or a 90-minute jungle trail from Abraão — no roads reach it. Your private speedboat means you arrive before the day-trip boat crowds, spend as long as you want, and depart when you're ready. An upgrade to extend time at Lopes Mendes with a guide-led forest trail is available for USD 100 per person.\n\nLunch is an optional stop at one of the beaches — not included in the tour price and at your own expense; your guide will recommend good spots. Budget USD 20–40 per person.\n\nThe return speedboat journey and drive back to Rio brings you home by early evening. The total day — door to door — is approximately 10 to 11 hours.\n\nIncluded: private round-trip transportation Rio to Mangaratiba, private speedboat for the day with captain, certified guide, snorkeling equipment, and complimentary bottled water. Not included: lunch, optional Lopes Mendes upgrade (USD 100/person), and any personal purchases.\n\nFor travelers who want to experience one of Brazil's most stunning islands without the constraints of a group tour, this is the definitive option.",
+      "fullDescription": "Ilha Grande is a 193-square-kilometer protected Atlantic Forest reserve with over 100 beaches, no cars, no roads between villages, and water so clear you can see the seafloor at 10 meters depth. It sits 150 kilometers southwest of Rio de Janeiro, and the only way to reach it is by boat.\n\nThe journey begins before dawn. Your private vehicle picks you up in Rio between 6:00 and 7:00 AM for the three-hour coastal drive through the Green Coast (Costa Verde) — one of Brazil's most scenic stretches of Atlantic coastline, passing through Mangaratiba where your private speedboat is waiting. The boat is exclusively yours for the day: no other passengers, no fixed itinerary imposed by a group schedule, no waiting for strangers to finish their swim. An on-board barbecue can be added on request (USD 120 per boat for up to 6 guests; USD 240 for 7–12).\n\nIlha Grande was a maximum-security prison island until 1994 — its isolation that made it ideal for incarceration also preserved its ecosystem entirely. When the prison closed, the Brazilian government declared it an environmental protection area. Today it is one of the last remaining intact sections of Atlantic Forest in Brazil, home to rare primates, over 200 bird species, sea turtles, and dolphins. The waters around the island contain some of the best snorkeling sites on the South Atlantic coast.\n\nThe private speedboat covers five hours visiting some of the island's most beautiful beaches. Stops are chosen based on sea conditions, tides, and your interests discussed in advance — typically including Lopes Mendes, consistently rated one of the top five beaches in Brazil for its three kilometers of white sand and translucent surf, the sheltered waters of Lagoa Azul for snorkeling, with an optional lunch stop at one of the beaches.\n\nNo roads reach Lopes Mendes — you arrive by boat. Your private speedboat means you arrive before the day-trip boat crowds, spend as long as you want, and depart when you're ready. An upgrade to extend time at Lopes Mendes with a guide-led forest trail is available for USD 100 per person.\n\nLunch is an optional stop at one of the beaches — not included in the tour price and at your own expense; your guide will recommend good spots. Budget USD 20–40 per person.\n\nThe return speedboat journey and drive back to Rio brings you home by early evening. The total day — door to door — is approximately 10 to 11 hours.\n\nIncluded: private round-trip transportation Rio to Mangaratiba, private speedboat for the day with captain, certified guide, snorkeling equipment, and complimentary bottled water. Not included: lunch, optional Lopes Mendes upgrade (USD 100/person), and any personal purchases.\n\nFor travelers who want to experience one of Brazil's most stunning islands without the constraints of a group tour, this is the private alternative to a group boat.",
       "highlights": [
         "Private speedboat for your group",
         "5-hour island exploration",
@@ -881,7 +886,7 @@ const prose = {
       ],
       "included": [
         "Private vehicle with professional driver",
-        "Licensed tour guide",
+        "Certified guide from Rio (English)",
         "5-hour private speedboat",
         "Boatman/sailor",
         "Snorkeling equipment",
@@ -930,7 +935,7 @@ const prose = {
       "imageSlug": "petropolis-imperial",
       "title": "Petrópolis: Imperial Palaces & Mountain Escape",
       "shortDescription": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
-      "fullDescription": "In 1843, Emperor Dom Pedro II chose a mountain valley 68 kilometers north of Rio de Janeiro as the site for his summer palace. The altitude — 840 meters above sea level — offered relief from the tropical heat of the coast, and the Serra dos Órgãos range provided a dramatic backdrop of peaks and Atlantic Forest. The city that grew around the imperial court became Petrópolis: the most European city in Brazil, the only place in South America where a reigning emperor ever established permanent residence, and the site of some of the finest 19th-century architecture on the continent.\n\nThe Petrópolis private tour from Rio is a full-day immersion in Brazilian imperial history, mountain scenery, and architectural heritage that most visitors to Rio never experience.\n\nThe drive from Rio takes approximately 70 to 90 minutes and is itself part of the experience. The ascent through the Serra dos Órgãos follows a colonial mountain road that winds through Atlantic Forest remnants, past waterfalls visible from the car window, and into the cool mountain air of the highlands. The temperature in Petrópolis runs 5 to 8 degrees Celsius cooler than Rio throughout the year — in the depths of winter (June to August) this means sweater weather while the coast swelters.\n\nThe Imperial Museum is the centerpiece of the tour and one of the finest history museums in South America. Housed in the original Imperial Palace — a neo-classical structure completed in 1845 — it contains the personal belongings of the Brazilian imperial family: Dom Pedro II's crown, containing 639 diamonds and 77 pearls; the original Declaration of the Abolition of Slavery (Lei Áurea), signed by Princess Isabel on 13 May 1888; the emperor's private library; royal furniture and artwork; and thousands of personal items that transform history from abstraction into tangible reality. Allow at least 45 minutes inside.\n\nQuitandinha Palace is one of the most improbable buildings in Brazil — a 1944 casino and resort in the style of Norman Manoir, built by a Brazilian entrepreneur who dreamed of creating South America's Monte Carlo. Gambling was banned in Brazil one year after it opened, but the building itself — surrounded by an artificial lake and forest — remains one of the most dramatic architectural statements of the 20th century on the continent.\n\nThe House of 7 Errors (Casa dos 7 Erros) is a local legend: a house deliberately constructed with seven intentional architectural mistakes by an eccentric Brazilian who commissioned it in the 1950s. Your guide's explanation of each error — some structural, some symbolic, some still debated — turns what sounds like a curiosity into a genuinely fascinating story about eccentricity, craft, and the fine line between error and intention.\n\nThe Metropolitan Cathedral of São Pedro de Alcântara is Petrópolis' most striking landmark — a neo-Gothic structure begun in 1884 and completed in 1939, whose twin towers define the city's skyline. The imperial mausoleum inside contains the remains of Emperor Dom Pedro II and Empress Teresa Cristina, returned to Brazil from Lisbon in 1939 after decades of post-republican exile.\n\nLunch is built into the itinerary — Petrópolis has excellent restaurants in the historic center, and your guide will recommend options based on your preferences. Budget USD 20–40 per person.\n\nNot available on Mondays, when most Petrópolis museums and monuments are closed. The tour runs Tuesday to Sunday.\n\nIncluded: private round-trip transportation Rio to Petrópolis, certified local guide, all entrance tickets to attractions listed, and complimentary bottled water. Lunch is not included.",
+      "fullDescription": "In 1843, Emperor Dom Pedro II chose a mountain valley 68 kilometers north of Rio de Janeiro as the site for his summer palace. The altitude — 840 meters above sea level — offered relief from the tropical heat of the coast, and the Serra dos Órgãos range provided a dramatic backdrop of peaks and Atlantic Forest. The city that grew around the imperial court became Petrópolis: the most European city in Brazil, the only place in South America where a reigning emperor ever established permanent residence, and the site of some of the finest 19th-century architecture on the continent.\n\nThe Petrópolis private tour from Rio is a full-day immersion in Brazilian imperial history, mountain scenery, and architectural heritage that most visitors to Rio never experience.\n\nThe drive from Rio takes approximately 70 to 90 minutes and is itself part of the experience. The ascent through the Serra dos Órgãos follows a colonial mountain road that winds through Atlantic Forest remnants, past waterfalls visible from the car window, and into the cool mountain air of the highlands. The temperature in Petrópolis runs 5 to 8 degrees Celsius cooler than Rio throughout the year — in the depths of winter (June to August) this means cool enough for a jacket while the coast swelters.\n\nThe Imperial Museum is the centerpiece of the tour and one of the finest history museums in South America. Housed in the original Imperial Palace — a neo-classical structure completed in 1845 — it contains the personal belongings of the Brazilian imperial family: Dom Pedro II's crown, containing 639 diamonds and 77 pearls; the original Declaration of the Abolition of Slavery (Lei Áurea), signed by Princess Isabel on 13 May 1888; the emperor's private library; royal furniture and artwork; and thousands of personal items that transform history from abstraction into tangible reality. Allow at least 45 minutes inside.\n\nQuitandinha Palace is one of the most improbable buildings in Brazil — a 1944 casino and resort in the style of Norman Manoir, built by a Brazilian entrepreneur who dreamed of creating South America's Monte Carlo. Gambling was banned in Brazil one year after it opened, but the building itself — surrounded by an artificial lake and forest — remains one of the most dramatic architectural statements of the 20th century on the continent.\n\nThe House of 7 Errors (Casa dos 7 Erros) is a local legend: a house deliberately constructed with seven intentional architectural mistakes by an eccentric Brazilian who commissioned it in the 1950s. Your guide's explanation of each error — some structural, some symbolic, some still debated — turns what sounds like a curiosity into a genuinely fascinating story about eccentricity, craft, and the fine line between error and intention.\n\nThe Metropolitan Cathedral of São Pedro de Alcântara is Petrópolis' most striking landmark — a neo-Gothic structure begun in 1884 and completed in 1939, whose twin towers define the city's skyline. The imperial mausoleum inside contains the remains of Emperor Dom Pedro II and Empress Teresa Cristina, returned to Brazil from Lisbon in 1939 after decades of post-republican exile.\n\nLunch is built into the itinerary — Petrópolis has excellent restaurants in the historic center, and your guide will recommend options based on your preferences. Budget USD 20–40 per person.\n\nNot available on Mondays, when most Petrópolis museums and monuments are closed. The tour runs Tuesday to Sunday.\n\nIncluded: private round-trip transportation Rio to Petrópolis, certified local guide, all entrance tickets to attractions listed, and complimentary bottled water. Lunch is not included.",
       "highlights": [
         "Quitandinha Palace",
         "Imperial Museum with crown jewels",
@@ -940,7 +945,7 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
+        "Certified guide from Rio (English)",
         "Museum entrance fees",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
@@ -998,7 +1003,7 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
+        "Certified local guide (English)",
         "All entrance fees",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
@@ -1055,7 +1060,7 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
+        "Certified guide from Rio (English)",
         "Museum and fort entrance",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
@@ -1100,12 +1105,12 @@ const prose = {
       ]
     },
     "modern-rio-museum-tomorrow": {
-      "id": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
+      "id": "Modern Rio: Museum of Tomorrow & Samba School Behind the Scenes",
       "slug": "modern-rio-museum-tomorrow",
       "imageSlug": "modern-rio-museum-tomorrow",
-      "title": "Modern Rio: Museum of Tomorrow & Sambadrome Behind the Scenes",
+      "title": "Modern Rio: Museum of Tomorrow & Samba School Behind the Scenes",
       "shortDescription": "Explore Rio's innovative Museum of Tomorrow, South America's largest aquarium, and go behind the scenes of Carnival.",
-      "fullDescription": "The port district of Rio de Janeiro — the area around Praça Mauá and the old harbor — sat largely derelict for decades, a relic of an industrial past that the city had moved beyond. For the 2016 Olympic Games, Rio invested heavily in its revitalization: a new boulevard, new tram line, new museums, and a new aquarium transformed the area into one of the most interesting cultural districts in South America. The Modern Rio tour explores the best of it.\n\nThe Museum of Tomorrow (Museu do Amanhã) is the centerpiece — a Santiago Calatrava building completed in 2015 that has become one of Rio's most photographed structures. The Spanish architect's cantilevered steel and concrete design, with moving solar panels that track the sun, extends over the bay like a creature in motion. Inside, the museum is an immersive exploration of sustainability, climate science, and humanity's relationship with the planet — not a static collection of objects, but a sequence of interactive environments that require at least 90 minutes to experience properly. It is, by considerable margin, the most intellectually engaging museum in Rio.\n\nAquaRio is South America's largest aquarium, opened in 2016 in a converted industrial building adjacent to the Museum of Tomorrow. The 8,000 animals across 350 species include the signature submarine tunnel — a 20-meter walk-through tube with sharks, rays, and large pelagic fish swimming overhead and on either side. Budget at least 60 minutes.\n\nThe behind-the-scenes visit to a Rio Carnival samba school is the most unusual element of the tour — and for many visitors, the most memorable. Carnival is not a spontaneous event. It is the result of year-round preparation by Rio's samba schools (escolas de samba), each of which has thousands of members working through the year on floats, costumes, music, and choreography for a 70-minute performance that will be judged by a panel of experts. The visit takes you into the galpão — the warehouse where the floats are constructed — and gives you access to the people, the process, and the scale of what Carnival actually involves. Available Tuesday to Saturday; if your tour falls on a Sunday or Monday this portion is adjusted.\n\nThe National Historical Museum, housed in a colonial fortress complex at the edge of the port district, covers 500 years of Brazilian history through one of South America's largest collections of historical artifacts, weapons, carriages, and documents.\n\nNot available on Mondays. The tour runs Tuesday to Sunday.\n\nIncluded: private door-to-door transportation, certified local guide, Museum of Tomorrow entrance, AquaRio entrance, samba school visit, National Historical Museum entrance, and complimentary bottled water. Meals are not included.",
+      "fullDescription": "The port district of Rio de Janeiro — the area around Praça Mauá and the old harbor — sat largely derelict for decades, a relic of an industrial past that the city had moved beyond. For the 2016 Olympic Games, Rio invested heavily in its revitalization: a new boulevard, new tram line, new museums, and a new aquarium transformed the area into one of the most interesting cultural districts in South America. The Modern Rio tour explores the best of it.\n\nThe Museum of Tomorrow (Museu do Amanhã) is the centerpiece — a Santiago Calatrava building completed in 2015 that has become one of Rio's most photographed structures. The Spanish architect's cantilevered steel and concrete design, with moving solar panels that track the sun, extends over the bay like a creature in motion. Inside, the museum is an immersive exploration of sustainability, climate science, and humanity's relationship with the planet — not a static collection of objects, but a sequence of interactive environments that require at least 90 minutes to experience properly. It is one of the few museums in Rio built around ideas rather than objects.\n\nAquaRio is South America's largest aquarium, opened in 2016 in a converted industrial building adjacent to the Museum of Tomorrow. The 8,000 animals across 350 species include the signature submarine tunnel — a 20-meter walk-through tube with sharks, rays, and large pelagic fish swimming overhead and on either side. Budget at least 60 minutes.\n\nThe behind-the-scenes visit to a Rio Carnival samba school is the most unusual element of the tour — and for many visitors, the most memorable. Carnival is not a spontaneous event. It is the result of year-round preparation by Rio's samba schools (escolas de samba), each of which has thousands of members working through the year on floats, costumes, music, and choreography for a 70-minute performance that will be judged by a panel of experts. The visit takes you into the galpão — the warehouse where the floats are constructed — and gives you access to the people, the process, and the scale of what Carnival actually involves. Available Tuesday to Saturday; if your tour falls on a Sunday or Monday this portion is adjusted.\n\nThe National Historical Museum, housed in a colonial fortress complex at the edge of the port district, covers 500 years of Brazilian history through one of South America's largest collections of historical artifacts, weapons, carriages, and documents.\n\nNot available on Mondays. The tour runs Tuesday to Sunday.\n\nIncluded: private door-to-door transportation, certified local guide, Museum of Tomorrow entrance, AquaRio entrance, samba school visit, National Historical Museum entrance, and complimentary bottled water. Meals are not included.",
       "highlights": [
         "Museum of Tomorrow",
         "AquaRio aquarium",
@@ -1114,7 +1119,7 @@ const prose = {
       ],
       "included": [
         "Private transportation",
-        "English-speaking guide",
+        "Certified local guide (English)",
         "All museum entrance fees",
         "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
         "Complimentary bottled water"
@@ -1173,7 +1178,7 @@ const prose = {
       ],
       "included": [
         "Private transportation from Rio with professional driver",
-        "Certified local guide",
+        "Certified guide from Rio (English)",
         "Pickup and drop-off in Rio (hotels, Airbnbs, and the cruise port)",
         "Complimentary bottled water"
       ],
@@ -1282,7 +1287,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía certificado en español",
+        "Guía local certificado (español)",
         "Todas las entradas incluidas",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1335,8 +1340,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
-        "Todas las entradas",
+        "Guía local certificado (español)",
+        "Entradas al Cristo Redentor",
+        "Entradas sin fila al teleférico del Pan de Azúcar",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
       ],
@@ -1384,8 +1390,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
-        "Todas las entradas",
+        "Guía local certificado (español)",
+        "Entradas al Cristo Redentor",
+        "Entradas sin fila al teleférico del Pan de Azúcar",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
       ],
@@ -1446,8 +1453,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
-        "Todas las entradas",
+        "Guía local certificado (español)",
+        "Entradas al Cristo Redentor",
+        "Entradas sin fila al teleférico del Pan de Azúcar",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
       ],
@@ -1496,7 +1504,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Todas las entradas",
+        "Guía local certificado (español), durante todo el día y el show",
+        "Entradas al Cristo Redentor",
+        "Entradas sin fila al teleférico del Pan de Azúcar",
         "Cena y show en Roxy",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1546,7 +1556,7 @@ const prose = {
       "imageSlug": "island-escape-ilha-grande",
       "title": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "shortDescription": "Embárcate en un viaje exclusivo en lancha privada a algunas de las playas más hermosas de la isla.",
-      "fullDescription": "Ilha Grande es clasificada sistemáticamente entre las islas más hermosas del mundo — una reserva de Mata Atlántica de 193 kilómetros cuadrados con más de 100 playas, sin coches, sin carreteras entre aldeas, y aguas tan cristalinas que puedes ver el fondo del mar a 10 metros de profundidad. Se encuentra a 150 kilómetros al suroeste de Río de Janeiro y la única forma de llegar es en barco.\n\nEl viaje comienza antes del amanecer. Tu vehículo privado te recoge en Río entre las 6:00 y las 7:00 AM para el viaje de tres horas por la Costa Verde — uno de los tramos de costa atlántica más escénicos de Brasil, pasando por Mangaratiba donde te espera tu lancha privada. La embarcación es exclusivamente tuya durante todo el día: sin otros pasajeros, sin itinerario fijo impuesto por un horario grupal, sin esperar a desconocidos para terminar su baño. Se puede añadir una barbacoa a bordo bajo pedido (USD 120 por lancha hasta 6 personas; USD 240 para 7–12).\n\nIlha Grande fue una isla-prisión de máxima seguridad hasta 1994 — su aislamiento que la hacía ideal para el encarcelamiento también preservó su ecosistema por completo. Cuando se cerró la prisión, el gobierno brasileño la declaró área de protección ambiental. Hoy es una de las últimas secciones intactas de Mata Atlántica en Brasil, hogar de primates raros, más de 200 especies de aves, tortugas marinas y delfines. Las aguas alrededor de la isla contienen algunos de los mejores puntos de snorkel de la costa sur del Atlántico.\n\nLa exploración en lancha cubre cinco horas visitando algunas de las playas más hermosas de la isla. Las paradas se eligen en función de las condiciones del mar, las mareas y tus intereses consultados con anticipación — típicamente incluyen Lopes Mendes, consistentemente valorada entre las cinco mejores playas de Brasil por sus tres kilómetros de arena blanca y oleaje traslúcido; las aguas protegidas de Lagoa Azul para hacer snorkel; con una parada opcional para almorzar en una de las playas. El interior de la Mata Atlántica es accesible a pie desde Abraão para quienes quieran explorar los senderos.\n\nLopes Mendes solo es accesible en barco o por un sendero selvático de 90 minutos desde Abraão — ninguna carretera llega hasta allí. Tu lancha privada significa que llegas antes que las multitudes de los botes de excursión, te quedas el tiempo que quieras y te vas cuando estés listo. Una mejora para ampliar el tiempo en Lopes Mendes con un sendero guiado por el bosque está disponible por USD 100 por persona.\n\nEl almuerzo es una parada opcional en una de las playas — no incluido en el precio y por cuenta del cliente; tu guía recomendará buenos lugares. Presupuesto USD 20–40 por persona.\n\nEl viaje de regreso en lancha y el trayecto de vuelta a Río te traen a casa al inicio de la tarde. El día total — de puerta a puerta — es de aproximadamente 10 a 11 horas.\n\nIncluido: transporte privado de ida y vuelta Río–Mangaratiba, lancha privada durante el día con capitán, guía certificado, equipo de snorkel y agua embotellada de cortesía. No incluido: almuerzo, mejora opcional Lopes Mendes (USD 100/persona) y compras personales.\n\nPara los viajeros que quieren experimentar una de las islas más impresionantes de Brasil sin las restricciones de un tour grupal, esta es la opción definitiva.",
+      "fullDescription": "Ilha Grande es clasificada sistemáticamente entre las islas más hermosas del mundo — una reserva de Mata Atlántica de 193 kilómetros cuadrados con más de 100 playas, sin coches, sin carreteras entre aldeas, y aguas tan cristalinas que puedes ver el fondo del mar a 10 metros de profundidad. Se encuentra a 150 kilómetros al suroeste de Río de Janeiro y la única forma de llegar es en barco.\n\nEl viaje comienza antes del amanecer. Tu vehículo privado te recoge en Río entre las 6:00 y las 7:00 AM para el viaje de tres horas por la Costa Verde — uno de los tramos de costa atlántica más escénicos de Brasil, pasando por Mangaratiba donde te espera tu lancha privada. La embarcación es exclusivamente tuya durante todo el día: sin otros pasajeros, sin itinerario fijo impuesto por un horario grupal, sin esperar a desconocidos para terminar su baño. Se puede añadir una barbacoa a bordo bajo pedido (USD 120 por lancha hasta 6 personas; USD 240 para 7–12).\n\nIlha Grande fue una isla-prisión de máxima seguridad hasta 1994 — su aislamiento que la hacía ideal para el encarcelamiento también preservó su ecosistema por completo. Cuando se cerró la prisión, el gobierno brasileño la declaró área de protección ambiental. Hoy es una de las últimas secciones intactas de Mata Atlántica en Brasil, hogar de primates raros, más de 200 especies de aves, tortugas marinas y delfines. Las aguas alrededor de la isla contienen algunos de los mejores puntos de snorkel de la costa sur del Atlántico.\n\nLa exploración en lancha cubre cinco horas visitando algunas de las playas más hermosas de la isla. Las paradas se eligen en función de las condiciones del mar, las mareas y tus intereses consultados con anticipación — típicamente incluyen Lopes Mendes, consistentemente valorada entre las cinco mejores playas de Brasil por sus tres kilómetros de arena blanca y oleaje traslúcido; las aguas protegidas de Lagoa Azul para hacer snorkel; con una parada opcional para almorzar en una de las playas.\n\nNinguna carretera llega a Lopes Mendes — se llega en barco. Tu lancha privada significa que llegas antes que las multitudes de los botes de excursión, te quedas el tiempo que quieras y te vas cuando estés listo. Una mejora para ampliar el tiempo en Lopes Mendes con un sendero guiado por el bosque está disponible por USD 100 por persona.\n\nEl almuerzo es una parada opcional en una de las playas — no incluido en el precio y por cuenta del cliente; tu guía recomendará buenos lugares. Presupuesto USD 20–40 por persona.\n\nEl viaje de regreso en lancha y el trayecto de vuelta a Río te traen a casa al inicio de la tarde. El día total — de puerta a puerta — es de aproximadamente 10 a 11 horas.\n\nIncluido: transporte privado de ida y vuelta Río–Mangaratiba, lancha privada durante el día con capitán, guía certificado, equipo de snorkel y agua embotellada de cortesía. No incluido: almuerzo, mejora opcional Lopes Mendes (USD 100/persona) y compras personales.\n\nPara los viajeros que quieren experimentar una de las islas más impresionantes de Brasil sin las restricciones de un tour grupal, esta es la opción definitiva.",
       "highlights": [
         "Lancha privada para tu grupo",
         "5 horas de exploración",
@@ -1555,7 +1565,7 @@ const prose = {
       ],
       "included": [
         "Vehículo privado con conductor profesional",
-        "Guía de turismo habilitado",
+        "Guía certificado desde Río (español)",
         "Lancha privada por 5 horas",
         "Marinero",
         "Equipo de snorkel",
@@ -1614,7 +1624,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
+        "Guía certificado desde Río (español)",
         "Entradas a museos",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1672,7 +1682,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
+        "Guía local certificado (español)",
         "Todas las entradas",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1729,7 +1739,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
+        "Guía certificado desde Río (español)",
         "Entrada al museo y fuertes",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1774,10 +1784,10 @@ const prose = {
       ]
     },
     "modern-rio-museum-tomorrow": {
-      "id": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
+      "id": "Río Moderno: Museo del Mañana y Escuela de Samba Entre Bastidores",
       "slug": "rio-moderno-museo-manana",
       "imageSlug": "modern-rio-museum-tomorrow",
-      "title": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
+      "title": "Río Moderno: Museo del Mañana y Escuela de Samba Entre Bastidores",
       "shortDescription": "Explora el innovador Museo del Mañana de Río, el acuario más grande de Sudamérica, y ve tras bambalinas del Carnaval.",
       "fullDescription": "El distrito portuario de Río de Janeiro — el área alrededor de la Praça Mauá y el antiguo puerto — estuvo en gran parte deteriorado durante décadas, un vestigio de un pasado industrial que la ciudad había superado. Para los Juegos Olímpicos de 2016, Río invirtió fuertemente en su revitalización: un nuevo bulevar, nueva línea de tranvía, nuevos museos y un nuevo acuario transformaron la zona en uno de los distritos culturales más interesantes de América del Sur. El tour Modern Rio explora lo mejor de ello.\n\nEl Museo del Mañana (Museu do Amanhã) es el elemento central — un edificio de Santiago Calatrava completado en 2015 que se ha convertido en una de las estructuras más fotografiadas de Río. El diseño en voladizo de acero y hormigón del arquitecto español, con paneles solares móviles que siguen el sol, se extiende sobre la bahía como una criatura en movimiento. En su interior, el museo es una exploración inmersiva de la sostenibilidad, la ciencia climática y la relación de la humanidad con el planeta — no una colección estática de objetos, sino una secuencia de entornos interactivos que requieren al menos 90 minutos para experimentarse correctamente. Es, por amplio margen, el museo más estimulante intelectualmente de Río.\n\nEl AquaRio es el mayor acuario de América del Sur, inaugurado en 2016 en un edificio industrial reconvertido junto al Museo del Mañana. Los 8.000 animales de 350 especies incluyen el característico túnel submarino — un tubo de 20 metros por el que caminas con tiburones, rayas y grandes peces pelágicos nadando sobre tu cabeza y a ambos lados. Dedica al menos 60 minutos.\n\nLa visita entre bastidores a una escuela de samba del Carnaval de Río es el elemento más inusual del tour — y para muchos visitantes, el más memorable. El Carnaval no es un evento espontáneo. Es el resultado de una preparación durante todo el año por parte de las escolas de samba de Río, cada una de las cuales tiene miles de miembros trabajando durante el año en carrozas, disfraces, música y coreografía para una actuación de 70 minutos que será juzgada por un panel de expertos. La visita te lleva al galpão — el almacén donde se construyen las carrozas — y te da acceso a las personas, el proceso y la escala de lo que el Carnaval implica realmente. Disponible de martes a sábado.\n\nEl Museo Histórico Nacional, alojado en un complejo de fortaleza colonial al borde del distrito portuario, cubre 500 años de historia brasileña a través de una de las mayores colecciones de artefactos históricos, armas, carruajes y documentos de América del Sur.\n\nNo disponible los lunes. El tour opera de martes a domingo.\n\nIncluido: transporte privado puerta a puerta, guía local certificado, entrada al Museo del Mañana, entrada al AquaRio, visita a la escuela de samba, entrada al Museo Histórico Nacional y agua embotellada de cortesía. Las comidas no están incluidas.",
       "highlights": [
@@ -1788,7 +1798,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guía en español",
+        "Guía local certificado (español)",
         "Todas las entradas",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
@@ -1847,7 +1857,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado desde Río con conductor profesional",
-        "Guía local certificado",
+        "Guía certificado desde Río (español)",
         "Recogida y regreso en Río (hoteles, Airbnbs y terminal de cruceros)",
         "Agua mineral de cortesía"
       ],
@@ -1956,7 +1966,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia certificado em português",
+        "Guia local certificado (português)",
         "Todos os ingressos incluídos",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2009,8 +2019,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
-        "Todos os ingressos",
+        "Guia local certificado (português)",
+        "Ingressos do Cristo Redentor",
+        "Ingressos sem fila do bondinho do Pão de Açúcar",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
       ],
@@ -2058,8 +2069,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
-        "Todos os ingressos",
+        "Guia local certificado (português)",
+        "Ingressos do Cristo Redentor",
+        "Ingressos sem fila do bondinho do Pão de Açúcar",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
       ],
@@ -2120,8 +2132,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
-        "Todos os ingressos",
+        "Guia local certificado (português)",
+        "Ingressos do Cristo Redentor",
+        "Ingressos sem fila do bondinho do Pão de Açúcar",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
       ],
@@ -2170,7 +2183,9 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Todos os ingressos",
+        "Guia local certificado (português), durante todo o dia e o show",
+        "Ingressos do Cristo Redentor",
+        "Ingressos sem fila do bondinho do Pão de Açúcar",
         "Jantar e show no Roxy",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2220,7 +2235,7 @@ const prose = {
       "imageSlug": "island-escape-ilha-grande",
       "title": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       "shortDescription": "Embarque em um passeio exclusivo de lancha privada por algumas das praias mais bonitas da ilha.",
-      "fullDescription": "Ilha Grande é consistentemente classificada entre as ilhas mais bonitas do mundo — uma reserva de Mata Atlântica de 193 quilômetros quadrados com mais de 100 praias, sem carros, sem estradas entre vilas, e água tão cristalina que você pode ver o fundo do mar a 10 metros de profundidade. Fica a 150 quilômetros a sudoeste do Rio de Janeiro e a única forma de chegar é de barco.\n\nA jornada começa antes do amanhecer. Seu veículo privativo busca você no Rio entre 6h e 7h para o trajeto de três horas pela Costa Verde — um dos trechos de litoral atlântico mais cênicos do Brasil, passando por Mangaratiba onde sua lancha privada está esperando. A embarcação é exclusivamente sua durante todo o dia: sem outros passageiros, sem itinerário fixo imposto por um horário de grupo, sem esperar por desconhecidos terminarem de nadar. É possível adicionar um churrasco a bordo sob consulta (USD 120 por barco até 6 pessoas; USD 240 para 7 a 12).\n\nIlha Grande foi uma ilha-prisão de segurança máxima até 1994 — seu isolamento que a tornava ideal para o encarceramento também preservou seu ecossistema inteiramente. Quando a prisão fechou, o governo brasileiro a declarou área de proteção ambiental. Hoje é uma das últimas seções intactas de Mata Atlântica no Brasil, lar de primatas raros, mais de 200 espécies de pássaros, tartarugas marinhas e golfinhos. As águas ao redor da ilha contêm alguns dos melhores pontos de snorkeling da costa sul do Atlântico.\n\nA exploração de lancha cobre cinco horas visitando algumas das praias mais bonitas da ilha. As paradas são escolhidas com base nas condições do mar, marés e seus interesses discutidos com antecedência — tipicamente incluindo Lopes Mendes, consistentemente avaliada entre as cinco melhores praias do Brasil pelos seus três quilômetros de areia branca e surf translúcido; as águas protegidas da Lagoa Azul para snorkeling; com uma parada opcional para almoço em uma das praias. O interior da Mata Atlântica é acessível a pé de Abraão para quem quiser explorar as trilhas.\n\nLopes Mendes só é acessível de barco ou por uma trilha de mata de 90 minutos a partir de Abraão — nenhuma estrada chega até lá. Sua lancha privativa significa que você chega antes das multidões dos barcos de excursão, fica o tempo que quiser e parte quando estiver pronto. Um upgrade para ampliar o tempo em Lopes Mendes com uma trilha guiada pela floresta está disponível por USD 100 por pessoa.\n\nO almoço é uma parada opcional em uma das praias — não incluído no preço e por conta do cliente; seu guia recomendará bons lugares. Orçamento de USD 20–40 por pessoa.\n\nO retorno de lancha e o trajeto de volta ao Rio trazem você para casa no início da tarde. O dia total — de porta a porta — é de aproximadamente 10 a 11 horas.\n\nIncluído: transporte privativo de ida e volta Rio–Mangaratiba, lancha privativa durante o dia com capitão, guia certificado, equipamento de snorkeling e água mineral de cortesia. Não incluído: almoço, upgrade opcional Lopes Mendes (USD 100/pessoa) e compras pessoais.\n\nPara viajantes que querem experimentar uma das ilhas mais deslumbrantes do Brasil sem as restrições de um tour em grupo, esta é a opção definitiva.",
+      "fullDescription": "Ilha Grande é consistentemente classificada entre as ilhas mais bonitas do mundo — uma reserva de Mata Atlântica de 193 quilômetros quadrados com mais de 100 praias, sem carros, sem estradas entre vilas, e água tão cristalina que você pode ver o fundo do mar a 10 metros de profundidade. Fica a 150 quilômetros a sudoeste do Rio de Janeiro e a única forma de chegar é de barco.\n\nA jornada começa antes do amanhecer. Seu veículo privativo busca você no Rio entre 6h e 7h para o trajeto de três horas pela Costa Verde — um dos trechos de litoral atlântico mais cênicos do Brasil, passando por Mangaratiba onde sua lancha privada está esperando. A embarcação é exclusivamente sua durante todo o dia: sem outros passageiros, sem itinerário fixo imposto por um horário de grupo, sem esperar por desconhecidos terminarem de nadar. É possível adicionar um churrasco a bordo sob consulta (USD 120 por barco até 6 pessoas; USD 240 para 7 a 12).\n\nIlha Grande foi uma ilha-prisão de segurança máxima até 1994 — seu isolamento que a tornava ideal para o encarceramento também preservou seu ecossistema inteiramente. Quando a prisão fechou, o governo brasileiro a declarou área de proteção ambiental. Hoje é uma das últimas seções intactas de Mata Atlântica no Brasil, lar de primatas raros, mais de 200 espécies de pássaros, tartarugas marinhas e golfinhos. As águas ao redor da ilha contêm alguns dos melhores pontos de snorkeling da costa sul do Atlântico.\n\nA exploração de lancha cobre cinco horas visitando algumas das praias mais bonitas da ilha. As paradas são escolhidas com base nas condições do mar, marés e seus interesses discutidos com antecedência — tipicamente incluindo Lopes Mendes, consistentemente avaliada entre as cinco melhores praias do Brasil pelos seus três quilômetros de areia branca e surf translúcido; as águas protegidas da Lagoa Azul para snorkeling; com uma parada opcional para almoço em uma das praias.\n\nNenhuma estrada chega a Lopes Mendes — o acesso é de barco. Sua lancha privativa significa que você chega antes das multidões dos barcos de excursão, fica o tempo que quiser e parte quando estiver pronto. Um upgrade para ampliar o tempo em Lopes Mendes com uma trilha guiada pela floresta está disponível por USD 100 por pessoa.\n\nO almoço é uma parada opcional em uma das praias — não incluído no preço e por conta do cliente; seu guia recomendará bons lugares. Orçamento de USD 20–40 por pessoa.\n\nO retorno de lancha e o trajeto de volta ao Rio trazem você para casa no início da tarde. O dia total — de porta a porta — é de aproximadamente 10 a 11 horas.\n\nIncluído: transporte privativo de ida e volta Rio–Mangaratiba, lancha privativa durante o dia com capitão, guia certificado, equipamento de snorkeling e água mineral de cortesia. Não incluído: almoço, upgrade opcional Lopes Mendes (USD 100/pessoa) e compras pessoais.\n\nPara viajantes que querem experimentar uma das ilhas mais deslumbrantes do Brasil sem as restrições de um tour em grupo, esta é a opção definitiva.",
       "highlights": [
         "Lancha privada para seu grupo",
         "5 horas de exploração",
@@ -2229,7 +2244,7 @@ const prose = {
       ],
       "included": [
         "Veículo particular com motorista profissional",
-        "Guia de Turismo credenciado",
+        "Guia certificado saindo do Rio (português)",
         "Speedboat privativo por 5 horas",
         "Marinheiro",
         "Equipamento de snorkel",
@@ -2288,7 +2303,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
+        "Guia certificado saindo do Rio (português)",
         "Ingressos para museus",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2346,7 +2361,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
+        "Guia local certificado (português)",
         "Todas as entradas",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2403,7 +2418,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
+        "Guia certificado saindo do Rio (português)",
         "Entrada no museu e fortes",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2448,10 +2463,10 @@ const prose = {
       ]
     },
     "modern-rio-museum-tomorrow": {
-      "id": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
+      "id": "Rio Moderno: Museu do Amanhã e Escola de Samba nos Bastidores",
       "slug": "museu-amanha-experiencia-carnaval-rio-passeio",
       "imageSlug": "modern-rio-museum-tomorrow",
-      "title": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
+      "title": "Rio Moderno: Museu do Amanhã e Escola de Samba nos Bastidores",
       "shortDescription": "Explore o inovador Museu do Amanhã do Rio, o maior aquário da América do Sul, e vá aos bastidores do Carnaval.",
       "fullDescription": "O distrito portuário do Rio de Janeiro — a área ao redor da Praça Mauá e do antigo porto — ficou em grande parte degradado durante décadas, relíquia de um passado industrial que a cidade havia superado. Para os Jogos Olímpicos de 2016, o Rio investiu pesadamente em sua revitalização: um novo boulevard, nova linha de VLT, novos museus e um novo aquário transformaram a área num dos distritos culturais mais interessantes da América do Sul. O passeio Modern Rio explora o melhor disso.\n\nO Museu do Amanhã é o elemento central — um edifício de Santiago Calatrava concluído em 2015 que se tornou uma das estruturas mais fotografadas do Rio. O design em balanço de aço e concreto do arquiteto espanhol, com painéis solares móveis que acompanham o sol, se estende sobre a baía como uma criatura em movimento. No interior, o museu é uma exploração imersiva da sustentabilidade, da ciência climática e da relação da humanidade com o planeta — não uma coleção estática de objetos, mas uma sequência de ambientes interativos que requerem pelo menos 90 minutos para serem experimentados corretamente. É, de longe, o museu mais estimulante intelectualmente do Rio.\n\nO AquaRio é o maior aquário da América do Sul, inaugurado em 2016 num edifício industrial reconvertido adjacente ao Museu do Amanhã. Os 8.000 animais de 350 espécies incluem o característico túnel submarino — um tubo de 20 metros pelo qual você caminha com tubarões, raias e grandes peixes pelágicos nadando sobre sua cabeça e nos dois lados. Reserve pelo menos 60 minutos.\n\nA visita aos bastidores de uma escola de samba do Carnaval do Rio é o elemento mais incomum do passeio — e para muitos visitantes, o mais memorável. O Carnaval não é um evento espontâneo. É o resultado de preparação ao longo do ano pelas escolas de samba do Rio, cada uma com milhares de integrantes trabalhando durante o ano em carros alegóricos, fantasias, música e coreografia para uma apresentação de 70 minutos que será julgada por um painel de especialistas. A visita leva você ao galpão — o armazém onde os carros alegóricos são construídos — e dá acesso às pessoas, ao processo e à escala do que o Carnaval realmente envolve. Disponível de terça a sábado.\n\nO Museu Histórico Nacional, instalado num complexo de fortaleza colonial na borda do distrito portuário, cobre 500 anos de história brasileira através de uma das maiores coleções de artefatos históricos, armas, carruagens e documentos da América do Sul.\n\nNão disponível às segundas. O passeio funciona de terça a domingo.\n\nIncluído: transporte privativo porta a porta, guia local certificado, entrada no Museu do Amanhã, entrada no AquaRio, visita à escola de samba, entrada no Museu Histórico Nacional e água mineral de cortesia. Refeições não estão incluídas.",
       "highlights": [
@@ -2462,7 +2477,7 @@ const prose = {
       ],
       "included": [
         "Transporte privado",
-        "Guia em português",
+        "Guia local certificado (português)",
         "Todas as entradas",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
@@ -2521,7 +2536,7 @@ const prose = {
       ],
       "included": [
         "Transporte privativo saindo do Rio com motorista profissional",
-        "Guia local certificado",
+        "Guia certificado saindo do Rio (português)",
         "Busca e retorno no Rio (hotéis, Airbnbs e terminal de cruzeiros)",
         "Água mineral de cortesia"
       ],
