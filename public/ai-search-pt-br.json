@@ -70,10 +70,10 @@
           "name": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
           "duration": "8 horas",
           "price_from": 415,
-          "description": "Conheça os pontos turísticos mais icônicos do Rio em um passeio privado completo, incluindo Cristo Redentor e Pão de Açúcar com acesso prioritário.",
+          "description": "Conheça os pontos turísticos mais icônicos do Rio em um passeio privado completo, incluindo Cristo Redentor e Pão de Açúcar. Ingressos sem fila do bondinho do Pão de Açúcar incluídos.",
           "highlights": [
-            "Cristo Redentor com acesso prioritário",
-            "Ingressos sem filas (skip-the-line) para o Pão de Açúcar incluídos.",
+            "Ingressos do Cristo Redentor incluídos",
+            "Ingressos sem fila do bondinho do Pão de Açúcar",
             "Bairro boêmio de Santa Teresa",
             "Escadaria Selarón",
             "Real Gabinete Português de Leitura",
@@ -97,7 +97,7 @@
           "highlights": [
             "Cristo Redentor",
             "Bondinho do Pão de Açúcar",
-            "Acesso fura-fila"
+            "Acesso sem fila no bondinho do Pão de Açúcar"
           ],
           "best_for": [
             "passageiros de cruzeiro",
@@ -114,7 +114,7 @@
           "price_from": 580,
           "description": "Experimente o nascer do sol mais impressionante do Rio do Pão de Açúcar, seguido de acesso matinal ao Cristo Redentor.",
           "highlights": [
-            "Nascer do sol exclusivo do Pão de Açúcar",
+            "Nascer do sol no cume do Pão de Açúcar, antes das multidões",
             "Visita matinal cedo ao Cristo Redentor",
             "Oportunidades de fotografia profissional"
           ],
@@ -134,6 +134,7 @@
           "description": "Experimente a beleza da hora dourada do Rio com visitas à tarde ao Cristo Redentor e um pôr do sol perfeitamente programado.",
           "highlights": [
             "Cristo Redentor com luz dourada",
+            "Você escolhe onde vê o pôr do sol — Cristo Redentor ou Pão de Açúcar",
             "Pôr do sol do Pão de Açúcar",
             "Vistas panorâmicas de praias",
             "Orientação fotográfica profissional"
@@ -208,9 +209,9 @@
           "url": "https://befreetours.com.br/pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado"
         },
         {
-          "id": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
+          "id": "Rio Moderno: Museu do Amanhã e Escola de Samba nos Bastidores",
           "slug": "museu-amanha-experiencia-carnaval-rio-passeio",
-          "name": "Rio Moderno: Museu do Amanhã e Sambódromo nos Bastidores",
+          "name": "Rio Moderno: Museu do Amanhã e Escola de Samba nos Bastidores",
           "duration": "7 horas",
           "price_from": 445,
           "description": "Explore o inovador Museu do Amanhã do Rio, o maior aquário da América do Sul, e vá aos bastidores do Carnaval.",
@@ -273,7 +274,7 @@
           "name": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
           "duration": "10 horas",
           "price_from": 875,
-          "description": "Embarque em uma jornada exclusiva de lancha privada pelo paraíso tropical intocado de Ilha Grande.",
+          "description": "Um dia de lancha privativa visitando algumas das praias da Ilha Grande, com tempo para nadar e mergulhar.",
           "highlights": [
             "Lancha privada para seu grupo",
             "5 horas de exploração",

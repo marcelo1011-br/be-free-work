@@ -70,10 +70,10 @@
           "name": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
           "duration": "8 horas",
           "price_from": 415,
-          "description": "Descubre los monumentos más emblemáticos de Río en un tour privado completo, incluyendo el Cristo Redentor y el Pan de Azúcar con acceso preferente.",
+          "description": "Descubre los monumentos más emblemáticos de Río en un tour privado completo, incluyendo el Cristo Redentor y el Pan de Azúcar. Entradas sin fila al teleférico del Pan de Azúcar incluidas.",
           "highlights": [
-            "Cristo Redentor con acceso prioritario",
-            "Entradas sin filas (skip-the-line) al Pan de Azúcar incluidas.",
+            "Entradas al Cristo Redentor incluidas",
+            "Entradas sin fila al teleférico del Pan de Azúcar",
             "Barrio bohemio de Santa Teresa",
             "Escaleras de Selarón",
             "Real Gabinete Portugués de Lectura",
@@ -97,7 +97,7 @@
           "highlights": [
             "Cristo Redentor",
             "Teleférico del Pan de Azúcar",
-            "Acceso sin fila"
+            "Acceso sin fila en el teleférico del Pan de Azúcar"
           ],
           "best_for": [
             "pasajeros de crucero",
@@ -114,7 +114,7 @@
           "price_from": 580,
           "description": "Experimenta el amanecer más impresionante de Río desde el Pan de Azúcar, seguido de acceso temprano al Cristo Redentor.",
           "highlights": [
-            "Amanecer exclusivo desde el Pan de Azúcar",
+            "Amanecer desde la cima del Pan de Azúcar, antes de las multitudes",
             "Visita matutina temprana al Cristo Redentor",
             "Oportunidades de fotografía profesional"
           ],
@@ -134,6 +134,7 @@
           "description": "Experimenta la belleza de la hora dorada de Río con visitas vespertinas al Cristo Redentor y un atardecer perfectamente programado.",
           "highlights": [
             "Cristo Redentor con luz dorada",
+            "Tú eliges dónde ves el atardecer — Cristo Redentor o Pan de Azúcar",
             "Atardecer desde el Pan de Azúcar",
             "Vistas panorámicas de playas",
             "Orientación fotográfica profesional"
@@ -208,9 +209,9 @@
           "url": "https://befreetours.com.br/es/tours-privados/niteroi-museo-mac"
         },
         {
-          "id": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
+          "id": "Río Moderno: Museo del Mañana y Escuela de Samba Entre Bastidores",
           "slug": "rio-moderno-museo-manana",
-          "name": "Río Moderno: Museo del Mañana y Sambódromo Entre Bastidores",
+          "name": "Río Moderno: Museo del Mañana y Escuela de Samba Entre Bastidores",
           "duration": "7 horas",
           "price_from": 445,
           "description": "Explora el innovador Museo del Mañana de Río, el acuario más grande de Sudamérica, y ve tras bambalinas del Carnaval.",
@@ -273,7 +274,7 @@
           "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
           "duration": "10 horas",
           "price_from": 875,
-          "description": "Embárcate en un viaje exclusivo en lancha privada alrededor del paraíso tropical prístino de Ilha Grande.",
+          "description": "Un día en lancha privada visitando algunas de las playas de Ilha Grande, con tiempo para nadar y hacer snorkel.",
           "highlights": [
             "Lancha privada para tu grupo",
             "5 horas de exploración",
