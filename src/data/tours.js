@@ -1288,7 +1288,8 @@ const prose = {
       "included": [
         "Transporte privado",
         "Guía local certificado (español)",
-        "Todas las entradas incluidas",
+        "Entradas al Cristo Redentor",
+        "Entradas sin fila al teleférico del Pan de Azúcar",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
         "Agua mineral"
       ],
@@ -1967,7 +1968,8 @@ const prose = {
       "included": [
         "Transporte privado",
         "Guia local certificado (português)",
-        "Todos os ingressos incluídos",
+        "Ingressos do Cristo Redentor",
+        "Ingressos sem fila do bondinho do Pão de Açúcar",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
         "Água mineral"
       ],
