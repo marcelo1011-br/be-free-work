@@ -42,7 +42,7 @@ Redirect 301 /en/private-tours/sunrise-sugarloaf /en/private-tours/first-light-s
 Redirect 301 /en/private-tours/sunset-magic /en/private-tours/golden-hour-rio
 Redirect 301 /en/private-tours/sunset-roxy /en/private-tours/sunset-culture-roxy
 Redirect 301 /en/private-tours/ilha-grande /en/private-tours/island-escape-ilha-grande
-# Redirect 301 /en/private-tours/buzios /en/private-tours/buzios-riviera  # TEMPORARIAMENTE DESATIVADO
+Redirect 301 /en/private-tours/buzios /en/private-tours/buzios-riviera
 Redirect 301 /en/private-tours/petropolis /en/private-tours/petropolis-imperial
 Redirect 301 /en/private-tours/sky-high /en/private-tours/tijuca-rainforest
 Redirect 301 /en/private-tours/niteroi /en/private-tours/niteroi-mac-museum
@@ -56,7 +56,7 @@ Redirect 301 /es/tours-privados/amanecer-pao-acucar /es/tours-privados/amanecer-
 Redirect 301 /es/tours-privados/magia-atardecer /es/tours-privados/hora-dorada-rio
 Redirect 301 /es/tours-privados/atardecer-roxy /es/tours-privados/atardecer-cultura-roxy
 Redirect 301 /es/tours-privados/ilha-grande /es/tours-privados/island-escape-ilha-grande
-# Redirect 301 /es/tours-privados/buzios /es/tours-privados/buzios-riviera  # TEMPORARIAMENTE DESATIVADO
+Redirect 301 /es/tours-privados/buzios /es/tours-privados/buzios-riviera
 Redirect 301 /es/tours-privados/petropolis /es/tours-privados/petropolis-imperial
 Redirect 301 /es/tours-privados/cielo-alto /es/tours-privados/bosque-tijuca
 Redirect 301 /es/tours-privados/niteroi /es/tours-privados/niteroi-museo-mac
@@ -70,7 +70,7 @@ Redirect 301 /pt-br/passeios-privados/nascer-sol-pao-acucar /pt-br/passeios-priv
 Redirect 301 /pt-br/passeios-privados/magia-por-do-sol /pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar
 Redirect 301 /pt-br/passeios-privados/por-do-sol-roxy /pt-br/passeios-privados/por-do-sol-cultura-roxy
 Redirect 301 /pt-br/passeios-privados/ilha-grande /pt-br/passeios-privados/island-escape-ilha-grande
-# Redirect 301 /pt-br/passeios-privados/buzios /pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado  # TEMPORARIAMENTE DESATIVADO
+Redirect 301 /pt-br/passeios-privados/buzios /pt-br/passeios-privados/buzios-charme-costeiro-passeio-privado
 Redirect 301 /pt-br/passeios-privados/petropolis /pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial
 Redirect 301 /pt-br/passeios-privados/alto-ceu /pt-br/passeios-privados/pao-acucar-floresta-tijuca-jardim-botanico-passeio
 Redirect 301 /pt-br/passeios-privados/niteroi /pt-br/passeios-privados/niteroi-museo-arte-contemporanea-passeio-privado
