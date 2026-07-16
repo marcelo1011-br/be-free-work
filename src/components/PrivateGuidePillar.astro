@@ -85,7 +85,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
 <!-- INTRO (bone, coluna estreita ~65ch) -->
 <section class="pg-intro">
   <div class="container">
-    <div class="pg-intro__inner">
+    <div class="pg-intro__inner measure">
       <p class="pg-kicker">{t.intro.kicker}</p>
       <h2 class="pg-intro__title">{t.intro.title}</h2>
       <div class="pg-intro__copy">
@@ -207,7 +207,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .pg-hero {
     background: var(--color-blue);
     color: var(--color-on-blue);
-    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+    padding-block: calc(var(--space-2xl) + var(--space-m)) var(--space-2xl);
   }
   .pg-hero__inner {
     max-width: clamp(40rem, 78vw, 56rem);
@@ -215,18 +215,18 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .pg-hero__title {
     color: var(--color-on-blue);
-    margin: 0 0 var(--space-md);
+    margin: 0 0 var(--space-s);
   }
   .pg-hero__subtitle {
-    font-size: var(--font-size-h5);
-    line-height: var(--line-height-relaxed);
+    font-size: var(--text-1);
+    line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     margin: 0 auto var(--space-xl);
     max-width: 48ch;
   }
   .pg-hero__actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -236,7 +236,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     display: inline-flex;
     align-items: center;
     min-block-size: 2.75rem;
-    padding-inline: var(--space-lg);
+    padding-inline: var(--space-m);
     border-radius: var(--radius);
     border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
     color: var(--color-on-blue);
@@ -277,7 +277,6 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
 
   /* ---- INTRO ---- */
   .pg-intro__inner {
-    max-width: 65ch;
     margin: 0 auto;
   }
   .pg-kicker {
@@ -285,22 +284,22 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: var(--font-size-small);
-    margin: 0 0 var(--space-sm);
+    font-size: var(--text--1);
+    margin: 0 0 var(--space-2xs);
   }
   .pg-intro__title {
-    margin: 0 0 var(--space-lg);
+    margin: 0 0 var(--space-m);
   }
   .pg-intro__copy {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-s);
   }
   .pg-intro__copy p {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
     margin: 0;
-    font-size: var(--font-size-h5);
+    font-size: var(--text-1);
   }
 
   /* ---- Cards (comparison + recommended) ---- */
@@ -311,7 +310,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
   }
   .pg-card,
   .pg-rec__card {
@@ -319,10 +318,10 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     flex-direction: column;
     gap: var(--space-xs);
     height: 100%;
-    padding: var(--space-lg);
+    padding: var(--space-m);
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
   }
   .pg-rec__card {
     text-decoration: none;
@@ -339,18 +338,18 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .pg-card__title {
     margin: 0 0 var(--space-xs);
     font-family: var(--font-display);
-    font-size: var(--font-size-h5);
+    font-size: var(--text-1);
     color: var(--color-blue);
   }
   .pg-card__text {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
     margin: 0;
   }
   .pg-rec__todo {
     color: var(--color-text-muted);
     font-style: italic;
-    margin-top: var(--space-sm);
+    margin-top: var(--space-2xs);
   }
   .pg-rec__hub {
     margin-top: var(--space-2xl);
@@ -366,7 +365,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .pg-list-block {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     padding: var(--space-xl);
   }
   .pg-list-block--accent {
@@ -378,7 +377,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .pg-list-block .pg-h2 {
     margin-top: 0;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-m);
   }
 
   /* ---- Listas com marca "+" (idealFor, help, why) ---- */
@@ -388,15 +387,15 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     margin: 0;
     padding: 0;
     display: grid;
-    gap: var(--space-md);
+    gap: var(--space-s);
   }
   .pg-list li,
   .pg-why__list li {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     align-items: flex-start;
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
   }
   .pg-mark {
     display: inline-flex;
@@ -415,7 +414,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .pg-why__panel {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     padding: var(--space-2xl);
     max-width: 60rem;
     margin: 0 auto;
@@ -426,15 +425,14 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .pg-why__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
   }
 
-  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  /* ---- FINAL CTA (bone, como HomeFinalCTA) ---- */
   .pg-final {
     background: var(--color-base);
     color: var(--color-text);
     padding-block: var(--space-3xl);
-    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
   }
   .pg-final__inner {
     max-width: 52rem;
@@ -445,15 +443,15 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     margin-top: 0;
   }
   .pg-final__text {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-h5);
-    margin: var(--space-md) auto var(--space-xl);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
+    font-size: var(--text-1);
+    margin: var(--space-s) auto var(--space-xl);
     max-width: 54ch;
   }
   .pg-final__actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -470,12 +468,12 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
       padding-block: var(--space-2xl);
     }
     .pg-hero__title {
-      font-size: var(--font-size-h3);
+      font-size: var(--text-3);
     }
     .pg-hero__subtitle,
     .pg-intro__copy p,
     .pg-final__text {
-      font-size: var(--font-size-body);
+      font-size: var(--text-0);
     }
     .pg-compare__grid,
     .pg-rec__grid,
@@ -485,7 +483,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     }
     .pg-list-block,
     .pg-why__panel {
-      padding: var(--space-lg);
+      padding: var(--space-m);
     }
   }
 </style>

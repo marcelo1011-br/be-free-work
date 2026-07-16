@@ -71,7 +71,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
 <!-- INTRO (bone, coluna estreita ~65ch) -->
 <section class="hd-intro">
   <div class="container">
-    <div class="hd-intro__inner">
+    <div class="hd-intro__inner measure">
       {t.intro.paragraphs.map((p) => <p>{p}</p>)}
     </div>
   </div>
@@ -190,7 +190,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .hd-hero {
     background: var(--color-blue);
     color: var(--color-on-blue);
-    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+    padding-block: calc(var(--space-2xl) + var(--space-m)) var(--space-2xl);
   }
   .hd-hero__inner {
     max-width: clamp(40rem, 78vw, 56rem);
@@ -198,18 +198,18 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .hd-hero__title {
     color: var(--color-on-blue);
-    margin: 0 0 var(--space-md);
+    margin: 0 0 var(--space-s);
   }
   .hd-hero__subtitle {
-    font-size: var(--font-size-h5);
-    line-height: var(--line-height-relaxed);
+    font-size: var(--text-1);
+    line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     margin: 0 auto var(--space-xl);
     max-width: 52ch;
   }
   .hd-hero__actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -235,31 +235,30 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
 
   /* ---- INTRO ---- */
   .hd-intro__inner {
-    max-width: 65ch;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-s);
   }
   .hd-intro__inner p {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
     margin: 0;
-    font-size: var(--font-size-h5);
+    font-size: var(--text-1);
   }
 
   /* ---- COMPARISON (tabela) ---- */
   .hd-compare__intro {
     max-width: 60ch;
-    margin: var(--space-md) auto var(--space-2xl);
+    margin: var(--space-s) auto var(--space-2xl);
     text-align: center;
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
   }
   .hd-compare__wrap {
     overflow-x: auto;
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     background: var(--color-surface);
   }
   .hd-compare__table {
@@ -269,14 +268,14 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .hd-compare__table th,
   .hd-compare__table td {
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-s) var(--space-m);
     text-align: left;
     vertical-align: top;
-    line-height: var(--line-height-relaxed);
+    line-height: var(--line-normal);
   }
   .hd-compare__table thead th {
     font-family: var(--font-display);
-    font-size: var(--font-size-small);
+    font-size: var(--text--1);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-blue);
@@ -288,7 +287,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     white-space: nowrap;
   }
   .hd-compare__table tbody td {
-    color: var(--color-text-light);
+    color: var(--color-text-muted);
   }
   .hd-compare__table tbody tr + tr th,
   .hd-compare__table tbody tr + tr td {
@@ -304,7 +303,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .hd-list-block {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     padding: var(--space-xl);
   }
   .hd-list-block--accent {
@@ -316,11 +315,11 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .hd-list-block .hd-h2 {
     margin-top: 0;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-m);
   }
   .hd-help__p {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
     margin: 0;
   }
 
@@ -331,15 +330,15 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     margin: 0;
     padding: 0;
     display: grid;
-    gap: var(--space-md);
+    gap: var(--space-s);
   }
   .hd-list li,
   .hd-why__list li {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     align-items: flex-start;
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
   }
   .hd-mark {
     display: inline-flex;
@@ -358,7 +357,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .hd-rec__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
     margin-top: var(--space-2xl);
   }
   .hd-rec__hub {
@@ -370,7 +369,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   .hd-why__panel {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     padding: var(--space-2xl);
     max-width: 60rem;
     margin: 0 auto;
@@ -381,7 +380,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
   }
   .hd-why__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
   }
 
   /* ---- COST WEDGE (banda azul — única batida azul do corpo) ---- */
@@ -400,8 +399,8 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     gap: var(--space-xl);
   }
   .hd-wedge__text {
-    font-size: var(--font-size-h5);
-    line-height: var(--line-height-relaxed);
+    font-size: var(--text-1);
+    line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 90%, transparent);
     margin: 0;
     max-width: 54ch;
@@ -411,7 +410,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     display: inline-flex;
     align-items: center;
     min-block-size: 2.75rem;
-    padding-inline: var(--space-lg);
+    padding-inline: var(--space-m);
     border-radius: var(--radius);
     border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
     color: var(--color-on-blue);
@@ -432,12 +431,11 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     outline-offset: var(--focus-outline-offset);
   }
 
-  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  /* ---- FINAL CTA (bone, como HomeFinalCTA) ---- */
   .hd-final {
     background: var(--color-base);
     color: var(--color-text);
     padding-block: var(--space-3xl);
-    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
   }
   .hd-final__inner {
     max-width: 52rem;
@@ -448,15 +446,15 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     margin-top: 0;
   }
   .hd-final__text {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-h5);
-    margin: var(--space-md) auto var(--space-xl);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
+    font-size: var(--text-1);
+    margin: var(--space-s) auto var(--space-xl);
     max-width: 54ch;
   }
   .hd-final__actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -474,13 +472,13 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
       padding-block: var(--space-2xl);
     }
     .hd-hero__title {
-      font-size: var(--font-size-h3);
+      font-size: var(--text-3);
     }
     .hd-hero__subtitle,
     .hd-intro__inner p,
     .hd-wedge__text,
     .hd-final__text {
-      font-size: var(--font-size-body);
+      font-size: var(--text-0);
     }
     .hd-two__grid,
     .hd-why__list,
@@ -489,7 +487,7 @@ const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
     }
     .hd-list-block,
     .hd-why__panel {
-      padding: var(--space-lg);
+      padding: var(--space-m);
     }
   }
 </style>

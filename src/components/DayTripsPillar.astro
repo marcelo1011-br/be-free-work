@@ -82,7 +82,7 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
 <!-- INTRO (bone, coluna estreita ~65ch) -->
 <section class="dt-intro">
   <div class="container">
-    <div class="dt-intro__inner">
+    <div class="dt-intro__inner measure">
       <p class="dt-kicker">{t.intro.kicker}</p>
       <div class="dt-intro__copy">
         {t.intro.paragraphs.map((p) => <p>{p}</p>)}
@@ -173,7 +173,7 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   .dt-hero {
     background: var(--color-blue);
     color: var(--color-on-blue);
-    padding-block: calc(var(--space-2xl) + var(--space-lg)) var(--space-2xl);
+    padding-block: calc(var(--space-2xl) + var(--space-m)) var(--space-2xl);
   }
   .dt-hero__inner {
     max-width: clamp(40rem, 78vw, 56rem);
@@ -181,18 +181,18 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   }
   .dt-hero__title {
     color: var(--color-on-blue);
-    margin: 0 0 var(--space-md);
+    margin: 0 0 var(--space-s);
   }
   .dt-hero__subtitle {
-    font-size: var(--font-size-h5);
-    line-height: var(--line-height-relaxed);
+    font-size: var(--text-1);
+    line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     margin: 0 auto var(--space-xl);
     max-width: 48ch;
   }
   .dt-hero__actions {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -202,7 +202,7 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     display: inline-flex;
     align-items: center;
     min-block-size: 2.75rem;
-    padding-inline: var(--space-lg);
+    padding-inline: var(--space-m);
     border-radius: var(--radius);
     border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
     color: var(--color-on-blue);
@@ -239,7 +239,6 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
 
   /* ---- INTRO ---- */
   .dt-intro__inner {
-    max-width: 65ch;
     margin: 0 auto;
   }
   .dt-kicker {
@@ -247,19 +246,19 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: var(--font-size-small);
-    margin: 0 0 var(--space-sm);
+    font-size: var(--text--1);
+    margin: 0 0 var(--space-2xs);
   }
   .dt-intro__copy {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-s);
   }
   .dt-intro__copy p {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
     margin: 0;
-    font-size: var(--font-size-h5);
+    font-size: var(--text-1);
   }
 
   /* ---- MOOD MENU ---- */
@@ -269,17 +268,17 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
   }
   .dt-mood__card {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
     height: 100%;
-    padding: var(--space-lg);
+    padding: var(--space-m);
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     text-decoration: none;
     transition:
       transform var(--transition-duration-normal) var(--transition-easing-default),
@@ -293,12 +292,12 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   }
   .dt-mood__label {
     font-family: var(--font-display);
-    font-size: var(--font-size-h5);
+    font-size: var(--text-1);
     color: var(--color-blue);
   }
   .dt-mood__text {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
   }
 
   /* ---- DESTINATIONS (alternando foto/texto) ---- */
@@ -320,17 +319,17 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     display: block;
   }
   .dt-dest__name {
-    margin: 0 0 var(--space-sm);
+    margin: 0 0 var(--space-2xs);
     color: var(--color-text);
   }
   .dt-dest__blurb {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-    margin: 0 0 var(--space-lg);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
+    margin: 0 0 var(--space-m);
   }
   .dt-dest__todo {
     color: var(--color-text-muted);
@@ -341,7 +340,7 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   .dt-why__panel {
     background: var(--color-surface);
     border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     padding: var(--space-2xl);
     max-width: 60rem;
     margin: 0 auto;
@@ -357,14 +356,14 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-m);
   }
   .dt-why__list li {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-s);
     align-items: flex-start;
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
   }
   .dt-why__mark {
     display: inline-flex;
@@ -379,12 +378,11 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     font-weight: var(--font-weight-bold);
   }
 
-  /* ---- FINAL CTA (bone + hairline topo, como HomeFinalCTA) ---- */
+  /* ---- FINAL CTA (bone, como HomeFinalCTA) ---- */
   .dt-final {
     background: var(--color-base);
     color: var(--color-text);
     padding-block: var(--space-3xl);
-    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
   }
   .dt-final__inner {
     max-width: 52rem;
@@ -395,10 +393,10 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     margin-top: 0;
   }
   .dt-final__text {
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-h5);
-    margin: var(--space-md) auto var(--space-xl);
+    color: var(--color-text-muted);
+    line-height: var(--line-normal);
+    font-size: var(--text-1);
+    margin: var(--space-s) auto var(--space-xl);
     max-width: 54ch;
   }
 
@@ -412,12 +410,12 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
       padding-block: var(--space-2xl);
     }
     .dt-hero__title {
-      font-size: var(--font-size-h3);
+      font-size: var(--text-3);
     }
     .dt-hero__subtitle,
     .dt-intro__copy p,
     .dt-final__text {
-      font-size: var(--font-size-body);
+      font-size: var(--text-0);
     }
     .dt-mood__grid,
     .dt-why__list {
@@ -425,13 +423,13 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     }
     .dt-dest {
       grid-template-columns: 1fr;
-      gap: var(--space-lg);
+      gap: var(--space-m);
     }
     .dt-dest:nth-child(even) .dt-dest__media {
       order: 0;
     }
     .dt-why__panel {
-      padding: var(--space-lg);
+      padding: var(--space-m);
     }
   }
 </style>
