@@ -83,7 +83,7 @@ Todos los tours incluyen traslado desde cualquier lugar de Río — hoteles, Air
 
 ## Día 1: El Río Icónico — Cristo, Pan de Azúcar y las Capas de la Ciudad
 
-**Tour recomendado:** [El Río Esencial: Íconos, Cultura y Joyas Ocultas](/es/private-tours/essential-rio) (8 horas) o [Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer](/es/private-tours/hora-dorada-rio) (6 horas)
+**Tour recomendado:** [El Río Esencial: Íconos, Cultura y Joyas Ocultas](/es/tours-privados/essential-rio/) (8 horas) o [Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer](/es/tours-privados/hora-dorada-rio/) (6 horas)
 
 ### Inicio en la mañana (recogida a las 6:30 AM)
 
@@ -142,7 +142,7 @@ El Día 3 es una elección entre tres experiencias completamente distintas. No s
 
 ### Opción A: Excursión a Petrópolis
 
-**Tour recomendado:** [Petrópolis: Palacios Imperiales y Refugio en la Montaña](/es/private-tours/petropolis-imperial) (8 horas)
+**Tour recomendado:** [Petrópolis: Palacios Imperiales y Refugio en la Montaña](/es/tours-privados/petropolis-imperial/) (8 horas)
 
 68 kilómetros al norte de Río, 840 metros sobre el nivel del mar y 5–8 grados más fresco. En 1843, el Emperador Dom Pedro II estableció aquí su corte de verano — lo que dejó es uno de los ejemplos más intactos de urbanismo imperial del siglo XIX en las Américas.
 
@@ -170,7 +170,7 @@ Un buen día en Búzios: dos playas por la mañana, almuerzo en un restaurante a
 
 ### Opción C: Ilha Grande en Lancha Privada
 
-**Tour recomendado:** [Escape a la Isla: Ilha Grande en Lancha Privada](/es/private-tours/island-escape-ilha-grande) (10 horas)
+**Tour recomendado:** [Escape a la Isla: Ilha Grande en Lancha Privada](/es/tours-privados/island-escape-ilha-grande/) (10 horas)
 
 La opción más lejana y exigente — y la que con más probabilidad produce el recuerdo más fuerte del viaje.
 
@@ -186,7 +186,7 @@ La recogida es a las 5:30–6:30 AM. El día es largo. Vale la pena.
 
 ## La Opción del 4.° Día
 
-Si tienes un cuarto día, el mejor uso es cualquiera de las opciones del Día 3 que no hayas elegido — o el **Tour del Amanecer** ([Río al Amanecer: Pan de Azúcar y Cristo al Alba](/es/private-tours/amanecer-rio)), que requiere una recogida a las 4:00 AM y te muestra una versión de Río que la mayoría de los visitantes nunca ve.
+Si tienes un cuarto día, el mejor uso es cualquiera de las opciones del Día 3 que no hayas elegido — o el **Tour del Amanecer** ([Río al Amanecer: Pan de Azúcar y Cristo al Alba](/es/tours-privados/amanecer-rio/)), que requiere una recogida a las 4:00 AM y te muestra una versión de Río que la mayoría de los visitantes nunca ve.
 
 Un cuarto día también te da tiempo para **Santa Teresa** a un ritmo adecuado si lo visitaste rápidamente el Día 1 — un almuerzo largo, una tarde en uno de los estudios de arte, una noche en el Bar do Mineiro con música en vivo.
 

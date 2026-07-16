@@ -89,7 +89,7 @@ Mais do que segurança, um guia local traz fluidez.
 
 Saber horários, trajetos, ritmo da cidade e detalhes culturais muda completamente a experiência. Em tours privados, você passa a maior parte do tempo em transporte, evitando situações desnecessárias.
 
-Experiências como [O Essencial do Rio](/pt-br/passeios-privados/essential-rio) ou um [Passeio Privado Personalizado](/pt-br/passeios-privados/custom-tour) permitem conhecer a cidade com conforto, eficiência e tranquilidade.
+Experiências como [O Essencial do Rio](/pt-br/passeios-privados/rio-essencial/) ou um [Passeio Privado Personalizado](/pt-br/passeios-privados/passeio-personalizado/) permitem conhecer a cidade com conforto, eficiência e tranquilidade.
 
 ## O Rio que não aparece nas manchetes
 

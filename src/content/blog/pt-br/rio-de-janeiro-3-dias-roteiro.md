@@ -83,7 +83,7 @@ Todos os passeios incluem traslado de qualquer ponto do Rio — hotéis, Airbnbs
 
 ## Dia 1: O Rio Icônico — Cristo, Pão de Açúcar e as Camadas da Cidade
 
-**Passeio recomendado:** [O Essencial do Rio: Ícones, Cultura e Joias Escondidas](/pt-br/private-tours/rio-essencial) (8 horas) ou [Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol](/pt-br/private-tours/passeio-por-do-sol-rio-cristo-redentor-pao-acucar) (6 horas)
+**Passeio recomendado:** [O Essencial do Rio: Ícones, Cultura e Joias Escondidas](/pt-br/passeios-privados/rio-essencial/) (8 horas) ou [Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol](/pt-br/passeios-privados/passeio-por-do-sol-rio-cristo-redentor-pao-acucar/) (6 horas)
 
 ### Início da manhã (busca às 6h30)
 
@@ -142,7 +142,7 @@ O Dia 3 é uma escolha entre três experiências completamente diferentes. Elas 
 
 ### Opção A: Excursão a Petrópolis
 
-**Passeio recomendado:** [Petrópolis: Palácios Imperiais e Refúgio na Montanha](/pt-br/private-tours/passeio-privado-petropolis-cidade-imperial) (8 horas)
+**Passeio recomendado:** [Petrópolis: Palácios Imperiais e Refúgio na Montanha](/pt-br/passeios-privados/passeio-privado-petropolis-cidade-imperial/) (8 horas)
 
 68 quilômetros ao norte do Rio, 840 metros acima do nível do mar e 5–8 graus mais fresco. Em 1843, o Imperador Dom Pedro II estabeleceu aqui sua corte de verão — o que ele deixou é um dos exemplos mais intactos de urbanismo imperial do século XIX nas Américas.
 
@@ -170,7 +170,7 @@ Um bom dia em Búzios: duas praias de manhã, almoço em um restaurante à beira
 
 ### Opção C: Ilha Grande de Lancha Privativa
 
-**Passeio recomendado:** [Escapada para a Ilha: Ilha Grande de Lancha Privativa](/pt-br/private-tours/island-escape-ilha-grande) (10 horas)
+**Passeio recomendado:** [Escapada para a Ilha: Ilha Grande de Lancha Privativa](/pt-br/passeios-privados/island-escape-ilha-grande/) (10 horas)
 
 A opção mais distante e exigente — e a que tem mais chance de gerar a memória mais forte da viagem.
 
@@ -186,7 +186,7 @@ A busca é às 5h30–6h30. O dia é longo. Vale a pena.
 
 ## A Opção do 4.º Dia
 
-Se você tem um quarto dia, o melhor uso é qualquer uma das opções do Dia 3 que você não escolheu — ou o **Passeio do Amanhecer** ([Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer](/pt-br/private-tours/nascer-sol-pao-acucar-cristo-redentor-passeio-privado)), que requer uma busca às 4h e mostra uma versão do Rio que a maioria dos visitantes nunca vê.
+Se você tem um quarto dia, o melhor uso é qualquer uma das opções do Dia 3 que você não escolheu — ou o **Passeio do Amanhecer** ([Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer](/pt-br/passeios-privados/nascer-sol-pao-acucar-cristo-redentor-passeio-privado/)), que requer uma busca às 4h e mostra uma versão do Rio que a maioria dos visitantes nunca vê.
 
 Um quarto dia também dá tempo para **Santa Teresa** em ritmo adequado se você passou correndo no Dia 1 — um almoço longo, uma tarde em um dos ateliês, uma noite no Bar do Mineiro com música ao vivo.
 

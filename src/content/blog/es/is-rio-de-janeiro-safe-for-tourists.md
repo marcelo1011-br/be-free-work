@@ -85,7 +85,7 @@ Son las mismas precauciones que tomarías en cualquier gran ciudad.
 
 Un guía local no es solo compañía: es conocimiento del ritmo de la ciudad.
 
-En un tour privado, te mueves de forma eficiente, evitas zonas innecesarias y aprovechas mejor tu tiempo. Experiencias como [El Río Esencial](/es/tours-privados/essential-rio) o un [Tour Privado a Medida](/es/tours-privados/custom-tour) hacen que todo fluya con naturalidad.
+En un tour privado, te mueves de forma eficiente, evitas zonas innecesarias y aprovechas mejor tu tiempo. Experiencias como [El Río Esencial](/es/tours-privados/essential-rio/) o un [Tour Privado a Medida](/es/tours-privados/tour-personalizado/) hacen que todo fluya con naturalidad.
 
 ## El Río que no sale en los titulares
 
