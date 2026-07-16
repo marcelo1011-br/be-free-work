@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { routes } from "../i18n/routes.js";
 
 const lang = (() => {
   const path = Astro.url.pathname;
@@ -17,8 +18,6 @@ const content = {
     tours: "Browse Tours",
     contact: "Contact Us",
     homeUrl: "/en/",
-    toursUrl: "/en/private-tours",
-    contactUrl: "/en/contact",
   },
   es: {
     title: "Página No Encontrada | Be Free Tours",
@@ -28,8 +27,6 @@ const content = {
     tours: "Ver Tours",
     contact: "Contáctenos",
     homeUrl: "/es/",
-    toursUrl: "/es/tours-privados",
-    contactUrl: "/es/contacto",
   },
   "pt-br": {
     title: "Página Não Encontrada | Be Free Tours",
@@ -39,12 +36,11 @@ const content = {
     tours: "Ver Passeios",
     contact: "Fale Conosco",
     homeUrl: "/pt-br/",
-    toursUrl: "/pt-br/passeios-privados",
-    contactUrl: "/pt-br/contato",
   },
 };
 
 const c = content[lang] || content.en;
+const r = routes[lang] || routes.en;
 ---
 
 <BaseLayout title={c.title} description={c.description} noindex={true}>
@@ -55,8 +51,8 @@ const c = content[lang] || content.en;
       <p>{c.description}</p>
       <nav class="error-links" aria-label="Helpful links">
         <a href={c.homeUrl} class="btn btn-primary">{c.home}</a>
-        <a href={c.toursUrl} class="btn btn-secondary">{c.tours}</a>
-        <a href={c.contactUrl} class="btn btn-secondary">{c.contact}</a>
+        <a href={`/${lang}${r.privateTours}`} class="btn btn-secondary">{c.tours}</a>
+        <a href={`/${lang}${r.contact}`} class="btn btn-secondary">{c.contact}</a>
       </nav>
     </div>
   </section>

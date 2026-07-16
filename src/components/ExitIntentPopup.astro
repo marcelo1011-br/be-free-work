@@ -1,6 +1,8 @@
 ---
 
 
+import { routes } from "../i18n/routes.js";
+
 const { lang = "en" } = Astro.props;
 
 
@@ -11,8 +13,7 @@ const content = {
     ctaWhatsApp: "Chat on WhatsApp",
     ctaEmail: "Send us an Email",
     dismiss: "Maybe later",
-    whatsappUrl: "https://wa.me/5521979271637?text=Hi!%20I%27m%20interested%20in%20booking%20a%20tour",
-    emailUrl: "/en/contact"
+    whatsappUrl: "https://wa.me/5521979271637?text=Hi!%20I%27m%20interested%20in%20booking%20a%20tour"
   },
   es: {
     title: "¿Tienes preguntas sobre tu viaje a Río?",
@@ -20,8 +21,7 @@ const content = {
     ctaWhatsApp: "Chat por WhatsApp",
     ctaEmail: "Envíanos un Email",
     dismiss: "Quizás más tarde",
-    whatsappUrl: "https://wa.me/5521979271637?text=Hola!%20Estoy%20interesado%20en%20reservar%20un%20tour",
-    emailUrl: "/es/contacto"
+    whatsappUrl: "https://wa.me/5521979271637?text=Hola!%20Estoy%20interesado%20en%20reservar%20un%20tour"
   },
   "pt-br": {
     title: "Tem dúvidas sobre sua viagem ao Rio?",
@@ -29,12 +29,12 @@ const content = {
     ctaWhatsApp: "Conversar no WhatsApp",
     ctaEmail: "Enviar um Email",
     dismiss: "Talvez mais tarde",
-    whatsappUrl: "https://wa.me/5521979271637?text=Oi!%20Tenho%20interesse%20em%20reservar%20um%20passeio",
-    emailUrl: "/pt-br/contato"
+    whatsappUrl: "https://wa.me/5521979271637?text=Oi!%20Tenho%20interesse%20em%20reservar%20um%20passeio"
   }
 };
 
 const text = content[lang] || content.en;
+const r = routes[lang] || routes.en;
 ---
 
 
@@ -58,7 +58,7 @@ const text = content[lang] || content.en;
           </svg>
           {text.ctaWhatsApp}
         </a>
-        <a href={text.emailUrl} class="btn btn-outline-primary btn-lg">
+        <a href={`/${lang}${r.contact}`} class="btn btn-outline-primary btn-lg">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>

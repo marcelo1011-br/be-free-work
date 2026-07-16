@@ -13,12 +13,13 @@ import TourCardRich from "./TourCardRich.astro";
 import { tours } from "../data/tours.js";
 import { getPrice } from "../utils/priceHelper.js";
 import { useTranslations } from "../i18n/utils";
+import { routes } from "../i18n/routes.js";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const r = routes[lang] ?? routes.en;
 
-const routeBySeg = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
-const toursBase = `/${lang}/${routeBySeg[lang] ?? routeBySeg.en}`;
+const toursBase = `/${lang}${r.privateTours}`;
 
 const featured = (tours[lang] ?? tours.en).filter((tour) => tour.isFeatured);
 
@@ -77,7 +78,7 @@ const cards = await Promise.all(
     }
 
     return {
-      href: `${toursBase}/${tour.slug}/`,
+      href: `${toursBase}${tour.slug}/`,
       image: img.src,
       imageAlt: tour.title,
       eyebrow: localityBySlug[tour.slug] ?? "Rio de Janeiro",

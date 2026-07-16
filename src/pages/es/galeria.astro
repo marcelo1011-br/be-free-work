@@ -7,8 +7,10 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
 import { galleryContent } from "../../data/galleryContent.js";
 import { getPageSEO, getImageGallerySchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+import { routes } from "../../i18n/routes.js";
 
 const lang = "es";
+const r = routes[lang];
 const content = galleryContent[lang];
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 
@@ -165,10 +167,10 @@ const schemas = [gallerySchema, breadcrumbSchema];
         <h2 class="cta-title">{content.cta.title}</h2>
         <p class="cta-subtitle">{content.cta.subtitle}</p>
         <div class="cta-buttons">
-          <a href={`/${lang}/private-tours`} class="btn btn-primary btn-lg">
+          <a href={`/${lang}${r.privateTours}`} class="btn btn-primary btn-lg">
             {content.cta.buttonPrimary}
           </a>
-          <a href={`/${lang}/contact`} class="btn btn-outline-secondary btn-lg">
+          <a href={`/${lang}${r.contact}`} class="btn btn-outline-secondary btn-lg">
             {content.cta.buttonSecondary}
           </a>
         </div>

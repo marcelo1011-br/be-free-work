@@ -3,8 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
 import { getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+import { routes } from "../../i18n/routes.js";
 
 const lang = "pt-br";
+const r = routes[lang];
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const title = "Política de Pagamento e Cancelamento | Be Free Tours";
@@ -99,7 +101,7 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
           <p>Será um prazer ajudar.</p>
 
           <div class="policy-cta">
-            <a href={`/${lang}/passeios-privados`} class="btn btn-primary btn-lg">
+            <a href={`/${lang}${r.privateTours}`} class="btn btn-primary btn-lg">
               Explore Todos os Passeios
             </a>
           </div>

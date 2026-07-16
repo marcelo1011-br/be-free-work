@@ -3,8 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import HeroPages from "../../components/HeroPages.astro";
 import { getBreadcrumbSchema } from "../../utils/seoHelpers.js";
+import { routes } from "../../i18n/routes.js";
 
 const lang = "en";
+const r = routes[lang];
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
 const title = "Payment & Cancellation Policy | Be Free Tours";
@@ -108,7 +110,7 @@ const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
         <h2 class="cta-title">Ready to explore Rio your way?</h2>
         <p class="cta-subtitle">Browse our private experiences and find the ideal tour for your trip.</p>
         <div class="cta-buttons">
-          <a href={`/${lang}/private-tours`} class="btn btn-primary btn-lg">
+          <a href={`/${lang}${r.privateTours}`} class="btn btn-primary btn-lg">
             Explore All Tours
           </a>
         </div>

@@ -5,8 +5,10 @@ import HeroPages from "../../components/HeroPages.astro";
 import CTAFinal from "../../components/CTAFinal.astro";
 import { homeContent } from "../../data/homeContent.js";
 import { getBreadcrumbSchema, getFAQSchema } from "../../utils/seoHelpers.js";
+import { routes } from "../../i18n/routes.js";
 
 const lang = "es";
+const r = routes[lang];
 const content = homeContent[lang].faq;
 
 const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
@@ -55,7 +57,7 @@ const faqSchema = getFAQSchema(content.questions);
 
       <div class="faq-cta">
         <p>{content.ctaText}</p>
-        <a href={`/${lang}/contacto`} class="btn-primary">{content.ctaButton}</a>
+        <a href={`/${lang}${r.contact}`} class="btn-primary">{content.ctaButton}</a>
       </div>
     </div>
   </section>
