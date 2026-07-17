@@ -14,6 +14,7 @@
   --color-text-muted: color-mix(in srgb, var(--color-ink) 68%, var(--color-base));
   --color-on-blue: #F3EEE3;
   --color-on-amber: #FFFFFF;
+  --color-base-dark: #0E1A2B; /* superfície escura CONSTANTE (light e dark): hero de pillar, footer. Não inverte por tema — por isso vive só aqui. */
   --color-border: color-mix(in srgb, var(--color-ink) 14%, transparent);
   --color-hairline: color-mix(in srgb, var(--color-ink) 8%, transparent);
 

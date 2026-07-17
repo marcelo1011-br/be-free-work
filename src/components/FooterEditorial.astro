@@ -4,10 +4,10 @@
  * Isolado e props-driven; supersede o Footer.astro atual no B2 (não o toca agora).
  * Absorve o global-amber: ZERO âmbar (links neutros/bone, hover sutil).
  *
- * Superfície: banda navy TERMINAL #0E1A2B, CONSTANTE em light E dark (como o hero/
- * wedge são azul constante). Texto bone (--color-on-blue), secundário mutado.
- * (#0E1A2B = --color-base do tema dark; literal único aqui p/ não alterar
- *  tokens.css/global — no B2 pode virar token --color-base-dark.)
+ * Superfície: banda navy TERMINAL var(--color-base-dark), CONSTANTE em light E dark
+ * (como o hero/wedge são azul constante). Texto bone (--color-on-blue), secundário mutado.
+ * (--color-base-dark = #0E1A2B, superfície escura constante em tokens.css; o débito do
+ *  literal foi quitado — o token existe agora e é a fonte única.)
  *
  * Fatos de operador FIXADOS: a linha legal (default) traz CNPJ + "cadastrada no
  * Cadastur" (número UMA vez só). WhatsApp/e-mail entram como links da coluna
@@ -85,7 +85,7 @@ const {
 <style>
   /* Banda navy TERMINAL, constante nos dois temas. */
   .footer {
-    background-color: #0E1A2B; /* = --color-base (dark), fixado constante */
+    background-color: var(--color-base-dark);
     color: var(--color-on-blue);
     padding-block: var(--space-3xl) var(--space-xl);
   }
