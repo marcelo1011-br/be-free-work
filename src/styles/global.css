@@ -47,6 +47,12 @@
   }
 
   body {
+    /* Zera a margem default do agente do usuário. Sem isto nenhuma banda de
+       superfície sangra até a borda — hero, footer e toda a alternância do doc
+       de linguagem §2 aparecem com moldura de 8px. O @layer reset já zera a
+       margem de headings/p/listas, mas omitia o body. Exceção explícita ao
+       invariante "global.css intocável", autorizada por prompt. */
+    margin: 0;
     min-height: 100vh;
     line-height: var(--line-normal);
     font-family: var(--font-body);
