@@ -883,7 +883,11 @@
     inline-size: 100%;
     max-inline-size: var(--container-wide);
     margin-inline: auto;
-    padding-inline: max(var(--gutter), env(safe-area-inset-inline-start));
+    /* env(safe-area-inset-inline-start) não existe — a declaração era descartada no parse
+       e o .container computava padding-inline: 0. O gutter (--gutter) nunca chegou ao browser;
+       o respiro lateral vinha, por acidente, do margin default do <body>.
+       Nome correto + fallback obrigatório. */
+    padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px));
     container-type: inline-size;
     container-name: main-container;
   }
