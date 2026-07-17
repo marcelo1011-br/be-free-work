@@ -5,6 +5,7 @@ import TourCard from "./TourCard.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 import BookingForm from "./BookingForm.astro";
 import { useTranslations } from "../i18n/utils";
+import { aggregateRating } from "../data/siteData.js";
 
 const {
   item,
@@ -39,8 +40,16 @@ const baseRoute = routeMaps[type]?.[lang] || routeMaps.tour.en;
 const relatedItems = allItems
   .filter((candidate) => candidate.category === item.category && candidate.id !== item.id)
   .slice(0, 3);
+
+// Conteúdo dinâmico — array vazio/ausente => a seção não renderiza (doc §8).
+const highlights = item.highlights || [];
+const included = item.included || [];
+const notIncluded = item.notIncluded || [];
 const tips = item.tips || [];
 const faqs = item.faqs || [];
+const recommendations = item.recommendations; // dado morto até aqui; publicado como "Best time to go" (doc §11 anexo)
+const overviewParas = (item.fullDescription || "").split("\n\n").filter(Boolean);
+
 const isCustomItem = item.isCustom || item.pricing?.custom;
 const customPriceText = item.pricing?.displayText || "Custom quote";
 const contactRoutes = {
@@ -55,6 +64,7 @@ const overviewIntro = type === "experience" ? t("product.overviewIntroExperience
 const alternateLabel = type === "experience" ? t("product.altLineExperienceLabel") : t("product.altLineTourLabel");
 const alternateButton = type === "experience" ? t("product.altLineExperienceButton") : t("product.altLineTourButton");
 
+// getFromPrice — trata os quatro formatos (doc §9). NÃO reimplementar.
 function getFromPrice(pricing = {}) {
   if (pricing.custom) return null;
   if (pricing.from) return pricing.from;
@@ -66,44 +76,48 @@ function getFromPrice(pricing = {}) {
   return null;
 }
 
-const fromPrice = getFromPrice(item.pricing || {});
+const pricing = item.pricing || {};
+const fromPrice = getFromPrice(pricing);
 
-const copyByType = {
-  tour: {
-    en: {
-      bookThisItem: "Reserve — Pay Nothing Until 72h Before",
-      viewAllItems: "View All Tours",
-      whatsappText: "Questions? WhatsApp us",
+// priceMode: "group" (A) · "boat" (B) · "perPerson" (D) · "custom" (C) (doc §9)
+let priceMode = "custom";
+let groupOptions = []; // formato A: [{ size, price }]
+let boatGroups = null; // formato B: [{ name, ranges:[{range,price}] }]
+let perPersonPrice = null; // formato D
+
+if (pricing.custom) {
+  priceMode = "custom";
+} else if (pricing.priceTable) {
+  priceMode = "group";
+  groupOptions = Object.keys(pricing.priceTable)
+    .map(Number)
+    .filter((n) => !Number.isNaN(n))
+    .sort((a, b) => a - b)
+    .map((n) => ({ size: n, price: pricing.priceTable[String(n)] }));
+} else if (pricing.standard) {
+  priceMode = "boat";
+  boatGroups = [
+    {
+      key: "standard",
+      name: t("product.standardPackage"),
+      ranges: Object.entries(pricing.standard).map(([range, price]) => ({ range, price })),
     },
-    es: {
-      bookThisItem: "Reservar — Sin Pagar Hasta 72h Antes",
-      viewAllItems: "Ver Todos los Tours",
-      whatsappText: "¿Dudas? Escríbenos por WhatsApp",
-    },
-    "pt-br": {
-      bookThisItem: "Reserve — Pague Só 72h Antes",
-      viewAllItems: "Ver Todos os Passeios",
-      whatsappText: "Dúvidas? Fale pelo WhatsApp",
-    },
-  },
-  experience: {
-    en: {
-      bookThisItem: "Reserve — Pay Nothing Until 72h Before",
-      viewAllItems: "View All Experiences",
-      whatsappText: "Questions? WhatsApp us",
-    },
-    es: {
-      bookThisItem: "Reservar — Sin Pagar Hasta 72h Antes",
-      viewAllItems: "Ver Todas las Experiencias",
-      whatsappText: "¿Dudas? Escríbenos por WhatsApp",
-    },
-    "pt-br": {
-      bookThisItem: "Reserve — Pague Só 72h Antes",
-      viewAllItems: "Ver Todas as Experiências",
-      whatsappText: "Dúvidas? Fale pelo WhatsApp",
-    },
-  },
-};
+    ...(pricing.lopesMendes
+      ? [
+          {
+            key: "lopesMendes",
+            name: `${t("product.premiumPackage")} ${t("product.lopesMendesPackage")}`,
+            ranges: Object.entries(pricing.lopesMendes).map(([range, price]) => ({ range, price })),
+          },
+        ]
+      : []),
+  ];
+} else if (pricing.perPerson) {
+  priceMode = "perPerson";
+  perPersonPrice = pricing.perPerson;
+}
+
+const hasAmberBooking = priceMode !== "custom"; // formato C: zero âmbar (doc §10)
 
 const waMessages = {
   en: `Hi, I have a question about the ${item.title} tour.`,
@@ -112,7 +126,6 @@ const waMessages = {
 };
 const waLink = `https://wa.me/5521979271637?text=${encodeURIComponent(waMessages[lang] || waMessages.en)}`;
 
-const copy = copyByType[type]?.[lang] || copyByType.tour.en;
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
   {
@@ -121,6 +134,134 @@ const breadcrumbItems = [
   },
   { name: item.title, url: `/${lang}/${baseRoute}/${item.slug}` },
 ];
+
+// Rótulos novos que o doc introduz e que NÃO existem no i18n (proibido tocar i18n/**).
+// Inline por locale, no molde do copyByType original.
+const L = {
+  en: {
+    eyebrowOverview: "Overview",
+    eyebrowItinerary: "The day",
+    itineraryTitle: "What you'll see",
+    eyebrowIncluded: "The details",
+    eyebrowTiming: "Timing",
+    bestTimeTitle: "Best time to go",
+    eyebrowProof: "Proof",
+    proofTitle: "People who were there",
+    proofCaption: "Real client photos — the tour, not a postcard.",
+    proofEmpty: "Client photos for this tour are being indexed.",
+    eyebrowVoices: "Voices",
+    voicesTitle: "Travellers say",
+    voicesEmpty: "Per-tour reviews are being connected.",
+    eyebrowFaq: "Questions",
+    eyebrowRelated: "Keep exploring",
+    eyebrowBooking: "Reserve",
+    bookingTitle: "Reserve your day",
+    readMore: "Read the full description",
+    readLess: "Show less",
+    swipe: "Swipe →",
+    reserve: type === "experience" ? "Reserve this experience" : "Reserve this tour",
+    heroBook: "Book this tour",
+    payNote: "Pay nothing until 72h before",
+    groupNote: "Group total — not per person",
+    perPersonNote: "per person",
+    requestQuote: "Request a custom quote",
+    cardTrust: "72h free cancellation · Cadastur licensed · Since 2013",
+    trust: {
+      reviews: "verified reviews",
+      tripadvisor: "TripAdvisor",
+      licensed: "Cadastur licensed",
+      since: "Since 2013",
+      travellers: "~15,000 travellers",
+    },
+    whatsapp: "Questions? WhatsApp us",
+    viewAll: type === "experience" ? "View all experiences" : "View all tours",
+  },
+  es: {
+    eyebrowOverview: "Resumen",
+    eyebrowItinerary: "El día",
+    itineraryTitle: "Lo que verás",
+    eyebrowIncluded: "Los detalles",
+    eyebrowTiming: "Cuándo",
+    bestTimeTitle: "Mejor momento para ir",
+    eyebrowProof: "Prueba",
+    proofTitle: "Quienes estuvieron allí",
+    proofCaption: "Fotos reales de clientes — el tour, no una postal.",
+    proofEmpty: "Las fotos de clientes de este tour se están indexando.",
+    eyebrowVoices: "Voces",
+    voicesTitle: "Lo que dicen los viajeros",
+    voicesEmpty: "Las reseñas por tour se están conectando.",
+    eyebrowFaq: "Preguntas",
+    eyebrowRelated: "Seguí explorando",
+    eyebrowBooking: "Reservar",
+    bookingTitle: "Reserva tu día",
+    readMore: "Leer la descripción completa",
+    readLess: "Mostrar menos",
+    swipe: "Deslizá →",
+    reserve: type === "experience" ? "Reservar esta experiencia" : "Reservar este tour",
+    heroBook: "Reservar este tour",
+    payNote: "Sin pagar hasta 72h antes",
+    groupNote: "Total del grupo — no por persona",
+    perPersonNote: "por persona",
+    requestQuote: "Solicitar presupuesto",
+    cardTrust: "Cancelación gratis 72h · Licencia Cadastur · Desde 2013",
+    trust: {
+      reviews: "reseñas verificadas",
+      tripadvisor: "TripAdvisor",
+      licensed: "Licencia Cadastur",
+      since: "Desde 2013",
+      travellers: "~15.000 viajeros",
+    },
+    whatsapp: "¿Dudas? Escríbenos por WhatsApp",
+    viewAll: type === "experience" ? "Ver todas las experiencias" : "Ver todos los tours",
+  },
+  "pt-br": {
+    eyebrowOverview: "Resumo",
+    eyebrowItinerary: "O dia",
+    itineraryTitle: "O que você vai ver",
+    eyebrowIncluded: "Os detalhes",
+    eyebrowTiming: "Quando",
+    bestTimeTitle: "Melhor hora para ir",
+    eyebrowProof: "Prova",
+    proofTitle: "Quem esteve lá",
+    proofCaption: "Fotos reais de clientes — o passeio, não um cartão-postal.",
+    proofEmpty: "As fotos de clientes deste passeio estão sendo indexadas.",
+    eyebrowVoices: "Vozes",
+    voicesTitle: "O que dizem os viajantes",
+    voicesEmpty: "As avaliações por passeio estão sendo conectadas.",
+    eyebrowFaq: "Perguntas",
+    eyebrowRelated: "Continue explorando",
+    eyebrowBooking: "Reservar",
+    bookingTitle: "Reserve seu dia",
+    readMore: "Ler a descrição completa",
+    readLess: "Mostrar menos",
+    swipe: "Arraste →",
+    reserve: type === "experience" ? "Reservar esta experiência" : "Reservar este passeio",
+    heroBook: "Reservar este passeio",
+    payNote: "Pague só 72h antes",
+    groupNote: "Total do grupo — não por pessoa",
+    perPersonNote: "por pessoa",
+    requestQuote: "Solicitar orçamento",
+    cardTrust: "Cancelamento grátis 72h · Licença Cadastur · Desde 2013",
+    trust: {
+      reviews: "avaliações verificadas",
+      tripadvisor: "TripAdvisor",
+      licensed: "Licença Cadastur",
+      since: "Desde 2013",
+      travellers: "~15.000 viajantes",
+    },
+    whatsapp: "Dúvidas? Fale pelo WhatsApp",
+    viewAll: type === "experience" ? "Ver todas as experiências" : "Ver todos os passeios",
+  },
+};
+const c = L[lang] || L.en;
+
+// TODO: DADO REAL PENDENTE — não existe manifest arquivo->atração para src/images/gallery/.
+// Estas duas seções renderizam placeholder. NÃO SUBIR PARA PRODUÇÃO ASSIM.
+const proofPhotos = []; // [{ src, caption }] — ligar quando o manifest existir
+const travellerReviews = []; // [{ quote, author, rating }] — não existe review por tour em tours.js
+const heroAlt = highlights[0]
+  ? `${item.title} - ${t("product.heroImageAlt")} ${highlights[0]}`
+  : item.title;
 ---
 
 <BaseLayout
@@ -133,925 +274,926 @@ const breadcrumbItems = [
 >
   <Breadcrumbs items={breadcrumbItems} />
 
-  <section class="product-hero">
-    <div class="hero-image">
+  {/* 3 · HERO — gradiente navy sob foto full-bleed (doc §2, §12) */}
+  <section class="pdp-hero">
+    <div class="pdp-hero__media">
       <Image
         src={heroImage}
-        alt={`${item.title} - ${t("product.heroImageAlt")} ${item.highlights[0]}`}
+        alt={heroAlt}
         width={1920}
         height={1080}
         format="webp"
         quality={85}
         loading="eager"
       />
-      <div class="hero-overlay"></div>
+      <div class="pdp-hero__scrim"></div>
     </div>
-    <div class="hero-content">
-      <div class="container">
-        <div class="hero-text">
-          <h1 class="hero-title">{item.title}</h1>
-          <div class="hero-meta">
-            <div class="meta-item">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"></path>
-              </svg>
-              <span>{item.duration}</span>
-            </div>
-            {
-              fromPrice ? (
-                <div class="meta-item hero-price">
-                  <span class="price-label">{t("product.from")}</span>
-                  <span class="price-value">US$ {fromPrice}</span>
-                </div>
-              ) : isCustomItem && (
-                <div class="meta-item hero-price">
-                  <span class="price-custom">{customPriceText}</span>
-                </div>
-              )
-            }
-          </div>
-          <button type="button" class="btn btn-primary btn-lg" data-booking-trigger>
-            {item.ctaText || copy.bookThisItem}
-          </button>
-        </div>
+    <div class="container pdp-hero__inner">
+      <h1 class="pdp-hero__title">{item.title}</h1>
+      <div class="pdp-hero__meta">
+        {item.duration && <span class="pdp-hero__chip">{item.duration}</span>}
+        <span class="pdp-hero__chip pdp-hero__chip--rating">
+          ★ {aggregateRating.ratingValue} · {aggregateRating.reviewCount}+
+        </span>
       </div>
-    </div>
-  </section>
 
-  <section class="product-overview">
-    <div class="container">
-      <h2 class="section-title">{overviewTitle}</h2>
-      <p class="overview-intro">{overviewIntro}</p>
-      {item.fullDescription.split("\n\n").map((paragraph) => (
-        <p class="overview-text">{paragraph}</p>
-      ))}
-      <div class="product-cross-link">
-        <p class="cross-link-text">{alternateLabel}</p>
-        <a href={`/${lang}/${alternateRoute}`} class="btn btn-outline-secondary btn-md">
-          {alternateButton}
+      <div class="pdp-hero__price">
+        {priceMode === "custom" ? (
+          <span class="pdp-hero__price-custom">{customPriceText}</span>
+        ) : priceMode === "perPerson" ? (
+          <>
+            <span class="pdp-hero__price-from">{t("product.from")}</span>
+            <span class="pdp-hero__price-value">US$ {perPersonPrice}</span>
+            <span class="pdp-hero__price-unit">{c.perPersonNote}</span>
+          </>
+        ) : (
+          <>
+            <span class="pdp-hero__price-from">{t("product.from")}</span>
+            <span class="pdp-hero__price-value">US$ {fromPrice}</span>
+            <span class="pdp-hero__price-unit">{c.groupNote}</span>
+          </>
+        )}
+      </div>
+
+      <div class="pdp-hero__actions">
+        {hasAmberBooking ? (
+          <button type="button" class="pdp-btn pdp-btn--amber pdp-btn--lg" data-booking-trigger>
+            {c.heroBook}
+          </button>
+        ) : (
+          <a href={`/${lang}/${contactRoute}`} class="pdp-btn pdp-btn--outline-dark pdp-btn--lg">
+            {c.requestQuote}
+          </a>
+        )}
+        <a href={waLink} class="pdp-hero__wa" target="_blank" rel="noopener noreferrer">
+          {c.whatsapp}
         </a>
       </div>
     </div>
   </section>
 
-  <section class="product-details">
-    <div class="container">
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
-              <span>{t("product.highlights")}</span>
+  {/* 4 · TRUST BAR — faixa branca, separa hero do corpo (doc §2) */}
+  <section class="pdp-trust">
+    <div class="container pdp-trust__inner">
+      <span class="pdp-trust__item pdp-trust__item--star">
+        ★ {aggregateRating.ratingValue} · {aggregateRating.reviewCount}+ {c.trust.reviews}
+      </span>
+      <span class="pdp-trust__sep" aria-hidden="true"></span>
+      <span class="pdp-trust__item">{c.trust.tripadvisor}</span>
+      <span class="pdp-trust__sep" aria-hidden="true"></span>
+      <span class="pdp-trust__item">{c.trust.licensed}</span>
+      <span class="pdp-trust__sep" aria-hidden="true"></span>
+      <span class="pdp-trust__item">{c.trust.since}</span>
+      <span class="pdp-trust__sep" aria-hidden="true"></span>
+      <span class="pdp-trust__item">{c.trust.travellers}</span>
+    </div>
+  </section>
+
+  {/* 5 · CORPO — grid conteúdo + booking card sticky (doc §2, §6) */}
+  <section class="pdp-body">
+    <div class="container pdp-body__grid">
+      <div class="pdp-body__main">
+        {/* Overview + read-more (doc §11) */}
+        <div class="pdp-block">
+          <header class="pdp-head">
+            <span class="pdp-eyebrow">{c.eyebrowOverview}</span>
+            <h2 class="pdp-h2">{overviewTitle}</h2>
+          </header>
+          <p class="pdp-lead">{overviewIntro}</p>
+          {overviewParas.length > 0 && (
+            <div class="pdp-overview" data-readmore>
+              <p class="pdp-prose pdp-prose--first">{overviewParas[0]}</p>
+              {overviewParas.length > 1 && (
+                <div class="pdp-overview__more" id="pdp-overview-more" data-readmore-body>
+                  {overviewParas.slice(1).map((paragraph) => (
+                    <p class="pdp-prose">{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              {overviewParas.length > 1 && (
+                <button
+                  type="button"
+                  class="pdp-readmore"
+                  data-readmore-toggle
+                  aria-expanded="false"
+                  aria-controls="pdp-overview-more"
+                  data-label-more={c.readMore}
+                  data-label-less={c.readLess}
+                >
+                  {c.readMore}
+                </button>
+              )}
             </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <ul class="highlights-list">
-              {item.highlights.map((highlight) => (
-                <li class="highlight-item">
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                  </svg>
-                  <span>{highlight}</span>
+          )}
+          <div class="pdp-crosslink">
+            <p class="pdp-crosslink__text">{alternateLabel}</p>
+            <a href={`/${lang}/${alternateRoute}`} class="pdp-btn pdp-btn--outline pdp-btn--md">
+              {alternateButton}
+            </a>
+          </div>
+        </div>
+
+        {/* Itinerário — highlights expostas e numeradas (doc §8) */}
+        {highlights.length > 0 && (
+          <div class="pdp-block">
+            <header class="pdp-head">
+              <span class="pdp-eyebrow">{c.eyebrowItinerary}</span>
+              <h2 class="pdp-h2">{c.itineraryTitle}</h2>
+            </header>
+            <ol class={`pdp-num-list ${highlights.length >= 4 ? "is-multi" : ""}`}>
+              {highlights.map((highlight, i) => (
+                <li class="pdp-num">
+                  <span class="pdp-num__n">{String(i + 1).padStart(2, "0")}</span>
+                  <span class="pdp-num__label">{highlight}</span>
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
-        </div>
+        )}
 
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"></path>
-              </svg>
-              <span>{t("product.whatsIncluded")}</span>
-            </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <div class="included-grid">
-              <div class="included-column">
-                <h4 class="included-title included-yes">✓ {t("product.included")}</h4>
-                <ul class="included-list">
-                  {item.included.map((includedItem) => (
-                    <li class="included-item">
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                      </svg>
-                      <span>{includedItem}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div class="included-column">
-                <h4 class="included-title included-no">✕ {t("product.notIncluded")}</h4>
-                <ul class="included-list">
-                  {item.notIncluded.map((excludedItem) => (
-                    <li class="included-item not-included">
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                      </svg>
-                      <span>{excludedItem}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {/* What's included + Not included (doc §8) */}
+        {included.length > 0 && (
+          <div class="pdp-block">
+            <header class="pdp-head">
+              <span class="pdp-eyebrow">{c.eyebrowIncluded}</span>
+              <h2 class="pdp-h2">{t("product.whatsIncluded")}</h2>
+            </header>
+            <div class="pdp-incl">
+              <ul class={`pdp-incl-list ${included.length >= 4 ? "is-multi" : ""}`}>
+                {included.map((includedItem) => (
+                  <li class="pdp-incl__row pdp-incl__row--yes">
+                    <span class="pdp-incl__mark" aria-hidden="true">✓</span>
+                    <span>{includedItem}</span>
+                  </li>
+                ))}
+              </ul>
+              {notIncluded.length > 0 && (
+                <div class="pdp-panel pdp-notincl">
+                  <p class="pdp-notincl__title">{t("product.notIncluded")}</p>
+                  <ul class="pdp-incl-list">
+                    {notIncluded.map((excludedItem) => (
+                      <li class="pdp-incl__row pdp-incl__row--no">
+                        <span class="pdp-incl__mark" aria-hidden="true">—</span>
+                        <span>{excludedItem}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
-        </div>
+        )}
 
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"></path>
-              </svg>
-              <span>{t("product.pricingPayment")}</span>
+        {/* Best time to go — publica item.recommendations (doc §11 anexo). Ausente => não renderiza. */}
+        {recommendations && (
+          <div class="pdp-block">
+            <header class="pdp-head">
+              <span class="pdp-eyebrow">{c.eyebrowTiming}</span>
+              <h2 class="pdp-h2">{c.bestTimeTitle}</h2>
+            </header>
+            <p class="pdp-prose pdp-prose--contained">{recommendations}</p>
+          </div>
+        )}
+
+        {/* Good to know — tips expostas e numeradas (doc §8) */}
+        {tips.length > 0 && (
+          <div class="pdp-block">
+            <header class="pdp-head">
+              <span class="pdp-eyebrow">{c.eyebrowIncluded}</span>
+              <h2 class="pdp-h2">{t("product.goodToKnow")}</h2>
+            </header>
+            <ol class={`pdp-num-list ${tips.length >= 4 ? "is-multi" : ""}`}>
+              {tips.map((tip, i) => (
+                <li class="pdp-num">
+                  <span class="pdp-num__n">{String(i + 1).padStart(2, "0")}</span>
+                  <span class="pdp-num__label">{tip}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+      </div>
+
+      {/* Booking card — sticky no desktop, seção normal no mobile (doc §6) */}
+      <aside class="pdp-book" data-pricing={JSON.stringify(pricing)}>
+        <header class="pdp-head pdp-book__head">
+          <span class="pdp-eyebrow">{c.eyebrowBooking}</span>
+          <h2 class="pdp-h3">{c.bookingTitle}</h2>
+        </header>
+
+        {priceMode === "custom" ? (
+          <div class="pdp-book__body">
+            <p class="pdp-book__custom">{customPriceText}</p>
+            <p class="pdp-book__note">{t("product.customPriceDescription")}</p>
+            <a href={`/${lang}/${contactRoute}`} class="pdp-btn pdp-btn--outline pdp-btn--lg pdp-book__cta">
+              {c.requestQuote}
+            </a>
+          </div>
+        ) : (
+          <div class="pdp-book__body">
+            <div class="pdp-book__price">
+              <span class="pdp-book__cur">US$</span>
+              <span class="pdp-book__amount" data-price-amount>
+                {priceMode === "perPerson" ? perPersonPrice : fromPrice}
+              </span>
+              <span class="pdp-book__unit">
+                {priceMode === "perPerson" ? c.perPersonNote : c.groupNote}
+              </span>
             </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <div class="pricing-content">
-              {
-                item.pricing?.custom && (
-                  <div class="pricing-custom">
-                    <div class="price-highlight">
-                      <span class="price-custom-title">{customPriceText}</span>
-                      <p class="price-custom-description">{t("product.customPriceDescription")}</p>
-                      <a href={`/${lang}/${contactRoute}`} class="btn btn-primary">
-                        {t("product.customPriceBtn")}
-                      </a>
+
+            {priceMode === "group" && (
+              <div class="pdp-book__chips" role="group" aria-label={t("product.groupSize")}>
+                {groupOptions.map((opt, i) => (
+                  <button
+                    type="button"
+                    class="pdp-chip"
+                    data-price={opt.price}
+                    aria-pressed={i === 0 ? "true" : "false"}
+                  >
+                    {opt.size} {t("product.people")}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {priceMode === "boat" && boatGroups && (
+              <div class="pdp-book__boats">
+                {boatGroups.map((boat) => (
+                  <div class="pdp-boat">
+                    <p class="pdp-boat__name">{boat.name}</p>
+                    <div class="pdp-book__chips" role="group" aria-label={boat.name}>
+                      {boat.ranges.map((r) => (
+                        <button type="button" class="pdp-chip" data-price={r.price}>
+                          {r.range} {t("product.people")}
+                        </button>
+                      ))}
                     </div>
                   </div>
-                )
-              }
-
-              {
-                item.pricing?.priceTable && (
-                  <div class="pricing-table-wrapper">
-                    <h4>{t("product.standardPackage")}</h4>
-                    <table class="pricing-table">
-                      <thead>
-                        <tr>
-                          <th>{t("product.groupSize")}</th>
-                          <th>{t("product.price")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {Object.entries(item.pricing.priceTable).map(([size, price]) => (
-                          <tr>
-                            <td>{size} {t("product.people")}</td>
-                            <td>US$ {price}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )
-              }
-
-              {
-                item.pricing?.perPerson && (
-                  <div class="pricing-table-wrapper">
-                    <h4>{t("product.standardPackage")}</h4>
-                    <table class="pricing-table">
-                      <thead>
-                        <tr>
-                          <th>{t("product.groupSize")}</th>
-                          <th>{t("product.price")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>{t("product.perPerson")}</td>
-                          <td>US$ {item.pricing.perPerson}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                )
-              }
-
-              {
-                item.pricing?.standard && (
-                  <div class="pricing-table-wrapper">
-                    <h4>{t("product.standardPackage")}</h4>
-                    <table class="pricing-table">
-                      <thead>
-                        <tr>
-                          <th>{t("product.groupSize")}</th>
-                          <th>{t("product.price")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {Object.entries(item.pricing.standard).map(([size, price]) => (
-                          <tr>
-                            <td>{size} {t("product.people")}</td>
-                            <td>US$ {price}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-
-                    {
-                      item.pricing.lopesMendes && (
-                        <>
-                          <h4 style="margin-top: 1.5rem;">
-                            {t("product.premiumPackage")} {t("product.lopesMendesPackage")}
-                          </h4>
-                          <table class="pricing-table">
-                            <thead>
-                              <tr>
-                                <th>{t("product.groupSize")}</th>
-                                <th>{t("product.price")}</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {Object.entries(item.pricing.lopesMendes).map(([size, price]) => (
-                                <tr>
-                                  <td>{size} {t("product.people")}</td>
-                                  <td>US$ {price}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </>
-                      )
-                    }
-                  </div>
-                )
-              }
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
-              </svg>
-              <span>{paymentPolicy.title}</span>
-            </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <div class="payment-policies">
-              <ul class="policy-list">
-                {paymentPolicy.items.map((policyItem) => (
-                  <li>
-                    <strong>{policyItem.label}</strong>
-                    {policyItem.text}
-                  </li>
                 ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+              </div>
+            )}
 
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
-              </svg>
-              <span>{cancellationPolicy.title}</span>
-            </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <div class="payment-policies">
-              <ul class="policy-list">
-                {cancellationPolicy.items.map((policyItem) => (
-                  <li>
-                    <strong>{policyItem.label}</strong>
-                    {policyItem.text}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <button type="button" class="pdp-btn pdp-btn--amber pdp-btn--lg pdp-book__cta" data-booking-trigger>
+              {c.reserve}
+            </button>
+            <p class="pdp-book__pay">{c.payNote}</p>
+            <p class="pdp-book__trust">{c.cardTrust}</p>
           </div>
-        </div>
+        )}
+      </aside>
+    </div>
+  </section>
 
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11 7h2v2h-2V7zm0 4h2v6h-2v-6zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-              </svg>
-              <span>{t("product.goodToKnow")}</span>
-            </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <ul class="tips-list">
-              {tips.map((tip) => (
-                <li class="tip-item">
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                  </svg>
-                  <span>{tip}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+  {/* 6 · PROVA — fotos de cliente (doc §12). PLACEHOLDER. */}
+  {/* TODO: DADO REAL PENDENTE — não existe manifest arquivo->atração para src/images/gallery/.
+      Seção renderiza placeholder. NÃO SUBIR PARA PRODUÇÃO ASSIM. */}
+  <section class="pdp-proof">
+    <div class="container">
+      <header class="pdp-head">
+        <span class="pdp-eyebrow">{c.eyebrowProof}</span>
+        <h2 class="pdp-h2">{c.proofTitle}</h2>
+      </header>
+      <p class="pdp-proof__caption">{c.proofCaption}</p>
+      {proofPhotos.length > 0 ? (
+        <ul class="pdp-proof__rail">
+          {proofPhotos.map((photo) => (
+            <li class="pdp-proof__item">
+              <figure class="pdp-proof__fig">
+                <img src={photo.src} alt="" loading="lazy" />
+                <figcaption>{photo.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="pdp-placeholder" data-placeholder="proof">{c.proofEmpty}</div>
+      )}
+    </div>
+  </section>
 
-        <div class="accordion-item">
-          <button class="accordion-header" data-accordion-trigger>
-            <div class="accordion-title">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"></path>
-              </svg>
-              <span>{t("product.faqs")}</span>
-            </div>
-            <svg class="accordion-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-            </svg>
-          </button>
-          <div class="accordion-content">
-            <div class="faq-list">
-              {faqs.map((faq) => (
-                <div class="faq-item">
-                  <h4 class="faq-question">{faq.q}</h4>
-                  <p class="faq-answer">{faq.a}</p>
+  {/* 7 · DEPOIMENTOS — reviews por tour (doc §2). PLACEHOLDER. */}
+  {/* TODO: DADO REAL PENDENTE — não existe review por tour em tours.js; testimonials.js é business-wide.
+      Seção renderiza placeholder. NÃO SUBIR PARA PRODUÇÃO ASSIM. */}
+  <section class="pdp-voices">
+    <div class="container">
+      <header class="pdp-head">
+        <span class="pdp-eyebrow">{c.eyebrowVoices}</span>
+        <h2 class="pdp-h2">{c.voicesTitle}</h2>
+      </header>
+      {travellerReviews.length > 0 ? (
+        <ul class="pdp-voices__grid">
+          {travellerReviews.map((review) => (
+            <li class="pdp-panel pdp-voice">
+              <p class="pdp-voice__quote">{review.quote}</p>
+              <p class="pdp-voice__author">{review.author}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="pdp-placeholder" data-placeholder="voices">{c.voicesEmpty}</div>
+      )}
+    </div>
+  </section>
+
+  {/* 8 · FAQ + POLICIES — dois acordeões, todos fechados (doc §13) */}
+  {(faqs.length > 0 || paymentPolicy || cancellationPolicy) && (
+    <section class="pdp-faq">
+      <div class="container pdp-faq__grid">
+        {faqs.length > 0 && (
+          <div class="pdp-block">
+            <header class="pdp-head">
+              <span class="pdp-eyebrow">{c.eyebrowFaq}</span>
+              <h2 class="pdp-h2">{t("product.faqs")}</h2>
+            </header>
+            <div class="pdp-acc">
+              {faqs.map((faq, i) => (
+                <div class="pdp-acc__item">
+                  <button
+                    type="button"
+                    class="pdp-acc__header"
+                    data-acc-trigger
+                    aria-expanded="false"
+                    aria-controls={`pdp-faq-${i}`}
+                  >
+                    <span>{faq.q}</span>
+                    <span class="pdp-acc__icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="pdp-acc__panel" id={`pdp-faq-${i}`} role="region" hidden>
+                    <p>{faq.a}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        )}
 
-  {
-    relatedItems.length > 0 && (
-      <section class="related-products">
-        <div class="container">
-          <h2 class="section-title">{t("product.relatedItems")}</h2>
-          <div class="related-grid grid grid-4">
-            {relatedItems.map((relatedItem) => (
-              <TourCard item={relatedItem} lang={lang} section={section} />
-            ))}
+        <div class="pdp-block">
+          <header class="pdp-head">
+            <span class="pdp-eyebrow">{c.eyebrowFaq}</span>
+            <h2 class="pdp-h2">{t("product.pricingPayment")}</h2>
+          </header>
+          <div class="pdp-acc">
+            {paymentPolicy && (
+              <div class="pdp-acc__item">
+                <button
+                  type="button"
+                  class="pdp-acc__header"
+                  data-acc-trigger
+                  aria-expanded="false"
+                  aria-controls="pdp-pol-pay"
+                >
+                  <span>{paymentPolicy.title}</span>
+                  <span class="pdp-acc__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="pdp-acc__panel" id="pdp-pol-pay" role="region" hidden>
+                  <ul class="pdp-policy">
+                    {paymentPolicy.items.map((policyItem) => (
+                      <li><strong>{policyItem.label}</strong>{policyItem.text}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+            {cancellationPolicy && (
+              <div class="pdp-acc__item">
+                <button
+                  type="button"
+                  class="pdp-acc__header"
+                  data-acc-trigger
+                  aria-expanded="false"
+                  aria-controls="pdp-pol-cancel"
+                >
+                  <span>{cancellationPolicy.title}</span>
+                  <span class="pdp-acc__icon" aria-hidden="true">+</span>
+                </button>
+                <div class="pdp-acc__panel" id="pdp-pol-cancel" role="region" hidden>
+                  <ul class="pdp-policy">
+                    {cancellationPolicy.items.map((policyItem) => (
+                      <li><strong>{policyItem.label}</strong>{policyItem.text}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )}
 
-  <section class="product-cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">{t("product.readyToBook")}</h2>
-        <p class="cta-subtitle">{t("product.readyToBookSubtitle")}</p>
-        <div class="cta-buttons">
-          <button type="button" class="btn btn-primary btn-lg" data-booking-trigger>
-            {item.ctaText || copy.bookThisItem}
-          </button>
-          <a href={`/${lang}/${baseRoute}`} class="btn btn-outline-secondary btn-lg">
-            {copy.viewAllItems}
-          </a>
+  {/* 9 · RELATED — TourCard 3-up (doc §2, §6) */}
+  {relatedItems.length > 0 && (
+    <section class="pdp-related">
+      <div class="container">
+        <header class="pdp-head">
+          <span class="pdp-eyebrow">{c.eyebrowRelated}</span>
+          <h2 class="pdp-h2">{t("product.relatedItems")}</h2>
+        </header>
+        <div class="pdp-related__grid">
+          {relatedItems.map((relatedItem) => (
+            <TourCard item={relatedItem} lang={lang} section={section} />
+          ))}
         </div>
-        <a
-          href={waLink}
-          class="product-cta__whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {copy.whatsappText}
-        </a>
+      </div>
+    </section>
+  )}
+
+  {/* 10 · BOOKING FORM — banda navy (doc §2) */}
+  <BookingForm tour={item} lang={lang} />
+
+  {/* 11 · CTA FINAL — banda azul, outline (doc §2, §10) */}
+  <section class="pdp-final">
+    <div class="container pdp-final__inner">
+      <h2 class="pdp-final__title">{t("product.readyToBook")}</h2>
+      <p class="pdp-final__sub">{t("product.readyToBookSubtitle")}</p>
+      <div class="pdp-final__actions">
+        {hasAmberBooking ? (
+          <button type="button" class="pdp-btn pdp-btn--outline-dark pdp-btn--lg" data-booking-trigger>
+            {c.reserve}
+          </button>
+        ) : (
+          <a href={`/${lang}/${contactRoute}`} class="pdp-btn pdp-btn--outline-dark pdp-btn--lg">
+            {c.requestQuote}
+          </a>
+        )}
+        <a href={`/${lang}/${baseRoute}`} class="pdp-final__ghost">{c.viewAll}</a>
       </div>
     </div>
   </section>
-
-  <BookingForm tour={item} lang={lang} />
 </BaseLayout>
 
 <style>
-  .section-title {
-    font-size: var(--font-size-h3);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-lg);
+  /* ============================================================
+     ProductDetailPage — tour page (redesign v3)
+     Tier PURO só (tokens.css). Zero bridge, zero box-shadow.
+     Tipografia em rem (clamps doc §3). px só em borda 1px e raio.
+     ============================================================ */
+
+  .pdp-hero,
+  .pdp-trust,
+  .pdp-body,
+  .pdp-proof,
+  .pdp-voices,
+  .pdp-faq,
+  .pdp-related,
+  .pdp-final {
+    --pdp-eyebrow: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
+    --pdp-note: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    --pdp-body: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    --pdp-lead: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
+    --pdp-stop: clamp(0.9375rem, 0.8679rem + 0.286vw, 1.125rem);
+    --pdp-h2: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
+    --pdp-touch: 2.75rem;
   }
 
-  .overview-intro {
-    max-width: clamp(42rem, 85vw, 52rem);
-    margin: 0 0 var(--space-lg);
-    font-size: var(--font-size-h6);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
+  /* ---- Header de seção (doc §4) ---- */
+  .pdp-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2xs) var(--space-m);
+    margin-bottom: var(--space-m);
+  }
+  .pdp-eyebrow {
+    display: block;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: var(--pdp-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3xs);
+  }
+  .pdp-h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--pdp-h2);
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    margin: 0;
+    line-height: var(--line-snug);
+  }
+  .pdp-h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-1);
+    color: var(--color-ink);
+    margin: 0;
   }
 
-  .product-cross-link {
-    margin-top: var(--space-xl);
-    padding: var(--space-lg);
-    border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-bg-soft);
+  /* ---- Botões ---- */
+  .pdp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xs);
+    min-height: var(--pdp-touch);
+    padding: 0 var(--space-m);
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--pdp-body);
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .pdp-btn--lg { min-height: 3rem; padding-inline: var(--space-l); }
+  .pdp-btn--md { min-height: var(--pdp-touch); }
+  .pdp-btn--amber {
+    background: var(--color-amber);
+    color: var(--color-on-amber);
+    border-color: var(--color-amber);
+  }
+  .pdp-btn--amber:hover { background: color-mix(in srgb, var(--color-amber) 88%, black); }
+  .pdp-btn--outline {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-blue);
+  }
+  .pdp-btn--outline:hover { border-color: var(--color-blue); }
+  .pdp-btn--outline-dark {
+    background: transparent;
+    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+  }
+  .pdp-btn--outline-dark:hover {
+    background: color-mix(in srgb, var(--color-on-blue) 10%, transparent);
+    border-color: var(--color-on-blue);
   }
 
-  .cross-link-text {
-    margin: 0 0 var(--space-md);
-    color: var(--color-text);
-    font-weight: var(--font-weight-medium);
-  }
-
-  .product-hero {
-    --product-hero-overlay-start: color-mix(in srgb, black 70%, transparent);
-    --product-hero-overlay-mid: color-mix(in srgb, black 30%, transparent);
-    --product-hero-text-shadow: 0 2px 10px color-mix(in srgb, black 50%, transparent);
-    --product-hero-price-shadow: 0 2px 8px color-mix(in srgb, black 80%, transparent),
-      0 4px 16px color-mix(in srgb, black 60%, transparent);
-    --product-hero-max: clamp(40rem, 75vw, 50rem);
-    --product-hero-price-opacity: 0.9;
-    --accordion-max: clamp(50rem, 85vw, 56.25rem);
-    --accordion-border: var(--border-width-regular);
-    --accordion-transition: var(--transition-duration-normal) var(--transition-easing-default);
-    --accordion-max-height: 3000px;
-    --included-grid-min: 280px;
-    --spacing-tiny: var(--space-2xs);
-    --cta-max: clamp(34rem, 70vw, 43.75rem);
-    --cta-subtitle-color: color-mix(in srgb, white 90%, transparent);
-
+  /* ---- 3 · HERO ---- */
+  .pdp-hero {
     position: relative;
-    min-height: 50svh;
     display: flex;
     align-items: flex-end;
+    min-height: 52svh;
+    color: var(--color-on-blue);
+    overflow: hidden;
   }
-
-  .hero-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hero-image :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  .hero-overlay {
+  .pdp-hero__media { position: absolute; inset: 0; z-index: 0; }
+  .pdp-hero__media :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .pdp-hero__scrim {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      to top,
-      var(--product-hero-overlay-start) 0%,
-      var(--product-hero-overlay-mid) 50%,
-      transparent 100%
+      120deg,
+      var(--color-blue) 0%,
+      color-mix(in srgb, var(--color-blue) 45%, var(--color-base-dark)) 45%,
+      var(--color-base-dark) 100%
     );
+    opacity: 0.82;
   }
-
-  .hero-content {
+  .pdp-hero__inner {
     position: relative;
     z-index: 1;
-    width: 100%;
-    padding: var(--space-3xl) 0 var(--space-2xl);
-    color: var(--color-text-inverse);
-  }
-
-  .hero-text {
-    text-align: center;
-    max-width: var(--product-hero-max);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-  }
-
-  .hero-title {
-    color: var(--color-text-inverse);
-    margin-bottom: 0;
-    text-shadow: var(--product-hero-text-shadow);
-  }
-
-  .hero-meta {
-    display: flex;
-    gap: var(--space-lg);
-    margin-bottom: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    font-size: var(--font-size-h6);
-    font-weight: var(--font-weight-medium);
-  }
-
-  .hero-price {
+    padding-block: var(--space-2xl) var(--space-xl);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--spacing-tiny);
+    gap: var(--space-s);
   }
-
-  .price-label {
-    font-size: var(--font-size-small);
-    color: var(--color-text-inverse);
-    opacity: var(--product-hero-price-opacity);
+  .pdp-hero__title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.0625rem, 1.529rem + 2.19vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+    color: var(--color-on-blue);
+    margin: 0;
+    max-width: 20ch;
   }
-
-  .price-value {
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-inverse);
-    text-shadow: var(--product-hero-price-shadow);
+  .pdp-hero__meta { display: flex; flex-wrap: wrap; gap: var(--space-2xs); }
+  .pdp-hero__chip {
+    font-family: var(--font-body);
+    font-size: var(--pdp-note);
+    font-weight: 500;
+    padding: var(--space-3xs) var(--space-xs);
+    border: 1px solid color-mix(in srgb, var(--color-on-blue) 30%, transparent);
+    border-radius: var(--radius);
   }
-
-  .hero-price .price-custom {
-    font-size: var(--font-size-h5);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-accent);
+  .pdp-hero__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-2xs); }
+  .pdp-hero__price-from { font-size: var(--pdp-note); opacity: 0.85; }
+  .pdp-hero__price-value {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.375rem, 2.236rem + 0.571vw, 2.75rem);
+    line-height: 1;
   }
-
-  .product-overview {
-    padding: var(--space-3xl) 0 var(--space-2xl);
+  .pdp-hero__price-unit { font-size: var(--pdp-note); opacity: 0.85; }
+  .pdp-hero__price-custom {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-2);
   }
-
-  .overview-text {
-    max-width: var(--product-hero-max);
-    font-size: var(--font-size-h6);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-light);
-  }
-
-  .overview-text + .overview-text {
-    margin-top: var(--space-md);
-  }
-
-  .product-details {
-    padding: 0 0 var(--space-3xl);
-  }
-
-  .accordion {
-    max-width: var(--accordion-max);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .accordion-item {
-    background-color: var(--color-bg-white);
-    border: var(--accordion-border) solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
-
-  .accordion-header {
-    width: 100%;
-    display: flex;
+  .pdp-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-s); }
+  .pdp-hero__wa {
+    font-size: var(--pdp-note);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+    text-decoration: none;
+    min-height: var(--pdp-touch);
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    border: none;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-    text-align: left;
   }
+  .pdp-hero__wa:hover { color: var(--color-on-blue); text-decoration: underline; }
 
-  .accordion-title {
+  /* ---- 4 · TRUST BAR ---- */
+  .pdp-trust { background: var(--color-surface); border-block: 1px solid var(--color-hairline); }
+  .pdp-trust__inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-sm);
-    font-size: var(--font-size-h6);
-    font-weight: var(--font-weight-semibold);
+    gap: var(--space-2xs) var(--space-s);
+    padding-block: var(--space-s);
+    font-family: var(--font-body);
+    font-size: var(--pdp-note);
+    color: var(--color-text-muted);
   }
+  .pdp-trust__item--star { color: var(--color-ink); font-weight: 700; }
+  .pdp-trust__sep { width: 1px; height: 1rem; background: var(--color-border); }
 
-  .accordion-icon {
-    transition: transform var(--accordion-transition);
-    flex-shrink: 0;
+  /* ---- 5 · CORPO ---- */
+  .pdp-body { background: var(--color-base); }
+  .pdp-body__grid {
+    display: grid;
+    gap: var(--space-xl);
+    padding-block: var(--space-2xl);
+    align-items: start;
   }
+  .pdp-body__main { display: flex; flex-direction: column; gap: var(--space-2xl); min-width: 0; }
+  .pdp-block { min-width: 0; }
 
-  .accordion-content {
+  .pdp-lead {
+    font-family: var(--font-body);
+    font-size: var(--pdp-lead);
+    line-height: var(--line-normal);
+    color: var(--color-text);
+    max-width: var(--measure);
+    margin: 0 0 var(--space-m);
+  }
+  .pdp-prose {
+    font-family: var(--font-body);
+    font-size: var(--pdp-body);
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--color-text);
+    max-width: 42rem;
+    margin: 0 0 var(--space-s);
+  }
+  .pdp-prose--contained { max-width: 42rem; }
+
+  /* Read-more (doc §11) */
+  .pdp-overview__more {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--accordion-transition);
+    transition: max-height 0.3s ease;
   }
-
-  .accordion-item.active .accordion-content {
-    max-height: var(--accordion-max-height);
-  }
-
-  .accordion-item.active .accordion-icon {
-    transform: rotate(180deg);
-  }
-
-  .accordion-content > :first-child {
-    padding: 0 var(--space-lg) var(--space-lg);
-  }
-
-  .highlights-list,
-  .included-list,
-  .tips-list {
-    list-style: none;
-    margin: 0;
+  .pdp-overview__more.is-open { max-height: 200rem; }
+  .pdp-readmore {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--pdp-touch);
+    background: none;
+    border: none;
     padding: 0;
-    display: grid;
-    gap: var(--space-sm);
-  }
-
-  .highlight-item,
-  .included-item,
-  .tip-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-  }
-
-  .highlight-item svg,
-  .included-item svg,
-  .tip-item svg {
-    color: var(--color-accent);
-    flex-shrink: 0;
-    margin-top: 0.125rem;
-  }
-
-  .included-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--included-grid-min), 1fr));
-    gap: var(--space-xl);
-  }
-
-  .included-title {
-    margin-bottom: var(--space-md);
-  }
-
-  .included-yes {
-    color: var(--color-accent);
-  }
-
-  .included-no {
-    color: var(--color-text-light);
-  }
-
-  .included-item:not(.not-included) svg {
-    color: var(--color-success);
-  }
-
-  .included-item.not-included svg {
-    color: var(--color-error);
-  }
-
-  .pricing-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .price-highlight {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--space-xl);
-    background-color: var(--color-bg-soft);
-    border-radius: clamp(0.3rem, 0.6vw, 0.375rem);
-    text-align: center;
-  }
-
-  .price-highlight .price-label {
-    font-size: var(--font-size-body);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-xs);
-  }
-
-  .pricing-custom .price-highlight {
-    gap: var(--space-md);
-  }
-
-  .price-custom-title {
-    font-size: var(--font-size-h3);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
-  }
-
-  .price-custom-description {
-    font-size: var(--font-size-body);
-    color: var(--color-text-light);
-    max-width: clamp(26rem, 70vw, 31.25rem);
-    line-height: var(--line-height-relaxed);
-  }
-
-  .pricing-table-wrapper h4 {
-    margin-bottom: var(--space-md);
-  }
-
-  .pricing-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: var(--space-md);
-  }
-
-  .pricing-table th,
-  .pricing-table td {
-    padding: var(--space-md);
-    text-align: left;
-    border-bottom: var(--border-width-hairline) solid var(--color-border);
-  }
-
-  .pricing-table th {
-    background-color: var(--color-bg-soft);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  .pricing-table td:last-child {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .payment-policies,
-  .faq-list {
-    display: grid;
-    gap: var(--space-md);
-  }
-
-  .policy-list {
-    margin: 0;
-    padding-left: 1.25rem;
-    display: grid;
-    gap: var(--space-sm);
-  }
-
-  .faq-question {
-    margin-bottom: var(--space-xs);
-  }
-
-  .faq-answer {
-    margin: 0;
-    color: var(--color-text-light);
-  }
-
-  .related-products {
-    padding: var(--space-3xl) 0;
-    background-color: var(--color-bg-soft);
-  }
-
-  .related-products .container {
-    max-width: none;
-    padding-inline: var(--space-xl-compact);
-  }
-
-  .related-grid {
-    margin-top: var(--space-2xl);
-    gap: var(--space-md);
-  }
-
-  .product-cta {
-    padding: var(--space-3xl) 0;
-    background: linear-gradient(
-      135deg,
-      var(--color-bg-dark) 0%,
-      var(--color-primary) 50%,
-      var(--color-bg-dark) 100%
-    );
-  }
-
-  .cta-content {
-    text-align: center;
-    max-width: var(--cta-max);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-lg);
-  }
-
-  .cta-title {
-    color: var(--color-text-inverse);
-    margin: 0;
-  }
-
-  .cta-subtitle {
-    font-size: var(--font-size-h5);
-    color: var(--cta-subtitle-color);
-    margin: 0;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: var(--space-md);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .cta-buttons .btn-outline-secondary {
-    color: var(--color-text-inverse);
-    border-color: var(--color-text-inverse);
-  }
-
-  .cta-buttons .btn-outline-secondary:hover {
-    background-color: var(--color-text-inverse);
-    color: var(--color-primary);
-  }
-
-  .product-cta__whatsapp {
-    display: block;
-    margin-top: var(--space-md);
-    font-size: var(--font-size-small);
-    color: color-mix(in srgb, var(--color-text-inverse) 70%, transparent);
-    text-decoration: none;
-    transition: color var(--transition-duration-normal) var(--transition-easing-default);
-  }
-
-  .product-cta__whatsapp:hover {
-    color: var(--color-text-inverse);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--pdp-body);
+    color: var(--color-blue);
+    cursor: pointer;
     text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
-    .product-hero {
-      min-height: 50vh;
-    }
+  .pdp-crosslink {
+    margin-top: var(--space-l);
+    padding: var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+  .pdp-crosslink__text { margin: 0 0 var(--space-2xs); font-size: var(--pdp-body); color: var(--color-text); }
 
-    .hero-content {
-      padding: calc(var(--space-2xl) + var(--space-md)) 0 var(--space-xl);
-    }
+  /* Numeração (doc §8) */
+  .pdp-num-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-s); }
+  .pdp-num { display: flex; gap: var(--space-s); align-items: baseline; }
+  .pdp-num__n {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--pdp-stop);
+    color: var(--color-blue);
+    flex-shrink: 0;
+    min-width: 1.75rem;
+  }
+  .pdp-num__label { font-family: var(--font-body); font-size: var(--pdp-stop); color: var(--color-ink); line-height: 1.4; }
 
-    .hero-meta {
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
+  /* Included / not included */
+  .pdp-incl { display: grid; gap: var(--space-l); }
+  .pdp-incl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2xs); }
+  .pdp-incl__row { display: flex; gap: var(--space-2xs); align-items: baseline; font-size: var(--pdp-body); color: var(--color-text); }
+  .pdp-incl__mark { flex-shrink: 0; font-weight: 700; }
+  .pdp-incl__row--yes .pdp-incl__mark { color: var(--color-blue); }
+  .pdp-incl__row--no { color: var(--color-text-muted); }
+  .pdp-notincl { background: var(--color-surface); }
+  .pdp-notincl__title {
+    margin: 0 0 var(--space-2xs);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--pdp-note);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
 
-    .product-overview {
-      padding: var(--space-2xl) 0 var(--space-xl);
-    }
+  .pdp-panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-m);
+  }
 
-    .product-details {
-      padding: 0 0 var(--space-2xl);
-    }
+  /* ---- Booking card (doc §5, §6) ---- */
+  .pdp-book {
+    background: var(--color-base-dark);
+    color: var(--color-on-blue);
+    border: 1px solid color-mix(in srgb, var(--color-on-blue) 12%, transparent);
+    border-radius: var(--radius);
+    padding: var(--space-l);
+    align-self: start;
+  }
+  .pdp-book__head { margin-bottom: var(--space-s); }
+  .pdp-book .pdp-eyebrow { color: color-mix(in srgb, var(--color-on-blue) 70%, transparent); }
+  .pdp-book .pdp-h3 { color: var(--color-on-blue); }
+  .pdp-book__body { display: flex; flex-direction: column; gap: var(--space-s); }
+  .pdp-book__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-3xs) var(--space-2xs); }
+  .pdp-book__cur { font-size: var(--pdp-note); opacity: 0.8; }
+  .pdp-book__amount { font-family: var(--font-display); font-weight: 500; font-size: var(--text-3); line-height: 1; }
+  .pdp-book__unit { width: 100%; font-size: var(--pdp-note); opacity: 0.8; }
+  .pdp-book__chips { display: flex; flex-wrap: wrap; gap: var(--space-3xs); }
+  .pdp-chip {
+    min-height: var(--pdp-touch);
+    padding: 0 var(--space-s);
+    background: transparent;
+    color: var(--color-on-blue);
+    border: 1px solid color-mix(in srgb, var(--color-on-blue) 30%, transparent);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: var(--pdp-note);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .pdp-chip[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--color-on-blue) 16%, transparent);
+    border-color: var(--color-on-blue);
+  }
+  .pdp-book__boats { display: grid; gap: var(--space-s); }
+  .pdp-boat__name { margin: 0 0 var(--space-3xs); font-size: var(--pdp-note); opacity: 0.85; }
+  .pdp-book__cta { width: 100%; }
+  .pdp-book__pay { margin: 0; font-size: var(--pdp-note); text-align: center; opacity: 0.85; }
+  .pdp-book__trust { margin: 0; font-size: var(--pdp-eyebrow); text-align: center; color: color-mix(in srgb, var(--color-on-blue) 65%, transparent); }
+  .pdp-book__custom { font-family: var(--font-display); font-size: var(--text-2); margin: 0; }
+  .pdp-book__note { font-size: var(--pdp-note); opacity: 0.85; margin: 0; }
 
-    .accordion-title {
-      font-size: var(--font-size-body);
-    }
+  /* ---- 6 · PROVA ---- */
+  .pdp-proof { background: var(--color-base); padding-block: var(--space-2xl); }
+  .pdp-proof__caption { font-size: var(--pdp-note); color: var(--color-text-muted); margin: 0 0 var(--space-m); font-style: italic; }
+  .pdp-proof__rail { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-s); }
 
-    .included-grid {
-      grid-template-columns: 1fr;
-    }
+  /* ---- 7 · DEPOIMENTOS ---- */
+  .pdp-voices { background: var(--color-surface); padding-block: var(--space-2xl); }
+  .pdp-voices__grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-s); }
+  .pdp-voice__quote { font-family: var(--font-display); font-size: var(--pdp-stop); color: var(--color-ink); margin: 0 0 var(--space-2xs); }
+  .pdp-voice__author { font-size: var(--pdp-note); color: var(--color-text-muted); margin: 0; }
 
-    .related-products {
-      padding: var(--space-2xl) 0;
-    }
+  /* Placeholder de dado pendente — visualmente marcado */
+  .pdp-placeholder {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-l);
+    text-align: center;
+    font-size: var(--pdp-note);
+    color: var(--color-text-muted);
+  }
 
-    .product-cta {
-      padding: var(--space-2xl) 0;
-    }
+  /* ---- 8 · FAQ + POLICIES ---- */
+  .pdp-faq { background: var(--color-base); padding-block: var(--space-2xl); }
+  .pdp-faq__grid { display: grid; gap: var(--space-xl); }
+  .pdp-acc { display: flex; flex-direction: column; gap: var(--space-2xs); }
+  .pdp-acc__item { border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); overflow: hidden; }
+  .pdp-acc__header {
+    width: 100%;
+    min-height: var(--pdp-touch);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--pdp-body);
+    color: var(--color-ink);
+  }
+  .pdp-acc__icon { flex-shrink: 0; font-size: 1.25rem; color: var(--color-blue); transition: transform 0.2s ease; }
+  .pdp-acc__header[aria-expanded="true"] .pdp-acc__icon { transform: rotate(45deg); }
+  .pdp-acc__panel { padding: 0 var(--space-m) var(--space-m); font-size: var(--pdp-body); color: var(--color-text); }
+  .pdp-acc__panel p { margin: 0; line-height: 1.55; }
+  .pdp-policy { margin: 0; padding-left: 1.25rem; display: grid; gap: var(--space-2xs); }
+  .pdp-policy strong { display: block; }
 
-    .cta-buttons {
-      flex-direction: column;
-      width: 100%;
-      max-width: clamp(18rem, 80vw, 20rem);
-    }
+  /* ---- 9 · RELATED ---- */
+  .pdp-related { background: var(--color-surface); padding-block: var(--space-2xl); }
+  .pdp-related__grid { display: grid; gap: var(--space-m); }
 
-    .cta-buttons .btn {
-      width: 100%;
+  /* ---- 11 · CTA FINAL ---- */
+  .pdp-final { background: var(--color-blue); color: var(--color-on-blue); padding-block: var(--space-2xl); }
+  .pdp-final__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-s); }
+  .pdp-final__title { font-family: var(--font-display); font-weight: 500; font-size: var(--pdp-h2); color: var(--color-on-blue); margin: 0; }
+  .pdp-final__sub { font-size: var(--pdp-lead); color: color-mix(in srgb, var(--color-on-blue) 88%, transparent); margin: 0; max-width: 42rem; }
+  .pdp-final__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-s); }
+  .pdp-final__ghost {
+    min-height: var(--pdp-touch);
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--pdp-note);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+    text-decoration: none;
+  }
+  .pdp-final__ghost:hover { color: var(--color-on-blue); text-decoration: underline; }
+
+  /* ============================================================
+     DESKTOP (doc §6) — grid 1fr 22rem, listas 2-col, booking sticky
+     ============================================================ */
+  @media (min-width: 1024px) {
+    .pdp-body__grid { grid-template-columns: 1fr 22rem; gap: 4rem; }
+    .pdp-book { position: sticky; top: var(--space-l); }
+    .pdp-num-list.is-multi { grid-template-columns: 1fr 1fr; column-gap: var(--space-xl); }
+    .pdp-incl-list.is-multi { grid-template-columns: 1fr 1fr; column-gap: var(--space-xl); }
+    .pdp-incl { grid-template-columns: 1fr; }
+    .pdp-faq__grid { grid-template-columns: 1fr 1fr; }
+    .pdp-related__grid { grid-template-columns: repeat(3, 1fr); }
+    .pdp-voices__grid { grid-template-columns: repeat(3, 1fr); }
+    .pdp-proof__rail { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Mobile: trilho horizontal p/ prova quando houver fotos (doc §7) */
+  @media (max-width: 1023.98px) {
+    .pdp-proof__rail:not(:empty) {
+      grid-auto-flow: column;
+      grid-auto-columns: 78%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
     }
+    .pdp-proof__rail::-webkit-scrollbar { height: 0; }
+    .pdp-proof__item { scroll-snap-align: start; }
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const accordionHeaders = document.querySelectorAll("[data-accordion-trigger]");
-
-    accordionHeaders.forEach((header) => {
-      header.addEventListener("click", () => {
-        const accordionItem = header.closest(".accordion-item");
-        const isActive = accordionItem.classList.contains("active");
-
-        document.querySelectorAll(".accordion-item").forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        if (!isActive) {
-          accordionItem.classList.add("active");
-        }
+    // Read-more (doc §11): texto sempre no DOM; botão aria-expanded
+    document.querySelectorAll("[data-readmore-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const wrap = btn.closest("[data-readmore]");
+        const body = wrap?.querySelector("[data-readmore-body]");
+        if (!body) return;
+        const open = body.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.textContent = open ? btn.dataset.labelLess : btn.dataset.labelMore;
       });
     });
 
-    const firstItem = document.querySelector(".accordion-item");
-    if (firstItem) {
-      firstItem.classList.add("active");
-    }
+    // Acordeão FAQ + policies (doc §13): todos fechados por default
+    document.querySelectorAll("[data-acc-trigger]").forEach((header) => {
+      header.addEventListener("click", () => {
+        const expanded = header.getAttribute("aria-expanded") === "true";
+        const panelId = header.getAttribute("aria-controls");
+        const panel = panelId ? document.getElementById(panelId) : null;
+        header.setAttribute("aria-expanded", expanded ? "false" : "true");
+        if (panel) panel.hidden = expanded;
+      });
+    });
+
+    // Booking card: preço ao vivo por chip (formato A e B)
+    document.querySelectorAll(".pdp-book").forEach((card) => {
+      const amount = card.querySelector("[data-price-amount]");
+      const chips = card.querySelectorAll(".pdp-chip");
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          if (amount && chip.dataset.price) amount.textContent = chip.dataset.price;
+          // aria-pressed exclusivo dentro do mesmo grupo
+          const grp = chip.closest(".pdp-book__chips");
+          grp?.querySelectorAll(".pdp-chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+          chip.setAttribute("aria-pressed", "true");
+        });
+      });
+    });
   });
 </script>
