@@ -53,40 +53,14 @@ const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
 
 <style>
   .breadcrumbs {
-    --breadcrumbs-top: clamp(4rem, 7vw, 4.5rem);
-    --breadcrumbs-top-mobile: clamp(3.5rem, 6vw, 4rem);
-    --breadcrumbs-padding-top: calc(var(--space-md) + var(--space-sm-compact));
-    --breadcrumbs-padding-bottom: var(--space-md);
-    --breadcrumbs-padding-mobile: var(--space-sm);
-    --breadcrumbs-border: var(--border-width-hairline);
-    --breadcrumbs-blur: var(--blur-sm);
-    --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-white) 95%, transparent);
-    --breadcrumbs-shadow: 0 2px 8px color-mix(in srgb, black 5%, transparent);
-    --breadcrumbs-shadow-dark: 0 2px 8px color-mix(in srgb, black 30%, transparent);
-    --breadcrumbs-transition: box-shadow var(--transition-duration-slow) var(--transition-easing-default);
+    /* Breadcrumb discreta (decisão de projeto): situa na chegada, NÃO acompanha
+       a leitura. Sem sticky, sem faixa (background/blur), sem borda, sem sombra —
+       vive sobre o fundo da seção. O markup fica (alimenta o BreadcrumbList do
+       schema); muda só a apresentação. Removidos: --breadcrumbs-top/-mobile (o
+       proxy chumbado da altura do nav — a âncora agora é --nav-h no tokens.css),
+       o background/blur, o border-bottom e o box-shadow do .scrolled + o listener. */
     --separator-size: clamp(0.625rem, 1.5vw, 0.75rem);
-
-    
-    position: sticky;
-    top: var(--breadcrumbs-top); 
-    z-index: calc(var(--navbar-z, 1000) - 1); 
-
-    
-    padding-top: var(--breadcrumbs-padding-top);
-    padding-bottom: var(--breadcrumbs-padding-bottom);
-    border-bottom: var(--breadcrumbs-border) solid var(--color-border);
-
-    
-    backdrop-filter: blur(var(--breadcrumbs-blur));
-    background-color: var(--breadcrumbs-bg);
-
-    
-    transition: var(--breadcrumbs-transition);
-  }
-
-  
-  .breadcrumbs.scrolled {
-    box-shadow: var(--breadcrumbs-shadow);
+    padding-block: var(--space-s);
   }
 
   .breadcrumb-list {
@@ -132,8 +106,7 @@ const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
   
   @media (max-width: 768px) {
     .breadcrumbs {
-      top: var(--breadcrumbs-top-mobile); 
-      padding: var(--breadcrumbs-padding-mobile) 0; 
+      padding-block: var(--space-xs);
     }
 
     .breadcrumb-list {
@@ -148,31 +121,4 @@ const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
   }
 
   
-  :global([data-theme="dark"]) .breadcrumbs {
-    --breadcrumbs-bg: color-mix(in srgb, var(--color-bg-soft) 95%, transparent);
-    border-bottom-color: color-mix(in srgb, white 10%, transparent);
-  }
-
-  :global([data-theme="dark"]) .breadcrumbs.scrolled {
-    box-shadow: var(--breadcrumbs-shadow-dark);
-  }
 </style>
-
-
-<script>
-  
-  const breadcrumbs = document.querySelector(".breadcrumbs");
-
-  if (breadcrumbs) {
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset;
-
-      
-      if (currentScroll > 50) {
-        breadcrumbs.classList.add("scrolled");
-      } else {
-        breadcrumbs.classList.remove("scrolled");
-      }
-    });
-  }
-</script>

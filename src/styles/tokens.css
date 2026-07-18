@@ -58,6 +58,12 @@
   --container-wide: 75rem;  /* ~1200px grids/mídia */
   --measure: 65ch;          /* ~65 char texto corrido */
 
+  /* Altura do nav — FIXA por decisão de projeto. O nav é fixed e cromo, não conteúdo:
+     não cresce com o viewport. Âncora única para tudo que precisa desviar dele
+     (breadcrumb sticky, booking card sticky). Antes disto cada consumidor chutava
+     um valor próprio, todos menores que a altura real. */
+  --nav-h: 4.5rem;   /* 72px */
+
   /* RADIUS — raio único do design system. 6px em TODO canto arredondado do site
      (cards, painéis, botões, inputs…). A escala --radius-sm/md/lg (global.css)
      converge p/ este valor; só --radius-full (pills/círculos) é exceção. */

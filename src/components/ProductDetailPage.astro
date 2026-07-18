@@ -1132,7 +1132,9 @@ const heroAlt = highlights[0]
      ============================================================ */
   @media (min-width: 1024px) {
     .pdp-body__grid { grid-template-columns: 1fr 22rem; gap: 4rem; }
-    .pdp-book { position: sticky; top: var(--space-l); }
+    /* Sticky abaixo do nav fixo: --nav-h (âncora única) + --space-m de respiro.
+       Antes era var(--space-l) (~32-40px), menor que o nav — o card entrava por baixo. */
+    .pdp-book { position: sticky; top: calc(var(--nav-h) + var(--space-m)); }
     .pdp-num-list.is-multi { grid-template-columns: 1fr 1fr; column-gap: var(--space-xl); }
     .pdp-incl-list.is-multi { grid-template-columns: 1fr 1fr; column-gap: var(--space-xl); }
     .pdp-incl { grid-template-columns: 1fr; }

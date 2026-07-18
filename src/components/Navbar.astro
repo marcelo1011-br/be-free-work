@@ -200,7 +200,6 @@ function isActive(href: string): boolean {
     --navbar-z: 1000;
     --navbar-blur: var(--blur-md);
     --navbar-bg: color-mix(in srgb, var(--color-primary) 80%, transparent);
-    --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 95%, transparent);
     --navbar-border-color: var(--glass-border);
     --navbar-hover-bg: color-mix(in srgb, white 10%, transparent);
     --navbar-light-text: color-mix(in srgb, white 80%, transparent);
@@ -230,14 +229,6 @@ function isActive(href: string): boolean {
     --navbar-light-text: color-mix(in srgb, white 90%, transparent);
   }
 
-  .navbar.scrolled {
-    background: var(--navbar-bg-scrolled);
-  }
-
-  :global(:root:not([data-theme="dark"])) .navbar.scrolled {
-    --navbar-bg-scrolled: color-mix(in srgb, var(--color-primary) 98%, transparent);
-  }
-
   .navbar :global(.container) {
     max-inline-size: 100%;
     padding-inline: clamp(1rem, 4vw, 2rem);
@@ -247,7 +238,11 @@ function isActive(href: string): boolean {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-md) 0;
+    /* Altura FIXA do nav (--nav-h = 72px). align-items:center centraliza o logo
+       (máx 48px) na faixa; o padding vertical sai — a altura deixa de depender do
+       clamp de --space-md + --logo-size e passa a ser determinística em qualquer
+       viewport. O border-bottom (1px) do .navbar fica abaixo desta caixa. */
+    min-block-size: var(--nav-h);
     gap: var(--space-lg);
   }
 
@@ -287,6 +282,11 @@ function isActive(href: string): boolean {
   }
 
   .nav-link {
+    /* a11y: alvo de toque ≥2.75rem (44px). inline-flex+center para o min-block-size
+       valer num <a> (inline não aceita) e centralizar o texto na altura garantida. */
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
     color: var(--color-text-light);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
@@ -323,6 +323,10 @@ function isActive(href: string): boolean {
   .icon-button {
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* a11y: alvo de toque ≥2.75rem (44px), quadrado nos ícones. */
+    min-block-size: 2.75rem;
+    min-inline-size: 2.75rem;
     gap: var(--space-xs);
     padding: var(--space-xs);
     background: none;
@@ -407,6 +411,8 @@ function isActive(href: string): boolean {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* a11y: alvo de toque ≥2.75rem (44px). */
+    min-block-size: 2.75rem;
     gap: var(--space-sm);
     padding: var(--space-sm);
     border-radius: var(--radius-sm);
@@ -443,6 +449,11 @@ function isActive(href: string): boolean {
   
   .mobile-menu-button {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    /* a11y: alvo de toque ≥2.75rem (44px), quadrado. */
+    min-block-size: 2.75rem;
+    min-inline-size: 2.75rem;
     padding: var(--space-xs);
     background: none;
     border: none;
@@ -491,17 +502,6 @@ function isActive(href: string): boolean {
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
     background-color: var(--navbar-hover-bg);
-  }
-
-  .mobile-nav-cta {
-    background: var(--gradient-accent);
-    color: var(--color-text-inverse);
-    text-align: center;
-    font-weight: var(--font-weight-semibold);
-  }
-
-  .mobile-nav-cta:hover {
-    background: var(--color-accent-light);
   }
 
   
