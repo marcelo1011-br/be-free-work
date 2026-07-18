@@ -169,9 +169,9 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
 </section>
 
 <style>
-  /* ---- HERO: banda navy sólida (par AA --color-blue / --color-on-blue) ---- */
+  /* ---- HERO: banda navy TERMINAL (par AA --color-base-dark / --color-on-blue, doc §2) ---- */
   .dt-hero {
-    background: var(--color-blue);
+    background: var(--color-base-dark);
     color: var(--color-on-blue);
     padding-block: calc(var(--space-2xl) + var(--space-m)) var(--space-2xl);
   }
@@ -180,11 +180,14 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     text-align: center;
   }
   .dt-hero__title {
+    /* H1 hero canônico (doc §3): 33→56px. Antes herdava --font-size-h1 (bridge) do global. */
+    font-size: clamp(2.0625rem, 1.529rem + 2.19vw, 3.5rem);
     color: var(--color-on-blue);
     margin: 0 0 var(--space-s);
   }
   .dt-hero__subtitle {
-    font-size: var(--text-1);
+    /* Lead canônico (doc §3): 15→19px. Antes --text-1 (21.6→25px). */
+    font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
     line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     margin: 0 auto var(--space-xl);
@@ -223,17 +226,33 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     outline-offset: var(--focus-outline-offset);
   }
 
-  /* ---- Seções bone padrão ---- */
+  /* ---- Sequência de superfícies (doc §2): navy → bone → branco → bone → azul → FAQ → bone.
+       Nenhuma corre por mais de 2 seções seguidas. ---- */
   .dt-intro,
-  .dt-mood,
-  .dt-destinations,
-  .dt-why {
+  .dt-destinations {
     background: var(--color-base);
     color: var(--color-text);
     padding-block: var(--space-3xl);
   }
 
+  /* MOOD: banda branca (surface). Cards ficam surface + hairline border — a borda
+     os define sobre o branco (doc §5 + §1.4: card é borda, não elevação). */
+  .dt-mood {
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding-block: var(--space-3xl);
+  }
+
+  /* WHY: única faixa azul do corpo, full-bleed (clímax visual). Conteúdo on-blue. */
+  .dt-why {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: var(--space-3xl);
+  }
+
   .dt-h2 {
+    /* H2 de seção canônico (doc §3): 26→32px. Antes herdava --font-size-h2 (bridge) do global. */
+    font-size: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
     color: var(--color-text);
   }
 
@@ -246,7 +265,8 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: var(--text--1);
+    /* Eyebrow canônico (doc §3): 10→11px. Antes --text--1 (15→16px). */
+    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
     margin: 0 0 var(--space-2xs);
   }
   .dt-intro__copy {
@@ -258,7 +278,8 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     color: var(--color-text-muted);
     line-height: var(--line-normal);
     margin: 0;
-    font-size: var(--text-1);
+    /* Corpo canônico (doc §3): 15→17px. Antes --text-1 (21.6→25px). */
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
   }
 
   /* ---- MOOD MENU ---- */
@@ -292,12 +313,15 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   }
   .dt-mood__label {
     font-family: var(--font-display);
-    font-size: var(--text-1);
+    /* Título de card canônico (doc §3): 15→18px. Antes --text-1 (21.6→25px). */
+    font-size: clamp(0.9375rem, 0.8679rem + 0.286vw, 1.125rem);
     color: var(--color-blue);
   }
   .dt-mood__text {
     color: var(--color-text-muted);
     line-height: var(--line-normal);
+    /* Nota/support canônico (doc §3): 12.5→14px. Antes herdava corpo default. */
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
   }
 
   /* ---- DESTINATIONS (alternando foto/texto) ---- */
@@ -330,6 +354,8 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     color: var(--color-text-muted);
     line-height: var(--line-normal);
     margin: 0 0 var(--space-m);
+    /* Nota/support canônico (doc §3): 12.5→14px. Antes herdava corpo default. */
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
   }
   .dt-dest__todo {
     color: var(--color-text-muted);
@@ -337,15 +363,14 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   }
 
   /* ---- WHY PRIVATE ---- */
+  /* Painel dissolvido: sobre a faixa azul full-bleed, o conteúdo é só centrado
+     (sem card/borda/fundo — a própria banda é o clímax). */
   .dt-why__panel {
-    background: var(--color-surface);
-    border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius);
-    padding: var(--space-2xl);
     max-width: 60rem;
     margin: 0 auto;
   }
   .dt-why__panel .dt-h2 {
+    color: var(--color-on-blue);
     text-align: center;
     margin-top: 0;
     margin-bottom: var(--space-xl);
@@ -362,9 +387,10 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     display: flex;
     gap: var(--space-s);
     align-items: flex-start;
-    color: var(--color-text-muted);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     line-height: var(--line-normal);
   }
+  /* Mark invertido: bone sobre azul (o azul do fundo o esconderia). */
   .dt-why__mark {
     display: inline-flex;
     align-items: center;
@@ -373,8 +399,8 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     width: 1.75rem;
     height: 1.75rem;
     border-radius: var(--radius-full);
-    background: var(--color-blue);
-    color: var(--color-on-blue);
+    background: var(--color-on-blue);
+    color: var(--color-blue);
     font-weight: var(--font-weight-bold);
   }
 
@@ -395,7 +421,8 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   .dt-final__text {
     color: var(--color-text-muted);
     line-height: var(--line-normal);
-    font-size: var(--text-1);
+    /* Corpo canônico (doc §3): 15→17px. Antes --text-1 (21.6→25px). */
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
     margin: var(--space-s) auto var(--space-xl);
     max-width: 54ch;
   }
@@ -409,14 +436,7 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     .dt-final {
       padding-block: var(--space-2xl);
     }
-    .dt-hero__title {
-      font-size: var(--text-3);
-    }
-    .dt-hero__subtitle,
-    .dt-intro__copy p,
-    .dt-final__text {
-      font-size: var(--text-0);
-    }
+    /* Sem override de font-size no mobile: os clamps canônicos já são fluidos 390→1440. */
     .dt-mood__grid,
     .dt-why__list {
       grid-template-columns: 1fr;
@@ -427,9 +447,6 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     }
     .dt-dest:nth-child(even) .dt-dest__media {
       order: 0;
-    }
-    .dt-why__panel {
-      padding: var(--space-m);
     }
   }
 </style>
