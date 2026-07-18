@@ -65,6 +65,9 @@ const r = routes[lang] || routes.en;
     justify-content: center;
     min-height: 70vh;
     padding: 2rem;
+    /* Offset do nav fixo: a 404 é a única página não-home que começa sob o nav
+       (sem breadcrumb). --nav-h vem do tokens.css (via BaseLayout), acessível aqui. */
+    padding-block-start: var(--nav-h);
     text-align: center;
   }
 

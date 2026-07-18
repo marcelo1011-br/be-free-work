@@ -60,6 +60,12 @@ const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
        proxy chumbado da altura do nav — a âncora agora é --nav-h no tokens.css),
        o background/blur, o border-bottom e o box-shadow do .scrolled + o listener. */
     --separator-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    /* Offset do nav fixo: o nav (position:fixed) fica fora do fluxo e não empurra
+       o conteúdo; a breadcrumb (1º elemento em toda página que não seja a home)
+       assentaria sob ele. margin-block-start = --nav-h a desce para logo abaixo do
+       nav; o espaço de 72px fica atrás do nav fixo, sem gap visível. A HOME não tem
+       breadcrumb (começa com HeroFull full-bleed sob o nav), então fica intocada. */
+    margin-block-start: var(--nav-h);
     padding-block: var(--space-s);
   }
 
