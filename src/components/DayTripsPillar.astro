@@ -53,12 +53,29 @@ function destImage(tourKey) {
   return heroImages[`../images/tours/heroes/${tourKey}-hero.webp`]?.default;
 }
 
-// Blocos de destino: fatos + href localizado + prose do locale.
+// Eyebrow "for X" (reusa moodMenu, keyed por destKey) e meta (duração · preço, de
+// tours.js). fromLabel = mapa local por locale (mesmo padrão do homeLabel abaixo);
+// NENHUM arquivo de dado é tocado — só leitura de tours.js/dayTripsContent já importados.
+const moodLabel = Object.fromEntries(t.moodMenu.items.map((m) => [m.destKey, m.label]));
+const fromLabel = { en: "From", es: "Desde", "pt-br": "A partir de" }[lang];
+function destMeta(tourKey) {
+  const idx = enSlugs.indexOf(tourKey);
+  const tt = tours[lang]?.[idx];
+  if (!tt) return null;
+  const p = tt.pricing || {};
+  if (p.custom) return tt.duration; // a duração já carrega "sob consulta"
+  const from = p.from ?? (p.standard ? Math.min(...Object.values(p.standard)) : null);
+  return from != null ? `${tt.duration} · ${fromLabel} US$ ${from}` : tt.duration;
+}
+
+// Blocos de destino: fatos + href localizado + prose + eyebrow + meta.
 const destBlocks = dayTripsDestinations.map((d) => ({
   ...d,
   href: tourHref(d.tourKey),
   image: destImage(d.tourKey),
   prose: t.destinations[d.key],
+  eyebrow: moodLabel[d.key],
+  meta: destMeta(d.tourKey),
 }));
 
 // FAQ.astro espera {question, answer}; a prose usa {q, a}.
@@ -108,25 +125,28 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   </div>
 </section>
 
-<!-- DESTINATIONS (bone, blocos alternando foto/texto) -->
+<!-- DESTINATIONS (linhas full-bleed alternadas: imagem sangra num lado, texto no outro) -->
 <section class="dt-destinations" id="destinations">
-  <div class="container">
-    {destBlocks.map((d, i) => (
-      <article class="dt-dest" id={`dest-${d.key}`}>
-        <div class="dt-dest__media">
-          {d.image && (
-            <Image
-              src={d.image}
-              alt={d.prose.name}
-              width={760}
-              height={560}
-              class="dt-dest__img"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-          )}
-        </div>
-        <div class="dt-dest__body">
+  {destBlocks.map((d, i) => (
+    <article class="dt-dest" id={`dest-${d.key}`}>
+      <div class="dt-dest__media">
+        <span class="dt-dest__num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+        {d.image && (
+          <Image
+            src={d.image}
+            alt={d.prose.name}
+            width={760}
+            height={560}
+            class="dt-dest__img"
+            loading={i === 0 ? "eager" : "lazy"}
+          />
+        )}
+      </div>
+      <div class="dt-dest__body">
+        <div class="dt-dest__inner">
+          {d.eyebrow && <p class="dt-dest__eyebrow">{d.eyebrow}</p>}
           <h2 class="dt-dest__name">{d.prose.name}</h2>
+          {d.meta && <p class="dt-dest__meta">{d.meta}</p>}
           <p class="dt-dest__blurb">{d.prose.blurb}</p>
           {d.href ? (
             <Button variant="outline" href={d.href}>{d.prose.ctaLabel}</Button>
@@ -134,9 +154,9 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
             <span class="dt-dest__todo">[href TODO: {d.tourKey}]</span>
           )}
         </div>
-      </article>
-    ))}
-  </div>
+      </div>
+    </article>
+  ))}
 </section>
 
 <!-- WHY PRIVATE (checklist em painel surface) -->
@@ -325,36 +345,96 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
   }
 
   /* ---- DESTINATIONS (alternando foto/texto) ---- */
+  /* Linha full-bleed: imagem sangra num lado, texto respira no outro (gutter).
+     Assimétrica 1fr : 1.15fr; alterna o lado a cada linha. */
   .dt-dest {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: var(--space-2xl);
-    align-items: center;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: stretch;
+    min-block-size: 24rem;
     scroll-margin-top: 6rem;
   }
   .dt-dest + .dt-dest {
-    margin-top: var(--space-3xl);
+    margin-top: var(--space-2xl);
+  }
+  /* Linha par: inverte (imagem à direita) — grid espelhado + ordem da mídia. */
+  .dt-dest:nth-child(even) {
+    grid-template-columns: 1.15fr 1fr;
   }
   .dt-dest:nth-child(even) .dt-dest__media {
     order: 2;
   }
+  /* Mídia: colide com a borda no seu lado, altura mínima 24rem. */
+  .dt-dest__media {
+    position: relative;
+    min-block-size: 24rem;
+    overflow: hidden;
+  }
   .dt-dest__img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
-    border-radius: var(--radius);
     display: block;
+  }
+  /* Número grande em serif atrás/na imagem, baixo contraste. */
+  .dt-dest__num {
+    position: absolute;
+    top: var(--space-xs);
+    left: var(--space-m);
+    z-index: 1;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 3rem + 6vw, 8rem);
+    line-height: 1;
+    color: color-mix(in srgb, var(--color-on-blue) 22%, transparent);
+    pointer-events: none;
+  }
+  /* Bloco de texto: centralizado no seu lado, com gutter (a imagem sangrou). */
+  .dt-dest__body {
+    display: flex;
+    align-items: center;
+  }
+  .dt-dest__inner {
+    max-width: 40rem;
+    padding: var(--space-xl) var(--gutter);
+    /* Alinha o texto ao lado EXTERNO da coluna (oposto à imagem que sangra), para
+       o padding-inline var(--gutter) do inner virar o gutter contra a borda da
+       página. Linha padrão (texto à direita): empurra p/ a direita. O padding
+       interno fica inalterado — o gutter que faltava é só o do lado de fora. */
+    margin-inline-start: auto;
+  }
+  /* Linha par (texto à esquerda): externo é a borda esquerda — volta ao flex-start. */
+  .dt-dest:nth-child(even) .dt-dest__inner {
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+  }
+  .dt-dest__eyebrow {
+    font-family: var(--font-body);
+    /* Eyebrow canônico (doc §3): 10→11px. */
+    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin: 0 0 var(--space-2xs);
   }
   .dt-dest__name {
     margin: 0 0 var(--space-2xs);
+    font-family: var(--font-display);
+    /* Título do destino: escala H de seção do doc §3 (26→32px), serif. */
+    font-size: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
     color: var(--color-text);
+  }
+  .dt-dest__meta {
+    /* Meta (duração · preço): nota canônica (doc §3), 12.5→14px. */
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-s);
   }
   .dt-dest__blurb {
     color: var(--color-text-muted);
     line-height: var(--line-normal);
     margin: 0 0 var(--space-m);
-    /* Nota/support canônico (doc §3): 12.5→14px. Antes herdava corpo default. */
+    /* Nota/support canônico (doc §3): 12.5→14px. */
     font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
   }
   .dt-dest__todo {
@@ -441,12 +521,21 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     .dt-why__list {
       grid-template-columns: 1fr;
     }
-    .dt-dest {
+    /* Empilha: imagem full-width em cima, texto embaixo. Reseta a inversão par. */
+    .dt-dest,
+    .dt-dest:nth-child(even) {
       grid-template-columns: 1fr;
-      gap: var(--space-m);
+      min-block-size: 0;
     }
     .dt-dest:nth-child(even) .dt-dest__media {
       order: 0;
+    }
+    .dt-dest__media {
+      min-block-size: 16rem;
+    }
+    .dt-dest__inner {
+      max-width: none;
+      padding-block: var(--space-l);
     }
   }
 </style>
