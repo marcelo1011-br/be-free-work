@@ -43,7 +43,6 @@ export const ui = {
     'footer.dayTrips': 'Day Trips from Rio',
     'footer.privateGuide': 'Private Guide',
     'footer.halfDay': 'Half-Day Tours',
-    'trust.reviews': '{n}+ Verified Reviews',
     'card.ticketsIncluded': 'Tickets Included',
     'general.onRequest': 'On Request',
     'general.perPerson': 'per person',
@@ -56,8 +55,6 @@ export const ui = {
     'quote.title': 'Request a quote',
     'quote.subtitle': "Tell us what you have in mind and we'll reply within 24 hours.",
     'quote.sending': 'Sending…',
-    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
-    'trust.since': 'Operating Since 2013',
     
     
     'btn.learnMore': 'Learn More',
@@ -247,7 +244,6 @@ export const ui = {
     'footer.dayTrips': 'Excursiones desde Río',
     'footer.privateGuide': 'Guía Privado',
     'footer.halfDay': 'Tours de Medio Día',
-    'trust.reviews': 'Más de {n} reseñas verificadas',
     'card.ticketsIncluded': 'Entradas Incluidas',
     'general.onRequest': 'Bajo Consulta',
     'general.perPerson': 'por persona',
@@ -260,8 +256,6 @@ export const ui = {
     'quote.title': 'Solicita un presupuesto',
     'quote.subtitle': 'Cuéntanos qué tienes en mente y te respondemos en 24 horas.',
     'quote.sending': 'Enviando…',
-    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
-    'trust.since': 'Operando desde 2013',
     
     
     'btn.learnMore': 'Más Información',
@@ -451,7 +445,6 @@ export const ui = {
     'footer.dayTrips': 'Bate e Volta do Rio',
     'footer.privateGuide': 'Guia Particular',
     'footer.halfDay': 'Passeios de Meio Dia',
-    'trust.reviews': 'Mais de {n} avaliações verificadas',
     'card.ticketsIncluded': 'Ingressos Inclusos',
     'general.onRequest': 'Sob Consulta',
     'general.perPerson': 'por pessoa',
@@ -464,8 +457,6 @@ export const ui = {
     'quote.title': 'Solicitar orçamento',
     'quote.subtitle': 'Conte o que você tem em mente e respondemos em até 24 horas.',
     'quote.sending': 'Enviando…',
-    'trust.platforms': 'TripAdvisor · Viator · Civitatis',
-    'trust.since': 'Operando desde 2013',
     
     
     'btn.learnMore': 'Saiba Mais',
