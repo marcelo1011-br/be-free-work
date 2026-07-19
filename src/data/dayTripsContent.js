@@ -69,6 +69,7 @@ export const dayTripsProse = {
       secondaryCta: { label: "Compare destinations", action: "destinations" },
     },
     intro: {
+      title: "A day trip from Rio is really a question of what kind of day you want.",
       kicker: "Where to next",
       paragraphs: [
         "A day trip from Rio is really a question of what kind of day you want. Cooler mountain air and imperial history point to Petrópolis; clear water and a private boat point to Ilha Grande; laid-back beach hopping points to Búzios.",
@@ -164,6 +165,7 @@ export const dayTripsProse = {
       secondaryCta: { label: "Comparar destinos", action: "destinations" },
     },
     intro: {
+      title: "Una excursión desde Río es, en realidad, una cuestión de qué tipo de día quieres.",
       kicker: "¿Adónde vas?",
       paragraphs: [
         "Elegir una excursión desde Río es, sobre todo, decidir qué tipo de día quieres. El aire fresco de la sierra y la historia imperial llevan a Petrópolis; el agua clara y una lancha privada, a Ilha Grande; las playas tranquilas, a Búzios.",
@@ -259,6 +261,7 @@ export const dayTripsProse = {
       secondaryCta: { label: "Ver os destinos", action: "destinations" },
     },
     intro: {
+      title: "Um bate-e-volta saindo do Rio é, na verdade, uma questão de que tipo de dia você quer.",
       kicker: "Por onde começar",
       paragraphs: [
         "Escolher um bate-volta saindo do Rio é, no fundo, escolher que tipo de dia você quer. Serra fresca e história imperial levam a Petrópolis; água clara e lancha privativa levam a Ilha Grande; praia com calma leva a Búzios.",

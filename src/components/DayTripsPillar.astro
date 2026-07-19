@@ -144,11 +144,13 @@ const heroTitleParts =
 <!-- INTRO (bone, coluna estreita ~65ch) -->
 <section class="dt-intro">
   <div class="container">
-    <div class="dt-intro__inner measure">
-      <p class="dt-kicker">{t.intro.kicker}</p>
-      <div class="dt-intro__copy">
-        {t.intro.paragraphs.map((p) => <p>{p}</p>)}
-      </div>
+    <div class="dt-intro__inner">
+      <header class="dt-intro__head">
+        <p class="dt-kicker">{t.intro.kicker}</p>
+        <h2 class="dt-intro__title">{t.intro.title}</h2>
+      </header>
+      <p class="dt-intro__lead">{t.intro.paragraphs[0]}</p>
+      {t.intro.paragraphs.slice(1).map((p) => <p class="dt-intro__body">{p}</p>)}
     </div>
   </div>
 </section>
@@ -438,30 +440,52 @@ const heroTitleParts =
     color: var(--color-text);
   }
 
-  /* ---- INTRO ---- */
-  .dt-intro__inner {
-    margin: 0 auto;
+  /* ---- INTRO: conformada ao overview da tour page (.pdp-head/.pdp-eyebrow/.pdp-h2/
+       .pdp-lead/.pdp-prose). 1 coluna, flush à esquerda, sem read-more. Os tokens
+       --pdp-* são escopados ao PDP → clamps literais equivalentes. ---- */
+  .dt-intro__head {
+    margin-bottom: var(--space-m);
   }
   .dt-kicker {
-    color: var(--color-blue);
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    /* Eyebrow canônico (doc §3): 10→11px. Antes --text--1 (15→16px). */
-    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
-    margin: 0 0 var(--space-2xs);
-  }
-  .dt-intro__copy {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-s);
-  }
-  .dt-intro__copy p {
+    /* Eyebrow espelha .pdp-eyebrow: text-muted, tracking 0.14em, 700, caixa-alta,
+       clamp 10→11 (já canônico). Antes: blue / 0.08em / semibold. */
     color: var(--color-text-muted);
-    line-height: var(--line-normal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
+    margin: 0 0 var(--space-3xs);
+  }
+  .dt-intro__title {
+    /* Espelha .pdp-h2: display serif, weight 500, clamp 26→32 (= --pdp-h2), tracking
+       -0.01em, ink, line-height snug. */
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    line-height: var(--line-snug);
     margin: 0;
-    /* Corpo canônico (doc §3): 15→17px. Antes --text-1 (21.6→25px). */
+  }
+  .dt-intro__lead {
+    /* Espelha .pdp-lead: clamp 15→19 (= --pdp-lead), text, medida 65ch. */
+    font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
+    line-height: var(--line-normal);
+    color: var(--color-text);
+    max-width: var(--measure);
+    margin: 0 0 var(--space-m);
+  }
+  .dt-intro__body {
+    /* Espelha .pdp-prose: clamp 15→17 (= --pdp-body), weight 500, lh 1.55, text, 42rem. */
     font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--color-text);
+    max-width: 42rem;
+    margin: 0 0 var(--space-s);
+  }
+  .dt-intro__body:last-child {
+    margin-bottom: 0;
   }
 
   /* ---- MOOD MENU ---- */
