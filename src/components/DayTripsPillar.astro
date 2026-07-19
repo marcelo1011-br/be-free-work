@@ -29,9 +29,18 @@ import {
 import Button from "./Button.astro";
 import FAQ from "./FAQ.astro";
 import { Image } from "astro:assets";
+// Trust bar: dado (siteData — fonte única, a MESMA do AggregateRating) + rótulos (ui.js).
+// Conteúdo VISÍVEL; não gera schema. aggregateRating INTACTO. foundedYear existe em
+// siteData (fato de negócio) mas não é consumido aqui — trust.since já traz o ano no texto.
+import { aggregateRating, travelersServed } from "../data/siteData.js";
+import { useTranslations } from "../i18n/utils";
 
 const { lang } = Astro.props;
 const t = dayTripsProse[lang];
+const tr = useTranslations(lang);
+
+// Nº de viajantes formatado por locale: 15,000 (EN/ES) · 15.000 (PT-BR).
+const travelersFmt = travelersServed.toLocaleString(lang === "pt-br" ? "pt-BR" : "en-US");
 
 // Segmento de rota do tour por locale (mesmo mapa que TourCard/hreflang usam inline).
 const tourRoutes = { en: "private-tours", es: "tours-privados", "pt-br": "passeios-privados" };
@@ -93,6 +102,26 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
       <Button variant="book" size="lg" href={quoteHref}>{t.hero.primaryCta.label}</Button>
       <a class="dt-hero__ghost" href="#destinations">{t.hero.secondaryCta.label}</a>
     </div>
+  </div>
+</section>
+
+<!-- TRUST BAR (branco + hairline; CONTEÚDO VISÍVEL, não schema). Cada item = dado
+     (siteData: rating/travelersServed) + rótulo localizado (ui.js trust.*). O
+     AggregateRating já vive no LocalBusiness via siteData — aqui só exibimos. -->
+<section class="dt-trust">
+  <div class="container dt-trust__inner">
+    <span class="dt-trust__item dt-trust__item--rating">
+      <span aria-hidden="true">★</span> {aggregateRating.ratingValue}
+      <span class="dt-trust__sub">· {aggregateRating.reviewCount}+ {tr("trust.reviews")}</span>
+    </span>
+    <span class="dt-trust__div" aria-hidden="true"></span>
+    <span class="dt-trust__item">{tr("trust.licensed")}</span>
+    <span class="dt-trust__div" aria-hidden="true"></span>
+    <span class="dt-trust__item">{tr("trust.since")}</span>
+    <span class="dt-trust__div" aria-hidden="true"></span>
+    <span class="dt-trust__item">{tr("trust.private")}</span>
+    <span class="dt-trust__div" aria-hidden="true"></span>
+    <span class="dt-trust__item">~{travelersFmt} {tr("trust.travellers")}</span>
   </div>
 </section>
 
@@ -246,8 +275,40 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     outline-offset: var(--focus-outline-offset);
   }
 
-  /* ---- Sequência de superfícies (doc §2): navy → bone → branco → bone → azul → FAQ → bone.
-       Nenhuma corre por mais de 2 seções seguidas. ---- */
+  /* ---- TRUST BAR: faixa branca (surface) com hairline embaixo, entre hero e intro.
+       Centralizada, flex-wrap no mobile. Zero âmbar. Nota/support canônico. ---- */
+  .dt-trust {
+    background: var(--color-surface);
+    border-block-end: var(--border-width-hairline) solid var(--color-border);
+  }
+  .dt-trust__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xs) var(--space-s);
+    padding-block: var(--space-s);
+    font-family: var(--font-body);
+    /* Nota/support canônico (doc §3): 12.5→14px. */
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: var(--color-text-muted);
+  }
+  .dt-trust__item--rating {
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+  }
+  .dt-trust__sub {
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-regular);
+  }
+  .dt-trust__div {
+    inline-size: var(--border-width-hairline);
+    block-size: 1rem;
+    background: var(--color-border);
+  }
+
+  /* ---- Sequência de superfícies (doc §2): navy → branco(trust) → bone → branco(mood)
+       → bone → azul → FAQ → bone. Nenhuma corre por mais de 2 seções seguidas. ---- */
   .dt-intro,
   .dt-destinations {
     background: var(--color-base);
