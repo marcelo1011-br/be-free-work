@@ -339,13 +339,16 @@ const heroTitleParts =
        Centralizada, flex-wrap no mobile. Zero âmbar. Nota/support canônico. ---- */
   .dt-trust {
     background: var(--color-surface);
-    border-block-end: var(--border-width-hairline) solid var(--color-border);
+    /* Conformado à .pdp-trust: hairline em cima E embaixo (--color-hairline, o mesmo
+       token da tour page; distinto de --color-border). */
+    border-block: 1px solid var(--color-hairline);
   }
   .dt-trust__inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    /* Alinhado à esquerda (flex-start), como a .pdp-trust__inner — coerente com o
+       hero à esquerda. (Antes: justify-content: center.) */
     gap: var(--space-2xs) var(--space-s);
     padding-block: var(--space-s);
     font-family: var(--font-body);
@@ -354,12 +357,15 @@ const heroTitleParts =
     color: var(--color-text-muted);
   }
   .dt-trust__item--rating {
-    color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
+    /* Destaque do rating igual ao .pdp-trust__item--star: ink + 700. */
+    color: var(--color-ink);
+    font-weight: 700;
   }
   .dt-trust__sub {
-    color: var(--color-text-muted);
-    font-weight: var(--font-weight-regular);
+    /* Item de rating inteiro em negrito ink (★ 4.9 · 800+ reviews), como o
+       .pdp-trust__item--star: o sub-span herda o 700/ink do pai. */
+    color: inherit;
+    font-weight: inherit;
   }
   .dt-trust__div {
     inline-size: var(--border-width-hairline);
