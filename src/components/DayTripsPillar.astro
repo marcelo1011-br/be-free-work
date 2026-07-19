@@ -194,10 +194,10 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     <div class="dt-why__panel">
       <h2 class="dt-h2">{t.whyPrivate.title}</h2>
       <ul class="dt-why__list">
-        {t.whyPrivate.items.map((it) => (
-          <li>
-            <span class="dt-why__mark" aria-hidden="true">+</span>
-            <span>{it}</span>
+        {t.whyPrivate.items.map((it, i) => (
+          <li class="dt-why__item">
+            <span class="dt-why__num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <span class="dt-why__text">{it}</span>
           </li>
         ))}
       </ul>
@@ -516,33 +516,36 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
     margin-top: 0;
     margin-bottom: var(--space-xl);
   }
+  /* Grade numerada 2×2: cada razão = número serif (baixo contraste sobre o azul) +
+     texto on-blue, com hairline inferior como separador leve entre as razões. */
   .dt-why__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-m);
+    gap: 0 var(--space-2xl);
   }
-  .dt-why__list li {
+  .dt-why__item {
     display: flex;
     gap: var(--space-s);
-    align-items: flex-start;
-    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
-    line-height: var(--line-normal);
+    align-items: baseline;
+    padding-block: var(--space-m);
+    border-block-end: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 16%, transparent);
   }
-  /* Mark invertido: bone sobre azul (o azul do fundo o esconderia). */
-  .dt-why__mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 1.75rem;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: var(--radius-full);
-    background: var(--color-on-blue);
-    color: var(--color-blue);
-    font-weight: var(--font-weight-bold);
+  .dt-why__num {
+    flex: 0 0 auto;
+    font-family: var(--font-display);
+    /* Número: escala H de seção do doc §3 (26→32px), serif. */
+    font-size: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
+    line-height: 1;
+    color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+  }
+  .dt-why__text {
+    color: var(--color-on-blue);
+    /* Corpo canônico (doc §3): 15→17px. */
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    line-height: var(--line-normal);
   }
 
   /* ---- FINAL CTA (bone, como HomeFinalCTA) ---- */
