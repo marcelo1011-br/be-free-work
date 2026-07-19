@@ -115,7 +115,7 @@ const heroTitleParts =
     <h1 class="dt-hero__title">{heroTitleParts.pre}{heroTitleParts.em && <em class="dt-hero__title-em">{heroTitleParts.em}</em>}{heroTitleParts.post}</h1>
     <p class="dt-hero__subtitle">{t.hero.subtitle}</p>
     <div class="dt-hero__actions">
-      <Button variant="book" size="lg" href={quoteHref}>{t.hero.primaryCta.label}</Button>
+      <a class="dt-hero__cta dt-hero__cta--amber" href={quoteHref}>{t.hero.primaryCta.label}</a>
       <a class="dt-hero__ghost" href="#destinations">{t.hero.secondaryCta.label}</a>
     </div>
   </div>
@@ -309,26 +309,61 @@ const heroTitleParts =
     flex-wrap: wrap;
     align-items: center;
   }
-  /* Secundário 'destinations': ghost bone sobre navy (escopado; não toca Button/global) */
+  /* CTA primário âmbar do hero: espelha .pdp-btn + .pdp-btn--lg + .pdp-btn--amber da
+     tour page, reimplementado SCOPED (não usa Button.astro/global). Os tokens --pdp-*
+     são escopados ao PDP, então o font-size vai pelo clamp literal (= --pdp-body 15→17). */
+  .dt-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xs);
+    min-height: 3rem; /* .pdp-btn--lg */
+    padding: 0 var(--space-l); /* .pdp-btn (block 0) + --lg (inline space-l) */
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  /* âmbar: tokens de TEMA (--color-amber/--color-on-amber) — os MESMOS da .pdp-btn--amber,
+     então troca de cor por tema exatamente como a tour page, sem override scoped. */
+  .dt-hero__cta--amber {
+    background: var(--color-amber);
+    color: var(--color-on-amber);
+    border-color: var(--color-amber);
+  }
+  .dt-hero__cta--amber:hover {
+    background: color-mix(in srgb, var(--color-amber) 88%, black);
+  }
+
+  /* Secundário 'destinations': espelha .pdp-btn + .pdp-btn--lg + .pdp-btn--outline-dark
+     (scoped; não toca Button/global). Conteúdo mantido (âncora #destinations). */
   .dt-hero__ghost {
     display: inline-flex;
     align-items: center;
-    min-block-size: 2.75rem;
-    padding-inline: var(--space-m);
+    justify-content: center;
+    gap: var(--space-2xs);
+    min-height: 3rem;
+    padding: 0 var(--space-l);
     border-radius: var(--radius);
-    border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    background: transparent;
     color: var(--color-on-blue);
-    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    line-height: 1.1;
     text-decoration: none;
-    transition:
-      background-color var(--transition-duration-normal) var(--transition-easing-default),
-      border-color var(--transition-duration-normal) var(--transition-easing-default);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
-  @media (hover: hover) {
-    .dt-hero__ghost:hover {
-      background-color: color-mix(in srgb, var(--color-on-blue) 12%, transparent);
-      border-color: var(--color-on-blue);
-    }
+  .dt-hero__ghost:hover {
+    background-color: color-mix(in srgb, var(--color-on-blue) 10%, transparent);
+    border-color: var(--color-on-blue);
   }
   .dt-hero__ghost:focus-visible {
     outline: var(--focus-outline-width) solid var(--color-on-blue);
