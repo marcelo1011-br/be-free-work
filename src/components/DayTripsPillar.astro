@@ -91,12 +91,28 @@ const destBlocks = dayTripsDestinations.map((d) => ({
 const faqQuestions = t.faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
+
+// Ênfase itálica no hero: parte t.hero.title no trecho t.hero.titleEmphasis.
+// t.hero.title fica INTACTO (schema/breadcrumb lê essa string) — só derivamos as
+// partes p/ envolver a ênfase em <em>. pre + em + post = título byte-a-byte.
+const heroEmIdx = t.hero.title.indexOf(t.hero.titleEmphasis);
+const heroTitleParts =
+  heroEmIdx >= 0
+    ? {
+        pre: t.hero.title.slice(0, heroEmIdx),
+        em: t.hero.titleEmphasis,
+        post: t.hero.title.slice(heroEmIdx + t.hero.titleEmphasis.length),
+      }
+    : { pre: t.hero.title, em: "", post: "" };
 ---
 
-<!-- HERO (navy sólido, inline) -->
+<!-- HERO: shell conformado ao .pdp-hero (bottom-left, 52svh, gradiente navy
+     canônico). Sem foto (decisão): o gradiente É o fundo do hero. Conteúdo próprio
+     da day-trips preservado (eyebrow, h1 com ênfase itálica, subtítulo, 2 CTAs). -->
 <section class="dt-hero">
   <div class="container dt-hero__inner">
-    <h1 class="dt-hero__title">{t.hero.title}</h1>
+    <p class="dt-hero__eyebrow">{t.hero.eyebrow}</p>
+    <h1 class="dt-hero__title">{heroTitleParts.pre}{heroTitleParts.em && <em class="dt-hero__title-em">{heroTitleParts.em}</em>}{heroTitleParts.post}</h1>
     <p class="dt-hero__subtitle">{t.hero.subtitle}</p>
     <div class="dt-hero__actions">
       <Button variant="book" size="lg" href={quoteHref}>{t.hero.primaryCta.label}</Button>
@@ -218,34 +234,78 @@ const homeLabel = { en: "Home", es: "Inicio", "pt-br": "Início" }[lang];
 </section>
 
 <style>
-  /* ---- HERO: banda navy TERMINAL (par AA --color-base-dark / --color-on-blue, doc §2) ---- */
+  /* ---- HERO: shell conformado ao .pdp-hero (doc §2/§12): ancorado embaixo,
+       alinhado à esquerda, min-height 52svh. Sem foto (decisão) — o gradiente navy
+       canônico É o próprio fundo. Par AA --color-base-dark / --color-on-blue. ---- */
   .dt-hero {
-    background: var(--color-base-dark);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 52svh;
     color: var(--color-on-blue);
-    padding-block: calc(var(--space-2xl) + var(--space-m)) var(--space-2xl);
+    overflow: hidden;
+    /* Mesmo gradiente do .pdp-hero__scrim, porém OPACO (sem opacity:.82): não há
+       foto por baixo, aqui o gradiente é o fundo do hero. */
+    background: linear-gradient(
+      120deg,
+      var(--color-blue) 0%,
+      color-mix(in srgb, var(--color-blue) 45%, var(--color-base-dark)) 45%,
+      var(--color-base-dark) 100%
+    );
   }
   .dt-hero__inner {
-    max-width: clamp(40rem, 78vw, 56rem);
-    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-2xl) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+  }
+  /* Eyebrow do hero: escala eyebrow canônica (doc §3, 10→11px), caixa-alta, tracking
+     amplo, on-blue de contraste reduzido — mesmo padrão dos eyebrows da página. */
+  .dt-hero__eyebrow {
+    font-family: var(--font-body);
+    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: color-mix(in srgb, var(--color-on-blue) 72%, transparent);
+    /* margin 0: o ritmo vertical vem do gap do .dt-hero__inner (padrão .pdp-hero). */
+    margin: 0;
   }
   .dt-hero__title {
-    /* H1 hero canônico (doc §3): 33→56px. Antes herdava --font-size-h1 (bridge) do global. */
+    /* H1 conformado ao .pdp-hero__title: mesma família display, weight 400, corte
+       serrado (line-height 1.04, tracking -0.02em), medida curta. font-size clamp
+       (33→56) mantido; o <em> de ênfase itálica da Etapa 5 permanece. */
+    font-family: var(--font-display);
+    font-weight: 400;
     font-size: clamp(2.0625rem, 1.529rem + 2.19vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
     color: var(--color-on-blue);
-    margin: 0 0 var(--space-s);
+    margin: 0;
+    max-width: 20ch;
+  }
+  /* Ênfase do título: itálico serif (a família display Newsreader assume o corte
+     itálico). Só font-style — tamanho, cor e peso continuam herdados do <h1>. */
+  .dt-hero__title-em {
+    font-style: italic;
   }
   .dt-hero__subtitle {
     /* Lead canônico (doc §3): 15→19px. Antes --text-1 (21.6→25px). */
     font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
     line-height: var(--line-normal);
     color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
-    margin: 0 auto var(--space-xl);
+    /* margin 0 + medida à esquerda (não centralizado): gap do inner rege o ritmo. */
+    margin: 0;
     max-width: 48ch;
   }
   .dt-hero__actions {
     display: flex;
     gap: var(--space-s);
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
   }

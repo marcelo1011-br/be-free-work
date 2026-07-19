@@ -58,7 +58,11 @@ export const dayTripsProse = {
         "Compare private day trips from Rio — imperial Petrópolis, an Ilha Grande speedboat escape, or Búzios on request. A licensed guide handles the logistics; you enjoy the day.",
     },
     hero: {
+      eyebrow: "PRIVATE · FROM RIO DE JANEIRO",
       title: "Private Day Trips from Rio de Janeiro",
+      // Trecho a enfatizar em itálico no <h1> (substring exata de `title`). `title`
+      // fica intacto — schema/breadcrumb lê essa string; o componente só o parte.
+      titleEmphasis: "Day Trips",
       subtitle:
         "Trade the city for a mountain palace, a Costa Verde island, or the beaches of Búzios — private, guided, and planned around your group. A licensed guide handles the driving, timing and logistics so you don't have to.",
       primaryCta: { label: "Plan your day trip", action: "quote" },
@@ -151,7 +155,9 @@ export const dayTripsProse = {
         "Compara las excursiones privadas desde Río: Petrópolis imperial, Ilha Grande en lancha privada o Búzios bajo consulta. Un guía habilitado se ocupa de la logística; tú disfrutas el día.",
     },
     hero: {
+      eyebrow: "PRIVADO · DESDE RÍO DE JANEIRO",
       title: "Excursiones privadas desde Río de Janeiro",
+      titleEmphasis: "Excursiones",
       subtitle:
         "Cambia la ciudad por un palacio de montaña, una isla de la Costa Verde o las playas de Búzios: excursiones privadas, guiadas y pensadas para tu grupo. Un guía habilitado se encarga del transporte, los tiempos y la logística.",
       primaryCta: { label: "Planifica tu excursión", action: "quote" },
@@ -244,7 +250,9 @@ export const dayTripsProse = {
         "Guia dos bate-voltas privativos saindo do Rio: Petrópolis imperial, Ilha Grande de lancha ou Búzios sob consulta. Quanto tempo leva, o que esperar e quando vale a pena.",
     },
     hero: {
+      eyebrow: "PRIVATIVO · SAINDO DO RIO DE JANEIRO",
       title: "Bate e volta saindo do Rio de Janeiro",
+      titleEmphasis: "Bate e volta",
       subtitle:
         "Serra imperial, ilha de águas claras ou as praias de Búzios: um dia fora do Rio, privativo e no ritmo do seu grupo. Aqui você vê quanto tempo leva cada opção, o que esperar e qual combina com a sua viagem.",
       primaryCta: { label: "Planejar seu passeio", action: "quote" },
