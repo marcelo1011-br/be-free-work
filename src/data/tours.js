@@ -590,6 +590,7 @@ const pricingDisplayText = {
 const prose = {
   "en": {
     "essential-rio": {
+      "badge": "Best-Seller",
       "id": "The Essential Rio: Icons, Culture & Hidden Gems",
       "slug": "essential-rio",
       "imageSlug": "essential-rio",
@@ -648,6 +649,7 @@ const prose = {
       ]
     },
     "rio-express": {
+      "badge": "Half-day",
       "id": "Rio Express: Christ & Sugarloaf in 5 Hours",
       "slug": "rio-express",
       "imageSlug": "rio-flash-5h",
@@ -872,6 +874,7 @@ const prose = {
       ]
     },
     "island-escape-ilha-grande": {
+      "badge": "Speedboat included",
       "id": "Island Escape: Ilha Grande by Private Speedboat",
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
@@ -930,6 +933,7 @@ const prose = {
       ]
     },
     "petropolis-imperial": {
+      "badge": "Imperial city",
       "id": "Petrópolis: Imperial Palaces & Mountain Escape",
       "slug": "petropolis-imperial",
       "imageSlug": "petropolis-imperial",
@@ -1206,6 +1210,7 @@ const prose = {
       ]
     },
     "custom-tour": {
+      "badge": "Fully customizable",
       "id": "Your Rio, Your Way: Custom Private Tour",
       "isCustom": true,
       "slug": "custom-tour",
@@ -1271,6 +1276,7 @@ const prose = {
   },
   "es": {
     "essential-rio": {
+      "badge": "Más vendido",
       "id": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
       "slug": "essential-rio",
       "imageSlug": "essential-rio",
@@ -1328,6 +1334,7 @@ const prose = {
       ]
     },
     "rio-express": {
+      "badge": "Medio día",
       "id": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
       "slug": "rio-express",
       "imageSlug": "rio-flash-5h",
@@ -1552,6 +1559,7 @@ const prose = {
       ]
     },
     "island-escape-ilha-grande": {
+      "badge": "Lancha incluida",
       "id": "Escape a la Isla: Ilha Grande en Lancha Privada",
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
@@ -1610,6 +1618,7 @@ const prose = {
       ]
     },
     "petropolis-imperial": {
+      "badge": "Ciudad imperial",
       "id": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
       "slug": "petropolis-imperial",
       "imageSlug": "petropolis-imperial",
@@ -1886,6 +1895,7 @@ const prose = {
       ]
     },
     "custom-tour": {
+      "badge": "Totalmente personalizable",
       "id": "Tu Río, a Tu Manera: Tour Privado Personalizado",
       "isCustom": true,
       "slug": "tour-personalizado",
@@ -1951,6 +1961,7 @@ const prose = {
   },
   "pt-br": {
     "essential-rio": {
+      "badge": "Mais vendido",
       "id": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
       "slug": "rio-essencial",
       "imageSlug": "essential-rio",
@@ -2008,6 +2019,7 @@ const prose = {
       ]
     },
     "rio-express": {
+      "badge": "Meio dia",
       "id": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
       "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
       "imageSlug": "rio-flash-5h",
@@ -2232,6 +2244,7 @@ const prose = {
       ]
     },
     "island-escape-ilha-grande": {
+      "badge": "Lancha inclusa",
       "id": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
@@ -2290,6 +2303,7 @@ const prose = {
       ]
     },
     "petropolis-imperial": {
+      "badge": "Cidade imperial",
       "id": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
       "slug": "passeio-privado-petropolis-cidade-imperial",
       "imageSlug": "petropolis-imperial",
@@ -2566,6 +2580,7 @@ const prose = {
       ]
     },
     "custom-tour": {
+      "badge": "Totalmente personalizável",
       "id": "Seu Rio, do Seu Jeito: Passeio Privado Personalizado",
       "isCustom": true,
       "slug": "passeio-personalizado",
