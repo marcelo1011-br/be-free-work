@@ -84,6 +84,31 @@ export const dayTripsProse = {
         { destKey: "buzios",      label: "For beach hopping",       text: "The peninsula's string of beaches and its famous cobblestone streets — arranged on request." },
       ],
     },
+    comparison: {
+      title: "Which one fits your trip?",
+      heads: [
+        { destKey: "petropolis", name: "Petrópolis" },
+        { destKey: "ilha-grande", name: "Ilha Grande" },
+        { destKey: "buzios", name: "Búzios" },
+      ],
+      rows: [
+        { key: "bestFor", label: "Best for", cells: {
+          "petropolis": "History & mountains",
+          "ilha-grande": "Beaches & boat time",
+          "buzios": "Beach hopping",
+        } },
+        { key: "theDay", label: "The day", cells: {
+          "petropolis": "History and a scenic drive up the Serra dos Órgãos",
+          "ilha-grande": "A private speedboat to the island's calm-water beaches",
+          "buzios": "The peninsula's beaches and the Rua das Pedras",
+        } },
+        { key: "season", label: "Season", cells: {
+          "petropolis": "Year-round — the most weather-proof of the three",
+          "ilha-grande": "Best in warm, clear-water months",
+          "buzios": "Arranged around the season, on request",
+        } },
+      ],
+    },
     destinations: {
       petropolis: {
         name: "Petrópolis — the Imperial City",
@@ -180,6 +205,31 @@ export const dayTripsProse = {
         { destKey: "buzios",      label: "Para recorrer playas",    text: "La sucesión de playas de la península y sus calles empedradas, organizado bajo consulta." },
       ],
     },
+    comparison: {
+      title: "¿Cuál encaja con tu viaje?",
+      heads: [
+        { destKey: "petropolis", name: "Petrópolis" },
+        { destKey: "ilha-grande", name: "Ilha Grande" },
+        { destKey: "buzios", name: "Búzios" },
+      ],
+      rows: [
+        { key: "bestFor", label: "Ideal para", cells: {
+          "petropolis": "Para historia y montaña",
+          "ilha-grande": "Para playas y lancha",
+          "buzios": "Para recorrer playas",
+        } },
+        { key: "theDay", label: "El día", cells: {
+          "petropolis": "Historia y una subida escénica por la Serra dos Órgãos",
+          "ilha-grande": "Una lancha privada a las playas de aguas tranquilas de la isla",
+          "buzios": "Las playas de la península y la Rua das Pedras",
+        } },
+        { key: "season", label: "Temporada", cells: {
+          "petropolis": "Todo el año — la más estable de las tres",
+          "ilha-grande": "Mejor en los meses cálidos de aguas claras",
+          "buzios": "Según la temporada, bajo consulta",
+        } },
+      ],
+    },
     destinations: {
       petropolis: {
         name: "Petrópolis, la Ciudad Imperial",
@@ -274,6 +324,31 @@ export const dayTripsProse = {
         { destKey: "petropolis",  label: "Para história e serra", text: "Palácios imperiais, a Serra dos Órgãos e um dia mais fresco e tranquilo a poucas horas do Rio." },
         { destKey: "ilha-grande", label: "Para praia e lancha",   text: "Um dia de lancha privativa pela Costa Verde, passando por algumas das praias de água mais clara da ilha." },
         { destKey: "buzios",      label: "Para curtir praias",     text: "As praias da península e as ruas de pedra do centrinho, organizado sob consulta." },
+      ],
+    },
+    comparison: {
+      title: "Qual combina com a sua viagem?",
+      heads: [
+        { destKey: "petropolis", name: "Petrópolis" },
+        { destKey: "ilha-grande", name: "Ilha Grande" },
+        { destKey: "buzios", name: "Búzios" },
+      ],
+      rows: [
+        { key: "bestFor", label: "Ideal para", cells: {
+          "petropolis": "Para história e serra",
+          "ilha-grande": "Para praia e lancha",
+          "buzios": "Para curtir praias",
+        } },
+        { key: "theDay", label: "O dia", cells: {
+          "petropolis": "História e uma subida cênica pela Serra dos Órgãos",
+          "ilha-grande": "Uma lancha privativa às praias de águas calmas da ilha",
+          "buzios": "As praias da península e a Rua das Pedras",
+        } },
+        { key: "season", label: "Temporada", cells: {
+          "petropolis": "O ano todo — a mais estável das três",
+          "ilha-grande": "Melhor nos meses quentes de águas calmas",
+          "buzios": "Conforme a estação, sob consulta",
+        } },
       ],
     },
     destinations: {

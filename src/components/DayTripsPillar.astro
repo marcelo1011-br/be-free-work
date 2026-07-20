@@ -155,23 +155,6 @@ const heroTitleParts =
   </div>
 </section>
 
-<!-- MOOD MENU (bone, 3 cards -> âncora do destino) -->
-<section class="dt-mood">
-  <div class="container">
-    <h2 class="dt-h2">{t.moodMenu.title}</h2>
-    <ul class="dt-mood__grid">
-      {t.moodMenu.items.map((m) => (
-        <li>
-          <a class="dt-mood__card" href={`#dest-${m.destKey}`}>
-            <span class="dt-mood__label">{m.label}</span>
-            <span class="dt-mood__text">{m.text}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
-
 <!-- DESTINATIONS (linhas full-bleed alternadas: imagem sangra num lado, texto no outro) -->
 <section class="dt-destinations" id="destinations">
   {destBlocks.map((d, i) => (
@@ -204,6 +187,37 @@ const heroTitleParts =
       </div>
     </article>
   ))}
+</section>
+
+<!-- COMPARE (tabela comparativa dos 3 destinos; branco, depois dos cards) -->
+<section class="dt-compare">
+  <div class="container">
+    <h2 class="dt-h2">{t.comparison.title}</h2>
+    <div class="dt-compare__wrap">
+      <table class="dt-compare__table">
+        <thead>
+          <tr>
+            <td class="dt-compare__corner"></td>
+            {t.comparison.heads.map((h) => (
+              <th scope="col" class="dt-compare__desthead">
+                <a class="dt-compare__destlink" href={`#dest-${h.destKey}`}>{h.name}</a>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {t.comparison.rows.map((row) => (
+            <tr>
+              <th scope="row" class="dt-compare__rowlabel">{row.label}</th>
+              {t.comparison.heads.map((h) => (
+                <td class="dt-compare__cell">{row.cells[h.destKey]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- WHY PRIVATE (checklist em painel surface) -->
@@ -419,9 +433,9 @@ const heroTitleParts =
     padding-block: var(--space-3xl);
   }
 
-  /* MOOD: banda branca (surface). Cards ficam surface + hairline border — a borda
-     os define sobre o branco (doc §5 + §1.4: card é borda, não elevação). */
-  .dt-mood {
+  /* COMPARE: banda branca (surface) — quebra o run de bone (intro+dest) antes do azul
+     do why (doc §2, máx 2 iguais). Tabela comparativa dos 3 destinos. */
+  .dt-compare {
     background: var(--color-surface);
     color: var(--color-text);
     padding-block: var(--space-3xl);
@@ -488,46 +502,76 @@ const heroTitleParts =
     margin-bottom: 0;
   }
 
-  /* ---- MOOD MENU ---- */
-  .dt-mood__grid {
-    list-style: none;
-    margin: var(--space-2xl) 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-m);
+  /* ---- COMPARE (tabela comparativa dos 3 destinos) ---- */
+  /* Mobile: scroll horizontal (matriz preservada); o rótulo de linha fica sticky à
+     esquerda para manter o contexto ao rolar. Tabela semântica (th scope). */
+  .dt-compare__wrap {
+    margin-top: var(--space-2xl);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Dica de scroll (CSS puro, sem JS) — scrolling-shadows (Lea Verou): os "covers"
+       (surface) em background-attachment:local acompanham o conteúdo e escondem a
+       sombra do lado que chegou ao limite; as sombras (ink sutil) em scroll ficam
+       presas ao wrap. Resultado: some no início (esq) e no fim (dir), e no desktop
+       (sem overflow) ambas ficam cobertas → sem sombra. Cor derivada de --color-ink. */
+    background:
+      linear-gradient(to right, var(--color-surface) 30%, transparent) left center,
+      linear-gradient(to left, var(--color-surface) 30%, transparent) right center,
+      radial-gradient(farthest-side at 0 50%, color-mix(in srgb, var(--color-ink) 12%, transparent), transparent) left center,
+      radial-gradient(farthest-side at 100% 50%, color-mix(in srgb, var(--color-ink) 12%, transparent), transparent) right center;
+    background-repeat: no-repeat;
+    background-color: var(--color-surface);
+    background-size: 2.5rem 100%, 2.5rem 100%, 0.875rem 100%, 0.875rem 100%;
+    background-attachment: local, local, scroll, scroll;
   }
-  .dt-mood__card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    height: 100%;
-    padding: var(--space-m);
+  .dt-compare__table {
+    inline-size: 100%;
+    min-inline-size: 44rem;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .dt-compare__corner {
     background: var(--color-surface);
-    border: var(--border-width-hairline) solid var(--color-border);
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition:
-      transform var(--transition-duration-normal) var(--transition-easing-default),
-      border-color var(--transition-duration-normal) var(--transition-easing-default);
   }
-  @media (hover: hover) {
-    .dt-mood__card:hover {
-      transform: translateY(-3px);
-      border-color: var(--color-blue);
-    }
+  .dt-compare__desthead {
+    padding: var(--space-s) var(--space-m);
+    border-block-end: var(--border-width-regular) solid var(--color-border);
+    vertical-align: bottom;
   }
-  .dt-mood__label {
+  .dt-compare__destlink {
     font-family: var(--font-display);
-    /* Título de card canônico (doc §3): 15→18px. Antes --text-1 (21.6→25px). */
+    /* Título de card canônico (doc §3): 15→18px. */
     font-size: clamp(0.9375rem, 0.8679rem + 0.286vw, 1.125rem);
+    font-weight: 500;
     color: var(--color-blue);
+    text-decoration: none;
   }
-  .dt-mood__text {
+  .dt-compare__destlink:hover {
+    text-decoration: underline;
+  }
+  .dt-compare__rowlabel {
+    position: sticky;
+    left: 0;
+    background: var(--color-surface);
+    padding: var(--space-s) var(--space-m) var(--space-s) 0;
+    vertical-align: top;
+    font-family: var(--font-body);
+    /* Eyebrow canônico (doc §3): 10→11px. */
+    font-size: clamp(0.625rem, 0.6018rem + 0.0952vw, 0.6875rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+  .dt-compare__cell {
+    padding: var(--space-s) var(--space-m);
+    border-block-start: var(--border-width-hairline) solid var(--color-hairline);
+    vertical-align: top;
+    /* Corpo canônico (doc §3): 15→17px. */
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
     line-height: var(--line-normal);
-    /* Nota/support canônico (doc §3): 12.5→14px. Antes herdava corpo default. */
-    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: var(--color-text);
   }
 
   /* ---- DESTINATIONS (alternando foto/texto) ---- */
@@ -699,14 +743,13 @@ const heroTitleParts =
   /* ---- Responsivo ---- */
   @media (max-width: 768px) {
     .dt-intro,
-    .dt-mood,
+    .dt-compare,
     .dt-destinations,
     .dt-why,
     .dt-final {
       padding-block: var(--space-2xl);
     }
     /* Sem override de font-size no mobile: os clamps canônicos já são fluidos 390→1440. */
-    .dt-mood__grid,
     .dt-why__list {
       grid-template-columns: 1fr;
     }
