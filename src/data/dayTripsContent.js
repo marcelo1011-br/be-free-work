@@ -64,7 +64,7 @@ export const dayTripsProse = {
       // fica intacto — schema/breadcrumb lê essa string; o componente só o parte.
       titleEmphasis: "Day Trips",
       subtitle:
-        "Trade the city for a mountain palace, a Costa Verde island, or the beaches of Búzios — private, guided, and planned around your group. A licensed guide handles the driving, timing and logistics so you don't have to.",
+        "Trade the city for a mountain palace, a Costa Verde island, or the beaches of Búzios — private, guided, and planned around your group. A professional driver and a certified guide handle the day — the driving, the timing, the details — so you don't have to.",
       primaryCta: { label: "Plan your day trip", action: "quote" },
       secondaryCta: { label: "Compare destinations", action: "destinations" },
     },
@@ -73,7 +73,7 @@ export const dayTripsProse = {
       kicker: "Where to next",
       paragraphs: [
         "A day trip from Rio is really a question of what kind of day you want. Cooler mountain air and imperial history point to Petrópolis; clear water and a private boat point to Ilha Grande; laid-back beach hopping points to Búzios.",
-        "Every route runs privately for your group only, with a licensed local guide handling the logistics — vehicle, timing and the details — so the day stays relaxed from pickup to drop-off.",
+        "Every route runs privately for your group only, with a professional driver and a certified local guide handling everything — vehicle, timing and the details — so the day stays relaxed.",
       ],
     },
     moodMenu: {
@@ -133,7 +133,7 @@ export const dayTripsProse = {
       title: "Why go private",
       items: [
         "Just your group — no strangers, no fixed departure to share.",
-        "A licensed local guide handles the driving, timing and logistics.",
+        "A professional driver at the wheel and a certified guide with you throughout the day.",
         "Flexible pace: linger where you like, skip what you don't.",
         "Hotel, Airbnb or port pickup when it's part of the route; mineral water included.",
       ],
@@ -185,7 +185,7 @@ export const dayTripsProse = {
       title: "Excursiones privadas desde Río de Janeiro",
       titleEmphasis: "Excursiones",
       subtitle:
-        "Cambia la ciudad por un palacio de montaña, una isla de la Costa Verde o las playas de Búzios: excursiones privadas, guiadas y pensadas para tu grupo. Un guía habilitado se encarga del transporte, los tiempos y la logística.",
+        "Cambia la ciudad por un palacio de montaña, una isla de la Costa Verde o las playas de Búzios: excursiones privadas, guiadas y pensadas para tu grupo. Un conductor profesional y un guía certificado se encargan del día —la conducción, los tiempos, los detalles— para que tú no tengas que hacerlo.",
       primaryCta: { label: "Planifica tu excursión", action: "quote" },
       secondaryCta: { label: "Comparar destinos", action: "destinations" },
     },
@@ -194,7 +194,7 @@ export const dayTripsProse = {
       kicker: "¿Adónde vas?",
       paragraphs: [
         "Elegir una excursión desde Río es, sobre todo, decidir qué tipo de día quieres. El aire fresco de la sierra y la historia imperial llevan a Petrópolis; el agua clara y una lancha privada, a Ilha Grande; las playas tranquilas, a Búzios.",
-        "Cada ruta es privada, solo para tu grupo, con un guía local habilitado que se ocupa de la logística —vehículo, horarios y detalles— para que el día fluya de principio a fin. Ten en cuenta el clima: la sierra es más templada y estable, mientras que las salidas en barco dependen más del estado del mar.",
+        "Cada ruta es privada, solo para tu grupo, con un conductor profesional y un guía local certificado que se ocupan de todo —vehículo, horarios y detalles— para que el día fluya de principio a fin. Ten en cuenta el clima: la sierra es más templada y estable, mientras que las salidas en barco dependen más del estado del mar.",
       ],
     },
     moodMenu: {
@@ -254,7 +254,7 @@ export const dayTripsProse = {
       title: "Por qué elegir privado",
       items: [
         "Solo tu grupo: sin desconocidos ni salidas compartidas.",
-        "Un guía local habilitado se ocupa del transporte, los tiempos y la logística.",
+        "Un conductor profesional al volante y un guía certificado contigo durante todo el día.",
         "Ritmo flexible: te detienes donde quieres y saltas lo que no.",
         "Recogida en hotel, Airbnb o puerto cuando forma parte de la ruta; agua mineral incluida.",
       ],
@@ -375,7 +375,7 @@ export const dayTripsProse = {
       title: "Por que ir privativo",
       items: [
         "Só o seu grupo — sem gente estranha nem saída compartilhada.",
-        "Um guia local credenciado cuida da direção, dos horários e da logística.",
+        "Um motorista profissional ao volante e um guia credenciado com você o dia todo.",
         "Ritmo flexível: fica mais onde gosta e pula o que não interessa.",
         "Busca no hotel, Airbnb ou porto quando faz parte da rota; água mineral incluída.",
       ],
