@@ -700,6 +700,7 @@ const prose = {
       ]
     },
     "first-light-sunrise": {
+      "badge": "Sunrise",
       "id": "Rio at First Light: Sunrise Sugarloaf & Christ",
       "slug": "first-light-sunrise",
       "imageSlug": "first-light-sunrise",
@@ -762,6 +763,7 @@ const prose = {
       ]
     },
     "golden-hour-rio": {
+      "badge": "Sunset",
       "id": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
       "slug": "golden-hour-rio",
       "imageSlug": "golden-hour-rio",
@@ -1385,6 +1387,7 @@ const prose = {
       ]
     },
     "first-light-sunrise": {
+      "badge": "Amanecer",
       "id": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
       "slug": "amanecer-rio",
       "imageSlug": "first-light-sunrise",
@@ -1447,6 +1450,7 @@ const prose = {
       ]
     },
     "golden-hour-rio": {
+      "badge": "Atardecer",
       "id": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
       "slug": "hora-dorada-rio",
       "imageSlug": "golden-hour-rio",
@@ -2070,6 +2074,7 @@ const prose = {
       ]
     },
     "first-light-sunrise": {
+      "badge": "Nascer do sol",
       "id": "Rio ao Amanhecer: Pão de Açúcar e Cristo ao Alvorecer",
       "slug": "nascer-sol-pao-acucar-cristo-redentor-passeio-privado",
       "imageSlug": "first-light-sunrise",
@@ -2132,6 +2137,7 @@ const prose = {
       ]
     },
     "golden-hour-rio": {
+      "badge": "Pôr do sol",
       "id": "Hora Dourada no Rio: Cristo e Pão de Açúcar ao Pôr do Sol",
       "slug": "passeio-por-do-sol-rio-cristo-redentor-pao-acucar",
       "imageSlug": "golden-hour-rio",
