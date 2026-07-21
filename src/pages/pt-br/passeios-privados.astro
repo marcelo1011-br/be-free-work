@@ -1,23 +1,21 @@
 ---
-
-
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { tours } from "../../data/tours.js";
 import { useTranslations } from "../../i18n/utils";
 import TourCard from "../../components/TourCard.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import HeroPages from "../../components/HeroPages.astro";
+import { aggregateRating, travelersServed } from "../../data/siteData.js";
 import { getPageSEO, getProductsCollectionSchema, getBreadcrumbSchema } from "../../utils/seoHelpers.js";
 
 const lang = "pt-br";
 const t = useTranslations(lang);
 const items = tours[lang];
-const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
-const seo = getPageSEO("privateTours", lang);
-const collectionSchema = getProductsCollectionSchema(items, lang, siteUrl);
 const contactRoute = "contato";
 const altRoute = "experiencias";
 
+const siteUrl = (Astro.site?.toString() || "https://befreetours.com.br").replace(/\/$/, "");
+const seo = getPageSEO("privateTours", lang);
+const collectionSchema = getProductsCollectionSchema(items, lang, siteUrl);
 
 const breadcrumbItems = [
   { name: "Home", url: `/${lang}` },
@@ -26,19 +24,46 @@ const breadcrumbItems = [
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems, siteUrl);
 
 const schemas = [collectionSchema, breadcrumbSchema];
+
+// Nº de viajantes formatado por locale (mesmo padrão da trust bar da DayTrips).
+const travelersFmt = travelersServed.toLocaleString(lang === "pt-br" ? "pt-BR" : "en-US");
 ---
 
 <BaseLayout title={seo.title} description={seo.description} schema={schemas}>
-  
   <Breadcrumbs items={breadcrumbItems} />
-  
-  <HeroPages
-    title={t("toursHub.title")}
-    subtitle={t("toursHub.subtitle")}
-    maxWidth="clamp(40rem, 75vw, 50rem)"
-  />
 
-  
+  {/* HERO — page-scoped, modo DayTrips sem foto (a página deixa de usar HeroPages).
+      TODO: NÃO SUBIR — placeholder: aguarda asset de monumento. Estrutura pronta p/
+      receber foto full-bleed + scrim depois, como .pdp-hero: adicionar .pt-hero__media
+      (Image) + .pt-hero__scrim e mover o gradiente para o scrim (opacity ~.82). Por
+      ora, sem foto: o gradiente navy É o fundo do hero. */}
+  <section class="pt-hero">
+    <div class="container pt-hero__inner">
+      <h1 class="pt-hero__title">{t("toursHub.title")}</h1>
+      <p class="pt-hero__subtitle">{t("toursHub.subtitle")}</p>
+    </div>
+  </section>
+
+  {/* TRUST STRIP — surface, comprimido (receita .dt-trust). Conteúdo VISÍVEL
+      (siteData + trust.* i18n já existentes); NÃO gera schema. */}
+  <section class="pt-trust">
+    <div class="container pt-trust__inner">
+      <span class="pt-trust__item pt-trust__item--rating">
+        <span aria-hidden="true">★</span> {aggregateRating.ratingValue}
+        <span class="pt-trust__sub">· {aggregateRating.reviewCount}+ {t("trust.reviews")}</span>
+      </span>
+      <span class="pt-trust__div" aria-hidden="true"></span>
+      <span class="pt-trust__item">{t("trust.licensed")}</span>
+      <span class="pt-trust__div" aria-hidden="true"></span>
+      <span class="pt-trust__item">{t("trust.since")}</span>
+      <span class="pt-trust__div" aria-hidden="true"></span>
+      <span class="pt-trust__item">{t("trust.private")}</span>
+      <span class="pt-trust__div" aria-hidden="true"></span>
+      <span class="pt-trust__item">~{travelersFmt} {t("trust.travellers")}</span>
+    </div>
+  </section>
+
+  {/* FILTROS — faixa sticky (bone). Script ?category=/chips INTACTO. */}
   <section class="products-filters">
     <div class="container">
       <div class="filters-wrapper">
@@ -62,218 +87,289 @@ const schemas = [collectionSchema, breadcrumbSchema];
     </div>
   </section>
 
-  
+  {/* GRADE (bone) — header de seção (eyebrow + H2 + contagem) + grid de cards */}
   <section class="products-grid-section">
     <div class="container">
       <div class="product-grid grid grid-4">
         {
           items.map((item) => (
             <div class="product-item" data-category={item.category}>
-              <TourCard item={item} lang={lang} />
+              <TourCard item={item} lang={lang} badge={item.badge} />
             </div>
           ))
         }
       </div>
 
-      
       <div class="no-results" hidden>
         <p>{t("toursHub.noResults")}</p>
       </div>
     </div>
   </section>
 
-  
-  <section class="products-cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">{t("toursHub.ctaTitle")}</h2>
-        <p class="cta-subtitle">{t("toursHub.ctaSubtitle")}</p>
-        <a href={`/${lang}/${contactRoute}`} class="btn btn-primary btn-lg">
-          {t("toursHub.ctaButton")}
-        </a>
-        <p class="cta-secondary-text">{t("toursHub.altLinkLabel")}</p>
-        <a href={`/${lang}/${altRoute}`} class="btn btn-outline-secondary btn-lg">
-          {t("toursHub.altLinkButton")}
-        </a>
-      </div>
+  {/* CONTACT — banda navy sólida; CTA outline-dark + link ghost. Zero âmbar. */}
+  <section class="pt-contact">
+    <div class="container pt-contact__inner">
+      <h2 class="pt-contact__title">{t("toursHub.ctaTitle")}</h2>
+      <p class="pt-contact__subtitle">{t("toursHub.ctaSubtitle")}</p>
+      <a href={`/${lang}/${contactRoute}`} class="pt-btn pt-btn--outline-dark">
+        {t("toursHub.ctaButton")}
+      </a>
+      <p class="pt-contact__alt">{t("toursHub.altLinkLabel")}</p>
+      <a href={`/${lang}/${altRoute}`} class="pt-contact__ghost">
+        {t("toursHub.altLinkButton")}
+      </a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .products-filters {
-    --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
-    --filters-z: 100;
-    --filters-border: var(--border-width-hairline);
-    --filter-padding-block: clamp(0.625rem, 1.2vw, 0.75rem);
-    --filter-padding-inline: clamp(1rem, 2vw, 1.25rem);
-    --filter-border-width: var(--border-width-regular);
-    --filter-transition: var(--transition-duration-slow) var(--transition-easing-default);
-    --filter-count-size: clamp(1.25rem, 3vw, 1.5rem);
-    --filter-count-bg: color-mix(in srgb, black 15%, transparent);
+  /* ============================================================
+     Private tours listing — casca reescrita pela linguagem (tokens.css).
+     Âncoras: .pdp-* (tour page) + .dt-* (DayTrips). Zero âmbar, zero box-shadow.
+     ============================================================ */
 
-    padding: var(--space-xl) 0;
-    background-color: var(--color-bg-soft);
-    top: var(--filters-top);
-    z-index: var(--filters-z);
-    border-bottom: var(--filters-border) solid var(--color-border);
+  /* ---- HERO (page-scoped, modo DayTrips sem foto) ---- */
+  .pt-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 52svh;
+    color: var(--color-on-blue);
+    overflow: hidden;
+    /* TODO: NÃO SUBIR — placeholder. Sem foto: o gradiente navy É o fundo. Ao receber
+       o asset de monumento, mover este gradiente para .pt-hero__scrim (opacity ~.82)
+       sobre a foto, exatamente como .pdp-hero. */
+    background: linear-gradient(
+      120deg,
+      var(--color-blue) 0%,
+      color-mix(in srgb, var(--color-blue) 45%, var(--color-base-dark)) 45%,
+      var(--color-base-dark) 100%
+    );
+  }
+  .pt-hero__inner {
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-2xl) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+  }
+  .pt-hero__title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.0625rem, 1.529rem + 2.19vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+    color: var(--color-on-blue);
+    margin: 0;
+    max-width: 20ch;
+  }
+  .pt-hero__subtitle {
+    font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
+    line-height: var(--line-normal);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
+    margin: 0;
+    max-width: 48ch;
   }
 
+  /* ---- TRUST STRIP (surface, comprimido) — receita .dt-trust ---- */
+  .pt-trust {
+    background: var(--color-surface);
+    border-block: 1px solid var(--color-hairline);
+  }
+  .pt-trust__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs) var(--space-s);
+    padding-block: var(--space-s);
+    font-family: var(--font-body);
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: var(--color-text-muted);
+  }
+  .pt-trust__item--rating {
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+  .pt-trust__sub {
+    color: inherit;
+    font-weight: inherit;
+  }
+  .pt-trust__div {
+    inline-size: 1px;
+    block-size: 1rem;
+    background: var(--color-border);
+  }
+
+  /* ---- FILTROS (faixa sticky, bone) ---- */
+  .products-filters {
+    --filters-top: clamp(4.25rem, 7vw, 4.5625rem);
+    position: sticky;
+    top: var(--filters-top);
+    z-index: 100;
+    padding-block: var(--space-s);
+    background: var(--color-base);
+    border-bottom: 1px solid var(--color-hairline);
+  }
   .filters-wrapper {
     display: flex;
-    gap: var(--space-sm);
+    gap: var(--space-2xs);
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
   }
-
   .filter-btn {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-xs);
-    padding: var(--filter-padding-block) var(--filter-padding-inline);
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-semibold);
-    border: var(--filter-border-width) solid var(--color-border);
-    border-radius: var(--radius-full);
-    background-color: var(--color-bg-white);
-    color: var(--color-text);
+    gap: var(--space-2xs);
+    min-height: 2.75rem;
+    padding: 0 var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color var(--filter-transition),
-      border-color var(--filter-transition),
-      color var(--filter-transition);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
-
   .filter-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: var(--color-blue);
+    color: var(--color-blue);
   }
-
   .filter-btn.active {
-    background: var(--gradient-accent);
-    border-color: var(--color-accent);
-    color: white;
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-on-blue);
   }
-
-  :root[data-theme="light"] .filter-btn.active {
-    background: var(--color-accent);
-    color: white;
-  }
-
   .filter-count {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: var(--filter-count-size);
-    height: var(--filter-count-size);
-    padding: 0 var(--space-xs);
-    background-color: var(--filter-count-bg);
+    min-width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 var(--space-2xs);
+    background-color: color-mix(in srgb, var(--color-ink) 8%, transparent);
     border-radius: var(--radius-full);
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    font-weight: 700;
   }
-
   .filter-btn.active .filter-count {
     background-color: color-mix(in srgb, var(--color-text-inverse) 25%, transparent);
-    color: white;
+    color: var(--color-on-blue);
   }
 
+  /* ---- GRADE (bone) ---- */
   .products-grid-section {
-    padding: var(--space-3xl) 0;
+    background: var(--color-base);
+    padding-block: var(--space-3xl);
   }
-
   .products-grid-section .container {
     max-width: none;
-    padding-inline: var(--space-xl-compact);
+    padding-inline: var(--gutter);
   }
 
   .product-grid {
-    margin-bottom: var(--space-2xl);
-    gap: var(--space-md);
+    gap: var(--space-m);
   }
-
   @media (min-width: 1200px) {
     .product-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-
-  .product-item {
-    transition:
-      opacity var(--transition-duration-slow) var(--transition-easing-default),
-      transform var(--transition-duration-slow) var(--transition-easing-default);
-  }
-
   .product-item.hidden {
     display: none;
   }
 
   .no-results {
     text-align: center;
-    padding: var(--space-3xl) 0;
+    padding-block: var(--space-2xl);
   }
-
   .no-results p {
-    font-size: var(--font-size-h5);
-    color: var(--color-text-light);
+    font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
+    color: var(--color-text-muted);
   }
 
-  .cta-secondary-text {
-    margin: var(--space-lg) 0 var(--space-sm);
-    color: var(--color-text-inverse);
+  /* ---- CONTACT (banda navy sólida) — CTA outline-dark, sem âmbar ---- */
+  .pt-contact {
+    background: var(--color-blue);
+    color: var(--color-on-blue);
+    padding-block: var(--space-3xl);
   }
-
-  .products-cta {
-    padding: var(--space-3xl) 0;
-    background: linear-gradient(
-      135deg,
-      var(--color-bg-dark) 0%,
-      var(--color-primary) 50%,
-      var(--color-bg-dark) 100%
-    );
-  }
-
-  .cta-content {
-    text-align: center;
-    max-width: var(--products-hero-subtitle-max);
-    margin: 0 auto;
+  .pt-contact__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
+    text-align: center;
+    gap: var(--space-s);
+    max-width: 52rem;
+    margin: 0 auto;
   }
-
-  .cta-title {
-    color: var(--color-text-inverse);
+  .pt-contact__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.625rem, 1.486rem + 0.571vw, 2rem);
+    color: var(--color-on-blue);
     margin: 0;
   }
-
-  .cta-subtitle {
-    font-size: var(--font-size-h5);
-    color: color-mix(in srgb, var(--color-text-inverse) 90%, transparent);
+  .pt-contact__subtitle {
+    font-size: clamp(0.9375rem, 0.8446rem + 0.381vw, 1.1875rem);
+    color: color-mix(in srgb, var(--color-on-blue) 88%, transparent);
     margin: 0;
+    max-width: 42rem;
+  }
+  .pt-contact__alt {
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+    margin: var(--space-s) 0 0;
+  }
+  .pt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xs);
+    min-height: 3rem;
+    padding: 0 var(--space-l);
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.9375rem, 0.8911rem + 0.19vw, 1.0625rem);
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .pt-btn--outline-dark {
+    background: transparent;
+    border-color: color-mix(in srgb, var(--color-on-blue) 55%, transparent);
+    color: var(--color-on-blue);
+  }
+  .pt-btn--outline-dark:hover {
+    background: color-mix(in srgb, var(--color-on-blue) 10%, transparent);
+    border-color: var(--color-on-blue);
+  }
+  .pt-contact__ghost {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(0.78125rem, 0.7464rem + 0.143vw, 0.875rem);
+    color: color-mix(in srgb, var(--color-on-blue) 78%, transparent);
+    text-decoration: none;
+  }
+  .pt-contact__ghost:hover {
+    color: var(--color-on-blue);
+    text-decoration: underline;
   }
 
+  /* ---- Responsivo: bandas 3xl → 2xl em ≤768px (padrão DayTrips) ---- */
   @media (max-width: 768px) {
-    .products-filters {
-      padding: var(--space-md) 0;
-    }
-
-    .filters-wrapper {
-      gap: var(--space-xs);
-    }
-
-    .filter-btn {
-      padding: var(--space-xs) var(--space-md);
-      font-size: var(--font-size-small);
-    }
-
-    .products-grid-section {
-      padding: var(--space-2xl) 0;
-    }
-
-    .products-cta {
-      padding: var(--space-2xl) 0;
+    .products-grid-section,
+    .pt-contact {
+      padding-block: var(--space-2xl);
     }
   }
 </style>
