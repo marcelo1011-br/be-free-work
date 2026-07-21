@@ -32,11 +32,7 @@ const travelersFmt = travelersServed.toLocaleString(lang === "pt-br" ? "pt-BR" :
 <BaseLayout title={seo.title} description={seo.description} schema={schemas}>
   <Breadcrumbs items={breadcrumbItems} />
 
-  {/* HERO — page-scoped, modo DayTrips sem foto (a página deixa de usar HeroPages).
-      TODO: NÃO SUBIR — placeholder: aguarda asset de monumento. Estrutura pronta p/
-      receber foto full-bleed + scrim depois, como .pdp-hero: adicionar .pt-hero__media
-      (Image) + .pt-hero__scrim e mover o gradiente para o scrim (opacity ~.82). Por
-      ora, sem foto: o gradiente navy É o fundo do hero. */}
+  {/* HERO — page-scoped, modo DayTrips: gradiente navy é o fundo definitivo (sem foto). */}
   <section class="pt-hero">
     <div class="container pt-hero__inner">
       <h1 class="pt-hero__title">{t("toursHub.title")}</h1>
@@ -130,15 +126,10 @@ const travelersFmt = travelersServed.toLocaleString(lang === "pt-br" ? "pt-BR" :
 
   /* ---- HERO (page-scoped, modo DayTrips sem foto) ---- */
   .pt-hero {
-    position: relative;
     display: flex;
     align-items: flex-end;
     min-height: 52svh;
     color: var(--color-on-blue);
-    overflow: hidden;
-    /* TODO: NÃO SUBIR — placeholder. Sem foto: o gradiente navy É o fundo. Ao receber
-       o asset de monumento, mover este gradiente para .pt-hero__scrim (opacity ~.82)
-       sobre a foto, exatamente como .pdp-hero. */
     background: linear-gradient(
       120deg,
       var(--color-blue) 0%,
