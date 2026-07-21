@@ -547,6 +547,7 @@ const heroAlt = highlights[0]
   {/* 6 · PROVA — fotos de cliente (doc §12). PLACEHOLDER. */}
   {/* TODO: DADO REAL PENDENTE — não existe manifest arquivo->atração para src/images/gallery/.
       Seção renderiza placeholder. NÃO SUBIR PARA PRODUÇÃO ASSIM. */}
+  {proofPhotos.length > 0 && (
   <section class="pdp-proof">
     <div class="container">
       <header class="pdp-head">
@@ -570,10 +571,12 @@ const heroAlt = highlights[0]
       )}
     </div>
   </section>
+  )}
 
   {/* 7 · DEPOIMENTOS — reviews por tour (doc §2). PLACEHOLDER. */}
   {/* TODO: DADO REAL PENDENTE — não existe review por tour em tours.js; testimonials.js é business-wide.
       Seção renderiza placeholder. NÃO SUBIR PARA PRODUÇÃO ASSIM. */}
+  {travellerReviews.length > 0 && (
   <section class="pdp-voices">
     <div class="container">
       <header class="pdp-head">
@@ -594,6 +597,7 @@ const heroAlt = highlights[0]
       )}
     </div>
   </section>
+  )}
 
   {/* 8 · FAQ + POLICIES — dois acordeões, todos fechados (doc §13) */}
   {(faqs.length > 0 || paymentPolicy || cancellationPolicy) && (
