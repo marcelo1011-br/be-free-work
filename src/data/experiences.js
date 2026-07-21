@@ -61,7 +61,7 @@ const facts = {
   "downtown-rio-walking": {
     "category": "walking-tours",
     "pricing": {
-      "perPerson": 65
+      "perPerson": 70
     },
     "bookingTimeSlots": [
       "10:00",
@@ -81,7 +81,7 @@ const facts = {
   "santa-teresa-walking": {
     "category": "walking-tours",
     "pricing": {
-      "perPerson": 65
+      "perPerson": 70
     },
     "bookingTimeSlots": [
       "10:00",
