@@ -16,15 +16,6 @@ const isQuote = price.basis === "quote";
 const isPerPerson = price.basis === "perPerson";
 const customPriceText = item.pricing?.displayText || t("general.onRequest");
 
-// Badge "tickets included": prop normalizada (passo 4) com fallback derivado do dado atual.
-const ticketsIncluded =
-  item.ticketsIncluded ??
-  (section === "tours" &&
-    !isCustomItem &&
-    (item.included || []).some((i) =>
-      /ticket|ingresso|entrada|skip-the-line|sem fila|sin fila/i.test(i)
-    ));
-
 const routeMaps = {
   tours: {
     en: "private-tours",
@@ -86,15 +77,6 @@ const itemButtonLabel = section === "experiences"
     {badge && (
       <span class={`tour-badge badge ${badgeClass}`}>
         {badge}
-      </span>
-    )}
-
-    {ticketsIncluded && (
-      <span class="tickets-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-        {t("card.ticketsIncluded")}
       </span>
     )}
   </div>
@@ -288,27 +270,6 @@ const itemButtonLabel = section === "experiences"
     font-weight: var(--font-weight-semibold);
     color: var(--color-primary);
     font-style: italic;
-  }
-
-  /* Badge "ingressos inclusos" — sinal anti-marketplace, azul estrutural (não âmbar). */
-  .tickets-badge {
-    position: absolute;
-    bottom: var(--space-md);
-    left: var(--space-md);
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    padding: var(--space-2xs) var(--space-sm);
-    border-radius: var(--radius-full);
-    background: color-mix(in srgb, var(--color-primary) 92%, black);
-    color: var(--color-on-blue);
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  .tickets-badge svg {
-    flex-shrink: 0;
   }
 
   .tour-card-footer .btn {
