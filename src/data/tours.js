@@ -662,19 +662,18 @@ const prose = {
       "slug": "rio-express",
       "imageSlug": "rio-flash-5h",
       "title": "Rio Express: Christ & Sugarloaf in 5 Hours",
-      "shortDescription": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
-      "fullDescription": "Five hours is enough time to see Rio's two greatest landmarks — if the logistics are perfect. The Rio Express private tour was built specifically for cruise passengers docking at Pier Mauá and travelers with tight schedules who want to see Christ the Redeemer and Sugarloaf Mountain without sacrificing the experience for the sake of speed.\n\nMost visitors to Rio only have time for one of the two — a full-day tour covering both with time to spare can feel rushed when you're watching the clock. The Rio Express solves this by eliminating everything that isn't essential: no scenic detours, no optional stops, no time lost to group bus coordination. Just two of the greatest viewpoints on earth, a certified local guide, and a private vehicle that moves on your schedule.\n\nChrist the Redeemer stands 38 meters tall atop the 710-meter Corcovado peak, arms extended over the entire city. The statue was completed in 1931 after nine years of construction, and declared one of the Seven Wonders of the Modern World in 2007. From the viewing platform beneath the statue, you can see the full sweep of Rio: Guanabara Bay, the beaches of Copacabana and Ipanema, the Tijuca Forest, the Maracanã stadium, and the Atlantic horizon beyond. Your Christ the Redeemer tickets are included, and we time the visit for the quieter windows — fewer crowds and clearer views at the top. The Corcovado line itself is run by a third party, and no ticket skips it.\n\nSugarloaf Mountain sits at the opposite end of Rio's geography, rising 396 meters directly from the sea at the bay's entrance. The two-stage cable car — first to Morro da Urca at 220 meters, then to the Sugarloaf summit — was one of the world's first aerial cable cars when it opened in 1912. The view from the top looking back at Christ the Redeemer across the city, with Copacabana below and the Atlantic behind you, is one of the most complete urban panoramas anywhere. Skip-the-line access to the Sugarloaf cable car is included.\n\nThe tour begins with pickup directly from Pier Mauá cruise terminal or your hotel, and returns you with time to spare before your ship's all-aboard. When booking, provide your ship's departure time and we will confirm your pickup time and build in a comfortable buffer — typically 45 to 60 minutes before the terminal deadline.\n\nEverything is included: private air-conditioned vehicle, professional driver, certified English and Portuguese-speaking guide, skip-the-line cable car tickets for Sugarloaf plus entrance tickets for Christ the Redeemer, and complimentary bottled water. No hidden costs, no surprises.\n\nThe Rio Express is our shortest itinerary covering both of Rio's essential landmarks. In five focused hours, you will have stood at the feet of Christ the Redeemer and watched Rio spread out beneath you from the top of Sugarloaf — two experiences that stay with travelers for decades.",
+      "shortDescription": "A five-hour private tour of Christ the Redeemer and Sugarloaf Mountain, with a licensed guide, a separate driver and tickets arranged in advance. Built for cruise passengers and travelers with limited time.",
+      "fullDescription": "The Rio Express is a five-hour private tour of Christ the Redeemer and Sugarloaf Mountain, created for travelers who want to experience Rio's two defining landmarks within a shorter schedule. It is particularly well suited to cruise passengers, business travelers and visitors with only a morning or afternoon available.\n\nYour tour includes two dedicated professionals: a licensed tour guide who accompanies your group throughout the visits and a separate professional driver responsible for transportation. While your guide stays with you, the driver manages the vehicle, traffic, parking and the next pickup point — an important advantage when every hour matters.\n\nFive hours is enough to visit both landmarks when the day is carefully planned. The Rio Express keeps the itinerary focused on Christ the Redeemer and Sugarloaf Mountain, without trying to compress a full-day sightseeing tour into a shorter experience. The order and timing may be adjusted according to your pickup location, traffic, weather and conditions at the attractions.\n\nAt Christ the Redeemer, surrounded by the Tijuca Forest, you will see how Rio's mountains, beaches, bay and neighborhoods come together. Tickets are included and booked in advance for a boarding time on the train or van, chosen according to your preference and availability, and your guide handles the voucher exchange and the boarding procedure.\n\nSugarloaf Mountain offers a different perspective of Rio, looking across Guanabara Bay, the coastline and the mountains surrounding the city. The visit includes skip-the-line access to the cable cars, with stops at Morro da Urca and the Sugarloaf summit.\n\nFor cruise passengers, pickup is available directly from Pier Mauá. When booking, provide your ship's official all-aboard time so we can recommend the appropriate starting time and plan a suitable return buffer. Pickup is also available from hotels and other accommodations in the covered area.\n\nThis is a focused itinerary rather than a shortened version of a full-day tour. The pace can be adapted to your group, and the order of the attractions may change when this creates a more efficient visit, but additional stops are subject to available time and operating conditions.\n\nThe Rio Express is ideal for travelers who want private transportation, personal attention and a well-organized visit to Rio's two essential landmarks without committing to a full day.",
       "highlights": [
-        "Christ the Redeemer statue",
-        "Sugarloaf Mountain cable car",
-        "Skip-the-line tickets for Sugarloaf included."
+        "Christ the Redeemer",
+        "Sugarloaf Mountain and its cable cars"
       ],
       "included": [
-        "Private transportation",
-        "Certified local guide (English)",
-        "Christ the Redeemer entrance tickets",
-        "Skip-the-line Sugarloaf cable car tickets",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Private air-conditioned transportation with a professional driver, exclusively for your group",
+        "Licensed tour guide (English) accompanying your group throughout the visits",
+        "Christ the Redeemer entrance tickets, booked in advance for your preferred boarding time, subject to availability",
+        "Skip-the-line cable car tickets at Sugarloaf Mountain",
+        "Pickup and drop-off at Pier Mauá cruise terminal, hotels, Airbnbs and airports in Rio",
         "Complimentary bottled water"
       ],
       "notIncluded": [
@@ -683,28 +682,53 @@ const prose = {
       ],
       "faqs": [
         {
-          "q": "Is 5 hours enough to properly see both Christ the Redeemer and Sugarloaf?",
-          "a": "Yes -- 5 hours is perfectly calibrated for these two iconic attractions with a private guide and skip-the-line access at Sugarloaf. With a dedicated driver and no cable-car queue, you spend the time experiencing the views rather than waiting. This tour is ideal for cruise passengers with limited port time or travelers with tight schedules."
+          "q": "Is five hours enough to visit Christ the Redeemer and Sugarloaf Mountain?",
+          "a": "Yes, provided the itinerary remains focused on the two attractions. Private transportation, advance planning and a separate guide and driver help make efficient use of the available time. Traffic, weather and attraction conditions may affect the order and pace of the visit."
         },
         {
-          "q": "Are all tickets included in the Rio Express price?",
-          "a": "Yes, all tickets are included: Christ the Redeemer entrance and Sugarloaf Mountain cable car with skip-the-line access. Private transportation and an English-speaking guide are also included. There are no hidden costs."
+          "q": "Is this tour only for cruise passengers?",
+          "a": "No. The Rio Express is also suitable for travelers with a free morning or afternoon, short stays, business trips or anyone who wants to visit Rio's two main landmarks without taking a full-day tour."
         },
         {
-          "q": "What happens if the weather is bad and Christ the Redeemer is covered in clouds?",
-          "a": "Rio's weather changes quickly -- even cloudy mornings often clear by mid-morning. Your guide will monitor conditions and advise on the best timing. If visibility is severely impacted, we can adjust the order of visits or reschedule at no extra cost."
+          "q": "Will you pick us up at the cruise terminal?",
+          "a": "Yes. Pickup is available at Pier Mauá cruise terminal. Please provide your ship's name, docking time and official all-aboard time when booking."
         },
         {
-          "q": "Is this tour suitable for cruise ship passengers?",
-          "a": "This tour was designed with cruise passengers in mind. Pickup from Pier Mauá cruise port is included, and the 5-hour format fits comfortably within most port day windows. Your guide will ensure you're back at the ship on time."
+          "q": "Will we return to the ship on time?",
+          "a": "We plan the starting time, itinerary and return around your ship's official all-aboard time, including a suitable safety buffer based on port requirements and expected traffic. Exceptional events outside our control may still affect road conditions, so accurate ship information is essential."
+        },
+        {
+          "q": "Are the guide and driver the same person?",
+          "a": "No. The tour includes two separate professionals: a licensed tour guide who accompanies your group and a professional driver responsible for transportation. This allows the guide to remain with you while the driver manages the vehicle, parking and the next pickup point."
+        },
+        {
+          "q": "Are tickets included?",
+          "a": "Yes. Tickets for Christ the Redeemer and Sugarloaf Mountain are included and arranged in advance. At Sugarloaf Mountain, tickets include skip-the-line cable car access. At Christ the Redeemer, your entry is booked ahead for the boarding time you prefer, subject to availability, and your guide manages the process on the day."
+        },
+        {
+          "q": "Will we have to wait in line?",
+          "a": "At Sugarloaf Mountain, the tour includes skip-the-line access to the cable cars. At Christ the Redeemer, tickets are booked in advance for a boarding time on the train or van, chosen according to your preference and availability, and your guide handles the voucher exchange and boarding so you don't have to manage any of it. Access follows the same official procedure for every visitor, and having it arranged beforehand is what keeps a five-hour tour on schedule."
+        },
+        {
+          "q": "Is the itinerary customizable?",
+          "a": "The order and pace can be adjusted according to your schedule and conditions on the day. Because this is a focused five-hour tour, adding other attractions is subject to available time and cannot always be guaranteed."
+        },
+        {
+          "q": "Is the tour shared with other travelers?",
+          "a": "No. The guide, driver, vehicle and itinerary are exclusively for your group."
+        },
+        {
+          "q": "Can the tour be adapted for children, seniors or limited mobility?",
+          "a": "Yes, whenever possible. Please inform us of any mobility requirements before booking so we can explain the conditions at each attraction and plan the most suitable pace."
         }
       ],
       "tips": [
-        "This tour is optimized for cruise passengers — if you're arriving at Pier Mauá, let us know your ship's all-aboard time when booking so we build in a comfortable buffer.",
-        "Christ the Redeemer and Sugarloaf are best in the morning before afternoon clouds typically build. This tour is timed accordingly.",
-        "The Sugarloaf cable car has two stages — the first stop at Morro da Urca already offers spectacular views and is less crowded than the summit.",
-        "Bring a small bag rather than a large suitcase if you're coming directly from the cruise port.",
-        "Both attractions have gift shops if you want to pick up souvenirs — build that into your time at each stop."
+        "This is a focused five-hour tour covering Christ the Redeemer and Sugarloaf Mountain. It does not include the additional neighborhoods and cultural attractions found in our full-day itineraries.",
+        "The order of the attractions may change according to traffic, weather, opening conditions and your pickup location.",
+        "Tickets for both attractions are arranged in advance. At Christ the Redeemer, your boarding time on the train or van is booked ahead according to your preference and availability, and your guide handles the voucher exchange.",
+        "For cruise pickup, please provide the ship's name, docking time and official all-aboard time. We will recommend a starting time and plan the return based on the ship's schedule, port requirements and expected traffic conditions.",
+        "The experience combines private transportation with walking and standing at the attractions. The pace can be adapted to your group whenever possible.",
+        "Additional stops are not guaranteed and depend on traffic, attraction conditions and the time available."
       ]
     },
     "first-light-sunrise": {
@@ -1358,20 +1382,19 @@ const prose = {
       "slug": "rio-express",
       "imageSlug": "rio-flash-5h",
       "title": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
-      "shortDescription": "Perfecto para viajeros con tiempo limitado - visita los dos monumentos más icónicos de Río en solo 5 horas.",
-      "fullDescription": "Cinco horas son suficientes para ver los dos grandes monumentos de Río — si la logística es perfecta. El tour privado Rio Express fue diseñado específicamente para pasajeros de crucero que atracan en el Pier Mauá y viajeros con horarios ajustados que quieren ver el Cristo Redentor y el Pan de Azúcar sin sacrificar la experiencia por el tiempo.\n\nLa mayoría de los visitantes de Río solo tiene tiempo para uno de los dos — un tour de día completo cubriendo ambos con tiempo de sobra puede volverse agotador cuando estás pendiente del reloj. El Rio Express resuelve esto eliminando todo lo que no es esencial: sin desvíos escénicos, sin paradas opcionales, sin tiempo perdido en la coordinación de un autobús grupal. Solo dos de los mejores miradores de la tierra, un guía local certificado y un vehículo privado que se mueve según tu horario.\n\nEl Cristo Redentor mide 38 metros de altura en la cima del Corcovado (710 metros), con los brazos extendidos sobre toda la ciudad. La estatua fue completada en 1931 tras nueve años de construcción y declarada una de las Siete Maravillas del Mundo Moderno en 2007. Desde la plataforma de observación bajo la estatua puedes ver toda la extensión de Río: la Bahía de Guanabara, las playas de Copacabana e Ipanema, la Floresta de Tijuca, el estadio Maracanã y el horizonte del Atlántico. Tus entradas al Cristo Redentor están incluidas, y programamos la visita para las franjas más tranquilas — menos gente y vistas más despejadas desde lo alto. La fila del Corcovado la opera un tercero, y ninguna entrada se la salta.\n\nEl Pan de Azúcar se encuentra en el extremo opuesto de la geografía de Río, elevándose 396 metros directamente desde el mar en la entrada de la bahía. El teleférico de dos etapas — primero al Morro da Urca a 220 metros, luego a la cima del Pan de Azúcar — fue uno de los primeros teleféricos aéreos del mundo cuando inauguró en 1912. La vista desde la cima mirando de regreso al Cristo Redentor a través de la ciudad, con Copacabana abajo y el Atlántico detrás de ti, es uno de los panoramas urbanos más completos que existen. El acceso sin fila al teleférico del Pan de Azúcar está incluido.\n\nEl tour comienza con recogida directamente en la terminal de cruceros Pier Mauá o en tu hotel, y te devuelve con tiempo suficiente antes del regreso a bordo. Al reservar, indica el horario de salida de tu barco y confirmaremos tu hora de recogida con un margen cómodo — generalmente 45 a 60 minutos antes del cierre de la terminal.\n\nTodo está incluido: vehículo privado con aire acondicionado, conductor profesional, guía certificado en español y portugués, entradas sin fila al teleférico del Pan de Azúcar y entradas al Cristo Redentor, y agua embotellada de cortesía. Sin costos ocultos, sin sorpresas.\n\nEl Rio Express es el tour privado más eficiente de los monumentos esenciales de Río. En cinco horas enfocadas, habrás estado a los pies del Cristo Redentor y habrás visto Río extenderse bajo tus pies desde la cima del Pan de Azúcar — dos experiencias que los viajeros recuerdan durante décadas.",
+      "shortDescription": "Tour privado de cinco horas por el Cristo Redentor y el Pan de Azúcar, con guía acreditado, conductor profesional y entradas organizadas con antelación. Pensado para pasajeros de cruceros y viajeros con poco tiempo.",
+      "fullDescription": "Rio Express es un tour privado de cinco horas por el Cristo Redentor (Christ the Redeemer) y el Pan de Azúcar (Sugarloaf Mountain), creado para quienes desean conocer los dos grandes símbolos de Río de Janeiro en menos tiempo. Es especialmente adecuado para pasajeros de cruceros, viajeros de negocios y visitantes que solo dispongan de una mañana o una tarde.\n\nEl tour cuenta con dos profesionales dedicados: un guía de turismo acreditado, que acompaña al grupo durante todas las visitas, y un conductor profesional responsable del transporte. Mientras el guía permanece contigo, el conductor se ocupa del vehículo, el tráfico, el estacionamiento y los siguientes puntos de encuentro, una ventaja importante cuando cada hora cuenta.\n\nCinco horas son suficientes para visitar ambos lugares cuando el día se planifica cuidadosamente. Rio Express mantiene el itinerario centrado en el Cristo Redentor y el Pan de Azúcar, sin intentar comprimir un recorrido completo de día entero en una experiencia más corta. El orden y los horarios pueden adaptarse según el lugar de recogida, el tráfico, el clima y las condiciones de las atracciones.\n\nDesde el Cristo Redentor, rodeado por la Floresta de Tijuca (Tijuca Forest), se puede observar cómo las montañas, las playas, los barrios y la bahía forman el paisaje de Río. Las entradas están incluidas y se reservan con antelación para un horario de subida en tren o van, elegido según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher y del embarque.\n\nEl Pan de Azúcar ofrece una perspectiva diferente de la ciudad, con vistas a la bahía de Guanabara (Guanabara Bay), la costa y las montañas que rodean Río. La visita incluye acceso sin fila a los teleféricos, con parada en el Morro da Urca antes de continuar hasta la cima del Pan de Azúcar.\n\nPara pasajeros de cruceros, la recogida puede realizarse directamente en la terminal de Pier Mauá. Al reservar, indica la hora oficial de regreso a bordo para que podamos recomendar la hora de inicio adecuada y planificar un margen prudente para el regreso. También ofrecemos recogida en hoteles y otros alojamientos dentro de la zona atendida.\n\nEste es un itinerario concentrado, no una versión acelerada de un tour de día completo. El ritmo puede adaptarse al grupo y el orden de las atracciones puede cambiar cuando esto permita una visita más eficiente. Las paradas adicionales, sin embargo, dependen del tiempo disponible y de las condiciones operativas del día.\n\nRio Express es ideal para quienes buscan transporte privado, atención personalizada y una visita bien organizada a los dos lugares más emblemáticos de Río sin dedicar un día entero al recorrido.",
       "highlights": [
         "Cristo Redentor",
-        "Teleférico del Pan de Azúcar",
-        "Acceso preferente al Pan de Azúcar"
+        "Pan de Azúcar y sus teleféricos"
       ],
       "included": [
-        "Transporte privado",
-        "Guía local certificado (español)",
-        "Entradas al Cristo Redentor",
-        "Entradas sin fila al teleférico del Pan de Azúcar",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
-        "Agua mineral"
+        "Transporte privado con aire acondicionado y conductor profesional, exclusivo para tu grupo",
+        "Guía de turismo acreditado (español) que acompaña a tu grupo durante todas las visitas",
+        "Entradas al Cristo Redentor, reservadas con antelación para el horario de subida que prefieras, según disponibilidad",
+        "Entradas sin fila a los teleféricos del Pan de Azúcar",
+        "Recogida y regreso en la terminal de cruceros Pier Mauá, hoteles, Airbnbs y aeropuertos de Río",
+        "Agua mineral de cortesía"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1379,28 +1402,53 @@ const prose = {
       ],
       "faqs": [
         {
-          "q": "¿Son suficientes 5 horas para ver bien tanto el Cristo como el Pan de Azúcar?",
-          "a": "Sí -- 5 horas están perfectamente calibradas para estas dos atracciones icónicas con guía privado y acceso sin fila en el Pan de Azúcar. Con conductor dedicado y sin cola en el teleférico, disfrutas las vistas en lugar de esperar. Ideal para pasajeros de cruceros con tiempo limitado en puerto."
+          "q": "¿Cinco horas son suficientes para visitar el Cristo Redentor y el Pan de Azúcar?",
+          "a": "Sí, siempre que el itinerario se mantenga centrado en las dos atracciones. El transporte privado, la planificación previa y la presencia de un guía y un conductor separados permiten aprovechar mejor el tiempo disponible. El tráfico, el clima y las condiciones de las atracciones pueden afectar el orden y el ritmo de las visitas."
         },
         {
-          "q": "¿Todas las entradas están incluidas en el precio del Río Express?",
-          "a": "Sí, todas las entradas están incluidas: acceso al Cristo Redentor y teleférico del Pan de Azúcar con acceso preferente. El transporte privado y guía en español también están incluidos. Sin costos ocultos."
+          "q": "¿Este tour es solo para pasajeros de cruceros?",
+          "a": "No. Rio Express también es adecuado para quienes solo tienen una mañana o una tarde libre, realizan una estancia corta o un viaje de negocios, o desean conocer los dos principales símbolos de Río sin hacer un tour de día completo."
         },
         {
-          "q": "¿Qué pasa si el clima está malo y el Cristo está entre nubes?",
-          "a": "El clima en Río cambia rápido -- incluso los días nublados suelen despejarse a media mañana. Tu guía monitoreará las condiciones y aconsejará el mejor horario. Si la visibilidad es muy baja, podemos ajustar el orden de visitas o reprogramar sin costo adicional."
+          "q": "¿Ofrecen recogida en la terminal de cruceros?",
+          "a": "Sí. La recogida puede realizarse en la terminal de Pier Mauá. Al reservar, indica el nombre del barco, la hora de llegada y la hora oficial de regreso a bordo."
         },
         {
-          "q": "¿Es este tour apto para pasajeros de crucero?",
-          "a": "Este tour fue diseñado especialmente para pasajeros de crucero. El recojo en la terminal de cruceros Pier Mauá está incluido y las 5 horas caben cómodamente dentro del tiempo en puerto. Tu guía se asegurará de que regreses al barco a tiempo."
+          "q": "¿Regresaremos al barco a tiempo?",
+          "a": "La hora de inicio, el itinerario y el regreso se planifican según la hora oficial de regreso a bordo, incluyendo un margen de seguridad adecuado a los requisitos del puerto y a las condiciones previstas del tráfico. Los acontecimientos excepcionales fuera de nuestro control aún pueden afectar las vías, por lo que es esencial facilitar los datos correctos del barco."
+        },
+        {
+          "q": "¿El guía y el conductor son la misma persona?",
+          "a": "No. El tour incluye dos profesionales diferentes: un guía de turismo acreditado, que acompaña al grupo, y un conductor profesional responsable del transporte. De esta manera, el guía permanece contigo mientras el conductor se ocupa del vehículo, el estacionamiento y los siguientes puntos de encuentro."
+        },
+        {
+          "q": "¿Las entradas están incluidas?",
+          "a": "Sí. Las entradas para el Cristo Redentor y el Pan de Azúcar están incluidas y se organizan con antelación. En el Pan de Azúcar, las entradas incluyen acceso sin fila a los teleféricos. En el Cristo Redentor, tu entrada se reserva por adelantado para el horario de subida que prefieras, según disponibilidad, y tu guía se encarga del proceso el día del tour."
+        },
+        {
+          "q": "¿Tendremos que hacer fila?",
+          "a": "En el Pan de Azúcar, el tour incluye acceso sin fila a los teleféricos. En el Cristo Redentor, las entradas se reservan con antelación para un horario de subida en tren o van, elegido según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher y del embarque para que no tengas que gestionar nada. El acceso sigue el mismo procedimiento oficial para todos los visitantes, y tenerlo organizado de antemano es lo que mantiene el ritmo de un tour de cinco horas."
+        },
+        {
+          "q": "¿El itinerario se puede personalizar?",
+          "a": "El orden y el ritmo de las visitas pueden adaptarse según tu horario y las condiciones del día. Como este es un tour concentrado de cinco horas, añadir otras atracciones depende del tiempo disponible y no siempre puede garantizarse."
+        },
+        {
+          "q": "¿El tour se comparte con otros viajeros?",
+          "a": "No. El guía, el conductor, el vehículo y el itinerario son exclusivos para tu grupo."
+        },
+        {
+          "q": "¿El tour puede adaptarse para niños, personas mayores o visitantes con movilidad reducida?",
+          "a": "Sí, siempre que sea posible. Informa cualquier necesidad de movilidad antes de reservar para que podamos explicar las condiciones de cada atracción y planificar el ritmo más adecuado."
         }
       ],
       "tips": [
-        "Este tour está optimizado para pasajeros de crucero — si llegas al Pier Mauá, indícanos el horario de regreso a bordo al reservar para que tengamos un margen cómodo.",
-        "El Cristo Redentor y el Pan de Azúcar están mejor por la mañana, antes de que las nubes de la tarde aparezcan. El tour está programado en consecuencia.",
-        "El teleférico del Pan de Azúcar tiene dos etapas — la primera parada en el Morro da Urca ya ofrece vistas espectaculares y está menos concurrida que la cima.",
-        "Si vienes directamente desde el puerto de cruceros, lleva una bolsa pequeña en vez de maleta grande.",
-        "Ambas atracciones tienen tiendas de recuerdos — tenlo en cuenta al planificar el tiempo en cada parada."
+        "Este es un tour concentrado de cinco horas por el Cristo Redentor y el Pan de Azúcar. No incluye los barrios y lugares culturales adicionales presentes en nuestros itinerarios de día completo.",
+        "El orden de las atracciones puede cambiar según el tráfico, el clima, las condiciones de funcionamiento y el lugar de recogida.",
+        "Las entradas de ambas atracciones se organizan con antelación. En el Cristo Redentor, tu horario de subida en tren o van se reserva por adelantado según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher.",
+        "Para recogidas en el puerto, indica el nombre del barco, la hora prevista de llegada y la hora oficial de regreso a bordo. Recomendaremos la hora de inicio y planificaremos el regreso según el horario del barco, los requisitos del puerto y las condiciones previstas del tráfico.",
+        "La experiencia combina desplazamientos en vehículo privado con períodos de caminata y tiempo de pie en las atracciones. Siempre que sea posible, el ritmo puede adaptarse al grupo.",
+        "Las paradas adicionales no están garantizadas y dependen del tráfico, las condiciones de las atracciones y el tiempo disponible."
       ]
     },
     "first-light-sunrise": {
@@ -2054,20 +2102,19 @@ const prose = {
       "slug": "passeio-expresso-rio-5-horas-cristo-pao-acucar",
       "imageSlug": "rio-flash-5h",
       "title": "Rio Express: Cristo e Pão de Açúcar em 5 Horas",
-      "shortDescription": "Perfeito para viajantes com tempo limitado - visite os dois pontos turísticos mais icônicos do Rio em apenas 5 horas.",
-      "fullDescription": "Cinco horas são suficientes para ver os dois maiores monumentos do Rio — se a logística for perfeita. O passeio privativo Rio Express foi criado especificamente para passageiros de cruzeiro que atracam no Pier Mauá e viajantes com horários apertados que querem ver o Cristo Redentor e o Pão de Açúcar sem sacrificar a experiência pelo tempo.\n\nA maioria dos visitantes do Rio só tem tempo para um dos dois — um passeio de dia inteiro cobrindo ambos com tempo de sobra pode se tornar estressante quando você está de olho no relógio. O Rio Express resolve isso eliminando tudo que não é essencial: sem desvios cênicos, sem paradas opcionais, sem tempo perdido na coordenação de um ônibus de grupo. Apenas dois dos melhores mirantes do mundo, um guia local certificado e um veículo privativo que se move no seu horário.\n\nO Cristo Redentor tem 38 metros de altura no topo do Corcovado (710 metros), com os braços abertos sobre toda a cidade. A estátua foi concluída em 1931 após nove anos de construção e declarada uma das Sete Maravilhas do Mundo Moderno em 2007. Da plataforma de observação sob a estátua você pode ver toda a extensão do Rio: a Baía de Guanabara, as praias de Copacabana e Ipanema, a Floresta da Tijuca, o Maracanã e o horizonte do Atlântico. Seus ingressos para o Cristo Redentor estão incluídos, e programamos a visita para os horários mais tranquilos — menos gente e vistas mais limpas lá do alto. A fila do Corcovado é operada por terceiros, e nenhum ingresso a fura.\n\nO Pão de Açúcar fica no extremo oposto da geografia do Rio, erguendo-se 396 metros diretamente do mar na entrada da baía. O bondinho de dois estágios — primeiro ao Morro da Urca a 220 metros, depois ao topo do Pão de Açúcar — foi um dos primeiros teleféricos aéreos do mundo quando inaugurou em 1912. A vista do topo olhando de volta para o Cristo Redentor sobre a cidade, com Copacabana abaixo e o Atlântico atrás de você, é um dos panoramas urbanos mais completos que existem. O acesso sem fila ao bondinho do Pão de Açúcar está incluído.\n\nO passeio começa com busca diretamente no terminal de cruzeiros Pier Mauá ou no seu hotel, e retorna com tempo suficiente antes do horário de retorno ao navio. Ao reservar, informe o horário de saída do seu navio e confirmaremos seu horário de busca com uma margem confortável — geralmente 45 a 60 minutos antes do fechamento do terminal.\n\nTudo está incluído: veículo privativo com ar-condicionado, motorista profissional, guia certificado em português e inglês, ingressos skip-the-line para o bondinho do Pão de Açúcar e ingressos para o Cristo Redentor, e água mineral de cortesia. Sem taxas ocultas, sem surpresas.\n\nO Rio Express é o passeio privativo mais eficiente dos marcos essenciais do Rio. Em cinco horas focadas, você terá estado aos pés do Cristo Redentor e visto o Rio se estender sob seus pés do topo do Pão de Açúcar — duas experiências que os viajantes lembram por décadas.",
+      "shortDescription": "Passeio privativo de cinco horas pelo Cristo Redentor e Pão de Açúcar, com guia credenciado, motorista profissional e ingressos providenciados antecipadamente. Pensado para passageiros de cruzeiros e viajantes com pouco tempo.",
+      "fullDescription": "O Rio Express é um tour privado de cinco horas pelo Cristo Redentor (Christ the Redeemer) e Pão de Açúcar (Sugarloaf Mountain), criado para quem deseja conhecer os dois principais cartões-postais do Rio de Janeiro em menos tempo. É especialmente indicado para passageiros de cruzeiros, viajantes a negócios e visitantes que tenham apenas uma manhã ou tarde disponível.\n\nO tour é realizado por dois profissionais dedicados: um guia de turismo credenciado, que acompanha o grupo durante todas as visitas, e um motorista profissional responsável pelo transporte. Enquanto o guia permanece com você, o motorista cuida do veículo, do trânsito, do estacionamento e dos próximos pontos de embarque — uma vantagem importante quando cada hora conta.\n\nCinco horas são suficientes para visitar as duas atrações quando o dia é cuidadosamente planejado. O Rio Express mantém o roteiro concentrado no Cristo Redentor e no Pão de Açúcar, sem tentar encaixar um passeio completo de dia inteiro em uma experiência mais curta. A ordem e os horários das visitas podem ser ajustados de acordo com o local de embarque, o trânsito, o clima e as condições das atrações.\n\nNo Cristo Redentor, cercado pela Floresta da Tijuca (Tijuca Forest), é possível observar como as montanhas, praias, bairros e a Baía de Guanabara formam a paisagem do Rio. Os ingressos estão incluídos e são reservados com antecedência para um horário de subida no trem ou van, escolhido conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher e do embarque.\n\nO Pão de Açúcar oferece uma perspectiva diferente da cidade, com vistas para a Baía de Guanabara (Guanabara Bay), a orla e as montanhas ao redor. A visita inclui acesso sem fila para os bondinhos, com passagem pelo Morro da Urca e subida até o topo do Pão de Açúcar.\n\nPara passageiros de cruzeiros, o embarque pode ser realizado diretamente no terminal do Pier Mauá. Ao fazer a reserva, informe o horário oficial de retorno ao navio para que possamos recomendar o melhor horário de início e planejar uma margem adequada para o retorno. O embarque também pode ser feito em hotéis e outras hospedagens dentro da área atendida.\n\nEste é um roteiro focado, e não uma versão acelerada de um tour de dia inteiro. O ritmo pode ser adaptado ao grupo, e a ordem das atrações pode mudar quando isso tornar a visita mais eficiente. Paradas adicionais, porém, dependem do tempo disponível e das condições operacionais do dia.\n\nO Rio Express é indicado para quem busca transporte privativo, atendimento pessoal e uma visita bem organizada aos dois principais cartões-postais do Rio sem precisar reservar um dia inteiro.",
       "highlights": [
         "Cristo Redentor",
-        "Bondinho do Pão de Açúcar",
-        "Acesso preferencial ao Pão de Açúcar"
+        "Pão de Açúcar e seus bondinhos"
       ],
       "included": [
-        "Transporte privado",
-        "Guia local certificado (português)",
-        "Ingressos do Cristo Redentor",
-        "Ingressos sem fila do bondinho do Pão de Açúcar",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
-        "Água mineral"
+        "Transporte privativo com ar-condicionado e motorista profissional, exclusivo para o seu grupo",
+        "Guia de turismo credenciado (português) acompanhando o grupo durante todas as visitas",
+        "Ingressos do Cristo Redentor, reservados antecipadamente para o horário de subida de sua preferência, conforme disponibilidade",
+        "Ingressos sem fila para os bondinhos do Pão de Açúcar",
+        "Busca e retorno no terminal de cruzeiros Pier Mauá, hotéis, Airbnbs e aeroportos do Rio",
+        "Água mineral de cortesia"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -2075,28 +2122,53 @@ const prose = {
       ],
       "faqs": [
         {
-          "q": "5 horas são suficientes para ver bem tanto o Cristo quanto o Pão de Açúcar?",
-          "a": "Sim -- 5 horas são perfeitamente calibradas para essas duas atrações icônicas com guia privado e acesso sem fila no Pão de Açúcar. Com motorista dedicado e sem fila no bondinho, você aproveita as vistas em vez de ficar na fila. Ideal para passageiros de cruzeiro com tempo limitado no porto."
+          "q": "Cinco horas são suficientes para visitar o Cristo Redentor e o Pão de Açúcar?",
+          "a": "Sim, desde que o roteiro permaneça focado nas duas atrações. O transporte privativo, o planejamento antecipado e a presença de guia e motorista separados ajudam a aproveitar melhor o tempo disponível. Trânsito, clima e condições das atrações podem afetar a ordem e o ritmo das visitas."
         },
         {
-          "q": "Todos os ingressos estão incluídos no preço do Rio Express?",
-          "a": "Sim, todos os ingressos estão incluídos: acesso ao Cristo Redentor e bondinho do Pão de Açúcar com acesso prioritário. Transporte privado e guia em português também estão incluídos. Sem custos ocultos."
+          "q": "Este tour é exclusivo para passageiros de cruzeiros?",
+          "a": "Não. O Rio Express também é indicado para quem tem apenas uma manhã ou tarde livre, está em uma viagem curta ou a trabalho, ou deseja conhecer os dois principais cartões-postais do Rio sem fazer um tour de dia inteiro."
         },
         {
-          "q": "O que acontece se o tempo estiver ruim e o Cristo estiver encoberto por nuvens?",
-          "a": "O clima no Rio muda rapidamente -- mesmo manhãs nubladas costumam abrir ao longo da manhã. Seu guia monitorará as condições e aconselhará o melhor horário. Se a visibilidade estiver muito baixa, podemos ajustar a ordem das visitas ou reagendar sem custo adicional."
+          "q": "Vocês fazem o embarque no terminal de cruzeiros?",
+          "a": "Sim. O embarque pode ser realizado no terminal do Pier Mauá. Informe o nome do navio, o horário de atracação e o horário oficial de retorno a bordo ao fazer a reserva."
         },
         {
-          "q": "Este tour é adequado para passageiros de cruzeiro?",
-          "a": "Este tour foi pensado especialmente para passageiros de cruzeiro. O traslado do terminal Pier Mauá está incluído e as 5 horas cabem confortavelmente dentro da janela de tempo no porto. Seu guia garantirá que você retorne ao navio no horário."
+          "q": "Retornaremos ao navio a tempo?",
+          "a": "O horário de início, o roteiro e o retorno são planejados de acordo com o horário oficial de retorno a bordo, incluindo uma margem de segurança adequada às exigências do porto e às condições previstas de trânsito. Eventos excepcionais fora do nosso controle ainda podem afetar as vias, por isso é essencial fornecer os dados corretos do navio."
+        },
+        {
+          "q": "O guia e o motorista são a mesma pessoa?",
+          "a": "Não. O tour inclui dois profissionais diferentes: um guia de turismo credenciado, que acompanha o grupo, e um motorista profissional responsável pelo transporte. Dessa forma, o guia permanece com você enquanto o motorista cuida do veículo, do estacionamento e dos próximos embarques."
+        },
+        {
+          "q": "Os ingressos estão incluídos?",
+          "a": "Sim. Os ingressos para o Cristo Redentor e o Pão de Açúcar estão incluídos e são providenciados antecipadamente. No Pão de Açúcar, os ingressos incluem acesso sem fila para os bondinhos. No Cristo Redentor, o ingresso é reservado com antecedência para o horário de subida de sua preferência, conforme a disponibilidade, e o guia cuida de todo o processo no dia do passeio."
+        },
+        {
+          "q": "Precisaremos enfrentar filas?",
+          "a": "No Pão de Açúcar, o tour inclui acesso sem fila para os bondinhos. No Cristo Redentor, os ingressos são reservados com antecedência para um horário de subida no trem ou van, escolhido conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher e do embarque para que você não precise se preocupar com nada. O acesso segue o mesmo procedimento oficial para todos os visitantes, e ter tudo organizado de antemão é o que mantém o ritmo de um passeio de cinco horas."
+        },
+        {
+          "q": "O roteiro pode ser personalizado?",
+          "a": "A ordem e o ritmo das visitas podem ser ajustados de acordo com o seu horário e as condições do dia. Como este é um tour focado de cinco horas, a inclusão de outras atrações depende do tempo disponível e nem sempre poderá ser garantida."
+        },
+        {
+          "q": "O tour é compartilhado com outras pessoas?",
+          "a": "Não. O guia, o motorista, o veículo e o roteiro são exclusivos para o seu grupo."
+        },
+        {
+          "q": "O tour pode ser adaptado para crianças, idosos ou pessoas com mobilidade reduzida?",
+          "a": "Sim, sempre que possível. Informe qualquer necessidade de mobilidade antes da reserva para que possamos explicar as condições de cada atração e planejar o ritmo mais adequado."
         }
       ],
       "tips": [
-        "Este passeio é otimizado para passageiros de cruzeiro — se você chega pelo Pier Mauá, informe o horário de retorno ao navio ao reservar para que tenhamos uma margem confortável.",
-        "O Cristo Redentor e o Pão de Açúcar estão melhores de manhã, antes das nuvens da tarde chegarem. O passeio é planejado com essa lógica.",
-        "O bondinho do Pão de Açúcar tem duas etapas — a primeira parada no Morro da Urca já oferece vistas espetaculares e é menos movimentada que o topo.",
-        "Se você vem direto do terminal de cruzeiros, leve uma bolsa pequena em vez de mala grande.",
-        "As duas atrações têm lojas de souvenirs — leve isso em conta ao planejar o tempo em cada parada."
+        "Este é um tour focado de cinco horas pelo Cristo Redentor e Pão de Açúcar. Ele não inclui os bairros e pontos culturais adicionais presentes nos nossos roteiros de dia inteiro.",
+        "A ordem das atrações pode mudar de acordo com o trânsito, o clima, as condições de funcionamento e o local de embarque.",
+        "Os ingressos das duas atrações são providenciados antecipadamente. No Cristo Redentor, o horário de subida no trem ou van é reservado com antecedência conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher.",
+        "Para embarques no porto, informe o nome do navio, o horário previsto de atracação e o horário oficial de retorno a bordo. Recomendaremos o horário de início e planejaremos o retorno de acordo com a programação do navio, as exigências do porto e as condições esperadas de trânsito.",
+        "A experiência combina deslocamentos em veículo privativo com períodos de caminhada e permanência em pé nas atrações. Sempre que possível, o ritmo pode ser adaptado ao grupo.",
+        "Paradas adicionais não são garantidas e dependem do trânsito, das condições das atrações e do tempo disponível."
       ]
     },
     "first-light-sunrise": {
