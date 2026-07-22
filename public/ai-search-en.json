@@ -69,7 +69,7 @@
           "slug": "essential-rio",
           "name": "The Essential Rio: Icons, Culture & Hidden Gems",
           "duration": "8 hours",
-          "price_from": 415,
+          "price_from": 455,
           "description": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain. Skip-the-line tickets for Sugarloaf included.",
           "highlights": [
             "Christ the Redeemer entrance tickets included",
@@ -92,7 +92,7 @@
           "slug": "rio-express",
           "name": "Rio Express: Christ & Sugarloaf in 5 Hours",
           "duration": "5 hours",
-          "price_from": 410,
+          "price_from": 435,
           "description": "Perfect for travelers with limited time - visit Rio's two most iconic landmarks in just 5 hours.",
           "highlights": [
             "Christ the Redeemer statue",
@@ -111,7 +111,7 @@
           "slug": "first-light-sunrise",
           "name": "Rio at First Light: Sunrise Sugarloaf & Christ",
           "duration": "6 hours",
-          "price_from": 580,
+          "price_from": 615,
           "description": "Experience Rio's most breathtaking sunrise from Sugarloaf Mountain, followed by early access to Christ the Redeemer.",
           "highlights": [
             "Sunrise from the Sugarloaf summit, before the crowds",
@@ -130,7 +130,7 @@
           "slug": "golden-hour-rio",
           "name": "Golden Hour Rio: Christ & Sugarloaf at Sunset",
           "duration": "6 hours",
-          "price_from": 430,
+          "price_from": 445,
           "description": "Experience Rio's golden hour beauty with afternoon visits to Christ the Redeemer and a perfectly timed sunset from Sugarloaf Mountain.",
           "highlights": [
             "Christ the Redeemer in golden light",
@@ -172,7 +172,7 @@
           "slug": "tijuca-rainforest",
           "name": "Tijuca Rainforest & Museums: Where Nature Meets Culture",
           "duration": "8 hours",
-          "price_from": 445,
+          "price_from": 415,
           "description": "Combine Sugarloaf Mountain's stunning vistas with the lush beauty of Tijuca Forest and Botanical Garden.",
           "highlights": [
             "Sugarloaf Mountain",
@@ -193,7 +193,7 @@
           "slug": "niteroi-mac-museum",
           "name": "Niterói: Niemeyer's MAC Museum & Colonial Forts",
           "duration": "8 hours",
-          "price_from": 335,
+          "price_from": 325,
           "description": "Cross Guanabara Bay to discover Niterói's architectural masterpiece MAC Museum and historic military forts.",
           "highlights": [
             "MAC Niterói by Oscar Niemeyer",
@@ -213,7 +213,7 @@
           "slug": "modern-rio-museum-tomorrow",
           "name": "Modern Rio: Museum of Tomorrow & Samba School Behind the Scenes",
           "duration": "7 hours",
-          "price_from": 445,
+          "price_from": 400,
           "description": "Explore Rio's innovative Museum of Tomorrow, South America's largest aquarium, and go behind the scenes of Carnival.",
           "highlights": [
             "Museum of Tomorrow",
@@ -273,7 +273,7 @@
           "slug": "island-escape-ilha-grande",
           "name": "Island Escape: Ilha Grande by Private Speedboat",
           "duration": "10 hours",
-          "price_from": 875,
+          "price_from": 955,
           "description": "A private speedboat day visiting some of Ilha Grande's beaches, with time to swim and snorkel.",
           "highlights": [
             "Private speedboat for your group",
@@ -294,7 +294,7 @@
           "slug": "petropolis-imperial",
           "name": "Petrópolis: Imperial Palaces & Mountain Escape",
           "duration": "8 hours",
-          "price_from": 360,
+          "price_from": 390,
           "description": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
           "highlights": [
             "Quitandinha Palace",
@@ -371,7 +371,7 @@
         "slug": "downtown-rio-walking",
         "name": "Downtown Rio on Foot: Selarón Steps & Hidden Gems",
         "duration": "3.5 hours",
-        "price_per_person": 65,
+        "price_per_person": 70,
         "description": "Discover downtown Rio's architectural treasures, historic squares, and the iconic Selarón Steps on a private guided walk.",
         "url": "https://befreetours.com.br/en/experiences/downtown-rio-walking"
       },
@@ -380,7 +380,7 @@
         "slug": "santa-teresa-walking",
         "name": "Santa Teresa Walking Tour: Art, History & Hidden Corners",
         "duration": "2.5 hours",
-        "price_per_person": 65,
+        "price_per_person": 70,
         "description": "Explore one of Rio's most atmospheric neighborhoods on foot, uncovering art, history, and local life off the main tourist trail.",
         "url": "https://befreetours.com.br/en/experiences/santa-teresa-walking"
       }

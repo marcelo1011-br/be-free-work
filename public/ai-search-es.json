@@ -69,7 +69,7 @@
           "slug": "essential-rio",
           "name": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
           "duration": "8 horas",
-          "price_from": 415,
+          "price_from": 455,
           "description": "Descubre los monumentos más emblemáticos de Río en un tour privado completo, incluyendo el Cristo Redentor y el Pan de Azúcar. Entradas sin fila al teleférico del Pan de Azúcar incluidas.",
           "highlights": [
             "Entradas al Cristo Redentor incluidas",
@@ -92,7 +92,7 @@
           "slug": "rio-express",
           "name": "Río Express: Cristo y Pan de Azúcar en 5 Horas",
           "duration": "5 horas",
-          "price_from": 410,
+          "price_from": 435,
           "description": "Perfecto para viajeros con tiempo limitado - visita los dos monumentos más icónicos de Río en solo 5 horas.",
           "highlights": [
             "Cristo Redentor",
@@ -111,7 +111,7 @@
           "slug": "amanecer-rio",
           "name": "Río al Amanecer: Pan de Azúcar y Cristo al Alba",
           "duration": "6 horas",
-          "price_from": 580,
+          "price_from": 615,
           "description": "Experimenta el amanecer más impresionante de Río desde el Pan de Azúcar, seguido de acceso temprano al Cristo Redentor.",
           "highlights": [
             "Amanecer desde la cima del Pan de Azúcar, antes de las multitudes",
@@ -130,7 +130,7 @@
           "slug": "hora-dorada-rio",
           "name": "Hora Dorada en Río: Cristo y Pan de Azúcar al Atardecer",
           "duration": "6 horas",
-          "price_from": 430,
+          "price_from": 445,
           "description": "Experimenta la belleza de la hora dorada de Río con visitas vespertinas al Cristo Redentor y un atardecer perfectamente programado.",
           "highlights": [
             "Cristo Redentor con luz dorada",
@@ -172,7 +172,7 @@
           "slug": "bosque-tijuca",
           "name": "Bosque de Tijuca y Museos: Donde la Naturaleza Encuentra la Cultura",
           "duration": "8 horas",
-          "price_from": 445,
+          "price_from": 415,
           "description": "Combina las vistas impresionantes del Pan de Azúcar con la belleza exuberante del Bosque de Tijuca y el Jardín Botánico.",
           "highlights": [
             "Pan de Azúcar",
@@ -193,7 +193,7 @@
           "slug": "niteroi-museo-mac",
           "name": "Niterói: Museo MAC de Niemeyer y Fortalezas Coloniales",
           "duration": "8 horas",
-          "price_from": 335,
+          "price_from": 325,
           "description": "Cruza la Bahía de Guanabara para descubrir la obra maestra arquitectónica del Museo MAC de Niterói y fuertes militares históricos.",
           "highlights": [
             "MAC Niterói de Oscar Niemeyer",
@@ -213,7 +213,7 @@
           "slug": "rio-moderno-museo-manana",
           "name": "Río Moderno: Museo del Mañana y Escuela de Samba Entre Bastidores",
           "duration": "7 horas",
-          "price_from": 445,
+          "price_from": 400,
           "description": "Explora el innovador Museo del Mañana de Río, el acuario más grande de Sudamérica, y ve tras bambalinas del Carnaval.",
           "highlights": [
             "Museo del Mañana",
@@ -273,7 +273,7 @@
           "slug": "island-escape-ilha-grande",
           "name": "Escape a la Isla: Ilha Grande en Lancha Privada",
           "duration": "10 horas",
-          "price_from": 875,
+          "price_from": 955,
           "description": "Un día en lancha privada visitando algunas de las playas de Ilha Grande, con tiempo para nadar y hacer snorkel.",
           "highlights": [
             "Lancha privada para tu grupo",
@@ -294,7 +294,7 @@
           "slug": "petropolis-imperial",
           "name": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
           "duration": "8 horas",
-          "price_from": 360,
+          "price_from": 390,
           "description": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
           "highlights": [
             "Palacio Quitandinha",
@@ -371,7 +371,7 @@
         "slug": "downtown-rio-walking",
         "name": "Centro de Río a Pie: Escaleras de Selarón y Joyas Ocultas",
         "duration": "3.5 horas",
-        "price_per_person": 65,
+        "price_per_person": 70,
         "description": "Descubre los tesoros arquitectónicos del centro histórico de Río, plazas históricas y los icónicos Escaleras de Selarón en un recorrido privado.",
         "url": "https://befreetours.com.br/es/experiencias/downtown-rio-walking"
       },
@@ -380,7 +380,7 @@
         "slug": "santa-teresa-walking",
         "name": "Tour a Pie por Santa Teresa: Arte, Historia y Rincones Ocultos",
         "duration": "2.5 horas",
-        "price_per_person": 65,
+        "price_per_person": 70,
         "description": "Explora uno de los barrios más atmosféricos de Río a pie, descubriendo arte, historia y vida local fuera del circuito turístico principal.",
         "url": "https://befreetours.com.br/es/experiencias/santa-teresa-walking"
       }
