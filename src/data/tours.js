@@ -595,57 +595,65 @@ const prose = {
       "slug": "essential-rio",
       "imageSlug": "essential-rio",
       "title": "The Essential Rio: Icons, Culture & Hidden Gems",
-      "shortDescription": "Experience Rio's most iconic landmarks in one comprehensive private tour, including Christ the Redeemer and Sugarloaf Mountain.",
-      "fullDescription": "Rio de Janeiro is one of the world's great cities — a place where a 700-meter granite peak rises directly from the urban fabric, where a century-old Art Nouveau café sits a few blocks from a favela, where a Chilean artist spent 23 years tiling an entire staircase one mosaic at a time. The Essential Rio private tour was designed to show you all of it, in a single day, without the crowds and compromises of a group bus.\n\nYour day begins at Christ the Redeemer atop Corcovado Mountain — one of the Seven Wonders of the Modern World and arguably the most recognizable statue on earth. At 38 meters tall, the figure of Christ stands with arms extended over a city of 7 million people, at an altitude that puts you above the clouds on misty mornings and rewards you with 360-degree panoramic views of Guanabara Bay, the Tijuca Forest, the beaches of Ipanema and Copacabana, and the Atlantic beyond. Your Christ the Redeemer tickets are included. One straight note: Corcovado is run by a third party, the voucher-to-ticket exchange at street level is required for everyone, and no ticket skips that line — up or down. We'd rather tell you plainly than oversell.\n\nFrom Corcovado, your private tour continues to Sugarloaf Mountain — the 396-meter granite monolith rising from the sea at the mouth of Guanabara Bay that has defined Rio's skyline since Portuguese sailors named it in the 16th century. Two cable car stages take you first to Morro da Urca, then to the Sugarloaf summit, where the view south to Copacabana and east across the bay to Niterói is one of the finest urban panoramas in the world. Skip-the-line tickets for the Sugarloaf cable car are included.\n\nThe afternoon moves into Rio's cultural districts. Santa Teresa is a hillside bohemian neighborhood of cobblestone streets, colonial mansions converted into artist studios, and some of the city's best restaurants and bars. For over a century it has been the home of musicians, painters, and writers who were drawn by the altitude, the light, and the distance from downtown's commercial intensity. Your guide will take you through streets that most tourists never see.\n\nA short walk brings you to the Selarón Steps — 215 steps connecting Lapa and Santa Teresa, each one covered in hand-placed ceramic tiles from over 60 countries. Chilean artist Jorge Selarón began the project in 1990 as a tribute to the Brazilian people and worked on it daily until his death in 2013. The result is one of the most vivid and joyful public art installations in the world.\n\nThe tour also includes two of Rio's most extraordinary architectural interiors: the Royal Portuguese Reading Room, a neo-Manueline masterpiece from 1837 housing 350,000 rare volumes under a stained glass ceiling — open weekdays only — and the Metropolitan Cathedral of São Sebastião, a brutalist cone completed in 1979 that seats 20,000 people and filters natural light through four enormous stained glass panels reaching 64 meters to the ceiling. Entry to both is included.\n\nThroughout the day, your certified private guide — a Rio-born local who has spent years refining this itinerary — provides historical context, local stories, and the kind of knowledge that doesn't appear in any guidebook. The pace is yours. If you want to spend an extra 30 minutes at Selarón Steps for photography, or skip one attraction entirely in favor of lunch in a neighborhood restaurant your guide recommends, that's exactly what happens.\n\nTransportation is private door-to-door: your air-conditioned vehicle with a professional driver picks you up at your hotel, Airbnb, airport or cruise port at the start of the day and returns you at the end. All entrance tickets are included. Complimentary bottled water is provided throughout.\n\nThe Essential Rio is the most comprehensive private tour of the city's iconic landmarks and cultural gems. For first-time visitors to Rio, it is the fullest single day on our program.",
+      "shortDescription": "A full-day private tour of Rio de Janeiro covering Christ the Redeemer, Sugarloaf Mountain and the city's historic neighborhoods, with a licensed guide, a separate driver and tickets arranged in advance.",
+      "fullDescription": "Every Be Free private tour is fully customizable. The itinerary below is our recommended version of the day, but the attractions, order of visits and pace can all be changed before or during the tour.\n\nThe Essential Rio Private Tour is our most complete introduction to Rio de Janeiro. Designed primarily for first-time visitors, it brings together Christ the Redeemer, Sugarloaf Mountain and some of the city's most distinctive neighborhoods, with private transportation and the freedom to experience Rio at your own pace.\n\nYour tour includes two dedicated professionals: a licensed tour guide who accompanies your group and a separate professional driver responsible for the vehicle. Your guide remains with you throughout the experience, rather than leaving to find parking or manage transportation, while your driver takes care of traffic and the next pickup point.\n\nThe suggested day usually begins with Rio's two defining landmarks. From Christ the Redeemer, surrounded by the Tijuca Forest, you see how mountains, beaches and city neighborhoods fit together. Sugarloaf Mountain offers a different perspective, looking across Guanabara Bay and the coastline. Tickets are arranged in advance, including skip-the-line cable car access at Sugarloaf Mountain.\n\nAfter the main viewpoints, many guests choose to explore Santa Teresa and the Selarón Steps. Santa Teresa has a slower rhythm, with hillside streets, historic houses, studios, cafés and local restaurants. Nearby, the Selarón Steps connect Santa Teresa and Lapa through one of Rio's most recognizable works of public art.\n\nDepending on opening hours and your interests, the itinerary may also include the Royal Portuguese Reading Room and the Metropolitan Cathedral. Their very different interiors reveal two sides of downtown Rio: the elaborate nineteenth-century Reading Room and the striking modern architecture of the Cathedral.\n\nThese stops are suggestions, not obligations. You may stay longer at an attraction, stop for lunch, remove a location or replace part of the route with another neighborhood or experience. The order may also change according to weather, traffic and local conditions. In a private tour, knowing Rio means not only knowing where to go, but also knowing when a different plan will create a better day.\n\nThe experience is exclusively for your group, with no shared transportation, no other guests and no need to follow someone else's pace. Essential Rio offers a complete first look at the city while leaving enough freedom for the day to feel entirely your own.",
       "highlights": [
         "Christ the Redeemer",
-        "Sugarloaf Mountain cable car",
-        "Santa Teresa's bohemian neighborhood",
-        "Selarón Stairs - famous mosaic masterpiece",
-        "Royal Portuguese Reading Room (Monday to Friday)",
-        "Metropolitan Cathedral's unique architecture"
+        "Sugarloaf Mountain and its cable cars",
+        "Santa Teresa, Rio's hillside bohemian neighborhood",
+        "Selarón Steps",
+        "Metropolitan Cathedral",
+        "Royal Portuguese Reading Room (weekdays only)"
       ],
       "included": [
-        "Private transportation with professional driver",
-        "Certified local guide (English)",
-        "Christ the Redeemer tickets",
-        "Skip-the-line Sugarloaf cable car tickets",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
+        "Private transportation with a professional driver, exclusively for your group",
+        "Licensed tour guide (English) accompanying your group throughout the day",
+        "Christ the Redeemer entrance tickets, booked in advance for your preferred boarding time, subject to availability",
+        "Skip-the-line cable car tickets at Sugarloaf Mountain",
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports and the cruise port)",
         "Complimentary bottled water"
       ],
       "notIncluded": [
         "Meals and drinks",
         "Gratuities (optional)"
       ],
-      "recommendations": "Start at 6:30 AM for minimal crowds and perfect morning light at Christ the Redeemer. Start at 1:00 PM or later to catch the spectacular sunset from Sugarloaf Mountain.",
       "faqs": [
         {
-          "q": "How long is the Essential Rio tour and is it really a full day?",
-          "a": "Yes, it's a genuine full-day experience -- 8 hours of curated private touring. You'll visit Christ the Redeemer, Sugarloaf Mountain, Santa Teresa neighborhood, Selarón Steps, and architectural gems like the Royal Portuguese Reading Room. The pace is relaxed and entirely at your discretion since it's a private tour."
+          "q": "Is the itinerary fixed?",
+          "a": "No. The itinerary shown on this page is our recommended version of the Essential Rio tour, but the tour is fully customizable. You can change the order of visits, spend longer at certain locations, remove attractions or replace part of the route with other neighborhoods and experiences. Changes can be arranged in advance or made with your guide during the day."
         },
         {
-          "q": "Are the skip-the-line tickets for Sugarloaf really included?",
-          "a": "Yes, skip-the-line cable car tickets for Sugarloaf Mountain are included in the tour price, along with Christ the Redeemer entrance tickets. You won't need to buy anything separately — and at Sugarloaf you skip the ticket line."
+          "q": "Are the guide and the driver the same person?",
+          "a": "No. The tour includes two separate professionals: a licensed tour guide who accompanies your group during the visits, and a professional driver responsible for the vehicle and transportation. This way your guide stays with you throughout the experience, while your driver handles traffic, parking and the next pickup point."
+        },
+        {
+          "q": "Are tickets included?",
+          "a": "Yes. Tickets for Christ the Redeemer and Sugarloaf Mountain are included and arranged in advance. At Sugarloaf Mountain, tickets include skip-the-line cable car access. At Christ the Redeemer, your entry is booked ahead for the boarding time you prefer, subject to availability, and your guide manages the process on the day."
+        },
+        {
+          "q": "Will we have to wait in line?",
+          "a": "At Sugarloaf Mountain, the tour includes skip-the-line access to the cable cars. At Christ the Redeemer, tickets are booked in advance for a boarding time on the train or van, chosen according to your preference and availability, and your guide handles the voucher exchange and boarding so you don't have to manage any of it. Access follows the same official procedure for every visitor, and having it arranged beforehand is what keeps the day moving."
+        },
+        {
+          "q": "Is the tour shared with other travelers?",
+          "a": "No. This is a fully private tour, exclusively for your group. The guide, the driver, the vehicle and the itinerary are not shared with anyone else."
+        },
+        {
+          "q": "Can the tour be adapted for seniors, children or visitors with limited mobility?",
+          "a": "Yes, whenever possible. Because this is a private tour, the pace, the amount of walking and the itinerary can be adapted to your group. We recommend telling us about any mobility needs before booking, so we can suggest the most suitable route and explain the accessibility conditions at each attraction."
         },
         {
           "q": "Is the Royal Portuguese Reading Room always open?",
-          "a": "The Royal Portuguese Reading Room is open Monday to Friday only. If your tour falls on a weekend, we'll replace it with an equally impressive cultural alternative -- your guide will suggest the best option based on the day."
-        },
-        {
-          "q": "Can we adjust the itinerary or add extra stops?",
-          "a": "Absolutely -- this is a private tour and the itinerary is completely flexible. If you'd like to spend more time in Santa Teresa, skip a stop, or add a neighborhood not on the standard route, just let your guide know. The 8 hours is yours to use as you wish."
-        },
-        {
-          "q": "What's the best starting time for this tour?",
-          "a": "For fewer crowds and the best morning light at Christ the Redeemer, we recommend starting at 06:30 AM. To catch the sunset at Christ or Sugarloaf, we recommend starting at 11:30 AM."
+          "a": "The Royal Portuguese Reading Room is open Monday to Friday only. If your tour falls on a weekend, your guide will suggest an alternative cultural stop for that day."
         }
       ],
       "tips": [
-        "Start at Christ the Redeemer early — the first cable car or van of the day has the shortest queues and clearest views before clouds roll in.",
-        "The Royal Portuguese Reading Room is only open Monday to Friday. If your tour is on a weekend, your guide will suggest an equally impressive alternative.",
-        "Selarón Steps are most photogenic in the morning light. Ask your guide to time this stop accordingly.",
-        "Wear light clothing on hot days and comfortable walking shoes — Santa Teresa's cobblestones and the Selarón Steps are uneven underfoot.",
-        "Keep your phone charged. Between Christ, Sugarloaf, Santa Teresa and Selarón, you'll want the battery for photos."
+        "This is an eight-hour tour combining private transportation with periods of walking at the attractions. The amount of walking and the pace of the day can be adapted to your group whenever possible.",
+        "The places shown in the suggested itinerary are not compulsory. Stops, order of visits and time spent at each location can be adjusted before or during the tour.",
+        "We usually recommend starting early, especially during busier periods. The best starting time varies with the date, the availability of each attraction and the itinerary chosen for your group.",
+        "The Royal Portuguese Reading Room is open Monday to Friday only. If your tour falls on a weekend, your guide will suggest an alternative.",
+        "The Selarón Steps photograph best in morning light. Ask your guide to plan that stop accordingly.",
+        "Wear light clothing on hot days and comfortable shoes — the cobblestones in Santa Teresa and the Selarón Steps are uneven underfoot."
       ]
     },
     "rio-express": {
@@ -1283,23 +1291,23 @@ const prose = {
       "slug": "essential-rio",
       "imageSlug": "essential-rio",
       "title": "El Río Esencial: Íconos, Cultura y Joyas Ocultas",
-      "shortDescription": "Descubre los monumentos más emblemáticos de Río en un tour privado completo, incluyendo el Cristo Redentor y el Pan de Azúcar, con acceso preferente al teleférico.",
-      "fullDescription": "Río de Janeiro es una de las grandes ciudades del mundo — un lugar donde una roca de granito de 700 metros surge directamente del tejido urbano, donde un café Art Nouveau centenario comparte barrio con una favela, donde un artista chileno pasó 23 años decorando una escalera entera mosaico por mosaico. El tour privado Essential Rio fue diseñado para mostrarte todo eso en un solo día, sin las multitudes ni los compromisos de un autobús grupal.\n\nTu día comienza en el Cristo Redentor en la cima del Corcovado — una de las Siete Maravillas del Mundo Moderno y posiblemente la estatua más reconocible de la tierra. Con 38 metros de altura, la figura del Cristo se alza con los brazos extendidos sobre una ciudad de 7 millones de personas, a una altitud que te coloca por encima de las nubes en las mañanas nubladas y te recompensa con vistas panorámicas de 360 grados de la Bahía de Guanabara, la Floresta de Tijuca, las playas de Ipanema y Copacabana, y el Atlántico más allá. Tus entradas al Cristo Redentor están incluidas. Una nota franca: el Corcovado lo opera un tercero, el canje del voucher por la entrada —a nivel de la calle— es obligatorio para todos, y ninguna entrada se salta esa fila, ni de subida ni de bajada. Preferimos decírtelo claro antes que prometer de más.\n\nDesde el Corcovado, el tour privado continúa hacia el Pan de Azúcar — el monolito de granito de 396 metros que surge del mar en la boca de la Bahía de Guanabara y ha definido el horizonte de Río desde que los marineros portugueses lo bautizaron en el siglo XVI. Dos etapas de teleférico te llevan primero al Morro da Urca y luego a la cima del Pan de Azúcar, desde donde la vista hacia el sur sobre Copacabana y al este sobre la bahía hacia Niterói es uno de los panoramas urbanos más espectaculares del mundo. Las entradas sin fila del teleférico del Pan de Azúcar están incluidas.\n\nLa tarde se adentra en los barrios culturales de Río. Santa Teresa es un barrio bohemio en ladera con calles empedradas, mansiones coloniales convertidas en estudios de artistas, y algunos de los mejores restaurantes y bares de la ciudad. Durante más de un siglo ha sido el hogar de músicos, pintores y escritores atraídos por la altitud, la luz y la distancia de la intensidad comercial del centro. Tu guía te llevará por calles que la mayoría de los turistas nunca ven.\n\nA pocos pasos se encuentran las Escaleras de Selarón — 215 escalones que conectan Lapa y Santa Teresa, cada uno cubierto de azulejos colocados a mano de más de 60 países. El artista chileno Jorge Selarón comenzó el proyecto en 1990 como homenaje al pueblo brasileño y trabajó en él a diario hasta su muerte en 2013. El resultado es una de las instalaciones de arte público más vívidas y alegres del mundo.\n\nEl tour también incluye dos de los interiores arquitectónicos más extraordinarios de Río: el Real Gabinete Portugués de Lectura, una obra maestra neomanuelina de 1837 que alberga 350.000 volúmenes raros bajo un techo de cristal emplomado — abierto solo de lunes a viernes — y la Catedral Metropolitana de São Sebastião, un cono brutalista completado en 1979 con capacidad para 20.000 personas que filtra la luz natural a través de cuatro enormes paneles de vidrieras que alcanzan los 64 metros hasta el techo. La entrada a ambos está incluida.\n\nDurante todo el día, tu guía privado certificado — un carioca de nacimiento que ha pasado años perfeccionando este itinerario — aporta contexto histórico, historias locales y el tipo de conocimiento que no aparece en ninguna guía turística. El ritmo es el tuyo. Si quieres pasar 30 minutos extra en las Escaleras para fotografías, o saltarte una atracción en favor de almorzar en un restaurante del barrio que tu guía recomienda, eso es exactamente lo que sucede.\n\nEl transporte es privado puerta a puerta: tu vehículo con aire acondicionado y conductor profesional te recoge en tu hotel, Airbnb, aeropuerto o terminal de cruceros al inicio del día y te devuelve al final. Todas las entradas están incluidas. Se proporciona agua embotellada de cortesía durante todo el día.\n\nEl Essential Rio es el tour privado más completo de los iconos y joyas culturales de la ciudad. Para quienes visitan Río por primera vez, es el mejor día disponible.",
+      "shortDescription": "Tour privado de día completo por Río de Janeiro con el Cristo Redentor, el Pan de Azúcar y los barrios históricos de la ciudad, con guía acreditado, conductor profesional y entradas organizadas con antelación.",
+      "fullDescription": "Todos los tours privados de Be Free se pueden personalizar. El itinerario que aparece a continuación es nuestra propuesta para el día, pero las atracciones, el orden de las visitas y el ritmo del recorrido pueden modificarse antes o durante el tour.\n\nEssential Rio es nuestro tour privado más completo para conocer Río de Janeiro, especialmente pensado para quienes visitan la ciudad por primera vez. El recorrido combina el Cristo Redentor (Christ the Redeemer), el Pan de Azúcar (Sugarloaf Mountain) y algunos de los barrios y lugares culturales más representativos de Río, con transporte privado y la libertad de descubrir la ciudad al ritmo de tu grupo.\n\nEl tour cuenta con dos profesionales dedicados: un guía de turismo acreditado, que acompaña al grupo durante las visitas, y un conductor profesional responsable del vehículo. De este modo, el guía permanece contigo durante toda la experiencia, sin tener que alejarse para estacionar o atender el transporte, mientras el conductor organiza los desplazamientos y los siguientes puntos de encuentro.\n\nEl itinerario recomendado suele comenzar por los dos grandes símbolos de Río. Desde el Cristo Redentor, rodeado por la Floresta de Tijuca (Tijuca Forest), se entiende mejor cómo las montañas, las playas y los distintos barrios forman parte de una misma ciudad. El Pan de Azúcar ofrece una perspectiva diferente, con vistas a la bahía de Guanabara (Guanabara Bay), la costa y las montañas que rodean Río. Las entradas se organizan con antelación e incluyen acceso sin fila a los teleféricos del Pan de Azúcar.\n\nDespués de los principales miradores, muchos visitantes eligen continuar hacia Santa Teresa y la Escalera de Selarón (Selarón Steps). Santa Teresa tiene un ambiente más tranquilo, con calles en las laderas, antiguas casas, talleres de artistas, cafés y restaurantes. Muy cerca, la Escalera de Selarón conecta Santa Teresa con Lapa y se ha convertido en una de las obras de arte público más reconocibles de Río de Janeiro.\n\nSegún el día, los horarios de apertura y los intereses del grupo, el recorrido también puede incluir el Real Gabinete Portugués de Lectura (Royal Portuguese Reading Room) y la Catedral Metropolitana de Río de Janeiro (Metropolitan Cathedral). Ambos lugares muestran dos caras muy distintas del centro de Río: la decoración histórica del Real Gabinete y la arquitectura moderna, marcada por sus grandes vitrales, de la Catedral.\n\nEstas paradas son sugerencias, no obligaciones. Puedes dedicar más tiempo a una atracción, hacer una pausa para almorzar, eliminar una visita o sustituir parte del itinerario por otro barrio o experiencia. El orden también puede cambiar según el clima, el tráfico y las condiciones del día. En un tour privado, conocer bien Río no significa solamente saber adónde ir, sino también reconocer cuándo un cambio de plan puede mejorar el recorrido.\n\nEl tour es exclusivo para tu grupo, sin transporte compartido, sin otros participantes y sin necesidad de seguir el ritmo de desconocidos. Essential Rio ofrece una introducción completa a la ciudad, manteniendo la flexibilidad necesaria para que el día se adapte realmente a ti.",
       "highlights": [
         "Cristo Redentor",
-        "Pan de Azúcar con acceso preferente",
-        "Barrio bohemio de Santa Teresa",
-        "Escaleras de Selarón",
-        "Real Gabinete Portugués de Lectura",
-        "Catedral Metropolitana"
+        "Pan de Azúcar y sus teleféricos",
+        "Santa Teresa, el barrio bohemio en las laderas de Río",
+        "Escalera de Selarón",
+        "Catedral Metropolitana",
+        "Real Gabinete Portugués de Lectura (solo días de semana)"
       ],
       "included": [
-        "Transporte privado",
-        "Guía local certificado (español)",
-        "Entradas al Cristo Redentor",
-        "Entradas sin fila al teleférico del Pan de Azúcar",
+        "Transporte privado con conductor profesional, exclusivo para tu grupo",
+        "Guía de turismo acreditado (español) que acompaña a tu grupo durante todo el día",
+        "Entradas al Cristo Redentor, reservadas con antelación para el horario de subida que prefieras, según disponibilidad",
+        "Entradas sin fila a los teleféricos del Pan de Azúcar",
         "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
-        "Agua mineral"
+        "Agua mineral de cortesía"
       ],
       "notIncluded": [
         "Comidas y bebidas",
@@ -1307,32 +1315,41 @@ const prose = {
       ],
       "faqs": [
         {
-          "q": "¿Cuánto dura el tour Río Esencial y es realmente un día completo?",
-          "a": "Sí, son 8 horas reales de tour privado personalizado. Visitarás el Cristo Redentor, el Pan de Azúcar, el barrio de Santa Teresa, las Escaleras de Selarón y joyas arquitectónicas como el Real Gabinete Portugués de Lectura. El ritmo es tranquilo ya que es un tour completamente privado."
+          "q": "¿El itinerario es fijo?",
+          "a": "No. El itinerario que aparece en esta página es nuestra versión recomendada del tour Essential Rio, pero el recorrido se puede personalizar por completo. Es posible cambiar el orden de las visitas, dedicar más tiempo a determinados lugares, eliminar atracciones o sustituir parte del itinerario por otros barrios y experiencias. Los cambios pueden acordarse con antelación o realizarse con el guía durante el tour."
         },
         {
-          "q": "¿Las entradas sin filas al Pan de Azúcar están realmente incluidas?",
-          "a": "Sí, las entradas al teleférico del Pan de Azúcar con acceso preferente están incluidas en el precio, junto con las entradas al Cristo Redentor. No tendrás que hacer cola ni comprar nada por separado en ninguna de las atracciones."
+          "q": "¿El guía y el conductor son la misma persona?",
+          "a": "No. El tour incluye dos profesionales diferentes: un guía de turismo acreditado, que acompaña al grupo durante las visitas, y un conductor profesional responsable del vehículo y de los desplazamientos. Así, el guía puede permanecer contigo durante toda la experiencia, mientras el conductor se ocupa del tráfico, el estacionamiento y los siguientes puntos de encuentro."
+        },
+        {
+          "q": "¿Las entradas están incluidas?",
+          "a": "Sí. Las entradas para el Cristo Redentor y el Pan de Azúcar están incluidas y se organizan con antelación. En el Pan de Azúcar, las entradas incluyen acceso sin fila a los teleféricos. En el Cristo Redentor, tu entrada se reserva por adelantado para el horario de subida que prefieras, según disponibilidad, y tu guía se encarga del proceso el día del tour."
+        },
+        {
+          "q": "¿Tendremos que hacer fila?",
+          "a": "En el Pan de Azúcar, el tour incluye acceso sin fila a los teleféricos. En el Cristo Redentor, las entradas se reservan con antelación para un horario de subida en tren o van, elegido según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher y del embarque para que no tengas que gestionar nada. El acceso sigue el mismo procedimiento oficial para todos los visitantes, y tenerlo organizado de antemano es lo que mantiene el ritmo del día."
+        },
+        {
+          "q": "¿El tour se comparte con otros viajeros?",
+          "a": "No. Este es un tour completamente privado y exclusivo para tu grupo. El guía, el conductor, el vehículo y el itinerario no se comparten con otros viajeros."
+        },
+        {
+          "q": "¿El recorrido puede adaptarse para personas mayores, niños o visitantes con movilidad reducida?",
+          "a": "Sí, siempre que sea posible. Al tratarse de un tour privado, el ritmo, el tiempo de caminata y el itinerario pueden adaptarse a las necesidades del grupo. Recomendamos informar cualquier necesidad de movilidad antes de reservar para que podamos sugerir el recorrido más adecuado y explicar las condiciones de accesibilidad de cada atracción."
         },
         {
           "q": "¿El Real Gabinete Portugués de Lectura siempre está abierto?",
-          "a": "El Real Gabinete abre de lunes a viernes. Si tu tour es en fin de semana, lo reemplazaremos por una alternativa cultural igualmente impresionante que tu guía recomendará según el día."
-        },
-        {
-          "q": "¿Podemos ajustar el itinerario o agregar paradas?",
-          "a": "Por supuesto -- es un tour privado y el itinerario es completamente flexible. Si quieres más tiempo en Santa Teresa, saltar una parada o agregar un barrio diferente, simplemente díselo a tu guía. Las 8 horas son tuyas."
-        },
-        {
-          "q": "¿Cuál es el mejor horario de inicio para este tour?",
-          "a": "Para encontrar menos gente y la mejor luz de la mañana en el Cristo Redentor, recomendamos comenzar a las 06:30. Para ver el atardecer en el Cristo o el Pan de Azúcar, recomendamos comenzar a las 11:30."
+          "a": "El Real Gabinete Portugués de Lectura abre solo de lunes a viernes. Si tu tour cae en fin de semana, tu guía sugerirá una alternativa cultural para ese día."
         }
       ],
       "tips": [
-        "Llegad temprano al Cristo Redentor — el primer teleférico o van del día tiene las colas más cortas y las vistas más despejadas antes de que lleguen las nubes.",
-        "El Real Gabinete Portugués de Lectura solo abre de lunes a viernes. Si tu tour es en fin de semana, tu guía sugerirá una alternativa igualmente impresionante.",
-        "Las Escaleras de Selarón lucen mejor con la luz de la mañana. Pídele a tu guía que planifique esa parada con anticipación.",
-        "Usa ropa ligera en días calurosos y calzado cómodo — los adoquines de Santa Teresa y la Escalera de Selarón son irregulares.",
-        "Mantén el teléfono cargado. Entre el Cristo, el Pan de Azúcar, Santa Teresa y el Selarón, querrás batería de sobra para fotos."
+        "Este es un tour de ocho horas que combina desplazamientos en vehículo privado con períodos de caminata en las atracciones. Siempre que sea posible, el ritmo del recorrido y la cantidad de caminata pueden adaptarse a las necesidades del grupo.",
+        "Los lugares que aparecen en el itinerario son sugerencias y no es obligatorio visitarlos todos. Las paradas, el orden de las visitas y el tiempo dedicado a cada atracción pueden modificarse antes o durante el tour.",
+        "Normalmente recomendamos comenzar temprano, especialmente durante los períodos de mayor afluencia. La mejor hora de inicio puede variar según la fecha, la disponibilidad de las atracciones y el itinerario elegido para tu grupo.",
+        "El Real Gabinete Portugués de Lectura abre solo de lunes a viernes. Si tu tour cae en fin de semana, tu guía sugerirá una alternativa igualmente interesante.",
+        "La Escalera de Selarón luce mejor con la luz de la mañana. Pídele a tu guía que planifique esa parada teniendo eso en cuenta.",
+        "Usa ropa ligera en días calurosos y calzado cómodo — los adoquines de Santa Teresa y la Escalera de Selarón son irregulares."
       ]
     },
     "rio-express": {
@@ -1970,23 +1987,23 @@ const prose = {
       "slug": "rio-essencial",
       "imageSlug": "essential-rio",
       "title": "O Essencial do Rio: Ícones, Cultura e Joias Escondidas",
-      "shortDescription": "Conheça os pontos turísticos mais icônicos do Rio em um passeio privado completo, incluindo Cristo Redentor e Pão de Açúcar, com acesso preferencial ao bondinho.",
-      "fullDescription": "O Rio de Janeiro é uma das grandes cidades do mundo — um lugar onde um pico de granito de 700 metros surge diretamente do tecido urbano, onde um café Art Nouveau centenário divide o bairro com uma favela, onde um artista chileno passou 23 anos revestindo uma escadaria inteira mosaico por mosaico. O passeio privativo Essential Rio foi criado para mostrar tudo isso em um único dia, sem as multidões e os compromissos de um ônibus de grupo.\n\nSeu dia começa no Cristo Redentor no topo do Corcovado — uma das Sete Maravilhas do Mundo Moderno e possivelmente a estátua mais reconhecível da Terra. Com 38 metros de altura, a figura do Cristo se ergue de braços abertos sobre uma cidade de 7 milhões de pessoas, numa altitude que coloca você acima das nuvens nas manhãs nubladas e recompensa com vistas panorâmicas de 360 graus da Baía de Guanabara, da Floresta da Tijuca, das praias de Ipanema e Copacabana, e do Atlântico além. Seus ingressos para o Cristo Redentor estão incluídos. Uma nota franca: o Corcovado é operado por terceiros, a troca do voucher pelo ingresso — no nível da rua — é obrigatória para todos, e nenhum ingresso fura essa fila, nem na subida nem na descida. Preferimos te dizer com franqueza a prometer demais.\n\nDo Corcovado, o passeio privativo segue para o Pão de Açúcar — o monólito de granito de 396 metros que surge do mar na entrada da Baía de Guanabara e define o horizonte do Rio desde que os marinheiros portugueses o batizaram no século XVI. Dois estágios de bondinho levam você primeiro ao Morro da Urca e depois ao topo do Pão de Açúcar, de onde a vista ao sul sobre Copacabana e a leste sobre a baía em direção a Niterói é um dos panoramas urbanos mais extraordinários do mundo. Os ingressos skip-the-line do bondinho do Pão de Açúcar estão incluídos.\n\nA tarde adentra os bairros culturais do Rio. Santa Teresa é um bairro boêmio no morro, com ruas de paralelepípedos, casarões coloniais convertidos em ateliês de artistas, e alguns dos melhores restaurantes e bares da cidade. Por mais de um século foi o lar de músicos, pintores e escritores atraídos pela altitude, pela luz e pela distância da intensidade comercial do centro. Seu guia levará você por ruas que a maioria dos turistas nunca vê.\n\nA poucos passos estão as Escadarias do Selarón — 215 degraus que conectam a Lapa e Santa Teresa, cada um revestido de azulejos colocados à mão de mais de 60 países. O artista chileno Jorge Selarón iniciou o projeto em 1990 como homenagem ao povo brasileiro e trabalhou nele diariamente até sua morte em 2013. O resultado é uma das instalações de arte pública mais vívidas e alegres do mundo.\n\nO passeio também inclui dois dos interiores arquitetônicos mais extraordinários do Rio: o Real Gabinete Português de Leitura, uma obra-prima neomanuelina de 1837 que abriga 350.000 volumes raros sob um teto de vitral — aberto apenas de segunda a sexta — e a Catedral Metropolitana de São Sebastião, um cone brutalista concluído em 1979 com capacidade para 20.000 pessoas que filtra a luz natural por quatro enormes painéis de vitral que alcançam 64 metros até o teto. A entrada em ambos está incluída.\n\nDurante todo o dia, seu guia privativo certificado — um carioca de nascimento que passou anos aperfeiçoando este roteiro — fornece contexto histórico, histórias locais e o tipo de conhecimento que não aparece em nenhum guia de viagem. O ritmo é seu. Se quiser passar 30 minutos a mais nas Escadarias para fotografar, ou pular uma atração em favor de almoçar num restaurante do bairro que seu guia recomenda, é exatamente isso que acontece.\n\nO transporte é privativo porta a porta: seu veículo com ar-condicionado e motorista profissional busca você no hotel, Airbnb, aeroporto ou terminal de cruzeiros no início do dia e retorna ao final. Todos os ingressos estão incluídos. Água mineral é fornecida gratuitamente ao longo do dia.\n\nO Essential Rio é o passeio privativo mais completo pelos marcos icônicos e joias culturais da cidade. Para quem visita o Rio pela primeira vez, é o melhor dia disponível.",
+      "shortDescription": "Passeio privativo de dia inteiro pelo Rio de Janeiro com Cristo Redentor, Pão de Açúcar e os bairros históricos da cidade, com guia credenciado, motorista profissional e ingressos providenciados antecipadamente.",
+      "fullDescription": "Todos os tours privados da Be Free podem ser personalizados. O roteiro abaixo é a nossa sugestão para o dia, mas as atrações, a ordem das visitas e o ritmo do passeio podem ser alterados antes ou durante o tour.\n\nO Essential Rio é o nosso tour privado mais completo para conhecer o Rio de Janeiro, especialmente indicado para quem visita a cidade pela primeira vez. O passeio reúne o Cristo Redentor (Christ the Redeemer), o Pão de Açúcar (Sugarloaf Mountain) e alguns dos bairros e pontos culturais mais marcantes do Rio, com transporte privativo e liberdade para conhecer a cidade no ritmo do seu grupo.\n\nO tour é realizado por dois profissionais dedicados: um guia de turismo credenciado, que acompanha o grupo durante as visitas, e um motorista profissional responsável pelo veículo. Dessa forma, o guia permanece com você ao longo de toda a experiência, sem precisar se afastar para estacionar ou cuidar do transporte, enquanto o motorista organiza os deslocamentos e os próximos pontos de embarque.\n\nO roteiro sugerido costuma começar pelos dois principais cartões-postais do Rio. No Cristo Redentor, cercado pela Floresta da Tijuca (Tijuca Forest), é possível compreender melhor como montanhas, praias e bairros se distribuem pela cidade. Já o Pão de Açúcar oferece uma perspectiva diferente, com vistas para a Baía de Guanabara (Guanabara Bay), a orla e as montanhas ao redor. Os ingressos são providenciados antecipadamente, incluindo acesso sem fila para os bondinhos do Pão de Açúcar.\n\nDepois dos principais mirantes, muitos visitantes optam por seguir para Santa Teresa e a Escadaria Selarón (Selarón Steps). Santa Teresa tem um ritmo mais tranquilo, com ruas nas encostas, casarões históricos, ateliês, cafés e restaurantes. Próxima dali, a Escadaria Selarón liga Santa Teresa à Lapa e se tornou uma das obras de arte pública mais conhecidas do Rio de Janeiro.\n\nDependendo do dia, dos horários de funcionamento e dos interesses do grupo, o passeio também pode incluir o Real Gabinete Português de Leitura (Royal Portuguese Reading Room) e a Catedral Metropolitana do Rio de Janeiro (Metropolitan Cathedral). Os dois espaços mostram lados muito diferentes do Centro: a ornamentação histórica do Real Gabinete e a arquitetura moderna, marcada pelos grandes vitrais, da Catedral.\n\nEssas paradas são sugestões, não obrigações. Você pode permanecer mais tempo em uma atração, fazer uma pausa para o almoço, retirar um local ou substituir parte do roteiro por outro bairro ou experiência. A ordem das visitas também pode mudar de acordo com o clima, o trânsito e as condições do dia. Em um tour privado, conhecer bem o Rio não significa apenas saber aonde ir, mas também entender quando uma mudança de plano pode tornar o passeio melhor.\n\nA experiência é exclusiva para o seu grupo, sem transporte compartilhado, sem outros participantes e sem a necessidade de acompanhar o ritmo de desconhecidos. O Essential Rio oferece uma introdução completa à cidade, preservando a flexibilidade necessária para que o dia tenha a cara do seu grupo.",
       "highlights": [
         "Cristo Redentor",
-        "Pão de Açúcar com acesso preferencial",
-        "Bairro boêmio de Santa Teresa",
+        "Pão de Açúcar e seus bondinhos",
+        "Santa Teresa, o bairro boêmio nas encostas do Rio",
         "Escadaria Selarón",
-        "Real Gabinete Português de Leitura",
-        "Catedral Metropolitana"
+        "Catedral Metropolitana",
+        "Real Gabinete Português de Leitura (apenas dias de semana)"
       ],
       "included": [
-        "Transporte privado",
-        "Guia local certificado (português)",
-        "Ingressos do Cristo Redentor",
-        "Ingressos sem fila do bondinho do Pão de Açúcar",
+        "Transporte privativo com motorista profissional, exclusivo para o seu grupo",
+        "Guia de turismo credenciado (português) acompanhando o grupo durante todo o dia",
+        "Ingressos do Cristo Redentor, reservados antecipadamente para o horário de subida de sua preferência, conforme disponibilidade",
+        "Ingressos sem fila para os bondinhos do Pão de Açúcar",
         "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
-        "Água mineral"
+        "Água mineral de cortesia"
       ],
       "notIncluded": [
         "Refeições e bebidas",
@@ -1994,32 +2011,41 @@ const prose = {
       ],
       "faqs": [
         {
-          "q": "Quanto tempo dura o tour Rio Essencial e é realmente um dia completo?",
-          "a": "Sim, são 8 horas reais de passeio privado e personalizado. Você visitará o Cristo Redentor, o Pão de Açúcar, o bairro de Santa Teresa, as Escadarias do Selarón e joias arquitetônicas como a Real Gabinete Português de Leitura. O ritmo é tranquilo pois é um tour totalmente privado."
+          "q": "O roteiro é fixo?",
+          "a": "Não. O roteiro apresentado nesta página é a nossa versão recomendada do Essential Rio, mas o tour pode ser totalmente personalizado. É possível mudar a ordem das visitas, permanecer mais tempo em determinados locais, retirar atrações ou substituir parte do roteiro por outros bairros e experiências. As alterações podem ser combinadas antecipadamente ou realizadas com o guia durante o passeio."
         },
         {
-          "q": "Os ingressos sem fila para o Pão de Açúcar estão mesmo incluídos?",
-          "a": "Sim, os ingressos do bondinho do Pão de Açúcar com acesso prioritário estão incluídos no preço, junto com os ingressos do Cristo Redentor. Você não precisará enfrentar filas nem comprar nada separadamente em nenhuma das atrações."
+          "q": "O guia e o motorista são a mesma pessoa?",
+          "a": "Não. O tour inclui dois profissionais diferentes: um guia de turismo credenciado, que acompanha o grupo durante as visitas, e um motorista profissional responsável pelo veículo e pelos deslocamentos. Assim, o guia pode permanecer com você durante toda a experiência, enquanto o motorista cuida do trânsito, do estacionamento e dos próximos embarques."
         },
         {
-          "q": "A Real Gabinete Português de Leitura sempre está aberta?",
-          "a": "A Real Gabinete funciona de segunda a sexta-feira. Se o seu tour for no fim de semana, substituiremos por uma alternativa cultural igualmente impressionante que seu guia recomendará conforme o dia."
+          "q": "Os ingressos estão incluídos?",
+          "a": "Sim. Os ingressos para o Cristo Redentor e o Pão de Açúcar estão incluídos e são providenciados antecipadamente. No Pão de Açúcar, os ingressos incluem acesso sem fila para os bondinhos. No Cristo Redentor, o ingresso é reservado com antecedência para o horário de subida de sua preferência, conforme a disponibilidade, e o guia cuida de todo o processo no dia do passeio."
         },
         {
-          "q": "Podemos ajustar o itinerário ou adicionar paradas?",
-          "a": "Com certeza -- é um passeio privado e o itinerário é completamente flexível. Se quiser mais tempo em Santa Teresa, pular uma parada ou adicionar um bairro diferente, basta avisar ao guia. As 8 horas são suas."
+          "q": "Precisaremos enfrentar filas?",
+          "a": "No Pão de Açúcar, o tour inclui acesso sem fila para os bondinhos. No Cristo Redentor, os ingressos são reservados com antecedência para um horário de subida no trem ou van, escolhido conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher e do embarque para que você não precise se preocupar com nada. O acesso segue o mesmo procedimento oficial para todos os visitantes, e ter tudo organizado de antemão é o que mantém o ritmo do dia."
         },
         {
-          "q": "Qual o melhor horário de início para este tour?",
-          "a": "Para pegar menos gente e a melhor luz da manhã no Cristo Redentor, recomendamos começar às 06:30. Para ver o pôr do sol no Cristo ou no Pão de Açúcar, recomendamos começar às 11:30."
+          "q": "O tour é compartilhado com outros visitantes?",
+          "a": "Não. Este é um tour totalmente privado e exclusivo para o seu grupo. O guia, o motorista, o veículo e o roteiro não são compartilhados com outros visitantes."
+        },
+        {
+          "q": "O passeio pode ser adaptado para idosos, crianças ou pessoas com mobilidade reduzida?",
+          "a": "Sim, sempre que possível. Por ser um tour privado, o ritmo, o tempo de caminhada e o roteiro podem ser adaptados às necessidades do grupo. Recomendamos informar qualquer necessidade de mobilidade antes da reserva para que possamos sugerir o percurso mais adequado e explicar as condições de acessibilidade de cada atração."
+        },
+        {
+          "q": "O Real Gabinete Português de Leitura fica sempre aberto?",
+          "a": "O Real Gabinete Português de Leitura abre apenas de segunda a sexta-feira. Se o seu passeio cair no fim de semana, o guia sugerirá uma alternativa cultural para aquele dia."
         }
       ],
       "tips": [
-        "Chegue cedo ao Cristo Redentor — o primeiro bondinho ou van do dia tem as filas mais curtas e as vistas mais limpas antes das nuvens chegarem.",
-        "A Real Gabinete Português de Leitura só abre de segunda a sexta. Se o seu passeio for no fim de semana, seu guia sugerirá uma alternativa igualmente impressionante.",
-        "As Escadarias do Selarón ficam mais fotogênicas com a luz da manhã. Peça ao seu guia para planejar essa parada com antecedência.",
-        "Use roupas leves em dias quentes e calçados confortáveis — os paralelepípedos de Santa Teresa e a Escadaria Selarón são irregulares.",
-        "Mantenha o celular carregado. Entre o Cristo, o Pão de Açúcar, Santa Teresa e o Selarón, você vai querer bateria de sobra para fotos."
+        "Este é um tour de oito horas que combina deslocamentos em veículo privativo com períodos de caminhada nas atrações. Sempre que possível, o ritmo do passeio e a quantidade de caminhada podem ser adaptados às necessidades do grupo.",
+        "Os locais apresentados no roteiro são sugestões e não precisam ser visitados obrigatoriamente. As paradas, a ordem das visitas e o tempo dedicado a cada atração podem ser ajustados antes ou durante o tour.",
+        "Normalmente recomendamos começar cedo, especialmente nos períodos de maior movimento. O melhor horário de início pode variar de acordo com a data, a disponibilidade das atrações e o roteiro escolhido para o grupo.",
+        "O Real Gabinete Português de Leitura abre apenas de segunda a sexta-feira. Se o seu passeio for no fim de semana, o guia sugerirá uma alternativa igualmente interessante.",
+        "A Escadaria Selarón fica mais fotogênica com a luz da manhã. Peça ao guia para planejar essa parada levando isso em conta.",
+        "Use roupas leves em dias quentes e calçados confortáveis — os paralelepípedos de Santa Teresa e a Escadaria Selarón são irregulares."
       ]
     },
     "rio-express": {
