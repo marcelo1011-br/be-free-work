@@ -644,7 +644,7 @@ const prose = {
         "Start at Christ the Redeemer early — the first cable car or van of the day has the shortest queues and clearest views before clouds roll in.",
         "The Royal Portuguese Reading Room is only open Monday to Friday. If your tour is on a weekend, your guide will suggest an equally impressive alternative.",
         "Selarón Steps are most photogenic in the morning light. Ask your guide to time this stop accordingly.",
-        "Bring a small daypack — you'll be on your feet for up to 8 hours across multiple neighborhoods.",
+        "Wear light clothing on hot days and comfortable walking shoes — Santa Teresa's cobblestones and the Selarón Steps are uneven underfoot.",
         "Keep your phone charged. Between Christ, Sugarloaf, Santa Teresa and Selarón, you'll want the battery for photos."
       ]
     },
@@ -1331,7 +1331,7 @@ const prose = {
         "Llegad temprano al Cristo Redentor — el primer teleférico o van del día tiene las colas más cortas y las vistas más despejadas antes de que lleguen las nubes.",
         "El Real Gabinete Portugués de Lectura solo abre de lunes a viernes. Si tu tour es en fin de semana, tu guía sugerirá una alternativa igualmente impresionante.",
         "Las Escaleras de Selarón lucen mejor con la luz de la mañana. Pídele a tu guía que planifique esa parada con anticipación.",
-        "Lleva una mochila pequeña — estarás de pie hasta 8 horas por distintos barrios.",
+        "Usa ropa ligera en días calurosos y calzado cómodo — los adoquines de Santa Teresa y la Escalera de Selarón son irregulares.",
         "Mantén el teléfono cargado. Entre el Cristo, el Pan de Azúcar, Santa Teresa y el Selarón, querrás batería de sobra para fotos."
       ]
     },
@@ -2018,7 +2018,7 @@ const prose = {
         "Chegue cedo ao Cristo Redentor — o primeiro bondinho ou van do dia tem as filas mais curtas e as vistas mais limpas antes das nuvens chegarem.",
         "A Real Gabinete Português de Leitura só abre de segunda a sexta. Se o seu passeio for no fim de semana, seu guia sugerirá uma alternativa igualmente impressionante.",
         "As Escadarias do Selarón ficam mais fotogênicas com a luz da manhã. Peça ao seu guia para planejar essa parada com antecedência.",
-        "Leve uma mochila pequena — você estará de pé por até 8 horas em diferentes bairros.",
+        "Use roupas leves em dias quentes e calçados confortáveis — os paralelepípedos de Santa Teresa e a Escadaria Selarón são irregulares.",
         "Mantenha o celular carregado. Entre o Cristo, o Pão de Açúcar, Santa Teresa e o Selarón, você vai querer bateria de sobra para fotos."
       ]
     },
