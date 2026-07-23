@@ -932,57 +932,101 @@ const prose = {
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
       "title": "Island Escape: Ilha Grande by Private Speedboat",
-      "shortDescription": "Embark on an exclusive private speedboat trip to some of the island's most beautiful beaches.",
-      "fullDescription": "Ilha Grande is a 193-square-kilometer protected Atlantic Forest reserve with over 100 beaches, no cars, no roads between villages, and water so clear you can see the seafloor at 10 meters depth. It sits 150 kilometers southwest of Rio de Janeiro, and the only way to reach it is by boat.\n\nThe journey begins before dawn. Your private vehicle picks you up in Rio between 6:00 and 7:00 AM for the three-hour coastal drive through the Green Coast (Costa Verde) — one of Brazil's most scenic stretches of Atlantic coastline, passing through Mangaratiba where your private speedboat is waiting. The boat is exclusively yours for the day: no other passengers, no fixed itinerary imposed by a group schedule, no waiting for strangers to finish their swim. An on-board barbecue can be added on request (USD 120 per boat for up to 6 guests; USD 240 for 7–12).\n\nIlha Grande was a maximum-security prison island until 1994 — its isolation that made it ideal for incarceration also preserved its ecosystem entirely. When the prison closed, the Brazilian government declared it an environmental protection area. Today it is one of the last remaining intact sections of Atlantic Forest in Brazil, home to rare primates, over 200 bird species, sea turtles, and dolphins. The waters around the island contain some of the best snorkeling sites on the South Atlantic coast.\n\nThe private speedboat covers five hours visiting some of the island's most beautiful beaches. Stops are chosen based on sea conditions, tides, and your interests discussed in advance — typically including Lopes Mendes, consistently rated one of the top five beaches in Brazil for its three kilometers of white sand and translucent surf, the sheltered waters of Lagoa Azul for snorkeling, with an optional lunch stop at one of the beaches.\n\nNo roads reach Lopes Mendes — you arrive by boat. Your private speedboat means you arrive before the day-trip boat crowds, spend as long as you want, and depart when you're ready. An upgrade to extend time at Lopes Mendes with a guide-led forest trail is available for USD 100 per person.\n\nLunch is an optional stop at one of the beaches — not included in the tour price and at your own expense; your guide will recommend good spots. Budget USD 20–40 per person.\n\nThe return speedboat journey and drive back to Rio brings you home by early evening. The total day — door to door — is approximately 10 to 11 hours.\n\nIncluded: private round-trip transportation Rio to Mangaratiba, private speedboat for the day with captain, certified guide, snorkeling equipment, and complimentary bottled water. Not included: lunch, optional Lopes Mendes upgrade (USD 100/person), and any personal purchases.\n\nFor travelers who want to experience one of Brazil's most stunning islands without the constraints of a group tour, this is the private alternative to a group boat.",
+      "shortDescription": "A private day trip from Rio to Ilha Grande by speedboat, exploring sheltered beaches and snorkeling spots, with a licensed guide, a driver and a boat reserved for your group. A premium Lopes Mendes option is available.",
+      "fullDescription": "This is a complete private day trip to Ilha Grande from Rio de Janeiro, with door-to-door transportation, a licensed tour guide and a speedboat reserved exclusively for your group. From pickup at your accommodation in Rio to the final beach stop, the whole experience is organized as one continuous private tour.\n\nThe day begins early, with pickup from your hotel, Airbnb or other accommodation in Rio. Your private vehicle takes you to Mangaratiba, a coastal town near Ilha Grande, where your speedboat and sailor are waiting. The boat is exclusively yours for the day, with no other passengers, no fixed group schedule and no waiting for strangers to finish their swim.\n\nIlha Grande is a preserved Atlantic Forest reserve — an island with no roads between villages and water clear enough to see the seafloor. The speedboat portion lasts about five hours and explores beaches, sheltered coves and snorkeling spots around the island. The usual stops are at beaches with shallow, calm water, and complimentary snorkeling equipment and bottled water are provided at no extra cost.\n\nThere is no fixed list of beaches. The route is chosen according to maritime conditions, safety, the time available and your group's interests, so stops may vary from one day to the next. Because the boat is private, the pace is yours: you can spend longer swimming, resting on a beach or snorkeling instead of following a shared excursion's timetable.\n\nYour experience includes three professionals with separate roles: a licensed tour guide who accompanies the group throughout the entire day, from departure in Rio through the boat tour and the return; a professional driver for the road transport; and a sailor responsible for the boat and safety on the water.\n\nLunch is optional and paid separately at a restaurant located at one of the boat stops. The tour does not go to Vila do Abraão for lunch. Your guide can recommend a good restaurant along the route. You are also welcome to bring your own food, snacks and drinks aboard the boat, whether or not you add the optional barbecue.\n\nAn on-board barbecue can be arranged in advance as an optional extra, priced on request. Drinks are not included with the barbecue and are brought by the guests.\n\nThe standard experience focuses on sheltered beaches, calm shallow water, swimming and snorkeling. A premium option adds a visit to Lopes Mendes, consistently ranked among the most beautiful beaches in Brazil, with its long stretch of pale sand, preserved Atlantic Forest surroundings and open-ocean setting.\n\nThe speedboat does not stop directly at Lopes Mendes. Access is through Praia do Pouso, followed by a forest trail of about forty minutes, of light to moderate difficulty, with your guide accompanying you the whole way. Lopes Mendes faces the open ocean, so the surf can be stronger than at the sheltered stops and some care in the water is recommended. There are only a few snacks there, so we strongly recommend bringing water and food for the visit.\n\nAfter the boat portion, your private vehicle takes you from Mangaratiba back to Rio. The complete experience usually lasts between ten and twelve hours door to door, including the road transport, boarding, the boat tour and the return. For travelers who want to see Ilha Grande from Rio in a single day, this is a fully private experience from beginning to end.",
       "highlights": [
-        "Private speedboat for your group",
-        "5-hour island exploration",
-        "Swimming and snorkeling",
-        "Secluded beaches and coves"
+        "Ilha Grande's sheltered beaches and clear water",
+        "Coves and snorkeling spots",
+        "Private speedboat exclusively for your group",
+        "Lopes Mendes, as a premium option",
+        "Costa Verde coastal drive from Rio"
       ],
       "included": [
-        "Private vehicle with professional driver",
-        "Certified guide from Rio (English)",
-        "5-hour private speedboat",
-        "Boatman/sailor",
-        "Snorkeling equipment",
-        "Round-trip transfer to the pier in Mangaratiba",
-        "Pickup and drop-off at your chosen locations in Rio",
-        "Bottled water"
+        "Private round-trip transportation between Rio and Mangaratiba",
+        "Pickup and drop-off at your accommodation in Rio, within the covered area",
+        "Licensed tour guide (English) accompanying the group throughout the day",
+        "Professional driver and sailor responsible for the boat",
+        "Private speedboat for approximately five hours",
+        "Snorkeling equipment at no extra cost",
+        "Bottled water at no extra cost"
       ],
       "notIncluded": [
-        "Meals and drinks",
-        "Gratuities",
-        "Optional on-board barbecue — USD 120 per boat (up to 6 people); USD 240 (7–12 people)"
+        "Lunch and drinks during the tour",
+        "Optional on-board barbecue (priced on request)",
+        "Sunscreen and towel",
+        "Gratuities"
       ],
       "faqs": [
         {
-          "q": "How do we get to Ilha Grande -- is it really a private speedboat?",
-          "a": "Yes, genuinely private. After a 3-hour scenic coastal drive from Rio to the pier, your group boards a private speedboat exclusively for your party. You are not sharing the boat with other tourists. The 5-hour island exploration includes secluded beaches, swimming, and snorkeling -- all at your own pace."
+          "q": "Does this tour leave from Rio de Janeiro?",
+          "a": "Yes. Pickup in Rio, private transportation to Mangaratiba, the private speedboat and the return journey are all included."
         },
         {
-          "q": "How far is Ilha Grande from Rio and is the drive included?",
-          "a": "Ilha Grande is approximately 150km from Rio -- about 3 hours by private vehicle along the Costa Verde (Green Coast) highway, one of Brazil's most scenic coastal roads. The round-trip drive and private speedboat are both fully included in the tour price."
+          "q": "Is the speedboat private?",
+          "a": "Yes. The speedboat is reserved exclusively for your group and is not shared with other travelers."
         },
         {
-          "q": "Do we need to know how to swim or have snorkeling experience?",
-          "a": "No experience necessary. Snorkeling equipment is provided and the waters around Ilha Grande are calm and clear, suitable for beginners. If anyone in your group prefers to stay on the beach, that's perfectly fine too."
+          "q": "How long is the complete experience?",
+          "a": "The boat portion lasts about five hours. The complete tour usually lasts between ten and twelve hours door to door, including the transport to Mangaratiba, boarding, the boat tour and the return to Rio."
         },
         {
-          "q": "What's the difference between the standard option and the Lopes Mendes option?",
-          "a": "Lopes Mendes is consistently ranked among Brazil's most beautiful beaches -- a long stretch of pristine white sand accessible only by boat. The standard option explores a variety of beaches and coves. The Lopes Mendes upgrade adds USD 100 to the group price and is worth it if you have beach lovers in the group."
+          "q": "Does the guide stay with us throughout the tour?",
+          "a": "Yes. The licensed guide accompanies your group throughout the entire experience, including the road transport and the boat tour. A separate sailor is responsible for the boat and safety on the water."
         },
         {
-          "q": "What should we bring for the Ilha Grande day?",
-          "a": "Swimwear, reef-safe sunscreen, a hat, light clothing for the drive, a change of clothes, and cash for lunch on the island (meals are not included). The 10-hour day means an early start -- typically departing Rio at 6:00-7:00 AM."
+          "q": "Are the guide, driver and sailor the same person?",
+          "a": "No. The tour includes a licensed tour guide, a professional driver for the road transport, and a sailor responsible for the boat — three separate roles."
+        },
+        {
+          "q": "Which beaches will we visit?",
+          "a": "There is no fixed list of beaches. The route is chosen according to maritime conditions, safety, the time available and your group's interests, so stops may vary from one day to the next."
+        },
+        {
+          "q": "Are the waters calm?",
+          "a": "The usual stops are at beaches with shallow, calm water. Lopes Mendes is the exception, as it faces the open ocean and can have stronger waves."
+        },
+        {
+          "q": "Is snorkeling equipment included?",
+          "a": "Yes. Snorkeling equipment and bottled water are provided at no extra cost."
+        },
+        {
+          "q": "Is lunch included?",
+          "a": "No. Lunch is optional and paid directly at a restaurant located at one of the boat stops. The tour does not go to Vila do Abraão for lunch — the restaurant is chosen along the boat route."
+        },
+        {
+          "q": "Can we bring our own food and drinks?",
+          "a": "Yes. You are welcome to bring your own food, snacks and drinks aboard the boat, whether or not you add the barbecue."
+        },
+        {
+          "q": "Is the barbecue included?",
+          "a": "No. The on-board barbecue is optional, arranged in advance and priced on request. Drinks are not included and are brought by the guests."
+        },
+        {
+          "q": "What is the premium Lopes Mendes option?",
+          "a": "The premium option adds a visit to Lopes Mendes, consistently ranked among the most beautiful beaches in Brazil. The speedboat stops at Praia do Pouso, and from there a forest trail of about forty minutes — light to moderate — leads to the beach, with your guide accompanying you. The visit depends on maritime and operating conditions."
+        },
+        {
+          "q": "Does the speedboat stop directly at Lopes Mendes? What is the beach like?",
+          "a": "No. The boat stops at Praia do Pouso, followed by an approximately forty-minute forest trail to Lopes Mendes with the guide. The trail is light to moderate over natural terrain that can be uneven or slippery after rain, so comfortable walking shoes or secure sandals are recommended. Lopes Mendes faces the open ocean, so the surf can be stronger than at the sheltered stops — enter the water with some care and follow the guide's advice. Food there is limited to a few snacks, so bring water and food."
+        },
+        {
+          "q": "What happens if the weather is bad?",
+          "a": "Light rain does not cancel the tour. It is only canceled when the sea conditions are not safe for navigation. We follow the forecast closely, including with the local operator on Ilha Grande, and if a cancellation is necessary for the sea, you are notified in advance and refunded the amount paid for the tour. A change of beaches or stops for sea conditions is part of normal operation and is not a cancellation."
+        },
+        {
+          "q": "Is the tour shared with other travelers?",
+          "a": "No. The road transport, the guide and the speedboat are private and exclusive to your group."
         }
       ],
       "tips": [
-        "Apply waterproof sunscreen before boarding the speedboat — reapplication is harder once underway and the equatorial sun on open water is intense.",
-        "Bring a waterproof bag or dry sack for your phone, camera and valuables. The speedboat ride can be splashy depending on sea conditions.",
-        "Motion sickness medication is recommended if you're sensitive to boat movement. Take it before departure, not after symptoms start.",
-        "Bring cash for lunch on the island — there are good restaurants in the village of Abraão but most prefer cash. Meals are not included in the tour.",
-        "The tour departs Rio very early — typically between 6:00 and 7:00 AM. Prepare everything the night before."
+        "The tour departs Rio early in the morning. The exact time depends on your pickup location, expected traffic and the boat departure arrangements. Prepare everything the night before.",
+        "The complete day usually runs between ten and twelve hours door to door, including the drive to Mangaratiba, about five hours on the boat, and the return.",
+        "Light rain does not cancel the tour — only unsafe sea conditions do. We follow the forecast closely with the local operator, and if a cancellation is necessary for the sea, you are notified in advance and refunded the amount paid.",
+        "Bring sunscreen and a towel — these are not provided. Swimwear, sunglasses, a hat, a light change of clothing and a waterproof bag for your phone and valuables are also a good idea.",
+        "Lunch is not included. You can eat at a restaurant along the boat route, paid separately, or bring your own food and drinks aboard.",
+        "Snorkeling equipment and bottled water are provided at no extra cost. The usual beach stops have shallow, calm water.",
+        "If you choose the premium Lopes Mendes option, it is a forty-minute forest trail from Praia do Pouso, light to moderate, with the guide accompanying you. Wear comfortable walking shoes or secure sandals, and bring water and food, as there are only a few snacks on the beach.",
+        "Lopes Mendes is an open-ocean beach where the surf can be stronger — enter the water with some care, especially with children."
       ]
     },
     "petropolis-imperial": {
@@ -1671,57 +1715,101 @@ const prose = {
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
       "title": "Escape a la Isla: Ilha Grande en Lancha Privada",
-      "shortDescription": "Embárcate en un viaje exclusivo en lancha privada a algunas de las playas más hermosas de la isla.",
-      "fullDescription": "Ilha Grande es clasificada sistemáticamente entre las islas más hermosas del mundo — una reserva de Mata Atlántica de 193 kilómetros cuadrados con más de 100 playas, sin coches, sin carreteras entre aldeas, y aguas tan cristalinas que puedes ver el fondo del mar a 10 metros de profundidad. Se encuentra a 150 kilómetros al suroeste de Río de Janeiro y la única forma de llegar es en barco.\n\nEl viaje comienza antes del amanecer. Tu vehículo privado te recoge en Río entre las 6:00 y las 7:00 AM para el viaje de tres horas por la Costa Verde — uno de los tramos de costa atlántica más escénicos de Brasil, pasando por Mangaratiba donde te espera tu lancha privada. La embarcación es exclusivamente tuya durante todo el día: sin otros pasajeros, sin itinerario fijo impuesto por un horario grupal, sin esperar a desconocidos para terminar su baño. Se puede añadir una barbacoa a bordo bajo pedido (USD 120 por lancha hasta 6 personas; USD 240 para 7–12).\n\nIlha Grande fue una isla-prisión de máxima seguridad hasta 1994 — su aislamiento que la hacía ideal para el encarcelamiento también preservó su ecosistema por completo. Cuando se cerró la prisión, el gobierno brasileño la declaró área de protección ambiental. Hoy es una de las últimas secciones intactas de Mata Atlántica en Brasil, hogar de primates raros, más de 200 especies de aves, tortugas marinas y delfines. Las aguas alrededor de la isla contienen algunos de los mejores puntos de snorkel de la costa sur del Atlántico.\n\nLa exploración en lancha cubre cinco horas visitando algunas de las playas más hermosas de la isla. Las paradas se eligen en función de las condiciones del mar, las mareas y tus intereses consultados con anticipación — típicamente incluyen Lopes Mendes, consistentemente valorada entre las cinco mejores playas de Brasil por sus tres kilómetros de arena blanca y oleaje traslúcido; las aguas protegidas de Lagoa Azul para hacer snorkel; con una parada opcional para almorzar en una de las playas.\n\nNinguna carretera llega a Lopes Mendes — se llega en barco. Tu lancha privada significa que llegas antes que las multitudes de los botes de excursión, te quedas el tiempo que quieras y te vas cuando estés listo. Una mejora para ampliar el tiempo en Lopes Mendes con un sendero guiado por el bosque está disponible por USD 100 por persona.\n\nEl almuerzo es una parada opcional en una de las playas — no incluido en el precio y por cuenta del cliente; tu guía recomendará buenos lugares. Presupuesto USD 20–40 por persona.\n\nEl viaje de regreso en lancha y el trayecto de vuelta a Río te traen a casa al inicio de la tarde. El día total — de puerta a puerta — es de aproximadamente 10 a 11 horas.\n\nIncluido: transporte privado de ida y vuelta Río–Mangaratiba, lancha privada durante el día con capitán, guía certificado, equipo de snorkel y agua embotellada de cortesía. No incluido: almuerzo, mejora opcional Lopes Mendes (USD 100/persona) y compras personales.\n\nPara los viajeros que quieren experimentar una de las islas más impresionantes de Brasil sin las restricciones de un tour grupal, esta es la opción definitiva.",
+      "shortDescription": "Una excursión privada desde Río a Ilha Grande en lancha, por playas abrigadas y puntos de snorkel, con guía acreditado, conductor y una lancha reservada para tu grupo. Hay una opción premium a Lopes Mendes.",
+      "fullDescription": "Esta es una excursión privada completa a Ilha Grande desde Río de Janeiro, con transporte puerta a puerta, guía de turismo acreditado y una lancha reservada exclusivamente para tu grupo. Desde la recogida en tu alojamiento en Río hasta la última parada en una playa, toda la experiencia se organiza como un único tour privado.\n\nEl día comienza temprano, con recogida en tu hotel, Airbnb u otro alojamiento en Río. Tu vehículo privado continúa hasta Mangaratiba, una ciudad costera próxima a Ilha Grande, donde te esperan la lancha y el marinero. La embarcación es exclusivamente tuya durante el día, sin otros pasajeros, sin horarios impuestos por un grupo y sin esperar a desconocidos para terminar su baño.\n\nIlha Grande es una reserva de Mata Atlántica preservada — una isla sin carreteras entre aldeas y con aguas tan claras que se ve el fondo del mar. La parte en lancha dura unas cinco horas y recorre playas, ensenadas protegidas y puntos de snorkel alrededor de la isla. Las paradas habituales son playas de aguas poco profundas y tranquilas, y el equipo de snorkel y el agua se ofrecen sin coste adicional.\n\nNo hay una lista fija de playas. La ruta se elige según las condiciones marítimas, la seguridad, el tiempo disponible y los intereses de tu grupo, por lo que las paradas pueden variar de un día a otro. Al ser una lancha privada, el ritmo lo decides tú: puedes pasar más tiempo nadando, descansando en una playa o haciendo snorkel, sin seguir el horario de una excursión compartida.\n\nLa experiencia cuenta con tres profesionales con funciones distintas: un guía de turismo acreditado que acompaña al grupo durante todo el día, desde la salida en Río, durante el recorrido en lancha y hasta el regreso; un conductor profesional para el transporte terrestre; y un marinero responsable de la embarcación y de la seguridad en el agua.\n\nEl almuerzo es opcional y se paga por separado en un restaurante situado en una de las paradas de la lancha. El tour no va a Vila do Abraão para almorzar. Tu guía puede recomendar un buen restaurante a lo largo de la ruta. También puedes llevar tu propia comida, aperitivos y bebidas a bordo, elijas o no la barbacoa opcional.\n\nSe puede organizar con antelación una barbacoa a bordo como opción adicional, con precio bajo consulta. Las bebidas no están incluidas con la barbacoa y las llevan los clientes.\n\nLa experiencia estándar se centra en playas protegidas, aguas poco profundas y tranquilas, baño y snorkel. Una opción premium añade una visita a Lopes Mendes, considerada una de las playas más hermosas de Brasil, con su extensa franja de arena clara, su entorno de Mata Atlántica preservada y su paisaje de mar abierto.\n\nLa lancha no se detiene directamente en Lopes Mendes. El acceso es por Praia do Pouso y desde allí un sendero por el bosque de unos cuarenta minutos, de dificultad ligera a moderada, con tu guía acompañándote todo el camino. Lopes Mendes da al mar abierto, por lo que el oleaje puede ser más fuerte que en las paradas abrigadas y se recomienda algo de cautela en el agua. Allí solo hay algunos snacks, así que recomendamos mucho llevar agua y comida para la visita.\n\nDespués de la parte en lancha, tu vehículo privado te lleva de Mangaratiba de vuelta a Río. La experiencia completa suele durar entre diez y doce horas puerta a puerta, incluyendo el transporte terrestre, el embarque, el recorrido en lancha y el regreso. Para quienes desean conocer Ilha Grande desde Río en un solo día, esta es una experiencia totalmente privada de principio a fin.",
       "highlights": [
-        "Lancha privada para tu grupo",
-        "5 horas de exploración",
-        "Natación y snorkel",
-        "Playas y calas aisladas"
+        "Las playas abrigadas y las aguas claras de Ilha Grande",
+        "Ensenadas y puntos de snorkel",
+        "Lancha privada exclusiva para tu grupo",
+        "Lopes Mendes, como opción premium",
+        "Recorrido por la Costa Verde desde Río"
       ],
       "included": [
-        "Vehículo privado con conductor profesional",
-        "Guía certificado desde Río (español)",
-        "Lancha privada por 5 horas",
-        "Marinero",
-        "Equipo de snorkel",
-        "Traslado de ida y vuelta al muelle de Mangaratiba",
-        "Recogida y regreso en los puntos que elijas en Río",
-        "Agua mineral"
+        "Transporte privado de ida y vuelta entre Río y Mangaratiba",
+        "Recogida y regreso en tu alojamiento en Río, dentro de la zona atendida",
+        "Guía de turismo acreditado (español) acompañando al grupo durante todo el día",
+        "Conductor profesional y marinero responsable de la embarcación",
+        "Lancha privada durante aproximadamente cinco horas",
+        "Equipo de snorkel sin coste adicional",
+        "Agua mineral sin coste adicional"
       ],
       "notIncluded": [
-        "Comidas y bebidas",
-        "Propinas",
-        "Barbacoa a bordo opcional — USD 120 por lancha (hasta 6 personas); USD 240 (7–12 personas)"
+        "Almuerzo y bebidas durante el tour",
+        "Barbacoa a bordo opcional (precio bajo consulta)",
+        "Protector solar y toalla",
+        "Propinas"
       ],
       "faqs": [
         {
-          "q": "¿Cómo llegamos a Ilha Grande -- es realmente una lancha privada?",
-          "a": "Sí, genuinamente privada. Después de un pintoresco viaje de 3 horas desde Río hasta el muelle, tu grupo aborda una lancha privada exclusiva para tu grupo. No compartes la lancha con otros turistas. La exploración de 5 horas incluye playas apartadas, natación y snorkel -- todo a tu ritmo."
+          "q": "¿El tour sale desde Río de Janeiro?",
+          "a": "Sí. La recogida en Río, el transporte privado hasta Mangaratiba, la lancha privada y el regreso están incluidos."
         },
         {
-          "q": "¿Qué tan lejos está Ilha Grande de Río y el viaje está incluido?",
-          "a": "Ilha Grande está a aproximadamente 150 km de Río -- unas 3 horas en vehículo privado por la carretera Costa Verde, una de las rutas costeras más escénicas de Brasil. El viaje de ida y vuelta y la lancha privada están completamente incluidos."
+          "q": "¿La lancha es privada?",
+          "a": "Sí. La lancha está reservada exclusivamente para tu grupo y no se comparte con otros viajeros."
         },
         {
-          "q": "¿Necesitamos saber nadar o tener experiencia en snorkel?",
-          "a": "No se necesita experiencia previa. El equipo de snorkel está incluido y las aguas de Ilha Grande son tranquilas y cristalinas, aptas para principiantes. Si alguien prefiere quedarse en la playa, también está perfecto."
+          "q": "¿Cuánto dura la experiencia completa?",
+          "a": "La parte en lancha dura unas cinco horas. El tour completo suele durar entre diez y doce horas puerta a puerta, incluyendo el transporte hasta Mangaratiba, el embarque, el recorrido en lancha y el regreso a Río."
         },
         {
-          "q": "¿Cuál es la diferencia entre la opción estándar y la opción Lopes Mendes?",
-          "a": "Lopes Mendes está constantemente clasificada como una de las playas más bellas de Brasil -- una larga franja de arena blanca prístina accesible solo por barca. La opción estándar explora diversas playas y calas. La mejora a Lopes Mendes agrega USD 100 al precio grupal y vale la pena si tienes amantes de la playa en el grupo."
+          "q": "¿El guía acompaña al grupo durante toda la excursión?",
+          "a": "Sí. El guía acreditado acompaña al grupo durante toda la experiencia, incluidos los desplazamientos y el recorrido en lancha. Un marinero aparte es responsable de la embarcación y de la seguridad en el agua."
         },
         {
-          "q": "¿Qué debemos llevar para el día en Ilha Grande?",
-          "a": "Traje de baño, protector solar apto para arrecifes, sombrero, ropa ligera para el viaje, ropa de cambio y efectivo para el almuerzo en la isla (comidas no incluidas). El día de 10 horas implica salida temprana -- típicamente entre las 6:00 y 7:00 AM desde Río."
+          "q": "¿El guía, el conductor y el marinero son la misma persona?",
+          "a": "No. El tour incluye un guía de turismo acreditado, un conductor profesional para el transporte terrestre y un marinero responsable de la embarcación — tres funciones distintas."
+        },
+        {
+          "q": "¿Qué playas visitaremos?",
+          "a": "No hay una lista fija de playas. La ruta se elige según las condiciones marítimas, la seguridad, el tiempo disponible y los intereses de tu grupo, por lo que las paradas pueden variar de un día a otro."
+        },
+        {
+          "q": "¿Las aguas son tranquilas?",
+          "a": "Las paradas habituales son playas de aguas poco profundas y tranquilas. Lopes Mendes es la excepción, porque da al mar abierto y puede tener olas más fuertes."
+        },
+        {
+          "q": "¿Está incluido el equipo de snorkel?",
+          "a": "Sí. El equipo de snorkel y el agua embotellada se ofrecen sin coste adicional."
+        },
+        {
+          "q": "¿El almuerzo está incluido?",
+          "a": "No. El almuerzo es opcional y se paga directamente en un restaurante situado en una de las paradas de la lancha. El tour no va a Vila do Abraão para almorzar — el restaurante se elige a lo largo de la ruta."
+        },
+        {
+          "q": "¿Podemos llevar nuestra propia comida y bebida?",
+          "a": "Sí. Puedes llevar tu propia comida, aperitivos y bebidas a bordo, elijas o no la barbacoa."
+        },
+        {
+          "q": "¿La barbacoa está incluida?",
+          "a": "No. La barbacoa a bordo es opcional, se organiza con antelación y tiene precio bajo consulta. Las bebidas no están incluidas y las llevan los clientes."
+        },
+        {
+          "q": "¿Qué es la opción premium Lopes Mendes?",
+          "a": "La opción premium añade una visita a Lopes Mendes, considerada una de las playas más hermosas de Brasil. La lancha se detiene en Praia do Pouso y desde allí un sendero por el bosque de unos cuarenta minutos — de ligero a moderado — lleva hasta la playa, con tu guía acompañándote. La visita depende de las condiciones marítimas y operativas."
+        },
+        {
+          "q": "¿La lancha se detiene directamente en Lopes Mendes? ¿Cómo es la playa?",
+          "a": "No. La lancha se detiene en Praia do Pouso, seguida de un sendero por el bosque de unos cuarenta minutos hasta Lopes Mendes con el guía. El sendero es de ligero a moderado, sobre terreno natural que puede ser irregular o resbaladizo después de la lluvia, por lo que se recomienda calzado cómodo o sandalias firmes. Lopes Mendes da al mar abierto, así que el oleaje puede ser más fuerte que en las paradas abrigadas — entra en el agua con algo de cautela y sigue las indicaciones del guía. La comida allí se limita a algunos snacks, así que lleva agua y comida."
+        },
+        {
+          "q": "¿Qué pasa si hace mal tiempo?",
+          "a": "La lluvia ligera no cancela el tour. Solo se cancela cuando las condiciones del mar no son seguras para navegar. Seguimos el pronóstico de cerca, incluso con el operador local en Ilha Grande, y si es necesario cancelar por el mar, te avisamos con antelación y te reembolsamos el importe pagado por el tour. Un cambio de playas o paradas por el mar es parte de la operación normal y no es una cancelación."
+        },
+        {
+          "q": "¿El tour se comparte con otros viajeros?",
+          "a": "No. El transporte terrestre, el guía y la lancha son privados y exclusivos para tu grupo."
         }
       ],
       "tips": [
-        "Aplica protector solar resistente al agua antes de abordar la lancha — reaplicarlo durante el trayecto es más difícil y el sol ecuatorial sobre el agua abierta es intenso.",
-        "Lleva una bolsa impermeable o dry sack para el teléfono, cámara y objetos de valor. El paseo en lancha puede mojarte según las condiciones del mar.",
-        "Se recomienda medicación para el mareo si eres sensible al movimiento de embarcaciones. Tómala antes de salir, no cuando ya tengas síntomas.",
-        "Lleva efectivo para el almuerzo en la isla — hay buenos restaurantes en el pueblo de Abraão pero la mayoría prefiere efectivo. Las comidas no están incluidas.",
-        "El tour sale de Río muy temprano — generalmente entre las 6:00 y las 7:00 AM. Prepara todo la noche anterior."
+        "El tour sale de Río temprano por la mañana. La hora exacta depende del lugar de recogida, del tráfico previsto y de la organización de la salida de la lancha. Prepara todo la noche anterior.",
+        "El día completo suele durar entre diez y doce horas puerta a puerta, incluyendo el trayecto a Mangaratiba, unas cinco horas en lancha y el regreso.",
+        "La lluvia ligera no cancela el tour — solo lo hacen las condiciones de mar no seguras. Seguimos el pronóstico de cerca con el operador local y, si hay que cancelar por el mar, te avisamos con antelación y te reembolsamos el importe pagado.",
+        "Lleva protector solar y toalla — no se proporcionan. Traje de baño, gafas de sol, sombrero, una muda ligera de ropa y una bolsa impermeable para el teléfono y los objetos de valor también son buena idea.",
+        "El almuerzo no está incluido. Puedes comer en un restaurante a lo largo de la ruta, pagado por separado, o llevar tu propia comida y bebida a bordo.",
+        "El equipo de snorkel y el agua embotellada se ofrecen sin coste adicional. Las paradas de playa habituales tienen aguas poco profundas y tranquilas.",
+        "Si eliges la opción premium Lopes Mendes, es un sendero por el bosque de cuarenta minutos desde Praia do Pouso, de ligero a moderado, con el guía acompañándote. Lleva calzado cómodo o sandalias firmes, y lleva agua y comida, ya que en la playa solo hay algunos snacks.",
+        "Lopes Mendes es una playa de mar abierto donde el oleaje puede ser más fuerte — entra en el agua con algo de cautela, sobre todo con niños."
       ]
     },
     "petropolis-imperial": {
@@ -2410,57 +2498,101 @@ const prose = {
       "slug": "island-escape-ilha-grande",
       "imageSlug": "island-escape-ilha-grande",
       "title": "Escapada para a Ilha: Ilha Grande de Lancha Privativa",
-      "shortDescription": "Embarque em um passeio exclusivo de lancha privada por algumas das praias mais bonitas da ilha.",
-      "fullDescription": "Ilha Grande é consistentemente classificada entre as ilhas mais bonitas do mundo — uma reserva de Mata Atlântica de 193 quilômetros quadrados com mais de 100 praias, sem carros, sem estradas entre vilas, e água tão cristalina que você pode ver o fundo do mar a 10 metros de profundidade. Fica a 150 quilômetros a sudoeste do Rio de Janeiro e a única forma de chegar é de barco.\n\nA jornada começa antes do amanhecer. Seu veículo privativo busca você no Rio entre 6h e 7h para o trajeto de três horas pela Costa Verde — um dos trechos de litoral atlântico mais cênicos do Brasil, passando por Mangaratiba onde sua lancha privada está esperando. A embarcação é exclusivamente sua durante todo o dia: sem outros passageiros, sem itinerário fixo imposto por um horário de grupo, sem esperar por desconhecidos terminarem de nadar. É possível adicionar um churrasco a bordo sob consulta (USD 120 por barco até 6 pessoas; USD 240 para 7 a 12).\n\nIlha Grande foi uma ilha-prisão de segurança máxima até 1994 — seu isolamento que a tornava ideal para o encarceramento também preservou seu ecossistema inteiramente. Quando a prisão fechou, o governo brasileiro a declarou área de proteção ambiental. Hoje é uma das últimas seções intactas de Mata Atlântica no Brasil, lar de primatas raros, mais de 200 espécies de pássaros, tartarugas marinhas e golfinhos. As águas ao redor da ilha contêm alguns dos melhores pontos de snorkeling da costa sul do Atlântico.\n\nA exploração de lancha cobre cinco horas visitando algumas das praias mais bonitas da ilha. As paradas são escolhidas com base nas condições do mar, marés e seus interesses discutidos com antecedência — tipicamente incluindo Lopes Mendes, consistentemente avaliada entre as cinco melhores praias do Brasil pelos seus três quilômetros de areia branca e surf translúcido; as águas protegidas da Lagoa Azul para snorkeling; com uma parada opcional para almoço em uma das praias.\n\nNenhuma estrada chega a Lopes Mendes — o acesso é de barco. Sua lancha privativa significa que você chega antes das multidões dos barcos de excursão, fica o tempo que quiser e parte quando estiver pronto. Um upgrade para ampliar o tempo em Lopes Mendes com uma trilha guiada pela floresta está disponível por USD 100 por pessoa.\n\nO almoço é uma parada opcional em uma das praias — não incluído no preço e por conta do cliente; seu guia recomendará bons lugares. Orçamento de USD 20–40 por pessoa.\n\nO retorno de lancha e o trajeto de volta ao Rio trazem você para casa no início da tarde. O dia total — de porta a porta — é de aproximadamente 10 a 11 horas.\n\nIncluído: transporte privativo de ida e volta Rio–Mangaratiba, lancha privativa durante o dia com capitão, guia certificado, equipamento de snorkeling e água mineral de cortesia. Não incluído: almoço, upgrade opcional Lopes Mendes (USD 100/pessoa) e compras pessoais.\n\nPara viajantes que querem experimentar uma das ilhas mais deslumbrantes do Brasil sem as restrições de um tour em grupo, esta é a opção definitiva.",
+      "shortDescription": "Um passeio privativo do Rio para Ilha Grande de lancha, por praias abrigadas e pontos de snorkeling, com guia credenciado, motorista e uma lancha reservada para o seu grupo. Há uma opção premium para Lopes Mendes.",
+      "fullDescription": "Este é um passeio privativo completo para Ilha Grande saindo do Rio de Janeiro, com transporte porta a porta, guia de turismo credenciado e uma lancha reservada exclusivamente para o seu grupo. Do embarque na sua hospedagem no Rio até a última parada em uma praia, toda a experiência é organizada como um único tour privado.\n\nO dia começa cedo, com embarque em hotel, Airbnb ou outra hospedagem no Rio. O veículo privativo segue até Mangaratiba, cidade costeira próxima a Ilha Grande, onde a lancha e o marinheiro estão aguardando. A embarcação é exclusiva do seu grupo durante o dia, sem outros passageiros, sem horários impostos por um grupo e sem esperar desconhecidos terminarem o banho de mar.\n\nIlha Grande é uma reserva de Mata Atlântica preservada — uma ilha sem estradas entre as vilas e com água tão transparente que se vê o fundo do mar. A parte de lancha dura cerca de cinco horas e percorre praias, enseadas abrigadas e pontos de snorkeling ao redor da ilha. As paradas habituais são em praias de águas rasas e calmas, e o equipamento de snorkeling e a água são fornecidos sem custo adicional.\n\nNão há uma lista fixa de praias. O roteiro é escolhido de acordo com as condições marítimas, a segurança, o tempo disponível e os interesses do grupo, então as paradas podem mudar de um dia para outro. Como a lancha é privativa, o ritmo é seu: você pode ficar mais tempo nadando, descansando numa praia ou fazendo snorkeling, sem seguir o horário de uma excursão compartilhada.\n\nA experiência envolve três profissionais com funções separadas: um guia de turismo credenciado que acompanha o grupo durante todo o dia, desde a saída no Rio, durante o passeio de lancha e até o retorno; um motorista profissional para o transporte terrestre; e um marinheiro responsável pela embarcação e pela segurança na água.\n\nO almoço é opcional e pago à parte em um restaurante localizado em uma das paradas da lancha. O passeio não vai à Vila do Abraão para o almoço. Seu guia pode recomendar um bom restaurante ao longo do roteiro. Você também pode levar sua própria comida, lanches e bebidas a bordo, com ou sem o churrasco opcional.\n\nUm churrasco a bordo pode ser organizado com antecedência como opção adicional, com preço sob consulta. As bebidas não estão incluídas no churrasco e são levadas pelos clientes.\n\nA experiência padrão é focada em praias abrigadas, águas rasas e calmas, banho de mar e snorkeling. Uma opção premium acrescenta uma visita a Lopes Mendes, considerada uma das praias mais bonitas do Brasil, com sua extensa faixa de areia clara, a Mata Atlântica preservada ao redor e a paisagem de mar aberto.\n\nA lancha não para diretamente em Lopes Mendes. O acesso é pela Praia do Pouso e de lá uma trilha pela mata de cerca de quarenta minutos, de dificuldade leve a moderada, com o seu guia acompanhando o caminho todo. Lopes Mendes fica em mar aberto, então as ondas podem estar mais fortes do que nas paradas abrigadas e recomenda-se alguma cautela na água. Por lá há apenas alguns snacks, por isso recomendamos bastante levar água e alimentação para a visita.\n\nDepois da parte de lancha, o veículo privativo leva você de Mangaratiba de volta ao Rio. A experiência completa costuma durar entre dez e doze horas de porta a porta, incluindo o transporte terrestre, o embarque, o passeio de lancha e o retorno. Para quem deseja conhecer Ilha Grande saindo do Rio em um único dia, esta é uma experiência totalmente privativa do início ao fim.",
       "highlights": [
-        "Lancha privada para seu grupo",
-        "5 horas de exploração",
-        "Natação e mergulho",
-        "Praias e enseadas isoladas"
+        "As praias abrigadas e a água transparente de Ilha Grande",
+        "Enseadas e pontos de snorkeling",
+        "Lancha privativa exclusiva para o seu grupo",
+        "Lopes Mendes, como opção premium",
+        "Trajeto pela Costa Verde saindo do Rio"
       ],
       "included": [
-        "Veículo particular com motorista profissional",
-        "Guia certificado saindo do Rio (português)",
-        "Speedboat privativo por 5 horas",
-        "Marinheiro",
-        "Equipamento de snorkel",
-        "Transfer de ida e volta ao Píer em Mangaratiba",
-        "Busca e retorno nos locais à sua escolha no Rio",
-        "Água mineral"
+        "Transporte privativo de ida e volta entre o Rio e Mangaratiba",
+        "Embarque e retorno na sua hospedagem no Rio, dentro da área atendida",
+        "Guia de turismo credenciado (português) acompanhando o grupo durante todo o dia",
+        "Motorista profissional e marinheiro responsável pela embarcação",
+        "Lancha privativa por aproximadamente cinco horas",
+        "Equipamento de snorkeling sem custo adicional",
+        "Água mineral sem custo adicional"
       ],
       "notIncluded": [
-        "Refeições e bebidas",
-        "Gorjetas",
-        "Churrasco a bordo opcional — USD 120 por barco (até 6 pessoas); USD 240 (7 a 12 pessoas)"
+        "Almoço e bebidas durante o passeio",
+        "Churrasco a bordo opcional (preço sob consulta)",
+        "Protetor solar e toalha",
+        "Gorjetas"
       ],
       "faqs": [
         {
-          "q": "Como chegamos à Ilha Grande -- é realmente uma lancha privada?",
-          "a": "Sim, genuinamente privada. Após um passeio panorâmico de 3 horas de carro do Rio até o pier, seu grupo embarca em uma lancha privada exclusiva para vocês. Não há compartilhamento com outros turistas. A exploração de 5 horas inclui praias isoladas, natação e mergulho com snorkel -- tudo no seu ritmo."
+          "q": "O passeio sai do Rio de Janeiro?",
+          "a": "Sim. O embarque no Rio, o transporte privativo até Mangaratiba, a lancha privativa e o retorno estão incluídos."
         },
         {
-          "q": "Quão longe fica Ilha Grande do Rio e o trajeto está incluído?",
-          "a": "Ilha Grande fica a cerca de 150 km do Rio -- aproximadamente 3 horas de carro particular pela rodovia Costa Verde, uma das estradas costeiras mais cênicas do Brasil. O traslado de ida e volta e a lancha privada estão totalmente incluídos no preço."
+          "q": "A lancha é privativa?",
+          "a": "Sim. A lancha é reservada exclusivamente para o seu grupo e não é compartilhada com outros visitantes."
         },
         {
-          "q": "Precisamos saber nadar ou ter experiência em snorkel?",
-          "a": "Não é necessária experiência prévia. O equipamento de snorkel é fornecido e as águas da Ilha Grande são calmas e cristalinas, adequadas para iniciantes. Se alguém do grupo preferir ficar na praia, também está ótimo."
+          "q": "Quanto tempo dura a experiência completa?",
+          "a": "A parte de lancha dura cerca de cinco horas. O tour completo costuma durar entre dez e doze horas de porta a porta, incluindo o transporte até Mangaratiba, o embarque, o passeio de lancha e o retorno ao Rio."
         },
         {
-          "q": "Qual é a diferença entre a opção padrão e a opção Lopes Mendes?",
-          "a": "Lopes Mendes é consistentemente classificada entre as praias mais bonitas do Brasil -- uma longa faixa de areia branca prístina acessível apenas de barco. A opção padrão explora diversas praias e enseadas. O upgrade para Lopes Mendes adiciona USD 100 ao preço do grupo e vale a pena se você tem amantes de praia no grupo."
+          "q": "O guia acompanha o grupo durante todo o passeio?",
+          "a": "Sim. O guia credenciado acompanha o grupo durante toda a experiência, inclusive nos deslocamentos e no passeio de lancha. Um marinheiro à parte é responsável pela embarcação e pela segurança na água."
         },
         {
-          "q": "O que devemos levar para o dia na Ilha Grande?",
-          "a": "Roupa de banho, protetor solar ecológico, chapéu, roupa leve para o trajeto, roupa para trocar e dinheiro para almoço na ilha (refeições não incluídas). O dia de 10 horas começa cedo -- tipicamente partindo do Rio entre 6h e 7h."
+          "q": "O guia, o motorista e o marinheiro são a mesma pessoa?",
+          "a": "Não. O passeio inclui um guia de turismo credenciado, um motorista profissional para o transporte terrestre e um marinheiro responsável pela embarcação — três funções separadas."
+        },
+        {
+          "q": "Quais praias serão visitadas?",
+          "a": "Não há uma lista fixa de praias. O roteiro é escolhido de acordo com as condições marítimas, a segurança, o tempo disponível e os interesses do grupo, então as paradas podem mudar de um dia para outro."
+        },
+        {
+          "q": "As águas são calmas?",
+          "a": "As paradas habituais são em praias de águas rasas e calmas. Lopes Mendes é a exceção, pois fica em mar aberto e pode ter ondas mais fortes."
+        },
+        {
+          "q": "Os equipamentos de snorkeling estão incluídos?",
+          "a": "Sim. O equipamento de snorkeling e a água mineral são fornecidos sem custo adicional."
+        },
+        {
+          "q": "O almoço está incluído?",
+          "a": "Não. O almoço é opcional e pago diretamente em um restaurante localizado em uma das paradas da lancha. O passeio não vai à Vila do Abraão para o almoço — o restaurante é escolhido ao longo do roteiro."
+        },
+        {
+          "q": "Podemos levar nossa própria comida e bebida?",
+          "a": "Sim. Você pode levar sua própria comida, lanches e bebidas a bordo, com ou sem o churrasco."
+        },
+        {
+          "q": "O churrasco está incluído?",
+          "a": "Não. O churrasco a bordo é opcional, organizado com antecedência e com preço sob consulta. As bebidas não estão incluídas e são levadas pelos clientes."
+        },
+        {
+          "q": "O que é a opção premium Lopes Mendes?",
+          "a": "A opção premium acrescenta uma visita a Lopes Mendes, considerada uma das praias mais bonitas do Brasil. A lancha para na Praia do Pouso e de lá uma trilha pela mata de cerca de quarenta minutos — de leve a moderada — leva até a praia, com o seu guia acompanhando. A visita depende das condições marítimas e operacionais."
+        },
+        {
+          "q": "A lancha para diretamente em Lopes Mendes? Como é a praia?",
+          "a": "Não. A lancha para na Praia do Pouso, seguida de uma trilha pela mata de cerca de quarenta minutos até Lopes Mendes com o guia. A trilha é de leve a moderada, em terreno natural que pode ficar irregular ou escorregadio depois de chuva, por isso recomendamos calçado confortável ou sandália firme. Lopes Mendes fica em mar aberto, então as ondas podem estar mais fortes do que nas paradas abrigadas — entre na água com alguma cautela e siga as orientações do guia. A comida por lá se resume a alguns snacks, então leve água e alimentação."
+        },
+        {
+          "q": "O que acontece se o tempo estiver ruim?",
+          "a": "Chuva leve não cancela o passeio. Ele só é cancelado quando as condições do mar não estão seguras para a navegação. Acompanhamos a previsão de perto, inclusive com o operador local em Ilha Grande, e se for necessário cancelar por causa do mar, você é avisado com antecedência e recebe o reembolso do valor pago pelo passeio. A mudança de praias ou paradas por causa do mar faz parte da operação normal e não é cancelamento."
+        },
+        {
+          "q": "O passeio é compartilhado com outras pessoas?",
+          "a": "Não. O transporte terrestre, o guia e a lancha são privativos e exclusivos para o seu grupo."
         }
       ],
       "tips": [
-        "Passe protetor solar à prova d'água antes de embarcar na lancha — reaplicar durante o trajeto é mais difícil e o sol equatorial sobre a água aberta é intenso.",
-        "Leve uma bolsa impermeável ou dry sack para o celular, câmera e objetos de valor. O passeio de lancha pode molhar dependendo das condições do mar.",
-        "Remédio para enjoo é recomendado se você tem sensibilidade ao movimento de embarcações. Tome antes de partir, não depois que os sintomas começarem.",
-        "Leve dinheiro para o almoço na ilha — há bons restaurantes na vila de Abraão mas a maioria prefere dinheiro em espécie. As refeições não estão incluídas.",
-        "O passeio sai do Rio muito cedo — geralmente entre 6h e 7h. Prepare tudo na noite anterior."
+        "O passeio sai do Rio cedo pela manhã. O horário exato depende do local de embarque, da previsão de trânsito e da organização da saída da lancha. Prepare tudo na noite anterior.",
+        "O dia completo costuma durar entre dez e doze horas de porta a porta, incluindo o trajeto até Mangaratiba, cerca de cinco horas de lancha e o retorno.",
+        "Chuva leve não cancela o passeio — só condições de mar inseguras cancelam. Acompanhamos a previsão de perto com o operador local e, se for preciso cancelar por causa do mar, você é avisado com antecedência e recebe o reembolso do valor pago.",
+        "Leve protetor solar e toalha — não são fornecidos. Roupa de banho, óculos de sol, chapéu ou boné, uma troca leve de roupa e uma bolsa impermeável para celular e objetos de valor também são recomendados.",
+        "O almoço não está incluído. Você pode comer em um restaurante ao longo do roteiro, pago à parte, ou levar sua própria comida e bebida a bordo.",
+        "O equipamento de snorkeling e a água mineral são fornecidos sem custo adicional. As paradas de praia habituais têm águas rasas e calmas.",
+        "Se escolher a opção premium Lopes Mendes, é uma trilha pela mata de quarenta minutos a partir da Praia do Pouso, de leve a moderada, com o guia acompanhando. Use calçado confortável ou sandália firme, e leve água e alimentação, pois na praia há apenas alguns snacks.",
+        "Lopes Mendes é uma praia de mar aberto onde as ondas podem estar mais fortes — entre na água com alguma cautela, especialmente com crianças."
       ]
     },
     "petropolis-imperial": {
