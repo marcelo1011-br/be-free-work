@@ -851,22 +851,24 @@ const prose = {
       "slug": "sunset-culture-roxy",
       "imageSlug": "sunset-culture-roxy",
       "title": "Sunset & Culture: Rio Icons + Roxy Brazilian Dance Show",
-      "shortDescription": "Combine Rio's sunset from Sugarloaf with an unforgettable evening at Brazil's premier cultural dinner show.",
-      "fullDescription": "Rio de Janeiro has two distinct modes: the daytime city of beaches and monuments, and the nighttime city of music, dance, and performance that comes alive after dark. The Sunset & Culture tour combines both — a precisely timed private sunset experience at Christ the Redeemer and Sugarloaf Mountain, followed by a direct transfer to the Roxy, one of Rio's premier Brazilian dinner show venues.\n\nThe afternoon begins with Christ the Redeemer during golden hour — the two hours before sunset when the light over Guanabara Bay turns warm and dramatic. Skip-the-line tickets for Sugarloaf are included, and your pickup time is confirmed from that day's sunset data so you reach the statue when conditions peak. From Corcovado, your private vehicle takes you to Sugarloaf Mountain, where the cable car ascent is timed to reach the 396-meter summit as the sun completes its descent and the city lights begin to appear below.\n\nThe transition from Sugarloaf to the Roxy is direct — your private vehicle handles the transfer with no logistics for you to manage. The Roxy is a fixed venue with a show that begins at a specific time, which is why the timing of the entire afternoon is built backwards from the show's start.\n\nThe Roxy Dinner Show is one of Rio's most celebrated cultural experiences — a professional production featuring samba, forró, axé, and Brazilian popular dance performed by trained dancers and musicians in a purpose-built theater. The show runs for approximately two hours and includes a three-course dinner served at your table. The production quality is consistent with what you would expect from a premium dinner theater: professional choreography, live music, elaborate costumes, and production values that reflect decades of refinement.\n\nSamba is not background entertainment at the Roxy. It is the centerpiece — the result of a performance tradition that traces directly to the African rhythms brought to Brazil by enslaved people, developed over centuries in Rio's communities, and elevated through the competitive structure of the Rio Carnival. Your guide, during the sunset portion of the day, will provide context for what you are about to see in the evening: the history, the structure, the meaning behind the movements and the music.\n\nImportant logistical notes: the Roxy show tickets are non-refundable once purchased, regardless of notice given — please only book if your plans for the evening are confirmed. The show runs Wednesday to Sunday; Mondays and Tuesdays are dark. Dress code is smart casual — the venue is upscale. Drinks at the Roxy are not included in the tour price; budget approximately USD 20–40 per person depending on preferences. Bring identification — the venue may request it at the entrance.\n\nIncluded: private transportation throughout the day and evening, certified local guide for the sunset portion, skip-the-line tickets for Sugarloaf Mountain plus entrance tickets for Christ the Redeemer, the Roxy Dinner Show ticket with three-course dinner, and complimentary bottled water during the tour. Drinks at the Roxy and gratuities are not included.\n\nThe Sunset & Culture tour is the most complete single-day Rio experience on our program — natural beauty, cultural depth, and live performance in one evening.",
+      "shortDescription": "A private afternoon-to-evening tour of Christ the Redeemer and Sugarloaf Mountain at sunset, followed by dinner and a Brazilian cultural show at the Roxy.",
+      "fullDescription": "Rio Sunset & Roxy combines a private afternoon visit to Christ the Redeemer and Sugarloaf Mountain with dinner and a Brazilian cultural show at the Roxy. It is designed for travelers who want to experience Rio's landmarks, the changing evening light and live performance as one continuous, carefully organized experience.\n\nThe starting time varies according to the date, seasonal sunset conditions and the Roxy schedule. During the sightseeing portion your experience includes two dedicated professionals: a licensed tour guide who accompanies your group and a separate professional driver responsible for transportation. While your guide remains with you at the attractions, the driver takes care of traffic, parking and the next pickup point.\n\nThe suggested itinerary begins at Christ the Redeemer, surrounded by the Tijuca Forest. From Corcovado, you can see how Rio's mountains, beaches, bay and neighborhoods come together. Tickets are included and booked in advance for a boarding time on the train or van, chosen according to your preference and availability, and your guide handles the voucher exchange and the boarding procedure.\n\nFrom Christ the Redeemer, the tour continues to Sugarloaf Mountain. Skip-the-line cable car tickets are included, with access through Morro da Urca and on to the Sugarloaf summit. The schedule is planned around the season's sunset time whenever possible, though visibility, weather and the exact quality of the light cannot be guaranteed.\n\nAfter Sugarloaf Mountain, your private vehicle takes you directly to the Roxy. The transition is planned around the show schedule, so you do not need to arrange separate transportation or manage the timing between the attractions and the venue.\n\nThe Roxy experience includes a three-course dinner served at your table and a professional stage production of Brazilian music and dance. The performance brings together rhythms and traditions from different regions of Brazil, presented by professional dancers and musicians in a theater setting.\n\nDuring the sightseeing portion, your guide can introduce some of the cultural context behind the music, dance and traditions shown in the evening performance. The show itself is a professional dinner-theater production rather than a guided cultural visit.\n\nThis is a private afternoon-to-evening experience for your group only. It combines two of Rio's best-known viewpoints with dinner, performance and private transportation, so you can move through the entire program without organizing separate tickets or transfers.",
       "highlights": [
-        "Sunset from Sugarloaf",
-        "Roxy Premium Dinner Show",
-        "Three-course dinner included",
-        "Cultural performance"
+        "Christ the Redeemer",
+        "Sugarloaf Mountain at sunset",
+        "Roxy Brazilian dinner show",
+        "Three-course dinner at the Roxy"
       ],
       "included": [
-        "Private transportation",
-        "Certified local guide (English), throughout the day and the show",
-        "Christ the Redeemer entrance tickets",
-        "Skip-the-line Sugarloaf cable car tickets",
-        "Roxy dinner and show",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
-        "Complimentary bottled water"
+        "Private air-conditioned transportation throughout the experience",
+        "Licensed tour guide (English) during the sightseeing portion",
+        "Separate professional driver",
+        "Christ the Redeemer entrance tickets, booked in advance for your preferred boarding time, subject to availability",
+        "Skip-the-line cable car tickets at Sugarloaf Mountain",
+        "Roxy dinner show admission",
+        "Three-course dinner at the Roxy",
+        "Complimentary bottled water during the sightseeing portion",
+        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports and the cruise port)"
       ],
       "notIncluded": [
         "Drinks at Roxy",
@@ -876,35 +878,52 @@ const prose = {
         "monday",
         "tuesday"
       ],
-      "restrictions": "Wednesday to Sunday only. Roxy tickets cannot be canceled.",
+      "restrictions": "Wednesday to Sunday only. Roxy show tickets are non-refundable.",
       "faqs": [
         {
-          "q": "What exactly is the Roxy Dinner Show?",
-          "a": "The Roxy is Rio's premier cultural dinner show featuring world-class samba and bossa nova performances in an elegant venue. A premium three-course dinner is included. It's a full evening of authentic Brazilian music and dance performed by professional artists -- not a tourist gimmick but a genuinely celebrated Rio institution."
+          "q": "What is the Roxy dinner show?",
+          "a": "The Roxy is a professional Brazilian dinner-theater production of music and dance, staged in a purpose-built venue. The performance brings together rhythms and traditions from different regions of Brazil, presented by professional dancers and musicians, alongside a three-course dinner served at your table."
         },
         {
           "q": "Which days is this tour available?",
-          "a": "Wednesday to Sunday only. The Roxy Show does not operate on Mondays and Tuesdays."
+          "a": "Wednesday to Sunday only. The Roxy does not operate on Mondays and Tuesdays, so the tour is not available on those days."
         },
         {
-          "q": "What is the cancellation policy for the Roxy tickets?",
-          "a": "This is critical to understand: once Roxy tickets are purchased, they cannot be canceled or refunded. The rest of the tour follows our standard 72-hour free cancellation policy, but the Roxy dinner show portion is non-refundable regardless of notice given. Please book only if you're certain of your plans."
+          "q": "Is the Roxy show ticket refundable?",
+          "a": "No. Once purchased, the Roxy show ticket cannot be canceled or refunded by the venue, regardless of notice given. Please only book if your evening plans are confirmed. The rest of the tour follows our standard cancellation policy."
         },
         {
-          "q": "What should we wear to the Roxy Dinner Show?",
-          "a": "Smart casual is appropriate -- the Roxy is an upscale venue. No formal attire required, but avoid beach clothing. Think a nice dress or blouse for women, collared shirt or light blazer for men."
+          "q": "Is sunset guaranteed?",
+          "a": "No. The schedule is planned around the season's sunset time whenever possible, but clouds, rain, visibility, traffic and attraction operations are outside our control."
+        },
+        {
+          "q": "Are the guide and driver the same person?",
+          "a": "No. During the sightseeing portion the tour includes a licensed tour guide who accompanies your group and a separate professional driver responsible for transportation."
+        },
+        {
+          "q": "Are the Christ the Redeemer and Sugarloaf tickets included?",
+          "a": "Yes. Both are included and arranged in advance. At Sugarloaf Mountain, tickets include skip-the-line cable car access. At Christ the Redeemer, your entry is booked ahead for the boarding time you prefer, subject to availability, and your guide manages the process on the day."
+        },
+        {
+          "q": "Is the tour private?",
+          "a": "The sightseeing portion and the transportation are exclusively for your group. The Roxy is a public theater venue attended by other guests."
+        },
+        {
+          "q": "What should I wear?",
+          "a": "Smart casual is appropriate — the Roxy is an upscale venue. Formal attire is not required, but beachwear is not recommended. Please also carry a valid photo ID, as the venue may request it at the entrance."
         },
         {
           "q": "Are drinks included at the Roxy?",
-          "a": "The three-course dinner is included but drinks at the Roxy are purchased separately. Budget approximately USD 20-40 per person for drinks depending on your preferences."
+          "a": "The three-course dinner is included, but drinks at the Roxy are not, and are paid directly at the venue."
         }
       ],
       "tips": [
-        "The Roxy Show tickets are non-refundable once purchased — this applies regardless of notice given. Please only book if your plans are confirmed.",
         "This tour is available Wednesday to Sunday only. The Roxy does not operate on Mondays and Tuesdays.",
-        "Dress smart casual for the Roxy — it's an upscale venue. Beach clothing is not appropriate. Beyond that, wear what makes you comfortable.",
-        "Drinks at the Roxy are not included in the tour price. Budget approximately USD 20–40 per person depending on your preferences.",
-        "Bring ID — the Roxy may request it at the entrance."
+        "The Roxy show ticket is non-refundable once purchased, regardless of notice given. Please only book if your evening plans are confirmed.",
+        "The starting time varies with the date, the season's sunset and the Roxy schedule. Your confirmed pickup time is provided after booking.",
+        "Tickets for both attractions are arranged in advance. At Christ the Redeemer, your boarding time on the train or van is booked ahead according to your preference and availability, and your guide handles the voucher exchange.",
+        "Dress smart casual for the Roxy — it is an upscale venue and beachwear is not appropriate. Bring a valid photo ID, as the venue may request it at the entrance.",
+        "Drinks at the Roxy are not included in the tour price and are paid directly at the venue."
       ]
     },
     "island-escape-ilha-grande": {
@@ -1571,22 +1590,24 @@ const prose = {
       "slug": "atardecer-cultura-roxy",
       "imageSlug": "sunset-culture-roxy",
       "title": "Atardecer y Cultura: Íconos de Río + Show de Danza Brasileña Roxy",
-      "shortDescription": "Combina el atardecer de Río desde el Pan de Azúcar con una velada inolvidable en el show cena cultural premier de Brasil.",
-      "fullDescription": "Río de Janeiro tiene dos modos distintos: la ciudad diurna de playas y monumentos, y la ciudad nocturna de música, baile y espectáculo que cobra vida después del anochecer. El tour Sunset & Culture combina ambos — una experiencia privada de atardecer perfectamente cronometrada en el Cristo Redentor y el Pan de Azúcar, seguida de un traslado directo al Roxy, uno de los principales locales de espectáculo de cena brasileño de Río.\n\nLa tarde comienza con el Cristo Redentor durante la hora dorada — las dos horas antes del atardecer cuando la luz sobre la Bahía de Guanabara se vuelve cálida y dramática. Las entradas sin fila al Pan de Azúcar están incluidas, y tu hora de recogida se confirma según los datos del atardecer de ese día para que llegues a la estatua en el punto máximo. Desde el Corcovado, tu vehículo privado te lleva al Pan de Azúcar, donde el ascenso en teleférico está cronometrado para llegar a la cima de 396 metros cuando el sol completa su descenso y las luces de la ciudad comienzan a aparecer abajo.\n\nLa transición del Pan de Azúcar al Roxy es directa — tu vehículo privado gestiona el traslado sin ninguna logística que debas manejar. El Roxy es un local fijo con un espectáculo que comienza a una hora específica, por lo que el timing de toda la tarde está construido hacia atrás desde el inicio del show.\n\nEl Roxy Dinner Show es una de las experiencias culturales más celebradas de Río — una producción profesional que presenta samba, forró, axé y danza popular brasileña interpretada por bailarines y músicos profesionales en un teatro diseñado para tal fin. El espectáculo dura aproximadamente dos horas e incluye una cena de tres platos servida en tu mesa. La calidad de producción es consistente con lo que esperarías de un teatro cena premium: coreografía profesional, música en vivo, vestuario elaborado y valores de producción que reflejan décadas de perfeccionamiento.\n\nLa samba no es entretenimiento de fondo en el Roxy. Es el elemento central — el resultado de una tradición de actuación que se remonta directamente a los ritmos africanos traídos a Brasil por personas esclavizadas, desarrollados durante siglos en las comunidades de Río, y elevados a través de la estructura competitiva del Carnaval de Río. Tu guía, durante la parte del atardecer del día, te proporcionará contexto sobre lo que estás a punto de ver por la noche: la historia, la estructura, el significado detrás de los movimientos y la música.\n\nNotas logísticas importantes: las entradas al show Roxy no son reembolsables una vez compradas, independientemente del aviso dado — reserva solo si tus planes para la noche están confirmados. El show funciona de miércoles a domingo; los lunes y martes no hay función. El código de vestimenta es elegante casual. Las bebidas en el Roxy no están incluidas en el precio del tour; presupuesta aproximadamente USD 20–40 por persona. Lleva identificación — el local puede solicitarla en la entrada.\n\nIncluido: transporte privado durante todo el día y la noche, guía local certificado para la parte del atardecer, entradas sin fila al Pan de Azúcar y entradas al Cristo Redentor, entrada al Roxy Dinner Show con cena de tres platos, y agua embotellada de cortesía durante el tour. Las bebidas en el Roxy y las propinas no están incluidas.\n\nEl tour Sunset & Culture es la experiencia de un solo día más completa de nuestro programa — belleza natural, profundidad cultural y espectáculo en vivo en una sola velada.",
+      "shortDescription": "Un tour privado de tarde y noche por el Cristo Redentor y el Pan de Azúcar al atardecer, seguido de una cena y un espectáculo cultural brasileño en el Roxy.",
+      "fullDescription": "Río al Atardecer y Roxy combina una tarde privada en el Cristo Redentor (Christ the Redeemer) y el Pan de Azúcar (Sugarloaf Mountain) con una cena y un espectáculo cultural brasileño en el Roxy. Está pensado para quienes desean conocer los lugares más emblemáticos de Río, disfrutar del cambio de luz al final del día y terminar la noche con música y danza, como una sola experiencia continua y bien organizada.\n\nLa hora de inicio varía según la fecha, la época del año y la programación del Roxy. Durante la parte turística, la experiencia cuenta con dos profesionales dedicados: un guía de turismo acreditado, que acompaña al grupo durante las visitas, y un conductor profesional responsable del transporte. Mientras el guía permanece contigo en las atracciones, el conductor se ocupa del tráfico, el estacionamiento y los siguientes puntos de encuentro.\n\nEl itinerario recomendado comienza en el Cristo Redentor, rodeado por la Floresta de Tijuca (Tijuca Forest). Desde el Corcovado se puede observar cómo las montañas, las playas, los barrios y la bahía forman el paisaje de Río. Las entradas están incluidas y se reservan con antelación para un horario de subida en tren o van, elegido según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher y del embarque.\n\nDesde el Cristo Redentor, el tour continúa hacia el Pan de Azúcar. Se incluyen entradas sin fila para los teleféricos, con paso por el Morro da Urca y subida hasta la cima del Pan de Azúcar. Siempre que sea posible, los horarios se planifican teniendo en cuenta la puesta de sol de la época del año, aunque la visibilidad, el clima y la calidad exacta de la luz no pueden garantizarse.\n\nDespués del Pan de Azúcar, el vehículo privado te lleva directamente al Roxy. La transición se organiza de acuerdo con la programación del espectáculo, así no tienes que buscar otro transporte ni coordinar los horarios entre las atracciones y el teatro.\n\nLa experiencia en el Roxy incluye una cena de tres platos servida en la mesa y una producción profesional de música y danza brasileñas. El espectáculo reúne ritmos y tradiciones de diferentes regiones del país, presentados por bailarines y músicos profesionales en un ambiente de teatro.\n\nDurante la parte turística, el guía puede explicar parte del contexto cultural de la música, la danza y las tradiciones que verás en el espectáculo. El Roxy, sin embargo, es una producción profesional en formato de cena con espectáculo, no una visita cultural guiada.\n\nEsta es una experiencia privada de tarde y noche para tu grupo. El tour combina dos de los principales miradores de Río, cena, espectáculo y transporte privado en un solo programa, sin que tengas que organizar cada etapa por separado.",
       "highlights": [
-        "Atardecer desde el Pan de Azúcar",
-        "Show Cena Roxy Premium",
-        "Cena de tres platos incluida",
-        "Presentación cultural"
+        "Cristo Redentor",
+        "Pan de Azúcar al atardecer",
+        "Espectáculo con cena brasileño en el Roxy",
+        "Cena de tres platos en el Roxy"
       ],
       "included": [
-        "Transporte privado",
-        "Guía local certificado (español), durante todo el día y el show",
-        "Entradas al Cristo Redentor",
-        "Entradas sin fila al teleférico del Pan de Azúcar",
-        "Cena y show en Roxy",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
-        "Agua mineral"
+        "Transporte privado con aire acondicionado durante toda la experiencia",
+        "Guía de turismo acreditado (español) durante la parte turística",
+        "Conductor profesional separado",
+        "Entradas al Cristo Redentor, reservadas con antelación para el horario de subida que prefieras, según disponibilidad",
+        "Entradas sin fila a los teleféricos del Pan de Azúcar",
+        "Entrada al espectáculo con cena del Roxy",
+        "Cena de tres platos en el Roxy",
+        "Agua mineral de cortesía durante la parte turística",
+        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)"
       ],
       "notIncluded": [
         "Bebidas en Roxy",
@@ -1596,35 +1617,52 @@ const prose = {
         "monday",
         "tuesday"
       ],
-      "restrictions": "Miércoles a domingo solamente. Entradas Roxy no reembolsables.",
+      "restrictions": "Miércoles a domingo solamente. Las entradas del espectáculo del Roxy no son reembolsables.",
       "faqs": [
         {
-          "q": "¿Qué es exactamente el Show Cena Roxy?",
-          "a": "El Roxy es el principal show de cena cultural de Río con presentaciones de samba y bossa nova de clase mundial en un elegante local. Se incluye una cena de tres platos premium. Es una noche completa de música y danza brasileña auténtica interpretada por artistas profesionales -- una institución genuinamente celebrada en Río, no una trampa para turistas."
+          "q": "¿Qué es el espectáculo con cena del Roxy?",
+          "a": "El Roxy es una producción profesional brasileña de cena con espectáculo, de música y danza, en un teatro construido para eso. La presentación reúne ritmos y tradiciones de diferentes regiones de Brasil, a cargo de bailarines y músicos profesionales, junto con una cena de tres platos servida en tu mesa."
         },
         {
           "q": "¿Qué días está disponible este tour?",
-          "a": "Solo de miércoles a domingo. El Show Roxy no opera los lunes y martes."
+          "a": "Solo de miércoles a domingo. El Roxy no funciona los lunes ni martes, así que el tour no está disponible esos días."
         },
         {
-          "q": "¿Cuál es la política de cancelación para las entradas al Roxy?",
-          "a": "Esto es importante: una vez compradas las entradas al Roxy, no se pueden cancelar ni reembolsar. El resto del tour sigue nuestra política estándar de cancelación gratuita de 72 horas, pero la parte del show-cena Roxy no es reembolsable. Reserva solo si estás seguro de tus planes."
+          "q": "¿La entrada del espectáculo del Roxy es reembolsable?",
+          "a": "No. Una vez comprada, la entrada del Roxy no puede cancelarse ni reembolsarse por el establecimiento, independientemente del aviso dado. Reserva solo si tus planes para la noche están confirmados. El resto del tour sigue nuestra política de cancelación estándar."
         },
         {
-          "q": "¿Qué debemos vestir para el Show Cena Roxy?",
-          "a": "Elegante casual es apropiado -- el Roxy es un lugar exclusivo. No se requiere ropa formal, pero evita ropa de playa. Un vestido o blusa bonita para mujeres, camisa con cuello o blazer ligero para hombres."
+          "q": "¿La puesta de sol está garantizada?",
+          "a": "No. Los horarios se planifican alrededor de la puesta de sol de la época del año siempre que sea posible, pero las nubes, la lluvia, la visibilidad, el tráfico y el funcionamiento de las atracciones están fuera de nuestro control."
+        },
+        {
+          "q": "¿El guía y el conductor son la misma persona?",
+          "a": "No. Durante la parte turística, el tour incluye un guía de turismo acreditado que acompaña al grupo y un conductor profesional separado responsable del transporte."
+        },
+        {
+          "q": "¿Están incluidas las entradas al Cristo Redentor y al Pan de Azúcar?",
+          "a": "Sí. Ambas están incluidas y se organizan con antelación. En el Pan de Azúcar, las entradas incluyen acceso sin fila a los teleféricos. En el Cristo Redentor, tu entrada se reserva por adelantado para el horario de subida que prefieras, según disponibilidad, y tu guía se encarga del proceso el día del tour."
+        },
+        {
+          "q": "¿El tour es privado?",
+          "a": "La parte turística y el transporte son exclusivos para tu grupo. El Roxy es un teatro abierto al público, con otros clientes presentes."
+        },
+        {
+          "q": "¿Cómo debo vestirme?",
+          "a": "Casual elegante es apropiado — el Roxy es un local exclusivo. No se requiere ropa formal, pero no se recomienda la ropa de playa. Lleva también un documento oficial con foto, ya que el establecimiento puede solicitarlo en la entrada."
         },
         {
           "q": "¿Las bebidas están incluidas en el Roxy?",
-          "a": "La cena de tres platos está incluida pero las bebidas en el Roxy se pagan por separado. Presupuesta aproximadamente USD 20-40 por persona para bebidas."
+          "a": "La cena de tres platos está incluida, pero las bebidas en el Roxy no lo están, y se pagan directamente en el local."
         }
       ],
       "tips": [
-        "Las entradas al Show Roxy no son reembolsables una vez compradas — esto aplica independientemente del aviso dado. Reserva solo si tus planes están confirmados.",
-        "Este tour solo está disponible de miércoles a domingo. El Roxy no opera los lunes ni martes.",
-        "Viste elegante casual para el Roxy — es un local exclusivo. La ropa de playa no es apropiada. Más allá de eso, viste lo que te haga sentir cómodo.",
-        "Las bebidas en el Roxy no están incluidas en el precio del tour. Presupuesta aproximadamente USD 20–40 por persona según tus preferencias.",
-        "Lleva identificación — el Roxy puede pedirla en la entrada."
+        "Este tour solo está disponible de miércoles a domingo. El Roxy no funciona los lunes ni martes.",
+        "La entrada del espectáculo del Roxy no es reembolsable una vez comprada, independientemente del aviso dado. Reserva solo si tus planes para la noche están confirmados.",
+        "La hora de inicio varía según la fecha, la puesta de sol de la época del año y la programación del Roxy. La hora confirmada de recogida se comunica después de la reserva.",
+        "Las entradas de ambas atracciones se organizan con antelación. En el Cristo Redentor, tu horario de subida en tren o van se reserva por adelantado según tu preferencia y la disponibilidad, y tu guía se ocupa del canje del voucher.",
+        "Viste casual elegante para el Roxy — es un local exclusivo y la ropa de playa no es apropiada. Lleva un documento oficial con foto, ya que el establecimiento puede solicitarlo en la entrada.",
+        "Las bebidas en el Roxy no están incluidas en el precio del tour y se pagan directamente en el local."
       ]
     },
     "island-escape-ilha-grande": {
@@ -2291,22 +2329,24 @@ const prose = {
       "slug": "por-do-sol-cultura-roxy",
       "imageSlug": "sunset-culture-roxy",
       "title": "Pôr do Sol e Cultura: Ícones do Rio + Show de Dança Brasileira Roxy",
-      "shortDescription": "Combine o pôr do sol do Rio do Pão de Açúcar com uma noite inesquecível no show jantar cultural premier do Brasil.",
-      "fullDescription": "O Rio de Janeiro tem dois modos distintos: a cidade diurna de praias e monumentos, e a cidade noturna de música, dança e espetáculo que ganha vida após o anoitecer. O passeio Sunset & Culture combina os dois — uma experiência privativa de pôr do sol perfeitamente cronometrada no Cristo Redentor e no Pão de Açúcar, seguida de traslado direto para o Roxy, um dos principais locais de show jantar brasileiro do Rio.\n\nA tarde começa com o Cristo Redentor durante a hora dourada — as duas horas antes do pôr do sol quando a luz sobre a Baía de Guanabara fica quente e dramática. Os ingressos skip-the-line para o Pão de Açúcar estão incluídos, e seu horário de busca é confirmado com base nos dados do pôr do sol daquele dia para você chegar à estátua no ponto máximo. Do Corcovado, seu veículo privativo leva você ao Pão de Açúcar, onde a subida de bondinho é cronometrada para chegar ao topo de 396 metros quando o sol completa sua descida e as luzes da cidade começam a aparecer abaixo.\n\nA transição do Pão de Açúcar para o Roxy é direta — seu veículo privativo cuida do traslado sem nenhuma logística para você gerenciar. O Roxy é um local fixo com um show que começa num horário específico, por isso o timing de toda a tarde é construído de trás para frente a partir do início do espetáculo.\n\nO Roxy Dinner Show é uma das experiências culturais mais celebradas do Rio — uma produção profissional com samba, forró, axé e dança popular brasileira interpretada por dançarinos e músicos profissionais num teatro projetado para isso. O show dura aproximadamente duas horas e inclui um jantar de três pratos servido na sua mesa. A qualidade da produção é consistente com o que você esperaria de um teatro jantar premium: coreografia profissional, música ao vivo, figurinos elaborados e valores de produção que refletem décadas de aprimoramento.\n\nO samba não é entretenimento de fundo no Roxy. É o elemento central — o resultado de uma tradição de performance que remonta diretamente aos ritmos africanos trazidos ao Brasil por pessoas escravizadas, desenvolvidos ao longo de séculos nas comunidades do Rio, e elevados através da estrutura competitiva do Carnaval do Rio. Seu guia, durante a parte do pôr do sol do dia, fornecerá contexto sobre o que você está prestes a ver à noite: a história, a estrutura, o significado por trás dos movimentos e da música.\n\nNotas logísticas importantes: os ingressos do show Roxy não são reembolsáveis após a compra, independentemente do aviso dado — reserve apenas se seus planos para a noite estiverem confirmados. O show funciona de quarta a domingo; segundas e terças não há apresentação. Traje elegante casual. As bebidas no Roxy não estão incluídas no preço do passeio; calcule aproximadamente USD 20–40 por pessoa. Leve documento de identidade — o local pode solicitá-lo na entrada.\n\nIncluído: transporte privativo durante todo o dia e a noite, guia local certificado para a parte do pôr do sol, ingressos skip-the-line para o Pão de Açúcar e ingressos para o Cristo Redentor, ingresso para o Roxy Dinner Show com jantar de três pratos, e água mineral de cortesia durante o passeio. As bebidas no Roxy e gorjetas não estão incluídas.\n\nO passeio Sunset & Culture é a experiência de um único dia mais completa do nosso programa — beleza natural, profundidade cultural e espetáculo ao vivo em uma única noite.",
+      "shortDescription": "Um passeio privativo de tarde e noite pelo Cristo Redentor e Pão de Açúcar ao pôr do sol, seguido de jantar e um espetáculo cultural brasileiro no Roxy.",
+      "fullDescription": "O Rio ao Pôr do Sol & Roxy combina uma tarde privativa no Cristo Redentor (Christ the Redeemer) e no Pão de Açúcar (Sugarloaf Mountain) com jantar e espetáculo cultural brasileiro no Roxy. É uma experiência pensada para quem deseja conhecer os cartões-postais do Rio, acompanhar a mudança da luz no fim do dia e terminar a noite com música e dança, como um único programa contínuo e bem organizado.\n\nO horário de início varia de acordo com a data, o período do ano e a programação do Roxy. Durante a parte turística, o serviço é realizado por dois profissionais dedicados: um guia de turismo credenciado, que acompanha o grupo nas visitas, e um motorista profissional responsável pelo transporte. Enquanto o guia permanece com você nas atrações, o motorista cuida do trânsito, do estacionamento e dos próximos embarques.\n\nO roteiro sugerido começa no Cristo Redentor, cercado pela Floresta da Tijuca (Tijuca Forest). Do Corcovado, é possível observar como montanhas, praias, bairros e a Baía de Guanabara formam a paisagem do Rio. Os ingressos estão incluídos e são reservados com antecedência para um horário de subida no trem ou van, escolhido conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher e do embarque.\n\nDo Cristo Redentor, o passeio segue para o Pão de Açúcar. Estão incluídos ingressos sem fila para os bondinhos, com passagem pelo Morro da Urca e subida até o topo do Pão de Açúcar. Sempre que possível, os horários são planejados em torno do pôr do sol da época do ano, embora as condições de visibilidade, clima e luz não possam ser garantidas.\n\nApós o Pão de Açúcar, o veículo privativo leva você diretamente ao Roxy. A transição é organizada de acordo com a programação do espetáculo, evitando que você precise providenciar outro transporte ou administrar os horários entre as atrações e o teatro.\n\nA experiência no Roxy inclui jantar de três pratos servido à mesa e uma produção profissional de música e dança brasileiras. O espetáculo reúne ritmos e tradições de diferentes regiões do país, apresentados por dançarinos e músicos profissionais em um ambiente de teatro.\n\nDurante a parte turística, o guia pode apresentar um pouco do contexto cultural das músicas, danças e tradições que você verá no espetáculo. O Roxy, no entanto, é uma produção profissional em formato de dinner show, e não uma visita cultural guiada.\n\nEsta é uma experiência privativa de tarde e noite para o seu grupo. O tour combina dois dos principais mirantes do Rio, jantar, espetáculo e transporte privativo em um único programa, sem que você precise organizar cada etapa separadamente.",
       "highlights": [
-        "Pôr do sol do Pão de Açúcar",
-        "Show Jantar Roxy Premium",
-        "Jantar de três pratos incluído",
-        "Apresentação cultural"
+        "Cristo Redentor",
+        "Pão de Açúcar ao pôr do sol",
+        "Show jantar brasileiro no Roxy",
+        "Jantar de três pratos no Roxy"
       ],
       "included": [
-        "Transporte privado",
-        "Guia local certificado (português), durante todo o dia e o show",
-        "Ingressos do Cristo Redentor",
-        "Ingressos sem fila do bondinho do Pão de Açúcar",
-        "Jantar e show no Roxy",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
-        "Água mineral"
+        "Transporte privativo com ar-condicionado durante toda a experiência",
+        "Guia de turismo credenciado (português) durante a parte turística",
+        "Motorista profissional separado",
+        "Ingressos do Cristo Redentor, reservados antecipadamente para o horário de subida de sua preferência, conforme disponibilidade",
+        "Ingressos sem fila para os bondinhos do Pão de Açúcar",
+        "Ingresso para o show jantar no Roxy",
+        "Jantar de três pratos no Roxy",
+        "Água mineral de cortesia durante a parte turística",
+        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)"
       ],
       "notIncluded": [
         "Bebidas no Roxy",
@@ -2316,35 +2356,52 @@ const prose = {
         "monday",
         "tuesday"
       ],
-      "restrictions": "Quarta a domingo apenas. Ingressos Roxy não reembolsáveis.",
+      "restrictions": "Quarta a domingo apenas. Os ingressos do espetáculo do Roxy não são reembolsáveis.",
       "faqs": [
         {
-          "q": "O que é exatamente o Show Jantar Roxy?",
-          "a": "O Roxy é o principal show jantar cultural do Rio com apresentações de samba e bossa nova de classe mundial em um local elegante. Um jantar de três pratos premium está incluído. É uma noite completa de música e dança brasileira autêntica com artistas profissionais -- uma instituição genuinamente celebrada no Rio."
+          "q": "O que é o show jantar do Roxy?",
+          "a": "O Roxy é uma produção profissional brasileira de dinner show, de música e dança, em um teatro projetado para isso. A apresentação reúne ritmos e tradições de diferentes regiões do Brasil, a cargo de dançarinos e músicos profissionais, junto com um jantar de três pratos servido à mesa."
         },
         {
           "q": "Quais dias este tour está disponível?",
-          "a": "Apenas de quarta a domingo. O Show Roxy não funciona às segundas e terças-feiras."
+          "a": "Apenas de quarta a domingo. O Roxy não funciona às segundas e terças-feiras, então o tour não está disponível nesses dias."
         },
         {
-          "q": "Qual é a política de cancelamento para os ingressos do Roxy?",
-          "a": "Isso é importante: uma vez comprados os ingressos do Roxy, eles não podem ser cancelados nem reembolsados. O restante do tour segue nossa política padrão de cancelamento gratuito com 72 horas de antecedência, mas a parte do show jantar Roxy não é reembolsável. Reserve apenas se tiver certeza dos seus planos."
+          "q": "O ingresso do show do Roxy é reembolsável?",
+          "a": "Não. Uma vez comprado, o ingresso do Roxy não pode ser cancelado nem reembolsado pelo estabelecimento, independentemente do aviso dado. Reserve apenas se seus planos para a noite estiverem confirmados. O restante do tour segue nossa política de cancelamento padrão."
         },
         {
-          "q": "O que devemos vestir para o Show Jantar Roxy?",
-          "a": "Elegante casual é apropriado -- o Roxy é um local sofisticado. Não é necessária roupa formal, mas evite roupas de praia. Um vestido ou blusa bonita para mulheres, camisa com colarinho ou blazer leve para homens."
+          "q": "O pôr do sol é garantido?",
+          "a": "Não. Os horários são planejados em torno do pôr do sol da época do ano sempre que possível, mas nuvens, chuva, visibilidade, trânsito e operação das atrações estão fora do nosso controle."
+        },
+        {
+          "q": "O guia e o motorista são a mesma pessoa?",
+          "a": "Não. Durante a parte turística, o tour inclui um guia de turismo credenciado que acompanha o grupo e um motorista profissional separado responsável pelo transporte."
+        },
+        {
+          "q": "Os ingressos do Cristo Redentor e do Pão de Açúcar estão incluídos?",
+          "a": "Sim. Ambos estão incluídos e são providenciados antecipadamente. No Pão de Açúcar, os ingressos incluem acesso sem fila para os bondinhos. No Cristo Redentor, o ingresso é reservado com antecedência para o horário de subida de sua preferência, conforme a disponibilidade, e o guia cuida de todo o processo no dia do passeio."
+        },
+        {
+          "q": "O tour é privado?",
+          "a": "A parte turística e o transporte são exclusivos para o seu grupo. O Roxy é um teatro aberto ao público, com a presença de outros clientes."
+        },
+        {
+          "q": "Que roupa devo usar?",
+          "a": "Traje casual arrumado é adequado — o Roxy é um local sofisticado. Roupa formal não é necessária, mas roupas de praia não são recomendadas. Leve também um documento oficial com foto, pois o estabelecimento pode solicitá-lo na entrada."
         },
         {
           "q": "As bebidas estão incluídas no Roxy?",
-          "a": "O jantar de três pratos está incluído mas as bebidas no Roxy são pagas separadamente. Calcule aproximadamente USD 20-40 por pessoa para bebidas."
+          "a": "O jantar de três pratos está incluído, mas as bebidas no Roxy não estão, e são pagas diretamente no local."
         }
       ],
       "tips": [
-        "Os ingressos do Show Roxy não são reembolsáveis após a compra — isso se aplica independentemente do aviso dado. Reserve apenas se seus planos estiverem confirmados.",
-        "Este passeio só está disponível de quarta a domingo. O Roxy não funciona às segundas e terças.",
-        "Vista-se elegante casual para o Roxy — é um local sofisticado. Roupas de praia não são adequadas. Além disso, vista o que o fizer sentir confortável.",
-        "As bebidas no Roxy não estão incluídas no preço do passeio. Calcule aproximadamente USD 20–40 por pessoa conforme suas preferências.",
-        "Leve documento de identidade — o Roxy pode solicitá-lo na entrada."
+        "Este passeio só está disponível de quarta a domingo. O Roxy não funciona às segundas e terças-feiras.",
+        "O ingresso do show do Roxy não é reembolsável após a compra, independentemente do aviso dado. Reserve apenas se seus planos para a noite estiverem confirmados.",
+        "O horário de início varia de acordo com a data, o pôr do sol da época do ano e a programação do Roxy. O horário confirmado de embarque é informado após a reserva.",
+        "Os ingressos das duas atrações são providenciados antecipadamente. No Cristo Redentor, o horário de subida no trem ou van é reservado com antecedência conforme sua preferência e a disponibilidade, e o guia cuida da troca do voucher.",
+        "Vista-se de traje casual arrumado para o Roxy — é um local sofisticado e roupas de praia não são adequadas. Leve um documento oficial com foto, pois o estabelecimento pode solicitá-lo na entrada.",
+        "As bebidas no Roxy não estão incluídas no preço do passeio e são pagas diretamente no local."
       ]
     },
     "island-escape-ilha-grande": {
