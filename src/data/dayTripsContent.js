@@ -119,7 +119,7 @@ export const dayTripsProse = {
       "ilha-grande": {
         name: "Ilha Grande — Costa Verde by Private Speedboat",
         blurb:
-          "An early start carries you to Mangaratiba, where a private speedboat takes your group out to visit some of Ilha Grande's clear-water beaches. There's an optional stop at a beach where you can have lunch on your own (roughly USD 20–40 per person). Prefer to stay on the water? An onboard barbecue can be added on request — around USD 120 per boat for up to 6 guests, or USD 240 for 7–12. Vehicle, driver, licensed guide, boatman and mineral water are included; it's a full, long day out.",
+          "A complete private day trip to Ilha Grande from Rio, with door-to-door transport, a licensed guide and a speedboat reserved for your group. The standard experience explores sheltered beaches with calm, shallow water for swimming and snorkeling; snorkeling equipment and water are included at no extra cost. A premium option adds Lopes Mendes, one of Brazil's most beautiful beaches, reached by boat to Praia do Pouso and a forest trail of about forty minutes with your guide. Lunch is optional and paid separately at a restaurant along the route; an on-board barbecue is available on request. The complete day runs about ten to twelve hours. Full details, inclusions and FAQs are on the tour page.",
         ctaLabel: "See the Ilha Grande day trip",
       },
       buzios: {
@@ -153,7 +153,7 @@ export const dayTripsProse = {
       },
       {
         q: "Is lunch included?",
-        a: "Lunch is on your own so you can choose what you like. On Ilha Grande there's an optional beach stop where lunch runs roughly USD 20–40 per person, and you can also add an onboard barbecue on request.",
+        a: "Lunch is not included in our day trips. It is optional and paid separately at restaurants along the route, and your guide can recommend good options according to the day's itinerary.",
       },
       {
         q: "Are the day trips private?",
@@ -240,7 +240,7 @@ export const dayTripsProse = {
       "ilha-grande": {
         name: "Ilha Grande, la Costa Verde en lancha privada",
         blurb:
-          "Con una salida temprano llegas a Mangaratiba, donde una lancha privada lleva a tu grupo a visitar algunas de las playas de aguas más claras de Ilha Grande. Hay una parada opcional en una playa donde puedes almorzar por tu cuenta (unos USD 20–40 por persona). ¿Prefieres quedarte en el agua? Se puede añadir un churrasco a bordo bajo consulta: alrededor de USD 120 por lancha para hasta 6 personas, o USD 240 para 7–12. Incluye vehículo, conductor, guía habilitado, marinero y agua mineral; es un día completo y largo.",
+          "Una excursión privada completa a Ilha Grande desde Río, con transporte puerta a puerta, guía acreditado y una lancha reservada para tu grupo. La experiencia estándar recorre playas abrigadas de aguas tranquilas y poco profundas para nadar y hacer snorkel; el equipo de snorkel y el agua están incluidos sin coste adicional. Una opción premium añade Lopes Mendes, una de las playas más bonitas de Brasil, a la que se llega en lancha hasta Praia do Pouso y un sendero por el bosque de unos cuarenta minutos con tu guía. El almuerzo es opcional y se paga por separado en un restaurante de la ruta; hay una barbacoa a bordo bajo consulta. El día completo dura unas diez a doce horas. Todos los detalles, lo incluido y las preguntas frecuentes están en la página del tour.",
         ctaLabel: "Ver la excursión a Ilha Grande",
       },
       buzios: {
@@ -361,7 +361,7 @@ export const dayTripsProse = {
       "ilha-grande": {
         name: "Ilha Grande — Costa Verde de lancha privativa",
         blurb:
-          "Dá pra fazer Ilha Grande em um dia? Dá — mas é um dia longo. A saída é cedo até Mangaratiba, de onde uma lancha privativa leva o seu grupo pra visitar algumas das praias de água mais clara da ilha. Tem uma parada opcional numa praia, onde o almoço fica por conta própria (algo entre USD 20 e 40 por pessoa). Quer ficar mais na água? Dá pra incluir um churrasco a bordo sob consulta — em torno de USD 120 por barco para até 6 pessoas, ou USD 240 para 7 a 12. Inclui veículo, motorista, guia credenciado, marinheiro e água mineral.",
+          "Um passeio privativo completo para Ilha Grande saindo do Rio, com transporte porta a porta, guia credenciado e uma lancha reservada para o seu grupo. A experiência padrão percorre praias abrigadas de águas calmas e rasas para banho e snorkeling; o equipamento de snorkeling e a água estão incluídos sem custo adicional. Uma opção premium acrescenta Lopes Mendes, uma das praias mais bonitas do Brasil, acessada de lancha até a Praia do Pouso e uma trilha pela mata de cerca de quarenta minutos com o seu guia. O almoço é opcional e pago à parte em um restaurante do roteiro; há churrasco a bordo sob consulta. O dia completo dura cerca de dez a doze horas. Todos os detalhes, o que está incluído e as perguntas frequentes estão na página do tour.",
         ctaLabel: "Ver o passeio a Ilha Grande",
       },
       buzios: {
