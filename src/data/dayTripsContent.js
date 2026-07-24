@@ -25,10 +25,10 @@
  * FATOS TRAVADOS (consistentes com tours.js @ commits ac7202cd/26d0d6a0):
  *   - Petrópolis: tour com Offer ("from"); água mineral incluída.
  *   - Ilha Grande: tour com Offer; visita ALGUMAS praias (NÃO dá a volta na
- *     ilha); parada opcional em praia com almoço por conta própria (USD 20–40);
- *     churrasco a bordo é ADD-ON opcional (≈USD 120/barco até 6 pax; USD 240
- *     p/ 7–12), sem Offer/preço fixo de tour; marinheiro e água mineral
- *     incluídos; sem superlativos, sem claims sobre concorrentes.
+ *     ilha); almoço opcional pago à parte, sem valor fixo; churrasco a bordo
+ *     opcional sob consulta, sem valor; sem Offer/preço fixo de tour;
+ *     marinheiro e água mineral incluídos; sem superlativos, sem claims
+ *     sobre concorrentes.
  *   - Búzios: SOB CONSULTA, sem preço, sem Offer; CTA = orçamento.
  *   - Custo de terceiros sempre "por conta própria / on your own / por tu
  *     cuenta"; nunca citar marketplace por nome.
