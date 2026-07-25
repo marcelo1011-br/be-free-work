@@ -1035,58 +1035,105 @@ const prose = {
       "slug": "petropolis-imperial",
       "imageSlug": "petropolis-imperial",
       "title": "Petrópolis: Imperial Palaces & Mountain Escape",
-      "shortDescription": "Escape to the mountains and explore Brazil's imperial history in Petrópolis, the summer residence of Brazilian emperors.",
-      "fullDescription": "In 1843, Emperor Dom Pedro II chose a mountain valley 68 kilometers north of Rio de Janeiro as the site for his summer palace. The altitude — 840 meters above sea level — offered relief from the tropical heat of the coast, and the Serra dos Órgãos range provided a dramatic backdrop of peaks and Atlantic Forest. The city that grew around the imperial court became Petrópolis: the most European city in Brazil, the only place in South America where a reigning emperor ever established permanent residence, and the site of some of the finest 19th-century architecture on the continent.\n\nThe Petrópolis private tour from Rio is a full-day immersion in Brazilian imperial history, mountain scenery, and architectural heritage that most visitors to Rio never experience.\n\nThe drive from Rio takes approximately 70 to 90 minutes and is itself part of the experience. The ascent through the Serra dos Órgãos follows a colonial mountain road that winds through Atlantic Forest remnants, past waterfalls visible from the car window, and into the cool mountain air of the highlands. The temperature in Petrópolis runs 5 to 8 degrees Celsius cooler than Rio throughout the year — in the depths of winter (June to August) this means cool enough for a jacket while the coast swelters.\n\nThe Imperial Museum is the centerpiece of the tour and one of the finest history museums in South America. Housed in the original Imperial Palace — a neo-classical structure completed in 1845 — it contains the personal belongings of the Brazilian imperial family: Dom Pedro II's crown, containing 639 diamonds and 77 pearls; the original Declaration of the Abolition of Slavery (Lei Áurea), signed by Princess Isabel on 13 May 1888; the emperor's private library; royal furniture and artwork; and thousands of personal items that transform history from abstraction into tangible reality. Allow at least 45 minutes inside.\n\nQuitandinha Palace is one of the most improbable buildings in Brazil — a 1944 casino and resort in the style of Norman Manoir, built by a Brazilian entrepreneur who dreamed of creating South America's Monte Carlo. Gambling was banned in Brazil one year after it opened, but the building itself — surrounded by an artificial lake and forest — remains one of the most dramatic architectural statements of the 20th century on the continent.\n\nThe House of 7 Errors (Casa dos 7 Erros) is a local legend: a house deliberately constructed with seven intentional architectural mistakes by an eccentric Brazilian who commissioned it in the 1950s. Your guide's explanation of each error — some structural, some symbolic, some still debated — turns what sounds like a curiosity into a genuinely fascinating story about eccentricity, craft, and the fine line between error and intention.\n\nThe Metropolitan Cathedral of São Pedro de Alcântara is Petrópolis' most striking landmark — a neo-Gothic structure begun in 1884 and completed in 1939, whose twin towers define the city's skyline. The imperial mausoleum inside contains the remains of Emperor Dom Pedro II and Empress Teresa Cristina, returned to Brazil from Lisbon in 1939 after decades of post-republican exile.\n\nLunch is built into the itinerary — Petrópolis has excellent restaurants in the historic center, and your guide will recommend options based on your preferences. Budget USD 20–40 per person.\n\nNot available on Mondays, when most Petrópolis museums and monuments are closed. The tour runs Tuesday to Sunday.\n\nIncluded: private round-trip transportation Rio to Petrópolis, certified local guide, all entrance tickets to attractions listed, and complimentary bottled water. Lunch is not included.",
+      "shortDescription": "A private day in Brazil's Imperial City — the Imperial Museum, the cathedral mausoleum and Quitandinha Palace — with pickup in Rio de Janeiro or in Petrópolis itself.",
+      "fullDescription": "Petrópolis is where the Brazilian imperial family spent its summers, and the city that grew around the court kept the shape it was given: palaces, churches, gardens and 19th-century residences along tree-lined avenues, 840 metres up in the Serra dos Órgãos. This is a private day there — your own guide, your own driver, your own vehicle, and an itinerary built around what you actually want to see.\n\nThe tour can begin at your accommodation in Rio de Janeiro or at your hotel, guesthouse or Airbnb in Petrópolis itself. The price is the same either way, and the vehicle stays with you for the whole day in both cases. Starting locally simply gives you more hours in the city — room for an extra stop, a longer lunch, or a slower pace through the historic centre.\n\nFrom Rio the drive takes roughly 70 to 90 minutes each way depending on traffic, climbing through the Serra dos Órgãos past stretches of Atlantic Forest. Petrópolis sits high enough that the air is noticeably milder than the coast year-round, which is precisely why the emperor went there — and why a light jacket is worth packing, particularly in autumn and winter.\n\nThe Imperial Museum is the centrepiece of the regular itinerary. It occupies the former summer palace itself, and the collection includes the crown of Dom Pedro II, imperial insignia, furniture, portraits, personal belongings of the imperial family, and the pen Princess Isabel used to sign the Lei Áurea — the 1888 law that abolished slavery in Brazil — alongside a copy of the document. Your guide sets the pace inside according to what holds your interest.\n\nThe Cathedral of São Pedro de Alcântara is the second anchor of the day. The neo-Gothic church, with its single tower, holds the Imperial Mausoleum: Emperor Dom Pedro II, Empress Teresa Cristina, Princess Isabel and the Count of Eu. Entry is free and the interior is normally open during regular hours, though access can be restricted during mass, weddings, funerals or other ceremonies.\n\nThe Casa de Petrópolis is known locally as the House of 7 Errors, and the name is a misunderstanding worth explaining. Built between 1879 and 1884, it blended European architectural styles with the technology arriving at the end of the century — it was the first house in the city wired for electric light. It was also deliberately asymmetrical: the two halves of the façade were never meant to match. Passers-by who assumed a symmetrical design read the differences as construction mistakes, counted seven of them, and the nickname stuck. Interior visits are currently closed, but the grounds are open — the tour stops there, and your guide takes you through the gardens, the façade and the story.\n\nQuitandinha Palace belongs to an entirely different chapter. Built in the 1940s as a luxury hotel and casino — an imposing building, with monumental interiors and an artificial lake at its feet — it dates from the years when Petrópolis was the mountain address of Brazilian high society. Which areas are open varies with events and operating conditions on the day.\n\nDepending on time, opening hours and what interests you, the day can also take in the Crystal Palace, the historic centre and Avenida Koeler, exterior views of other significant residences, and the Rio Negro Palace when it is open to visitors. The Lutheran Church, one of the landmarks of German immigration in the city, can sometimes be visited inside — access is limited and generally restricted to Saturday mornings, so it is never guaranteed.\n\nMondays work differently. Petrópolis' main museums and historic interiors are closed, so a Monday tour is a genuinely different day: the historic centre on foot, architecture and exteriors, public spaces, the scenery of the serra, and an unhurried lunch. It is a good day in the city, but it is not the imperial itinerary with the interiors removed — the Imperial Museum in particular cannot be appreciated from the outside, and we would rather say so before you book than after.\n\nAdmissions to the attractions on the itinerary are included in the price. The Bohemia Brewery Tour can be added on request, subject to availability and opening hours, and is the one ticket paid separately; the brewery's own restaurant and bar are currently closed. Lunch is not included and is paid directly at the restaurant you choose, and your guide will suggest options to match your taste and budget.",
       "highlights": [
+        "Imperial Museum",
+        "Cathedral of São Pedro de Alcântara and the Imperial Mausoleum",
         "Quitandinha Palace",
-        "Imperial Museum with crown jewels",
-        "House of 7 Errors",
-        "Metropolitan Cathedral",
-        "European-style town center"
+        "Crystal Palace",
+        "Casa de Petrópolis and its gardens",
+        "Historic centre and Avenida Koeler"
       ],
       "included": [
-        "Private transportation",
-        "Certified guide from Rio (English)",
-        "Museum entrance fees",
-        "Pickup and drop-off anywhere in Rio (hotels, Airbnbs, airports, and the cruise port)",
-        "Complimentary bottled water"
+        "Private air-conditioned vehicle for the whole day",
+        "Licensed tour guide with your group throughout",
+        "Professional driver, separate from the guide",
+        "Admission to the attractions on the itinerary",
+        "Pickup and drop-off at your accommodation in Rio de Janeiro or in Petrópolis",
+        "Bottled water"
       ],
       "notIncluded": [
-        "Lunch and drinks",
-        "Gratuities"
+        "Lunch, food and drinks",
+        "Bohemia Brewery Tour admission (optional add-on)",
+        "Gratuities",
+        "Additional fee for guides in languages other than English, Spanish and Portuguese, where applicable"
       ],
-      "bookingBlockedWeekdays": [
-        "monday"
-      ],
-      "restrictions": "Not available Mondays",
+      "restrictions": "Mondays follow a different itinerary — Petrópolis' main museums and historic interiors are closed that day.",
       "faqs": [
         {
-          "q": "How far is Petrópolis from Rio and what is the drive like?",
-          "a": "Petrópolis is about 70km from Rio -- roughly 1 to 1.5 hours by private vehicle through a spectacular mountain road that rises from sea level to 840 meters. The drive itself through the Serra dos Orgaos mountains is part of the experience."
+          "q": "Can the tour start in Petrópolis instead of Rio?",
+          "a": "Yes. We pick you up directly at your hotel, guesthouse, Airbnb or other accommodation in Petrópolis, and the price is exactly the same as starting from Rio. The private vehicle and driver stay with you throughout the day either way."
         },
         {
-          "q": "Is the tour available every day of the week?",
-          "a": "Not available on Mondays -- most Petrópolis museums and palaces are closed on Mondays. The tour runs Tuesday to Sunday."
+          "q": "How long is the drive from Rio?",
+          "a": "Roughly 70 to 90 minutes each way, depending on traffic and where you are staying. The road climbs through the Serra dos Órgãos and the scenery is part of the day."
         },
         {
-          "q": "Are all museum and palace entrance fees included?",
-          "a": "Yes, all entrance fees are included: Quitandinha Palace, Imperial Museum with the crown jewels, House of 7 Errors, and Metropolitan Cathedral. No separate purchases needed at any attraction."
+          "q": "How long is the whole tour?",
+          "a": "Around eight hours. The exact figure shifts with your starting point, traffic, opening hours and the itinerary you settle on with your guide."
         },
         {
-          "q": "Is Petrópolis significantly cooler than Rio?",
-          "a": "Yes, noticeably so. At 840 meters altitude, Petrópolis averages 5-8 degrees Celsius cooler than Rio throughout the year. In winter (June-August) temperatures can reach 10-15 degrees Celsius. Bring a jacket or light layer regardless of the Rio weather when you leave."
+          "q": "Are the guide and the driver the same person?",
+          "a": "No. You have a licensed tour guide who stays with your group and a separate professional driver responsible for the vehicle."
         },
         {
-          "q": "Is there time for lunch in Petrópolis?",
-          "a": "Yes -- the 8-hour format includes a comfortable lunch break. Petrópolis has excellent restaurants in its European-style town center. Lunch is not included in the tour price but your guide will recommend the best local options."
+          "q": "Are admission tickets included?",
+          "a": "Yes. Admissions to the attractions on your itinerary are included in the tour price. The only exception is the optional Bohemia Brewery Tour, which is always paid separately."
+        },
+        {
+          "q": "Can we visit Petrópolis on a Monday?",
+          "a": "Yes, but it is a different tour. The main museums and historic interiors are closed on Mondays, so a Monday itinerary focuses on the historic centre on foot, architecture and exteriors, public spaces, the mountain scenery and lunch. We will make that clear when you book rather than let you discover it on arrival."
+        },
+        {
+          "q": "Is the Imperial Museum open on Mondays?",
+          "a": "No. The Imperial Museum, like most of the city's principal museums and historic interiors, is closed on Mondays. It cannot be appreciated from the outside, so a Monday visit is not a substitute for going inside."
+        },
+        {
+          "q": "What is in the Imperial Museum?",
+          "a": "The collection is held in the former summer palace and includes the crown of Dom Pedro II, imperial insignia, furniture, portraits, personal belongings of the imperial family, and the pen Princess Isabel used to sign the Lei Áurea, with a copy of the document itself."
+        },
+        {
+          "q": "Is there an admission fee for the cathedral?",
+          "a": "No, entry to the Cathedral of São Pedro de Alcântara is free. The interior is normally open during regular hours, though access can be restricted during mass, weddings, funerals or other ceremonies."
+        },
+        {
+          "q": "Can we go inside the Casa de Petrópolis?",
+          "a": "Not the house itself, at present — interior visits are closed, with no reopening date announced. The gardens are open, though, and that is where the tour stops: your guide takes you through the grounds, the façade and the story behind the nickname."
+        },
+        {
+          "q": "What are the \"7 Errors\" of the Casa de Petrópolis?",
+          "a": "There are no errors. The house, completed in 1884, was deliberately built asymmetrical, so the two halves of the façade were never meant to match. People who assumed the design was symmetrical read the differences as construction mistakes, counted seven, and the name stuck."
+        },
+        {
+          "q": "Can we add the Bohemia Brewery Tour?",
+          "a": "Yes, on request and subject to availability and opening hours. The ticket is paid separately from the tour price. Note that the brewery's restaurant and bar are currently closed, so lunch happens elsewhere."
+        },
+        {
+          "q": "Is lunch included?",
+          "a": "No. Lunch is paid directly at the restaurant you choose, and your guide will recommend options in the historic centre according to your preferences and budget."
+        },
+        {
+          "q": "Can the itinerary be adjusted?",
+          "a": "Yes. The order and the selection of stops can be built around your interests, the time available and what is open on the day. Some attractions may replace others."
+        },
+        {
+          "q": "Is Petrópolis colder than Rio, and what should we wear?",
+          "a": "Noticeably milder, given the altitude, throughout the year. Bring a light jacket or an extra layer regardless of the weather in Rio when you leave, especially in autumn and winter, and wear comfortable shoes — parts of the historic centre are best seen on foot."
+        },
+        {
+          "q": "Are guides available in other languages?",
+          "a": "We work in English, Spanish and Portuguese. Guides in other languages can sometimes be arranged on request, subject to availability, and an additional fee may apply."
         }
       ],
       "tips": [
-        "Petrópolis sits at 840 meters altitude — bring a light jacket regardless of Rio's temperature when you leave. It's consistently 5–8°C cooler and afternoon rain is common.",
-        "The mountain road from Rio is spectacular — the ascent through the Serra dos Órgãos is part of the experience. If you're prone to motion sickness on winding roads, take medication before departure.",
-        "The Imperial Museum contains the original Brazilian crown jewels and royal artifacts — allow at least 45 minutes inside. It's one of the most impressive museum collections in South America.",
-        "The House of 7 Errors (Casa dos 7 Erros) is a quirky architectural oddity where an eccentric Brazilian built a house deliberately full of construction mistakes. Your guide's explanation makes it genuinely fascinating.",
-        "Not available on Mondays — most Petrópolis museums and palaces are closed. The tour runs Tuesday to Sunday."
+        "Petrópolis sits at 840 metres and runs consistently milder than the coast. Bring a light jacket whatever the weather in Rio when you set off, particularly between April and September.",
+        "Parts of the historic centre are best covered on foot, along Avenida Koeler and around the cathedral. Comfortable shoes make a real difference to the day.",
+        "The mountain road is winding on the way up. If anyone in the group is prone to motion sickness, take something before departure rather than en route.",
+        "If your only possible date is a Monday, plan for the alternative itinerary: exteriors, the historic centre and the scenery, without the museum interiors. Worth knowing before you choose the date rather than after.",
+        "At the Casa de Petrópolis the house itself is closed, but the gardens are open and the stop is worth making. The story is the reason to go, and your guide tells it on the grounds.",
+        "The Bohemia Brewery Tour has to be requested in advance so we can check availability and opening hours. Its restaurant and bar are closed, so plan lunch elsewhere.",
+        "The cathedral is an active church. Mass, weddings and funerals can close the interior at short notice, and no tour can work around that."
       ]
     },
     "tijuca-rainforest": {
@@ -1818,58 +1865,105 @@ const prose = {
       "slug": "petropolis-imperial",
       "imageSlug": "petropolis-imperial",
       "title": "Petrópolis: Palacios Imperiales y Refugio en la Montaña",
-      "shortDescription": "Escapa a las montañas y explora la historia imperial de Brasil en Petrópolis, residencia de verano de los emperadores brasileños.",
-      "fullDescription": "En 1843, el Emperador Dom Pedro II eligió un valle montañoso a 68 kilómetros al norte de Río de Janeiro como sede de su palacio de verano. La altitud — 840 metros sobre el nivel del mar — ofrecía alivio del calor tropical de la costa, y la Serra dos Órgãos proporcionaba un telón de fondo dramático de picos y Mata Atlántica. La ciudad que creció alrededor de la corte imperial se convirtió en Petrópolis: la ciudad más europea de Brasil, el único lugar en América del Sur donde un emperador reinante estableció residencia permanente, y sede de algunas de las mejores arquitecturas del siglo XIX del continente.\n\nEl tour privado a Petrópolis desde Río es una inmersión de día completo en la historia imperial brasileña, el paisaje de montaña y el patrimonio arquitectónico que la mayoría de los visitantes de Río nunca experimenta.\n\nEl viaje desde Río dura aproximadamente 70 a 90 minutos y es en sí mismo parte de la experiencia. El ascenso por la Serra dos Órgãos sigue una carretera colonial de montaña que serpentea por remanentes de Mata Atlántica, pasando frente a cascadas visibles desde la ventanilla del coche, y penetra en el aire fresco de las tierras altas. La temperatura en Petrópolis es de 5 a 8 grados Celsius más fresca que en Río durante todo el año — en pleno invierno (junio a agosto) esto significa ropa de abrigo mientras la costa sofoca.\n\nEl Museo Imperial es el centro del tour y uno de los mejores museos históricos de América del Sur. Alojado en el Palacio Imperial original — una estructura neoclásica completada en 1845 — contiene los objetos personales de la familia imperial brasileña: la corona de Dom Pedro II con 639 diamantes y 77 perlas; la Lei Áurea original (Declaración de Abolición de la Esclavitud), firmada por la Princesa Isabel el 13 de mayo de 1888; la biblioteca privada del emperador; muebles y obras de arte reales; y miles de objetos personales que transforman la historia de abstracción en realidad tangible. Dedica al menos 45 minutos dentro.\n\nEl Palacio Quitandinha es uno de los edificios más improbables de Brasil — un casino y resort de 1944 al estilo de un Manoir normando, construido por un empresario brasileño que soñaba con crear el Monte Carlo de América del Sur. El juego fue prohibido en Brasil un año después de su apertura, pero el edificio en sí — rodeado de un lago artificial y bosque — sigue siendo una de las declaraciones arquitectónicas más dramáticas del siglo XX en el continente.\n\nLa Casa de los 7 Errores es una leyenda local: una casa construida deliberadamente con siete errores arquitectónicos intencionales por un excéntrico brasileño que la encargó en los años 50. La explicación de tu guía sobre cada error — algunos estructurales, algunos simbólicos, algunos aún debatidos — convierte lo que suena como una curiosidad en una historia genuinamente fascinante sobre excentricidad, oficio y la delgada línea entre el error y la intención.\n\nLa Catedral Metropolitana de São Pedro de Alcântara es el hito más llamativo de Petrópolis — una estructura neogótica iniciada en 1884 y completada en 1939, cuyas torres gemelas definen el horizonte de la ciudad. El mausoleo imperial en su interior contiene los restos del Emperador Dom Pedro II y la Emperatriz Teresa Cristina, devueltos a Brasil desde Lisboa en 1939 tras décadas de exilio posrepublicano.\n\nEl almuerzo está integrado en el itinerario — Petrópolis tiene excelentes restaurantes en el centro histórico, y tu guía recomendará opciones según tus preferencias. Presupuesta USD 20–40 por persona.\n\nNo disponible los lunes, cuando la mayoría de los museos y monumentos de Petrópolis están cerrados. El tour opera de martes a domingo.\n\nIncluido: transporte privado de ida y vuelta Río–Petrópolis, guía local certificado, todas las entradas a las atracciones indicadas y agua embotellada de cortesía. El almuerzo no está incluido.",
+      "shortDescription": "Un día privado en la Ciudad Imperial de Brasil — el Museo Imperial, el mausoleo de la catedral y el Palacio Quitandinha — con recogida en Río de Janeiro o en la propia Petrópolis.",
+      "fullDescription": "Petrópolis es la ciudad donde la familia imperial brasileña pasaba los veranos, y el trazado que le dio la corte sigue ahí: palacios, iglesias, jardines y residencias del siglo XIX a lo largo de avenidas arboladas, a 840 metros de altura en la Serra dos Órgãos. Este es un día privado allí — tu guía, tu conductor, tu vehículo y un itinerario armado alrededor de lo que de verdad quieres ver.\n\nEl tour puede empezar en tu alojamiento de Río de Janeiro o directamente en tu hotel, posada o Airbnb en Petrópolis. El precio es el mismo en ambos casos y el vehículo se queda contigo todo el día. Empezar en la propia ciudad simplemente te da más horas: espacio para una parada extra, un almuerzo sin prisa o un ritmo más lento por el centro histórico.\n\nDesde Río el trayecto dura entre 70 y 90 minutos por sentido según el tráfico, subiendo por la Serra dos Órgãos entre tramos de Mata Atlántica. Petrópolis está lo bastante alta como para que el aire sea claramente más templado que el de la costa durante todo el año — por eso subía el emperador, y por eso conviene llevar una chaqueta ligera, sobre todo en otoño e invierno.\n\nEl Museo Imperial es el centro del itinerario regular. Ocupa el propio palacio de verano, y la colección incluye la corona de Dom Pedro II, insignias imperiales, muebles, retratos, objetos personales de la familia imperial y la pluma con la que la princesa Isabel firmó la Lei Áurea — la ley de 1888 que abolió la esclavitud en Brasil —, además de una copia del documento. Tu guía marca el ritmo dentro según lo que te interese.\n\nLa Catedral de São Pedro de Alcântara es el segundo eje del día. La iglesia neogótica, de una sola torre, alberga el Mausoleo Imperial: Dom Pedro II, la emperatriz Teresa Cristina, la princesa Isabel y el conde d'Eu. La entrada es gratuita y el interior suele estar abierto en horario regular, aunque el acceso puede restringirse durante misas, bodas, funerales u otras ceremonias.\n\nLa Casa de Petrópolis se conoce como la Casa de los 7 Errores, y el nombre es un malentendido que vale la pena aclarar. Construida entre 1879 y 1884, mezcló estilos arquitectónicos europeos con la tecnología que llegaba a finales de siglo: fue la primera casa de la ciudad con luz eléctrica. También fue deliberadamente asimétrica — las dos mitades de la fachada nunca debieron coincidir. Quien pasaba por delante daba por hecho un diseño simétrico, leyó las diferencias como fallos de construcción, contó siete y el apodo se quedó. Las visitas al interior están cerradas por ahora, pero los jardines sí se recorren, y ahí para el tour.\n\nEl Palacio Quitandinha pertenece a otro capítulo. Construido en los años cuarenta como hotel-casino de lujo — un edificio imponente, de interiores monumentales y con un lago artificial a sus pies —, es de los años en que Petrópolis era la dirección serrana de la alta sociedad brasileña. Qué zonas están abiertas varía según los eventos y las condiciones de funcionamiento del día.\n\nSegún el tiempo, los horarios y lo que te interese, el día puede incluir también el Palacio de Cristal, el centro histórico y la Avenida Koeler, vistas exteriores de otras residencias señaladas y el Palacio Rio Negro cuando está abierto al público. La Iglesia Luterana, uno de los hitos de la inmigración alemana en la ciudad, a veces se puede ver por dentro — el acceso es limitado y en general solo los sábados por la mañana, así que nunca está garantizado.\n\nLos lunes funcionan distinto. Los principales museos e interiores históricos de Petrópolis cierran, así que un tour en lunes es otro día: el centro histórico a pie, arquitectura y fachadas, espacios públicos, el paisaje de la sierra y un almuerzo sin prisa. Es un buen día en la ciudad, pero no es el itinerario imperial sin los interiores — el Museo Imperial en particular no se aprecia desde fuera, y preferimos decírtelo antes de que reserves y no después.\n\nLas entradas a las atracciones del itinerario están incluidas en el precio. El Tour Cervecero de Bohemia se puede añadir bajo petición, sujeto a disponibilidad y horarios, y es la única entrada que se paga aparte; el restaurante y el bar de la cervecería están cerrados actualmente. El almuerzo no está incluido y se paga directamente en el restaurante que elijas — tu guía te sugerirá opciones según tu gusto y tu presupuesto.",
       "highlights": [
+        "Museo Imperial",
+        "Catedral de São Pedro de Alcântara y Mausoleo Imperial",
         "Palacio Quitandinha",
-        "Museo Imperial con joyas de la corona",
-        "Casa de los 7 Errores",
-        "Catedral Metropolitana",
-        "Centro de estilo europeo"
+        "Palacio de Cristal",
+        "Casa de Petrópolis y sus jardines",
+        "Centro histórico y Avenida Koeler"
       ],
       "included": [
-        "Transporte privado",
-        "Guía certificado desde Río (español)",
-        "Entradas a museos",
-        "Recogida y regreso en cualquier lugar de Río (hoteles, Airbnbs, aeropuertos y terminal de cruceros)",
+        "Vehículo privado con aire acondicionado durante todo el día",
+        "Guía de turismo acreditado con tu grupo en todo momento",
+        "Conductor profesional, distinto del guía",
+        "Entradas a las atracciones del itinerario",
+        "Recogida y regreso en tu alojamiento de Río de Janeiro o de Petrópolis",
         "Agua mineral"
       ],
       "notIncluded": [
-        "Almuerzo y bebidas",
-        "Propinas"
+        "Almuerzo, comidas y bebidas",
+        "Entrada del Tour Cervecero de Bohemia (opcional)",
+        "Propinas",
+        "Suplemento por guía en idiomas distintos del español, el inglés y el portugués, cuando corresponda"
       ],
-      "bookingBlockedWeekdays": [
-        "monday"
-      ],
-      "restrictions": "No disponible los lunes",
+      "restrictions": "Los lunes siguen un itinerario diferente — los principales museos e interiores históricos de Petrópolis cierran ese día.",
       "faqs": [
         {
-          "q": "¿Qué tan lejos está Petrópolis de Río y cómo es el viaje?",
-          "a": "Petrópolis está a unos 70 km de Río -- aproximadamente 1 a 1.5 horas en vehículo privado por una espectacular carretera de montaña que sube desde el nivel del mar hasta 840 metros. El trayecto por las montañas de la Serra dos Órgãos es parte de la experiencia en sí."
+          "q": "¿El tour puede empezar en Petrópolis en vez de Río?",
+          "a": "Sí. Te recogemos directamente en tu hotel, posada, Airbnb u otro alojamiento de Petrópolis, y el precio es exactamente el mismo que saliendo de Río. El vehículo privado y el conductor se quedan contigo todo el día en ambos casos."
         },
         {
-          "q": "¿El tour está disponible todos los días de la semana?",
-          "a": "No está disponible los lunes -- la mayoría de los museos y palacios de Petrópolis cierran los lunes. El tour opera de martes a domingo."
+          "q": "¿Cuánto dura el trayecto desde Río?",
+          "a": "Entre 70 y 90 minutos por sentido, según el tráfico y dónde te alojes. La carretera sube por la Serra dos Órgãos y el paisaje forma parte del día."
         },
         {
-          "q": "¿Todas las entradas a museos y palacios están incluidas?",
-          "a": "Sí, todas las entradas están incluidas: Palacio Quitandinha, Museo Imperial con las joyas de la corona, Casa de los 7 Errores y Catedral Metropolitana. No necesitas comprar nada por separado."
+          "q": "¿Cuánto dura el tour completo?",
+          "a": "Alrededor de ocho horas. La cifra exacta cambia según el punto de salida, el tráfico, los horarios de las atracciones y el itinerario que acuerdes con tu guía."
         },
         {
-          "q": "¿Petrópolis es significativamente más fresca que Río?",
-          "a": "Sí, notablemente. A 840 metros de altitud, Petrópolis es 5-8 grados Celsius más fresca que Río durante todo el año. En invierno (junio-agosto) las temperaturas pueden bajar a 10-15 grados. Lleva una chaqueta o capa ligera independientemente del clima de Río cuando partas."
+          "q": "¿El guía y el conductor son la misma persona?",
+          "a": "No. Tienes un guía de turismo acreditado que acompaña a tu grupo y un conductor profesional aparte, responsable del vehículo."
         },
         {
-          "q": "¿Hay tiempo para almorzar en Petrópolis?",
-          "a": "Sí -- el formato de 8 horas incluye una pausa cómoda para almorzar. Petrópolis tiene excelentes restaurantes en su centro de estilo europeo. El almuerzo no está incluido pero tu guía recomendará las mejores opciones locales."
+          "q": "¿Las entradas están incluidas?",
+          "a": "Sí. Las entradas a las atracciones de tu itinerario están incluidas en el precio del tour. La única excepción es el Tour Cervecero de Bohemia, que es opcional y siempre se paga aparte."
+        },
+        {
+          "q": "¿Se puede visitar Petrópolis un lunes?",
+          "a": "Sí, pero es otro tour. Los principales museos e interiores históricos cierran los lunes, así que el itinerario de ese día se centra en el centro histórico a pie, la arquitectura y las fachadas, los espacios públicos, el paisaje de montaña y el almuerzo. Te lo dejamos claro al reservar en lugar de que lo descubras al llegar."
+        },
+        {
+          "q": "¿El Museo Imperial abre los lunes?",
+          "a": "No. El Museo Imperial, como la mayoría de los museos e interiores históricos de la ciudad, cierra los lunes. Y no se aprecia desde fuera, así que una visita en lunes no sustituye a entrar."
+        },
+        {
+          "q": "¿Qué hay en el Museo Imperial?",
+          "a": "La colección se guarda en el antiguo palacio de verano e incluye la corona de Dom Pedro II, insignias imperiales, muebles, retratos, objetos personales de la familia imperial y la pluma con la que la princesa Isabel firmó la Lei Áurea, junto a una copia del documento."
+        },
+        {
+          "q": "¿Hay que pagar entrada en la catedral?",
+          "a": "No, la entrada a la Catedral de São Pedro de Alcântara es gratuita. El interior suele estar abierto en horario regular, aunque el acceso puede restringirse durante misas, bodas, funerales u otras ceremonias."
+        },
+        {
+          "q": "¿Se puede entrar en la Casa de Petrópolis?",
+          "a": "En la casa no, por ahora: las visitas al interior están cerradas y no hay fecha de reapertura anunciada. Los jardines sí están abiertos, y es donde para el tour — tu guía te lleva por el recinto, la fachada y la historia detrás del apodo."
+        },
+        {
+          "q": "¿Cuáles son los \"7 errores\" de la Casa de Petrópolis?",
+          "a": "No hay errores. La casa, terminada en 1884, se construyó deliberadamente asimétrica, de modo que las dos mitades de la fachada nunca debieron coincidir. Quien daba por hecho un diseño simétrico leyó las diferencias como fallos de construcción, contó siete y el nombre se quedó."
+        },
+        {
+          "q": "¿Podemos añadir el Tour Cervecero de Bohemia?",
+          "a": "Sí, bajo petición y sujeto a disponibilidad y horarios. La entrada se paga aparte del precio del tour. Ten en cuenta que el restaurante y el bar de la cervecería están cerrados, así que el almuerzo será en otro sitio."
+        },
+        {
+          "q": "¿El almuerzo está incluido?",
+          "a": "No. El almuerzo se paga directamente en el restaurante que elijas, y tu guía te recomendará opciones en el centro histórico según tus preferencias y tu presupuesto."
+        },
+        {
+          "q": "¿Se puede modificar el itinerario?",
+          "a": "Sí. El orden y la selección de paradas se arman según tus intereses, el tiempo disponible y lo que esté abierto ese día. Algunas atracciones pueden sustituir a otras."
+        },
+        {
+          "q": "¿Petrópolis es más fresca que Río? ¿Qué ropa llevamos?",
+          "a": "Bastante más templada, por la altitud, durante todo el año. Lleva una chaqueta ligera o una capa extra sin importar el tiempo que haga en Río al salir, sobre todo en otoño e invierno, y calzado cómodo: partes del centro histórico se ven mejor a pie."
+        },
+        {
+          "q": "¿Hay guías en otros idiomas?",
+          "a": "Trabajamos en español, inglés y portugués. A veces podemos conseguir guías en otros idiomas bajo petición, sujeto a disponibilidad, y puede aplicarse un suplemento."
         }
       ],
       "tips": [
-        "Petrópolis está a 840 metros de altitud — lleva una chaqueta ligera independientemente de la temperatura en Río cuando salgas. Es consistentemente 5–8°C más fresca y la lluvia vespertina es habitual.",
-        "La carretera de montaña desde Río es espectacular — el ascenso por la Serra dos Órgãos es parte de la experiencia. Si eres propenso al mareo en carreteras sinuosas, toma medicación antes de salir.",
-        "El Museo Imperial contiene las joyas de la corona brasileña originales y artefactos reales — dedica al menos 45 minutos adentro. Es una de las colecciones museísticas más impresionantes de América del Sur.",
-        "La Casa de los 7 Errores es una curiosa rareza arquitectónica donde un excéntrico brasileño construyó una casa deliberadamente llena de errores de construcción. La explicación de tu guía la hace genuinamente fascinante.",
-        "No disponible los lunes — la mayoría de museos y palacios de Petrópolis cierran ese día. El tour opera de martes a domingo."
+        "Petrópolis está a 840 metros y es sistemáticamente más templada que la costa. Lleva una chaqueta ligera haga el tiempo que haga en Río al salir, sobre todo entre abril y septiembre.",
+        "Partes del centro histórico se recorren mejor a pie, por la Avenida Koeler y alrededor de la catedral. El calzado cómodo cambia el día.",
+        "La carretera de montaña tiene muchas curvas en la subida. Si alguien del grupo se marea, conviene tomar algo antes de salir y no en el camino.",
+        "Si tu única fecha posible es un lunes, cuenta con el itinerario alternativo: fachadas, centro histórico y paisaje, sin los interiores de los museos. Mejor saberlo al elegir la fecha que después.",
+        "En la Casa de Petrópolis la casa está cerrada, pero los jardines están abiertos y la parada merece la pena. La historia es el motivo para ir, y tu guía la cuenta en el recinto.",
+        "El Tour Cervecero de Bohemia hay que pedirlo con antelación para comprobar disponibilidad y horarios. Su restaurante y su bar están cerrados, así que planifica el almuerzo en otro lugar.",
+        "La catedral es una iglesia en funcionamiento. Misas, bodas y funerales pueden cerrar el interior sin aviso previo, y ningún tour puede sortear eso."
       ]
     },
     "tijuca-rainforest": {
@@ -2601,58 +2695,105 @@ const prose = {
       "slug": "passeio-privado-petropolis-cidade-imperial",
       "imageSlug": "petropolis-imperial",
       "title": "Petrópolis: Palácios Imperiais e Refúgio na Montanha",
-      "shortDescription": "Fuja para as montanhas e explore a história imperial do Brasil em Petrópolis, residência de verão dos imperadores brasileiros.",
-      "fullDescription": "Em 1843, o Imperador Dom Pedro II escolheu um vale serrano a 68 quilômetros ao norte do Rio de Janeiro como sede de seu palácio de verão. A altitude — 840 metros acima do nível do mar — oferecia alívio do calor tropical da costa, e a Serra dos Órgãos fornecia um pano de fundo dramático de picos e Mata Atlântica. A cidade que cresceu em torno da corte imperial tornou-se Petrópolis: a cidade mais europeia do Brasil, o único lugar na América do Sul onde um imperador reinante estabeleceu residência permanente, e sede de algumas das mais belas arquiteturas do século XIX do continente.\n\nO passeio privativo para Petrópolis a partir do Rio é uma imersão de dia inteiro na história imperial brasileira, na paisagem serrana e no patrimônio arquitetônico que a maioria dos visitantes do Rio nunca experimenta.\n\nO trajeto do Rio leva aproximadamente 70 a 90 minutos e é em si parte da experiência. A subida pela Serra dos Órgãos segue uma estrada colonial de montanha que serpenteia por remanescentes de Mata Atlântica, passando por cachoeiras visíveis pela janela do carro, e penetra no ar fresco das terras altas. A temperatura em Petrópolis é de 5 a 8 graus Celsius mais fresca do que no Rio durante todo o ano — no inverno (junho a agosto) isso significa agasalho enquanto o litoral sufoca.\n\nO Museu Imperial é o centro do passeio e um dos melhores museus históricos da América do Sul. Instalado no Palácio Imperial original — uma estrutura neoclássica concluída em 1845 — contém os objetos pessoais da família imperial brasileira: a coroa de Dom Pedro II com 639 diamantes e 77 pérolas; a Lei Áurea original (Declaração de Abolição da Escravatura), assinada pela Princesa Isabel em 13 de maio de 1888; a biblioteca privada do imperador; móveis e obras de arte reais; e milhares de objetos pessoais que transformam a história de abstração em realidade tangível. Reserve pelo menos 45 minutos dentro.\n\nO Palácio Quitandinha é um dos edifícios mais improváveis do Brasil — um cassino e resort de 1944 no estilo de um Manoir normando, construído por um empresário brasileiro que sonhava em criar o Monte Carlo da América do Sul. O jogo foi proibido no Brasil um ano após sua abertura, mas o edifício em si — cercado por um lago artificial e floresta — permanece como uma das declarações arquitetônicas mais dramáticas do século XX no continente.\n\nA Casa dos 7 Erros é uma lenda local: uma casa construída deliberadamente com sete erros arquitetônicos intencionais por um excêntrico brasileiro que a encomendou nos anos 1950. A explicação do seu guia sobre cada erro — alguns estruturais, alguns simbólicos, alguns ainda debatidos — transforma o que parece uma curiosidade numa história genuinamente fascinante sobre excentricidade, ofício e a tênue linha entre o erro e a intenção.\n\nA Catedral Metropolitana de São Pedro de Alcântara é o marco mais imponente de Petrópolis — uma estrutura neogótica iniciada em 1884 e concluída em 1939, cujas torres gêmeas definem o horizonte da cidade. O mausoléu imperial no interior contém os restos do Imperador Dom Pedro II e da Imperatriz Teresa Cristina, devolvidos ao Brasil de Lisboa em 1939 após décadas de exílio pós-republicano.\n\nO almoço está integrado no itinerário — Petrópolis tem excelentes restaurantes no centro histórico, e seu guia recomendará opções conforme suas preferências. Calcule USD 20–40 por pessoa.\n\nNão disponível às segundas, quando a maioria dos museus e monumentos de Petrópolis estão fechados. O passeio funciona de terça a domingo.\n\nIncluído: transporte privativo de ida e volta Rio–Petrópolis, guia local certificado, todos os ingressos para as atrações listadas e água mineral de cortesia. O almoço não está incluído.",
+      "shortDescription": "Um dia privativo na Cidade Imperial — Museu Imperial, o mausoléu da catedral e o Palácio Quitandinha — com saída do Rio de Janeiro ou da sua hospedagem em Petrópolis.",
+      "fullDescription": "Petrópolis é onde a família imperial passava os verões, e a cidade que cresceu em volta da corte manteve o desenho que ganhou: palácios, igrejas, jardins e residências do século XIX ao longo de avenidas arborizadas, a 840 metros de altitude na Serra dos Órgãos. Este é um dia privativo lá — seu guia, seu motorista, seu veículo e um roteiro montado em cima do que você realmente quer ver.\n\nO passeio pode começar na sua hospedagem no Rio de Janeiro ou direto no seu hotel, pousada ou Airbnb em Petrópolis. O preço é o mesmo nos dois casos, e o veículo fica com você o dia inteiro de qualquer forma. Começar na própria cidade dá mais horas de Petrópolis: espaço para uma parada a mais, um almoço sem pressa ou um ritmo mais lento pelo Centro Histórico.\n\nSaindo do Rio, o trajeto leva de 70 a 90 minutos por trecho, dependendo do trânsito, subindo a Serra dos Órgãos por entre trechos de Mata Atlântica. Petrópolis fica alta o bastante para o ar ser bem mais ameno que o do litoral o ano inteiro — foi por isso que o imperador subia, e é por isso que vale levar um casaco leve, principalmente no outono e no inverno.\n\nO Museu Imperial é o centro do roteiro regular. Ele ocupa o próprio palácio de verão, e o acervo inclui a coroa de Dom Pedro II, insígnias imperiais, mobiliário, retratos, objetos pessoais da família imperial e a caneta com que a Princesa Isabel assinou a Lei Áurea — a lei de 1888 que aboliu a escravidão no Brasil —, além de uma cópia do documento. Seu guia acerta o ritmo lá dentro conforme o que prender sua atenção.\n\nA Catedral São Pedro de Alcântara é o segundo eixo do dia. A igreja neogótica, de torre única, abriga o Mausoléu Imperial: Dom Pedro II, a Imperatriz Teresa Cristina, a Princesa Isabel e o Conde d'Eu. A entrada é gratuita e o interior costuma estar aberto em horário regular, embora o acesso possa ser restringido durante missas, casamentos, velórios ou outras cerimônias.\n\nA Casa de Petrópolis é conhecida como Casa dos 7 Erros, e o nome é um mal-entendido que vale explicar. Construída entre 1879 e 1884, uniu estilos arquitetônicos europeus às novidades técnicas do fim do século: foi a primeira casa da cidade a receber luz elétrica. E foi propositalmente assimétrica — os dois lados da fachada nunca deveriam coincidir. Quem passava em frente supunha um projeto simétrico, leu as diferenças como erros de construção, contou sete, e o apelido pegou. As visitas ao interior estão fechadas no momento, mas os jardins podem ser percorridos, e é onde o passeio para.\n\nO Palácio Quitandinha é outro capítulo. Construído nos anos 1940 como hotel-cassino de luxo — uma construção imponente, de interiores monumentais e com um lago artificial aos pés —, é dos anos em que Petrópolis era o endereço serrano da alta sociedade brasileira. Quais áreas estão abertas varia conforme eventos e condições de funcionamento no dia.\n\nConforme o tempo, os horários e o seu interesse, o dia também pode incluir o Palácio de Cristal, o Centro Histórico e a Avenida Koeler, vistas externas de outras residências importantes e o Palácio Rio Negro quando aberto à visitação. A Igreja Luterana, um dos marcos da imigração alemã na cidade, às vezes pode ser vista por dentro — o acesso é limitado e em geral só aos sábados de manhã, então nunca é garantido.\n\nSegunda-feira funciona diferente. Os principais museus e interiores históricos de Petrópolis fecham, então o passeio de segunda é outro dia: Centro Histórico a pé, arquitetura e fachadas, espaços públicos, a paisagem da serra e um almoço sem pressa. É um bom dia na cidade, mas não é o roteiro imperial sem os interiores — o Museu Imperial, em especial, não se aprecia por fora, e preferimos dizer isso antes da reserva, não depois.\n\nOs ingressos das atrações do roteiro estão incluídos no preço. O Tour Cervejeiro da Bohemia pode ser acrescentado sob solicitação, sujeito a disponibilidade e horário de funcionamento, e é o único ingresso pago à parte; o restaurante e o bar da cervejaria estão fechados no momento. O almoço não está incluído e é pago direto no restaurante escolhido — seu guia sugere opções conforme seu gosto e seu orçamento.",
       "highlights": [
+        "Museu Imperial",
+        "Catedral São Pedro de Alcântara e Mausoléu Imperial",
         "Palácio Quitandinha",
-        "Museu Imperial com joias da coroa",
-        "Casa dos 7 Erros",
-        "Catedral Metropolitana",
-        "Centro de estilo europeu"
+        "Palácio de Cristal",
+        "Casa de Petrópolis e seus jardins",
+        "Centro Histórico e Avenida Koeler"
       ],
       "included": [
-        "Transporte privado",
-        "Guia certificado saindo do Rio (português)",
-        "Ingressos para museus",
-        "Busca e retorno em qualquer lugar do Rio (hotéis, Airbnbs, aeroportos e terminal de cruzeiros)",
+        "Veículo privativo com ar-condicionado o dia inteiro",
+        "Guia de turismo credenciado acompanhando o grupo o tempo todo",
+        "Motorista profissional, separado do guia",
+        "Ingressos das atrações do roteiro",
+        "Embarque e retorno na sua hospedagem no Rio de Janeiro ou em Petrópolis",
         "Água mineral"
       ],
       "notIncluded": [
-        "Almoço e bebidas",
-        "Gorjetas"
+        "Almoço, comidas e bebidas",
+        "Ingresso do Tour Cervejeiro da Bohemia (opcional)",
+        "Gorjetas",
+        "Taxa adicional para guia em idiomas além de português, inglês e espanhol, quando aplicável"
       ],
-      "bookingBlockedWeekdays": [
-        "monday"
-      ],
-      "restrictions": "Não disponível às segundas-feiras",
+      "restrictions": "Segundas-feiras seguem um roteiro diferente — os principais museus e interiores históricos de Petrópolis fecham nesse dia.",
       "faqs": [
         {
-          "q": "Quão longe fica Petrópolis do Rio e como é o trajeto?",
-          "a": "Petrópolis fica a cerca de 70 km do Rio -- aproximadamente 1 a 1h30 de carro particular por uma estrada de montanha espetacular que sobe do nível do mar até 840 metros. O próprio trajeto pela Serra dos Órgãos faz parte da experiência."
+          "q": "O passeio pode começar em Petrópolis, e não no Rio?",
+          "a": "Pode. A gente busca você direto no seu hotel, pousada, Airbnb ou outra hospedagem em Petrópolis, e o preço é exatamente o mesmo de quem sai do Rio. O veículo privativo e o motorista ficam com você o dia todo nos dois casos."
         },
         {
-          "q": "O tour está disponível todos os dias da semana?",
-          "a": "Não está disponível às segundas-feiras -- a maioria dos museus e palácios de Petrópolis fecha às segundas. O tour funciona de terça a domingo."
+          "q": "Quanto tempo leva o trajeto do Rio?",
+          "a": "De 70 a 90 minutos por trecho, dependendo do trânsito e de onde você está hospedado. A estrada sobe a Serra dos Órgãos e a paisagem faz parte do dia."
         },
         {
-          "q": "Todas as entradas de museus e palácios estão incluídas?",
-          "a": "Sim, todas as entradas estão incluídas: Palácio Quitandinha, Museu Imperial com as joias da coroa, Casa dos 7 Erros e Catedral Metropolitana. Não é necessário comprar nada separadamente."
+          "q": "Quanto dura o passeio inteiro?",
+          "a": "Cerca de oito horas. O número exato muda conforme o ponto de partida, o trânsito, os horários das atrações e o roteiro que você fecha com o guia."
         },
         {
-          "q": "Petrópolis é significativamente mais fria que o Rio?",
-          "a": "Sim, notavelmente. A 840 metros de altitude, Petrópolis é 5-8 graus Celsius mais fria que o Rio o ano todo. No inverno (junho-agosto) as temperaturas podem chegar a 10-15 graus. Leve uma jaqueta ou camada leve independentemente do clima do Rio ao partir."
+          "q": "O guia e o motorista são a mesma pessoa?",
+          "a": "Não. Você tem um guia de turismo credenciado que acompanha o grupo e um motorista profissional separado, responsável pelo veículo."
         },
         {
-          "q": "Há tempo para almoçar em Petrópolis?",
-          "a": "Sim -- o formato de 8 horas inclui uma pausa confortável para almoço. Petrópolis tem ótimos restaurantes em seu centro de estilo europeu. O almoço não está incluído mas seu guia recomendará as melhores opções locais."
+          "q": "Os ingressos estão incluídos?",
+          "a": "Sim. Os ingressos das atrações do seu roteiro estão incluídos no preço do passeio. A única exceção é o Tour Cervejeiro da Bohemia, que é opcional e sempre pago à parte."
+        },
+        {
+          "q": "Dá para visitar Petrópolis numa segunda-feira?",
+          "a": "Dá, mas é outro passeio. Os principais museus e interiores históricos fecham às segundas, então o roteiro do dia é Centro Histórico a pé, arquitetura e fachadas, espaços públicos, a paisagem da serra e almoço. A gente deixa isso claro na reserva em vez de você descobrir ao chegar."
+        },
+        {
+          "q": "O Museu Imperial abre às segundas?",
+          "a": "Não. O Museu Imperial, como a maioria dos museus e interiores históricos da cidade, fecha às segundas. E ele não se aprecia por fora, então visitar numa segunda não substitui entrar."
+        },
+        {
+          "q": "O que tem no Museu Imperial?",
+          "a": "O acervo fica no antigo palácio de verão e inclui a coroa de Dom Pedro II, insígnias imperiais, mobiliário, retratos, objetos pessoais da família imperial e a caneta com que a Princesa Isabel assinou a Lei Áurea, além de uma cópia do documento."
+        },
+        {
+          "q": "A catedral cobra entrada?",
+          "a": "Não, a entrada da Catedral São Pedro de Alcântara é gratuita. O interior costuma estar aberto em horário regular, embora o acesso possa ser restringido durante missas, casamentos, velórios ou outras cerimônias."
+        },
+        {
+          "q": "Dá para entrar na Casa de Petrópolis?",
+          "a": "Na casa, não, por enquanto: as visitas ao interior estão fechadas e não há data de reabertura anunciada. Os jardins estão abertos, e é onde o passeio para — seu guia leva você pelo terreno, pela fachada e pela história por trás do apelido."
+        },
+        {
+          "q": "Quais são os \"7 erros\" da Casa de Petrópolis?",
+          "a": "Não existem erros. A casa, concluída em 1884, foi construída propositalmente assimétrica, de modo que os dois lados da fachada nunca deveriam coincidir. Quem supunha um projeto simétrico leu as diferenças como erros de construção, contou sete, e o nome pegou."
+        },
+        {
+          "q": "Dá para incluir o Tour Cervejeiro da Bohemia?",
+          "a": "Dá, sob solicitação e sujeito a disponibilidade e horário de funcionamento. O ingresso é pago à parte do valor do passeio. Vale saber que o restaurante e o bar da cervejaria estão fechados, então o almoço fica para outro lugar."
+        },
+        {
+          "q": "O almoço está incluído?",
+          "a": "Não. O almoço é pago direto no restaurante escolhido, e seu guia recomenda opções no Centro Histórico conforme suas preferências e seu orçamento."
+        },
+        {
+          "q": "O roteiro pode ser ajustado?",
+          "a": "Pode. A ordem e a seleção das paradas se montam conforme seu interesse, o tempo disponível e o que estiver aberto no dia. Algumas atrações podem substituir outras."
+        },
+        {
+          "q": "Petrópolis é mais fria que o Rio? O que levar?",
+          "a": "Bem mais amena, por causa da altitude, o ano inteiro. Leve um casaco leve independentemente do tempo que estiver fazendo no Rio na hora de sair, principalmente no outono e no inverno, e calçado confortável: parte do Centro Histórico se vê melhor a pé."
+        },
+        {
+          "q": "Há guias em outros idiomas?",
+          "a": "Trabalhamos em português, inglês e espanhol. Guias em outros idiomas às vezes podem ser arranjados sob solicitação, sujeito a disponibilidade, e pode haver taxa adicional."
         }
       ],
       "tips": [
-        "Petrópolis fica a 840 metros de altitude — leve um casaco leve independentemente da temperatura no Rio quando você sair. É consistentemente 5–8°C mais fria e chuva à tarde é comum.",
-        "A estrada de montanha do Rio é espetacular — a subida pela Serra dos Órgãos é parte da experiência. Se você é propenso a enjoo em estradas com muitas curvas, tome medicação antes de partir.",
-        "O Museu Imperial contém as joias da coroa brasileira originais e artefatos reais — reserve pelo menos 45 minutos dentro. É uma das coleções museológicas mais impressionantes da América do Sul.",
-        "A Casa dos 7 Erros é uma curiosa excentricidade arquitetônica onde um brasileiro construiu uma casa deliberadamente cheia de erros de construção. A explicação do seu guia a torna genuinamente fascinante.",
-        "Não disponível às segundas — a maioria dos museus e palácios de Petrópolis fecha nesse dia. O passeio funciona de terça a domingo."
+        "Petrópolis fica a 840 metros e é sistematicamente mais amena que o litoral. Leve um casaco leve independentemente do tempo no Rio na hora de sair, principalmente entre abril e setembro.",
+        "Parte do Centro Histórico se percorre melhor a pé, pela Avenida Koeler e no entorno da catedral. Calçado confortável muda o dia.",
+        "A serra tem muitas curvas na subida. Se alguém do grupo enjoa em estrada, o remédio funciona melhor antes da saída do que no meio do caminho.",
+        "Se a sua única data possível for segunda-feira, conte com o roteiro alternativo: fachadas, Centro Histórico e paisagem, sem os interiores dos museus. Melhor saber na hora de escolher a data do que depois.",
+        "Na Casa de Petrópolis a casa está fechada, mas os jardins estão abertos e a parada vale. A história é o motivo de ir, e o guia conta no próprio terreno.",
+        "O Tour Cervejeiro da Bohemia precisa ser pedido com antecedência, para conferirmos disponibilidade e horário. O restaurante e o bar da cervejaria estão fechados, então planeje o almoço em outro lugar.",
+        "A catedral é uma igreja em funcionamento. Missa, casamento e velório podem fechar o interior sem aviso, e nenhum passeio contorna isso."
       ]
     },
     "tijuca-rainforest": {
