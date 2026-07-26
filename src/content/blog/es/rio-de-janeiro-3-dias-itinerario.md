@@ -146,13 +146,13 @@ El Día 3 es una elección entre tres experiencias completamente distintas. No s
 
 68 kilómetros al norte de Río, 840 metros sobre el nivel del mar y 5–8 grados más fresco. En 1843, el Emperador Dom Pedro II estableció aquí su corte de verano — lo que dejó es uno de los ejemplos más intactos de urbanismo imperial del siglo XIX en las Américas.
 
-El **Museo Imperial** ocupa el palacio de verano original de Dom Pedro II (1845). En su interior: la corona del emperador (639 diamantes, 77 perlas), el pergamino original de la Lei Áurea (la ley que abolió la esclavitud en Brasil, firmada por la Princesa Isabel el 13 de mayo de 1888) y la biblioteca personal del emperador con 350.000 volúmenes. No son reproducciones.
+El **Museo Imperial** ocupa el palacio de verano original de Dom Pedro II (1845). En su interior: la corona del emperador, la pluma con la que la princesa Isabel firmó la Lei Áurea — la ley que abolió la esclavitud en Brasil, el 13 de mayo de 1888 —, junto a una copia del documento y la biblioteca personal del emperador con 350.000 volúmenes.
 
-El **Palacio Quitandinha** (1944) fue construido como resort casino de lujo en estilo normando — diseñado para rivalizar con Montecarlo. Los juegos de azar fueron prohibidos en todo Brasil un año después de su apertura. El edificio ha existido desde entonces como condominio residencial privado, con sus salones de baile preservados y abiertos para visitas. Es una de las historias más extrañas y fascinantes de la arquitectura brasileña.
+El **Palacio Quitandinha** (1944) fue construido como resort casino de lujo — diseñado para rivalizar con Montecarlo. Los juegos de azar fueron prohibidos en todo Brasil un año después de su apertura. El edificio ha existido desde entonces como condominio residencial privado, con sus salones de baile preservados y abiertos para visitas. Es una de las historias más extrañas y fascinantes de la arquitectura brasileña.
 
 La Catedral neogótica, iniciada en 1884 y completada en 1939, alberga el mausoleo imperial. Almuerzo en el centro histórico — cocina de influencia alemana que refleja la inmigración europea del siglo XIX.
 
-*No disponible los lunes — el Museo Imperial está cerrado.*
+*Los lunes siguen un itinerario diferente — el Museo Imperial y los interiores históricos cierran, así que el día se centra en el centro histórico, la arquitectura y el paisaje.*
 
 ---
 

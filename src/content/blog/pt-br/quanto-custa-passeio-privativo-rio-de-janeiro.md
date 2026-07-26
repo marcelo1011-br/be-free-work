@@ -101,7 +101,7 @@ Os passeios de dia inteiro levam você para fora do Rio a destinos como Petrópo
 
 | Passeio | Duração | Preço a partir de (por grupo) |
 |---------|---------|-------------------------------|
-| Petrópolis: Palácios Imperiais e Fuga para a Montanha | 8 horas | USD 390 |
+| Petrópolis: Palácios Imperiais e Refúgio na Montanha | 8 horas | USD 390 |
 | Búzios: A Riviera Brasileira (23 Praias em Um Dia) | 9 horas | USD 460 |
 | Fuga para as Ilhas: Ilha Grande de Lancha Privativa | 10 horas | USD 925 (1–4 viajantes) |
 

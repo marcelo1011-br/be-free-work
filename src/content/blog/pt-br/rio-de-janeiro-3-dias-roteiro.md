@@ -146,13 +146,13 @@ O Dia 3 é uma escolha entre três experiências completamente diferentes. Elas 
 
 68 quilômetros ao norte do Rio, 840 metros acima do nível do mar e 5–8 graus mais fresco. Em 1843, o Imperador Dom Pedro II estabeleceu aqui sua corte de verão — o que ele deixou é um dos exemplos mais intactos de urbanismo imperial do século XIX nas Américas.
 
-O **Museu Imperial** ocupa o palácio de verão original de Dom Pedro II (1845). Dentro: a coroa do imperador (639 diamantes, 77 pérolas), o pergaminho original da Lei Áurea (a lei que aboliu a escravidão no Brasil, assinada pela Princesa Isabel em 13 de maio de 1888) e a biblioteca pessoal do imperador com 350.000 volumes. Não são reproduções.
+O **Museu Imperial** ocupa o palácio de verão original de Dom Pedro II (1845). Dentro: a coroa do imperador, a caneta com que a Princesa Isabel assinou a Lei Áurea — a lei que aboliu a escravidão no Brasil, em 13 de maio de 1888 —, além de uma cópia do documento e a biblioteca pessoal do imperador com 350.000 volumes.
 
-O **Palácio Quitandinha** (1944) foi construído como resort cassino de luxo em estilo normando — projetado para rivalizar com Monte Carlo. O jogo foi proibido em todo o Brasil um ano após sua inauguração. O prédio existe desde então como condomínio residencial privado, com seus salões preservados e abertos para visita. É uma das histórias mais singulares e fascinantes da arquitetura brasileira.
+O **Palácio Quitandinha** (1944) foi construído como resort cassino de luxo — projetado para rivalizar com Monte Carlo. O jogo foi proibido em todo o Brasil um ano após sua inauguração. O prédio existe desde então como condomínio residencial privado, com seus salões preservados e abertos para visita. É uma das histórias mais singulares e fascinantes da arquitetura brasileira.
 
 A Catedral neogótica, iniciada em 1884 e concluída em 1939, abriga o mausoléu imperial. Almoço no centro histórico — culinária de influência alemã refletindo a imigração europeia do século XIX.
 
-*Não disponível às segundas-feiras — o Museu Imperial está fechado.*
+*Segundas-feiras seguem um roteiro diferente — o Museu Imperial e os interiores históricos fecham, então o dia se concentra no Centro Histórico, na arquitetura e na paisagem.*
 
 ---
 

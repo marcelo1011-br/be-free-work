@@ -146,13 +146,13 @@ Day 3 is a choice between three completely different experiences. They don't com
 
 68 kilometres north of Rio, 840 metres above sea level, and 5–8 degrees cooler. In 1843, Emperor Dom Pedro II established his summer court here — what he left behind is one of the most intact examples of 19th-century imperial urbanism in the Americas.
 
-The **Imperial Museum** occupies Dom Pedro II's original summer palace (1845). Inside: the emperor's crown (639 diamonds, 77 pearls), the original parchment of the Lei Áurea (the law that abolished slavery in Brazil, signed by Princess Isabel on May 13, 1888), and the emperor's personal library of 350,000 volumes. These are not reproductions.
+The **Imperial Museum** occupies Dom Pedro II's original summer palace (1845). Inside: the emperor's crown, the pen Princess Isabel used to sign the Lei Áurea — the law that abolished slavery in Brazil, on May 13, 1888 — with a copy of the document itself, and the emperor's personal library of 350,000 volumes.
 
-**Quitandinha Palace** (1944) was built as a luxury casino resort in Norman Manoir style — designed to rival Monte Carlo. Gambling was banned throughout Brazil one year after it opened. The building has existed since as a private residential condominium, its ballrooms preserved and open for visits. It is one of the stranger and more compelling stories in Brazilian architectural history.
+**Quitandinha Palace** (1944) was built as a luxury casino resort — designed to rival Monte Carlo. Gambling was banned throughout Brazil one year after it opened. The building has existed since as a private residential condominium, its ballrooms preserved and open for visits. It is one of the stranger and more compelling stories in Brazilian architectural history.
 
 The neo-Gothic Cathedral, begun in 1884 and completed in 1939, contains the imperial mausoleum. Lunch in the historic center — German-influenced cuisine reflecting 19th-century European immigration to the region.
 
-*Not available on Mondays — the Imperial Museum is closed.*
+*Mondays run a different itinerary — the Imperial Museum and the city's historic interiors are closed, so the day focuses on the historic centre, architecture and scenery.*
 
 ---
 

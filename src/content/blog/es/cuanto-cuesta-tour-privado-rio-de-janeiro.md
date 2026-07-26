@@ -101,7 +101,7 @@ Las excursiones de día te llevan fuera de Río a destinos como Petrópolis, Bú
 
 | Tour | Duración | Precio desde (por grupo) |
 |------|----------|--------------------------|
-| Petrópolis: Palacios Imperiales y Escape a la Montaña | 8 horas | USD 390 |
+| Petrópolis: Palacios Imperiales y Refugio en la Montaña | 8 horas | USD 390 |
 | Búzios: La Riviera Brasileña (23 Playas en Un Día) | 9 horas | USD 460 |
 | Escape a las Islas: Ilha Grande en Lancha Privada | 10 horas | USD 925 (1–4 viajeros) |
 
