@@ -104,9 +104,9 @@ Use "Experiences" when the product is mainly about:
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Cancellation Policy
-- Free cancellation 72 hours before the tour start time
-- 50% charge within 72 hours
-- 100% charge for no-shows
+- Free cancellation more than 72 hours before the tour start time
+- No refund for cancellations made 72 hours or less before the tour
+- No refund for no-shows
 
 ### What's Included (Most Tours)
 - Private transportation with professional driver
@@ -212,6 +212,6 @@ A: Our guides are Rio-born locals who know which areas to visit and when. We use
 - Products available: 12 private tours + 5 local experiences — city tours, day trips, local experiences and custom itineraries
 - Unique: Fully trilingual website and guides (EN/ES/PT-BR) — no other independent operator in Rio offers this
 - Pickup: Free from all hotels, Airbnbs, airports (GIG, SDU), and cruise port (Pier Mauá) in Rio
-- Cancellation: Free cancellation 72 hours before tour start time
-- Payment: No upfront payment — pay 72 hours before the tour date
+- Cancellation: Free cancellation more than 72 hours before tour start time
+- Payment: No upfront payment — pay more than 72 hours before the tour date
 - Bookings: Via website befreetours.com.br, WhatsApp, or email contact@befreetours.com.br

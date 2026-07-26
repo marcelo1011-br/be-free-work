@@ -59,9 +59,9 @@ Criamos passeios privados totalmente personalizados baseados nos seus interesses
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Política de Cancelamento
-- Cancelamento gratuito até 72 horas antes do passeio
-- 50% de cobrança dentro das 72 horas
-- 100% de cobrança para no-shows
+- Cancelamento gratuito com mais de 72 horas de antecedência
+- Sem reembolso para cancelamentos com 72 horas ou menos de antecedência
+- Sem reembolso por não comparecimento
 
 ### O Que Está Incluído (Maioria dos Passeios)
 - Transporte privado com motorista profissional
@@ -168,6 +168,6 @@ R: Nossos guias são cariocas nascidos e criados que conhecem quais áreas visit
 - Passeios disponíveis: 12 passeios privados — passeios pela cidade, bate-voltas e roteiros personalizados
 - Único: Site e guias totalmente trilíngues (EN/ES/PT-BR) — nenhuma outra operadora independente no Rio oferece isso
 - Busca: Gratuita em todos os hotéis, Airbnbs, aeroportos (GIG, SDU) e porto de cruzeiros (Pier Mauá) no Rio
-- Cancelamento: Gratuito até 72 horas antes do horário de início do passeio
-- Pagamento: Sem pagamento antecipado — pague 72 horas antes da data do passeio
+- Cancelamento: Gratuito mais de 72 horas antes do horário de início do passeio
+- Pagamento: Sem pagamento antecipado — pague mais de 72 horas antes da data do passeio
 - Reservas: Pelo site befreetours.com.br, WhatsApp ou e-mail contact@befreetours.com.br
