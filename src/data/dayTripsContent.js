@@ -113,7 +113,7 @@ export const dayTripsProse = {
       petropolis: {
         name: "Petrópolis — the Imperial City",
         blurb:
-          "Climb the Serra dos Órgãos to Brazil's former imperial summer capital, where the Crystal Palace, the Imperial Museum and mountain-cool streets make for a calm, culture-rich day. It's the most weather-proof of the three — good year-round and easy on the pace. Private vehicle, licensed guide and mineral water are included; entrance fees and lunch are on your own.",
+          "Climb the Serra dos Órgãos to Brazil's former imperial summer capital, where the Crystal Palace, the Imperial Museum and mountain-cool streets make for a calm, culture-rich day. It's the most weather-proof of the three — good year-round and easy on the pace. Private vehicle, licensed guide, attraction tickets and mineral water are included; lunch is on your own.",
         ctaLabel: "See the Petrópolis day trip",
       },
       "ilha-grande": {
@@ -234,7 +234,7 @@ export const dayTripsProse = {
       petropolis: {
         name: "Petrópolis, la Ciudad Imperial",
         blurb:
-          "Sube la Serra dos Órgãos hasta la antigua capital imperial de verano de Brasil, con el Palacio de Cristal, el Museo Imperial y calles de clima templado para un día tranquilo y con mucha cultura. Es la opción menos dependiente del clima: funciona todo el año y con un ritmo cómodo. Incluye vehículo privado, guía habilitado y agua mineral; las entradas y el almuerzo corren por tu cuenta.",
+          "Sube la Serra dos Órgãos hasta la antigua capital imperial de verano de Brasil, con el Palacio de Cristal, el Museo Imperial y calles de clima templado para un día tranquilo y con mucha cultura. Es la opción menos dependiente del clima: funciona todo el año y con un ritmo cómodo. Incluye vehículo privado, guía habilitado, las entradas a las atracciones y agua mineral; el almuerzo corre por tu cuenta.",
         ctaLabel: "Ver la excursión a Petrópolis",
       },
       "ilha-grande": {
@@ -355,7 +355,7 @@ export const dayTripsProse = {
       petropolis: {
         name: "Petrópolis — a Cidade Imperial",
         blurb:
-          "Subindo a Serra dos Órgãos você chega à antiga capital imperial de verão do Brasil, com o Palácio de Cristal, o Museu Imperial e um clima de montanha que deixa o dia mais leve. É a opção que menos depende do clima: funciona o ano todo e num ritmo tranquilo. Quanto tempo leva? Cerca de 8 horas, ida e volta no mesmo dia — não precisa dormir lá. Inclui veículo privativo, guia credenciado e água mineral; ingressos e almoço ficam por conta própria.",
+          "Subindo a Serra dos Órgãos você chega à antiga capital imperial de verão do Brasil, com o Palácio de Cristal, o Museu Imperial e um clima de montanha que deixa o dia mais leve. É a opção que menos depende do clima: funciona o ano todo e num ritmo tranquilo. Quanto tempo leva? Cerca de 8 horas, ida e volta no mesmo dia — não precisa dormir lá. Inclui veículo privativo, guia credenciado, os ingressos das atrações e água mineral; o almoço fica por conta própria.",
         ctaLabel: "Ver o passeio a Petrópolis",
       },
       "ilha-grande": {
@@ -399,7 +399,7 @@ export const dayTripsProse = {
       },
       {
         q: "O que está incluído no passeio?",
-        a: "Cada bate-volta privativo inclui veículo e motorista, guia credenciado e água mineral, além da busca no hotel, Airbnb ou porto quando faz parte da rota. Ingressos e almoço ficam por conta própria.",
+        a: "Cada bate-volta privativo inclui veículo e motorista, guia credenciado e água mineral, além da busca no hotel, Airbnb ou porto quando faz parte da rota. Em Petrópolis os ingressos das atrações também estão inclusos. O almoço fica por conta própria em todos.",
       },
       {
         q: "Precisa reservar com antecedência?",
