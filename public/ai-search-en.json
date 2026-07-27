@@ -38,7 +38,7 @@
     "operating_hours": "06:00-22:00 (Rio time)"
   },
   "booking": {
-    "policy": "Free cancellation up to 72 hours (3 days) before the tour start time",
+    "policy": "Free cancellation more than 72 hours before the tour start time; 72 hours or less is non-refundable",
     "payment_methods": [
       "Credit Card",
       "PayPal"
