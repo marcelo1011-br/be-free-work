@@ -129,12 +129,12 @@ export const homeContent = {
         {
           id: 4,
           question: "When do I need to pay for my tour?",
-          answer: "You can reserve your tour with zero payment upfront. Payment is only required 72 hours before your scheduled tour date. This gives you flexibility to plan your trip without immediate financial commitment. We accept all major credit cards — Visa, Mastercard, and others — through our secure payment link, as well as PayPal. American Express is not accepted."
+          answer: "Submitting the booking form costs nothing and commits you to nothing — it is a request, not a confirmed reservation. Once we check availability and confirm your date by email, we send a secure payment link. Full payment is due more than 72 hours before the tour start time. For requests made 72 hours or less before the tour, payment is due immediately and is non-refundable."
         },
         {
           id: 5,
           question: "What's your cancellation policy?",
-          answer: "We offer free cancellation up to 72 hours before your tour start time for a full refund. Cancellations made within 72 hours are non-refundable. Weather-related cancellations decided by our team are fully refundable or can be rescheduled at no extra cost. Exception: tours that include the Roxy Dinner Show have non-refundable show tickets regardless of notice given — this is stated clearly at booking."
+          answer: "Cancel more than 72 hours before your tour start time and you receive a full refund. Cancellations made 72 hours or less before the start time are non-refundable, as is failing to appear at the agreed time and place. Weather-related cancellations decided by our team are fully refundable or can be rescheduled at no extra cost. Exception: tours that include the Roxy Dinner Show have non-refundable show tickets regardless of notice given — this is stated clearly at booking."
         },
         {
           id: 6,
@@ -179,7 +179,7 @@ export const homeContent = {
         {
           id: 14,
           question: "What payment methods do you accept?",
-          answer: "We accept all major credit and debit cards. Payment is only required 72 hours before your tour — you can reserve your date today with no upfront charge. For last-minute bookings made within 72 hours, full payment is required at the time of reservation."
+          answer: "Credit and debit cards, processed securely by Stripe. We send the payment link by email after confirming your date. Full payment is due more than 72 hours before the tour; requests made 72 hours or less before the start time are paid immediately."
         },
         {
           id: 15,
@@ -206,20 +206,21 @@ export const homeContent = {
     paymentPolicy: {
       title: "Payment Policy",
       items: [
-        { label: "How it works:", text: "After you click Book Now and submit your booking request, we'll review the details and send a secure payment link by email." },
-        { label: "Payment deadline:", text: "Full payment must be completed at least 72 hours (3 days) before the tour date." },
-        { label: "Last-minute bookings:", text: "Reservations made within 72 hours of the tour require immediate payment to secure availability. The payment link will be sent as soon as possible." },
-        { label: "Accepted methods:", text: "Credit and debit cards, processed securely via Stripe." },
-        { label: "Important:", text: "Bookings that remain unpaid will be automatically released 72 hours before the tour. Reminder notifications are sent by email and WhatsApp." }
+        { label: "How it works:", text: "Book Now sends us a booking request, not a confirmed reservation. We check availability first, then confirm your date by email and send a secure payment link." },
+        { label: "Payment deadline:", text: "Full payment must be completed more than 72 hours before the tour start time." },
+        { label: "Last-minute requests:", text: "For requests made 72 hours or less before the tour, payment is due immediately once we confirm availability, and it is non-refundable." },
+        { label: "Accepted methods:", text: "Credit and debit cards, processed securely by Stripe." },
+        { label: "Important:", text: "A confirmed booking that remains unpaid may be released once the payment deadline passes. We send reminders by email and WhatsApp before that happens." }
       ]
     },
     cancellationPolicy: {
       title: "Cancellation Policy",
       items: [
-        { label: "Free cancellation:", text: "Cancel free of charge up to 72 hours (3 days) before your tour start time." },
+        { label: "Free cancellation:", text: "Cancel at no cost more than 72 hours before your tour start time for a full refund." },
         { label: "Changes or rescheduling:", text: "To cancel, modify, or reschedule your tour, please contact us by email or WhatsApp as soon as possible. We'll do our best to accommodate adjustments whenever feasible." },
-        { label: "Late cancellations:", text: "Tours canceled less than 72 hours before the start date are non-refundable." },
-        { label: "Weather Conditions:", text: "If severe weather conditions make the tour unsafe or unviable, we'll offer a full refund or the option to reschedule at no additional cost." }
+        { label: "Late cancellations:", text: "Tours canceled 72 hours or less before the start time are non-refundable." },
+        { label: "No-show:", text: "Failing to appear at the agreed time and place is non-refundable." },
+        { label: "Weather conditions:", text: "If severe weather conditions make the tour unsafe or unviable, we'll offer a full refund or the option to reschedule at no additional cost." }
       ]
     },
     ctaFinal: {
@@ -343,12 +344,12 @@ export const homeContent = {
         {
           id: 4,
           question: "¿Cuándo necesito pagar por mi tour?",
-          answer: "Puedes reservar tu tour sin pago inicial. El pago solo se requiere 72 horas antes de la fecha programada. Esto te da flexibilidad para planificar tu viaje sin compromiso financiero inmediato. Aceptamos las principales tarjetas de crédito — Visa, Mastercard y otras — a través de nuestro enlace de pago seguro, así como PayPal. No aceptamos American Express."
+          answer: "Enviar el formulario no cuesta nada ni te compromete a nada: es una solicitud, no una reserva confirmada. Una vez que verificamos la disponibilidad y te confirmamos la fecha por correo electrónico, te enviamos un enlace de pago seguro. El pago total se realiza con más de 72 horas de antelación al inicio del tour. En solicitudes hechas con 72 horas o menos de antelación, el pago es inmediato y no es reembolsable."
         },
         {
           id: 5,
           question: "¿Cuál es su política de cancelación?",
-          answer: "Ofrecemos cancelación gratuita hasta 72 horas antes del inicio del tour para reembolso completo. Las cancelaciones dentro de las 72 horas no son reembolsables. Las cancelaciones por clima decididas por nuestro equipo son totalmente reembolsables o pueden reprogramarse sin costo adicional. Excepción: los tours que incluyen el Show Cena Roxy tienen entradas no reembolsables independientemente del aviso dado — esto se indica claramente al reservar."
+          answer: "Si cancelas con más de 72 horas de antelación al inicio del tour, recibes el reembolso total. Las cancelaciones con 72 horas o menos de antelación no son reembolsables, igual que no presentarse en el lugar y la hora acordados. Las cancelaciones por clima decididas por nuestro equipo son totalmente reembolsables o pueden reprogramarse sin costo adicional. Excepción: los tours que incluyen el Show Cena Roxy tienen entradas no reembolsables independientemente del aviso dado — esto se indica claramente al reservar."
         },
         {
           id: 6,
@@ -393,7 +394,7 @@ export const homeContent = {
         {
           id: 14,
           question: "¿Qué métodos de pago aceptan?",
-          answer: "Aceptamos todas las tarjetas de crédito y débito principales. El pago solo se requiere 72 horas antes de tu tour — puedes reservar tu fecha hoy sin cargo inicial. Para reservas de último momento realizadas dentro de las 72 horas, se requiere el pago completo al momento de la reserva."
+          answer: "Tarjetas de crédito y débito, procesadas de forma segura por Stripe. Enviamos el enlace de pago por correo electrónico después de confirmar tu fecha. El pago total se realiza con más de 72 horas de antelación al tour; las solicitudes hechas con 72 horas o menos se pagan de inmediato."
         },
         {
           id: 15,
@@ -420,19 +421,20 @@ export const homeContent = {
     paymentPolicy: {
       title: "Política de pago",
       items: [
-        { label: "Cómo funciona:", text: "Después de hacer clic en Reservar ahora y enviar tu solicitud de reserva, revisaremos los detalles y te enviaremos un enlace de pago seguro por correo electrónico." },
-        { label: "Plazo de pago:", text: "El pago total debe completarse al menos 72 horas (3 días) antes de la fecha del tour." },
-        { label: "Reservas de último minuto:", text: "Las reservas realizadas dentro de las 72 horas previas al tour requieren pago inmediato para asegurar disponibilidad. El enlace de pago se enviará lo antes posible." },
-        { label: "Métodos aceptados:", text: "Tarjetas de crédito y débito, procesadas de forma segura a través de Stripe." },
-        { label: "Importante:", text: "Las reservas que permanezcan sin pagar se liberarán automáticamente 72 horas antes del tour. Las notificaciones de recordatorio se envían por correo electrónico y WhatsApp." }
+        { label: "Cómo funciona:", text: "Al hacer clic en Reservar ahora envías una solicitud de reserva, no una reserva confirmada. Primero verificamos la disponibilidad, luego te confirmamos la fecha por correo electrónico y te enviamos un enlace de pago seguro." },
+        { label: "Plazo de pago:", text: "El pago total debe completarse con más de 72 horas de antelación al inicio del tour." },
+        { label: "Solicitudes de último minuto:", text: "En solicitudes hechas con 72 horas o menos de antelación, el pago se realiza de inmediato una vez confirmada la disponibilidad y no es reembolsable." },
+        { label: "Métodos aceptados:", text: "Tarjetas de crédito y débito, procesadas de forma segura por Stripe." },
+        { label: "Importante:", text: "Una reserva confirmada que siga sin pago podrá ser liberada una vez vencido el plazo. Antes de eso enviamos recordatorios por correo electrónico y WhatsApp." }
       ]
     },
     cancellationPolicy: {
       title: "Política de cancelación",
       items: [
-        { label: "Cancelación gratuita:", text: "Cancela sin costo hasta 72 horas (3 días) antes de la hora de inicio de tu tour." },
+        { label: "Cancelación gratuita:", text: "Cancela sin costo con más de 72 horas de antelación al inicio de tu tour y recibe el reembolso total." },
         { label: "Cambios o reprogramación:", text: "Para cancelar, modificar o reprogramar tu tour, contáctanos por correo electrónico o WhatsApp lo antes posible. Haremos todo lo posible por adaptarnos a los cambios siempre que sea viable." },
-        { label: "Cancelaciones tardías:", text: "Los tours cancelados con menos de 72 horas antes de la fecha de inicio no son reembolsables." },
+        { label: "Cancelaciones tardías:", text: "Los tours cancelados con 72 horas o menos de antelación al inicio no son reembolsables." },
+        { label: "Ausencia:", text: "No presentarse en el lugar y la hora acordados no es reembolsable." },
         { label: "Condiciones climáticas:", text: "Si las condiciones climáticas severas hacen que el tour sea inseguro o inviable, ofreceremos un reembolso total o la opción de reprogramar sin costo adicional." }
       ]
     },
@@ -557,12 +559,12 @@ export const homeContent = {
         {
           id: 4,
           question: "Quando preciso pagar pelo meu passeio?",
-          answer: "Você pode reservar seu passeio sem pagamento inicial. O pagamento é exigido apenas 72 horas antes da data programada do passeio. Isso oferece flexibilidade para planejar sua viagem sem compromisso financeiro imediato. Aceitamos as principais bandeiras de cartão de crédito — Visa, Mastercard e outras — através do nosso link de pagamento seguro, além de PayPal. American Express não é aceito."
+          answer: "Enviar o formulário não custa nada e não compromete você a nada: é uma solicitação, não uma reserva confirmada. Assim que verificamos a disponibilidade e confirmamos a data por e-mail, enviamos um link de pagamento seguro. O pagamento total é feito com mais de 72 horas de antecedência do início do passeio. Em solicitações feitas com 72 horas ou menos de antecedência, o pagamento é imediato e não é reembolsável."
         },
         {
           id: 5,
           question: "Qual é a política de cancelamento?",
-          answer: "Oferecemos cancelamento gratuito até 72 horas antes do início do passeio para reembolso total. Cancelamentos feitos dentro de 72 horas não são reembolsáveis. Cancelamentos por motivo climático decididos pela nossa equipe são totalmente reembolsáveis ou podem ser reagendados sem custo adicional. Exceção: passeios que incluem o Show Jantar Roxy possuem ingressos não reembolsáveis independentemente do aviso — isso é informado claramente no momento da reserva."
+          answer: "Cancelando com mais de 72 horas de antecedência do início do passeio, você recebe o reembolso total. Cancelamentos com 72 horas ou menos de antecedência não são reembolsáveis, assim como não comparecer no local e horário combinados. Cancelamentos por motivo climático decididos pela nossa equipe são totalmente reembolsáveis ou podem ser reagendados sem custo adicional. Exceção: passeios que incluem o Show Jantar Roxy possuem ingressos não reembolsáveis independentemente do aviso — isso é informado claramente no momento da reserva."
         },
         {
           id: 6,
@@ -607,7 +609,7 @@ export const homeContent = {
         {
           id: 14,
           question: "Quais formas de pagamento vocês aceitam?",
-          answer: "Aceitamos todos os principais cartões de crédito e débito. O pagamento só é necessário 72 horas antes do seu passeio — você pode reservar sua data hoje sem cobrança antecipada. Para reservas de última hora feitas dentro de 72 horas, o pagamento completo é exigido no momento da reserva."
+          answer: "Cartões de crédito e débito, processados com segurança pela Stripe, além de PIX para clientes no Brasil. Enviamos o link de pagamento por e-mail depois de confirmar sua data. O pagamento total é feito com mais de 72 horas de antecedência; solicitações com 72 horas ou menos são pagas de imediato."
         },
         {
           id: 15,
@@ -634,19 +636,20 @@ export const homeContent = {
     paymentPolicy: {
       title: "Política de pagamento",
       items: [
-        { label: "Como funciona:", text: "Após clicar em Reservar agora e enviar sua solicitação de reserva, revisaremos os detalhes e enviaremos um link de pagamento seguro por e-mail." },
-        { label: "Prazo de pagamento:", text: "O pagamento total deve ser concluído pelo menos 72 horas (3 dias) antes da data do passeio." },
-        { label: "Reservas de última hora:", text: "Reservas feitas dentro de 72 horas do passeio exigem pagamento imediato para garantir disponibilidade. O link de pagamento será enviado o mais rápido possível." },
-        { label: "Métodos aceitos:", text: "Cartões de crédito e débito, processados com segurança via Stripe." },
-        { label: "Importante:", text: "Reservas que permanecerem sem pagamento serão liberadas automaticamente 72 horas antes do passeio. Notificações de lembrete são enviadas por e-mail e WhatsApp." }
+        { label: "Como funciona:", text: "Ao clicar em Reservar agora você envia uma solicitação de reserva, não uma reserva confirmada. Primeiro verificamos a disponibilidade, depois confirmamos a data por e-mail e enviamos um link de pagamento seguro." },
+        { label: "Prazo de pagamento:", text: "O pagamento total deve ser concluído com mais de 72 horas de antecedência do início do passeio." },
+        { label: "Solicitações de última hora:", text: "Em solicitações feitas com 72 horas ou menos de antecedência, o pagamento é imediato assim que confirmamos a disponibilidade e não é reembolsável." },
+        { label: "Métodos aceitos:", text: "Cartões de crédito e débito, processados com segurança pela Stripe. Para clientes no Brasil, também aceitamos PIX." },
+        { label: "Importante:", text: "Uma reserva confirmada que permanecer sem pagamento poderá ser liberada após o vencimento do prazo. Antes disso enviamos lembretes por e-mail e WhatsApp." }
       ]
     },
     cancellationPolicy: {
       title: "Política de cancelamento",
       items: [
-        { label: "Cancelamento gratuito:", text: "Cancele sem custo até 72 horas (3 dias) antes do horário de início do seu passeio." },
+        { label: "Cancelamento gratuito:", text: "Cancele sem custo com mais de 72 horas de antecedência do início do seu passeio e receba o reembolso total." },
         { label: "Alterações ou reagendamento:", text: "Para cancelar, alterar ou reagendar seu passeio, entre em contato por e-mail ou WhatsApp o quanto antes. Faremos o possível para acomodar os ajustes sempre que viável." },
-        { label: "Cancelamentos tardios:", text: "Passeios cancelados com menos de 72 horas antes da data de início não são reembolsáveis." },
+        { label: "Cancelamentos tardios:", text: "Passeios cancelados com 72 horas ou menos de antecedência do início não são reembolsáveis." },
+        { label: "Não comparecimento:", text: "Não comparecer no local e horário combinados não é reembolsável." },
         { label: "Condições climáticas:", text: "Se condições climáticas severas tornarem o passeio inseguro ou inviável, ofereceremos reembolso total ou a opção de reagendamento sem custo adicional." }
       ]
     },
