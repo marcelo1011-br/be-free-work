@@ -41,7 +41,7 @@
     "policy": "Free cancellation more than 72 hours before the tour start time; 72 hours or less is non-refundable",
     "payment_methods": [
       "Credit Card",
-      "PayPal"
+      "Debit Card"
     ],
     "currencies": [
       "USD",

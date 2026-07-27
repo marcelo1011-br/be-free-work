@@ -186,7 +186,6 @@ function getBaseProductSchema(tour, lang, siteUrl, imageUrl, section = 'tours') 
         'acceptedPaymentMethod': [
           'https://schema.org/CreditCard',
           'https://schema.org/PaymentCard',
-          'http://purl.org/goodrelations/v1#PayPal',
         ],
         'seller': {
           '@type': 'Organization',

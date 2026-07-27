@@ -92,7 +92,7 @@ R: Manhã cedo (antes das 9h) ou fim de tarde (após 15h) para menos multidão e
 R: Sim, oferecemos busca e retorno no terminal de cruzeiros. Nosso Rio Express 5h é pensado para horários de cruzeiro.
 
 **P: Como faço o pagamento?**
-R: Aceitamos cartões de crédito e PayPal. O pagamento é normalmente feito após a confirmação da reserva.
+R: Aceitamos cartões de crédito e débito, processados pela Stripe, além de PIX para clientes no Brasil. Enviamos o link de pagamento após confirmar a disponibilidade; o pagamento total é feito com mais de 72 horas de antecedência do início do passeio.
 
 ## Localização e Área de Operação
 

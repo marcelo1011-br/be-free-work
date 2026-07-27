@@ -41,7 +41,8 @@
     "policy": "Cancelamento gratuito com mais de 72 horas de antecedência do início do passeio; com 72 horas ou menos não há reembolso",
     "payment_methods": [
       "Cartão de crédito",
-      "PayPal"
+      "Cartão de débito",
+      "PIX"
     ],
     "currencies": [
       "USD",

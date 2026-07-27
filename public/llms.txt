@@ -137,7 +137,7 @@ A: Early morning (before 9 AM) or late afternoon (after 3 PM) for fewer crowds a
 A: Yes, door-to-door pickup from Pier Mauá cruise terminal is included. The Rio Express 5-hour tour is built around cruise schedules.
 
 **Q: How do I pay?**
-A: We accept credit and debit cards. No upfront payment — payment is due 72 hours before the tour date.
+A: We accept credit and debit cards, processed by Stripe. We send the payment link after confirming availability; full payment is due more than 72 hours before the tour start time.
 
 ## Location and Operating Area
 

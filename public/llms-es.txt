@@ -92,7 +92,7 @@ R: Temprano por la mañana (antes de las 9am) o por la tarde (después de las 3p
 R: Sí, ofrecemos recogida y regreso en la terminal de cruceros. Nuestro Río Express 5h está pensado para horarios de crucero.
 
 **P: ¿Cómo se paga?**
-R: Aceptamos tarjetas de crédito y PayPal. El pago se realiza normalmente tras la confirmación de la reserva.
+R: Aceptamos tarjetas de crédito y débito, procesadas por Stripe. Enviamos el enlace de pago tras confirmar la disponibilidad; el pago total se realiza con más de 72 horas de antelación al inicio del tour.
 
 ## Ubicación y Área de Operación
 

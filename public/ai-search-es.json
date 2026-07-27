@@ -41,7 +41,7 @@
     "policy": "Cancelación gratuita con más de 72 horas de antelación al inicio del tour; con 72 horas o menos no hay reembolso",
     "payment_methods": [
       "Tarjeta de crédito",
-      "PayPal"
+      "Tarjeta de débito"
     ],
     "currencies": [
       "USD",
