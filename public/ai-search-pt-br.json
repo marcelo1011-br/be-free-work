@@ -46,8 +46,7 @@
     "currencies": [
       "USD",
       "BRL"
-    ],
-    "deposit": "50% para tours acima de $500"
+    ]
   },
   "tours": {
     "city_tours": {
