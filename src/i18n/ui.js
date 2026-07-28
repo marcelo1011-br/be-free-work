@@ -179,7 +179,7 @@ export const ui = {
     'product.altLineExperienceButton': 'See Private Tours',
 
     'booking.title': 'Request Booking',
-    'booking.subtitle': 'No payment required now. We\'ll confirm by email within 1 hour, and you pay 72 hours before your tour — with free cancellation until then.',
+    'booking.subtitle': 'No payment required now. We\'ll confirm by email within 1 hour, and you pay at least 72 hours before your tour — with free cancellation until then.',
     'booking.close': 'Close',
     'booking.date': 'Date *',
     'booking.time': 'Time *',
@@ -378,7 +378,7 @@ export const ui = {
     'product.altLineExperienceButton': 'Ver Tours Privados',
 
     'booking.title': 'Solicitar Reserva',
-    'booking.subtitle': 'Sin pago ahora. Confirmamos por email en hasta 1 hora, y pagas 72 horas antes de tu tour — con cancelación gratuita hasta ese momento.',
+    'booking.subtitle': 'Sin pago ahora. Confirmamos por email en hasta 1 hora, y pagas al menos 72 horas antes de tu tour — con cancelación gratuita hasta ese momento.',
     'booking.close': 'Cerrar',
     'booking.date': 'Fecha *',
     'booking.time': 'Hora *',
@@ -577,7 +577,7 @@ export const ui = {
     'product.altLineExperienceButton': 'Ver Passeios Privados',
 
     'booking.title': 'Solicitar Reserva',
-    'booking.subtitle': 'Sem pagamento agora. Confirmamos por email em até 1 hora, e você paga 72 horas antes do passeio — com cancelamento grátis até lá.',
+    'booking.subtitle': 'Sem pagamento agora. Confirmamos por email em até 1 hora, e você paga com pelo menos 72 horas de antecedência do passeio — com cancelamento grátis até lá.',
     'booking.close': 'Fechar',
     'booking.date': 'Data *',
     'booking.time': 'Horário *',

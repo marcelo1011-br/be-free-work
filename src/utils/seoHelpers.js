@@ -374,9 +374,9 @@ export function getTourFAQSchema(tour, lang, section = 'tours') {
     priceAnswer = answers[lang];
   } else {
     const answers = {
-      en: `${tour.title} starts from USD ${tour.pricing.from} per group. The tour is priced per group, not per person — for couples and families, the cost per person drops significantly. Payment is due more than 72 hours before the tour, after we confirm your date.`,
-      es: `${tour.title} comienza desde USD ${tour.pricing.from} por grupo. El precio es por grupo, no por persona — para parejas y familias, el costo por persona baja considerablemente. El pago se realiza con más de 72 horas de antelación al tour, después de confirmar tu fecha.`,
-      'pt-br': `${tour.title} começa a partir de USD ${tour.pricing.from} por grupo. O preço é por grupo, não por pessoa — para casais e famílias, o custo por pessoa cai consideravelmente. O pagamento é feito com mais de 72 horas de antecedência do passeio, depois de confirmarmos sua data.`,
+      en: `${tour.title} starts from USD ${tour.pricing.from} per group. The tour is priced per group, not per person — for couples and families, the cost per person drops significantly. Payment is due at least 72 hours before the tour, after we confirm your date.`,
+      es: `${tour.title} comienza desde USD ${tour.pricing.from} por grupo. El precio es por grupo, no por persona — para parejas y familias, el costo por persona baja considerablemente. El pago se realiza al menos 72 horas antes del tour, después de confirmar tu fecha.`,
+      'pt-br': `${tour.title} começa a partir de USD ${tour.pricing.from} por grupo. O preço é por grupo, não por pessoa — para casais e famílias, o custo por pessoa cai consideravelmente. O pagamento é feito com pelo menos 72 horas de antecedência do passeio, depois de confirmarmos sua data.`,
     };
     priceAnswer = answers[lang];
   }
