@@ -38,7 +38,7 @@
     "operating_hours": "06:00-22:00 (horário do Rio)"
   },
   "booking": {
-    "policy": "Cancelamento gratuito com mais de 72 horas de antecedência do início do passeio; com 72 horas ou menos não há reembolso",
+    "policy": "Cancelamento gratuito com pelo menos 72 horas de antecedência do início do passeio; com menos de 72 horas não há reembolso",
     "payment_methods": [
       "Cartão de crédito",
       "Cartão de débito",

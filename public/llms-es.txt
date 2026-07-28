@@ -59,8 +59,8 @@ Creamos tours privados totalmente personalizados basados en tus intereses. Cont�
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Política de Cancelación
-- Cancelación gratuita más de 72 horas antes del inicio del tour
-- Sin reembolso para cancelaciones con 72 horas o menos de antelación
+- Cancelación gratuita al menos 72 horas antes del inicio del tour
+- Sin reembolso para cancelaciones con menos de 72 horas de antelación
 - Sin reembolso por ausencias
 
 ### Qué Está Incluido (Mayoría de Tours)
@@ -92,7 +92,7 @@ R: Temprano por la mañana (antes de las 9am) o por la tarde (después de las 3p
 R: Sí, ofrecemos recogida y regreso en la terminal de cruceros. Nuestro Río Express 5h está pensado para horarios de crucero.
 
 **P: ¿Cómo se paga?**
-R: Aceptamos tarjetas de crédito y débito, procesadas por Stripe. Enviamos el enlace de pago tras confirmar la disponibilidad; el pago total se realiza con más de 72 horas de antelación al inicio del tour.
+R: Aceptamos tarjetas de crédito y débito, procesadas por Stripe. Enviamos el enlace de pago tras confirmar la disponibilidad; el pago total se realiza al menos 72 horas antes del inicio del tour.
 
 ## Ubicación y Área de Operación
 
@@ -168,6 +168,6 @@ R: Nuestros guías son cariocas nacidos y criados que conocen qué áreas visita
 - Tours disponibles: 12 tours privados + 5 experiencias locales — tours por la ciudad, excursiones de un día, experiencias locales e itinerarios personalizados
 - Único: Sitio web y guías completamente trilingües (EN/ES/PT-BR) — ninguna otra operadora independiente en Río ofrece esto
 - Recogida: Gratuita en todos los hoteles, Airbnbs, aeropuertos (GIG, SDU) y puerto de cruceros (Pier Mauá) de Río
-- Cancelación: Gratuita más de 72 horas antes de la hora de inicio del tour
-- Pago: Sin pago por adelantado — se paga más de 72 horas antes de la fecha del tour
+- Cancelación: Gratuita al menos 72 horas antes de la hora de inicio del tour
+- Pago: Sin pago por adelantado — se paga al menos 72 horas antes de la fecha del tour
 - Reservas: A través del sitio befreetours.com.br, WhatsApp o email contact@befreetours.com.br

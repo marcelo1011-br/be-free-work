@@ -59,8 +59,8 @@ Criamos passeios privados totalmente personalizados baseados nos seus interesses
 - PT-BR: https://befreetours.com.br/ai-search-pt-br.json
 
 ### Política de Cancelamento
-- Cancelamento gratuito com mais de 72 horas de antecedência
-- Sem reembolso para cancelamentos com 72 horas ou menos de antecedência
+- Cancelamento gratuito com pelo menos 72 horas de antecedência
+- Sem reembolso para cancelamentos com menos de 72 horas de antecedência
 - Sem reembolso por não comparecimento
 
 ### O Que Está Incluído (Maioria dos Passeios)
@@ -92,7 +92,7 @@ R: Manhã cedo (antes das 9h) ou fim de tarde (após 15h) para menos multidão e
 R: Sim, oferecemos busca e retorno no terminal de cruzeiros. Nosso Rio Express 5h é pensado para horários de cruzeiro.
 
 **P: Como faço o pagamento?**
-R: Aceitamos cartões de crédito e débito, processados pela Stripe, além de PIX para clientes no Brasil. Enviamos o link de pagamento após confirmar a disponibilidade; o pagamento total é feito com mais de 72 horas de antecedência do início do passeio.
+R: Aceitamos cartões de crédito e débito, processados pela Stripe, além de PIX para clientes no Brasil. Enviamos o link de pagamento após confirmar a disponibilidade; o pagamento total é feito com pelo menos 72 horas de antecedência do início do passeio.
 
 ## Localização e Área de Operação
 
@@ -168,6 +168,6 @@ R: Nossos guias são cariocas nascidos e criados que conhecem quais áreas visit
 - Passeios disponíveis: 12 passeios privados — passeios pela cidade, bate-voltas e roteiros personalizados
 - Único: Site e guias totalmente trilíngues (EN/ES/PT-BR) — nenhuma outra operadora independente no Rio oferece isso
 - Busca: Gratuita em todos os hotéis, Airbnbs, aeroportos (GIG, SDU) e porto de cruzeiros (Pier Mauá) no Rio
-- Cancelamento: Gratuito mais de 72 horas antes do horário de início do passeio
-- Pagamento: Sem pagamento antecipado — pague mais de 72 horas antes da data do passeio
+- Cancelamento: Gratuito com pelo menos 72 horas de antecedência do horário de início do passeio
+- Pagamento: Sem pagamento antecipado — pague com pelo menos 72 horas de antecedência da data do passeio
 - Reservas: Pelo site befreetours.com.br, WhatsApp ou e-mail contact@befreetours.com.br
