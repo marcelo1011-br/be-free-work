@@ -260,7 +260,7 @@ export const pageContent = {
     en: {
       hero: {
         title: "Get in Touch",
-        subtitle: "Book a private tour, ask about availability, or tell us what you have in mind — we typically respond within a few hours."
+        subtitle: "Book a private tour, ask about availability, or tell us what you have in mind — we usually reply within a few hours, and no later than 24."
       },
       form: {
         title: "Send us a Message",
@@ -294,7 +294,7 @@ export const pageContent = {
         whatsapp: { label: "WhatsApp", value: "+55 21 97927-1637" },
         email: { label: "Email", value: "contact@befreetours.com.br" },
         hours: { label: "Business Hours", value: "Mon-Sun: 7:00 AM - 10:00 PM" },
-        responseTime: "We typically respond within 24 hours"
+        responseTime: "We reply within 24 hours"
       },
       whatsappCta: {
         title: "Prefer to chat?",
@@ -305,7 +305,7 @@ export const pageContent = {
     es: {
       hero: {
         title: "Contáctanos",
-        subtitle: "Reserva un tour privado, consulta disponibilidad o cuéntanos qué tienes en mente — normalmente respondemos en pocas horas."
+        subtitle: "Reserva un tour privado, consulta disponibilidad o cuéntanos qué tienes en mente — normalmente respondemos en pocas horas, y como máximo en 24."
       },
       form: {
         title: "Envíanos un Mensaje",
@@ -339,7 +339,7 @@ export const pageContent = {
         whatsapp: { label: "WhatsApp", value: "+55 21 97927-1637" },
         email: { label: "Email", value: "contact@befreetours.com.br" },
         hours: { label: "Horario de Atención", value: "Lun-Dom: 7:00 AM - 10:00 PM" },
-        responseTime: "Típicamente respondemos en 24 horas"
+        responseTime: "Respondemos en un máximo de 24 horas"
       },
       whatsappCta: {
         title: "¿Prefieres chatear?",
@@ -350,7 +350,7 @@ export const pageContent = {
     'pt-br': {
       hero: {
         title: "Entre em Contato",
-        subtitle: "Reserve um passeio privativo, pergunte sobre disponibilidade ou nos conte o que você tem em mente — respondemos normalmente em poucas horas."
+        subtitle: "Reserve um passeio privativo, pergunte sobre disponibilidade ou nos conte o que você tem em mente — normalmente respondemos em poucas horas, e no máximo em 24."
       },
       form: {
         title: "Envie uma Mensagem",
@@ -384,7 +384,7 @@ export const pageContent = {
         whatsapp: { label: "WhatsApp", value: "+55 21 97927-1637" },
         email: { label: "Email", value: "contact@befreetours.com.br" },
         hours: { label: "Horário de Atendimento", value: "Seg-Dom: 7:00 - 22:00" },
-        responseTime: "Geralmente respondemos em até 24 horas"
+        responseTime: "Respondemos em no máximo 24 horas"
       },
       whatsappCta: {
         title: "Prefere conversar?",
